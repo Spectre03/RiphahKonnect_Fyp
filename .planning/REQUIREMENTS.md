@@ -119,22 +119,63 @@ Deferred to future release.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| UI-01 to UI-06 | Phase 1 | Pending |
-| LAY-01 to LAY-05 | Phase 2 | Pending |
-| FEED-01 to FEED-07 | Phase 3 | Pending |
-| PROF-01 to PROF-05 | Phase 4 | Pending |
-| GRP-01 to GRP-04 | Phase 5 | Pending |
-| EVT-01 to EVT-04 | Phase 5 | Pending |
-| LF-01 to LF-04 | Phase 5 | Pending |
-| MSG-01 to MSG-04 | Phase 5 | Pending |
-| REC-01 to REC-08 | Phase 6 | Pending |
-| RESP-01 to RESP-04 | Phase 7 | Pending |
+| UI-01 | Phase 1: UI Primitives | Pending |
+| UI-02 | Phase 1: UI Primitives | Pending |
+| UI-03 | Phase 1: UI Primitives | Pending |
+| UI-04 | Phase 1: UI Primitives | Pending |
+| UI-05 | Phase 1: UI Primitives | Pending |
+| UI-06 | Phase 1: UI Primitives | Pending |
+| LAY-01 | Phase 2: Layout & Navigation | Pending |
+| LAY-02 | Phase 2: Layout & Navigation | Pending |
+| LAY-03 | Phase 2: Layout & Navigation | Pending |
+| LAY-04 | Phase 2: Layout & Navigation | Pending |
+| LAY-05 | Phase 2: Layout & Navigation | Pending |
+| FEED-01 | Phase 3: Feed Page | Pending |
+| FEED-02 | Phase 3: Feed Page | Pending |
+| FEED-03 | Phase 3: Feed Page | Pending |
+| FEED-04 | Phase 3: Feed Page | Pending |
+| FEED-05 | Phase 3: Feed Page | Pending |
+| FEED-06 | Phase 3: Feed Page | Pending |
+| FEED-07 | Phase 3: Feed Page | Pending |
+| PROF-01 | Phase 4: Profile Page | Pending |
+| PROF-02 | Phase 4: Profile Page | Pending |
+| PROF-03 | Phase 4: Profile Page | Pending |
+| PROF-04 | Phase 4: Profile Page | Pending |
+| PROF-05 | Phase 4: Profile Page | Pending |
+| GRP-01 | Phase 5: Secondary Pages | Pending |
+| GRP-02 | Phase 5: Secondary Pages | Pending |
+| GRP-03 | Phase 5: Secondary Pages | Pending |
+| GRP-04 | Phase 5: Secondary Pages | Pending |
+| EVT-01 | Phase 5: Secondary Pages | Pending |
+| EVT-02 | Phase 5: Secondary Pages | Pending |
+| EVT-03 | Phase 5: Secondary Pages | Pending |
+| EVT-04 | Phase 5: Secondary Pages | Pending |
+| LF-01 | Phase 5: Secondary Pages | Pending |
+| LF-02 | Phase 5: Secondary Pages | Pending |
+| LF-03 | Phase 5: Secondary Pages | Pending |
+| LF-04 | Phase 5: Secondary Pages | Pending |
+| MSG-01 | Phase 5: Secondary Pages | Pending |
+| MSG-02 | Phase 5: Secondary Pages | Pending |
+| MSG-03 | Phase 5: Secondary Pages | Pending |
+| MSG-04 | Phase 5: Secondary Pages | Pending |
+| REC-01 | Phase 6: AI Recommendations | Pending |
+| REC-02 | Phase 6: AI Recommendations | Pending |
+| REC-03 | Phase 6: AI Recommendations | Pending |
+| REC-04 | Phase 6: AI Recommendations | Pending |
+| REC-05 | Phase 6: AI Recommendations | Pending |
+| REC-06 | Phase 6: AI Recommendations | Pending |
+| REC-07 | Phase 6: AI Recommendations | Pending |
+| REC-08 | Phase 6: AI Recommendations | Pending |
+| RESP-01 | Phase 7: Responsive Design | Pending |
+| RESP-02 | Phase 7: Responsive Design | Pending |
+| RESP-03 | Phase 7: Responsive Design | Pending |
+| RESP-04 | Phase 7: Responsive Design | Pending |
 
 **Coverage:**
 - v1 requirements: 42 total
 - Mapped to phases: 42
-- Unmapped: 0 ✓
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-18*
-*Last updated: 2026-02-18 after initial definition*
+*Last updated: 2026-02-18 after roadmap creation — individual traceability rows added*

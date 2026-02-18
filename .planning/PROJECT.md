@@ -35,6 +35,7 @@ Students can connect, collaborate, and stay informed about campus life through a
 - [ ] Ensure responsive layouts across all pages
 - [ ] Polish all forms, modals, and interactive elements
 - [ ] Consistent spacing, typography, and component sizing
+- [ ] AI-based study partner recommendation system
 
 ### Out of Scope
 
