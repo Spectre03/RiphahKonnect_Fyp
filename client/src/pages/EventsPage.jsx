@@ -105,23 +105,23 @@ export default function EventsPage() {
 
   return (
     <div className="rc-fade-in">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3 min-w-0">
-            <div className="h-10 w-10 rounded-xl bg-violet-50 flex items-center justify-center flex-shrink-0">
-              <Calendar className="h-5 w-5 text-violet-600" />
+            <div className="h-11 w-11 rounded-xl bg-violet-500 flex items-center justify-center shadow-lg shadow-violet-500/20 flex-shrink-0">
+              <Calendar className="h-5 w-5 text-white" />
             </div>
             <div className="min-w-0">
-              <h1 className="text-lg font-bold text-slate-900 truncate">Campus Events</h1>
-              <p className="text-xs text-slate-500 truncate">Discover and attend events on campus</p>
+              <h1 className="text-xl font-bold text-slate-900">Campus Events</h1>
+              <p className="text-xs text-slate-500">Discover and attend events on campus</p>
             </div>
           </div>
           <Button icon={Plus} onClick={() => setShowCreate(true)}>Create Event</Button>
         </div>
 
         {/* Filter */}
-        <div className="flex gap-1 mb-6 bg-white rounded-xl border border-slate-200/80 p-1 max-w-xs">
+        <div className="flex gap-1 mb-6 bg-white rounded-xl border border-slate-200/60 p-1 max-w-xs shadow-sm">
           {['upcoming', 'all'].map((f) => (
             <button
               key={f}
@@ -140,20 +140,20 @@ export default function EventsPage() {
 
         {/* Events */}
         {loading && page === 1 ? (
-          <div className="flex flex-col items-center justify-center py-16">
-            <Loader2 className="h-8 w-8 animate-spin text-teal-600" />
+          <div className="flex flex-col items-center justify-center py-20">
+            <Loader2 className="h-7 w-7 animate-spin text-teal-600" />
             <p className="text-sm text-slate-400 mt-3">Loading events...</p>
           </div>
         ) : events.length === 0 ? (
-          <div className="text-center py-16">
-            <div className="h-16 w-16 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto mb-4">
-              <CalendarDays className="h-8 w-8 text-slate-300" />
+          <Card className="text-center py-16">
+            <div className="h-14 w-14 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto mb-4">
+              <CalendarDays className="h-7 w-7 text-slate-300" />
             </div>
-            <p className="text-lg font-semibold text-slate-900">No events found</p>
+            <p className="text-base font-semibold text-slate-900">No events found</p>
             <p className="text-sm text-slate-500 mt-1">Create an event to get started!</p>
-          </div>
+          </Card>
         ) : (
-          <div className="space-y-5 rc-stagger">
+          <div className="space-y-4 rc-stagger">
             {events.map((event) => {
               const dp = getDateParts(event.startDate);
               const upcoming = isUpcoming(event.startDate);
@@ -163,10 +163,10 @@ export default function EventsPage() {
                     {/* Date Badge */}
                     <div className={cn(
                       'flex-shrink-0 w-20 flex flex-col items-center justify-center border-r border-slate-100',
-                      upcoming ? 'bg-teal-50' : 'bg-slate-50'
+                      upcoming ? 'bg-gradient-to-b from-violet-50 to-violet-100/50' : 'bg-slate-50'
                     )}>
-                      <span className={cn('text-[10px] font-bold tracking-wider', upcoming ? 'text-teal-600' : 'text-slate-400')}>{dp.month}</span>
-                      <span className={cn('text-2xl font-bold', upcoming ? 'text-teal-700' : 'text-slate-500')}>{dp.day}</span>
+                      <span className={cn('text-[10px] font-bold tracking-wider', upcoming ? 'text-violet-500' : 'text-slate-400')}>{dp.month}</span>
+                      <span className={cn('text-2xl font-bold', upcoming ? 'text-violet-700' : 'text-slate-500')}>{dp.day}</span>
                     </div>
 
                     {/* Content */}
@@ -174,7 +174,7 @@ export default function EventsPage() {
                       <div className="flex items-start justify-between">
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 min-w-0">
-                            <h3 className="text-base font-semibold text-slate-900 truncate">{event.title}</h3>
+                            <h3 className="text-base font-bold text-slate-900 truncate">{event.title}</h3>
                             {!upcoming && <Badge variant="slate" size="sm">Past</Badge>}
                           </div>
                           {event.description && <p className="text-sm text-slate-500 mt-1 line-clamp-2 leading-relaxed break-words">{event.description}</p>}
@@ -201,12 +201,12 @@ export default function EventsPage() {
 
                       {/* RSVP */}
                       <div className="flex items-center gap-2 mt-3 pt-3 border-t border-slate-100">
-                        <span className="text-xs text-slate-400 font-medium mr-1">RSVP:</span>
+                        <span className="text-xs text-slate-400 font-semibold mr-1">RSVP:</span>
                         {[
-                          { status: 'GOING', icon: Check, label: 'Going', activeVariant: 'teal' },
-                          { status: 'INTERESTED', icon: Star, label: 'Interested', activeVariant: 'amber' },
-                          { status: 'NOT_GOING', icon: XCircle, label: "Can't go", activeVariant: 'slate' },
-                        ].map(({ status, icon: Icon, label, activeVariant }) => {
+                          { status: 'GOING', icon: Check, label: 'Going', activeColor: 'teal' },
+                          { status: 'INTERESTED', icon: Star, label: 'Interested', activeColor: 'amber' },
+                          { status: 'NOT_GOING', icon: XCircle, label: "Can't go", activeColor: 'slate' },
+                        ].map(({ status, icon: Icon, label, activeColor }) => {
                           const isActive = event.myRsvp === status;
                           const activeColors = {
                             teal: 'bg-teal-100 text-teal-700 border-teal-200',
@@ -218,9 +218,9 @@ export default function EventsPage() {
                               key={status}
                               onClick={() => handleRsvp(event.id, isActive ? 'REMOVE' : status)}
                               className={cn(
-                                'flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium cursor-pointer transition-all border',
+                                'flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold cursor-pointer transition-all border',
                                 isActive
-                                  ? activeColors[activeVariant]
+                                  ? activeColors[activeColor]
                                   : 'border-slate-200 text-slate-400 hover:bg-slate-50 hover:text-slate-600'
                               )}
                             >

@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { groupsAPI } from '../services/api';
-import { Card, Button, Badge, Modal } from '../components/ui';
+import { cn } from '../utils/cn';
+import { Card, Button, Badge, Modal, Avatar } from '../components/ui';
 import toast from 'react-hot-toast';
-import { Users, Plus, Search, Loader2, Lock, Globe, BookOpen } from 'lucide-react';
+import { Users, Plus, Search, Loader2, Lock, Globe, BookOpen, ArrowRight } from 'lucide-react';
 
 export default function GroupsPage() {
   const [groups, setGroups] = useState([]);
@@ -59,15 +60,15 @@ export default function GroupsPage() {
 
   return (
     <div className="rc-fade-in">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-xl bg-blue-50 flex items-center justify-center">
-              <Users className="h-5 w-5 text-blue-600" />
+          <div className="flex items-center gap-3 min-w-0">
+            <div className="h-11 w-11 rounded-xl bg-blue-500 flex items-center justify-center shadow-lg shadow-blue-500/20 flex-shrink-0">
+              <Users className="h-5 w-5 text-white" />
             </div>
-            <div>
-              <h1 className="text-lg font-bold text-slate-900">Study Groups</h1>
+            <div className="min-w-0">
+              <h1 className="text-xl font-bold text-slate-900">Study Groups</h1>
               <p className="text-xs text-slate-500">Join or create groups to study together</p>
             </div>
           </div>
@@ -75,17 +76,20 @@ export default function GroupsPage() {
         </div>
 
         {/* Search */}
-        <form onSubmit={handleSearch} className="mb-6">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-            <input
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search groups by name or subject..."
-              className="w-full pl-11 pr-4 py-3 rounded-2xl border border-slate-200/80 bg-white text-sm placeholder-slate-400 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20 transition-all"
-            />
-          </div>
-        </form>
+        <Card padding="p-3" className="mb-6">
+          <form onSubmit={handleSearch} className="flex gap-2">
+            <div className="relative flex-1 min-w-0">
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
+              <input
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Search groups by name or subject..."
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm placeholder-slate-400 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:bg-white transition-all"
+              />
+            </div>
+            <Button type="submit" variant="secondary" className="flex-shrink-0">Search</Button>
+          </form>
+        </Card>
 
         {/* Groups Grid */}
         {loading && page === 1 ? (
@@ -94,35 +98,41 @@ export default function GroupsPage() {
             <p className="text-sm text-slate-400 mt-3">Loading groups...</p>
           </div>
         ) : groups.length === 0 ? (
-          <div className="text-center py-20">
+          <Card className="text-center py-16">
             <div className="h-14 w-14 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto mb-4">
               <Users className="h-7 w-7 text-slate-300" />
             </div>
             <p className="text-base font-semibold text-slate-900">No groups found</p>
             <p className="text-sm text-slate-500 mt-1">Create the first study group!</p>
-          </div>
+          </Card>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 rc-stagger">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 rc-stagger">
             {groups.map((group) => (
               <Card key={group.id} hover padding="p-0">
-                <div className="p-5">
-                  <Link to={`/groups/${group.id}`} className="block min-w-0">
-                    <div className="flex items-center gap-3">
-                      <div className="h-10 w-10 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
-                        <BookOpen className="h-5 w-5 text-blue-600" />
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <h3 className="text-sm font-semibold text-slate-900 hover:text-teal-600 transition-colors truncate">{group.name}</h3>
-                        <div className="flex items-center gap-1.5 text-xs text-slate-400">
-                          {group.isPrivate ? <Lock className="h-3 w-3" /> : <Globe className="h-3 w-3" />}
-                          {group.subject && <span className="text-teal-600 font-medium truncate">{group.subject}</span>}
-                        </div>
-                      </div>
+                <Link to={`/groups/${group.id}`} className="block p-5">
+                  <div className="flex items-start gap-3.5">
+                    <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center flex-shrink-0">
+                      <BookOpen className="h-6 w-6 text-blue-600" />
                     </div>
-                    {group.description && <p className="text-sm text-slate-500 mt-3 line-clamp-2 leading-relaxed break-words">{group.description}</p>}
-                  </Link>
-                </div>
-                <div className="flex items-center justify-between px-5 py-3 border-t border-slate-100 bg-slate-50/50">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 min-w-0">
+                        <h3 className="text-sm font-bold text-slate-900 truncate group-hover:text-teal-600 transition-colors">{group.name}</h3>
+                        {group.isPrivate ? (
+                          <Lock className="h-3.5 w-3.5 text-slate-400 flex-shrink-0" />
+                        ) : (
+                          <Globe className="h-3.5 w-3.5 text-slate-400 flex-shrink-0" />
+                        )}
+                      </div>
+                      {group.subject && (
+                        <p className="text-xs text-blue-600 font-medium mt-0.5 truncate">{group.subject}</p>
+                      )}
+                      {group.description && (
+                        <p className="text-xs text-slate-500 mt-1.5 line-clamp-2 leading-relaxed">{group.description}</p>
+                      )}
+                    </div>
+                  </div>
+                </Link>
+                <div className="flex items-center justify-between px-5 py-3 border-t border-slate-100 bg-slate-50/40">
                   <span className="text-xs text-slate-500 flex items-center gap-1.5 font-medium">
                     <Users className="h-3.5 w-3.5" /> {group.memberCount} members
                   </span>
@@ -130,12 +140,12 @@ export default function GroupsPage() {
                     group.myRole === 'OWNER' ? (
                       <Badge variant="teal" size="sm">Owner</Badge>
                     ) : (
-                      <button onClick={() => handleLeave(group.id)} className="text-xs text-red-500 hover:text-red-600 font-semibold px-2.5 py-1 hover:bg-red-50 rounded-full cursor-pointer transition-colors">
+                      <button onClick={(e) => { e.preventDefault(); handleLeave(group.id); }} className="text-xs text-red-500 hover:text-red-600 font-semibold px-2.5 py-1 hover:bg-red-50 rounded-full cursor-pointer transition-colors">
                         Leave
                       </button>
                     )
                   ) : (
-                    <Button size="sm" onClick={() => handleJoin(group.id)}>Join</Button>
+                    <Button size="sm" onClick={(e) => { e.preventDefault(); handleJoin(group.id); }}>Join</Button>
                   )}
                 </div>
               </Card>
@@ -180,15 +190,15 @@ function CreateGroupModal({ open, onClose, onCreated }) {
     <Modal open={open} onClose={onClose} title="Create Study Group">
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-1.5">Group Name *</label>
+          <label className="block text-sm font-semibold text-slate-700 mb-1.5">Group Name *</label>
           <input value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g. CS301 Study Group" className="block w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm placeholder-slate-400 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20 transition-all" required />
         </div>
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-1.5">Subject</label>
+          <label className="block text-sm font-semibold text-slate-700 mb-1.5">Subject</label>
           <input value={subject} onChange={(e) => setSubject(e.target.value)} placeholder="e.g. Data Structures" className="block w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm placeholder-slate-400 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20 transition-all" />
         </div>
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-1.5">Description</label>
+          <label className="block text-sm font-semibold text-slate-700 mb-1.5">Description</label>
           <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="What's this group about?" rows={3} className="block w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm placeholder-slate-400 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20 resize-none transition-all" />
         </div>
         <label className="flex items-center gap-2.5 cursor-pointer">

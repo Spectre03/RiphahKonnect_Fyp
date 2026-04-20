@@ -10,7 +10,6 @@ export default function Modal({
   children,
   maxWidth = 'max-w-lg',
 }) {
-  // Close on Escape
   useEffect(() => {
     if (!open) return;
     const handleKey = (e) => {
@@ -28,23 +27,23 @@ export default function Modal({
 
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      {/* Backdrop */}
+      {/* Backdrop with blur */}
       <div
-        className="absolute inset-0 bg-black/50"
+        className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"
         onClick={onClose}
       />
 
       {/* Panel */}
       <div
         className={cn(
-          'relative bg-white rounded-2xl shadow-xl w-full max-h-[90vh] overflow-y-auto rc-scale-in',
+          'relative bg-white rounded-2xl shadow-2xl shadow-slate-900/10 w-full max-h-[90vh] overflow-y-auto rc-scale-in border border-slate-200/50',
           maxWidth
         )}
       >
         {/* Header */}
         {title && (
-          <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100">
-            <h2 className="text-lg font-semibold text-slate-900">{title}</h2>
+          <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100">
+            <h2 className="text-lg font-bold text-slate-900">{title}</h2>
             <button
               onClick={onClose}
               className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition cursor-pointer"
@@ -55,7 +54,7 @@ export default function Modal({
         )}
 
         {/* Body */}
-        <div className={title ? 'p-5' : 'p-5'}>
+        <div className="p-6">
           {children}
         </div>
       </div>

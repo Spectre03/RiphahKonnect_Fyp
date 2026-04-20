@@ -179,13 +179,15 @@ export default function ProfilePage() {
         {/* Profile Header */}
         <Card padding="p-0">
           {/* Cover */}
-          <div className="h-28 bg-gradient-to-r from-teal-500 to-blue-500 relative" />
+          <div className="h-32 bg-gradient-to-r from-teal-500 via-teal-600 to-blue-600 relative">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent" />
+          </div>
 
           <div className="px-6 pb-6">
             {/* Avatar + Name */}
             <div className="flex items-end justify-between -mt-12">
               <div className="flex items-end gap-4 min-w-0">
-                <Avatar name={profile.name || ''} size="xl" className="border-4 border-white rounded-2xl h-24 w-24 text-3xl" />
+                <Avatar name={profile.name || ''} size="xl" className="border-4 border-white shadow-lg rounded-2xl h-24 w-24 text-3xl" />
                 <div className="pb-1 min-w-0">
                   <h1 className="text-xl font-bold text-slate-900 truncate">{profile.name}</h1>
                   <p className="text-sm text-slate-500 flex items-center gap-1.5 mt-0.5 min-w-0">

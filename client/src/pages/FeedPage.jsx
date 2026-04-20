@@ -18,10 +18,11 @@ import {
   HelpCircle,
   BookOpen,
   Megaphone,
+  ImagePlus,
 } from 'lucide-react';
 
 const POST_TYPES = [
-  { value: 'ALL', label: 'All Posts', icon: Newspaper },
+  { value: 'ALL', label: 'All', icon: Newspaper },
   { value: 'GENERAL', label: 'General', icon: Newspaper },
   { value: 'QUESTION', label: 'Questions', icon: HelpCircle },
   { value: 'RESOURCE', label: 'Resources', icon: BookOpen },
@@ -114,68 +115,60 @@ export default function FeedPage() {
 
   return (
     <div className="rc-fade-in">
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 py-8">
-        {/* Header */}
-        <div className="flex items-center gap-3 mb-6">
-          <div className="h-10 w-10 rounded-xl bg-teal-50 flex items-center justify-center">
-            <Newspaper className="h-5 w-5 text-teal-600" />
-          </div>
-          <div>
-            <h1 className="text-lg font-bold text-slate-900">Feed</h1>
-            <p className="text-xs text-slate-500">Share and discover what's happening on campus</p>
-          </div>
-        </div>
-
-        {/* Create Post */}
-        <Card className="mb-6">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 py-6">
+        {/* Composer */}
+        <Card padding="p-0" className="mb-5">
           <form onSubmit={handleCreatePost}>
-            <div className="flex gap-3">
-              <Avatar name={user?.name || ''} size="md" className="flex-shrink-0 mt-0.5" />
-              <div className="flex-1 min-w-0">
+            <div className="p-4 pb-0">
+              <div className="flex gap-3">
+                <Avatar name={user?.name || ''} size="md" className="flex-shrink-0 mt-1" />
                 <textarea
                   value={newPost}
                   onChange={(e) => setNewPost(e.target.value)}
-                  placeholder="What's on your mind?"
+                  placeholder="Share something with the community..."
                   rows={3}
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm placeholder-slate-400 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:bg-white resize-none transition-all"
+                  className="w-full min-w-0 rounded-xl border-0 bg-slate-50 px-4 py-3 text-sm placeholder-slate-400 focus:bg-slate-100 focus:outline-none resize-none transition-all"
                 />
-                <div className="flex items-center justify-between mt-3 gap-3">
-                  {/* Post Type Selector */}
-                  <div className="flex items-center gap-1.5 flex-wrap">
-                    {POST_TYPES.filter((t) => t.value !== 'ALL').map((t) => (
-                      <button
-                        key={t.value}
-                        type="button"
-                        onClick={() => setPostType(t.value)}
-                        className={cn(
-                          'px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer',
-                          postType === t.value
-                            ? 'bg-teal-50 text-teal-700 border border-teal-200'
-                            : 'text-slate-400 hover:text-slate-600 hover:bg-slate-50 border border-transparent'
-                        )}
-                      >
-                        {t.label}
-                      </button>
-                    ))}
-                  </div>
-                  <Button
-                    type="submit"
-                    disabled={posting || !newPost.trim()}
-                    loading={posting}
-                    icon={Send}
-                    size="md"
-                    className="flex-shrink-0"
-                  >
-                    Post
-                  </Button>
-                </div>
               </div>
+            </div>
+            <div className="flex items-center justify-between px-4 py-3 border-t border-slate-100 mt-3">
+              <div className="flex items-center gap-1 overflow-x-auto">
+                {POST_TYPES.filter((t) => t.value !== 'ALL').map((t) => {
+                  const Icon = t.icon;
+                  return (
+                    <button
+                      key={t.value}
+                      type="button"
+                      onClick={() => setPostType(t.value)}
+                      className={cn(
+                        'flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer whitespace-nowrap',
+                        postType === t.value
+                          ? 'bg-teal-50 text-teal-700'
+                          : 'text-slate-400 hover:text-slate-600 hover:bg-slate-50'
+                      )}
+                    >
+                      <Icon className="h-3.5 w-3.5" />
+                      {t.label}
+                    </button>
+                  );
+                })}
+              </div>
+              <Button
+                type="submit"
+                disabled={posting || !newPost.trim()}
+                loading={posting}
+                icon={Send}
+                size="sm"
+                className="flex-shrink-0 ml-2"
+              >
+                Post
+              </Button>
             </div>
           </form>
         </Card>
 
         {/* Filter Tabs */}
-        <div className="flex items-center gap-1 mb-6 overflow-x-auto pb-1">
+        <div className="flex items-center gap-1 mb-5 bg-white rounded-xl border border-slate-200/60 p-1 shadow-sm overflow-x-auto">
           {POST_TYPES.map((t) => {
             const Icon = t.icon;
             return (
@@ -183,10 +176,10 @@ export default function FeedPage() {
                 key={t.value}
                 onClick={() => setFilterType(t.value)}
                 className={cn(
-                  'flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-medium transition-all cursor-pointer whitespace-nowrap',
+                  'flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold transition-all cursor-pointer whitespace-nowrap',
                   filterType === t.value
-                    ? 'bg-teal-50 text-teal-700 border border-teal-200'
-                    : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50 border border-transparent'
+                    ? 'bg-teal-600 text-white shadow-sm'
+                    : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'
                 )}
               >
                 <Icon className="h-3.5 w-3.5" />
@@ -203,7 +196,7 @@ export default function FeedPage() {
             <p className="text-sm text-slate-400 mt-3">Loading posts...</p>
           </div>
         ) : filteredPosts.length === 0 ? (
-          <div className="text-center py-20">
+          <Card className="text-center py-16">
             <div className="h-14 w-14 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto mb-4">
               <Newspaper className="h-7 w-7 text-slate-300" />
             </div>
@@ -211,9 +204,9 @@ export default function FeedPage() {
             <p className="text-sm text-slate-500 mt-1">
               {filterType === 'ALL' ? 'Be the first to share something!' : `No ${filterType.toLowerCase()} posts yet.`}
             </p>
-          </div>
+          </Card>
         ) : (
-          <div className="space-y-5 rc-stagger">
+          <div className="space-y-4 rc-stagger">
             {filteredPosts.map((post) => (
               <PostCard
                 key={post.id}
@@ -228,11 +221,7 @@ export default function FeedPage() {
 
             {filterType === 'ALL' && pagination && page < pagination.totalPages && (
               <div className="flex justify-center pt-4">
-                <Button
-                  variant="secondary"
-                  onClick={() => fetchPosts(page + 1)}
-                  loading={loading}
-                >
+                <Button variant="secondary" onClick={() => fetchPosts(page + 1)} loading={loading}>
                   Load More
                 </Button>
               </div>
@@ -257,15 +246,15 @@ function PostCard({ post, currentUser, onLike, onDelete, isCommentsExpanded, onT
               <Avatar name={post.author?.name || ''} src={post.author?.avatarUrl} size="md" />
             </Link>
             <div className="min-w-0">
-              <div className="flex items-center gap-2">
-                <Link to={`/profile/${post.author?.id}`} className="text-sm font-semibold text-slate-900 hover:text-teal-600 transition-colors truncate">
+              <div className="flex items-center gap-2 flex-wrap">
+                <Link to={`/profile/${post.author?.id}`} className="text-sm font-bold text-slate-900 hover:text-teal-600 transition-colors truncate">
                   {post.author?.name}
                 </Link>
                 <Badge variant={typeBadge.variant} size="sm">{typeBadge.label}</Badge>
               </div>
-              <div className="flex items-center gap-1.5 text-xs text-slate-400">
+              <div className="flex items-center gap-1.5 text-xs text-slate-400 mt-0.5">
                 {post.author?.department && (
-                  <><span className="text-teal-600 font-medium truncate max-w-[120px] inline-block">{post.author.department}</span><span>·</span></>
+                  <><span className="text-teal-600 font-medium truncate max-w-[140px] inline-block">{post.author.department}</span><span className="text-slate-300">·</span></>
                 )}
                 <span className="flex-shrink-0">{timeAgo(post.createdAt)}</span>
               </div>
@@ -279,20 +268,20 @@ function PostCard({ post, currentUser, onLike, onDelete, isCommentsExpanded, onT
         </div>
 
         {/* Content */}
-        <p className="mt-3 text-sm text-slate-700 whitespace-pre-wrap leading-relaxed break-words">{post.content}</p>
+        <p className="mt-3.5 text-[15px] text-slate-800 whitespace-pre-wrap leading-relaxed break-words">{post.content}</p>
         {post.imageUrl && (
           <img src={post.imageUrl} alt="" className="mt-3 rounded-xl w-full object-cover max-h-96" />
         )}
       </div>
 
       {/* Actions */}
-      <div className="flex items-center gap-1 px-5 py-3 border-t border-slate-100">
+      <div className="flex items-center gap-1 px-5 py-2.5 border-t border-slate-100 bg-slate-50/30">
         <button
           onClick={() => onLike(post.id)}
           className={cn(
-            'flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium cursor-pointer transition-all',
+            'flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-semibold cursor-pointer transition-all',
             post.isLiked
-              ? 'text-red-500 bg-red-50'
+              ? 'text-red-500 bg-red-50 hover:bg-red-100'
               : 'text-slate-400 hover:text-red-500 hover:bg-red-50'
           )}
         >
@@ -302,13 +291,13 @@ function PostCard({ post, currentUser, onLike, onDelete, isCommentsExpanded, onT
         <button
           onClick={() => onToggleComments(post.id)}
           className={cn(
-            'flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium cursor-pointer transition-colors',
+            'flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-semibold cursor-pointer transition-colors',
             isCommentsExpanded ? 'text-teal-600 bg-teal-50' : 'text-slate-400 hover:text-teal-600 hover:bg-teal-50'
           )}
         >
           <MessageCircle className="h-4 w-4" />
           {post.commentsCount || 0}
-          {isCommentsExpanded ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
+          {isCommentsExpanded ? <ChevronUp className="h-3 w-3 ml-0.5" /> : <ChevronDown className="h-3 w-3 ml-0.5" />}
         </button>
       </div>
 
@@ -376,9 +365,9 @@ function CommentsSection({ postId, currentUser }) {
           {comments.map((comment) => (
             <div key={comment.id} className="flex gap-2.5">
               <Avatar name={comment.author?.name || ''} size="sm" className="mt-0.5" />
-              <div className="flex-1 min-w-0 bg-white rounded-xl px-3.5 py-2.5 border border-slate-100">
+              <div className="flex-1 min-w-0 bg-white rounded-xl px-3.5 py-2.5 border border-slate-100 shadow-sm">
                 <div className="flex items-center justify-between gap-2">
-                  <p className="text-xs font-semibold text-slate-900 truncate">{comment.author?.name}</p>
+                  <p className="text-xs font-bold text-slate-900 truncate">{comment.author?.name}</p>
                   {comment.author?.id === currentUser?.id && (
                     <button onClick={() => handleDelete(comment.id)} className="text-slate-300 hover:text-red-500 cursor-pointer transition-colors flex-shrink-0">
                       <Trash2 className="h-3 w-3" />
@@ -393,6 +382,7 @@ function CommentsSection({ postId, currentUser }) {
       )}
 
       <form onSubmit={handleSubmit} className="flex gap-2 mt-3">
+        <Avatar name={currentUser?.name || ''} size="sm" className="mt-0.5 flex-shrink-0" />
         <input
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
@@ -402,7 +392,7 @@ function CommentsSection({ postId, currentUser }) {
         <button
           type="submit"
           disabled={submitting || !newComment.trim()}
-          className="px-3.5 py-2.5 rounded-xl bg-teal-600 text-white text-sm hover:bg-teal-700 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors flex-shrink-0"
+          className="px-3.5 py-2.5 rounded-xl bg-teal-600 text-white text-sm hover:bg-teal-700 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors flex-shrink-0 shadow-sm"
         >
           {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
         </button>
