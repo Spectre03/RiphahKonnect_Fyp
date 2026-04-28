@@ -7,20 +7,12 @@ import { cn } from '../utils/cn';
 import { Card, Button, Badge, Avatar } from '../components/ui';
 import toast from 'react-hot-toast';
 import {
-  Users,
-  ArrowLeft,
-  Send,
-  Heart,
-  MessageCircle,
-  Trash2,
-  Loader2,
-  Lock,
-  Globe,
-  BookOpen,
-  Crown,
-  Shield,
-  User,
+  Users, ArrowLeft, Send, Heart, MessageCircle, Trash2,
+  Loader2, BookOpen, Crown, User, GraduationCap,
 } from 'lucide-react';
+
+const CAN_JOIN = ['STUDENT', 'TEACHER'];
+const CAN_POST = ['STUDENT', 'TEACHER'];
 
 export default function GroupDetailPage() {
   const { id } = useParams();
@@ -60,7 +52,7 @@ export default function GroupDetailPage() {
       const res = await postsAPI.create({ content: newPost, groupId: id });
       setPosts([{ ...res.data.post, likesCount: 0, commentsCount: 0, isLiked: false }, ...posts]);
       setNewPost('');
-      toast.success('Posted to group!');
+      toast.success('Posted!');
     } catch {
       toast.error('Failed to post.');
     } finally {
@@ -103,6 +95,7 @@ export default function GroupDetailPage() {
   };
 
   const handleLeave = async () => {
+    if (!confirm('Leave this group?')) return;
     try {
       await groupsAPI.leave(id);
       setGroup({ ...group, isMember: false, myRole: null, memberCount: group.memberCount - 1 });
@@ -123,17 +116,14 @@ export default function GroupDetailPage() {
 
   if (!group) return null;
 
-  const roleIcon = { OWNER: Crown, ADMIN: Shield, MEMBER: User };
-  const roleColor = {
-    OWNER: 'bg-amber-50 text-amber-600 border-amber-200',
-    ADMIN: 'bg-teal-50 text-teal-600 border-teal-200',
-    MEMBER: 'bg-slate-50 text-slate-500 border-slate-200',
-  };
+  const canJoin = CAN_JOIN.includes(user?.role);
+  const canPost = CAN_POST.includes(user?.role) && group.isMember;
+  const isMember = group.isMember;
+  const isCoordinator = group.myRole === 'COORDINATOR';
 
   return (
-    <div className="rc-fade-in">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6">
-        {/* Back */}
+    <div className="page-wrapper">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8">
         <button
           onClick={() => navigate('/groups')}
           className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-900 mb-6 cursor-pointer transition-colors"
@@ -143,8 +133,10 @@ export default function GroupDetailPage() {
 
         {/* Group Header */}
         <Card padding="p-0" className="mb-6">
-          <div className="h-24 bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 relative">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent" />
+          <div className="h-28 bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 relative overflow-hidden">
+            <div className="absolute inset-0 banner-grid" />
+            <div className="absolute -right-10 -top-10 w-48 h-48 rounded-full bg-white/[0.08] blur-3xl" />
+            <div className="absolute -left-10 bottom-0 w-40 h-32 rounded-full bg-indigo-300/[0.10] blur-2xl" />
           </div>
           <div className="px-6 pb-6">
             <div className="flex items-end justify-between -mt-8">
@@ -153,23 +145,26 @@ export default function GroupDetailPage() {
                   <BookOpen className="h-8 w-8 text-blue-600" />
                 </div>
                 <div className="pb-1 min-w-0">
-                  <div className="flex items-center gap-2 min-w-0">
-                    <h1 className="text-xl font-bold text-slate-900 truncate">{group.name}</h1>
-                    {group.isPrivate ? <Lock className="h-4 w-4 text-slate-400 flex-shrink-0" /> : <Globe className="h-4 w-4 text-slate-400 flex-shrink-0" />}
+                  <h1 className="text-xl font-bold text-slate-900 truncate">{group.name}</h1>
+                  <div className="flex items-center gap-2 flex-wrap mt-0.5">
+                    <span className="flex items-center gap-1 text-sm text-blue-600 font-semibold">
+                      <GraduationCap className="h-3.5 w-3.5" /> {group.department}
+                    </span>
+                    <span className="text-slate-400 text-sm">·</span>
+                    <span className="text-sm text-slate-500 font-medium">Semester {group.semester}</span>
                   </div>
-                  {group.subject && (
-                    <p className="text-sm text-blue-600 font-semibold truncate">{group.subject}</p>
-                  )}
                 </div>
               </div>
               <div className="flex-shrink-0 ml-3">
-                {group.isMember ? (
-                  group.myRole !== 'OWNER' && (
-                    <Button variant="danger" size="sm" onClick={handleLeave}>Leave</Button>
-                  )
-                ) : (
+                {isMember ? (
+                  isCoordinator ? (
+                    <Badge variant="violet" size="sm">Coordinator</Badge>
+                  ) : canJoin ? (
+                    <Button variant="secondary" size="sm" onClick={handleLeave}>Leave</Button>
+                  ) : null
+                ) : canJoin ? (
                   <Button onClick={handleJoin}>Join Group</Button>
-                )}
+                ) : null}
               </div>
             </div>
             {group.description && (
@@ -177,7 +172,7 @@ export default function GroupDetailPage() {
             )}
             <div className="flex items-center gap-4 mt-4 pt-4 border-t border-slate-100">
               <span className="text-sm text-slate-500 flex items-center gap-1.5 font-medium">
-                <Users className="h-4 w-4 text-slate-400" /> {group.memberCount} members
+                <Users className="h-4 w-4 text-slate-400" /> {group._count?.members || group.memberCount} members
               </span>
             </div>
           </div>
@@ -185,18 +180,13 @@ export default function GroupDetailPage() {
 
         {/* Tabs */}
         <div className="flex gap-1 bg-white rounded-xl border border-slate-200/60 p-1 mb-6 shadow-sm">
-          {[
-            { key: 'posts', label: 'Posts' },
-            { key: 'members', label: 'Members' },
-          ].map((t) => (
+          {[{ key: 'posts', label: 'Posts' }, { key: 'members', label: 'Members' }].map((t) => (
             <button
               key={t.key}
               onClick={() => setTab(t.key)}
               className={cn(
                 'flex-1 py-2.5 text-sm font-semibold rounded-lg cursor-pointer transition-all',
-                tab === t.key
-                  ? 'bg-teal-600 text-white shadow-sm'
-                  : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
+                tab === t.key ? 'bg-teal-600 text-white shadow-sm' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
               )}
             >
               {t.label}
@@ -206,8 +196,8 @@ export default function GroupDetailPage() {
 
         {tab === 'posts' ? (
           <>
-            {/* Create post */}
-            {group.isMember && (
+            {/* Post composer — members who can post */}
+            {canPost && (
               <Card padding="p-0" className="mb-5">
                 <form onSubmit={handlePost}>
                   <div className="p-4">
@@ -223,85 +213,92 @@ export default function GroupDetailPage() {
                     </div>
                   </div>
                   <div className="flex justify-end px-4 py-3 border-t border-slate-100">
-                    <Button type="submit" disabled={posting || !newPost.trim()} loading={posting} icon={Send} size="sm">
-                      Post
-                    </Button>
+                    <Button type="submit" disabled={posting || !newPost.trim()} loading={posting} icon={Send} size="sm">Post</Button>
                   </div>
                 </form>
               </Card>
             )}
 
-            {/* Posts */}
-            {posts.length === 0 ? (
-              <Card className="text-center py-16">
-                <div className="h-14 w-14 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto mb-3">
-                  <BookOpen className="h-7 w-7 text-slate-300" />
+            {/* Must be member to view posts (backend enforces this too) */}
+            {!isMember && canJoin && (
+              <Card className="text-center py-12">
+                <div className="h-12 w-12 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto mb-3">
+                  <Users className="h-6 w-6 text-slate-300" />
                 </div>
-                <p className="text-sm font-medium text-slate-900">No posts in this group yet</p>
-                <p className="text-xs text-slate-500 mt-1">Be the first to start a discussion!</p>
+                <p className="text-sm font-semibold text-slate-900">Join to see group posts</p>
+                <p className="text-xs text-slate-500 mt-1">Members-only content</p>
+                <Button className="mt-4" onClick={handleJoin}>Join Group</Button>
               </Card>
-            ) : (
-              <div className="space-y-4 rc-stagger">
-                {posts.map((post) => (
-                  <Card key={post.id} hover padding="p-0">
-                    <div className="p-5">
-                      <div className="flex items-start justify-between">
-                        <div className="flex items-center gap-3 min-w-0">
-                          <Link to={`/profile/${post.author?.id}`} className="flex-shrink-0">
-                            <Avatar name={post.author?.name || ''} size="md" />
-                          </Link>
-                          <div className="min-w-0">
-                            <Link
-                              to={`/profile/${post.author?.id}`}
-                              className="text-sm font-bold text-slate-900 hover:text-teal-600 transition-colors truncate block"
-                            >
-                              {post.author?.name}
+            )}
+
+            {isMember && (
+              posts.length === 0 ? (
+                <Card className="text-center py-16">
+                  <div className="h-14 w-14 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto mb-3">
+                    <BookOpen className="h-7 w-7 text-slate-300" />
+                  </div>
+                  <p className="text-sm font-medium text-slate-900">No posts yet</p>
+                  {canPost && <p className="text-xs text-slate-500 mt-1">Be the first to post!</p>}
+                </Card>
+              ) : (
+                <div className="space-y-4 stagger">
+                  {posts.map((post) => (
+                    <Card key={post.id} hover padding="p-0">
+                      <div className="p-5">
+                        <div className="flex items-start justify-between">
+                          <div className="flex items-center gap-3 min-w-0">
+                            <Link to={`/profile/${post.author?.id}`} className="flex-shrink-0">
+                              <Avatar name={post.author?.name || ''} size="md" />
                             </Link>
-                            <p className="text-xs text-slate-400">{timeAgo(post.createdAt)}</p>
+                            <div className="min-w-0">
+                              <Link to={`/profile/${post.author?.id}`} className="text-sm font-bold text-slate-900 hover:text-teal-600 transition-colors truncate block">
+                                {post.author?.name}
+                              </Link>
+                              <p className="text-xs text-slate-400">{timeAgo(post.createdAt)}</p>
+                            </div>
                           </div>
+                          {post.author?.id === user?.id && (
+                            <button onClick={() => handleDeletePost(post.id)} className="p-1.5 text-slate-300 hover:text-red-500 hover:bg-red-50 rounded-lg cursor-pointer transition-colors flex-shrink-0">
+                              <Trash2 className="h-4 w-4" />
+                            </button>
+                          )}
                         </div>
-                        {post.author?.id === user?.id && (
-                          <button
-                            onClick={() => handleDeletePost(post.id)}
-                            className="p-1.5 text-slate-300 hover:text-red-500 hover:bg-red-50 rounded-lg cursor-pointer transition-colors flex-shrink-0"
-                          >
-                            <Trash2 className="h-4 w-4" />
-                          </button>
-                        )}
+                        <p className="mt-3 text-[15px] text-slate-800 whitespace-pre-wrap leading-relaxed break-words">{post.content}</p>
                       </div>
-                      <p className="mt-3 text-[15px] text-slate-800 whitespace-pre-wrap leading-relaxed break-words">
-                        {post.content}
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-1 px-5 py-2.5 border-t border-slate-100 bg-slate-50/30">
-                      <button
-                        onClick={() => handleLike(post.id)}
-                        className={cn(
-                          'flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-semibold cursor-pointer transition-all',
-                          post.isLiked
-                            ? 'text-red-500 bg-red-50 hover:bg-red-100'
-                            : 'text-slate-400 hover:text-red-500 hover:bg-red-50'
+                      <div className="flex items-center gap-1 px-5 py-2.5 border-t border-slate-100 bg-slate-50/30">
+                        {canPost ? (
+                          <button
+                            onClick={() => handleLike(post.id)}
+                            className={cn(
+                              'flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-semibold cursor-pointer transition-all',
+                              post.isLiked ? 'text-red-500 bg-red-50' : 'text-slate-400 hover:text-red-500 hover:bg-red-50'
+                            )}
+                          >
+                            <Heart className={cn('h-4 w-4', post.isLiked && 'fill-current')} /> {post.likesCount}
+                          </button>
+                        ) : (
+                          <span className="flex items-center gap-1.5 px-3.5 py-2 text-sm text-slate-400">
+                            <Heart className="h-4 w-4" /> {post.likesCount}
+                          </span>
                         )}
-                      >
-                        <Heart className={cn('h-4 w-4', post.isLiked && 'fill-current')} /> {post.likesCount}
-                      </button>
-                      <span className="flex items-center gap-1.5 px-3.5 py-2 text-sm text-slate-400 font-medium">
-                        <MessageCircle className="h-4 w-4" /> {post.commentsCount}
-                      </span>
-                    </div>
-                  </Card>
-                ))}
-              </div>
+                        <span className="flex items-center gap-1.5 px-3.5 py-2 text-sm text-slate-400 font-medium">
+                          <MessageCircle className="h-4 w-4" /> {post.commentsCount}
+                        </span>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              )
             )}
           </>
         ) : (
           /* Members Tab */
           <Card padding="p-0">
-            {group.members?.length === 0 ? (
+            {!group.members || group.members.length === 0 ? (
               <div className="text-center py-12 text-slate-500 text-sm">No members yet</div>
             ) : (
-              group.members?.map((member, i) => {
-                const RoleIcon = roleIcon[member.role] || User;
+              group.members.map((member, i) => {
+                const isCoord = member.role === 'COORDINATOR';
                 return (
                   <Link
                     key={member.id}
@@ -320,9 +317,9 @@ export default function GroupDetailPage() {
                         )}
                       </div>
                     </div>
-                    <Badge variant={member.role === 'OWNER' ? 'amber' : member.role === 'ADMIN' ? 'teal' : 'slate'} size="sm">
-                      <RoleIcon className="h-3 w-3" />
-                      {member.role}
+                    <Badge variant={isCoord ? 'violet' : 'slate'} size="sm">
+                      {isCoord ? <Crown className="h-3 w-3" /> : <User className="h-3 w-3" />}
+                      {isCoord ? 'Coordinator' : 'Member'}
                     </Badge>
                   </Link>
                 );

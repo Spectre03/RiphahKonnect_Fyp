@@ -2,19 +2,23 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { lostFoundAPI } from '../services/api';
 import { Card, Button, Badge, Modal } from '../components/ui';
+import { cn } from '../utils/cn';
 import toast from 'react-hot-toast';
 import {
-  Search,
-  Plus,
-  Loader2,
-  MapPin,
-  Tag,
-  CheckCircle,
-  PackageSearch,
-  Trash2,
+  Search, Plus, MapPin, Tag,
+  CheckCircle2, PackageSearch, Trash2, Phone,
+  Filter, AlertCircle,
 } from 'lucide-react';
 
-const CATEGORIES = ['ELECTRONICS', 'BOOKS', 'CLOTHING', 'DOCUMENTS', 'ACCESSORIES', 'OTHER'];
+const CATEGORIES   = ['ELECTRONICS', 'BOOKS', 'CLOTHING', 'DOCUMENTS', 'ACCESSORIES', 'OTHER'];
+const CAN_REPORT   = ['STUDENT', 'TEACHER'];
+const CAN_RESOLVE  = ['COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'];
+
+const STATUS_CONFIG = {
+  LOST:     { variant: 'red',    label: 'Lost',     dot: true,  bg: 'bg-red-50',     icon: AlertCircle, iconColor: 'text-red-500' },
+  FOUND:    { variant: 'teal',   label: 'Found',    dot: true,  bg: 'bg-teal-50',    icon: CheckCircle2, iconColor: 'text-teal-600' },
+  RESOLVED: { variant: 'slate',  label: 'Resolved', dot: false, bg: 'bg-slate-50',   icon: CheckCircle2, iconColor: 'text-slate-400' },
+};
 
 export default function LostFoundPage() {
   const { user } = useAuth();
@@ -32,30 +36,21 @@ export default function LostFoundPage() {
       setItems(p === 1 ? res.data.items : [...items, ...res.data.items]);
       setPagination(res.data.pagination);
       setPage(p);
-    } catch {
-      toast.error('Failed to load items.');
-    } finally {
-      setLoading(false);
-    }
+    } catch { toast.error('Failed to load items.'); }
+    finally { setLoading(false); }
   };
 
-  useEffect(() => {
-    fetchItems(1);
-  }, [filters.status, filters.category]);
+  useEffect(() => { fetchItems(1); }, [filters.status, filters.category]);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    fetchItems(1);
-  };
+  const handleSearch = (e) => { e.preventDefault(); fetchItems(1); };
 
   const handleResolve = async (itemId) => {
+    if (!confirm('Mark this item as resolved?')) return;
     try {
       await lostFoundAPI.resolve(itemId);
-      setItems(items.map((i) => (i.id === itemId ? { ...i, status: 'CLAIMED' } : i)));
-      toast.success('Item marked as claimed!');
-    } catch {
-      toast.error('Failed to resolve item.');
-    }
+      setItems(items.map((i) => i.id === itemId ? { ...i, status: 'RESOLVED' } : i));
+      toast.success('Item marked as resolved!');
+    } catch { toast.error('Failed to resolve item.'); }
   };
 
   const handleDelete = async (itemId) => {
@@ -64,9 +59,7 @@ export default function LostFoundPage() {
       await lostFoundAPI.delete(itemId);
       setItems(items.filter((i) => i.id !== itemId));
       toast.success('Item deleted.');
-    } catch {
-      toast.error('Failed to delete item.');
-    }
+    } catch { toast.error('Failed to delete item.'); }
   };
 
   const handleCreated = (item) => {
@@ -75,30 +68,49 @@ export default function LostFoundPage() {
     toast.success('Item reported!');
   };
 
-  const statusBadge = {
-    LOST: { variant: 'red', dot: true },
-    FOUND: { variant: 'teal', dot: true },
-    CLAIMED: { variant: 'slate', dot: true },
-  };
+  const canReport  = CAN_REPORT.includes(user?.role);
+  const canResolve = CAN_RESOLVE.includes(user?.role);
 
   return (
-    <div className="rc-fade-in">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center gap-3 min-w-0">
-            <div className="h-11 w-11 rounded-xl bg-amber-500 flex items-center justify-center shadow-lg shadow-amber-500/20 flex-shrink-0">
-              <PackageSearch className="h-5 w-5 text-white" />
+    <div className="page-wrapper">
+      {/* ── Gradient Banner ── */}
+      <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0d9488 0%, #059669 100%)' }}>
+        <div className="absolute inset-0 banner-grid pointer-events-none" />
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute -right-20 -top-16 w-72 h-72 rounded-full bg-white/[0.07] blur-3xl" />
+          <div className="absolute -left-16 bottom-0 w-64 h-64 rounded-full bg-white/[0.05] blur-3xl" />
+          <div className="absolute top-0 left-1/2 w-72 h-40 rounded-full bg-emerald-300/[0.12] blur-3xl" />
+        </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 relative z-10">
+          <div className="flex items-center justify-between">
+            <div>
+              <span className="text-[11px] font-bold uppercase tracking-widest text-teal-200 block mb-2">Campus Services</span>
+              <h1 className="text-3xl font-extrabold text-white tracking-tight">Lost &amp; Found</h1>
+              <p className="text-teal-100 text-sm mt-2">
+                {canReport ? 'Report or find lost items on campus' : 'Review and resolve reports'}
+              </p>
             </div>
-            <div className="min-w-0">
-              <h1 className="text-xl font-bold text-slate-900">Lost & Found</h1>
-              <p className="text-xs text-slate-500">Report or find lost items on campus</p>
+            <div className="flex items-center gap-3 flex-shrink-0">
+              {pagination && (
+                <div className="hidden sm:flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-4 py-3 animate-popIn">
+                  <PackageSearch className="h-5 w-5 text-teal-200" />
+                  <div>
+                    <span className="text-2xl font-extrabold text-white leading-none">{pagination.total}</span>
+                    <p className="text-[11px] text-teal-300 font-medium">Reports</p>
+                  </div>
+                </div>
+              )}
+              {canReport && (
+                <Button icon={Plus} onClick={() => setShowCreate(true)} className="bg-white text-teal-700 hover:bg-teal-50 border-0 shadow-lg">Report Item</Button>
+              )}
             </div>
           </div>
-          <Button icon={Plus} onClick={() => setShowCreate(true)}>Report Item</Button>
         </div>
+      </div>
 
-        {/* Filters */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
+
+        {/* ── Filters ── */}
         <Card padding="p-3" className="mb-6">
           <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-2">
             <div className="relative flex-1 min-w-0">
@@ -107,85 +119,131 @@ export default function LostFoundPage() {
                 value={filters.search}
                 onChange={(e) => setFilters({ ...filters, search: e.target.value })}
                 placeholder="Search items..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm placeholder-slate-400 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:bg-white transition-all"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm font-medium placeholder-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/15 focus:bg-white transition-all"
               />
             </div>
             <select
               value={filters.status}
               onChange={(e) => setFilters({ ...filters, status: e.target.value })}
-              className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20 transition-all flex-shrink-0"
+              className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm font-medium text-slate-600 focus:border-indigo-500 focus:outline-none transition-all"
             >
               <option value="">All Status</option>
               <option value="LOST">Lost</option>
               <option value="FOUND">Found</option>
-              <option value="CLAIMED">Claimed</option>
+              <option value="RESOLVED">Resolved</option>
             </select>
             <select
               value={filters.category}
               onChange={(e) => setFilters({ ...filters, category: e.target.value })}
-              className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20 transition-all flex-shrink-0"
+              className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm font-medium text-slate-600 focus:border-indigo-500 focus:outline-none transition-all"
             >
               <option value="">All Categories</option>
               {CATEGORIES.map((c) => (
                 <option key={c} value={c}>{c.charAt(0) + c.slice(1).toLowerCase()}</option>
               ))}
             </select>
-            <Button variant="secondary" type="submit" className="flex-shrink-0">Search</Button>
+            <button
+              type="submit"
+              className="flex-shrink-0 h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center hover:bg-indigo-700 active:scale-95 transition-all cursor-pointer shadow-sm"
+            >
+              <Filter size={15} />
+            </button>
           </form>
         </Card>
 
-        {/* Items */}
+        {/* ── Items Grid ── */}
         {loading && page === 1 ? (
-          <div className="flex flex-col items-center justify-center py-20">
-            <Loader2 className="h-7 w-7 animate-spin text-teal-600" />
-            <p className="text-sm text-slate-400 mt-3">Loading items...</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[1, 2, 3, 4].map((i) => (
+              <Card key={i} padding="p-5">
+                <div className="space-y-2.5">
+                  <div className="flex gap-2">
+                    <div className="skeleton h-5 w-16 rounded-full" />
+                    <div className="skeleton h-5 w-20 rounded-full" />
+                  </div>
+                  <div className="skeleton h-4 w-3/4 rounded" />
+                  <div className="skeleton h-3 w-full rounded" />
+                  <div className="skeleton h-3 w-1/2 rounded" />
+                </div>
+              </Card>
+            ))}
           </div>
         ) : items.length === 0 ? (
           <Card className="text-center py-16">
-            <div className="h-14 w-14 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto mb-4">
-              <PackageSearch className="h-7 w-7 text-slate-300" />
+            <div className="h-14 w-14 rounded-2xl bg-amber-50 flex items-center justify-center mx-auto mb-4">
+              <PackageSearch size={24} className="text-amber-300" />
             </div>
-            <p className="text-base font-semibold text-slate-900">No items found</p>
-            <p className="text-sm text-slate-500 mt-1">Report a lost or found item to get started.</p>
+            <p className="text-base font-bold text-slate-800">No items found</p>
+            <p className="text-sm text-slate-400 mt-1">
+              {canReport ? 'Report a lost or found item.' : 'No reports match your filters.'}
+            </p>
           </Card>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 rc-stagger">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 stagger">
             {items.map((item) => {
-              const sb = statusBadge[item.status] || statusBadge.LOST;
+              const sc = STATUS_CONFIG[item.status] || STATUS_CONFIG.LOST;
+              const StatusIcon = sc.icon;
+              const isOwner = item.reportedById === user?.id || item.reportedBy?.id === user?.id;
+              const isResolved = item.status === 'RESOLVED';
+
               return (
                 <Card key={item.id} hover padding="p-0">
                   <div className="p-5">
-                    <div className="flex items-center gap-2 mb-3 min-w-0">
-                      <Badge variant={sb.variant} size="sm" dot={sb.dot}>{item.status}</Badge>
-                      <span className="text-xs text-slate-400 flex items-center gap-1 min-w-0 truncate">
-                        <Tag className="h-3 w-3 shrink-0" /> {item.category.charAt(0) + item.category.slice(1).toLowerCase()}
-                      </span>
+                    <div className="flex items-center gap-2 mb-3 flex-wrap">
+                      <div className={cn('flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold', sc.bg, sc.iconColor)}>
+                        <StatusIcon size={11} />
+                        {sc.label}
+                      </div>
+                      <div className="flex items-center gap-1 text-[11px] text-slate-400 font-semibold">
+                        <Tag size={11} />
+                        {item.category.charAt(0) + item.category.slice(1).toLowerCase()}
+                      </div>
                     </div>
-                    <div className="min-w-0">
-                      <h3 className="text-base font-bold text-slate-900 break-words line-clamp-2">{item.title}</h3>
-                      {item.description && <p className="text-sm text-slate-500 mt-1.5 line-clamp-2 leading-relaxed break-words">{item.description}</p>}
-                    </div>
-                    <div className="flex flex-wrap gap-3 mt-3 text-xs text-slate-400 min-w-0">
+
+                    <h3 className="text-sm font-bold text-slate-900 line-clamp-2 mb-1.5">{item.title}</h3>
+                    {item.description && (
+                      <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">{item.description}</p>
+                    )}
+
+                    <div className="flex flex-wrap gap-3 mt-3 text-[11px] text-slate-400 font-medium">
                       {item.location && (
-                        <span className="flex items-center gap-1 min-w-0 truncate">
-                          <MapPin className="h-3 w-3 shrink-0" /> <span className="truncate">{item.location}</span>
+                        <span className="flex items-center gap-1 truncate">
+                          <MapPin size={11} className="flex-shrink-0" /> {item.location}
                         </span>
                       )}
-                      <span>{new Date(item.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                      {item.contactInfo && (
+                        <span className="flex items-center gap-1 truncate">
+                          <Phone size={11} className="flex-shrink-0" /> {item.contactInfo}
+                        </span>
+                      )}
                     </div>
-                    <p className="text-xs text-slate-400 mt-2 min-w-0 truncate">
-                      by <span className="font-semibold text-slate-600">{item.reportedBy?.name}</span>
-                    </p>
+
+                    <div className="flex items-center gap-1.5 mt-3 text-[11px] text-slate-400">
+                      <span>by</span>
+                      <span className="font-bold text-slate-600">{item.reportedBy?.name}</span>
+                      <span className="text-slate-200">·</span>
+                      <span>{new Date(item.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+                    </div>
                   </div>
 
-                  {item.reportedById === user?.id && item.status !== 'CLAIMED' && (
-                    <div className="flex gap-2 px-5 py-3 border-t border-slate-100 bg-slate-50/40">
-                      <Button variant="ghost" size="sm" icon={CheckCircle} onClick={() => handleResolve(item.id)} className="text-teal-600 hover:text-teal-700 hover:bg-teal-50">
-                        Mark as Claimed
-                      </Button>
-                      <Button variant="ghost" size="sm" icon={Trash2} onClick={() => handleDelete(item.id)} className="ml-auto text-red-500 hover:text-red-600 hover:bg-red-50">
-                        Delete
-                      </Button>
+                  {!isResolved && (isOwner || canResolve) && (
+                    <div className="flex items-center gap-2 px-5 py-3 border-t border-slate-50 bg-slate-50/40 rounded-b-2xl flex-wrap">
+                      {canResolve && (
+                        <button
+                          onClick={() => handleResolve(item.id)}
+                          className="flex items-center gap-1.5 text-[11px] font-bold text-teal-600 hover:text-teal-700 hover:bg-teal-50 px-3 py-1.5 rounded-lg cursor-pointer transition-all"
+                        >
+                          <CheckCircle2 size={13} /> Mark Resolved
+                        </button>
+                      )}
+                      {isOwner && (
+                        <button
+                          onClick={() => handleDelete(item.id)}
+                          className="flex items-center gap-1.5 text-[11px] font-bold text-red-500 hover:text-red-600 hover:bg-red-50 px-3 py-1.5 rounded-lg cursor-pointer transition-all ml-auto"
+                        >
+                          <Trash2 size={13} /> Delete
+                        </button>
+                      )}
                     </div>
                   )}
                 </Card>
@@ -195,77 +253,76 @@ export default function LostFoundPage() {
         )}
 
         {pagination && page < pagination.totalPages && (
-          <div className="flex justify-center pt-8">
+          <div className="flex justify-center pt-6">
             <Button variant="secondary" onClick={() => fetchItems(page + 1)} loading={loading}>Load More</Button>
           </div>
         )}
 
-        <CreateItemModal open={showCreate} onClose={() => setShowCreate(false)} onCreated={handleCreated} />
+        {canReport && (
+          <CreateItemModal open={showCreate} onClose={() => setShowCreate(false)} onCreated={handleCreated} />
+        )}
       </div>
     </div>
   );
 }
 
 function CreateItemModal({ open, onClose, onCreated }) {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [status, setStatus] = useState('LOST');
-  const [category, setCategory] = useState('OTHER');
-  const [location, setLocation] = useState('');
-  const [contactInfo, setContactInfo] = useState('');
+  const [form, setForm] = useState({ title: '', description: '', status: 'LOST', category: 'OTHER', location: '', contactInfo: '' });
   const [submitting, setSubmitting] = useState(false);
+  const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!title.trim()) return;
+    if (!form.title.trim()) return;
     try {
       setSubmitting(true);
-      const res = await lostFoundAPI.create({ title, description, status, category, location, contactInfo });
+      const res = await lostFoundAPI.create(form);
       onCreated(res.data.item);
+      setForm({ title: '', description: '', status: 'LOST', category: 'OTHER', location: '', contactInfo: '' });
     } catch (err) {
       toast.error(err.response?.data?.error || 'Failed to report item.');
-    } finally {
-      setSubmitting(false);
-    }
+    } finally { setSubmitting(false); }
   };
 
+  const inputCls = 'w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium placeholder-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/15 transition-all';
+
   return (
-    <Modal open={open} onClose={onClose} title="Report Item">
+    <Modal open={open} onClose={onClose} title="Report Item" subtitle="Help the community find lost items" icon={PackageSearch} iconColor="bg-gradient-to-br from-amber-500 to-orange-600">
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-3">
           <div>
-            <label className="block text-sm font-semibold text-slate-700 mb-1.5">Type *</label>
-            <select value={status} onChange={(e) => setStatus(e.target.value)} className="block w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20 transition-all">
+            <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Type *</label>
+            <select value={form.status} onChange={(e) => set('status', e.target.value)} className={inputCls}>
               <option value="LOST">Lost</option>
               <option value="FOUND">Found</option>
             </select>
           </div>
           <div>
-            <label className="block text-sm font-semibold text-slate-700 mb-1.5">Category</label>
-            <select value={category} onChange={(e) => setCategory(e.target.value)} className="block w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20 transition-all">
-              {CATEGORIES.map((c) => (
-                <option key={c} value={c}>{c.charAt(0) + c.slice(1).toLowerCase()}</option>
-              ))}
+            <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Category</label>
+            <select value={form.category} onChange={(e) => set('category', e.target.value)} className={inputCls}>
+              {CATEGORIES.map((c) => <option key={c} value={c}>{c.charAt(0) + c.slice(1).toLowerCase()}</option>)}
             </select>
           </div>
         </div>
         <div>
-          <label className="block text-sm font-semibold text-slate-700 mb-1.5">Title *</label>
-          <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="e.g. Black iPhone 14" className="block w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm placeholder-slate-400 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20 transition-all" required />
+          <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Title *</label>
+          <input value={form.title} onChange={(e) => set('title', e.target.value)} placeholder="e.g. Black iPhone 14 Pro" className={inputCls} required />
         </div>
         <div>
-          <label className="block text-sm font-semibold text-slate-700 mb-1.5">Description</label>
-          <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Describe the item..." rows={3} className="block w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm placeholder-slate-400 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20 resize-none transition-all" />
+          <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Description</label>
+          <textarea value={form.description} onChange={(e) => set('description', e.target.value)} placeholder="Describe the item in detail..." rows={3} className={`${inputCls} resize-none`} />
         </div>
-        <div>
-          <label className="block text-sm font-semibold text-slate-700 mb-1.5">Location</label>
-          <input value={location} onChange={(e) => setLocation(e.target.value)} placeholder="Where was it lost/found?" className="block w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm placeholder-slate-400 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20 transition-all" />
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Location</label>
+            <input value={form.location} onChange={(e) => set('location', e.target.value)} placeholder="Where lost/found?" className={inputCls} />
+          </div>
+          <div>
+            <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Contact</label>
+            <input value={form.contactInfo} onChange={(e) => set('contactInfo', e.target.value)} placeholder="Phone or email" className={inputCls} />
+          </div>
         </div>
-        <div>
-          <label className="block text-sm font-semibold text-slate-700 mb-1.5">Contact Info</label>
-          <input value={contactInfo} onChange={(e) => setContactInfo(e.target.value)} placeholder="Phone or email to reach you" className="block w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm placeholder-slate-400 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20 transition-all" />
-        </div>
-        <Button type="submit" loading={submitting} disabled={!title.trim()} className="w-full">
+        <Button type="submit" loading={submitting} disabled={!form.title.trim()} className="w-full">
           Report Item
         </Button>
       </form>
