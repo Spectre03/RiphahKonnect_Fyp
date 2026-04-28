@@ -3,21 +3,15 @@ import { API_URL } from '../utils/constants';
 
 const api = axios.create({
   baseURL: API_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
+  headers: { 'Content-Type': 'application/json' },
 });
 
-// Attach JWT token to every request
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
+  if (token) config.headers.Authorization = `Bearer ${token}`;
   return config;
 });
 
-// Handle 401 responses — clear token but let React auth flow handle redirect
 api.interceptors.response.use(
   (response) => response,
   (error) => {
@@ -26,15 +20,18 @@ api.interceptors.response.use(
       if (!isAuthRoute) {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
+        // Notify AuthContext to clear user state and redirect to login
+        window.dispatchEvent(new Event('auth:expired'));
       }
     }
     return Promise.reject(error);
   }
 );
 
-// Auth API calls
+// ─── Auth ────────────────────────────────────────────────────────────────────
 export const authAPI = {
   register: (data) => api.post('/auth/register', data),
+  registerUser: (data) => api.post('/auth/register-user', data),   // Coordination only
   login: (data) => api.post('/auth/login', data),
   verifyEmail: (token) => api.get(`/auth/verify-email?token=${token}`),
   forgotPassword: (email) => api.post('/auth/forgot-password', { email }),
@@ -42,9 +39,13 @@ export const authAPI = {
   getMe: () => api.get('/auth/me'),
 };
 
-// Posts API
+// ─── Posts ───────────────────────────────────────────────────────────────────
 export const postsAPI = {
-  getFeed: (page = 1) => api.get(`/posts?page=${page}`),
+  getFeed: (page = 1, type = null) => {
+    const params = new URLSearchParams({ page });
+    if (type && type !== 'ALL') params.set('type', type);
+    return api.get(`/posts?${params}`);
+  },
   getPost: (id) => api.get(`/posts/${id}`),
   create: (data) => api.post('/posts', data),
   update: (id, data) => api.put(`/posts/${id}`, data),
@@ -55,19 +56,40 @@ export const postsAPI = {
   deleteComment: (id) => api.delete(`/posts/comments/${id}`),
 };
 
-// Study Groups API
+// ─── Semester Groups ──────────────────────────────────────────────────────────
 export const groupsAPI = {
-  getAll: (page = 1, search = '') => api.get(`/study-groups?page=${page}&search=${search}`),
-  get: (id) => api.get(`/study-groups/${id}`),
-  create: (data) => api.post('/study-groups', data),
-  update: (id, data) => api.put(`/study-groups/${id}`, data),
-  delete: (id) => api.delete(`/study-groups/${id}`),
-  join: (id) => api.post(`/study-groups/${id}/join`),
-  leave: (id) => api.post(`/study-groups/${id}/leave`),
-  getPosts: (id, page = 1) => api.get(`/study-groups/${id}/posts?page=${page}`),
+  getAll: (params = {}) => {
+    const qs = new URLSearchParams();
+    if (params.page)       qs.set('page', params.page);
+    if (params.search)     qs.set('search', params.search);
+    if (params.department) qs.set('department', params.department);
+    if (params.semester)   qs.set('semester', params.semester);
+    return api.get(`/semester-groups?${qs}`);
+  },
+  get: (id) => api.get(`/semester-groups/${id}`),
+  create: (data) => api.post('/semester-groups', data),
+  update: (id, data) => api.put(`/semester-groups/${id}`, data),
+  delete: (id) => api.delete(`/semester-groups/${id}`),
+  join: (id) => api.post(`/semester-groups/${id}/join`),
+  leave: (id) => api.delete(`/semester-groups/${id}/leave`),
+  getPosts: (id, page = 1) => api.get(`/semester-groups/${id}/posts?page=${page}`),
 };
 
-// Events API
+// ─── Announcements ────────────────────────────────────────────────────────────
+export const announcementsAPI = {
+  getAll: (params = {}) => {
+    const qs = new URLSearchParams();
+    if (params.page) qs.set('page', params.page);
+    if (params.type) qs.set('type', params.type);
+    return api.get(`/announcements?${qs}`);
+  },
+  get: (id) => api.get(`/announcements/${id}`),
+  create: (data) => api.post('/announcements', data),
+  update: (id, data) => api.put(`/announcements/${id}`, data),
+  delete: (id) => api.delete(`/announcements/${id}`),
+};
+
+// ─── Events ───────────────────────────────────────────────────────────────────
 export const eventsAPI = {
   getAll: (page = 1, upcoming = false) => api.get(`/events?page=${page}&upcoming=${upcoming}`),
   get: (id) => api.get(`/events/${id}`),
@@ -78,13 +100,13 @@ export const eventsAPI = {
   getAttendees: (id) => api.get(`/events/${id}/attendees`),
 };
 
-// Lost & Found API
+// ─── Lost & Found ─────────────────────────────────────────────────────────────
 export const lostFoundAPI = {
   getAll: (page = 1, filters = {}) => {
     const params = new URLSearchParams({ page });
-    if (filters.status) params.append('status', filters.status);
+    if (filters.status)   params.append('status', filters.status);
     if (filters.category) params.append('category', filters.category);
-    if (filters.search) params.append('search', filters.search);
+    if (filters.search)   params.append('search', filters.search);
     return api.get(`/lost-found?${params}`);
   },
   get: (id) => api.get(`/lost-found/${id}`),
@@ -94,7 +116,7 @@ export const lostFoundAPI = {
   resolve: (id) => api.post(`/lost-found/${id}/resolve`),
 };
 
-// Conversations / Messaging API
+// ─── Conversations / Messaging ────────────────────────────────────────────────
 export const conversationsAPI = {
   getAll: () => api.get('/conversations'),
   create: (data) => api.post('/conversations', data),
@@ -102,12 +124,23 @@ export const conversationsAPI = {
   sendMessage: (id, content) => api.post(`/conversations/${id}/messages`, { content }),
 };
 
-// Users API
+// ─── Users ────────────────────────────────────────────────────────────────────
 export const usersAPI = {
   get: (id) => api.get(`/users/${id}`),
   updateProfile: (data) => api.put('/users/profile', data),
   getPosts: (id, page = 1) => api.get(`/users/${id}/posts?page=${page}`),
-  search: (q) => api.get(`/users/search?q=${q}`),
+  search: (q) => api.get(`/users/search?q=${encodeURIComponent(q)}`),
+  // System Admin
+  listAll: (params = {}) => {
+    const qs = new URLSearchParams();
+    if (params.page)       qs.set('page', params.page);
+    if (params.role)       qs.set('role', params.role);
+    if (params.department) qs.set('department', params.department);
+    if (params.search)     qs.set('search', params.search);
+    return api.get(`/users?${qs}`);
+  },
+  block: (id) => api.post(`/users/${id}/block`),
+  unblock: (id) => api.post(`/users/${id}/unblock`),
 };
 
 export default api;

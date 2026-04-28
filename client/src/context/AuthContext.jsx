@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { authAPI } from '../services/api';
 
 const AuthContext = createContext(null);
@@ -37,11 +37,18 @@ export function AuthProvider({ children }) {
     return res.data;
   };
 
-  const logout = () => {
+  const logout = useCallback(() => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     setUser(null);
-  };
+  }, []);
+
+  // Auto-logout when API interceptor fires auth:expired (token expired server-side)
+  useEffect(() => {
+    const handler = () => logout();
+    window.addEventListener('auth:expired', handler);
+    return () => window.removeEventListener('auth:expired', handler);
+  }, [logout]);
 
   return (
     <AuthContext.Provider value={{ user, loading, login, register, logout }}>
