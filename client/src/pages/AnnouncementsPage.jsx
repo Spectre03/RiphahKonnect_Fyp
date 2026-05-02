@@ -11,7 +11,7 @@ import {
   BookOpen, Bell, Sparkles,
 } from 'lucide-react';
 
-const CAN_CREATE = ['UNIVERSITY_ADMIN', 'COORDINATION', 'TEACHER'];
+const CAN_CREATE = ['UNIVERSITY_ADMIN', 'COORDINATION', 'TEACHER', 'SYSTEM_ADMIN'];
 
 const TYPE_CONFIG = {
   OFFICIAL: {
