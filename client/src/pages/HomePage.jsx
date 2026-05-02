@@ -7,12 +7,13 @@ import { Card, Avatar, Badge } from '../components/ui';
 import {
   Newspaper, Users, Calendar, MessageSquare, PackageSearch,
   ArrowRight, GraduationCap, Sparkles, Clock, Megaphone,
-  ShieldCheck, UserCog, BarChart3, MapPin, TrendingUp,
+  ShieldCheck, UserCog, BarChart3, MapPin, TrendingUp, FileText,
 } from 'lucide-react';
 
 const STUDENT_TEACHER_LINKS = [
   { icon: Newspaper,     label: 'Feed',          to: '/feed',          from: 'from-teal-500',   to_: 'to-emerald-500',  desc: 'Posts & discussions' },
   { icon: Users,         label: 'Groups',        to: '/groups',        from: 'from-blue-500',   to_: 'to-indigo-500',   desc: 'Semester groups' },
+  { icon: FileText,      label: 'Resources',     to: '/resources',     from: 'from-cyan-500',   to_: 'to-teal-500',     desc: 'Notes & past papers' },
   { icon: Calendar,      label: 'Events',        to: '/events',        from: 'from-violet-500', to_: 'to-purple-500',   desc: 'Campus events' },
   { icon: Megaphone,     label: 'Announcements', to: '/announcements', from: 'from-amber-500',  to_: 'to-orange-500',   desc: 'Official notices' },
   { icon: PackageSearch, label: 'Lost & Found',  to: '/lost-found',    from: 'from-rose-500',   to_: 'to-pink-500',     desc: 'Find items' },
@@ -100,7 +101,8 @@ export default function HomePage() {
     quickLinks.length <= 2 ? 'grid-cols-2' :
     quickLinks.length <= 4 ? 'grid-cols-2 sm:grid-cols-4' :
     quickLinks.length === 5 ? 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-5' :
-    'grid-cols-2 sm:grid-cols-3';   /* 6 links → 2 cols mobile, 3 cols sm+ */
+    quickLinks.length === 6 ? 'grid-cols-2 sm:grid-cols-3' :
+    'grid-cols-2 sm:grid-cols-3 lg:grid-cols-4';   /* 7 links → wrap evenly */
 
   return (
     <div className="page-wrapper">
