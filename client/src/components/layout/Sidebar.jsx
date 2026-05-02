@@ -7,13 +7,14 @@ import {
   LayoutDashboard, Newspaper, Users, Calendar,
   PackageSearch, MessageSquare, LogOut, Menu, X,
   Megaphone, ShieldCheck, UserCog, GraduationCap,
-  ChevronRight, Sparkles, BookOpen,
+  ChevronRight, Sparkles, BookOpen, FileText,
 } from 'lucide-react';
 
 const STUDENT_NAV = [
   { to: '/home',          label: 'Dashboard',       icon: LayoutDashboard },
   { to: '/feed',          label: 'Feed',            icon: Newspaper },
   { to: '/groups',        label: 'Semester Groups', icon: Users },
+  { to: '/resources',     label: 'Resources',       icon: FileText },
   { to: '/events',        label: 'Events',          icon: Calendar },
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/lost-found',    label: 'Lost & Found',    icon: PackageSearch },
@@ -24,6 +25,7 @@ const TEACHER_NAV = [
   { to: '/home',          label: 'Dashboard',       icon: LayoutDashboard },
   { to: '/feed',          label: 'Feed',            icon: Newspaper },
   { to: '/groups',        label: 'Semester Groups', icon: Users },
+  { to: '/resources',     label: 'Resources',       icon: FileText },
   { to: '/events',        label: 'Events',          icon: Calendar },
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/lost-found',    label: 'Lost & Found',    icon: PackageSearch },

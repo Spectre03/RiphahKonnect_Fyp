@@ -28,6 +28,7 @@ import AnnouncementsPage from './pages/AnnouncementsPage';
 import AdminUsersPage from './pages/AdminUsersPage';
 import AdminDashboardPage from './pages/AdminDashboardPage';
 import AdminGroupsPage from './pages/AdminGroupsPage';
+import ResourcesPage from './pages/ResourcesPage';
 import LandingPage from './pages/LandingPage';
 
 const queryClient = new QueryClient({
@@ -84,6 +85,7 @@ function App() {
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/profile/:id" element={<ProfilePage />} />
               <Route path="/announcements" element={<AnnouncementsPage />} />
+              <Route path="/resources" element={<ResourcesPage />} />
 
               {/* System Admin only */}
               <Route
