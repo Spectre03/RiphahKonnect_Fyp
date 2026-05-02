@@ -143,4 +143,29 @@ export const usersAPI = {
   unblock: (id) => api.post(`/users/${id}/unblock`),
 };
 
+// ─── System Admin ─────────────────────────────────────────────────────────────
+export const adminAPI = {
+  getStats:   () => api.get('/admin/stats'),
+  getContent: () => api.get('/admin/content'),
+  // User control
+  deleteUser:     (id)         => api.delete(`/admin/users/${id}`),
+  updateUserRole: (id, role)   => api.put(`/admin/users/${id}/role`, { role }),
+  blockUser:      (id)         => api.post(`/admin/users/${id}/block`),
+  unblockUser:    (id)         => api.post(`/admin/users/${id}/unblock`),
+  // Content moderation
+  deletePost:         (id) => api.delete(`/admin/posts/${id}`),
+  deleteAnnouncement: (id) => api.delete(`/admin/announcements/${id}`),
+  deleteEvent:        (id) => api.delete(`/admin/events/${id}`),
+  // Group management
+  getGroups: (params = {}) => {
+    const qs = new URLSearchParams();
+    if (params.page)       qs.set('page',       params.page);
+    if (params.search)     qs.set('search',     params.search);
+    if (params.department) qs.set('department', params.department);
+    if (params.semester)   qs.set('semester',   params.semester);
+    return api.get(`/admin/groups?${qs}`);
+  },
+  deleteGroup: (id) => api.delete(`/admin/groups/${id}`),
+};
+
 export default api;
