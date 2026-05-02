@@ -95,7 +95,7 @@ export default function EventsPage() {
               </p>
             </div>
             <div className="flex items-center gap-3 flex-shrink-0">
-              {pagination && !canCreate && (
+              {pagination && (
                 <div className="hidden sm:flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-4 py-3 animate-popIn">
                   <CalendarDays className="h-5 w-5 text-violet-200" />
                   <div>
