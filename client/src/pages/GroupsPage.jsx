@@ -11,8 +11,8 @@ import {
   GraduationCap, Filter, Hash,
 } from 'lucide-react';
 
-const CAN_JOIN   = ['STUDENT', 'TEACHER', 'UNIVERSITY_ADMIN'];
-const CAN_CREATE = ['TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN'];
+const CAN_JOIN   = ['STUDENT', 'TEACHER', 'UNIVERSITY_ADMIN', 'COORDINATION'];
+const CAN_CREATE = ['COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'];
 
 const DEPT_COLORS = [
   'from-blue-500 to-indigo-600',
