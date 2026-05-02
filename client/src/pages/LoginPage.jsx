@@ -19,7 +19,7 @@ export default function LoginPage() {
   const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
-  const returnTo = location.state?.from || '/';
+  const returnTo = location.state?.from || '/home';
   const [showPassword, setShowPassword] = useState(false);
 
   const {
