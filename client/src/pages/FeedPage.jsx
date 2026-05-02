@@ -25,7 +25,7 @@ const TYPE_CONFIG = {
   RESOURCE: { variant: 'violet',  label: 'Resource', bg: 'bg-violet-50', icon: BookOpen,   iconColor: 'text-violet-600', accent: 'bg-violet-500' },
 };
 
-const CAN_MOD_DELETE = ['UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'];
+const CAN_MOD_DELETE = ['UNIVERSITY_ADMIN', 'SYSTEM_ADMIN', 'COORDINATION'];
 
 export default function FeedPage() {
   const { user } = useAuth();
