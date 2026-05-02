@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { groupsAPI } from '../services/api';
 import { cn } from '../utils/cn';
 import { Card, Button, Badge, Modal } from '../components/ui';
-import { DEPARTMENTS, SEMESTERS } from '../utils/constants';
+import { DEPARTMENTS, SEMESTERS, getDepartmentsForUser } from '../utils/constants';
 import toast from 'react-hot-toast';
 import {
   Users, Plus, Search, Loader2, BookOpen, ArrowRight,
@@ -34,9 +34,9 @@ export default function GroupsPage() {
   const [groups, setGroups] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
-  const [deptFilter, setDeptFilter] = useState('');
-  // Students default to their own semester so they see relevant groups immediately
-  const [semFilter, setSemFilter] = useState(user?.role === 'STUDENT' && user?.semester ? String(user.semester) : '');
+  // Students default to their own department and semester so they see relevant groups immediately
+  const [deptFilter, setDeptFilter] = useState(user?.role === 'STUDENT' && user?.department ? user.department : '');
+  const [semFilter,  setSemFilter]  = useState(user?.role === 'STUDENT' && user?.semester  ? String(user.semester)  : '');
   const [showCreate, setShowCreate] = useState(false);
   const [pagination, setPagination] = useState(null);
   const [page, setPage] = useState(1);
@@ -264,6 +264,8 @@ export default function GroupsPage() {
 }
 
 function CreateGroupModal({ open, onClose, onCreated }) {
+  const { user } = useAuth();
+  const availableDepts = getDepartmentsForUser(user);
   const [form, setForm] = useState({ name: '', description: '', department: '', semester: '' });
   const [submitting, setSubmitting] = useState(false);
   const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
@@ -295,7 +297,7 @@ function CreateGroupModal({ open, onClose, onCreated }) {
             <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Department *</label>
             <select value={form.department} onChange={(e) => set('department', e.target.value)} className={inputCls} required>
               <option value="">Select dept.</option>
-              {DEPARTMENTS.map((d) => <option key={d} value={d}>{d}</option>)}
+              {availableDepts.map((d) => <option key={d} value={d}>{d}</option>)}
             </select>
           </div>
           <div>
