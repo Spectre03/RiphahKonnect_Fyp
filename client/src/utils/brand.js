@@ -49,6 +49,16 @@ export function timeAgo(date) {
   return new Date(date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 }
 
+// Format a date like "May 3, 2026" or "May 3, 2026 at 2:30 PM"
+export function formatDate(date, withTime = false) {
+  if (!date) return '';
+  const d = new Date(date);
+  const base = d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  if (!withTime) return base;
+  const time = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+  return `${base} at ${time}`;
+}
+
 // Format short time like "2m", "3h"
 export function timeShort(date) {
   if (!date) return '';
