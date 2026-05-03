@@ -104,9 +104,10 @@ export const eventsAPI = {
 export const lostFoundAPI = {
   getAll: (page = 1, filters = {}) => {
     const params = new URLSearchParams({ page });
-    if (filters.status)   params.append('status', filters.status);
+    if (filters.status)   params.append('status',   filters.status);
+    if (filters.type)     params.append('type',     filters.type);
     if (filters.category) params.append('category', filters.category);
-    if (filters.search)   params.append('search', filters.search);
+    if (filters.search)   params.append('search',   filters.search);
     return api.get(`/lost-found?${params}`);
   },
   get: (id) => api.get(`/lost-found/${id}`),
