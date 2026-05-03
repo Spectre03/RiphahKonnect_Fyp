@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { eventsAPI } from '../services/api';
+import { formatDate } from '../utils/brand';
 import { cn } from '../utils/cn';
 import { Card, Button, Badge, Modal } from '../components/ui';
 import toast from 'react-hot-toast';
@@ -69,11 +70,6 @@ export default function EventsPage() {
   const canCreate  = CAN_CREATE.includes(user?.role);
   const canDelAny  = CAN_DEL_ANY.includes(user?.role);
 
-  const formatDate = (date) =>
-    new Date(date).toLocaleDateString('en-US', {
-      weekday: 'short', month: 'short', day: 'numeric',
-      hour: '2-digit', minute: '2-digit',
-    });
 
   return (
     <div className="page-wrapper">
@@ -196,7 +192,7 @@ export default function EventsPage() {
                           <div className="flex flex-wrap gap-3 text-[11px] text-slate-400 font-medium">
                             <span className="flex items-center gap-1">
                               <Clock size={11} className="flex-shrink-0" />
-                              {formatDate(event.startDate)}
+                              {formatDate(event.startDate, true)}
                             </span>
                             {event.location && (
                               <span className="flex items-center gap-1">
