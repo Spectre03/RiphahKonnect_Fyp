@@ -11,8 +11,8 @@ import {
   Loader2, BookOpen, Crown, User, GraduationCap,
 } from 'lucide-react';
 
-const CAN_JOIN = ['STUDENT', 'TEACHER'];
-const CAN_POST = ['STUDENT', 'TEACHER'];
+const CAN_JOIN = ['STUDENT', 'TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN'];
+const CAN_POST = ['STUDENT', 'TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN'];
 
 export default function GroupDetailPage() {
   const { id } = useParams();
