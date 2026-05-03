@@ -91,7 +91,11 @@ export const announcementsAPI = {
 
 // ─── Events ───────────────────────────────────────────────────────────────────
 export const eventsAPI = {
-  getAll: (page = 1, upcoming = false) => api.get(`/events?page=${page}&upcoming=${upcoming}`),
+  getAll: (page = 1, upcoming = false, filters = {}) => {
+    const params = new URLSearchParams({ page, upcoming });
+    if (filters.search) params.set('search', filters.search);
+    return api.get(`/events?${params}`);
+  },
   get: (id) => api.get(`/events/${id}`),
   create: (data) => api.post('/events', data),
   update: (id, data) => api.put(`/events/${id}`, data),
