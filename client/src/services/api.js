@@ -162,6 +162,7 @@ export const adminAPI = {
   updateUserRole: (id, role)   => api.put(`/admin/users/${id}/role`, { role }),
   blockUser:      (id)         => api.post(`/admin/users/${id}/block`),
   unblockUser:    (id)         => api.post(`/admin/users/${id}/unblock`),
+  resetPassword:  (id, password) => api.post(`/admin/users/${id}/reset-password`, { password }),
   // Content moderation
   deletePost:         (id) => api.delete(`/admin/posts/${id}`),
   deleteAnnouncement: (id) => api.delete(`/admin/announcements/${id}`),
