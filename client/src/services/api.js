@@ -134,7 +134,12 @@ export const usersAPI = {
   get: (id) => api.get(`/users/${id}`),
   updateProfile: (data) => api.put('/users/profile', data),
   getPosts: (id, page = 1) => api.get(`/users/${id}/posts?page=${page}`),
-  search: (q) => api.get(`/users/search?q=${encodeURIComponent(q)}`),
+  search: (q, filters = {}) => {
+    const params = new URLSearchParams({ q });
+    if (filters.department) params.set('department', filters.department);
+    if (filters.semester)   params.set('semester',   filters.semester);
+    return api.get(`/users/search?${params}`);
+  },
   // System Admin
   listAll: (params = {}) => {
     const qs = new URLSearchParams();
