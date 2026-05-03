@@ -21,6 +21,7 @@ const STUDENT_TEACHER_LINKS = [
 ];
 
 const COORDINATION_LINKS = [
+  { icon: Newspaper,     label: 'Feed',          to: '/feed',          from: 'from-teal-500',   to_: 'to-emerald-500',  desc: 'Posts & discussions' },
   { icon: Users,         label: 'Groups',        to: '/groups',        from: 'from-blue-500',   to_: 'to-indigo-500',   desc: 'Create & manage' },
   { icon: Calendar,      label: 'Events',        to: '/events',        from: 'from-violet-500', to_: 'to-purple-500',   desc: 'Organise events' },
   { icon: Megaphone,     label: 'Announcements', to: '/announcements', from: 'from-amber-500',  to_: 'to-orange-500',   desc: 'Post notices' },
