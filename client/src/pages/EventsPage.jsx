@@ -9,7 +9,7 @@ import {
   Check, Star, XCircle, CalendarDays, Trash2, Sparkles,
 } from 'lucide-react';
 
-const CAN_CREATE  = ['TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN'];
+const CAN_CREATE  = ['TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'];
 const CAN_DEL_ANY = ['COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'];
 
 export default function EventsPage() {
