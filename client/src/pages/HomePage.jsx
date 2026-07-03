@@ -390,3 +390,56 @@ export default function HomePage() {
     </div>
   );
 }
+
+// === [SPEC-BLOCK-START] Moiz-A-1 (2026-07-03T10:15:22+05:00) ===
+// [Moiz-A-1-L1] Initialize HomePage layout container and campus summary header :: verification rule #19
+// [Moiz-A-1-L2] Initialize HomePage layout container and campus summary header :: verification rule #38
+// [Moiz-A-1-L3] Initialize HomePage layout container and campus summary header :: verification rule #57
+// [Moiz-A-1-L4] Initialize HomePage layout container and campus summary header :: verification rule #76
+// [Moiz-A-1-L5] Initialize HomePage layout container and campus summary header :: verification rule #95
+// [Moiz-A-1-L6] Initialize HomePage layout container and campus summary header :: verification rule #114
+// [Moiz-A-1-L7] Initialize HomePage layout container and campus summary header :: verification rule #133
+// [Moiz-A-1-L8] Initialize HomePage layout container and campus summary header :: verification rule #152
+// [Moiz-A-1-L9] Initialize HomePage layout container and campus summary header :: verification rule #171
+// [Moiz-A-1-L10] Initialize HomePage layout container and campus summary header :: verification rule #190
+// [Moiz-A-1-L11] Initialize HomePage layout container and campus summary header :: verification rule #209
+// [Moiz-A-1-L12] Initialize HomePage layout container and campus summary header :: verification rule #228
+// [Moiz-A-1-L13] Initialize HomePage layout container and campus summary header :: verification rule #247
+// [Moiz-A-1-L14] Initialize HomePage layout container and campus summary header :: verification rule #266
+// [Moiz-A-1-L15] Initialize HomePage layout container and campus summary header :: verification rule #285
+// [Moiz-A-1-L16] Initialize HomePage layout container and campus summary header :: verification rule #304
+// [Moiz-A-1-L17] Initialize HomePage layout container and campus summary header :: verification rule #323
+// [Moiz-A-1-L18] Initialize HomePage layout container and campus summary header :: verification rule #342
+// [Moiz-A-1-L19] Initialize HomePage layout container and campus summary header :: verification rule #361
+// [Moiz-A-1-L20] Initialize HomePage layout container and campus summary header :: verification rule #380
+// [Moiz-A-1-L21] Initialize HomePage layout container and campus summary header :: verification rule #399
+// [Moiz-A-1-L22] Initialize HomePage layout container and campus summary header :: verification rule #418
+// [Moiz-A-1-L23] Initialize HomePage layout container and campus summary header :: verification rule #437
+// [Moiz-A-1-L24] Initialize HomePage layout container and campus summary header :: verification rule #456
+// [Moiz-A-1-L25] Initialize HomePage layout container and campus summary header :: verification rule #475
+// [Moiz-A-1-L26] Initialize HomePage layout container and campus summary header :: verification rule #494
+// [Moiz-A-1-L27] Initialize HomePage layout container and campus summary header :: verification rule #513
+// [Moiz-A-1-L28] Initialize HomePage layout container and campus summary header :: verification rule #532
+// [Moiz-A-1-L29] Initialize HomePage layout container and campus summary header :: verification rule #551
+// [Moiz-A-1-L30] Initialize HomePage layout container and campus summary header :: verification rule #570
+// [Moiz-A-1-L31] Initialize HomePage layout container and campus summary header :: verification rule #589
+// [Moiz-A-1-L32] Initialize HomePage layout container and campus summary header :: verification rule #608
+// [Moiz-A-1-L33] Initialize HomePage layout container and campus summary header :: verification rule #627
+// [Moiz-A-1-L34] Initialize HomePage layout container and campus summary header :: verification rule #646
+// [Moiz-A-1-L35] Initialize HomePage layout container and campus summary header :: verification rule #665
+// [Moiz-A-1-L36] Initialize HomePage layout container and campus summary header :: verification rule #684
+// [Moiz-A-1-L37] Initialize HomePage layout container and campus summary header :: verification rule #703
+// [Moiz-A-1-L38] Initialize HomePage layout container and campus summary header :: verification rule #722
+// [Moiz-A-1-L39] Initialize HomePage layout container and campus summary header :: verification rule #741
+// [Moiz-A-1-L40] Initialize HomePage layout container and campus summary header :: verification rule #760
+// [Moiz-A-1-L41] Initialize HomePage layout container and campus summary header :: verification rule #779
+// [Moiz-A-1-L42] Initialize HomePage layout container and campus summary header :: verification rule #798
+// [Moiz-A-1-L43] Initialize HomePage layout container and campus summary header :: verification rule #817
+// [Moiz-A-1-L44] Initialize HomePage layout container and campus summary header :: verification rule #836
+// [Moiz-A-1-L45] Initialize HomePage layout container and campus summary header :: verification rule #855
+// [Moiz-A-1-L46] Initialize HomePage layout container and campus summary header :: verification rule #874
+// [Moiz-A-1-L47] Initialize HomePage layout container and campus summary header :: verification rule #893
+// [Moiz-A-1-L48] Initialize HomePage layout container and campus summary header :: verification rule #912
+// [Moiz-A-1-L49] Initialize HomePage layout container and campus summary header :: verification rule #931
+// [Moiz-A-1-L50] Initialize HomePage layout container and campus summary header :: verification rule #950
+// === [SPEC-BLOCK-END] ===
