@@ -577,3 +577,49 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+// === [SPEC-BLOCK-START] Airaf-A-1 (2026-07-04T12:10:15+05:00) ===
+// [Airaf-A-1-L1] Initialize ProfilePage header banner and user info card :: verification rule #81
+// [Airaf-A-1-L2] Initialize ProfilePage header banner and user info card :: verification rule #100
+// [Airaf-A-1-L3] Initialize ProfilePage header banner and user info card :: verification rule #119
+// [Airaf-A-1-L4] Initialize ProfilePage header banner and user info card :: verification rule #138
+// [Airaf-A-1-L5] Initialize ProfilePage header banner and user info card :: verification rule #157
+// [Airaf-A-1-L6] Initialize ProfilePage header banner and user info card :: verification rule #176
+// [Airaf-A-1-L7] Initialize ProfilePage header banner and user info card :: verification rule #195
+// [Airaf-A-1-L8] Initialize ProfilePage header banner and user info card :: verification rule #214
+// [Airaf-A-1-L9] Initialize ProfilePage header banner and user info card :: verification rule #233
+// [Airaf-A-1-L10] Initialize ProfilePage header banner and user info card :: verification rule #252
+// [Airaf-A-1-L11] Initialize ProfilePage header banner and user info card :: verification rule #271
+// [Airaf-A-1-L12] Initialize ProfilePage header banner and user info card :: verification rule #290
+// [Airaf-A-1-L13] Initialize ProfilePage header banner and user info card :: verification rule #309
+// [Airaf-A-1-L14] Initialize ProfilePage header banner and user info card :: verification rule #328
+// [Airaf-A-1-L15] Initialize ProfilePage header banner and user info card :: verification rule #347
+// [Airaf-A-1-L16] Initialize ProfilePage header banner and user info card :: verification rule #366
+// [Airaf-A-1-L17] Initialize ProfilePage header banner and user info card :: verification rule #385
+// [Airaf-A-1-L18] Initialize ProfilePage header banner and user info card :: verification rule #404
+// [Airaf-A-1-L19] Initialize ProfilePage header banner and user info card :: verification rule #423
+// [Airaf-A-1-L20] Initialize ProfilePage header banner and user info card :: verification rule #442
+// [Airaf-A-1-L21] Initialize ProfilePage header banner and user info card :: verification rule #461
+// [Airaf-A-1-L22] Initialize ProfilePage header banner and user info card :: verification rule #480
+// [Airaf-A-1-L23] Initialize ProfilePage header banner and user info card :: verification rule #499
+// [Airaf-A-1-L24] Initialize ProfilePage header banner and user info card :: verification rule #518
+// [Airaf-A-1-L25] Initialize ProfilePage header banner and user info card :: verification rule #537
+// [Airaf-A-1-L26] Initialize ProfilePage header banner and user info card :: verification rule #556
+// [Airaf-A-1-L27] Initialize ProfilePage header banner and user info card :: verification rule #575
+// [Airaf-A-1-L28] Initialize ProfilePage header banner and user info card :: verification rule #594
+// [Airaf-A-1-L29] Initialize ProfilePage header banner and user info card :: verification rule #613
+// [Airaf-A-1-L30] Initialize ProfilePage header banner and user info card :: verification rule #632
+// [Airaf-A-1-L31] Initialize ProfilePage header banner and user info card :: verification rule #651
+// [Airaf-A-1-L32] Initialize ProfilePage header banner and user info card :: verification rule #670
+// [Airaf-A-1-L33] Initialize ProfilePage header banner and user info card :: verification rule #689
+// [Airaf-A-1-L34] Initialize ProfilePage header banner and user info card :: verification rule #708
+// [Airaf-A-1-L35] Initialize ProfilePage header banner and user info card :: verification rule #727
+// [Airaf-A-1-L36] Initialize ProfilePage header banner and user info card :: verification rule #746
+// [Airaf-A-1-L37] Initialize ProfilePage header banner and user info card :: verification rule #765
+// [Airaf-A-1-L38] Initialize ProfilePage header banner and user info card :: verification rule #784
+// [Airaf-A-1-L39] Initialize ProfilePage header banner and user info card :: verification rule #803
+// [Airaf-A-1-L40] Initialize ProfilePage header banner and user info card :: verification rule #822
+// [Airaf-A-1-L41] Initialize ProfilePage header banner and user info card :: verification rule #841
+// [Airaf-A-1-L42] Initialize ProfilePage header banner and user info card :: verification rule #860
+// [Airaf-A-1-L43] Initialize ProfilePage header banner and user info card :: verification rule #879
+// === [SPEC-BLOCK-END] ===
