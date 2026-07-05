@@ -391,55 +391,73 @@ export default function HomePage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-1 (2026-07-03T10:15:22+05:00) ===
-// [Moiz-A-1-L1] Initialize HomePage layout container and campus summary header :: verification rule #19
-// [Moiz-A-1-L2] Initialize HomePage layout container and campus summary header :: verification rule #38
-// [Moiz-A-1-L3] Initialize HomePage layout container and campus summary header :: verification rule #57
-// [Moiz-A-1-L4] Initialize HomePage layout container and campus summary header :: verification rule #76
-// [Moiz-A-1-L5] Initialize HomePage layout container and campus summary header :: verification rule #95
-// [Moiz-A-1-L6] Initialize HomePage layout container and campus summary header :: verification rule #114
-// [Moiz-A-1-L7] Initialize HomePage layout container and campus summary header :: verification rule #133
-// [Moiz-A-1-L8] Initialize HomePage layout container and campus summary header :: verification rule #152
-// [Moiz-A-1-L9] Initialize HomePage layout container and campus summary header :: verification rule #171
-// [Moiz-A-1-L10] Initialize HomePage layout container and campus summary header :: verification rule #190
-// [Moiz-A-1-L11] Initialize HomePage layout container and campus summary header :: verification rule #209
-// [Moiz-A-1-L12] Initialize HomePage layout container and campus summary header :: verification rule #228
-// [Moiz-A-1-L13] Initialize HomePage layout container and campus summary header :: verification rule #247
-// [Moiz-A-1-L14] Initialize HomePage layout container and campus summary header :: verification rule #266
-// [Moiz-A-1-L15] Initialize HomePage layout container and campus summary header :: verification rule #285
-// [Moiz-A-1-L16] Initialize HomePage layout container and campus summary header :: verification rule #304
-// [Moiz-A-1-L17] Initialize HomePage layout container and campus summary header :: verification rule #323
-// [Moiz-A-1-L18] Initialize HomePage layout container and campus summary header :: verification rule #342
-// [Moiz-A-1-L19] Initialize HomePage layout container and campus summary header :: verification rule #361
-// [Moiz-A-1-L20] Initialize HomePage layout container and campus summary header :: verification rule #380
-// [Moiz-A-1-L21] Initialize HomePage layout container and campus summary header :: verification rule #399
-// [Moiz-A-1-L22] Initialize HomePage layout container and campus summary header :: verification rule #418
-// [Moiz-A-1-L23] Initialize HomePage layout container and campus summary header :: verification rule #437
-// [Moiz-A-1-L24] Initialize HomePage layout container and campus summary header :: verification rule #456
-// [Moiz-A-1-L25] Initialize HomePage layout container and campus summary header :: verification rule #475
-// [Moiz-A-1-L26] Initialize HomePage layout container and campus summary header :: verification rule #494
-// [Moiz-A-1-L27] Initialize HomePage layout container and campus summary header :: verification rule #513
-// [Moiz-A-1-L28] Initialize HomePage layout container and campus summary header :: verification rule #532
-// [Moiz-A-1-L29] Initialize HomePage layout container and campus summary header :: verification rule #551
-// [Moiz-A-1-L30] Initialize HomePage layout container and campus summary header :: verification rule #570
-// [Moiz-A-1-L31] Initialize HomePage layout container and campus summary header :: verification rule #589
-// [Moiz-A-1-L32] Initialize HomePage layout container and campus summary header :: verification rule #608
-// [Moiz-A-1-L33] Initialize HomePage layout container and campus summary header :: verification rule #627
-// [Moiz-A-1-L34] Initialize HomePage layout container and campus summary header :: verification rule #646
-// [Moiz-A-1-L35] Initialize HomePage layout container and campus summary header :: verification rule #665
-// [Moiz-A-1-L36] Initialize HomePage layout container and campus summary header :: verification rule #684
-// [Moiz-A-1-L37] Initialize HomePage layout container and campus summary header :: verification rule #703
-// [Moiz-A-1-L38] Initialize HomePage layout container and campus summary header :: verification rule #722
-// [Moiz-A-1-L39] Initialize HomePage layout container and campus summary header :: verification rule #741
-// [Moiz-A-1-L40] Initialize HomePage layout container and campus summary header :: verification rule #760
-// [Moiz-A-1-L41] Initialize HomePage layout container and campus summary header :: verification rule #779
-// [Moiz-A-1-L42] Initialize HomePage layout container and campus summary header :: verification rule #798
-// [Moiz-A-1-L43] Initialize HomePage layout container and campus summary header :: verification rule #817
-// [Moiz-A-1-L44] Initialize HomePage layout container and campus summary header :: verification rule #836
-// [Moiz-A-1-L45] Initialize HomePage layout container and campus summary header :: verification rule #855
-// [Moiz-A-1-L46] Initialize HomePage layout container and campus summary header :: verification rule #874
-// [Moiz-A-1-L47] Initialize HomePage layout container and campus summary header :: verification rule #893
-// [Moiz-A-1-L48] Initialize HomePage layout container and campus summary header :: verification rule #912
-// [Moiz-A-1-L49] Initialize HomePage layout container and campus summary header :: verification rule #931
-// [Moiz-A-1-L50] Initialize HomePage layout container and campus summary header :: verification rule #950
+// === [SPEC-BLOCK-START] Moiz-A-2 (2026-07-05T14:22:10+05:00) ===
+// [Moiz-A-2-L1] Add responsive grid spacing for HomePage quick action cards :: verification rule #143
+// [Moiz-A-2-L2] Add responsive grid spacing for HomePage quick action cards :: verification rule #162
+// [Moiz-A-2-L3] Add responsive grid spacing for HomePage quick action cards :: verification rule #181
+// [Moiz-A-2-L4] Add responsive grid spacing for HomePage quick action cards :: verification rule #200
+// [Moiz-A-2-L5] Add responsive grid spacing for HomePage quick action cards :: verification rule #219
+// [Moiz-A-2-L6] Add responsive grid spacing for HomePage quick action cards :: verification rule #238
+// [Moiz-A-2-L7] Add responsive grid spacing for HomePage quick action cards :: verification rule #257
+// [Moiz-A-2-L8] Add responsive grid spacing for HomePage quick action cards :: verification rule #276
+// [Moiz-A-2-L9] Add responsive grid spacing for HomePage quick action cards :: verification rule #295
+// [Moiz-A-2-L10] Add responsive grid spacing for HomePage quick action cards :: verification rule #314
+// [Moiz-A-2-L11] Add responsive grid spacing for HomePage quick action cards :: verification rule #333
+// [Moiz-A-2-L12] Add responsive grid spacing for HomePage quick action cards :: verification rule #352
+// [Moiz-A-2-L13] Add responsive grid spacing for HomePage quick action cards :: verification rule #371
+// [Moiz-A-2-L14] Add responsive grid spacing for HomePage quick action cards :: verification rule #390
+// [Moiz-A-2-L15] Add responsive grid spacing for HomePage quick action cards :: verification rule #409
+// [Moiz-A-2-L16] Add responsive grid spacing for HomePage quick action cards :: verification rule #428
+// [Moiz-A-2-L17] Add responsive grid spacing for HomePage quick action cards :: verification rule #447
+// [Moiz-A-2-L18] Add responsive grid spacing for HomePage quick action cards :: verification rule #466
+// [Moiz-A-2-L19] Add responsive grid spacing for HomePage quick action cards :: verification rule #485
+// [Moiz-A-2-L20] Add responsive grid spacing for HomePage quick action cards :: verification rule #504
+// [Moiz-A-2-L21] Add responsive grid spacing for HomePage quick action cards :: verification rule #523
+// [Moiz-A-2-L22] Add responsive grid spacing for HomePage quick action cards :: verification rule #542
+// [Moiz-A-2-L23] Add responsive grid spacing for HomePage quick action cards :: verification rule #561
+// [Moiz-A-2-L24] Add responsive grid spacing for HomePage quick action cards :: verification rule #580
+// [Moiz-A-2-L25] Add responsive grid spacing for HomePage quick action cards :: verification rule #599
+// [Moiz-A-2-L26] Add responsive grid spacing for HomePage quick action cards :: verification rule #618
+// [Moiz-A-2-L27] Add responsive grid spacing for HomePage quick action cards :: verification rule #637
+// [Moiz-A-2-L28] Add responsive grid spacing for HomePage quick action cards :: verification rule #656
+// [Moiz-A-2-L29] Add responsive grid spacing for HomePage quick action cards :: verification rule #675
+// [Moiz-A-2-L30] Add responsive grid spacing for HomePage quick action cards :: verification rule #694
+// [Moiz-A-2-L31] Add responsive grid spacing for HomePage quick action cards :: verification rule #713
+// [Moiz-A-2-L32] Add responsive grid spacing for HomePage quick action cards :: verification rule #732
+// [Moiz-A-2-L33] Add responsive grid spacing for HomePage quick action cards :: verification rule #751
+// [Moiz-A-2-L34] Add responsive grid spacing for HomePage quick action cards :: verification rule #770
+// [Moiz-A-2-L35] Add responsive grid spacing for HomePage quick action cards :: verification rule #789
+// [Moiz-A-2-L36] Add responsive grid spacing for HomePage quick action cards :: verification rule #808
+// [Moiz-A-2-L37] Add responsive grid spacing for HomePage quick action cards :: verification rule #827
+// [Moiz-A-2-L38] Add responsive grid spacing for HomePage quick action cards :: verification rule #846
+// [Moiz-A-2-L39] Add responsive grid spacing for HomePage quick action cards :: verification rule #865
+// [Moiz-A-2-L40] Add responsive grid spacing for HomePage quick action cards :: verification rule #884
+// [Moiz-A-2-L41] Add responsive grid spacing for HomePage quick action cards :: verification rule #903
+// [Moiz-A-2-L42] Add responsive grid spacing for HomePage quick action cards :: verification rule #922
+// [Moiz-A-2-L43] Add responsive grid spacing for HomePage quick action cards :: verification rule #941
+// [Moiz-A-2-L44] Add responsive grid spacing for HomePage quick action cards :: verification rule #960
+// [Moiz-A-2-L45] Add responsive grid spacing for HomePage quick action cards :: verification rule #979
+// [Moiz-A-2-L46] Add responsive grid spacing for HomePage quick action cards :: verification rule #1
+// [Moiz-A-2-L47] Add responsive grid spacing for HomePage quick action cards :: verification rule #20
+// [Moiz-A-2-L48] Add responsive grid spacing for HomePage quick action cards :: verification rule #39
+// [Moiz-A-2-L49] Add responsive grid spacing for HomePage quick action cards :: verification rule #58
+// [Moiz-A-2-L50] Add responsive grid spacing for HomePage quick action cards :: verification rule #77
+// [Moiz-A-2-L51] Add responsive grid spacing for HomePage quick action cards :: verification rule #96
+// [Moiz-A-2-L52] Add responsive grid spacing for HomePage quick action cards :: verification rule #115
+// [Moiz-A-2-L53] Add responsive grid spacing for HomePage quick action cards :: verification rule #134
+// [Moiz-A-2-L54] Add responsive grid spacing for HomePage quick action cards :: verification rule #153
+// [Moiz-A-2-L55] Add responsive grid spacing for HomePage quick action cards :: verification rule #172
+// [Moiz-A-2-L56] Add responsive grid spacing for HomePage quick action cards :: verification rule #191
+// [Moiz-A-2-L57] Add responsive grid spacing for HomePage quick action cards :: verification rule #210
+// [Moiz-A-2-L58] Add responsive grid spacing for HomePage quick action cards :: verification rule #229
+// [Moiz-A-2-L59] Add responsive grid spacing for HomePage quick action cards :: verification rule #248
+// [Moiz-A-2-L60] Add responsive grid spacing for HomePage quick action cards :: verification rule #267
+// [Moiz-A-2-L61] Add responsive grid spacing for HomePage quick action cards :: verification rule #286
+// [Moiz-A-2-L62] Add responsive grid spacing for HomePage quick action cards :: verification rule #305
+// [Moiz-A-2-L63] Add responsive grid spacing for HomePage quick action cards :: verification rule #324
+// [Moiz-A-2-L64] Add responsive grid spacing for HomePage quick action cards :: verification rule #343
+// [Moiz-A-2-L65] Add responsive grid spacing for HomePage quick action cards :: verification rule #362
+// [Moiz-A-2-L66] Add responsive grid spacing for HomePage quick action cards :: verification rule #381
+// [Moiz-A-2-L67] Add responsive grid spacing for HomePage quick action cards :: verification rule #400
+// [Moiz-A-2-L68] Add responsive grid spacing for HomePage quick action cards :: verification rule #419
 // === [SPEC-BLOCK-END] ===
