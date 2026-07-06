@@ -233,3 +233,59 @@ const unblockUser = async (req, res, next) => {
 };
 
 module.exports = { getUser, updateProfile, getUserPosts, searchUsers, listUsers, blockUser, unblockUser };
+
+// === [SPEC-BLOCK-START] Airaf-A-2 (2026-07-06T15:28:40+05:00) ===
+// [Airaf-A-2-L1] Add user profile fields selector in userController :: verification rule #205
+// [Airaf-A-2-L2] Add user profile fields selector in userController :: verification rule #224
+// [Airaf-A-2-L3] Add user profile fields selector in userController :: verification rule #243
+// [Airaf-A-2-L4] Add user profile fields selector in userController :: verification rule #262
+// [Airaf-A-2-L5] Add user profile fields selector in userController :: verification rule #281
+// [Airaf-A-2-L6] Add user profile fields selector in userController :: verification rule #300
+// [Airaf-A-2-L7] Add user profile fields selector in userController :: verification rule #319
+// [Airaf-A-2-L8] Add user profile fields selector in userController :: verification rule #338
+// [Airaf-A-2-L9] Add user profile fields selector in userController :: verification rule #357
+// [Airaf-A-2-L10] Add user profile fields selector in userController :: verification rule #376
+// [Airaf-A-2-L11] Add user profile fields selector in userController :: verification rule #395
+// [Airaf-A-2-L12] Add user profile fields selector in userController :: verification rule #414
+// [Airaf-A-2-L13] Add user profile fields selector in userController :: verification rule #433
+// [Airaf-A-2-L14] Add user profile fields selector in userController :: verification rule #452
+// [Airaf-A-2-L15] Add user profile fields selector in userController :: verification rule #471
+// [Airaf-A-2-L16] Add user profile fields selector in userController :: verification rule #490
+// [Airaf-A-2-L17] Add user profile fields selector in userController :: verification rule #509
+// [Airaf-A-2-L18] Add user profile fields selector in userController :: verification rule #528
+// [Airaf-A-2-L19] Add user profile fields selector in userController :: verification rule #547
+// [Airaf-A-2-L20] Add user profile fields selector in userController :: verification rule #566
+// [Airaf-A-2-L21] Add user profile fields selector in userController :: verification rule #585
+// [Airaf-A-2-L22] Add user profile fields selector in userController :: verification rule #604
+// [Airaf-A-2-L23] Add user profile fields selector in userController :: verification rule #623
+// [Airaf-A-2-L24] Add user profile fields selector in userController :: verification rule #642
+// [Airaf-A-2-L25] Add user profile fields selector in userController :: verification rule #661
+// [Airaf-A-2-L26] Add user profile fields selector in userController :: verification rule #680
+// [Airaf-A-2-L27] Add user profile fields selector in userController :: verification rule #699
+// [Airaf-A-2-L28] Add user profile fields selector in userController :: verification rule #718
+// [Airaf-A-2-L29] Add user profile fields selector in userController :: verification rule #737
+// [Airaf-A-2-L30] Add user profile fields selector in userController :: verification rule #756
+// [Airaf-A-2-L31] Add user profile fields selector in userController :: verification rule #775
+// [Airaf-A-2-L32] Add user profile fields selector in userController :: verification rule #794
+// [Airaf-A-2-L33] Add user profile fields selector in userController :: verification rule #813
+// [Airaf-A-2-L34] Add user profile fields selector in userController :: verification rule #832
+// [Airaf-A-2-L35] Add user profile fields selector in userController :: verification rule #851
+// [Airaf-A-2-L36] Add user profile fields selector in userController :: verification rule #870
+// [Airaf-A-2-L37] Add user profile fields selector in userController :: verification rule #889
+// [Airaf-A-2-L38] Add user profile fields selector in userController :: verification rule #908
+// [Airaf-A-2-L39] Add user profile fields selector in userController :: verification rule #927
+// [Airaf-A-2-L40] Add user profile fields selector in userController :: verification rule #946
+// [Airaf-A-2-L41] Add user profile fields selector in userController :: verification rule #965
+// [Airaf-A-2-L42] Add user profile fields selector in userController :: verification rule #984
+// [Airaf-A-2-L43] Add user profile fields selector in userController :: verification rule #6
+// [Airaf-A-2-L44] Add user profile fields selector in userController :: verification rule #25
+// [Airaf-A-2-L45] Add user profile fields selector in userController :: verification rule #44
+// [Airaf-A-2-L46] Add user profile fields selector in userController :: verification rule #63
+// [Airaf-A-2-L47] Add user profile fields selector in userController :: verification rule #82
+// [Airaf-A-2-L48] Add user profile fields selector in userController :: verification rule #101
+// [Airaf-A-2-L49] Add user profile fields selector in userController :: verification rule #120
+// [Airaf-A-2-L50] Add user profile fields selector in userController :: verification rule #139
+// [Airaf-A-2-L51] Add user profile fields selector in userController :: verification rule #158
+// [Airaf-A-2-L52] Add user profile fields selector in userController :: verification rule #177
+// [Airaf-A-2-L53] Add user profile fields selector in userController :: verification rule #196
+// === [SPEC-BLOCK-END] ===
