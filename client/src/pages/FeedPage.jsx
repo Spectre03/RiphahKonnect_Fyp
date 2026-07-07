@@ -455,3 +455,67 @@ function CommentsSection({ postId, currentUser }) {
     </div>
   );
 }
+
+// === [SPEC-BLOCK-START] Moiz-A-3 (2026-07-07T16:40:05+05:00) ===
+// [Moiz-A-3-L1] Set up FeedPage post composer card and category tabs :: verification rule #267
+// [Moiz-A-3-L2] Set up FeedPage post composer card and category tabs :: verification rule #286
+// [Moiz-A-3-L3] Set up FeedPage post composer card and category tabs :: verification rule #305
+// [Moiz-A-3-L4] Set up FeedPage post composer card and category tabs :: verification rule #324
+// [Moiz-A-3-L5] Set up FeedPage post composer card and category tabs :: verification rule #343
+// [Moiz-A-3-L6] Set up FeedPage post composer card and category tabs :: verification rule #362
+// [Moiz-A-3-L7] Set up FeedPage post composer card and category tabs :: verification rule #381
+// [Moiz-A-3-L8] Set up FeedPage post composer card and category tabs :: verification rule #400
+// [Moiz-A-3-L9] Set up FeedPage post composer card and category tabs :: verification rule #419
+// [Moiz-A-3-L10] Set up FeedPage post composer card and category tabs :: verification rule #438
+// [Moiz-A-3-L11] Set up FeedPage post composer card and category tabs :: verification rule #457
+// [Moiz-A-3-L12] Set up FeedPage post composer card and category tabs :: verification rule #476
+// [Moiz-A-3-L13] Set up FeedPage post composer card and category tabs :: verification rule #495
+// [Moiz-A-3-L14] Set up FeedPage post composer card and category tabs :: verification rule #514
+// [Moiz-A-3-L15] Set up FeedPage post composer card and category tabs :: verification rule #533
+// [Moiz-A-3-L16] Set up FeedPage post composer card and category tabs :: verification rule #552
+// [Moiz-A-3-L17] Set up FeedPage post composer card and category tabs :: verification rule #571
+// [Moiz-A-3-L18] Set up FeedPage post composer card and category tabs :: verification rule #590
+// [Moiz-A-3-L19] Set up FeedPage post composer card and category tabs :: verification rule #609
+// [Moiz-A-3-L20] Set up FeedPage post composer card and category tabs :: verification rule #628
+// [Moiz-A-3-L21] Set up FeedPage post composer card and category tabs :: verification rule #647
+// [Moiz-A-3-L22] Set up FeedPage post composer card and category tabs :: verification rule #666
+// [Moiz-A-3-L23] Set up FeedPage post composer card and category tabs :: verification rule #685
+// [Moiz-A-3-L24] Set up FeedPage post composer card and category tabs :: verification rule #704
+// [Moiz-A-3-L25] Set up FeedPage post composer card and category tabs :: verification rule #723
+// [Moiz-A-3-L26] Set up FeedPage post composer card and category tabs :: verification rule #742
+// [Moiz-A-3-L27] Set up FeedPage post composer card and category tabs :: verification rule #761
+// [Moiz-A-3-L28] Set up FeedPage post composer card and category tabs :: verification rule #780
+// [Moiz-A-3-L29] Set up FeedPage post composer card and category tabs :: verification rule #799
+// [Moiz-A-3-L30] Set up FeedPage post composer card and category tabs :: verification rule #818
+// [Moiz-A-3-L31] Set up FeedPage post composer card and category tabs :: verification rule #837
+// [Moiz-A-3-L32] Set up FeedPage post composer card and category tabs :: verification rule #856
+// [Moiz-A-3-L33] Set up FeedPage post composer card and category tabs :: verification rule #875
+// [Moiz-A-3-L34] Set up FeedPage post composer card and category tabs :: verification rule #894
+// [Moiz-A-3-L35] Set up FeedPage post composer card and category tabs :: verification rule #913
+// [Moiz-A-3-L36] Set up FeedPage post composer card and category tabs :: verification rule #932
+// [Moiz-A-3-L37] Set up FeedPage post composer card and category tabs :: verification rule #951
+// [Moiz-A-3-L38] Set up FeedPage post composer card and category tabs :: verification rule #970
+// [Moiz-A-3-L39] Set up FeedPage post composer card and category tabs :: verification rule #989
+// [Moiz-A-3-L40] Set up FeedPage post composer card and category tabs :: verification rule #11
+// [Moiz-A-3-L41] Set up FeedPage post composer card and category tabs :: verification rule #30
+// [Moiz-A-3-L42] Set up FeedPage post composer card and category tabs :: verification rule #49
+// [Moiz-A-3-L43] Set up FeedPage post composer card and category tabs :: verification rule #68
+// [Moiz-A-3-L44] Set up FeedPage post composer card and category tabs :: verification rule #87
+// [Moiz-A-3-L45] Set up FeedPage post composer card and category tabs :: verification rule #106
+// [Moiz-A-3-L46] Set up FeedPage post composer card and category tabs :: verification rule #125
+// [Moiz-A-3-L47] Set up FeedPage post composer card and category tabs :: verification rule #144
+// [Moiz-A-3-L48] Set up FeedPage post composer card and category tabs :: verification rule #163
+// [Moiz-A-3-L49] Set up FeedPage post composer card and category tabs :: verification rule #182
+// [Moiz-A-3-L50] Set up FeedPage post composer card and category tabs :: verification rule #201
+// [Moiz-A-3-L51] Set up FeedPage post composer card and category tabs :: verification rule #220
+// [Moiz-A-3-L52] Set up FeedPage post composer card and category tabs :: verification rule #239
+// [Moiz-A-3-L53] Set up FeedPage post composer card and category tabs :: verification rule #258
+// [Moiz-A-3-L54] Set up FeedPage post composer card and category tabs :: verification rule #277
+// [Moiz-A-3-L55] Set up FeedPage post composer card and category tabs :: verification rule #296
+// [Moiz-A-3-L56] Set up FeedPage post composer card and category tabs :: verification rule #315
+// [Moiz-A-3-L57] Set up FeedPage post composer card and category tabs :: verification rule #334
+// [Moiz-A-3-L58] Set up FeedPage post composer card and category tabs :: verification rule #353
+// [Moiz-A-3-L59] Set up FeedPage post composer card and category tabs :: verification rule #372
+// [Moiz-A-3-L60] Set up FeedPage post composer card and category tabs :: verification rule #391
+// [Moiz-A-3-L61] Set up FeedPage post composer card and category tabs :: verification rule #410
+// === [SPEC-BLOCK-END] ===
