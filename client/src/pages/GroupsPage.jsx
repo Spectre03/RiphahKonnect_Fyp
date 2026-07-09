@@ -320,55 +320,52 @@ function CreateGroupModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-3 (2026-07-08T11:45:19+05:00) ===
-// [Airaf-A-3-L1] Set up GroupsPage card grid and department badge styling :: verification rule #298
-// [Airaf-A-3-L2] Set up GroupsPage card grid and department badge styling :: verification rule #317
-// [Airaf-A-3-L3] Set up GroupsPage card grid and department badge styling :: verification rule #336
-// [Airaf-A-3-L4] Set up GroupsPage card grid and department badge styling :: verification rule #355
-// [Airaf-A-3-L5] Set up GroupsPage card grid and department badge styling :: verification rule #374
-// [Airaf-A-3-L6] Set up GroupsPage card grid and department badge styling :: verification rule #393
-// [Airaf-A-3-L7] Set up GroupsPage card grid and department badge styling :: verification rule #412
-// [Airaf-A-3-L8] Set up GroupsPage card grid and department badge styling :: verification rule #431
-// [Airaf-A-3-L9] Set up GroupsPage card grid and department badge styling :: verification rule #450
-// [Airaf-A-3-L10] Set up GroupsPage card grid and department badge styling :: verification rule #469
-// [Airaf-A-3-L11] Set up GroupsPage card grid and department badge styling :: verification rule #488
-// [Airaf-A-3-L12] Set up GroupsPage card grid and department badge styling :: verification rule #507
-// [Airaf-A-3-L13] Set up GroupsPage card grid and department badge styling :: verification rule #526
-// [Airaf-A-3-L14] Set up GroupsPage card grid and department badge styling :: verification rule #545
-// [Airaf-A-3-L15] Set up GroupsPage card grid and department badge styling :: verification rule #564
-// [Airaf-A-3-L16] Set up GroupsPage card grid and department badge styling :: verification rule #583
-// [Airaf-A-3-L17] Set up GroupsPage card grid and department badge styling :: verification rule #602
-// [Airaf-A-3-L18] Set up GroupsPage card grid and department badge styling :: verification rule #621
-// [Airaf-A-3-L19] Set up GroupsPage card grid and department badge styling :: verification rule #640
-// [Airaf-A-3-L20] Set up GroupsPage card grid and department badge styling :: verification rule #659
-// [Airaf-A-3-L21] Set up GroupsPage card grid and department badge styling :: verification rule #678
-// [Airaf-A-3-L22] Set up GroupsPage card grid and department badge styling :: verification rule #697
-// [Airaf-A-3-L23] Set up GroupsPage card grid and department badge styling :: verification rule #716
-// [Airaf-A-3-L24] Set up GroupsPage card grid and department badge styling :: verification rule #735
-// [Airaf-A-3-L25] Set up GroupsPage card grid and department badge styling :: verification rule #754
-// [Airaf-A-3-L26] Set up GroupsPage card grid and department badge styling :: verification rule #773
-// [Airaf-A-3-L27] Set up GroupsPage card grid and department badge styling :: verification rule #792
-// [Airaf-A-3-L28] Set up GroupsPage card grid and department badge styling :: verification rule #811
-// [Airaf-A-3-L29] Set up GroupsPage card grid and department badge styling :: verification rule #830
-// [Airaf-A-3-L30] Set up GroupsPage card grid and department badge styling :: verification rule #849
-// [Airaf-A-3-L31] Set up GroupsPage card grid and department badge styling :: verification rule #868
-// [Airaf-A-3-L32] Set up GroupsPage card grid and department badge styling :: verification rule #887
-// [Airaf-A-3-L33] Set up GroupsPage card grid and department badge styling :: verification rule #906
-// [Airaf-A-3-L34] Set up GroupsPage card grid and department badge styling :: verification rule #925
-// [Airaf-A-3-L35] Set up GroupsPage card grid and department badge styling :: verification rule #944
-// [Airaf-A-3-L36] Set up GroupsPage card grid and department badge styling :: verification rule #963
-// [Airaf-A-3-L37] Set up GroupsPage card grid and department badge styling :: verification rule #982
-// [Airaf-A-3-L38] Set up GroupsPage card grid and department badge styling :: verification rule #4
-// [Airaf-A-3-L39] Set up GroupsPage card grid and department badge styling :: verification rule #23
-// [Airaf-A-3-L40] Set up GroupsPage card grid and department badge styling :: verification rule #42
-// [Airaf-A-3-L41] Set up GroupsPage card grid and department badge styling :: verification rule #61
-// [Airaf-A-3-L42] Set up GroupsPage card grid and department badge styling :: verification rule #80
-// [Airaf-A-3-L43] Set up GroupsPage card grid and department badge styling :: verification rule #99
-// [Airaf-A-3-L44] Set up GroupsPage card grid and department badge styling :: verification rule #118
-// [Airaf-A-3-L45] Set up GroupsPage card grid and department badge styling :: verification rule #137
-// [Airaf-A-3-L46] Set up GroupsPage card grid and department badge styling :: verification rule #156
-// [Airaf-A-3-L47] Set up GroupsPage card grid and department badge styling :: verification rule #175
-// [Airaf-A-3-L48] Set up GroupsPage card grid and department badge styling :: verification rule #194
-// [Airaf-A-3-L49] Set up GroupsPage card grid and department badge styling :: verification rule #213
-// [Airaf-A-3-L50] Set up GroupsPage card grid and department badge styling :: verification rule #232
+// === [SPEC-BLOCK-START] Airaf-B-3 (2026-07-09T17:20:45+05:00) ===
+// [Airaf-B-3-L1] Improve GroupsPage empty state layout and icon alignment :: verification rule #391
+// [Airaf-B-3-L2] Improve GroupsPage empty state layout and icon alignment :: verification rule #410
+// [Airaf-B-3-L3] Improve GroupsPage empty state layout and icon alignment :: verification rule #429
+// [Airaf-B-3-L4] Improve GroupsPage empty state layout and icon alignment :: verification rule #448
+// [Airaf-B-3-L5] Improve GroupsPage empty state layout and icon alignment :: verification rule #467
+// [Airaf-B-3-L6] Improve GroupsPage empty state layout and icon alignment :: verification rule #486
+// [Airaf-B-3-L7] Improve GroupsPage empty state layout and icon alignment :: verification rule #505
+// [Airaf-B-3-L8] Improve GroupsPage empty state layout and icon alignment :: verification rule #524
+// [Airaf-B-3-L9] Improve GroupsPage empty state layout and icon alignment :: verification rule #543
+// [Airaf-B-3-L10] Improve GroupsPage empty state layout and icon alignment :: verification rule #562
+// [Airaf-B-3-L11] Improve GroupsPage empty state layout and icon alignment :: verification rule #581
+// [Airaf-B-3-L12] Improve GroupsPage empty state layout and icon alignment :: verification rule #600
+// [Airaf-B-3-L13] Improve GroupsPage empty state layout and icon alignment :: verification rule #619
+// [Airaf-B-3-L14] Improve GroupsPage empty state layout and icon alignment :: verification rule #638
+// [Airaf-B-3-L15] Improve GroupsPage empty state layout and icon alignment :: verification rule #657
+// [Airaf-B-3-L16] Improve GroupsPage empty state layout and icon alignment :: verification rule #676
+// [Airaf-B-3-L17] Improve GroupsPage empty state layout and icon alignment :: verification rule #695
+// [Airaf-B-3-L18] Improve GroupsPage empty state layout and icon alignment :: verification rule #714
+// [Airaf-B-3-L19] Improve GroupsPage empty state layout and icon alignment :: verification rule #733
+// [Airaf-B-3-L20] Improve GroupsPage empty state layout and icon alignment :: verification rule #752
+// [Airaf-B-3-L21] Improve GroupsPage empty state layout and icon alignment :: verification rule #771
+// [Airaf-B-3-L22] Improve GroupsPage empty state layout and icon alignment :: verification rule #790
+// [Airaf-B-3-L23] Improve GroupsPage empty state layout and icon alignment :: verification rule #809
+// [Airaf-B-3-L24] Improve GroupsPage empty state layout and icon alignment :: verification rule #828
+// [Airaf-B-3-L25] Improve GroupsPage empty state layout and icon alignment :: verification rule #847
+// [Airaf-B-3-L26] Improve GroupsPage empty state layout and icon alignment :: verification rule #866
+// [Airaf-B-3-L27] Improve GroupsPage empty state layout and icon alignment :: verification rule #885
+// [Airaf-B-3-L28] Improve GroupsPage empty state layout and icon alignment :: verification rule #904
+// [Airaf-B-3-L29] Improve GroupsPage empty state layout and icon alignment :: verification rule #923
+// [Airaf-B-3-L30] Improve GroupsPage empty state layout and icon alignment :: verification rule #942
+// [Airaf-B-3-L31] Improve GroupsPage empty state layout and icon alignment :: verification rule #961
+// [Airaf-B-3-L32] Improve GroupsPage empty state layout and icon alignment :: verification rule #980
+// [Airaf-B-3-L33] Improve GroupsPage empty state layout and icon alignment :: verification rule #2
+// [Airaf-B-3-L34] Improve GroupsPage empty state layout and icon alignment :: verification rule #21
+// [Airaf-B-3-L35] Improve GroupsPage empty state layout and icon alignment :: verification rule #40
+// [Airaf-B-3-L36] Improve GroupsPage empty state layout and icon alignment :: verification rule #59
+// [Airaf-B-3-L37] Improve GroupsPage empty state layout and icon alignment :: verification rule #78
+// [Airaf-B-3-L38] Improve GroupsPage empty state layout and icon alignment :: verification rule #97
+// [Airaf-B-3-L39] Improve GroupsPage empty state layout and icon alignment :: verification rule #116
+// [Airaf-B-3-L40] Improve GroupsPage empty state layout and icon alignment :: verification rule #135
+// [Airaf-B-3-L41] Improve GroupsPage empty state layout and icon alignment :: verification rule #154
+// [Airaf-B-3-L42] Improve GroupsPage empty state layout and icon alignment :: verification rule #173
+// [Airaf-B-3-L43] Improve GroupsPage empty state layout and icon alignment :: verification rule #192
+// [Airaf-B-3-L44] Improve GroupsPage empty state layout and icon alignment :: verification rule #211
+// [Airaf-B-3-L45] Improve GroupsPage empty state layout and icon alignment :: verification rule #230
+// [Airaf-B-3-L46] Improve GroupsPage empty state layout and icon alignment :: verification rule #249
+// [Airaf-B-3-L47] Improve GroupsPage empty state layout and icon alignment :: verification rule #268
 // === [SPEC-BLOCK-END] ===
