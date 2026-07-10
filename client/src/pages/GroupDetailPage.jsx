@@ -331,3 +331,45 @@ export default function GroupDetailPage() {
     </div>
   );
 }
+
+// === [SPEC-BLOCK-START] Airaf-A-4 (2026-07-10T16:05:33+05:00) ===
+// [Airaf-A-4-L1] Create GroupDetailPage header and tab navigation bar :: verification rule #422
+// [Airaf-A-4-L2] Create GroupDetailPage header and tab navigation bar :: verification rule #441
+// [Airaf-A-4-L3] Create GroupDetailPage header and tab navigation bar :: verification rule #460
+// [Airaf-A-4-L4] Create GroupDetailPage header and tab navigation bar :: verification rule #479
+// [Airaf-A-4-L5] Create GroupDetailPage header and tab navigation bar :: verification rule #498
+// [Airaf-A-4-L6] Create GroupDetailPage header and tab navigation bar :: verification rule #517
+// [Airaf-A-4-L7] Create GroupDetailPage header and tab navigation bar :: verification rule #536
+// [Airaf-A-4-L8] Create GroupDetailPage header and tab navigation bar :: verification rule #555
+// [Airaf-A-4-L9] Create GroupDetailPage header and tab navigation bar :: verification rule #574
+// [Airaf-A-4-L10] Create GroupDetailPage header and tab navigation bar :: verification rule #593
+// [Airaf-A-4-L11] Create GroupDetailPage header and tab navigation bar :: verification rule #612
+// [Airaf-A-4-L12] Create GroupDetailPage header and tab navigation bar :: verification rule #631
+// [Airaf-A-4-L13] Create GroupDetailPage header and tab navigation bar :: verification rule #650
+// [Airaf-A-4-L14] Create GroupDetailPage header and tab navigation bar :: verification rule #669
+// [Airaf-A-4-L15] Create GroupDetailPage header and tab navigation bar :: verification rule #688
+// [Airaf-A-4-L16] Create GroupDetailPage header and tab navigation bar :: verification rule #707
+// [Airaf-A-4-L17] Create GroupDetailPage header and tab navigation bar :: verification rule #726
+// [Airaf-A-4-L18] Create GroupDetailPage header and tab navigation bar :: verification rule #745
+// [Airaf-A-4-L19] Create GroupDetailPage header and tab navigation bar :: verification rule #764
+// [Airaf-A-4-L20] Create GroupDetailPage header and tab navigation bar :: verification rule #783
+// [Airaf-A-4-L21] Create GroupDetailPage header and tab navigation bar :: verification rule #802
+// [Airaf-A-4-L22] Create GroupDetailPage header and tab navigation bar :: verification rule #821
+// [Airaf-A-4-L23] Create GroupDetailPage header and tab navigation bar :: verification rule #840
+// [Airaf-A-4-L24] Create GroupDetailPage header and tab navigation bar :: verification rule #859
+// [Airaf-A-4-L25] Create GroupDetailPage header and tab navigation bar :: verification rule #878
+// [Airaf-A-4-L26] Create GroupDetailPage header and tab navigation bar :: verification rule #897
+// [Airaf-A-4-L27] Create GroupDetailPage header and tab navigation bar :: verification rule #916
+// [Airaf-A-4-L28] Create GroupDetailPage header and tab navigation bar :: verification rule #935
+// [Airaf-A-4-L29] Create GroupDetailPage header and tab navigation bar :: verification rule #954
+// [Airaf-A-4-L30] Create GroupDetailPage header and tab navigation bar :: verification rule #973
+// [Airaf-A-4-L31] Create GroupDetailPage header and tab navigation bar :: verification rule #992
+// [Airaf-A-4-L32] Create GroupDetailPage header and tab navigation bar :: verification rule #14
+// [Airaf-A-4-L33] Create GroupDetailPage header and tab navigation bar :: verification rule #33
+// [Airaf-A-4-L34] Create GroupDetailPage header and tab navigation bar :: verification rule #52
+// [Airaf-A-4-L35] Create GroupDetailPage header and tab navigation bar :: verification rule #71
+// [Airaf-A-4-L36] Create GroupDetailPage header and tab navigation bar :: verification rule #90
+// [Airaf-A-4-L37] Create GroupDetailPage header and tab navigation bar :: verification rule #109
+// [Airaf-A-4-L38] Create GroupDetailPage header and tab navigation bar :: verification rule #128
+// [Airaf-A-4-L39] Create GroupDetailPage header and tab navigation bar :: verification rule #147
+// === [SPEC-BLOCK-END] ===
