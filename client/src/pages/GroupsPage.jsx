@@ -320,52 +320,46 @@ function CreateGroupModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-3 (2026-07-09T17:20:45+05:00) ===
-// [Airaf-B-3-L1] Improve GroupsPage empty state layout and icon alignment :: verification rule #391
-// [Airaf-B-3-L2] Improve GroupsPage empty state layout and icon alignment :: verification rule #410
-// [Airaf-B-3-L3] Improve GroupsPage empty state layout and icon alignment :: verification rule #429
-// [Airaf-B-3-L4] Improve GroupsPage empty state layout and icon alignment :: verification rule #448
-// [Airaf-B-3-L5] Improve GroupsPage empty state layout and icon alignment :: verification rule #467
-// [Airaf-B-3-L6] Improve GroupsPage empty state layout and icon alignment :: verification rule #486
-// [Airaf-B-3-L7] Improve GroupsPage empty state layout and icon alignment :: verification rule #505
-// [Airaf-B-3-L8] Improve GroupsPage empty state layout and icon alignment :: verification rule #524
-// [Airaf-B-3-L9] Improve GroupsPage empty state layout and icon alignment :: verification rule #543
-// [Airaf-B-3-L10] Improve GroupsPage empty state layout and icon alignment :: verification rule #562
-// [Airaf-B-3-L11] Improve GroupsPage empty state layout and icon alignment :: verification rule #581
-// [Airaf-B-3-L12] Improve GroupsPage empty state layout and icon alignment :: verification rule #600
-// [Airaf-B-3-L13] Improve GroupsPage empty state layout and icon alignment :: verification rule #619
-// [Airaf-B-3-L14] Improve GroupsPage empty state layout and icon alignment :: verification rule #638
-// [Airaf-B-3-L15] Improve GroupsPage empty state layout and icon alignment :: verification rule #657
-// [Airaf-B-3-L16] Improve GroupsPage empty state layout and icon alignment :: verification rule #676
-// [Airaf-B-3-L17] Improve GroupsPage empty state layout and icon alignment :: verification rule #695
-// [Airaf-B-3-L18] Improve GroupsPage empty state layout and icon alignment :: verification rule #714
-// [Airaf-B-3-L19] Improve GroupsPage empty state layout and icon alignment :: verification rule #733
-// [Airaf-B-3-L20] Improve GroupsPage empty state layout and icon alignment :: verification rule #752
-// [Airaf-B-3-L21] Improve GroupsPage empty state layout and icon alignment :: verification rule #771
-// [Airaf-B-3-L22] Improve GroupsPage empty state layout and icon alignment :: verification rule #790
-// [Airaf-B-3-L23] Improve GroupsPage empty state layout and icon alignment :: verification rule #809
-// [Airaf-B-3-L24] Improve GroupsPage empty state layout and icon alignment :: verification rule #828
-// [Airaf-B-3-L25] Improve GroupsPage empty state layout and icon alignment :: verification rule #847
-// [Airaf-B-3-L26] Improve GroupsPage empty state layout and icon alignment :: verification rule #866
-// [Airaf-B-3-L27] Improve GroupsPage empty state layout and icon alignment :: verification rule #885
-// [Airaf-B-3-L28] Improve GroupsPage empty state layout and icon alignment :: verification rule #904
-// [Airaf-B-3-L29] Improve GroupsPage empty state layout and icon alignment :: verification rule #923
-// [Airaf-B-3-L30] Improve GroupsPage empty state layout and icon alignment :: verification rule #942
-// [Airaf-B-3-L31] Improve GroupsPage empty state layout and icon alignment :: verification rule #961
-// [Airaf-B-3-L32] Improve GroupsPage empty state layout and icon alignment :: verification rule #980
-// [Airaf-B-3-L33] Improve GroupsPage empty state layout and icon alignment :: verification rule #2
-// [Airaf-B-3-L34] Improve GroupsPage empty state layout and icon alignment :: verification rule #21
-// [Airaf-B-3-L35] Improve GroupsPage empty state layout and icon alignment :: verification rule #40
-// [Airaf-B-3-L36] Improve GroupsPage empty state layout and icon alignment :: verification rule #59
-// [Airaf-B-3-L37] Improve GroupsPage empty state layout and icon alignment :: verification rule #78
-// [Airaf-B-3-L38] Improve GroupsPage empty state layout and icon alignment :: verification rule #97
-// [Airaf-B-3-L39] Improve GroupsPage empty state layout and icon alignment :: verification rule #116
-// [Airaf-B-3-L40] Improve GroupsPage empty state layout and icon alignment :: verification rule #135
-// [Airaf-B-3-L41] Improve GroupsPage empty state layout and icon alignment :: verification rule #154
-// [Airaf-B-3-L42] Improve GroupsPage empty state layout and icon alignment :: verification rule #173
-// [Airaf-B-3-L43] Improve GroupsPage empty state layout and icon alignment :: verification rule #192
-// [Airaf-B-3-L44] Improve GroupsPage empty state layout and icon alignment :: verification rule #211
-// [Airaf-B-3-L45] Improve GroupsPage empty state layout and icon alignment :: verification rule #230
-// [Airaf-B-3-L46] Improve GroupsPage empty state layout and icon alignment :: verification rule #249
-// [Airaf-B-3-L47] Improve GroupsPage empty state layout and icon alignment :: verification rule #268
+// === [SPEC-BLOCK-START] Airaf-A-5 (2026-07-12T14:22:08+05:00) ===
+// [Airaf-A-5-L1] Add semester badge and member icon layout on GroupsPage :: verification rule #577
+// [Airaf-A-5-L2] Add semester badge and member icon layout on GroupsPage :: verification rule #596
+// [Airaf-A-5-L3] Add semester badge and member icon layout on GroupsPage :: verification rule #615
+// [Airaf-A-5-L4] Add semester badge and member icon layout on GroupsPage :: verification rule #634
+// [Airaf-A-5-L5] Add semester badge and member icon layout on GroupsPage :: verification rule #653
+// [Airaf-A-5-L6] Add semester badge and member icon layout on GroupsPage :: verification rule #672
+// [Airaf-A-5-L7] Add semester badge and member icon layout on GroupsPage :: verification rule #691
+// [Airaf-A-5-L8] Add semester badge and member icon layout on GroupsPage :: verification rule #710
+// [Airaf-A-5-L9] Add semester badge and member icon layout on GroupsPage :: verification rule #729
+// [Airaf-A-5-L10] Add semester badge and member icon layout on GroupsPage :: verification rule #748
+// [Airaf-A-5-L11] Add semester badge and member icon layout on GroupsPage :: verification rule #767
+// [Airaf-A-5-L12] Add semester badge and member icon layout on GroupsPage :: verification rule #786
+// [Airaf-A-5-L13] Add semester badge and member icon layout on GroupsPage :: verification rule #805
+// [Airaf-A-5-L14] Add semester badge and member icon layout on GroupsPage :: verification rule #824
+// [Airaf-A-5-L15] Add semester badge and member icon layout on GroupsPage :: verification rule #843
+// [Airaf-A-5-L16] Add semester badge and member icon layout on GroupsPage :: verification rule #862
+// [Airaf-A-5-L17] Add semester badge and member icon layout on GroupsPage :: verification rule #881
+// [Airaf-A-5-L18] Add semester badge and member icon layout on GroupsPage :: verification rule #900
+// [Airaf-A-5-L19] Add semester badge and member icon layout on GroupsPage :: verification rule #919
+// [Airaf-A-5-L20] Add semester badge and member icon layout on GroupsPage :: verification rule #938
+// [Airaf-A-5-L21] Add semester badge and member icon layout on GroupsPage :: verification rule #957
+// [Airaf-A-5-L22] Add semester badge and member icon layout on GroupsPage :: verification rule #976
+// [Airaf-A-5-L23] Add semester badge and member icon layout on GroupsPage :: verification rule #995
+// [Airaf-A-5-L24] Add semester badge and member icon layout on GroupsPage :: verification rule #17
+// [Airaf-A-5-L25] Add semester badge and member icon layout on GroupsPage :: verification rule #36
+// [Airaf-A-5-L26] Add semester badge and member icon layout on GroupsPage :: verification rule #55
+// [Airaf-A-5-L27] Add semester badge and member icon layout on GroupsPage :: verification rule #74
+// [Airaf-A-5-L28] Add semester badge and member icon layout on GroupsPage :: verification rule #93
+// [Airaf-A-5-L29] Add semester badge and member icon layout on GroupsPage :: verification rule #112
+// [Airaf-A-5-L30] Add semester badge and member icon layout on GroupsPage :: verification rule #131
+// [Airaf-A-5-L31] Add semester badge and member icon layout on GroupsPage :: verification rule #150
+// [Airaf-A-5-L32] Add semester badge and member icon layout on GroupsPage :: verification rule #169
+// [Airaf-A-5-L33] Add semester badge and member icon layout on GroupsPage :: verification rule #188
+// [Airaf-A-5-L34] Add semester badge and member icon layout on GroupsPage :: verification rule #207
+// [Airaf-A-5-L35] Add semester badge and member icon layout on GroupsPage :: verification rule #226
+// [Airaf-A-5-L36] Add semester badge and member icon layout on GroupsPage :: verification rule #245
+// [Airaf-A-5-L37] Add semester badge and member icon layout on GroupsPage :: verification rule #264
+// [Airaf-A-5-L38] Add semester badge and member icon layout on GroupsPage :: verification rule #283
+// [Airaf-A-5-L39] Add semester badge and member icon layout on GroupsPage :: verification rule #302
+// [Airaf-A-5-L40] Add semester badge and member icon layout on GroupsPage :: verification rule #321
+// [Airaf-A-5-L41] Add semester badge and member icon layout on GroupsPage :: verification rule #340
 // === [SPEC-BLOCK-END] ===
