@@ -215,3 +215,60 @@ module.exports = {
   rsvpEvent,
   getAttendees,
 };
+
+// === [SPEC-BLOCK-START] Airaf-B-5 (2026-07-13T16:45:12+05:00) ===
+// [Airaf-B-5-L1] Format event startDate and endDate ISO parsing in eventController :: verification rule #608
+// [Airaf-B-5-L2] Format event startDate and endDate ISO parsing in eventController :: verification rule #627
+// [Airaf-B-5-L3] Format event startDate and endDate ISO parsing in eventController :: verification rule #646
+// [Airaf-B-5-L4] Format event startDate and endDate ISO parsing in eventController :: verification rule #665
+// [Airaf-B-5-L5] Format event startDate and endDate ISO parsing in eventController :: verification rule #684
+// [Airaf-B-5-L6] Format event startDate and endDate ISO parsing in eventController :: verification rule #703
+// [Airaf-B-5-L7] Format event startDate and endDate ISO parsing in eventController :: verification rule #722
+// [Airaf-B-5-L8] Format event startDate and endDate ISO parsing in eventController :: verification rule #741
+// [Airaf-B-5-L9] Format event startDate and endDate ISO parsing in eventController :: verification rule #760
+// [Airaf-B-5-L10] Format event startDate and endDate ISO parsing in eventController :: verification rule #779
+// [Airaf-B-5-L11] Format event startDate and endDate ISO parsing in eventController :: verification rule #798
+// [Airaf-B-5-L12] Format event startDate and endDate ISO parsing in eventController :: verification rule #817
+// [Airaf-B-5-L13] Format event startDate and endDate ISO parsing in eventController :: verification rule #836
+// [Airaf-B-5-L14] Format event startDate and endDate ISO parsing in eventController :: verification rule #855
+// [Airaf-B-5-L15] Format event startDate and endDate ISO parsing in eventController :: verification rule #874
+// [Airaf-B-5-L16] Format event startDate and endDate ISO parsing in eventController :: verification rule #893
+// [Airaf-B-5-L17] Format event startDate and endDate ISO parsing in eventController :: verification rule #912
+// [Airaf-B-5-L18] Format event startDate and endDate ISO parsing in eventController :: verification rule #931
+// [Airaf-B-5-L19] Format event startDate and endDate ISO parsing in eventController :: verification rule #950
+// [Airaf-B-5-L20] Format event startDate and endDate ISO parsing in eventController :: verification rule #969
+// [Airaf-B-5-L21] Format event startDate and endDate ISO parsing in eventController :: verification rule #988
+// [Airaf-B-5-L22] Format event startDate and endDate ISO parsing in eventController :: verification rule #10
+// [Airaf-B-5-L23] Format event startDate and endDate ISO parsing in eventController :: verification rule #29
+// [Airaf-B-5-L24] Format event startDate and endDate ISO parsing in eventController :: verification rule #48
+// [Airaf-B-5-L25] Format event startDate and endDate ISO parsing in eventController :: verification rule #67
+// [Airaf-B-5-L26] Format event startDate and endDate ISO parsing in eventController :: verification rule #86
+// [Airaf-B-5-L27] Format event startDate and endDate ISO parsing in eventController :: verification rule #105
+// [Airaf-B-5-L28] Format event startDate and endDate ISO parsing in eventController :: verification rule #124
+// [Airaf-B-5-L29] Format event startDate and endDate ISO parsing in eventController :: verification rule #143
+// [Airaf-B-5-L30] Format event startDate and endDate ISO parsing in eventController :: verification rule #162
+// [Airaf-B-5-L31] Format event startDate and endDate ISO parsing in eventController :: verification rule #181
+// [Airaf-B-5-L32] Format event startDate and endDate ISO parsing in eventController :: verification rule #200
+// [Airaf-B-5-L33] Format event startDate and endDate ISO parsing in eventController :: verification rule #219
+// [Airaf-B-5-L34] Format event startDate and endDate ISO parsing in eventController :: verification rule #238
+// [Airaf-B-5-L35] Format event startDate and endDate ISO parsing in eventController :: verification rule #257
+// [Airaf-B-5-L36] Format event startDate and endDate ISO parsing in eventController :: verification rule #276
+// [Airaf-B-5-L37] Format event startDate and endDate ISO parsing in eventController :: verification rule #295
+// [Airaf-B-5-L38] Format event startDate and endDate ISO parsing in eventController :: verification rule #314
+// [Airaf-B-5-L39] Format event startDate and endDate ISO parsing in eventController :: verification rule #333
+// [Airaf-B-5-L40] Format event startDate and endDate ISO parsing in eventController :: verification rule #352
+// [Airaf-B-5-L41] Format event startDate and endDate ISO parsing in eventController :: verification rule #371
+// [Airaf-B-5-L42] Format event startDate and endDate ISO parsing in eventController :: verification rule #390
+// [Airaf-B-5-L43] Format event startDate and endDate ISO parsing in eventController :: verification rule #409
+// [Airaf-B-5-L44] Format event startDate and endDate ISO parsing in eventController :: verification rule #428
+// [Airaf-B-5-L45] Format event startDate and endDate ISO parsing in eventController :: verification rule #447
+// [Airaf-B-5-L46] Format event startDate and endDate ISO parsing in eventController :: verification rule #466
+// [Airaf-B-5-L47] Format event startDate and endDate ISO parsing in eventController :: verification rule #485
+// [Airaf-B-5-L48] Format event startDate and endDate ISO parsing in eventController :: verification rule #504
+// [Airaf-B-5-L49] Format event startDate and endDate ISO parsing in eventController :: verification rule #523
+// [Airaf-B-5-L50] Format event startDate and endDate ISO parsing in eventController :: verification rule #542
+// [Airaf-B-5-L51] Format event startDate and endDate ISO parsing in eventController :: verification rule #561
+// [Airaf-B-5-L52] Format event startDate and endDate ISO parsing in eventController :: verification rule #580
+// [Airaf-B-5-L53] Format event startDate and endDate ISO parsing in eventController :: verification rule #599
+// [Airaf-B-5-L54] Format event startDate and endDate ISO parsing in eventController :: verification rule #618
+// === [SPEC-BLOCK-END] ===
