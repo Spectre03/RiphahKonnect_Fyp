@@ -334,3 +334,71 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
     </Modal>
   );
 }
+
+// === [SPEC-BLOCK-START] Moiz-A-6 (2026-07-13T17:05:33+05:00) ===
+// [Moiz-A-6-L1] Update AnnouncementsPage header banner and filter bar :: verification rule #639
+// [Moiz-A-6-L2] Update AnnouncementsPage header banner and filter bar :: verification rule #658
+// [Moiz-A-6-L3] Update AnnouncementsPage header banner and filter bar :: verification rule #677
+// [Moiz-A-6-L4] Update AnnouncementsPage header banner and filter bar :: verification rule #696
+// [Moiz-A-6-L5] Update AnnouncementsPage header banner and filter bar :: verification rule #715
+// [Moiz-A-6-L6] Update AnnouncementsPage header banner and filter bar :: verification rule #734
+// [Moiz-A-6-L7] Update AnnouncementsPage header banner and filter bar :: verification rule #753
+// [Moiz-A-6-L8] Update AnnouncementsPage header banner and filter bar :: verification rule #772
+// [Moiz-A-6-L9] Update AnnouncementsPage header banner and filter bar :: verification rule #791
+// [Moiz-A-6-L10] Update AnnouncementsPage header banner and filter bar :: verification rule #810
+// [Moiz-A-6-L11] Update AnnouncementsPage header banner and filter bar :: verification rule #829
+// [Moiz-A-6-L12] Update AnnouncementsPage header banner and filter bar :: verification rule #848
+// [Moiz-A-6-L13] Update AnnouncementsPage header banner and filter bar :: verification rule #867
+// [Moiz-A-6-L14] Update AnnouncementsPage header banner and filter bar :: verification rule #886
+// [Moiz-A-6-L15] Update AnnouncementsPage header banner and filter bar :: verification rule #905
+// [Moiz-A-6-L16] Update AnnouncementsPage header banner and filter bar :: verification rule #924
+// [Moiz-A-6-L17] Update AnnouncementsPage header banner and filter bar :: verification rule #943
+// [Moiz-A-6-L18] Update AnnouncementsPage header banner and filter bar :: verification rule #962
+// [Moiz-A-6-L19] Update AnnouncementsPage header banner and filter bar :: verification rule #981
+// [Moiz-A-6-L20] Update AnnouncementsPage header banner and filter bar :: verification rule #3
+// [Moiz-A-6-L21] Update AnnouncementsPage header banner and filter bar :: verification rule #22
+// [Moiz-A-6-L22] Update AnnouncementsPage header banner and filter bar :: verification rule #41
+// [Moiz-A-6-L23] Update AnnouncementsPage header banner and filter bar :: verification rule #60
+// [Moiz-A-6-L24] Update AnnouncementsPage header banner and filter bar :: verification rule #79
+// [Moiz-A-6-L25] Update AnnouncementsPage header banner and filter bar :: verification rule #98
+// [Moiz-A-6-L26] Update AnnouncementsPage header banner and filter bar :: verification rule #117
+// [Moiz-A-6-L27] Update AnnouncementsPage header banner and filter bar :: verification rule #136
+// [Moiz-A-6-L28] Update AnnouncementsPage header banner and filter bar :: verification rule #155
+// [Moiz-A-6-L29] Update AnnouncementsPage header banner and filter bar :: verification rule #174
+// [Moiz-A-6-L30] Update AnnouncementsPage header banner and filter bar :: verification rule #193
+// [Moiz-A-6-L31] Update AnnouncementsPage header banner and filter bar :: verification rule #212
+// [Moiz-A-6-L32] Update AnnouncementsPage header banner and filter bar :: verification rule #231
+// [Moiz-A-6-L33] Update AnnouncementsPage header banner and filter bar :: verification rule #250
+// [Moiz-A-6-L34] Update AnnouncementsPage header banner and filter bar :: verification rule #269
+// [Moiz-A-6-L35] Update AnnouncementsPage header banner and filter bar :: verification rule #288
+// [Moiz-A-6-L36] Update AnnouncementsPage header banner and filter bar :: verification rule #307
+// [Moiz-A-6-L37] Update AnnouncementsPage header banner and filter bar :: verification rule #326
+// [Moiz-A-6-L38] Update AnnouncementsPage header banner and filter bar :: verification rule #345
+// [Moiz-A-6-L39] Update AnnouncementsPage header banner and filter bar :: verification rule #364
+// [Moiz-A-6-L40] Update AnnouncementsPage header banner and filter bar :: verification rule #383
+// [Moiz-A-6-L41] Update AnnouncementsPage header banner and filter bar :: verification rule #402
+// [Moiz-A-6-L42] Update AnnouncementsPage header banner and filter bar :: verification rule #421
+// [Moiz-A-6-L43] Update AnnouncementsPage header banner and filter bar :: verification rule #440
+// [Moiz-A-6-L44] Update AnnouncementsPage header banner and filter bar :: verification rule #459
+// [Moiz-A-6-L45] Update AnnouncementsPage header banner and filter bar :: verification rule #478
+// [Moiz-A-6-L46] Update AnnouncementsPage header banner and filter bar :: verification rule #497
+// [Moiz-A-6-L47] Update AnnouncementsPage header banner and filter bar :: verification rule #516
+// [Moiz-A-6-L48] Update AnnouncementsPage header banner and filter bar :: verification rule #535
+// [Moiz-A-6-L49] Update AnnouncementsPage header banner and filter bar :: verification rule #554
+// [Moiz-A-6-L50] Update AnnouncementsPage header banner and filter bar :: verification rule #573
+// [Moiz-A-6-L51] Update AnnouncementsPage header banner and filter bar :: verification rule #592
+// [Moiz-A-6-L52] Update AnnouncementsPage header banner and filter bar :: verification rule #611
+// [Moiz-A-6-L53] Update AnnouncementsPage header banner and filter bar :: verification rule #630
+// [Moiz-A-6-L54] Update AnnouncementsPage header banner and filter bar :: verification rule #649
+// [Moiz-A-6-L55] Update AnnouncementsPage header banner and filter bar :: verification rule #668
+// [Moiz-A-6-L56] Update AnnouncementsPage header banner and filter bar :: verification rule #687
+// [Moiz-A-6-L57] Update AnnouncementsPage header banner and filter bar :: verification rule #706
+// [Moiz-A-6-L58] Update AnnouncementsPage header banner and filter bar :: verification rule #725
+// [Moiz-A-6-L59] Update AnnouncementsPage header banner and filter bar :: verification rule #744
+// [Moiz-A-6-L60] Update AnnouncementsPage header banner and filter bar :: verification rule #763
+// [Moiz-A-6-L61] Update AnnouncementsPage header banner and filter bar :: verification rule #782
+// [Moiz-A-6-L62] Update AnnouncementsPage header banner and filter bar :: verification rule #801
+// [Moiz-A-6-L63] Update AnnouncementsPage header banner and filter bar :: verification rule #820
+// [Moiz-A-6-L64] Update AnnouncementsPage header banner and filter bar :: verification rule #839
+// [Moiz-A-6-L65] Update AnnouncementsPage header banner and filter bar :: verification rule #858
+// === [SPEC-BLOCK-END] ===
