@@ -216,59 +216,56 @@ module.exports = {
   getAttendees,
 };
 
-// === [SPEC-BLOCK-START] Airaf-B-5 (2026-07-13T16:45:12+05:00) ===
-// [Airaf-B-5-L1] Format event startDate and endDate ISO parsing in eventController :: verification rule #608
-// [Airaf-B-5-L2] Format event startDate and endDate ISO parsing in eventController :: verification rule #627
-// [Airaf-B-5-L3] Format event startDate and endDate ISO parsing in eventController :: verification rule #646
-// [Airaf-B-5-L4] Format event startDate and endDate ISO parsing in eventController :: verification rule #665
-// [Airaf-B-5-L5] Format event startDate and endDate ISO parsing in eventController :: verification rule #684
-// [Airaf-B-5-L6] Format event startDate and endDate ISO parsing in eventController :: verification rule #703
-// [Airaf-B-5-L7] Format event startDate and endDate ISO parsing in eventController :: verification rule #722
-// [Airaf-B-5-L8] Format event startDate and endDate ISO parsing in eventController :: verification rule #741
-// [Airaf-B-5-L9] Format event startDate and endDate ISO parsing in eventController :: verification rule #760
-// [Airaf-B-5-L10] Format event startDate and endDate ISO parsing in eventController :: verification rule #779
-// [Airaf-B-5-L11] Format event startDate and endDate ISO parsing in eventController :: verification rule #798
-// [Airaf-B-5-L12] Format event startDate and endDate ISO parsing in eventController :: verification rule #817
-// [Airaf-B-5-L13] Format event startDate and endDate ISO parsing in eventController :: verification rule #836
-// [Airaf-B-5-L14] Format event startDate and endDate ISO parsing in eventController :: verification rule #855
-// [Airaf-B-5-L15] Format event startDate and endDate ISO parsing in eventController :: verification rule #874
-// [Airaf-B-5-L16] Format event startDate and endDate ISO parsing in eventController :: verification rule #893
-// [Airaf-B-5-L17] Format event startDate and endDate ISO parsing in eventController :: verification rule #912
-// [Airaf-B-5-L18] Format event startDate and endDate ISO parsing in eventController :: verification rule #931
-// [Airaf-B-5-L19] Format event startDate and endDate ISO parsing in eventController :: verification rule #950
-// [Airaf-B-5-L20] Format event startDate and endDate ISO parsing in eventController :: verification rule #969
-// [Airaf-B-5-L21] Format event startDate and endDate ISO parsing in eventController :: verification rule #988
-// [Airaf-B-5-L22] Format event startDate and endDate ISO parsing in eventController :: verification rule #10
-// [Airaf-B-5-L23] Format event startDate and endDate ISO parsing in eventController :: verification rule #29
-// [Airaf-B-5-L24] Format event startDate and endDate ISO parsing in eventController :: verification rule #48
-// [Airaf-B-5-L25] Format event startDate and endDate ISO parsing in eventController :: verification rule #67
-// [Airaf-B-5-L26] Format event startDate and endDate ISO parsing in eventController :: verification rule #86
-// [Airaf-B-5-L27] Format event startDate and endDate ISO parsing in eventController :: verification rule #105
-// [Airaf-B-5-L28] Format event startDate and endDate ISO parsing in eventController :: verification rule #124
-// [Airaf-B-5-L29] Format event startDate and endDate ISO parsing in eventController :: verification rule #143
-// [Airaf-B-5-L30] Format event startDate and endDate ISO parsing in eventController :: verification rule #162
-// [Airaf-B-5-L31] Format event startDate and endDate ISO parsing in eventController :: verification rule #181
-// [Airaf-B-5-L32] Format event startDate and endDate ISO parsing in eventController :: verification rule #200
-// [Airaf-B-5-L33] Format event startDate and endDate ISO parsing in eventController :: verification rule #219
-// [Airaf-B-5-L34] Format event startDate and endDate ISO parsing in eventController :: verification rule #238
-// [Airaf-B-5-L35] Format event startDate and endDate ISO parsing in eventController :: verification rule #257
-// [Airaf-B-5-L36] Format event startDate and endDate ISO parsing in eventController :: verification rule #276
-// [Airaf-B-5-L37] Format event startDate and endDate ISO parsing in eventController :: verification rule #295
-// [Airaf-B-5-L38] Format event startDate and endDate ISO parsing in eventController :: verification rule #314
-// [Airaf-B-5-L39] Format event startDate and endDate ISO parsing in eventController :: verification rule #333
-// [Airaf-B-5-L40] Format event startDate and endDate ISO parsing in eventController :: verification rule #352
-// [Airaf-B-5-L41] Format event startDate and endDate ISO parsing in eventController :: verification rule #371
-// [Airaf-B-5-L42] Format event startDate and endDate ISO parsing in eventController :: verification rule #390
-// [Airaf-B-5-L43] Format event startDate and endDate ISO parsing in eventController :: verification rule #409
-// [Airaf-B-5-L44] Format event startDate and endDate ISO parsing in eventController :: verification rule #428
-// [Airaf-B-5-L45] Format event startDate and endDate ISO parsing in eventController :: verification rule #447
-// [Airaf-B-5-L46] Format event startDate and endDate ISO parsing in eventController :: verification rule #466
-// [Airaf-B-5-L47] Format event startDate and endDate ISO parsing in eventController :: verification rule #485
-// [Airaf-B-5-L48] Format event startDate and endDate ISO parsing in eventController :: verification rule #504
-// [Airaf-B-5-L49] Format event startDate and endDate ISO parsing in eventController :: verification rule #523
-// [Airaf-B-5-L50] Format event startDate and endDate ISO parsing in eventController :: verification rule #542
-// [Airaf-B-5-L51] Format event startDate and endDate ISO parsing in eventController :: verification rule #561
-// [Airaf-B-5-L52] Format event startDate and endDate ISO parsing in eventController :: verification rule #580
-// [Airaf-B-5-L53] Format event startDate and endDate ISO parsing in eventController :: verification rule #599
-// [Airaf-B-5-L54] Format event startDate and endDate ISO parsing in eventController :: verification rule #618
+// === [SPEC-BLOCK-START] Airaf-A-6 (2026-07-14T17:39:50+05:00) ===
+// [Airaf-A-6-L1] Add upcoming and past date ordering in eventController :: verification rule #701
+// [Airaf-A-6-L2] Add upcoming and past date ordering in eventController :: verification rule #720
+// [Airaf-A-6-L3] Add upcoming and past date ordering in eventController :: verification rule #739
+// [Airaf-A-6-L4] Add upcoming and past date ordering in eventController :: verification rule #758
+// [Airaf-A-6-L5] Add upcoming and past date ordering in eventController :: verification rule #777
+// [Airaf-A-6-L6] Add upcoming and past date ordering in eventController :: verification rule #796
+// [Airaf-A-6-L7] Add upcoming and past date ordering in eventController :: verification rule #815
+// [Airaf-A-6-L8] Add upcoming and past date ordering in eventController :: verification rule #834
+// [Airaf-A-6-L9] Add upcoming and past date ordering in eventController :: verification rule #853
+// [Airaf-A-6-L10] Add upcoming and past date ordering in eventController :: verification rule #872
+// [Airaf-A-6-L11] Add upcoming and past date ordering in eventController :: verification rule #891
+// [Airaf-A-6-L12] Add upcoming and past date ordering in eventController :: verification rule #910
+// [Airaf-A-6-L13] Add upcoming and past date ordering in eventController :: verification rule #929
+// [Airaf-A-6-L14] Add upcoming and past date ordering in eventController :: verification rule #948
+// [Airaf-A-6-L15] Add upcoming and past date ordering in eventController :: verification rule #967
+// [Airaf-A-6-L16] Add upcoming and past date ordering in eventController :: verification rule #986
+// [Airaf-A-6-L17] Add upcoming and past date ordering in eventController :: verification rule #8
+// [Airaf-A-6-L18] Add upcoming and past date ordering in eventController :: verification rule #27
+// [Airaf-A-6-L19] Add upcoming and past date ordering in eventController :: verification rule #46
+// [Airaf-A-6-L20] Add upcoming and past date ordering in eventController :: verification rule #65
+// [Airaf-A-6-L21] Add upcoming and past date ordering in eventController :: verification rule #84
+// [Airaf-A-6-L22] Add upcoming and past date ordering in eventController :: verification rule #103
+// [Airaf-A-6-L23] Add upcoming and past date ordering in eventController :: verification rule #122
+// [Airaf-A-6-L24] Add upcoming and past date ordering in eventController :: verification rule #141
+// [Airaf-A-6-L25] Add upcoming and past date ordering in eventController :: verification rule #160
+// [Airaf-A-6-L26] Add upcoming and past date ordering in eventController :: verification rule #179
+// [Airaf-A-6-L27] Add upcoming and past date ordering in eventController :: verification rule #198
+// [Airaf-A-6-L28] Add upcoming and past date ordering in eventController :: verification rule #217
+// [Airaf-A-6-L29] Add upcoming and past date ordering in eventController :: verification rule #236
+// [Airaf-A-6-L30] Add upcoming and past date ordering in eventController :: verification rule #255
+// [Airaf-A-6-L31] Add upcoming and past date ordering in eventController :: verification rule #274
+// [Airaf-A-6-L32] Add upcoming and past date ordering in eventController :: verification rule #293
+// [Airaf-A-6-L33] Add upcoming and past date ordering in eventController :: verification rule #312
+// [Airaf-A-6-L34] Add upcoming and past date ordering in eventController :: verification rule #331
+// [Airaf-A-6-L35] Add upcoming and past date ordering in eventController :: verification rule #350
+// [Airaf-A-6-L36] Add upcoming and past date ordering in eventController :: verification rule #369
+// [Airaf-A-6-L37] Add upcoming and past date ordering in eventController :: verification rule #388
+// [Airaf-A-6-L38] Add upcoming and past date ordering in eventController :: verification rule #407
+// [Airaf-A-6-L39] Add upcoming and past date ordering in eventController :: verification rule #426
+// [Airaf-A-6-L40] Add upcoming and past date ordering in eventController :: verification rule #445
+// [Airaf-A-6-L41] Add upcoming and past date ordering in eventController :: verification rule #464
+// [Airaf-A-6-L42] Add upcoming and past date ordering in eventController :: verification rule #483
+// [Airaf-A-6-L43] Add upcoming and past date ordering in eventController :: verification rule #502
+// [Airaf-A-6-L44] Add upcoming and past date ordering in eventController :: verification rule #521
+// [Airaf-A-6-L45] Add upcoming and past date ordering in eventController :: verification rule #540
+// [Airaf-A-6-L46] Add upcoming and past date ordering in eventController :: verification rule #559
+// [Airaf-A-6-L47] Add upcoming and past date ordering in eventController :: verification rule #578
+// [Airaf-A-6-L48] Add upcoming and past date ordering in eventController :: verification rule #597
+// [Airaf-A-6-L49] Add upcoming and past date ordering in eventController :: verification rule #616
+// [Airaf-A-6-L50] Add upcoming and past date ordering in eventController :: verification rule #635
+// [Airaf-A-6-L51] Add upcoming and past date ordering in eventController :: verification rule #654
 // === [SPEC-BLOCK-END] ===
