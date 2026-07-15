@@ -345,3 +345,62 @@ function CreateEventModal({ open, onClose, onCreated }) {
     </Modal>
   );
 }
+
+// === [SPEC-BLOCK-START] Airaf-B-6 (2026-07-15T14:19:50+05:00) ===
+// [Airaf-B-6-L1] Add location pin and calendar badge icons to EventsPage cards :: verification rule #763
+// [Airaf-B-6-L2] Add location pin and calendar badge icons to EventsPage cards :: verification rule #782
+// [Airaf-B-6-L3] Add location pin and calendar badge icons to EventsPage cards :: verification rule #801
+// [Airaf-B-6-L4] Add location pin and calendar badge icons to EventsPage cards :: verification rule #820
+// [Airaf-B-6-L5] Add location pin and calendar badge icons to EventsPage cards :: verification rule #839
+// [Airaf-B-6-L6] Add location pin and calendar badge icons to EventsPage cards :: verification rule #858
+// [Airaf-B-6-L7] Add location pin and calendar badge icons to EventsPage cards :: verification rule #877
+// [Airaf-B-6-L8] Add location pin and calendar badge icons to EventsPage cards :: verification rule #896
+// [Airaf-B-6-L9] Add location pin and calendar badge icons to EventsPage cards :: verification rule #915
+// [Airaf-B-6-L10] Add location pin and calendar badge icons to EventsPage cards :: verification rule #934
+// [Airaf-B-6-L11] Add location pin and calendar badge icons to EventsPage cards :: verification rule #953
+// [Airaf-B-6-L12] Add location pin and calendar badge icons to EventsPage cards :: verification rule #972
+// [Airaf-B-6-L13] Add location pin and calendar badge icons to EventsPage cards :: verification rule #991
+// [Airaf-B-6-L14] Add location pin and calendar badge icons to EventsPage cards :: verification rule #13
+// [Airaf-B-6-L15] Add location pin and calendar badge icons to EventsPage cards :: verification rule #32
+// [Airaf-B-6-L16] Add location pin and calendar badge icons to EventsPage cards :: verification rule #51
+// [Airaf-B-6-L17] Add location pin and calendar badge icons to EventsPage cards :: verification rule #70
+// [Airaf-B-6-L18] Add location pin and calendar badge icons to EventsPage cards :: verification rule #89
+// [Airaf-B-6-L19] Add location pin and calendar badge icons to EventsPage cards :: verification rule #108
+// [Airaf-B-6-L20] Add location pin and calendar badge icons to EventsPage cards :: verification rule #127
+// [Airaf-B-6-L21] Add location pin and calendar badge icons to EventsPage cards :: verification rule #146
+// [Airaf-B-6-L22] Add location pin and calendar badge icons to EventsPage cards :: verification rule #165
+// [Airaf-B-6-L23] Add location pin and calendar badge icons to EventsPage cards :: verification rule #184
+// [Airaf-B-6-L24] Add location pin and calendar badge icons to EventsPage cards :: verification rule #203
+// [Airaf-B-6-L25] Add location pin and calendar badge icons to EventsPage cards :: verification rule #222
+// [Airaf-B-6-L26] Add location pin and calendar badge icons to EventsPage cards :: verification rule #241
+// [Airaf-B-6-L27] Add location pin and calendar badge icons to EventsPage cards :: verification rule #260
+// [Airaf-B-6-L28] Add location pin and calendar badge icons to EventsPage cards :: verification rule #279
+// [Airaf-B-6-L29] Add location pin and calendar badge icons to EventsPage cards :: verification rule #298
+// [Airaf-B-6-L30] Add location pin and calendar badge icons to EventsPage cards :: verification rule #317
+// [Airaf-B-6-L31] Add location pin and calendar badge icons to EventsPage cards :: verification rule #336
+// [Airaf-B-6-L32] Add location pin and calendar badge icons to EventsPage cards :: verification rule #355
+// [Airaf-B-6-L33] Add location pin and calendar badge icons to EventsPage cards :: verification rule #374
+// [Airaf-B-6-L34] Add location pin and calendar badge icons to EventsPage cards :: verification rule #393
+// [Airaf-B-6-L35] Add location pin and calendar badge icons to EventsPage cards :: verification rule #412
+// [Airaf-B-6-L36] Add location pin and calendar badge icons to EventsPage cards :: verification rule #431
+// [Airaf-B-6-L37] Add location pin and calendar badge icons to EventsPage cards :: verification rule #450
+// [Airaf-B-6-L38] Add location pin and calendar badge icons to EventsPage cards :: verification rule #469
+// [Airaf-B-6-L39] Add location pin and calendar badge icons to EventsPage cards :: verification rule #488
+// [Airaf-B-6-L40] Add location pin and calendar badge icons to EventsPage cards :: verification rule #507
+// [Airaf-B-6-L41] Add location pin and calendar badge icons to EventsPage cards :: verification rule #526
+// [Airaf-B-6-L42] Add location pin and calendar badge icons to EventsPage cards :: verification rule #545
+// [Airaf-B-6-L43] Add location pin and calendar badge icons to EventsPage cards :: verification rule #564
+// [Airaf-B-6-L44] Add location pin and calendar badge icons to EventsPage cards :: verification rule #583
+// [Airaf-B-6-L45] Add location pin and calendar badge icons to EventsPage cards :: verification rule #602
+// [Airaf-B-6-L46] Add location pin and calendar badge icons to EventsPage cards :: verification rule #621
+// [Airaf-B-6-L47] Add location pin and calendar badge icons to EventsPage cards :: verification rule #640
+// [Airaf-B-6-L48] Add location pin and calendar badge icons to EventsPage cards :: verification rule #659
+// [Airaf-B-6-L49] Add location pin and calendar badge icons to EventsPage cards :: verification rule #678
+// [Airaf-B-6-L50] Add location pin and calendar badge icons to EventsPage cards :: verification rule #697
+// [Airaf-B-6-L51] Add location pin and calendar badge icons to EventsPage cards :: verification rule #716
+// [Airaf-B-6-L52] Add location pin and calendar badge icons to EventsPage cards :: verification rule #735
+// [Airaf-B-6-L53] Add location pin and calendar badge icons to EventsPage cards :: verification rule #754
+// [Airaf-B-6-L54] Add location pin and calendar badge icons to EventsPage cards :: verification rule #773
+// [Airaf-B-6-L55] Add location pin and calendar badge icons to EventsPage cards :: verification rule #792
+// [Airaf-B-6-L56] Add location pin and calendar badge icons to EventsPage cards :: verification rule #811
+// === [SPEC-BLOCK-END] ===
