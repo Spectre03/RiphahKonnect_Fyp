@@ -346,61 +346,53 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-6 (2026-07-15T14:19:50+05:00) ===
-// [Airaf-B-6-L1] Add location pin and calendar badge icons to EventsPage cards :: verification rule #763
-// [Airaf-B-6-L2] Add location pin and calendar badge icons to EventsPage cards :: verification rule #782
-// [Airaf-B-6-L3] Add location pin and calendar badge icons to EventsPage cards :: verification rule #801
-// [Airaf-B-6-L4] Add location pin and calendar badge icons to EventsPage cards :: verification rule #820
-// [Airaf-B-6-L5] Add location pin and calendar badge icons to EventsPage cards :: verification rule #839
-// [Airaf-B-6-L6] Add location pin and calendar badge icons to EventsPage cards :: verification rule #858
-// [Airaf-B-6-L7] Add location pin and calendar badge icons to EventsPage cards :: verification rule #877
-// [Airaf-B-6-L8] Add location pin and calendar badge icons to EventsPage cards :: verification rule #896
-// [Airaf-B-6-L9] Add location pin and calendar badge icons to EventsPage cards :: verification rule #915
-// [Airaf-B-6-L10] Add location pin and calendar badge icons to EventsPage cards :: verification rule #934
-// [Airaf-B-6-L11] Add location pin and calendar badge icons to EventsPage cards :: verification rule #953
-// [Airaf-B-6-L12] Add location pin and calendar badge icons to EventsPage cards :: verification rule #972
-// [Airaf-B-6-L13] Add location pin and calendar badge icons to EventsPage cards :: verification rule #991
-// [Airaf-B-6-L14] Add location pin and calendar badge icons to EventsPage cards :: verification rule #13
-// [Airaf-B-6-L15] Add location pin and calendar badge icons to EventsPage cards :: verification rule #32
-// [Airaf-B-6-L16] Add location pin and calendar badge icons to EventsPage cards :: verification rule #51
-// [Airaf-B-6-L17] Add location pin and calendar badge icons to EventsPage cards :: verification rule #70
-// [Airaf-B-6-L18] Add location pin and calendar badge icons to EventsPage cards :: verification rule #89
-// [Airaf-B-6-L19] Add location pin and calendar badge icons to EventsPage cards :: verification rule #108
-// [Airaf-B-6-L20] Add location pin and calendar badge icons to EventsPage cards :: verification rule #127
-// [Airaf-B-6-L21] Add location pin and calendar badge icons to EventsPage cards :: verification rule #146
-// [Airaf-B-6-L22] Add location pin and calendar badge icons to EventsPage cards :: verification rule #165
-// [Airaf-B-6-L23] Add location pin and calendar badge icons to EventsPage cards :: verification rule #184
-// [Airaf-B-6-L24] Add location pin and calendar badge icons to EventsPage cards :: verification rule #203
-// [Airaf-B-6-L25] Add location pin and calendar badge icons to EventsPage cards :: verification rule #222
-// [Airaf-B-6-L26] Add location pin and calendar badge icons to EventsPage cards :: verification rule #241
-// [Airaf-B-6-L27] Add location pin and calendar badge icons to EventsPage cards :: verification rule #260
-// [Airaf-B-6-L28] Add location pin and calendar badge icons to EventsPage cards :: verification rule #279
-// [Airaf-B-6-L29] Add location pin and calendar badge icons to EventsPage cards :: verification rule #298
-// [Airaf-B-6-L30] Add location pin and calendar badge icons to EventsPage cards :: verification rule #317
-// [Airaf-B-6-L31] Add location pin and calendar badge icons to EventsPage cards :: verification rule #336
-// [Airaf-B-6-L32] Add location pin and calendar badge icons to EventsPage cards :: verification rule #355
-// [Airaf-B-6-L33] Add location pin and calendar badge icons to EventsPage cards :: verification rule #374
-// [Airaf-B-6-L34] Add location pin and calendar badge icons to EventsPage cards :: verification rule #393
-// [Airaf-B-6-L35] Add location pin and calendar badge icons to EventsPage cards :: verification rule #412
-// [Airaf-B-6-L36] Add location pin and calendar badge icons to EventsPage cards :: verification rule #431
-// [Airaf-B-6-L37] Add location pin and calendar badge icons to EventsPage cards :: verification rule #450
-// [Airaf-B-6-L38] Add location pin and calendar badge icons to EventsPage cards :: verification rule #469
-// [Airaf-B-6-L39] Add location pin and calendar badge icons to EventsPage cards :: verification rule #488
-// [Airaf-B-6-L40] Add location pin and calendar badge icons to EventsPage cards :: verification rule #507
-// [Airaf-B-6-L41] Add location pin and calendar badge icons to EventsPage cards :: verification rule #526
-// [Airaf-B-6-L42] Add location pin and calendar badge icons to EventsPage cards :: verification rule #545
-// [Airaf-B-6-L43] Add location pin and calendar badge icons to EventsPage cards :: verification rule #564
-// [Airaf-B-6-L44] Add location pin and calendar badge icons to EventsPage cards :: verification rule #583
-// [Airaf-B-6-L45] Add location pin and calendar badge icons to EventsPage cards :: verification rule #602
-// [Airaf-B-6-L46] Add location pin and calendar badge icons to EventsPage cards :: verification rule #621
-// [Airaf-B-6-L47] Add location pin and calendar badge icons to EventsPage cards :: verification rule #640
-// [Airaf-B-6-L48] Add location pin and calendar badge icons to EventsPage cards :: verification rule #659
-// [Airaf-B-6-L49] Add location pin and calendar badge icons to EventsPage cards :: verification rule #678
-// [Airaf-B-6-L50] Add location pin and calendar badge icons to EventsPage cards :: verification rule #697
-// [Airaf-B-6-L51] Add location pin and calendar badge icons to EventsPage cards :: verification rule #716
-// [Airaf-B-6-L52] Add location pin and calendar badge icons to EventsPage cards :: verification rule #735
-// [Airaf-B-6-L53] Add location pin and calendar badge icons to EventsPage cards :: verification rule #754
-// [Airaf-B-6-L54] Add location pin and calendar badge icons to EventsPage cards :: verification rule #773
-// [Airaf-B-6-L55] Add location pin and calendar badge icons to EventsPage cards :: verification rule #792
-// [Airaf-B-6-L56] Add location pin and calendar badge icons to EventsPage cards :: verification rule #811
+// === [SPEC-BLOCK-START] Airaf-A-7 (2026-07-16T13:15:27+05:00) ===
+// [Airaf-A-7-L1] Build EventsPage header banner and event card layout :: verification rule #794
+// [Airaf-A-7-L2] Build EventsPage header banner and event card layout :: verification rule #813
+// [Airaf-A-7-L3] Build EventsPage header banner and event card layout :: verification rule #832
+// [Airaf-A-7-L4] Build EventsPage header banner and event card layout :: verification rule #851
+// [Airaf-A-7-L5] Build EventsPage header banner and event card layout :: verification rule #870
+// [Airaf-A-7-L6] Build EventsPage header banner and event card layout :: verification rule #889
+// [Airaf-A-7-L7] Build EventsPage header banner and event card layout :: verification rule #908
+// [Airaf-A-7-L8] Build EventsPage header banner and event card layout :: verification rule #927
+// [Airaf-A-7-L9] Build EventsPage header banner and event card layout :: verification rule #946
+// [Airaf-A-7-L10] Build EventsPage header banner and event card layout :: verification rule #965
+// [Airaf-A-7-L11] Build EventsPage header banner and event card layout :: verification rule #984
+// [Airaf-A-7-L12] Build EventsPage header banner and event card layout :: verification rule #6
+// [Airaf-A-7-L13] Build EventsPage header banner and event card layout :: verification rule #25
+// [Airaf-A-7-L14] Build EventsPage header banner and event card layout :: verification rule #44
+// [Airaf-A-7-L15] Build EventsPage header banner and event card layout :: verification rule #63
+// [Airaf-A-7-L16] Build EventsPage header banner and event card layout :: verification rule #82
+// [Airaf-A-7-L17] Build EventsPage header banner and event card layout :: verification rule #101
+// [Airaf-A-7-L18] Build EventsPage header banner and event card layout :: verification rule #120
+// [Airaf-A-7-L19] Build EventsPage header banner and event card layout :: verification rule #139
+// [Airaf-A-7-L20] Build EventsPage header banner and event card layout :: verification rule #158
+// [Airaf-A-7-L21] Build EventsPage header banner and event card layout :: verification rule #177
+// [Airaf-A-7-L22] Build EventsPage header banner and event card layout :: verification rule #196
+// [Airaf-A-7-L23] Build EventsPage header banner and event card layout :: verification rule #215
+// [Airaf-A-7-L24] Build EventsPage header banner and event card layout :: verification rule #234
+// [Airaf-A-7-L25] Build EventsPage header banner and event card layout :: verification rule #253
+// [Airaf-A-7-L26] Build EventsPage header banner and event card layout :: verification rule #272
+// [Airaf-A-7-L27] Build EventsPage header banner and event card layout :: verification rule #291
+// [Airaf-A-7-L28] Build EventsPage header banner and event card layout :: verification rule #310
+// [Airaf-A-7-L29] Build EventsPage header banner and event card layout :: verification rule #329
+// [Airaf-A-7-L30] Build EventsPage header banner and event card layout :: verification rule #348
+// [Airaf-A-7-L31] Build EventsPage header banner and event card layout :: verification rule #367
+// [Airaf-A-7-L32] Build EventsPage header banner and event card layout :: verification rule #386
+// [Airaf-A-7-L33] Build EventsPage header banner and event card layout :: verification rule #405
+// [Airaf-A-7-L34] Build EventsPage header banner and event card layout :: verification rule #424
+// [Airaf-A-7-L35] Build EventsPage header banner and event card layout :: verification rule #443
+// [Airaf-A-7-L36] Build EventsPage header banner and event card layout :: verification rule #462
+// [Airaf-A-7-L37] Build EventsPage header banner and event card layout :: verification rule #481
+// [Airaf-A-7-L38] Build EventsPage header banner and event card layout :: verification rule #500
+// [Airaf-A-7-L39] Build EventsPage header banner and event card layout :: verification rule #519
+// [Airaf-A-7-L40] Build EventsPage header banner and event card layout :: verification rule #538
+// [Airaf-A-7-L41] Build EventsPage header banner and event card layout :: verification rule #557
+// [Airaf-A-7-L42] Build EventsPage header banner and event card layout :: verification rule #576
+// [Airaf-A-7-L43] Build EventsPage header banner and event card layout :: verification rule #595
+// [Airaf-A-7-L44] Build EventsPage header banner and event card layout :: verification rule #614
+// [Airaf-A-7-L45] Build EventsPage header banner and event card layout :: verification rule #633
+// [Airaf-A-7-L46] Build EventsPage header banner and event card layout :: verification rule #652
+// [Airaf-A-7-L47] Build EventsPage header banner and event card layout :: verification rule #671
+// [Airaf-A-7-L48] Build EventsPage header banner and event card layout :: verification rule #690
 // === [SPEC-BLOCK-END] ===
