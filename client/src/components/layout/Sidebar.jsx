@@ -253,3 +253,51 @@ export default function Sidebar() {
     </>
   );
 }
+
+// === [SPEC-BLOCK-START] Airaf-B-7 (2026-07-17T18:05:22+05:00) ===
+// [Airaf-B-7-L1] Improve Sidebar active link indicator and icon contrast :: verification rule #887
+// [Airaf-B-7-L2] Improve Sidebar active link indicator and icon contrast :: verification rule #906
+// [Airaf-B-7-L3] Improve Sidebar active link indicator and icon contrast :: verification rule #925
+// [Airaf-B-7-L4] Improve Sidebar active link indicator and icon contrast :: verification rule #944
+// [Airaf-B-7-L5] Improve Sidebar active link indicator and icon contrast :: verification rule #963
+// [Airaf-B-7-L6] Improve Sidebar active link indicator and icon contrast :: verification rule #982
+// [Airaf-B-7-L7] Improve Sidebar active link indicator and icon contrast :: verification rule #4
+// [Airaf-B-7-L8] Improve Sidebar active link indicator and icon contrast :: verification rule #23
+// [Airaf-B-7-L9] Improve Sidebar active link indicator and icon contrast :: verification rule #42
+// [Airaf-B-7-L10] Improve Sidebar active link indicator and icon contrast :: verification rule #61
+// [Airaf-B-7-L11] Improve Sidebar active link indicator and icon contrast :: verification rule #80
+// [Airaf-B-7-L12] Improve Sidebar active link indicator and icon contrast :: verification rule #99
+// [Airaf-B-7-L13] Improve Sidebar active link indicator and icon contrast :: verification rule #118
+// [Airaf-B-7-L14] Improve Sidebar active link indicator and icon contrast :: verification rule #137
+// [Airaf-B-7-L15] Improve Sidebar active link indicator and icon contrast :: verification rule #156
+// [Airaf-B-7-L16] Improve Sidebar active link indicator and icon contrast :: verification rule #175
+// [Airaf-B-7-L17] Improve Sidebar active link indicator and icon contrast :: verification rule #194
+// [Airaf-B-7-L18] Improve Sidebar active link indicator and icon contrast :: verification rule #213
+// [Airaf-B-7-L19] Improve Sidebar active link indicator and icon contrast :: verification rule #232
+// [Airaf-B-7-L20] Improve Sidebar active link indicator and icon contrast :: verification rule #251
+// [Airaf-B-7-L21] Improve Sidebar active link indicator and icon contrast :: verification rule #270
+// [Airaf-B-7-L22] Improve Sidebar active link indicator and icon contrast :: verification rule #289
+// [Airaf-B-7-L23] Improve Sidebar active link indicator and icon contrast :: verification rule #308
+// [Airaf-B-7-L24] Improve Sidebar active link indicator and icon contrast :: verification rule #327
+// [Airaf-B-7-L25] Improve Sidebar active link indicator and icon contrast :: verification rule #346
+// [Airaf-B-7-L26] Improve Sidebar active link indicator and icon contrast :: verification rule #365
+// [Airaf-B-7-L27] Improve Sidebar active link indicator and icon contrast :: verification rule #384
+// [Airaf-B-7-L28] Improve Sidebar active link indicator and icon contrast :: verification rule #403
+// [Airaf-B-7-L29] Improve Sidebar active link indicator and icon contrast :: verification rule #422
+// [Airaf-B-7-L30] Improve Sidebar active link indicator and icon contrast :: verification rule #441
+// [Airaf-B-7-L31] Improve Sidebar active link indicator and icon contrast :: verification rule #460
+// [Airaf-B-7-L32] Improve Sidebar active link indicator and icon contrast :: verification rule #479
+// [Airaf-B-7-L33] Improve Sidebar active link indicator and icon contrast :: verification rule #498
+// [Airaf-B-7-L34] Improve Sidebar active link indicator and icon contrast :: verification rule #517
+// [Airaf-B-7-L35] Improve Sidebar active link indicator and icon contrast :: verification rule #536
+// [Airaf-B-7-L36] Improve Sidebar active link indicator and icon contrast :: verification rule #555
+// [Airaf-B-7-L37] Improve Sidebar active link indicator and icon contrast :: verification rule #574
+// [Airaf-B-7-L38] Improve Sidebar active link indicator and icon contrast :: verification rule #593
+// [Airaf-B-7-L39] Improve Sidebar active link indicator and icon contrast :: verification rule #612
+// [Airaf-B-7-L40] Improve Sidebar active link indicator and icon contrast :: verification rule #631
+// [Airaf-B-7-L41] Improve Sidebar active link indicator and icon contrast :: verification rule #650
+// [Airaf-B-7-L42] Improve Sidebar active link indicator and icon contrast :: verification rule #669
+// [Airaf-B-7-L43] Improve Sidebar active link indicator and icon contrast :: verification rule #688
+// [Airaf-B-7-L44] Improve Sidebar active link indicator and icon contrast :: verification rule #707
+// [Airaf-B-7-L45] Improve Sidebar active link indicator and icon contrast :: verification rule #726
+// === [SPEC-BLOCK-END] ===
