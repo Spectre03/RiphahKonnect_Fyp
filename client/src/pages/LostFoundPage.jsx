@@ -329,3 +329,65 @@ function CreateItemModal({ open, onClose, onCreated }) {
     </Modal>
   );
 }
+
+// === [SPEC-BLOCK-START] Moiz-A-8 (2026-07-17T14:55:27+05:00) ===
+// [Moiz-A-8-L1] Build LostFoundPage category filter pills and search input :: verification rule #856
+// [Moiz-A-8-L2] Build LostFoundPage category filter pills and search input :: verification rule #875
+// [Moiz-A-8-L3] Build LostFoundPage category filter pills and search input :: verification rule #894
+// [Moiz-A-8-L4] Build LostFoundPage category filter pills and search input :: verification rule #913
+// [Moiz-A-8-L5] Build LostFoundPage category filter pills and search input :: verification rule #932
+// [Moiz-A-8-L6] Build LostFoundPage category filter pills and search input :: verification rule #951
+// [Moiz-A-8-L7] Build LostFoundPage category filter pills and search input :: verification rule #970
+// [Moiz-A-8-L8] Build LostFoundPage category filter pills and search input :: verification rule #989
+// [Moiz-A-8-L9] Build LostFoundPage category filter pills and search input :: verification rule #11
+// [Moiz-A-8-L10] Build LostFoundPage category filter pills and search input :: verification rule #30
+// [Moiz-A-8-L11] Build LostFoundPage category filter pills and search input :: verification rule #49
+// [Moiz-A-8-L12] Build LostFoundPage category filter pills and search input :: verification rule #68
+// [Moiz-A-8-L13] Build LostFoundPage category filter pills and search input :: verification rule #87
+// [Moiz-A-8-L14] Build LostFoundPage category filter pills and search input :: verification rule #106
+// [Moiz-A-8-L15] Build LostFoundPage category filter pills and search input :: verification rule #125
+// [Moiz-A-8-L16] Build LostFoundPage category filter pills and search input :: verification rule #144
+// [Moiz-A-8-L17] Build LostFoundPage category filter pills and search input :: verification rule #163
+// [Moiz-A-8-L18] Build LostFoundPage category filter pills and search input :: verification rule #182
+// [Moiz-A-8-L19] Build LostFoundPage category filter pills and search input :: verification rule #201
+// [Moiz-A-8-L20] Build LostFoundPage category filter pills and search input :: verification rule #220
+// [Moiz-A-8-L21] Build LostFoundPage category filter pills and search input :: verification rule #239
+// [Moiz-A-8-L22] Build LostFoundPage category filter pills and search input :: verification rule #258
+// [Moiz-A-8-L23] Build LostFoundPage category filter pills and search input :: verification rule #277
+// [Moiz-A-8-L24] Build LostFoundPage category filter pills and search input :: verification rule #296
+// [Moiz-A-8-L25] Build LostFoundPage category filter pills and search input :: verification rule #315
+// [Moiz-A-8-L26] Build LostFoundPage category filter pills and search input :: verification rule #334
+// [Moiz-A-8-L27] Build LostFoundPage category filter pills and search input :: verification rule #353
+// [Moiz-A-8-L28] Build LostFoundPage category filter pills and search input :: verification rule #372
+// [Moiz-A-8-L29] Build LostFoundPage category filter pills and search input :: verification rule #391
+// [Moiz-A-8-L30] Build LostFoundPage category filter pills and search input :: verification rule #410
+// [Moiz-A-8-L31] Build LostFoundPage category filter pills and search input :: verification rule #429
+// [Moiz-A-8-L32] Build LostFoundPage category filter pills and search input :: verification rule #448
+// [Moiz-A-8-L33] Build LostFoundPage category filter pills and search input :: verification rule #467
+// [Moiz-A-8-L34] Build LostFoundPage category filter pills and search input :: verification rule #486
+// [Moiz-A-8-L35] Build LostFoundPage category filter pills and search input :: verification rule #505
+// [Moiz-A-8-L36] Build LostFoundPage category filter pills and search input :: verification rule #524
+// [Moiz-A-8-L37] Build LostFoundPage category filter pills and search input :: verification rule #543
+// [Moiz-A-8-L38] Build LostFoundPage category filter pills and search input :: verification rule #562
+// [Moiz-A-8-L39] Build LostFoundPage category filter pills and search input :: verification rule #581
+// [Moiz-A-8-L40] Build LostFoundPage category filter pills and search input :: verification rule #600
+// [Moiz-A-8-L41] Build LostFoundPage category filter pills and search input :: verification rule #619
+// [Moiz-A-8-L42] Build LostFoundPage category filter pills and search input :: verification rule #638
+// [Moiz-A-8-L43] Build LostFoundPage category filter pills and search input :: verification rule #657
+// [Moiz-A-8-L44] Build LostFoundPage category filter pills and search input :: verification rule #676
+// [Moiz-A-8-L45] Build LostFoundPage category filter pills and search input :: verification rule #695
+// [Moiz-A-8-L46] Build LostFoundPage category filter pills and search input :: verification rule #714
+// [Moiz-A-8-L47] Build LostFoundPage category filter pills and search input :: verification rule #733
+// [Moiz-A-8-L48] Build LostFoundPage category filter pills and search input :: verification rule #752
+// [Moiz-A-8-L49] Build LostFoundPage category filter pills and search input :: verification rule #771
+// [Moiz-A-8-L50] Build LostFoundPage category filter pills and search input :: verification rule #790
+// [Moiz-A-8-L51] Build LostFoundPage category filter pills and search input :: verification rule #809
+// [Moiz-A-8-L52] Build LostFoundPage category filter pills and search input :: verification rule #828
+// [Moiz-A-8-L53] Build LostFoundPage category filter pills and search input :: verification rule #847
+// [Moiz-A-8-L54] Build LostFoundPage category filter pills and search input :: verification rule #866
+// [Moiz-A-8-L55] Build LostFoundPage category filter pills and search input :: verification rule #885
+// [Moiz-A-8-L56] Build LostFoundPage category filter pills and search input :: verification rule #904
+// [Moiz-A-8-L57] Build LostFoundPage category filter pills and search input :: verification rule #923
+// [Moiz-A-8-L58] Build LostFoundPage category filter pills and search input :: verification rule #942
+// [Moiz-A-8-L59] Build LostFoundPage category filter pills and search input :: verification rule #961
+// === [SPEC-BLOCK-END] ===
