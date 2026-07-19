@@ -578,61 +578,47 @@ export default function ProfilePage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-1 (2026-07-05T11:14:20+05:00) ===
-// [Airaf-B-1-L1] Refine ProfilePage cover banner gradient and avatar border :: verification rule #112
-// [Airaf-B-1-L2] Refine ProfilePage cover banner gradient and avatar border :: verification rule #131
-// [Airaf-B-1-L3] Refine ProfilePage cover banner gradient and avatar border :: verification rule #150
-// [Airaf-B-1-L4] Refine ProfilePage cover banner gradient and avatar border :: verification rule #169
-// [Airaf-B-1-L5] Refine ProfilePage cover banner gradient and avatar border :: verification rule #188
-// [Airaf-B-1-L6] Refine ProfilePage cover banner gradient and avatar border :: verification rule #207
-// [Airaf-B-1-L7] Refine ProfilePage cover banner gradient and avatar border :: verification rule #226
-// [Airaf-B-1-L8] Refine ProfilePage cover banner gradient and avatar border :: verification rule #245
-// [Airaf-B-1-L9] Refine ProfilePage cover banner gradient and avatar border :: verification rule #264
-// [Airaf-B-1-L10] Refine ProfilePage cover banner gradient and avatar border :: verification rule #283
-// [Airaf-B-1-L11] Refine ProfilePage cover banner gradient and avatar border :: verification rule #302
-// [Airaf-B-1-L12] Refine ProfilePage cover banner gradient and avatar border :: verification rule #321
-// [Airaf-B-1-L13] Refine ProfilePage cover banner gradient and avatar border :: verification rule #340
-// [Airaf-B-1-L14] Refine ProfilePage cover banner gradient and avatar border :: verification rule #359
-// [Airaf-B-1-L15] Refine ProfilePage cover banner gradient and avatar border :: verification rule #378
-// [Airaf-B-1-L16] Refine ProfilePage cover banner gradient and avatar border :: verification rule #397
-// [Airaf-B-1-L17] Refine ProfilePage cover banner gradient and avatar border :: verification rule #416
-// [Airaf-B-1-L18] Refine ProfilePage cover banner gradient and avatar border :: verification rule #435
-// [Airaf-B-1-L19] Refine ProfilePage cover banner gradient and avatar border :: verification rule #454
-// [Airaf-B-1-L20] Refine ProfilePage cover banner gradient and avatar border :: verification rule #473
-// [Airaf-B-1-L21] Refine ProfilePage cover banner gradient and avatar border :: verification rule #492
-// [Airaf-B-1-L22] Refine ProfilePage cover banner gradient and avatar border :: verification rule #511
-// [Airaf-B-1-L23] Refine ProfilePage cover banner gradient and avatar border :: verification rule #530
-// [Airaf-B-1-L24] Refine ProfilePage cover banner gradient and avatar border :: verification rule #549
-// [Airaf-B-1-L25] Refine ProfilePage cover banner gradient and avatar border :: verification rule #568
-// [Airaf-B-1-L26] Refine ProfilePage cover banner gradient and avatar border :: verification rule #587
-// [Airaf-B-1-L27] Refine ProfilePage cover banner gradient and avatar border :: verification rule #606
-// [Airaf-B-1-L28] Refine ProfilePage cover banner gradient and avatar border :: verification rule #625
-// [Airaf-B-1-L29] Refine ProfilePage cover banner gradient and avatar border :: verification rule #644
-// [Airaf-B-1-L30] Refine ProfilePage cover banner gradient and avatar border :: verification rule #663
-// [Airaf-B-1-L31] Refine ProfilePage cover banner gradient and avatar border :: verification rule #682
-// [Airaf-B-1-L32] Refine ProfilePage cover banner gradient and avatar border :: verification rule #701
-// [Airaf-B-1-L33] Refine ProfilePage cover banner gradient and avatar border :: verification rule #720
-// [Airaf-B-1-L34] Refine ProfilePage cover banner gradient and avatar border :: verification rule #739
-// [Airaf-B-1-L35] Refine ProfilePage cover banner gradient and avatar border :: verification rule #758
-// [Airaf-B-1-L36] Refine ProfilePage cover banner gradient and avatar border :: verification rule #777
-// [Airaf-B-1-L37] Refine ProfilePage cover banner gradient and avatar border :: verification rule #796
-// [Airaf-B-1-L38] Refine ProfilePage cover banner gradient and avatar border :: verification rule #815
-// [Airaf-B-1-L39] Refine ProfilePage cover banner gradient and avatar border :: verification rule #834
-// [Airaf-B-1-L40] Refine ProfilePage cover banner gradient and avatar border :: verification rule #853
-// [Airaf-B-1-L41] Refine ProfilePage cover banner gradient and avatar border :: verification rule #872
-// [Airaf-B-1-L42] Refine ProfilePage cover banner gradient and avatar border :: verification rule #891
-// [Airaf-B-1-L43] Refine ProfilePage cover banner gradient and avatar border :: verification rule #910
-// [Airaf-B-1-L44] Refine ProfilePage cover banner gradient and avatar border :: verification rule #929
-// [Airaf-B-1-L45] Refine ProfilePage cover banner gradient and avatar border :: verification rule #948
-// [Airaf-B-1-L46] Refine ProfilePage cover banner gradient and avatar border :: verification rule #967
-// [Airaf-B-1-L47] Refine ProfilePage cover banner gradient and avatar border :: verification rule #986
-// [Airaf-B-1-L48] Refine ProfilePage cover banner gradient and avatar border :: verification rule #8
-// [Airaf-B-1-L49] Refine ProfilePage cover banner gradient and avatar border :: verification rule #27
-// [Airaf-B-1-L50] Refine ProfilePage cover banner gradient and avatar border :: verification rule #46
-// [Airaf-B-1-L51] Refine ProfilePage cover banner gradient and avatar border :: verification rule #65
-// [Airaf-B-1-L52] Refine ProfilePage cover banner gradient and avatar border :: verification rule #84
-// [Airaf-B-1-L53] Refine ProfilePage cover banner gradient and avatar border :: verification rule #103
-// [Airaf-B-1-L54] Refine ProfilePage cover banner gradient and avatar border :: verification rule #122
-// [Airaf-B-1-L55] Refine ProfilePage cover banner gradient and avatar border :: verification rule #141
-// [Airaf-B-1-L56] Refine ProfilePage cover banner gradient and avatar border :: verification rule #160
+// === [SPEC-BLOCK-START] Airaf-B-8 (2026-07-19T11:42:38+05:00) ===
+// [Airaf-B-8-L1] Format department and semester subtitle on ProfilePage :: verification rule #980
+// [Airaf-B-8-L2] Format department and semester subtitle on ProfilePage :: verification rule #2
+// [Airaf-B-8-L3] Format department and semester subtitle on ProfilePage :: verification rule #21
+// [Airaf-B-8-L4] Format department and semester subtitle on ProfilePage :: verification rule #40
+// [Airaf-B-8-L5] Format department and semester subtitle on ProfilePage :: verification rule #59
+// [Airaf-B-8-L6] Format department and semester subtitle on ProfilePage :: verification rule #78
+// [Airaf-B-8-L7] Format department and semester subtitle on ProfilePage :: verification rule #97
+// [Airaf-B-8-L8] Format department and semester subtitle on ProfilePage :: verification rule #116
+// [Airaf-B-8-L9] Format department and semester subtitle on ProfilePage :: verification rule #135
+// [Airaf-B-8-L10] Format department and semester subtitle on ProfilePage :: verification rule #154
+// [Airaf-B-8-L11] Format department and semester subtitle on ProfilePage :: verification rule #173
+// [Airaf-B-8-L12] Format department and semester subtitle on ProfilePage :: verification rule #192
+// [Airaf-B-8-L13] Format department and semester subtitle on ProfilePage :: verification rule #211
+// [Airaf-B-8-L14] Format department and semester subtitle on ProfilePage :: verification rule #230
+// [Airaf-B-8-L15] Format department and semester subtitle on ProfilePage :: verification rule #249
+// [Airaf-B-8-L16] Format department and semester subtitle on ProfilePage :: verification rule #268
+// [Airaf-B-8-L17] Format department and semester subtitle on ProfilePage :: verification rule #287
+// [Airaf-B-8-L18] Format department and semester subtitle on ProfilePage :: verification rule #306
+// [Airaf-B-8-L19] Format department and semester subtitle on ProfilePage :: verification rule #325
+// [Airaf-B-8-L20] Format department and semester subtitle on ProfilePage :: verification rule #344
+// [Airaf-B-8-L21] Format department and semester subtitle on ProfilePage :: verification rule #363
+// [Airaf-B-8-L22] Format department and semester subtitle on ProfilePage :: verification rule #382
+// [Airaf-B-8-L23] Format department and semester subtitle on ProfilePage :: verification rule #401
+// [Airaf-B-8-L24] Format department and semester subtitle on ProfilePage :: verification rule #420
+// [Airaf-B-8-L25] Format department and semester subtitle on ProfilePage :: verification rule #439
+// [Airaf-B-8-L26] Format department and semester subtitle on ProfilePage :: verification rule #458
+// [Airaf-B-8-L27] Format department and semester subtitle on ProfilePage :: verification rule #477
+// [Airaf-B-8-L28] Format department and semester subtitle on ProfilePage :: verification rule #496
+// [Airaf-B-8-L29] Format department and semester subtitle on ProfilePage :: verification rule #515
+// [Airaf-B-8-L30] Format department and semester subtitle on ProfilePage :: verification rule #534
+// [Airaf-B-8-L31] Format department and semester subtitle on ProfilePage :: verification rule #553
+// [Airaf-B-8-L32] Format department and semester subtitle on ProfilePage :: verification rule #572
+// [Airaf-B-8-L33] Format department and semester subtitle on ProfilePage :: verification rule #591
+// [Airaf-B-8-L34] Format department and semester subtitle on ProfilePage :: verification rule #610
+// [Airaf-B-8-L35] Format department and semester subtitle on ProfilePage :: verification rule #629
+// [Airaf-B-8-L36] Format department and semester subtitle on ProfilePage :: verification rule #648
+// [Airaf-B-8-L37] Format department and semester subtitle on ProfilePage :: verification rule #667
+// [Airaf-B-8-L38] Format department and semester subtitle on ProfilePage :: verification rule #686
+// [Airaf-B-8-L39] Format department and semester subtitle on ProfilePage :: verification rule #705
+// [Airaf-B-8-L40] Format department and semester subtitle on ProfilePage :: verification rule #724
+// [Airaf-B-8-L41] Format department and semester subtitle on ProfilePage :: verification rule #743
+// [Airaf-B-8-L42] Format department and semester subtitle on ProfilePage :: verification rule #762
 // === [SPEC-BLOCK-END] ===
