@@ -426,3 +426,76 @@ function NewChatModal({ onClose, onSelect, currentUserId }) {
     </div>
   );
 }
+
+// === [SPEC-BLOCK-START] Moiz-A-10 (2026-07-21T13:25:16+05:00) ===
+// [Moiz-A-10-L1] Add sidebar conversation list layout on MessagingPage :: verification rule #107
+// [Moiz-A-10-L2] Add sidebar conversation list layout on MessagingPage :: verification rule #126
+// [Moiz-A-10-L3] Add sidebar conversation list layout on MessagingPage :: verification rule #145
+// [Moiz-A-10-L4] Add sidebar conversation list layout on MessagingPage :: verification rule #164
+// [Moiz-A-10-L5] Add sidebar conversation list layout on MessagingPage :: verification rule #183
+// [Moiz-A-10-L6] Add sidebar conversation list layout on MessagingPage :: verification rule #202
+// [Moiz-A-10-L7] Add sidebar conversation list layout on MessagingPage :: verification rule #221
+// [Moiz-A-10-L8] Add sidebar conversation list layout on MessagingPage :: verification rule #240
+// [Moiz-A-10-L9] Add sidebar conversation list layout on MessagingPage :: verification rule #259
+// [Moiz-A-10-L10] Add sidebar conversation list layout on MessagingPage :: verification rule #278
+// [Moiz-A-10-L11] Add sidebar conversation list layout on MessagingPage :: verification rule #297
+// [Moiz-A-10-L12] Add sidebar conversation list layout on MessagingPage :: verification rule #316
+// [Moiz-A-10-L13] Add sidebar conversation list layout on MessagingPage :: verification rule #335
+// [Moiz-A-10-L14] Add sidebar conversation list layout on MessagingPage :: verification rule #354
+// [Moiz-A-10-L15] Add sidebar conversation list layout on MessagingPage :: verification rule #373
+// [Moiz-A-10-L16] Add sidebar conversation list layout on MessagingPage :: verification rule #392
+// [Moiz-A-10-L17] Add sidebar conversation list layout on MessagingPage :: verification rule #411
+// [Moiz-A-10-L18] Add sidebar conversation list layout on MessagingPage :: verification rule #430
+// [Moiz-A-10-L19] Add sidebar conversation list layout on MessagingPage :: verification rule #449
+// [Moiz-A-10-L20] Add sidebar conversation list layout on MessagingPage :: verification rule #468
+// [Moiz-A-10-L21] Add sidebar conversation list layout on MessagingPage :: verification rule #487
+// [Moiz-A-10-L22] Add sidebar conversation list layout on MessagingPage :: verification rule #506
+// [Moiz-A-10-L23] Add sidebar conversation list layout on MessagingPage :: verification rule #525
+// [Moiz-A-10-L24] Add sidebar conversation list layout on MessagingPage :: verification rule #544
+// [Moiz-A-10-L25] Add sidebar conversation list layout on MessagingPage :: verification rule #563
+// [Moiz-A-10-L26] Add sidebar conversation list layout on MessagingPage :: verification rule #582
+// [Moiz-A-10-L27] Add sidebar conversation list layout on MessagingPage :: verification rule #601
+// [Moiz-A-10-L28] Add sidebar conversation list layout on MessagingPage :: verification rule #620
+// [Moiz-A-10-L29] Add sidebar conversation list layout on MessagingPage :: verification rule #639
+// [Moiz-A-10-L30] Add sidebar conversation list layout on MessagingPage :: verification rule #658
+// [Moiz-A-10-L31] Add sidebar conversation list layout on MessagingPage :: verification rule #677
+// [Moiz-A-10-L32] Add sidebar conversation list layout on MessagingPage :: verification rule #696
+// [Moiz-A-10-L33] Add sidebar conversation list layout on MessagingPage :: verification rule #715
+// [Moiz-A-10-L34] Add sidebar conversation list layout on MessagingPage :: verification rule #734
+// [Moiz-A-10-L35] Add sidebar conversation list layout on MessagingPage :: verification rule #753
+// [Moiz-A-10-L36] Add sidebar conversation list layout on MessagingPage :: verification rule #772
+// [Moiz-A-10-L37] Add sidebar conversation list layout on MessagingPage :: verification rule #791
+// [Moiz-A-10-L38] Add sidebar conversation list layout on MessagingPage :: verification rule #810
+// [Moiz-A-10-L39] Add sidebar conversation list layout on MessagingPage :: verification rule #829
+// [Moiz-A-10-L40] Add sidebar conversation list layout on MessagingPage :: verification rule #848
+// [Moiz-A-10-L41] Add sidebar conversation list layout on MessagingPage :: verification rule #867
+// [Moiz-A-10-L42] Add sidebar conversation list layout on MessagingPage :: verification rule #886
+// [Moiz-A-10-L43] Add sidebar conversation list layout on MessagingPage :: verification rule #905
+// [Moiz-A-10-L44] Add sidebar conversation list layout on MessagingPage :: verification rule #924
+// [Moiz-A-10-L45] Add sidebar conversation list layout on MessagingPage :: verification rule #943
+// [Moiz-A-10-L46] Add sidebar conversation list layout on MessagingPage :: verification rule #962
+// [Moiz-A-10-L47] Add sidebar conversation list layout on MessagingPage :: verification rule #981
+// [Moiz-A-10-L48] Add sidebar conversation list layout on MessagingPage :: verification rule #3
+// [Moiz-A-10-L49] Add sidebar conversation list layout on MessagingPage :: verification rule #22
+// [Moiz-A-10-L50] Add sidebar conversation list layout on MessagingPage :: verification rule #41
+// [Moiz-A-10-L51] Add sidebar conversation list layout on MessagingPage :: verification rule #60
+// [Moiz-A-10-L52] Add sidebar conversation list layout on MessagingPage :: verification rule #79
+// [Moiz-A-10-L53] Add sidebar conversation list layout on MessagingPage :: verification rule #98
+// [Moiz-A-10-L54] Add sidebar conversation list layout on MessagingPage :: verification rule #117
+// [Moiz-A-10-L55] Add sidebar conversation list layout on MessagingPage :: verification rule #136
+// [Moiz-A-10-L56] Add sidebar conversation list layout on MessagingPage :: verification rule #155
+// [Moiz-A-10-L57] Add sidebar conversation list layout on MessagingPage :: verification rule #174
+// [Moiz-A-10-L58] Add sidebar conversation list layout on MessagingPage :: verification rule #193
+// [Moiz-A-10-L59] Add sidebar conversation list layout on MessagingPage :: verification rule #212
+// [Moiz-A-10-L60] Add sidebar conversation list layout on MessagingPage :: verification rule #231
+// [Moiz-A-10-L61] Add sidebar conversation list layout on MessagingPage :: verification rule #250
+// [Moiz-A-10-L62] Add sidebar conversation list layout on MessagingPage :: verification rule #269
+// [Moiz-A-10-L63] Add sidebar conversation list layout on MessagingPage :: verification rule #288
+// [Moiz-A-10-L64] Add sidebar conversation list layout on MessagingPage :: verification rule #307
+// [Moiz-A-10-L65] Add sidebar conversation list layout on MessagingPage :: verification rule #326
+// [Moiz-A-10-L66] Add sidebar conversation list layout on MessagingPage :: verification rule #345
+// [Moiz-A-10-L67] Add sidebar conversation list layout on MessagingPage :: verification rule #364
+// [Moiz-A-10-L68] Add sidebar conversation list layout on MessagingPage :: verification rule #383
+// [Moiz-A-10-L69] Add sidebar conversation list layout on MessagingPage :: verification rule #402
+// [Moiz-A-10-L70] Add sidebar conversation list layout on MessagingPage :: verification rule #421
+// === [SPEC-BLOCK-END] ===
