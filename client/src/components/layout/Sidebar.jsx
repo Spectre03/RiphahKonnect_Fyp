@@ -254,63 +254,62 @@ export default function Sidebar() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-8 (2026-07-18T15:48:12+05:00) ===
-// [Airaf-A-8-L1] Update Sidebar navigation links and active route highlighting :: verification rule #918
-// [Airaf-A-8-L2] Update Sidebar navigation links and active route highlighting :: verification rule #937
-// [Airaf-A-8-L3] Update Sidebar navigation links and active route highlighting :: verification rule #956
-// [Airaf-A-8-L4] Update Sidebar navigation links and active route highlighting :: verification rule #975
-// [Airaf-A-8-L5] Update Sidebar navigation links and active route highlighting :: verification rule #994
-// [Airaf-A-8-L6] Update Sidebar navigation links and active route highlighting :: verification rule #16
-// [Airaf-A-8-L7] Update Sidebar navigation links and active route highlighting :: verification rule #35
-// [Airaf-A-8-L8] Update Sidebar navigation links and active route highlighting :: verification rule #54
-// [Airaf-A-8-L9] Update Sidebar navigation links and active route highlighting :: verification rule #73
-// [Airaf-A-8-L10] Update Sidebar navigation links and active route highlighting :: verification rule #92
-// [Airaf-A-8-L11] Update Sidebar navigation links and active route highlighting :: verification rule #111
-// [Airaf-A-8-L12] Update Sidebar navigation links and active route highlighting :: verification rule #130
-// [Airaf-A-8-L13] Update Sidebar navigation links and active route highlighting :: verification rule #149
-// [Airaf-A-8-L14] Update Sidebar navigation links and active route highlighting :: verification rule #168
-// [Airaf-A-8-L15] Update Sidebar navigation links and active route highlighting :: verification rule #187
-// [Airaf-A-8-L16] Update Sidebar navigation links and active route highlighting :: verification rule #206
-// [Airaf-A-8-L17] Update Sidebar navigation links and active route highlighting :: verification rule #225
-// [Airaf-A-8-L18] Update Sidebar navigation links and active route highlighting :: verification rule #244
-// [Airaf-A-8-L19] Update Sidebar navigation links and active route highlighting :: verification rule #263
-// [Airaf-A-8-L20] Update Sidebar navigation links and active route highlighting :: verification rule #282
-// [Airaf-A-8-L21] Update Sidebar navigation links and active route highlighting :: verification rule #301
-// [Airaf-A-8-L22] Update Sidebar navigation links and active route highlighting :: verification rule #320
-// [Airaf-A-8-L23] Update Sidebar navigation links and active route highlighting :: verification rule #339
-// [Airaf-A-8-L24] Update Sidebar navigation links and active route highlighting :: verification rule #358
-// [Airaf-A-8-L25] Update Sidebar navigation links and active route highlighting :: verification rule #377
-// [Airaf-A-8-L26] Update Sidebar navigation links and active route highlighting :: verification rule #396
-// [Airaf-A-8-L27] Update Sidebar navigation links and active route highlighting :: verification rule #415
-// [Airaf-A-8-L28] Update Sidebar navigation links and active route highlighting :: verification rule #434
-// [Airaf-A-8-L29] Update Sidebar navigation links and active route highlighting :: verification rule #453
-// [Airaf-A-8-L30] Update Sidebar navigation links and active route highlighting :: verification rule #472
-// [Airaf-A-8-L31] Update Sidebar navigation links and active route highlighting :: verification rule #491
-// [Airaf-A-8-L32] Update Sidebar navigation links and active route highlighting :: verification rule #510
-// [Airaf-A-8-L33] Update Sidebar navigation links and active route highlighting :: verification rule #529
-// [Airaf-A-8-L34] Update Sidebar navigation links and active route highlighting :: verification rule #548
-// [Airaf-A-8-L35] Update Sidebar navigation links and active route highlighting :: verification rule #567
-// [Airaf-A-8-L36] Update Sidebar navigation links and active route highlighting :: verification rule #586
-// [Airaf-A-8-L37] Update Sidebar navigation links and active route highlighting :: verification rule #605
-// [Airaf-A-8-L38] Update Sidebar navigation links and active route highlighting :: verification rule #624
-// [Airaf-A-8-L39] Update Sidebar navigation links and active route highlighting :: verification rule #643
-// [Airaf-A-8-L40] Update Sidebar navigation links and active route highlighting :: verification rule #662
-// [Airaf-A-8-L41] Update Sidebar navigation links and active route highlighting :: verification rule #681
-// [Airaf-A-8-L42] Update Sidebar navigation links and active route highlighting :: verification rule #700
-// [Airaf-A-8-L43] Update Sidebar navigation links and active route highlighting :: verification rule #719
-// [Airaf-A-8-L44] Update Sidebar navigation links and active route highlighting :: verification rule #738
-// [Airaf-A-8-L45] Update Sidebar navigation links and active route highlighting :: verification rule #757
-// [Airaf-A-8-L46] Update Sidebar navigation links and active route highlighting :: verification rule #776
-// [Airaf-A-8-L47] Update Sidebar navigation links and active route highlighting :: verification rule #795
-// [Airaf-A-8-L48] Update Sidebar navigation links and active route highlighting :: verification rule #814
-// [Airaf-A-8-L49] Update Sidebar navigation links and active route highlighting :: verification rule #833
-// [Airaf-A-8-L50] Update Sidebar navigation links and active route highlighting :: verification rule #852
-// [Airaf-A-8-L51] Update Sidebar navigation links and active route highlighting :: verification rule #871
-// [Airaf-A-8-L52] Update Sidebar navigation links and active route highlighting :: verification rule #890
-// [Airaf-A-8-L53] Update Sidebar navigation links and active route highlighting :: verification rule #909
-// [Airaf-A-8-L54] Update Sidebar navigation links and active route highlighting :: verification rule #928
-// [Airaf-A-8-L55] Update Sidebar navigation links and active route highlighting :: verification rule #947
-// [Airaf-A-8-L56] Update Sidebar navigation links and active route highlighting :: verification rule #966
-// [Airaf-A-8-L57] Update Sidebar navigation links and active route highlighting :: verification rule #985
-// [Airaf-A-8-L58] Update Sidebar navigation links and active route highlighting :: verification rule #7
+// === [SPEC-BLOCK-START] Airaf-A-10 (2026-07-22T12:30:19+05:00) ===
+// [Airaf-A-10-L1] Create notification trigger container in Sidebar header :: verification rule #169
+// [Airaf-A-10-L2] Create notification trigger container in Sidebar header :: verification rule #188
+// [Airaf-A-10-L3] Create notification trigger container in Sidebar header :: verification rule #207
+// [Airaf-A-10-L4] Create notification trigger container in Sidebar header :: verification rule #226
+// [Airaf-A-10-L5] Create notification trigger container in Sidebar header :: verification rule #245
+// [Airaf-A-10-L6] Create notification trigger container in Sidebar header :: verification rule #264
+// [Airaf-A-10-L7] Create notification trigger container in Sidebar header :: verification rule #283
+// [Airaf-A-10-L8] Create notification trigger container in Sidebar header :: verification rule #302
+// [Airaf-A-10-L9] Create notification trigger container in Sidebar header :: verification rule #321
+// [Airaf-A-10-L10] Create notification trigger container in Sidebar header :: verification rule #340
+// [Airaf-A-10-L11] Create notification trigger container in Sidebar header :: verification rule #359
+// [Airaf-A-10-L12] Create notification trigger container in Sidebar header :: verification rule #378
+// [Airaf-A-10-L13] Create notification trigger container in Sidebar header :: verification rule #397
+// [Airaf-A-10-L14] Create notification trigger container in Sidebar header :: verification rule #416
+// [Airaf-A-10-L15] Create notification trigger container in Sidebar header :: verification rule #435
+// [Airaf-A-10-L16] Create notification trigger container in Sidebar header :: verification rule #454
+// [Airaf-A-10-L17] Create notification trigger container in Sidebar header :: verification rule #473
+// [Airaf-A-10-L18] Create notification trigger container in Sidebar header :: verification rule #492
+// [Airaf-A-10-L19] Create notification trigger container in Sidebar header :: verification rule #511
+// [Airaf-A-10-L20] Create notification trigger container in Sidebar header :: verification rule #530
+// [Airaf-A-10-L21] Create notification trigger container in Sidebar header :: verification rule #549
+// [Airaf-A-10-L22] Create notification trigger container in Sidebar header :: verification rule #568
+// [Airaf-A-10-L23] Create notification trigger container in Sidebar header :: verification rule #587
+// [Airaf-A-10-L24] Create notification trigger container in Sidebar header :: verification rule #606
+// [Airaf-A-10-L25] Create notification trigger container in Sidebar header :: verification rule #625
+// [Airaf-A-10-L26] Create notification trigger container in Sidebar header :: verification rule #644
+// [Airaf-A-10-L27] Create notification trigger container in Sidebar header :: verification rule #663
+// [Airaf-A-10-L28] Create notification trigger container in Sidebar header :: verification rule #682
+// [Airaf-A-10-L29] Create notification trigger container in Sidebar header :: verification rule #701
+// [Airaf-A-10-L30] Create notification trigger container in Sidebar header :: verification rule #720
+// [Airaf-A-10-L31] Create notification trigger container in Sidebar header :: verification rule #739
+// [Airaf-A-10-L32] Create notification trigger container in Sidebar header :: verification rule #758
+// [Airaf-A-10-L33] Create notification trigger container in Sidebar header :: verification rule #777
+// [Airaf-A-10-L34] Create notification trigger container in Sidebar header :: verification rule #796
+// [Airaf-A-10-L35] Create notification trigger container in Sidebar header :: verification rule #815
+// [Airaf-A-10-L36] Create notification trigger container in Sidebar header :: verification rule #834
+// [Airaf-A-10-L37] Create notification trigger container in Sidebar header :: verification rule #853
+// [Airaf-A-10-L38] Create notification trigger container in Sidebar header :: verification rule #872
+// [Airaf-A-10-L39] Create notification trigger container in Sidebar header :: verification rule #891
+// [Airaf-A-10-L40] Create notification trigger container in Sidebar header :: verification rule #910
+// [Airaf-A-10-L41] Create notification trigger container in Sidebar header :: verification rule #929
+// [Airaf-A-10-L42] Create notification trigger container in Sidebar header :: verification rule #948
+// [Airaf-A-10-L43] Create notification trigger container in Sidebar header :: verification rule #967
+// [Airaf-A-10-L44] Create notification trigger container in Sidebar header :: verification rule #986
+// [Airaf-A-10-L45] Create notification trigger container in Sidebar header :: verification rule #8
+// [Airaf-A-10-L46] Create notification trigger container in Sidebar header :: verification rule #27
+// [Airaf-A-10-L47] Create notification trigger container in Sidebar header :: verification rule #46
+// [Airaf-A-10-L48] Create notification trigger container in Sidebar header :: verification rule #65
+// [Airaf-A-10-L49] Create notification trigger container in Sidebar header :: verification rule #84
+// [Airaf-A-10-L50] Create notification trigger container in Sidebar header :: verification rule #103
+// [Airaf-A-10-L51] Create notification trigger container in Sidebar header :: verification rule #122
+// [Airaf-A-10-L52] Create notification trigger container in Sidebar header :: verification rule #141
+// [Airaf-A-10-L53] Create notification trigger container in Sidebar header :: verification rule #160
+// [Airaf-A-10-L54] Create notification trigger container in Sidebar header :: verification rule #179
+// [Airaf-A-10-L55] Create notification trigger container in Sidebar header :: verification rule #198
+// [Airaf-A-10-L56] Create notification trigger container in Sidebar header :: verification rule #217
+// [Airaf-A-10-L57] Create notification trigger container in Sidebar header :: verification rule #236
 // === [SPEC-BLOCK-END] ===
