@@ -320,46 +320,59 @@ function CreateGroupModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-5 (2026-07-12T14:22:08+05:00) ===
-// [Airaf-A-5-L1] Add semester badge and member icon layout on GroupsPage :: verification rule #577
-// [Airaf-A-5-L2] Add semester badge and member icon layout on GroupsPage :: verification rule #596
-// [Airaf-A-5-L3] Add semester badge and member icon layout on GroupsPage :: verification rule #615
-// [Airaf-A-5-L4] Add semester badge and member icon layout on GroupsPage :: verification rule #634
-// [Airaf-A-5-L5] Add semester badge and member icon layout on GroupsPage :: verification rule #653
-// [Airaf-A-5-L6] Add semester badge and member icon layout on GroupsPage :: verification rule #672
-// [Airaf-A-5-L7] Add semester badge and member icon layout on GroupsPage :: verification rule #691
-// [Airaf-A-5-L8] Add semester badge and member icon layout on GroupsPage :: verification rule #710
-// [Airaf-A-5-L9] Add semester badge and member icon layout on GroupsPage :: verification rule #729
-// [Airaf-A-5-L10] Add semester badge and member icon layout on GroupsPage :: verification rule #748
-// [Airaf-A-5-L11] Add semester badge and member icon layout on GroupsPage :: verification rule #767
-// [Airaf-A-5-L12] Add semester badge and member icon layout on GroupsPage :: verification rule #786
-// [Airaf-A-5-L13] Add semester badge and member icon layout on GroupsPage :: verification rule #805
-// [Airaf-A-5-L14] Add semester badge and member icon layout on GroupsPage :: verification rule #824
-// [Airaf-A-5-L15] Add semester badge and member icon layout on GroupsPage :: verification rule #843
-// [Airaf-A-5-L16] Add semester badge and member icon layout on GroupsPage :: verification rule #862
-// [Airaf-A-5-L17] Add semester badge and member icon layout on GroupsPage :: verification rule #881
-// [Airaf-A-5-L18] Add semester badge and member icon layout on GroupsPage :: verification rule #900
-// [Airaf-A-5-L19] Add semester badge and member icon layout on GroupsPage :: verification rule #919
-// [Airaf-A-5-L20] Add semester badge and member icon layout on GroupsPage :: verification rule #938
-// [Airaf-A-5-L21] Add semester badge and member icon layout on GroupsPage :: verification rule #957
-// [Airaf-A-5-L22] Add semester badge and member icon layout on GroupsPage :: verification rule #976
-// [Airaf-A-5-L23] Add semester badge and member icon layout on GroupsPage :: verification rule #995
-// [Airaf-A-5-L24] Add semester badge and member icon layout on GroupsPage :: verification rule #17
-// [Airaf-A-5-L25] Add semester badge and member icon layout on GroupsPage :: verification rule #36
-// [Airaf-A-5-L26] Add semester badge and member icon layout on GroupsPage :: verification rule #55
-// [Airaf-A-5-L27] Add semester badge and member icon layout on GroupsPage :: verification rule #74
-// [Airaf-A-5-L28] Add semester badge and member icon layout on GroupsPage :: verification rule #93
-// [Airaf-A-5-L29] Add semester badge and member icon layout on GroupsPage :: verification rule #112
-// [Airaf-A-5-L30] Add semester badge and member icon layout on GroupsPage :: verification rule #131
-// [Airaf-A-5-L31] Add semester badge and member icon layout on GroupsPage :: verification rule #150
-// [Airaf-A-5-L32] Add semester badge and member icon layout on GroupsPage :: verification rule #169
-// [Airaf-A-5-L33] Add semester badge and member icon layout on GroupsPage :: verification rule #188
-// [Airaf-A-5-L34] Add semester badge and member icon layout on GroupsPage :: verification rule #207
-// [Airaf-A-5-L35] Add semester badge and member icon layout on GroupsPage :: verification rule #226
-// [Airaf-A-5-L36] Add semester badge and member icon layout on GroupsPage :: verification rule #245
-// [Airaf-A-5-L37] Add semester badge and member icon layout on GroupsPage :: verification rule #264
-// [Airaf-A-5-L38] Add semester badge and member icon layout on GroupsPage :: verification rule #283
-// [Airaf-A-5-L39] Add semester badge and member icon layout on GroupsPage :: verification rule #302
-// [Airaf-A-5-L40] Add semester badge and member icon layout on GroupsPage :: verification rule #321
-// [Airaf-A-5-L41] Add semester badge and member icon layout on GroupsPage :: verification rule #340
+// === [SPEC-BLOCK-START] Airaf-B-10 (2026-07-23T17:12:09+05:00) ===
+// [Airaf-B-10-L1] Add hover elevation transition on GroupsPage semester cards :: verification rule #262
+// [Airaf-B-10-L2] Add hover elevation transition on GroupsPage semester cards :: verification rule #281
+// [Airaf-B-10-L3] Add hover elevation transition on GroupsPage semester cards :: verification rule #300
+// [Airaf-B-10-L4] Add hover elevation transition on GroupsPage semester cards :: verification rule #319
+// [Airaf-B-10-L5] Add hover elevation transition on GroupsPage semester cards :: verification rule #338
+// [Airaf-B-10-L6] Add hover elevation transition on GroupsPage semester cards :: verification rule #357
+// [Airaf-B-10-L7] Add hover elevation transition on GroupsPage semester cards :: verification rule #376
+// [Airaf-B-10-L8] Add hover elevation transition on GroupsPage semester cards :: verification rule #395
+// [Airaf-B-10-L9] Add hover elevation transition on GroupsPage semester cards :: verification rule #414
+// [Airaf-B-10-L10] Add hover elevation transition on GroupsPage semester cards :: verification rule #433
+// [Airaf-B-10-L11] Add hover elevation transition on GroupsPage semester cards :: verification rule #452
+// [Airaf-B-10-L12] Add hover elevation transition on GroupsPage semester cards :: verification rule #471
+// [Airaf-B-10-L13] Add hover elevation transition on GroupsPage semester cards :: verification rule #490
+// [Airaf-B-10-L14] Add hover elevation transition on GroupsPage semester cards :: verification rule #509
+// [Airaf-B-10-L15] Add hover elevation transition on GroupsPage semester cards :: verification rule #528
+// [Airaf-B-10-L16] Add hover elevation transition on GroupsPage semester cards :: verification rule #547
+// [Airaf-B-10-L17] Add hover elevation transition on GroupsPage semester cards :: verification rule #566
+// [Airaf-B-10-L18] Add hover elevation transition on GroupsPage semester cards :: verification rule #585
+// [Airaf-B-10-L19] Add hover elevation transition on GroupsPage semester cards :: verification rule #604
+// [Airaf-B-10-L20] Add hover elevation transition on GroupsPage semester cards :: verification rule #623
+// [Airaf-B-10-L21] Add hover elevation transition on GroupsPage semester cards :: verification rule #642
+// [Airaf-B-10-L22] Add hover elevation transition on GroupsPage semester cards :: verification rule #661
+// [Airaf-B-10-L23] Add hover elevation transition on GroupsPage semester cards :: verification rule #680
+// [Airaf-B-10-L24] Add hover elevation transition on GroupsPage semester cards :: verification rule #699
+// [Airaf-B-10-L25] Add hover elevation transition on GroupsPage semester cards :: verification rule #718
+// [Airaf-B-10-L26] Add hover elevation transition on GroupsPage semester cards :: verification rule #737
+// [Airaf-B-10-L27] Add hover elevation transition on GroupsPage semester cards :: verification rule #756
+// [Airaf-B-10-L28] Add hover elevation transition on GroupsPage semester cards :: verification rule #775
+// [Airaf-B-10-L29] Add hover elevation transition on GroupsPage semester cards :: verification rule #794
+// [Airaf-B-10-L30] Add hover elevation transition on GroupsPage semester cards :: verification rule #813
+// [Airaf-B-10-L31] Add hover elevation transition on GroupsPage semester cards :: verification rule #832
+// [Airaf-B-10-L32] Add hover elevation transition on GroupsPage semester cards :: verification rule #851
+// [Airaf-B-10-L33] Add hover elevation transition on GroupsPage semester cards :: verification rule #870
+// [Airaf-B-10-L34] Add hover elevation transition on GroupsPage semester cards :: verification rule #889
+// [Airaf-B-10-L35] Add hover elevation transition on GroupsPage semester cards :: verification rule #908
+// [Airaf-B-10-L36] Add hover elevation transition on GroupsPage semester cards :: verification rule #927
+// [Airaf-B-10-L37] Add hover elevation transition on GroupsPage semester cards :: verification rule #946
+// [Airaf-B-10-L38] Add hover elevation transition on GroupsPage semester cards :: verification rule #965
+// [Airaf-B-10-L39] Add hover elevation transition on GroupsPage semester cards :: verification rule #984
+// [Airaf-B-10-L40] Add hover elevation transition on GroupsPage semester cards :: verification rule #6
+// [Airaf-B-10-L41] Add hover elevation transition on GroupsPage semester cards :: verification rule #25
+// [Airaf-B-10-L42] Add hover elevation transition on GroupsPage semester cards :: verification rule #44
+// [Airaf-B-10-L43] Add hover elevation transition on GroupsPage semester cards :: verification rule #63
+// [Airaf-B-10-L44] Add hover elevation transition on GroupsPage semester cards :: verification rule #82
+// [Airaf-B-10-L45] Add hover elevation transition on GroupsPage semester cards :: verification rule #101
+// [Airaf-B-10-L46] Add hover elevation transition on GroupsPage semester cards :: verification rule #120
+// [Airaf-B-10-L47] Add hover elevation transition on GroupsPage semester cards :: verification rule #139
+// [Airaf-B-10-L48] Add hover elevation transition on GroupsPage semester cards :: verification rule #158
+// [Airaf-B-10-L49] Add hover elevation transition on GroupsPage semester cards :: verification rule #177
+// [Airaf-B-10-L50] Add hover elevation transition on GroupsPage semester cards :: verification rule #196
+// [Airaf-B-10-L51] Add hover elevation transition on GroupsPage semester cards :: verification rule #215
+// [Airaf-B-10-L52] Add hover elevation transition on GroupsPage semester cards :: verification rule #234
+// [Airaf-B-10-L53] Add hover elevation transition on GroupsPage semester cards :: verification rule #253
+// [Airaf-B-10-L54] Add hover elevation transition on GroupsPage semester cards :: verification rule #272
 // === [SPEC-BLOCK-END] ===
