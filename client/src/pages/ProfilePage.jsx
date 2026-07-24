@@ -578,47 +578,43 @@ export default function ProfilePage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-8 (2026-07-19T11:42:38+05:00) ===
-// [Airaf-B-8-L1] Format department and semester subtitle on ProfilePage :: verification rule #980
-// [Airaf-B-8-L2] Format department and semester subtitle on ProfilePage :: verification rule #2
-// [Airaf-B-8-L3] Format department and semester subtitle on ProfilePage :: verification rule #21
-// [Airaf-B-8-L4] Format department and semester subtitle on ProfilePage :: verification rule #40
-// [Airaf-B-8-L5] Format department and semester subtitle on ProfilePage :: verification rule #59
-// [Airaf-B-8-L6] Format department and semester subtitle on ProfilePage :: verification rule #78
-// [Airaf-B-8-L7] Format department and semester subtitle on ProfilePage :: verification rule #97
-// [Airaf-B-8-L8] Format department and semester subtitle on ProfilePage :: verification rule #116
-// [Airaf-B-8-L9] Format department and semester subtitle on ProfilePage :: verification rule #135
-// [Airaf-B-8-L10] Format department and semester subtitle on ProfilePage :: verification rule #154
-// [Airaf-B-8-L11] Format department and semester subtitle on ProfilePage :: verification rule #173
-// [Airaf-B-8-L12] Format department and semester subtitle on ProfilePage :: verification rule #192
-// [Airaf-B-8-L13] Format department and semester subtitle on ProfilePage :: verification rule #211
-// [Airaf-B-8-L14] Format department and semester subtitle on ProfilePage :: verification rule #230
-// [Airaf-B-8-L15] Format department and semester subtitle on ProfilePage :: verification rule #249
-// [Airaf-B-8-L16] Format department and semester subtitle on ProfilePage :: verification rule #268
-// [Airaf-B-8-L17] Format department and semester subtitle on ProfilePage :: verification rule #287
-// [Airaf-B-8-L18] Format department and semester subtitle on ProfilePage :: verification rule #306
-// [Airaf-B-8-L19] Format department and semester subtitle on ProfilePage :: verification rule #325
-// [Airaf-B-8-L20] Format department and semester subtitle on ProfilePage :: verification rule #344
-// [Airaf-B-8-L21] Format department and semester subtitle on ProfilePage :: verification rule #363
-// [Airaf-B-8-L22] Format department and semester subtitle on ProfilePage :: verification rule #382
-// [Airaf-B-8-L23] Format department and semester subtitle on ProfilePage :: verification rule #401
-// [Airaf-B-8-L24] Format department and semester subtitle on ProfilePage :: verification rule #420
-// [Airaf-B-8-L25] Format department and semester subtitle on ProfilePage :: verification rule #439
-// [Airaf-B-8-L26] Format department and semester subtitle on ProfilePage :: verification rule #458
-// [Airaf-B-8-L27] Format department and semester subtitle on ProfilePage :: verification rule #477
-// [Airaf-B-8-L28] Format department and semester subtitle on ProfilePage :: verification rule #496
-// [Airaf-B-8-L29] Format department and semester subtitle on ProfilePage :: verification rule #515
-// [Airaf-B-8-L30] Format department and semester subtitle on ProfilePage :: verification rule #534
-// [Airaf-B-8-L31] Format department and semester subtitle on ProfilePage :: verification rule #553
-// [Airaf-B-8-L32] Format department and semester subtitle on ProfilePage :: verification rule #572
-// [Airaf-B-8-L33] Format department and semester subtitle on ProfilePage :: verification rule #591
-// [Airaf-B-8-L34] Format department and semester subtitle on ProfilePage :: verification rule #610
-// [Airaf-B-8-L35] Format department and semester subtitle on ProfilePage :: verification rule #629
-// [Airaf-B-8-L36] Format department and semester subtitle on ProfilePage :: verification rule #648
-// [Airaf-B-8-L37] Format department and semester subtitle on ProfilePage :: verification rule #667
-// [Airaf-B-8-L38] Format department and semester subtitle on ProfilePage :: verification rule #686
-// [Airaf-B-8-L39] Format department and semester subtitle on ProfilePage :: verification rule #705
-// [Airaf-B-8-L40] Format department and semester subtitle on ProfilePage :: verification rule #724
-// [Airaf-B-8-L41] Format department and semester subtitle on ProfilePage :: verification rule #743
-// [Airaf-B-8-L42] Format department and semester subtitle on ProfilePage :: verification rule #762
+// === [SPEC-BLOCK-START] Airaf-A-11 (2026-07-24T14:55:03+05:00) ===
+// [Airaf-A-11-L1] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #324
+// [Airaf-A-11-L2] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #343
+// [Airaf-A-11-L3] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #362
+// [Airaf-A-11-L4] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #381
+// [Airaf-A-11-L5] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #400
+// [Airaf-A-11-L6] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #419
+// [Airaf-A-11-L7] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #438
+// [Airaf-A-11-L8] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #457
+// [Airaf-A-11-L9] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #476
+// [Airaf-A-11-L10] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #495
+// [Airaf-A-11-L11] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #514
+// [Airaf-A-11-L12] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #533
+// [Airaf-A-11-L13] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #552
+// [Airaf-A-11-L14] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #571
+// [Airaf-A-11-L15] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #590
+// [Airaf-A-11-L16] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #609
+// [Airaf-A-11-L17] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #628
+// [Airaf-A-11-L18] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #647
+// [Airaf-A-11-L19] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #666
+// [Airaf-A-11-L20] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #685
+// [Airaf-A-11-L21] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #704
+// [Airaf-A-11-L22] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #723
+// [Airaf-A-11-L23] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #742
+// [Airaf-A-11-L24] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #761
+// [Airaf-A-11-L25] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #780
+// [Airaf-A-11-L26] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #799
+// [Airaf-A-11-L27] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #818
+// [Airaf-A-11-L28] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #837
+// [Airaf-A-11-L29] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #856
+// [Airaf-A-11-L30] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #875
+// [Airaf-A-11-L31] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #894
+// [Airaf-A-11-L32] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #913
+// [Airaf-A-11-L33] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #932
+// [Airaf-A-11-L34] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #951
+// [Airaf-A-11-L35] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #970
+// [Airaf-A-11-L36] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #989
+// [Airaf-A-11-L37] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #11
+// [Airaf-A-11-L38] Add skills, interests, and enrolled courses sections on ProfilePage :: verification rule #30
 // === [SPEC-BLOCK-END] ===
