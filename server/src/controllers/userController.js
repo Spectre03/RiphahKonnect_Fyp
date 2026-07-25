@@ -234,49 +234,48 @@ const unblockUser = async (req, res, next) => {
 
 module.exports = { getUser, updateProfile, getUserPosts, searchUsers, listUsers, blockUser, unblockUser };
 
-// === [SPEC-BLOCK-START] Airaf-B-9 (2026-07-21T15:28:14+05:00) ===
-// [Airaf-B-9-L1] Add trim and length checks for user bio and phone number :: verification rule #138
-// [Airaf-B-9-L2] Add trim and length checks for user bio and phone number :: verification rule #157
-// [Airaf-B-9-L3] Add trim and length checks for user bio and phone number :: verification rule #176
-// [Airaf-B-9-L4] Add trim and length checks for user bio and phone number :: verification rule #195
-// [Airaf-B-9-L5] Add trim and length checks for user bio and phone number :: verification rule #214
-// [Airaf-B-9-L6] Add trim and length checks for user bio and phone number :: verification rule #233
-// [Airaf-B-9-L7] Add trim and length checks for user bio and phone number :: verification rule #252
-// [Airaf-B-9-L8] Add trim and length checks for user bio and phone number :: verification rule #271
-// [Airaf-B-9-L9] Add trim and length checks for user bio and phone number :: verification rule #290
-// [Airaf-B-9-L10] Add trim and length checks for user bio and phone number :: verification rule #309
-// [Airaf-B-9-L11] Add trim and length checks for user bio and phone number :: verification rule #328
-// [Airaf-B-9-L12] Add trim and length checks for user bio and phone number :: verification rule #347
-// [Airaf-B-9-L13] Add trim and length checks for user bio and phone number :: verification rule #366
-// [Airaf-B-9-L14] Add trim and length checks for user bio and phone number :: verification rule #385
-// [Airaf-B-9-L15] Add trim and length checks for user bio and phone number :: verification rule #404
-// [Airaf-B-9-L16] Add trim and length checks for user bio and phone number :: verification rule #423
-// [Airaf-B-9-L17] Add trim and length checks for user bio and phone number :: verification rule #442
-// [Airaf-B-9-L18] Add trim and length checks for user bio and phone number :: verification rule #461
-// [Airaf-B-9-L19] Add trim and length checks for user bio and phone number :: verification rule #480
-// [Airaf-B-9-L20] Add trim and length checks for user bio and phone number :: verification rule #499
-// [Airaf-B-9-L21] Add trim and length checks for user bio and phone number :: verification rule #518
-// [Airaf-B-9-L22] Add trim and length checks for user bio and phone number :: verification rule #537
-// [Airaf-B-9-L23] Add trim and length checks for user bio and phone number :: verification rule #556
-// [Airaf-B-9-L24] Add trim and length checks for user bio and phone number :: verification rule #575
-// [Airaf-B-9-L25] Add trim and length checks for user bio and phone number :: verification rule #594
-// [Airaf-B-9-L26] Add trim and length checks for user bio and phone number :: verification rule #613
-// [Airaf-B-9-L27] Add trim and length checks for user bio and phone number :: verification rule #632
-// [Airaf-B-9-L28] Add trim and length checks for user bio and phone number :: verification rule #651
-// [Airaf-B-9-L29] Add trim and length checks for user bio and phone number :: verification rule #670
-// [Airaf-B-9-L30] Add trim and length checks for user bio and phone number :: verification rule #689
-// [Airaf-B-9-L31] Add trim and length checks for user bio and phone number :: verification rule #708
-// [Airaf-B-9-L32] Add trim and length checks for user bio and phone number :: verification rule #727
-// [Airaf-B-9-L33] Add trim and length checks for user bio and phone number :: verification rule #746
-// [Airaf-B-9-L34] Add trim and length checks for user bio and phone number :: verification rule #765
-// [Airaf-B-9-L35] Add trim and length checks for user bio and phone number :: verification rule #784
-// [Airaf-B-9-L36] Add trim and length checks for user bio and phone number :: verification rule #803
-// [Airaf-B-9-L37] Add trim and length checks for user bio and phone number :: verification rule #822
-// [Airaf-B-9-L38] Add trim and length checks for user bio and phone number :: verification rule #841
-// [Airaf-B-9-L39] Add trim and length checks for user bio and phone number :: verification rule #860
-// [Airaf-B-9-L40] Add trim and length checks for user bio and phone number :: verification rule #879
-// [Airaf-B-9-L41] Add trim and length checks for user bio and phone number :: verification rule #898
-// [Airaf-B-9-L42] Add trim and length checks for user bio and phone number :: verification rule #917
-// [Airaf-B-9-L43] Add trim and length checks for user bio and phone number :: verification rule #936
-// [Airaf-B-9-L44] Add trim and length checks for user bio and phone number :: verification rule #955
+// === [SPEC-BLOCK-START] Airaf-A-12 (2026-07-25T16:40:28+05:00) ===
+// [Airaf-A-12-L1] Support updating bio, skills, and interests in userController :: verification rule #386
+// [Airaf-A-12-L2] Support updating bio, skills, and interests in userController :: verification rule #405
+// [Airaf-A-12-L3] Support updating bio, skills, and interests in userController :: verification rule #424
+// [Airaf-A-12-L4] Support updating bio, skills, and interests in userController :: verification rule #443
+// [Airaf-A-12-L5] Support updating bio, skills, and interests in userController :: verification rule #462
+// [Airaf-A-12-L6] Support updating bio, skills, and interests in userController :: verification rule #481
+// [Airaf-A-12-L7] Support updating bio, skills, and interests in userController :: verification rule #500
+// [Airaf-A-12-L8] Support updating bio, skills, and interests in userController :: verification rule #519
+// [Airaf-A-12-L9] Support updating bio, skills, and interests in userController :: verification rule #538
+// [Airaf-A-12-L10] Support updating bio, skills, and interests in userController :: verification rule #557
+// [Airaf-A-12-L11] Support updating bio, skills, and interests in userController :: verification rule #576
+// [Airaf-A-12-L12] Support updating bio, skills, and interests in userController :: verification rule #595
+// [Airaf-A-12-L13] Support updating bio, skills, and interests in userController :: verification rule #614
+// [Airaf-A-12-L14] Support updating bio, skills, and interests in userController :: verification rule #633
+// [Airaf-A-12-L15] Support updating bio, skills, and interests in userController :: verification rule #652
+// [Airaf-A-12-L16] Support updating bio, skills, and interests in userController :: verification rule #671
+// [Airaf-A-12-L17] Support updating bio, skills, and interests in userController :: verification rule #690
+// [Airaf-A-12-L18] Support updating bio, skills, and interests in userController :: verification rule #709
+// [Airaf-A-12-L19] Support updating bio, skills, and interests in userController :: verification rule #728
+// [Airaf-A-12-L20] Support updating bio, skills, and interests in userController :: verification rule #747
+// [Airaf-A-12-L21] Support updating bio, skills, and interests in userController :: verification rule #766
+// [Airaf-A-12-L22] Support updating bio, skills, and interests in userController :: verification rule #785
+// [Airaf-A-12-L23] Support updating bio, skills, and interests in userController :: verification rule #804
+// [Airaf-A-12-L24] Support updating bio, skills, and interests in userController :: verification rule #823
+// [Airaf-A-12-L25] Support updating bio, skills, and interests in userController :: verification rule #842
+// [Airaf-A-12-L26] Support updating bio, skills, and interests in userController :: verification rule #861
+// [Airaf-A-12-L27] Support updating bio, skills, and interests in userController :: verification rule #880
+// [Airaf-A-12-L28] Support updating bio, skills, and interests in userController :: verification rule #899
+// [Airaf-A-12-L29] Support updating bio, skills, and interests in userController :: verification rule #918
+// [Airaf-A-12-L30] Support updating bio, skills, and interests in userController :: verification rule #937
+// [Airaf-A-12-L31] Support updating bio, skills, and interests in userController :: verification rule #956
+// [Airaf-A-12-L32] Support updating bio, skills, and interests in userController :: verification rule #975
+// [Airaf-A-12-L33] Support updating bio, skills, and interests in userController :: verification rule #994
+// [Airaf-A-12-L34] Support updating bio, skills, and interests in userController :: verification rule #16
+// [Airaf-A-12-L35] Support updating bio, skills, and interests in userController :: verification rule #35
+// [Airaf-A-12-L36] Support updating bio, skills, and interests in userController :: verification rule #54
+// [Airaf-A-12-L37] Support updating bio, skills, and interests in userController :: verification rule #73
+// [Airaf-A-12-L38] Support updating bio, skills, and interests in userController :: verification rule #92
+// [Airaf-A-12-L39] Support updating bio, skills, and interests in userController :: verification rule #111
+// [Airaf-A-12-L40] Support updating bio, skills, and interests in userController :: verification rule #130
+// [Airaf-A-12-L41] Support updating bio, skills, and interests in userController :: verification rule #149
+// [Airaf-A-12-L42] Support updating bio, skills, and interests in userController :: verification rule #168
+// [Airaf-A-12-L43] Support updating bio, skills, and interests in userController :: verification rule #187
 // === [SPEC-BLOCK-END] ===
