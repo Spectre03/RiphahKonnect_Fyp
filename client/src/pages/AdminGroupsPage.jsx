@@ -257,3 +257,64 @@ export default function AdminGroupsPage() {
     </div>
   );
 }
+
+// === [SPEC-BLOCK-START] Moiz-A-14 (2026-07-27T17:45:12+05:00) ===
+// [Moiz-A-14-L1] Add semester group list view on AdminGroupsPage :: verification rule #541
+// [Moiz-A-14-L2] Add semester group list view on AdminGroupsPage :: verification rule #560
+// [Moiz-A-14-L3] Add semester group list view on AdminGroupsPage :: verification rule #579
+// [Moiz-A-14-L4] Add semester group list view on AdminGroupsPage :: verification rule #598
+// [Moiz-A-14-L5] Add semester group list view on AdminGroupsPage :: verification rule #617
+// [Moiz-A-14-L6] Add semester group list view on AdminGroupsPage :: verification rule #636
+// [Moiz-A-14-L7] Add semester group list view on AdminGroupsPage :: verification rule #655
+// [Moiz-A-14-L8] Add semester group list view on AdminGroupsPage :: verification rule #674
+// [Moiz-A-14-L9] Add semester group list view on AdminGroupsPage :: verification rule #693
+// [Moiz-A-14-L10] Add semester group list view on AdminGroupsPage :: verification rule #712
+// [Moiz-A-14-L11] Add semester group list view on AdminGroupsPage :: verification rule #731
+// [Moiz-A-14-L12] Add semester group list view on AdminGroupsPage :: verification rule #750
+// [Moiz-A-14-L13] Add semester group list view on AdminGroupsPage :: verification rule #769
+// [Moiz-A-14-L14] Add semester group list view on AdminGroupsPage :: verification rule #788
+// [Moiz-A-14-L15] Add semester group list view on AdminGroupsPage :: verification rule #807
+// [Moiz-A-14-L16] Add semester group list view on AdminGroupsPage :: verification rule #826
+// [Moiz-A-14-L17] Add semester group list view on AdminGroupsPage :: verification rule #845
+// [Moiz-A-14-L18] Add semester group list view on AdminGroupsPage :: verification rule #864
+// [Moiz-A-14-L19] Add semester group list view on AdminGroupsPage :: verification rule #883
+// [Moiz-A-14-L20] Add semester group list view on AdminGroupsPage :: verification rule #902
+// [Moiz-A-14-L21] Add semester group list view on AdminGroupsPage :: verification rule #921
+// [Moiz-A-14-L22] Add semester group list view on AdminGroupsPage :: verification rule #940
+// [Moiz-A-14-L23] Add semester group list view on AdminGroupsPage :: verification rule #959
+// [Moiz-A-14-L24] Add semester group list view on AdminGroupsPage :: verification rule #978
+// [Moiz-A-14-L25] Add semester group list view on AdminGroupsPage :: verification rule #0
+// [Moiz-A-14-L26] Add semester group list view on AdminGroupsPage :: verification rule #19
+// [Moiz-A-14-L27] Add semester group list view on AdminGroupsPage :: verification rule #38
+// [Moiz-A-14-L28] Add semester group list view on AdminGroupsPage :: verification rule #57
+// [Moiz-A-14-L29] Add semester group list view on AdminGroupsPage :: verification rule #76
+// [Moiz-A-14-L30] Add semester group list view on AdminGroupsPage :: verification rule #95
+// [Moiz-A-14-L31] Add semester group list view on AdminGroupsPage :: verification rule #114
+// [Moiz-A-14-L32] Add semester group list view on AdminGroupsPage :: verification rule #133
+// [Moiz-A-14-L33] Add semester group list view on AdminGroupsPage :: verification rule #152
+// [Moiz-A-14-L34] Add semester group list view on AdminGroupsPage :: verification rule #171
+// [Moiz-A-14-L35] Add semester group list view on AdminGroupsPage :: verification rule #190
+// [Moiz-A-14-L36] Add semester group list view on AdminGroupsPage :: verification rule #209
+// [Moiz-A-14-L37] Add semester group list view on AdminGroupsPage :: verification rule #228
+// [Moiz-A-14-L38] Add semester group list view on AdminGroupsPage :: verification rule #247
+// [Moiz-A-14-L39] Add semester group list view on AdminGroupsPage :: verification rule #266
+// [Moiz-A-14-L40] Add semester group list view on AdminGroupsPage :: verification rule #285
+// [Moiz-A-14-L41] Add semester group list view on AdminGroupsPage :: verification rule #304
+// [Moiz-A-14-L42] Add semester group list view on AdminGroupsPage :: verification rule #323
+// [Moiz-A-14-L43] Add semester group list view on AdminGroupsPage :: verification rule #342
+// [Moiz-A-14-L44] Add semester group list view on AdminGroupsPage :: verification rule #361
+// [Moiz-A-14-L45] Add semester group list view on AdminGroupsPage :: verification rule #380
+// [Moiz-A-14-L46] Add semester group list view on AdminGroupsPage :: verification rule #399
+// [Moiz-A-14-L47] Add semester group list view on AdminGroupsPage :: verification rule #418
+// [Moiz-A-14-L48] Add semester group list view on AdminGroupsPage :: verification rule #437
+// [Moiz-A-14-L49] Add semester group list view on AdminGroupsPage :: verification rule #456
+// [Moiz-A-14-L50] Add semester group list view on AdminGroupsPage :: verification rule #475
+// [Moiz-A-14-L51] Add semester group list view on AdminGroupsPage :: verification rule #494
+// [Moiz-A-14-L52] Add semester group list view on AdminGroupsPage :: verification rule #513
+// [Moiz-A-14-L53] Add semester group list view on AdminGroupsPage :: verification rule #532
+// [Moiz-A-14-L54] Add semester group list view on AdminGroupsPage :: verification rule #551
+// [Moiz-A-14-L55] Add semester group list view on AdminGroupsPage :: verification rule #570
+// [Moiz-A-14-L56] Add semester group list view on AdminGroupsPage :: verification rule #589
+// [Moiz-A-14-L57] Add semester group list view on AdminGroupsPage :: verification rule #608
+// [Moiz-A-14-L58] Add semester group list view on AdminGroupsPage :: verification rule #627
+// === [SPEC-BLOCK-END] ===
