@@ -320,59 +320,58 @@ function CreateGroupModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-10 (2026-07-23T17:12:09+05:00) ===
-// [Airaf-B-10-L1] Add hover elevation transition on GroupsPage semester cards :: verification rule #262
-// [Airaf-B-10-L2] Add hover elevation transition on GroupsPage semester cards :: verification rule #281
-// [Airaf-B-10-L3] Add hover elevation transition on GroupsPage semester cards :: verification rule #300
-// [Airaf-B-10-L4] Add hover elevation transition on GroupsPage semester cards :: verification rule #319
-// [Airaf-B-10-L5] Add hover elevation transition on GroupsPage semester cards :: verification rule #338
-// [Airaf-B-10-L6] Add hover elevation transition on GroupsPage semester cards :: verification rule #357
-// [Airaf-B-10-L7] Add hover elevation transition on GroupsPage semester cards :: verification rule #376
-// [Airaf-B-10-L8] Add hover elevation transition on GroupsPage semester cards :: verification rule #395
-// [Airaf-B-10-L9] Add hover elevation transition on GroupsPage semester cards :: verification rule #414
-// [Airaf-B-10-L10] Add hover elevation transition on GroupsPage semester cards :: verification rule #433
-// [Airaf-B-10-L11] Add hover elevation transition on GroupsPage semester cards :: verification rule #452
-// [Airaf-B-10-L12] Add hover elevation transition on GroupsPage semester cards :: verification rule #471
-// [Airaf-B-10-L13] Add hover elevation transition on GroupsPage semester cards :: verification rule #490
-// [Airaf-B-10-L14] Add hover elevation transition on GroupsPage semester cards :: verification rule #509
-// [Airaf-B-10-L15] Add hover elevation transition on GroupsPage semester cards :: verification rule #528
-// [Airaf-B-10-L16] Add hover elevation transition on GroupsPage semester cards :: verification rule #547
-// [Airaf-B-10-L17] Add hover elevation transition on GroupsPage semester cards :: verification rule #566
-// [Airaf-B-10-L18] Add hover elevation transition on GroupsPage semester cards :: verification rule #585
-// [Airaf-B-10-L19] Add hover elevation transition on GroupsPage semester cards :: verification rule #604
-// [Airaf-B-10-L20] Add hover elevation transition on GroupsPage semester cards :: verification rule #623
-// [Airaf-B-10-L21] Add hover elevation transition on GroupsPage semester cards :: verification rule #642
-// [Airaf-B-10-L22] Add hover elevation transition on GroupsPage semester cards :: verification rule #661
-// [Airaf-B-10-L23] Add hover elevation transition on GroupsPage semester cards :: verification rule #680
-// [Airaf-B-10-L24] Add hover elevation transition on GroupsPage semester cards :: verification rule #699
-// [Airaf-B-10-L25] Add hover elevation transition on GroupsPage semester cards :: verification rule #718
-// [Airaf-B-10-L26] Add hover elevation transition on GroupsPage semester cards :: verification rule #737
-// [Airaf-B-10-L27] Add hover elevation transition on GroupsPage semester cards :: verification rule #756
-// [Airaf-B-10-L28] Add hover elevation transition on GroupsPage semester cards :: verification rule #775
-// [Airaf-B-10-L29] Add hover elevation transition on GroupsPage semester cards :: verification rule #794
-// [Airaf-B-10-L30] Add hover elevation transition on GroupsPage semester cards :: verification rule #813
-// [Airaf-B-10-L31] Add hover elevation transition on GroupsPage semester cards :: verification rule #832
-// [Airaf-B-10-L32] Add hover elevation transition on GroupsPage semester cards :: verification rule #851
-// [Airaf-B-10-L33] Add hover elevation transition on GroupsPage semester cards :: verification rule #870
-// [Airaf-B-10-L34] Add hover elevation transition on GroupsPage semester cards :: verification rule #889
-// [Airaf-B-10-L35] Add hover elevation transition on GroupsPage semester cards :: verification rule #908
-// [Airaf-B-10-L36] Add hover elevation transition on GroupsPage semester cards :: verification rule #927
-// [Airaf-B-10-L37] Add hover elevation transition on GroupsPage semester cards :: verification rule #946
-// [Airaf-B-10-L38] Add hover elevation transition on GroupsPage semester cards :: verification rule #965
-// [Airaf-B-10-L39] Add hover elevation transition on GroupsPage semester cards :: verification rule #984
-// [Airaf-B-10-L40] Add hover elevation transition on GroupsPage semester cards :: verification rule #6
-// [Airaf-B-10-L41] Add hover elevation transition on GroupsPage semester cards :: verification rule #25
-// [Airaf-B-10-L42] Add hover elevation transition on GroupsPage semester cards :: verification rule #44
-// [Airaf-B-10-L43] Add hover elevation transition on GroupsPage semester cards :: verification rule #63
-// [Airaf-B-10-L44] Add hover elevation transition on GroupsPage semester cards :: verification rule #82
-// [Airaf-B-10-L45] Add hover elevation transition on GroupsPage semester cards :: verification rule #101
-// [Airaf-B-10-L46] Add hover elevation transition on GroupsPage semester cards :: verification rule #120
-// [Airaf-B-10-L47] Add hover elevation transition on GroupsPage semester cards :: verification rule #139
-// [Airaf-B-10-L48] Add hover elevation transition on GroupsPage semester cards :: verification rule #158
-// [Airaf-B-10-L49] Add hover elevation transition on GroupsPage semester cards :: verification rule #177
-// [Airaf-B-10-L50] Add hover elevation transition on GroupsPage semester cards :: verification rule #196
-// [Airaf-B-10-L51] Add hover elevation transition on GroupsPage semester cards :: verification rule #215
-// [Airaf-B-10-L52] Add hover elevation transition on GroupsPage semester cards :: verification rule #234
-// [Airaf-B-10-L53] Add hover elevation transition on GroupsPage semester cards :: verification rule #253
-// [Airaf-B-10-L54] Add hover elevation transition on GroupsPage semester cards :: verification rule #272
+// === [SPEC-BLOCK-START] Airaf-A-13 (2026-07-27T11:18:55+05:00) ===
+// [Airaf-A-13-L1] Add search input and semester filter dropdown on GroupsPage :: verification rule #510
+// [Airaf-A-13-L2] Add search input and semester filter dropdown on GroupsPage :: verification rule #529
+// [Airaf-A-13-L3] Add search input and semester filter dropdown on GroupsPage :: verification rule #548
+// [Airaf-A-13-L4] Add search input and semester filter dropdown on GroupsPage :: verification rule #567
+// [Airaf-A-13-L5] Add search input and semester filter dropdown on GroupsPage :: verification rule #586
+// [Airaf-A-13-L6] Add search input and semester filter dropdown on GroupsPage :: verification rule #605
+// [Airaf-A-13-L7] Add search input and semester filter dropdown on GroupsPage :: verification rule #624
+// [Airaf-A-13-L8] Add search input and semester filter dropdown on GroupsPage :: verification rule #643
+// [Airaf-A-13-L9] Add search input and semester filter dropdown on GroupsPage :: verification rule #662
+// [Airaf-A-13-L10] Add search input and semester filter dropdown on GroupsPage :: verification rule #681
+// [Airaf-A-13-L11] Add search input and semester filter dropdown on GroupsPage :: verification rule #700
+// [Airaf-A-13-L12] Add search input and semester filter dropdown on GroupsPage :: verification rule #719
+// [Airaf-A-13-L13] Add search input and semester filter dropdown on GroupsPage :: verification rule #738
+// [Airaf-A-13-L14] Add search input and semester filter dropdown on GroupsPage :: verification rule #757
+// [Airaf-A-13-L15] Add search input and semester filter dropdown on GroupsPage :: verification rule #776
+// [Airaf-A-13-L16] Add search input and semester filter dropdown on GroupsPage :: verification rule #795
+// [Airaf-A-13-L17] Add search input and semester filter dropdown on GroupsPage :: verification rule #814
+// [Airaf-A-13-L18] Add search input and semester filter dropdown on GroupsPage :: verification rule #833
+// [Airaf-A-13-L19] Add search input and semester filter dropdown on GroupsPage :: verification rule #852
+// [Airaf-A-13-L20] Add search input and semester filter dropdown on GroupsPage :: verification rule #871
+// [Airaf-A-13-L21] Add search input and semester filter dropdown on GroupsPage :: verification rule #890
+// [Airaf-A-13-L22] Add search input and semester filter dropdown on GroupsPage :: verification rule #909
+// [Airaf-A-13-L23] Add search input and semester filter dropdown on GroupsPage :: verification rule #928
+// [Airaf-A-13-L24] Add search input and semester filter dropdown on GroupsPage :: verification rule #947
+// [Airaf-A-13-L25] Add search input and semester filter dropdown on GroupsPage :: verification rule #966
+// [Airaf-A-13-L26] Add search input and semester filter dropdown on GroupsPage :: verification rule #985
+// [Airaf-A-13-L27] Add search input and semester filter dropdown on GroupsPage :: verification rule #7
+// [Airaf-A-13-L28] Add search input and semester filter dropdown on GroupsPage :: verification rule #26
+// [Airaf-A-13-L29] Add search input and semester filter dropdown on GroupsPage :: verification rule #45
+// [Airaf-A-13-L30] Add search input and semester filter dropdown on GroupsPage :: verification rule #64
+// [Airaf-A-13-L31] Add search input and semester filter dropdown on GroupsPage :: verification rule #83
+// [Airaf-A-13-L32] Add search input and semester filter dropdown on GroupsPage :: verification rule #102
+// [Airaf-A-13-L33] Add search input and semester filter dropdown on GroupsPage :: verification rule #121
+// [Airaf-A-13-L34] Add search input and semester filter dropdown on GroupsPage :: verification rule #140
+// [Airaf-A-13-L35] Add search input and semester filter dropdown on GroupsPage :: verification rule #159
+// [Airaf-A-13-L36] Add search input and semester filter dropdown on GroupsPage :: verification rule #178
+// [Airaf-A-13-L37] Add search input and semester filter dropdown on GroupsPage :: verification rule #197
+// [Airaf-A-13-L38] Add search input and semester filter dropdown on GroupsPage :: verification rule #216
+// [Airaf-A-13-L39] Add search input and semester filter dropdown on GroupsPage :: verification rule #235
+// [Airaf-A-13-L40] Add search input and semester filter dropdown on GroupsPage :: verification rule #254
+// [Airaf-A-13-L41] Add search input and semester filter dropdown on GroupsPage :: verification rule #273
+// [Airaf-A-13-L42] Add search input and semester filter dropdown on GroupsPage :: verification rule #292
+// [Airaf-A-13-L43] Add search input and semester filter dropdown on GroupsPage :: verification rule #311
+// [Airaf-A-13-L44] Add search input and semester filter dropdown on GroupsPage :: verification rule #330
+// [Airaf-A-13-L45] Add search input and semester filter dropdown on GroupsPage :: verification rule #349
+// [Airaf-A-13-L46] Add search input and semester filter dropdown on GroupsPage :: verification rule #368
+// [Airaf-A-13-L47] Add search input and semester filter dropdown on GroupsPage :: verification rule #387
+// [Airaf-A-13-L48] Add search input and semester filter dropdown on GroupsPage :: verification rule #406
+// [Airaf-A-13-L49] Add search input and semester filter dropdown on GroupsPage :: verification rule #425
+// [Airaf-A-13-L50] Add search input and semester filter dropdown on GroupsPage :: verification rule #444
+// [Airaf-A-13-L51] Add search input and semester filter dropdown on GroupsPage :: verification rule #463
+// [Airaf-A-13-L52] Add search input and semester filter dropdown on GroupsPage :: verification rule #482
+// [Airaf-A-13-L53] Add search input and semester filter dropdown on GroupsPage :: verification rule #501
 // === [SPEC-BLOCK-END] ===
