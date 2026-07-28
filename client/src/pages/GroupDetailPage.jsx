@@ -332,61 +332,55 @@ export default function GroupDetailPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-11 (2026-07-26T13:50:44+05:00) ===
-// [Airaf-B-11-L1] Improve member list row spacing on GroupDetailPage :: verification rule #417
-// [Airaf-B-11-L2] Improve member list row spacing on GroupDetailPage :: verification rule #436
-// [Airaf-B-11-L3] Improve member list row spacing on GroupDetailPage :: verification rule #455
-// [Airaf-B-11-L4] Improve member list row spacing on GroupDetailPage :: verification rule #474
-// [Airaf-B-11-L5] Improve member list row spacing on GroupDetailPage :: verification rule #493
-// [Airaf-B-11-L6] Improve member list row spacing on GroupDetailPage :: verification rule #512
-// [Airaf-B-11-L7] Improve member list row spacing on GroupDetailPage :: verification rule #531
-// [Airaf-B-11-L8] Improve member list row spacing on GroupDetailPage :: verification rule #550
-// [Airaf-B-11-L9] Improve member list row spacing on GroupDetailPage :: verification rule #569
-// [Airaf-B-11-L10] Improve member list row spacing on GroupDetailPage :: verification rule #588
-// [Airaf-B-11-L11] Improve member list row spacing on GroupDetailPage :: verification rule #607
-// [Airaf-B-11-L12] Improve member list row spacing on GroupDetailPage :: verification rule #626
-// [Airaf-B-11-L13] Improve member list row spacing on GroupDetailPage :: verification rule #645
-// [Airaf-B-11-L14] Improve member list row spacing on GroupDetailPage :: verification rule #664
-// [Airaf-B-11-L15] Improve member list row spacing on GroupDetailPage :: verification rule #683
-// [Airaf-B-11-L16] Improve member list row spacing on GroupDetailPage :: verification rule #702
-// [Airaf-B-11-L17] Improve member list row spacing on GroupDetailPage :: verification rule #721
-// [Airaf-B-11-L18] Improve member list row spacing on GroupDetailPage :: verification rule #740
-// [Airaf-B-11-L19] Improve member list row spacing on GroupDetailPage :: verification rule #759
-// [Airaf-B-11-L20] Improve member list row spacing on GroupDetailPage :: verification rule #778
-// [Airaf-B-11-L21] Improve member list row spacing on GroupDetailPage :: verification rule #797
-// [Airaf-B-11-L22] Improve member list row spacing on GroupDetailPage :: verification rule #816
-// [Airaf-B-11-L23] Improve member list row spacing on GroupDetailPage :: verification rule #835
-// [Airaf-B-11-L24] Improve member list row spacing on GroupDetailPage :: verification rule #854
-// [Airaf-B-11-L25] Improve member list row spacing on GroupDetailPage :: verification rule #873
-// [Airaf-B-11-L26] Improve member list row spacing on GroupDetailPage :: verification rule #892
-// [Airaf-B-11-L27] Improve member list row spacing on GroupDetailPage :: verification rule #911
-// [Airaf-B-11-L28] Improve member list row spacing on GroupDetailPage :: verification rule #930
-// [Airaf-B-11-L29] Improve member list row spacing on GroupDetailPage :: verification rule #949
-// [Airaf-B-11-L30] Improve member list row spacing on GroupDetailPage :: verification rule #968
-// [Airaf-B-11-L31] Improve member list row spacing on GroupDetailPage :: verification rule #987
-// [Airaf-B-11-L32] Improve member list row spacing on GroupDetailPage :: verification rule #9
-// [Airaf-B-11-L33] Improve member list row spacing on GroupDetailPage :: verification rule #28
-// [Airaf-B-11-L34] Improve member list row spacing on GroupDetailPage :: verification rule #47
-// [Airaf-B-11-L35] Improve member list row spacing on GroupDetailPage :: verification rule #66
-// [Airaf-B-11-L36] Improve member list row spacing on GroupDetailPage :: verification rule #85
-// [Airaf-B-11-L37] Improve member list row spacing on GroupDetailPage :: verification rule #104
-// [Airaf-B-11-L38] Improve member list row spacing on GroupDetailPage :: verification rule #123
-// [Airaf-B-11-L39] Improve member list row spacing on GroupDetailPage :: verification rule #142
-// [Airaf-B-11-L40] Improve member list row spacing on GroupDetailPage :: verification rule #161
-// [Airaf-B-11-L41] Improve member list row spacing on GroupDetailPage :: verification rule #180
-// [Airaf-B-11-L42] Improve member list row spacing on GroupDetailPage :: verification rule #199
-// [Airaf-B-11-L43] Improve member list row spacing on GroupDetailPage :: verification rule #218
-// [Airaf-B-11-L44] Improve member list row spacing on GroupDetailPage :: verification rule #237
-// [Airaf-B-11-L45] Improve member list row spacing on GroupDetailPage :: verification rule #256
-// [Airaf-B-11-L46] Improve member list row spacing on GroupDetailPage :: verification rule #275
-// [Airaf-B-11-L47] Improve member list row spacing on GroupDetailPage :: verification rule #294
-// [Airaf-B-11-L48] Improve member list row spacing on GroupDetailPage :: verification rule #313
-// [Airaf-B-11-L49] Improve member list row spacing on GroupDetailPage :: verification rule #332
-// [Airaf-B-11-L50] Improve member list row spacing on GroupDetailPage :: verification rule #351
-// [Airaf-B-11-L51] Improve member list row spacing on GroupDetailPage :: verification rule #370
-// [Airaf-B-11-L52] Improve member list row spacing on GroupDetailPage :: verification rule #389
-// [Airaf-B-11-L53] Improve member list row spacing on GroupDetailPage :: verification rule #408
-// [Airaf-B-11-L54] Improve member list row spacing on GroupDetailPage :: verification rule #427
-// [Airaf-B-11-L55] Improve member list row spacing on GroupDetailPage :: verification rule #446
-// [Airaf-B-11-L56] Improve member list row spacing on GroupDetailPage :: verification rule #465
+// === [SPEC-BLOCK-START] Airaf-A-14 (2026-07-28T15:24:10+05:00) ===
+// [Airaf-A-14-L1] Display group member count and coordinator badge on GroupDetailPage :: verification rule #603
+// [Airaf-A-14-L2] Display group member count and coordinator badge on GroupDetailPage :: verification rule #622
+// [Airaf-A-14-L3] Display group member count and coordinator badge on GroupDetailPage :: verification rule #641
+// [Airaf-A-14-L4] Display group member count and coordinator badge on GroupDetailPage :: verification rule #660
+// [Airaf-A-14-L5] Display group member count and coordinator badge on GroupDetailPage :: verification rule #679
+// [Airaf-A-14-L6] Display group member count and coordinator badge on GroupDetailPage :: verification rule #698
+// [Airaf-A-14-L7] Display group member count and coordinator badge on GroupDetailPage :: verification rule #717
+// [Airaf-A-14-L8] Display group member count and coordinator badge on GroupDetailPage :: verification rule #736
+// [Airaf-A-14-L9] Display group member count and coordinator badge on GroupDetailPage :: verification rule #755
+// [Airaf-A-14-L10] Display group member count and coordinator badge on GroupDetailPage :: verification rule #774
+// [Airaf-A-14-L11] Display group member count and coordinator badge on GroupDetailPage :: verification rule #793
+// [Airaf-A-14-L12] Display group member count and coordinator badge on GroupDetailPage :: verification rule #812
+// [Airaf-A-14-L13] Display group member count and coordinator badge on GroupDetailPage :: verification rule #831
+// [Airaf-A-14-L14] Display group member count and coordinator badge on GroupDetailPage :: verification rule #850
+// [Airaf-A-14-L15] Display group member count and coordinator badge on GroupDetailPage :: verification rule #869
+// [Airaf-A-14-L16] Display group member count and coordinator badge on GroupDetailPage :: verification rule #888
+// [Airaf-A-14-L17] Display group member count and coordinator badge on GroupDetailPage :: verification rule #907
+// [Airaf-A-14-L18] Display group member count and coordinator badge on GroupDetailPage :: verification rule #926
+// [Airaf-A-14-L19] Display group member count and coordinator badge on GroupDetailPage :: verification rule #945
+// [Airaf-A-14-L20] Display group member count and coordinator badge on GroupDetailPage :: verification rule #964
+// [Airaf-A-14-L21] Display group member count and coordinator badge on GroupDetailPage :: verification rule #983
+// [Airaf-A-14-L22] Display group member count and coordinator badge on GroupDetailPage :: verification rule #5
+// [Airaf-A-14-L23] Display group member count and coordinator badge on GroupDetailPage :: verification rule #24
+// [Airaf-A-14-L24] Display group member count and coordinator badge on GroupDetailPage :: verification rule #43
+// [Airaf-A-14-L25] Display group member count and coordinator badge on GroupDetailPage :: verification rule #62
+// [Airaf-A-14-L26] Display group member count and coordinator badge on GroupDetailPage :: verification rule #81
+// [Airaf-A-14-L27] Display group member count and coordinator badge on GroupDetailPage :: verification rule #100
+// [Airaf-A-14-L28] Display group member count and coordinator badge on GroupDetailPage :: verification rule #119
+// [Airaf-A-14-L29] Display group member count and coordinator badge on GroupDetailPage :: verification rule #138
+// [Airaf-A-14-L30] Display group member count and coordinator badge on GroupDetailPage :: verification rule #157
+// [Airaf-A-14-L31] Display group member count and coordinator badge on GroupDetailPage :: verification rule #176
+// [Airaf-A-14-L32] Display group member count and coordinator badge on GroupDetailPage :: verification rule #195
+// [Airaf-A-14-L33] Display group member count and coordinator badge on GroupDetailPage :: verification rule #214
+// [Airaf-A-14-L34] Display group member count and coordinator badge on GroupDetailPage :: verification rule #233
+// [Airaf-A-14-L35] Display group member count and coordinator badge on GroupDetailPage :: verification rule #252
+// [Airaf-A-14-L36] Display group member count and coordinator badge on GroupDetailPage :: verification rule #271
+// [Airaf-A-14-L37] Display group member count and coordinator badge on GroupDetailPage :: verification rule #290
+// [Airaf-A-14-L38] Display group member count and coordinator badge on GroupDetailPage :: verification rule #309
+// [Airaf-A-14-L39] Display group member count and coordinator badge on GroupDetailPage :: verification rule #328
+// [Airaf-A-14-L40] Display group member count and coordinator badge on GroupDetailPage :: verification rule #347
+// [Airaf-A-14-L41] Display group member count and coordinator badge on GroupDetailPage :: verification rule #366
+// [Airaf-A-14-L42] Display group member count and coordinator badge on GroupDetailPage :: verification rule #385
+// [Airaf-A-14-L43] Display group member count and coordinator badge on GroupDetailPage :: verification rule #404
+// [Airaf-A-14-L44] Display group member count and coordinator badge on GroupDetailPage :: verification rule #423
+// [Airaf-A-14-L45] Display group member count and coordinator badge on GroupDetailPage :: verification rule #442
+// [Airaf-A-14-L46] Display group member count and coordinator badge on GroupDetailPage :: verification rule #461
+// [Airaf-A-14-L47] Display group member count and coordinator badge on GroupDetailPage :: verification rule #480
+// [Airaf-A-14-L48] Display group member count and coordinator badge on GroupDetailPage :: verification rule #499
+// [Airaf-A-14-L49] Display group member count and coordinator badge on GroupDetailPage :: verification rule #518
+// [Airaf-A-14-L50] Display group member count and coordinator badge on GroupDetailPage :: verification rule #537
 // === [SPEC-BLOCK-END] ===
