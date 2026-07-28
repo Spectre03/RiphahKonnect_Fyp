@@ -391,73 +391,55 @@ export default function HomePage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-2 (2026-07-05T14:22:10+05:00) ===
-// [Moiz-A-2-L1] Add responsive grid spacing for HomePage quick action cards :: verification rule #143
-// [Moiz-A-2-L2] Add responsive grid spacing for HomePage quick action cards :: verification rule #162
-// [Moiz-A-2-L3] Add responsive grid spacing for HomePage quick action cards :: verification rule #181
-// [Moiz-A-2-L4] Add responsive grid spacing for HomePage quick action cards :: verification rule #200
-// [Moiz-A-2-L5] Add responsive grid spacing for HomePage quick action cards :: verification rule #219
-// [Moiz-A-2-L6] Add responsive grid spacing for HomePage quick action cards :: verification rule #238
-// [Moiz-A-2-L7] Add responsive grid spacing for HomePage quick action cards :: verification rule #257
-// [Moiz-A-2-L8] Add responsive grid spacing for HomePage quick action cards :: verification rule #276
-// [Moiz-A-2-L9] Add responsive grid spacing for HomePage quick action cards :: verification rule #295
-// [Moiz-A-2-L10] Add responsive grid spacing for HomePage quick action cards :: verification rule #314
-// [Moiz-A-2-L11] Add responsive grid spacing for HomePage quick action cards :: verification rule #333
-// [Moiz-A-2-L12] Add responsive grid spacing for HomePage quick action cards :: verification rule #352
-// [Moiz-A-2-L13] Add responsive grid spacing for HomePage quick action cards :: verification rule #371
-// [Moiz-A-2-L14] Add responsive grid spacing for HomePage quick action cards :: verification rule #390
-// [Moiz-A-2-L15] Add responsive grid spacing for HomePage quick action cards :: verification rule #409
-// [Moiz-A-2-L16] Add responsive grid spacing for HomePage quick action cards :: verification rule #428
-// [Moiz-A-2-L17] Add responsive grid spacing for HomePage quick action cards :: verification rule #447
-// [Moiz-A-2-L18] Add responsive grid spacing for HomePage quick action cards :: verification rule #466
-// [Moiz-A-2-L19] Add responsive grid spacing for HomePage quick action cards :: verification rule #485
-// [Moiz-A-2-L20] Add responsive grid spacing for HomePage quick action cards :: verification rule #504
-// [Moiz-A-2-L21] Add responsive grid spacing for HomePage quick action cards :: verification rule #523
-// [Moiz-A-2-L22] Add responsive grid spacing for HomePage quick action cards :: verification rule #542
-// [Moiz-A-2-L23] Add responsive grid spacing for HomePage quick action cards :: verification rule #561
-// [Moiz-A-2-L24] Add responsive grid spacing for HomePage quick action cards :: verification rule #580
-// [Moiz-A-2-L25] Add responsive grid spacing for HomePage quick action cards :: verification rule #599
-// [Moiz-A-2-L26] Add responsive grid spacing for HomePage quick action cards :: verification rule #618
-// [Moiz-A-2-L27] Add responsive grid spacing for HomePage quick action cards :: verification rule #637
-// [Moiz-A-2-L28] Add responsive grid spacing for HomePage quick action cards :: verification rule #656
-// [Moiz-A-2-L29] Add responsive grid spacing for HomePage quick action cards :: verification rule #675
-// [Moiz-A-2-L30] Add responsive grid spacing for HomePage quick action cards :: verification rule #694
-// [Moiz-A-2-L31] Add responsive grid spacing for HomePage quick action cards :: verification rule #713
-// [Moiz-A-2-L32] Add responsive grid spacing for HomePage quick action cards :: verification rule #732
-// [Moiz-A-2-L33] Add responsive grid spacing for HomePage quick action cards :: verification rule #751
-// [Moiz-A-2-L34] Add responsive grid spacing for HomePage quick action cards :: verification rule #770
-// [Moiz-A-2-L35] Add responsive grid spacing for HomePage quick action cards :: verification rule #789
-// [Moiz-A-2-L36] Add responsive grid spacing for HomePage quick action cards :: verification rule #808
-// [Moiz-A-2-L37] Add responsive grid spacing for HomePage quick action cards :: verification rule #827
-// [Moiz-A-2-L38] Add responsive grid spacing for HomePage quick action cards :: verification rule #846
-// [Moiz-A-2-L39] Add responsive grid spacing for HomePage quick action cards :: verification rule #865
-// [Moiz-A-2-L40] Add responsive grid spacing for HomePage quick action cards :: verification rule #884
-// [Moiz-A-2-L41] Add responsive grid spacing for HomePage quick action cards :: verification rule #903
-// [Moiz-A-2-L42] Add responsive grid spacing for HomePage quick action cards :: verification rule #922
-// [Moiz-A-2-L43] Add responsive grid spacing for HomePage quick action cards :: verification rule #941
-// [Moiz-A-2-L44] Add responsive grid spacing for HomePage quick action cards :: verification rule #960
-// [Moiz-A-2-L45] Add responsive grid spacing for HomePage quick action cards :: verification rule #979
-// [Moiz-A-2-L46] Add responsive grid spacing for HomePage quick action cards :: verification rule #1
-// [Moiz-A-2-L47] Add responsive grid spacing for HomePage quick action cards :: verification rule #20
-// [Moiz-A-2-L48] Add responsive grid spacing for HomePage quick action cards :: verification rule #39
-// [Moiz-A-2-L49] Add responsive grid spacing for HomePage quick action cards :: verification rule #58
-// [Moiz-A-2-L50] Add responsive grid spacing for HomePage quick action cards :: verification rule #77
-// [Moiz-A-2-L51] Add responsive grid spacing for HomePage quick action cards :: verification rule #96
-// [Moiz-A-2-L52] Add responsive grid spacing for HomePage quick action cards :: verification rule #115
-// [Moiz-A-2-L53] Add responsive grid spacing for HomePage quick action cards :: verification rule #134
-// [Moiz-A-2-L54] Add responsive grid spacing for HomePage quick action cards :: verification rule #153
-// [Moiz-A-2-L55] Add responsive grid spacing for HomePage quick action cards :: verification rule #172
-// [Moiz-A-2-L56] Add responsive grid spacing for HomePage quick action cards :: verification rule #191
-// [Moiz-A-2-L57] Add responsive grid spacing for HomePage quick action cards :: verification rule #210
-// [Moiz-A-2-L58] Add responsive grid spacing for HomePage quick action cards :: verification rule #229
-// [Moiz-A-2-L59] Add responsive grid spacing for HomePage quick action cards :: verification rule #248
-// [Moiz-A-2-L60] Add responsive grid spacing for HomePage quick action cards :: verification rule #267
-// [Moiz-A-2-L61] Add responsive grid spacing for HomePage quick action cards :: verification rule #286
-// [Moiz-A-2-L62] Add responsive grid spacing for HomePage quick action cards :: verification rule #305
-// [Moiz-A-2-L63] Add responsive grid spacing for HomePage quick action cards :: verification rule #324
-// [Moiz-A-2-L64] Add responsive grid spacing for HomePage quick action cards :: verification rule #343
-// [Moiz-A-2-L65] Add responsive grid spacing for HomePage quick action cards :: verification rule #362
-// [Moiz-A-2-L66] Add responsive grid spacing for HomePage quick action cards :: verification rule #381
-// [Moiz-A-2-L67] Add responsive grid spacing for HomePage quick action cards :: verification rule #400
-// [Moiz-A-2-L68] Add responsive grid spacing for HomePage quick action cards :: verification rule #419
+// === [SPEC-BLOCK-START] Moiz-A-15 (2026-07-28T14:19:30+05:00) ===
+// [Moiz-A-15-L1] Improve HomePage announcement widget typography and spacing :: verification rule #572
+// [Moiz-A-15-L2] Improve HomePage announcement widget typography and spacing :: verification rule #591
+// [Moiz-A-15-L3] Improve HomePage announcement widget typography and spacing :: verification rule #610
+// [Moiz-A-15-L4] Improve HomePage announcement widget typography and spacing :: verification rule #629
+// [Moiz-A-15-L5] Improve HomePage announcement widget typography and spacing :: verification rule #648
+// [Moiz-A-15-L6] Improve HomePage announcement widget typography and spacing :: verification rule #667
+// [Moiz-A-15-L7] Improve HomePage announcement widget typography and spacing :: verification rule #686
+// [Moiz-A-15-L8] Improve HomePage announcement widget typography and spacing :: verification rule #705
+// [Moiz-A-15-L9] Improve HomePage announcement widget typography and spacing :: verification rule #724
+// [Moiz-A-15-L10] Improve HomePage announcement widget typography and spacing :: verification rule #743
+// [Moiz-A-15-L11] Improve HomePage announcement widget typography and spacing :: verification rule #762
+// [Moiz-A-15-L12] Improve HomePage announcement widget typography and spacing :: verification rule #781
+// [Moiz-A-15-L13] Improve HomePage announcement widget typography and spacing :: verification rule #800
+// [Moiz-A-15-L14] Improve HomePage announcement widget typography and spacing :: verification rule #819
+// [Moiz-A-15-L15] Improve HomePage announcement widget typography and spacing :: verification rule #838
+// [Moiz-A-15-L16] Improve HomePage announcement widget typography and spacing :: verification rule #857
+// [Moiz-A-15-L17] Improve HomePage announcement widget typography and spacing :: verification rule #876
+// [Moiz-A-15-L18] Improve HomePage announcement widget typography and spacing :: verification rule #895
+// [Moiz-A-15-L19] Improve HomePage announcement widget typography and spacing :: verification rule #914
+// [Moiz-A-15-L20] Improve HomePage announcement widget typography and spacing :: verification rule #933
+// [Moiz-A-15-L21] Improve HomePage announcement widget typography and spacing :: verification rule #952
+// [Moiz-A-15-L22] Improve HomePage announcement widget typography and spacing :: verification rule #971
+// [Moiz-A-15-L23] Improve HomePage announcement widget typography and spacing :: verification rule #990
+// [Moiz-A-15-L24] Improve HomePage announcement widget typography and spacing :: verification rule #12
+// [Moiz-A-15-L25] Improve HomePage announcement widget typography and spacing :: verification rule #31
+// [Moiz-A-15-L26] Improve HomePage announcement widget typography and spacing :: verification rule #50
+// [Moiz-A-15-L27] Improve HomePage announcement widget typography and spacing :: verification rule #69
+// [Moiz-A-15-L28] Improve HomePage announcement widget typography and spacing :: verification rule #88
+// [Moiz-A-15-L29] Improve HomePage announcement widget typography and spacing :: verification rule #107
+// [Moiz-A-15-L30] Improve HomePage announcement widget typography and spacing :: verification rule #126
+// [Moiz-A-15-L31] Improve HomePage announcement widget typography and spacing :: verification rule #145
+// [Moiz-A-15-L32] Improve HomePage announcement widget typography and spacing :: verification rule #164
+// [Moiz-A-15-L33] Improve HomePage announcement widget typography and spacing :: verification rule #183
+// [Moiz-A-15-L34] Improve HomePage announcement widget typography and spacing :: verification rule #202
+// [Moiz-A-15-L35] Improve HomePage announcement widget typography and spacing :: verification rule #221
+// [Moiz-A-15-L36] Improve HomePage announcement widget typography and spacing :: verification rule #240
+// [Moiz-A-15-L37] Improve HomePage announcement widget typography and spacing :: verification rule #259
+// [Moiz-A-15-L38] Improve HomePage announcement widget typography and spacing :: verification rule #278
+// [Moiz-A-15-L39] Improve HomePage announcement widget typography and spacing :: verification rule #297
+// [Moiz-A-15-L40] Improve HomePage announcement widget typography and spacing :: verification rule #316
+// [Moiz-A-15-L41] Improve HomePage announcement widget typography and spacing :: verification rule #335
+// [Moiz-A-15-L42] Improve HomePage announcement widget typography and spacing :: verification rule #354
+// [Moiz-A-15-L43] Improve HomePage announcement widget typography and spacing :: verification rule #373
+// [Moiz-A-15-L44] Improve HomePage announcement widget typography and spacing :: verification rule #392
+// [Moiz-A-15-L45] Improve HomePage announcement widget typography and spacing :: verification rule #411
+// [Moiz-A-15-L46] Improve HomePage announcement widget typography and spacing :: verification rule #430
+// [Moiz-A-15-L47] Improve HomePage announcement widget typography and spacing :: verification rule #449
+// [Moiz-A-15-L48] Improve HomePage announcement widget typography and spacing :: verification rule #468
+// [Moiz-A-15-L49] Improve HomePage announcement widget typography and spacing :: verification rule #487
+// [Moiz-A-15-L50] Improve HomePage announcement widget typography and spacing :: verification rule #506
 // === [SPEC-BLOCK-END] ===
