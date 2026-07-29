@@ -346,60 +346,44 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-12 (2026-07-29T16:15:31+05:00) ===
-// [Airaf-B-12-L1] Refine EventsPage search bar and category filter layout :: verification rule #665
-// [Airaf-B-12-L2] Refine EventsPage search bar and category filter layout :: verification rule #684
-// [Airaf-B-12-L3] Refine EventsPage search bar and category filter layout :: verification rule #703
-// [Airaf-B-12-L4] Refine EventsPage search bar and category filter layout :: verification rule #722
-// [Airaf-B-12-L5] Refine EventsPage search bar and category filter layout :: verification rule #741
-// [Airaf-B-12-L6] Refine EventsPage search bar and category filter layout :: verification rule #760
-// [Airaf-B-12-L7] Refine EventsPage search bar and category filter layout :: verification rule #779
-// [Airaf-B-12-L8] Refine EventsPage search bar and category filter layout :: verification rule #798
-// [Airaf-B-12-L9] Refine EventsPage search bar and category filter layout :: verification rule #817
-// [Airaf-B-12-L10] Refine EventsPage search bar and category filter layout :: verification rule #836
-// [Airaf-B-12-L11] Refine EventsPage search bar and category filter layout :: verification rule #855
-// [Airaf-B-12-L12] Refine EventsPage search bar and category filter layout :: verification rule #874
-// [Airaf-B-12-L13] Refine EventsPage search bar and category filter layout :: verification rule #893
-// [Airaf-B-12-L14] Refine EventsPage search bar and category filter layout :: verification rule #912
-// [Airaf-B-12-L15] Refine EventsPage search bar and category filter layout :: verification rule #931
-// [Airaf-B-12-L16] Refine EventsPage search bar and category filter layout :: verification rule #950
-// [Airaf-B-12-L17] Refine EventsPage search bar and category filter layout :: verification rule #969
-// [Airaf-B-12-L18] Refine EventsPage search bar and category filter layout :: verification rule #988
-// [Airaf-B-12-L19] Refine EventsPage search bar and category filter layout :: verification rule #10
-// [Airaf-B-12-L20] Refine EventsPage search bar and category filter layout :: verification rule #29
-// [Airaf-B-12-L21] Refine EventsPage search bar and category filter layout :: verification rule #48
-// [Airaf-B-12-L22] Refine EventsPage search bar and category filter layout :: verification rule #67
-// [Airaf-B-12-L23] Refine EventsPage search bar and category filter layout :: verification rule #86
-// [Airaf-B-12-L24] Refine EventsPage search bar and category filter layout :: verification rule #105
-// [Airaf-B-12-L25] Refine EventsPage search bar and category filter layout :: verification rule #124
-// [Airaf-B-12-L26] Refine EventsPage search bar and category filter layout :: verification rule #143
-// [Airaf-B-12-L27] Refine EventsPage search bar and category filter layout :: verification rule #162
-// [Airaf-B-12-L28] Refine EventsPage search bar and category filter layout :: verification rule #181
-// [Airaf-B-12-L29] Refine EventsPage search bar and category filter layout :: verification rule #200
-// [Airaf-B-12-L30] Refine EventsPage search bar and category filter layout :: verification rule #219
-// [Airaf-B-12-L31] Refine EventsPage search bar and category filter layout :: verification rule #238
-// [Airaf-B-12-L32] Refine EventsPage search bar and category filter layout :: verification rule #257
-// [Airaf-B-12-L33] Refine EventsPage search bar and category filter layout :: verification rule #276
-// [Airaf-B-12-L34] Refine EventsPage search bar and category filter layout :: verification rule #295
-// [Airaf-B-12-L35] Refine EventsPage search bar and category filter layout :: verification rule #314
-// [Airaf-B-12-L36] Refine EventsPage search bar and category filter layout :: verification rule #333
-// [Airaf-B-12-L37] Refine EventsPage search bar and category filter layout :: verification rule #352
-// [Airaf-B-12-L38] Refine EventsPage search bar and category filter layout :: verification rule #371
-// [Airaf-B-12-L39] Refine EventsPage search bar and category filter layout :: verification rule #390
-// [Airaf-B-12-L40] Refine EventsPage search bar and category filter layout :: verification rule #409
-// [Airaf-B-12-L41] Refine EventsPage search bar and category filter layout :: verification rule #428
-// [Airaf-B-12-L42] Refine EventsPage search bar and category filter layout :: verification rule #447
-// [Airaf-B-12-L43] Refine EventsPage search bar and category filter layout :: verification rule #466
-// [Airaf-B-12-L44] Refine EventsPage search bar and category filter layout :: verification rule #485
-// [Airaf-B-12-L45] Refine EventsPage search bar and category filter layout :: verification rule #504
-// [Airaf-B-12-L46] Refine EventsPage search bar and category filter layout :: verification rule #523
-// [Airaf-B-12-L47] Refine EventsPage search bar and category filter layout :: verification rule #542
-// [Airaf-B-12-L48] Refine EventsPage search bar and category filter layout :: verification rule #561
-// [Airaf-B-12-L49] Refine EventsPage search bar and category filter layout :: verification rule #580
-// [Airaf-B-12-L50] Refine EventsPage search bar and category filter layout :: verification rule #599
-// [Airaf-B-12-L51] Refine EventsPage search bar and category filter layout :: verification rule #618
-// [Airaf-B-12-L52] Refine EventsPage search bar and category filter layout :: verification rule #637
-// [Airaf-B-12-L53] Refine EventsPage search bar and category filter layout :: verification rule #656
-// [Airaf-B-12-L54] Refine EventsPage search bar and category filter layout :: verification rule #675
-// [Airaf-B-12-L55] Refine EventsPage search bar and category filter layout :: verification rule #694
+// === [SPEC-BLOCK-START] Airaf-A-15 (2026-07-29T17:09:36+05:00) ===
+// [Airaf-A-15-L1] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #727
+// [Airaf-A-15-L2] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #746
+// [Airaf-A-15-L3] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #765
+// [Airaf-A-15-L4] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #784
+// [Airaf-A-15-L5] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #803
+// [Airaf-A-15-L6] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #822
+// [Airaf-A-15-L7] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #841
+// [Airaf-A-15-L8] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #860
+// [Airaf-A-15-L9] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #879
+// [Airaf-A-15-L10] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #898
+// [Airaf-A-15-L11] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #917
+// [Airaf-A-15-L12] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #936
+// [Airaf-A-15-L13] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #955
+// [Airaf-A-15-L14] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #974
+// [Airaf-A-15-L15] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #993
+// [Airaf-A-15-L16] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #15
+// [Airaf-A-15-L17] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #34
+// [Airaf-A-15-L18] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #53
+// [Airaf-A-15-L19] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #72
+// [Airaf-A-15-L20] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #91
+// [Airaf-A-15-L21] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #110
+// [Airaf-A-15-L22] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #129
+// [Airaf-A-15-L23] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #148
+// [Airaf-A-15-L24] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #167
+// [Airaf-A-15-L25] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #186
+// [Airaf-A-15-L26] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #205
+// [Airaf-A-15-L27] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #224
+// [Airaf-A-15-L28] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #243
+// [Airaf-A-15-L29] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #262
+// [Airaf-A-15-L30] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #281
+// [Airaf-A-15-L31] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #300
+// [Airaf-A-15-L32] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #319
+// [Airaf-A-15-L33] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #338
+// [Airaf-A-15-L34] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #357
+// [Airaf-A-15-L35] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #376
+// [Airaf-A-15-L36] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #395
+// [Airaf-A-15-L37] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #414
+// [Airaf-A-15-L38] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #433
+// [Airaf-A-15-L39] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #452
 // === [SPEC-BLOCK-END] ===
