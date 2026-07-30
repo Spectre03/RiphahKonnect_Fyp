@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 import {
   Eye, EyeOff, GraduationCap, Loader2, ArrowRight,
-  Lock, Mail, Sparkles,
+  Lock, Mail, Sparkles, ArrowLeft,
 } from 'lucide-react';
 
 const FEATURES = [
@@ -16,7 +16,7 @@ const FEATURES = [
 ];
 
 export default function LoginPage() {
-  const { login } = useAuth();
+  const { login, user, logout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const returnTo = location.state?.from || '/home';
@@ -53,20 +53,17 @@ export default function LoginPage() {
 
         <div className="relative flex flex-col h-full p-10">
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="h-10 w-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/30">
-              <GraduationCap className="h-5 w-5 text-white" />
+          <div className="flex items-center">
+            <div className="h-12 flex items-center py-0.5">
+              <img src="/logo-dark.png" alt="RiphahKonnect" className="h-full w-auto object-contain" />
             </div>
-            <span className="text-xl font-bold text-white tracking-tight">
-              Riphah<span className="text-indigo-400">Konnect</span>
-            </span>
           </div>
 
           {/* Hero copy */}
           <div className="mt-auto mb-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-indigo-500/10 border border-indigo-500/20 rounded-full mb-5">
-              <Sparkles className="h-3 w-3 text-indigo-400" />
-              <span className="text-xs font-semibold text-indigo-300 tracking-wide">RIPHAH INTERNATIONAL UNIVERSITY</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5" style={{ background: 'rgba(201,151,58,0.10)', border: '1px solid rgba(201,151,58,0.20)' }}>
+              <Sparkles className="h-3 w-3" style={{ color: '#c9973a' }} />
+              <span className="text-xs font-semibold tracking-wide" style={{ color: '#c9973a' }}>RIPHAH INTERNATIONAL UNIVERSITY</span>
             </div>
             <h1 className="text-4xl font-extrabold text-white leading-tight tracking-tight mb-3">
               Your campus,<br />
@@ -104,107 +101,145 @@ export default function LoginPage() {
         </div>
 
         <div className="w-full max-w-[420px] animate-fadeUp relative z-10">
+          {/* Back to home */}
+          <div className="flex items-center justify-between mb-5">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-slate-700 transition-colors group"
+            >
+              <ArrowLeft size={13} className="group-hover:-translate-x-0.5 transition-transform" />
+              Back to Home
+            </Link>
+          </div>
+
           {/* Mobile logo */}
-          <div className="lg:hidden flex items-center gap-2.5 mb-6">
-            <div className="h-9 w-9 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl flex items-center justify-center">
-              <GraduationCap className="h-4.5 w-4.5 text-white" size={18} />
+          <div className="lg:hidden flex items-center mb-5">
+            <div className="h-10 flex items-center py-0.5">
+              <img src="/logo.png" alt="RiphahKonnect" className="h-full w-auto object-contain" />
             </div>
-            <span className="text-lg font-bold text-slate-900">
-              Riphah<span className="text-indigo-600">Konnect</span>
-            </span>
           </div>
 
           {/* Card */}
           <div className="bg-white rounded-3xl shadow-xl shadow-slate-900/[0.08] border border-slate-200/70 px-8 py-9">
-            <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">Welcome back</h2>
-            <p className="text-slate-500 text-sm mt-1 mb-7">Sign in to your account to continue</p>
-
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-              {/* Email */}
-              <div className={errors.email ? 'animate-shake' : ''}>
-                <label className="block text-sm font-semibold text-slate-700 mb-1.5">
-                  Email address
-                </label>
-                <div className="input-icon-wrap relative">
-                  <Mail className="input-icon absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 transition-colors duration-200 pointer-events-none" />
-                  <input
-                    {...register('email', {
-                      required: 'Email is required',
-                      pattern: {
-                        value: /@(students\.)?riphah\.edu\.pk$/,
-                        message: 'Must be a Riphah university email',
-                      },
-                    })}
-                    type="email"
-                    placeholder="you@students.riphah.edu.pk"
-                    autoComplete="email"
-                    className={`input-premium w-full pl-10 ${errors.email ? 'border-red-400 focus:border-red-400 focus:shadow-none' : ''}`}
-                  />
+            {user ? (
+              <div className="text-center">
+                <div className="h-16 w-16 bg-indigo-50 rounded-full flex items-center justify-center mx-auto mb-4 ring-4 ring-indigo-50/50">
+                  <span className="text-2xl font-bold text-indigo-600">
+                    {user.name.charAt(0).toUpperCase()}
+                  </span>
                 </div>
-                {errors.email && (
-                  <p className="mt-1.5 text-xs text-red-500 font-medium flex items-center gap-1">
-                    <span className="inline-block h-1 w-1 rounded-full bg-red-500" />
-                    {errors.email.message}
-                  </p>
-                )}
-              </div>
-
-              {/* Password */}
-              <div className={errors.password ? 'animate-shake' : ''}>
-                <div className="flex items-center justify-between mb-1.5">
-                  <label className="text-sm font-semibold text-slate-700">Password</label>
+                <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">You are logged in</h2>
+                <p className="text-slate-500 text-sm mt-1 mb-8">
+                  You are currently authenticated as <span className="font-semibold text-slate-700">{user.email}</span>
+                </p>
+                <div className="space-y-3">
                   <Link
-                    to="/forgot-password"
-                    className="text-xs font-semibold text-indigo-600 hover:text-indigo-800 transition-colors"
+                    to="/home"
+                    className="w-full h-12 gradient-brand text-white font-bold rounded-xl flex items-center justify-center hover:opacity-95 shadow-lg shadow-indigo-500/30 transition-all cursor-pointer"
                   >
-                    Forgot password?
+                    Go to Dashboard
                   </Link>
-                </div>
-                <div className="input-icon-wrap relative">
-                  <Lock className="input-icon absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 transition-colors duration-200 pointer-events-none" />
-                  <input
-                    {...register('password', { required: 'Password is required' })}
-                    type={showPassword ? 'text' : 'password'}
-                    placeholder="Enter your password"
-                    autoComplete="current-password"
-                    className={`input-premium w-full pl-10 pr-11 ${errors.password ? 'border-red-400' : ''}`}
-                  />
                   <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-indigo-500 transition-colors cursor-pointer p-0.5"
+                    onClick={() => logout()}
+                    className="w-full h-12 bg-white text-slate-700 border border-slate-200 font-bold rounded-xl flex items-center justify-center hover:bg-slate-50 transition-colors cursor-pointer"
                   >
-                    {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                    Log out
                   </button>
                 </div>
-                {errors.password && (
-                  <p className="mt-1.5 text-xs text-red-500 font-medium flex items-center gap-1">
-                    <span className="inline-block h-1 w-1 rounded-full bg-red-500" />
-                    {errors.password.message}
-                  </p>
-                )}
               </div>
+            ) : (
+              <>
+                <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">Welcome back</h2>
+                <p className="text-slate-500 text-sm mt-1 mb-7">Sign in to your account to continue</p>
 
-              {/* Submit */}
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full h-12 mt-2 gradient-brand text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:opacity-95 hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0 transition-all duration-150 shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/25 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none cursor-pointer text-sm"
-              >
-                {isSubmitting ? (
-                  <Loader2 className="h-5 w-5 animate-spin" />
-                ) : (
-                  <>Sign in <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" /></>
-                )}
-              </button>
-            </form>
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                  {/* Email */}
+                  <div className={errors.email ? 'animate-shake' : ''}>
+                    <label className="block text-sm font-semibold text-slate-700 mb-1.5">
+                      Email address
+                    </label>
+                    <div className="input-icon-wrap relative">
+                      <Mail className="input-icon absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 transition-colors duration-200 pointer-events-none" />
+                      <input
+                        {...register('email', {
+                          required: 'Email is required',
+                          pattern: {
+                            value: /@(students\.)?riphah\.edu\.pk$/,
+                            message: 'Must be a Riphah university email',
+                          },
+                        })}
+                        type="email"
+                        placeholder="you@students.riphah.edu.pk"
+                        autoComplete="email"
+                        className={`input-premium w-full pl-10 ${errors.email ? 'border-red-400 focus:border-red-400 focus:shadow-none' : ''}`}
+                      />
+                    </div>
+                    {errors.email && (
+                      <p className="mt-1.5 text-xs text-red-500 font-medium flex items-center gap-1">
+                        <span className="inline-block h-1 w-1 rounded-full bg-red-500" />
+                        {errors.email.message}
+                      </p>
+                    )}
+                  </div>
 
-            <p className="text-center text-sm text-slate-500 mt-6">
-              Don&apos;t have an account?{' '}
-              <Link to="/register" className="font-bold text-indigo-600 hover:text-indigo-800 transition-colors">
-                Create one
-              </Link>
-            </p>
+                  {/* Password */}
+                  <div className={errors.password ? 'animate-shake' : ''}>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <label className="text-sm font-semibold text-slate-700">Password</label>
+                      <Link
+                        to="/forgot-password"
+                        className="text-xs font-semibold text-indigo-600 hover:text-indigo-800 transition-colors"
+                      >
+                        Forgot password?
+                      </Link>
+                    </div>
+                    <div className="input-icon-wrap relative">
+                      <Lock className="input-icon absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 transition-colors duration-200 pointer-events-none" />
+                      <input
+                        {...register('password', { required: 'Password is required' })}
+                        type={showPassword ? 'text' : 'password'}
+                        placeholder="Enter your password"
+                        autoComplete="current-password"
+                        className={`input-premium w-full pl-10 pr-11 ${errors.password ? 'border-red-400' : ''}`}
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-indigo-500 transition-colors cursor-pointer p-0.5"
+                      >
+                        {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                      </button>
+                    </div>
+                    {errors.password && (
+                      <p className="mt-1.5 text-xs text-red-500 font-medium flex items-center gap-1">
+                        <span className="inline-block h-1 w-1 rounded-full bg-red-500" />
+                        {errors.password.message}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Submit */}
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full h-12 mt-2 gradient-brand text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:opacity-95 hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-0 transition-all duration-150 shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/25 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none cursor-pointer text-sm"
+                  >
+                    {isSubmitting ? (
+                      <Loader2 className="h-5 w-5 animate-spin" />
+                    ) : (
+                      <>Sign in <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" /></>
+                    )}
+                  </button>
+                </form>
+
+                <p className="text-center text-sm text-slate-500 mt-6">
+                  Don&apos;t have an account?{' '}
+                  <Link to="/register" className="font-bold text-indigo-600 hover:text-indigo-800 transition-colors">
+                    Create one
+                  </Link>
+                </p>
+              </>
+            )}
           </div>
 
           {/* Trust badges */}
