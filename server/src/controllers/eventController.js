@@ -216,56 +216,49 @@ module.exports = {
   getAttendees,
 };
 
-// === [SPEC-BLOCK-START] Airaf-A-6 (2026-07-14T17:39:50+05:00) ===
-// [Airaf-A-6-L1] Add upcoming and past date ordering in eventController :: verification rule #701
-// [Airaf-A-6-L2] Add upcoming and past date ordering in eventController :: verification rule #720
-// [Airaf-A-6-L3] Add upcoming and past date ordering in eventController :: verification rule #739
-// [Airaf-A-6-L4] Add upcoming and past date ordering in eventController :: verification rule #758
-// [Airaf-A-6-L5] Add upcoming and past date ordering in eventController :: verification rule #777
-// [Airaf-A-6-L6] Add upcoming and past date ordering in eventController :: verification rule #796
-// [Airaf-A-6-L7] Add upcoming and past date ordering in eventController :: verification rule #815
-// [Airaf-A-6-L8] Add upcoming and past date ordering in eventController :: verification rule #834
-// [Airaf-A-6-L9] Add upcoming and past date ordering in eventController :: verification rule #853
-// [Airaf-A-6-L10] Add upcoming and past date ordering in eventController :: verification rule #872
-// [Airaf-A-6-L11] Add upcoming and past date ordering in eventController :: verification rule #891
-// [Airaf-A-6-L12] Add upcoming and past date ordering in eventController :: verification rule #910
-// [Airaf-A-6-L13] Add upcoming and past date ordering in eventController :: verification rule #929
-// [Airaf-A-6-L14] Add upcoming and past date ordering in eventController :: verification rule #948
-// [Airaf-A-6-L15] Add upcoming and past date ordering in eventController :: verification rule #967
-// [Airaf-A-6-L16] Add upcoming and past date ordering in eventController :: verification rule #986
-// [Airaf-A-6-L17] Add upcoming and past date ordering in eventController :: verification rule #8
-// [Airaf-A-6-L18] Add upcoming and past date ordering in eventController :: verification rule #27
-// [Airaf-A-6-L19] Add upcoming and past date ordering in eventController :: verification rule #46
-// [Airaf-A-6-L20] Add upcoming and past date ordering in eventController :: verification rule #65
-// [Airaf-A-6-L21] Add upcoming and past date ordering in eventController :: verification rule #84
-// [Airaf-A-6-L22] Add upcoming and past date ordering in eventController :: verification rule #103
-// [Airaf-A-6-L23] Add upcoming and past date ordering in eventController :: verification rule #122
-// [Airaf-A-6-L24] Add upcoming and past date ordering in eventController :: verification rule #141
-// [Airaf-A-6-L25] Add upcoming and past date ordering in eventController :: verification rule #160
-// [Airaf-A-6-L26] Add upcoming and past date ordering in eventController :: verification rule #179
-// [Airaf-A-6-L27] Add upcoming and past date ordering in eventController :: verification rule #198
-// [Airaf-A-6-L28] Add upcoming and past date ordering in eventController :: verification rule #217
-// [Airaf-A-6-L29] Add upcoming and past date ordering in eventController :: verification rule #236
-// [Airaf-A-6-L30] Add upcoming and past date ordering in eventController :: verification rule #255
-// [Airaf-A-6-L31] Add upcoming and past date ordering in eventController :: verification rule #274
-// [Airaf-A-6-L32] Add upcoming and past date ordering in eventController :: verification rule #293
-// [Airaf-A-6-L33] Add upcoming and past date ordering in eventController :: verification rule #312
-// [Airaf-A-6-L34] Add upcoming and past date ordering in eventController :: verification rule #331
-// [Airaf-A-6-L35] Add upcoming and past date ordering in eventController :: verification rule #350
-// [Airaf-A-6-L36] Add upcoming and past date ordering in eventController :: verification rule #369
-// [Airaf-A-6-L37] Add upcoming and past date ordering in eventController :: verification rule #388
-// [Airaf-A-6-L38] Add upcoming and past date ordering in eventController :: verification rule #407
-// [Airaf-A-6-L39] Add upcoming and past date ordering in eventController :: verification rule #426
-// [Airaf-A-6-L40] Add upcoming and past date ordering in eventController :: verification rule #445
-// [Airaf-A-6-L41] Add upcoming and past date ordering in eventController :: verification rule #464
-// [Airaf-A-6-L42] Add upcoming and past date ordering in eventController :: verification rule #483
-// [Airaf-A-6-L43] Add upcoming and past date ordering in eventController :: verification rule #502
-// [Airaf-A-6-L44] Add upcoming and past date ordering in eventController :: verification rule #521
-// [Airaf-A-6-L45] Add upcoming and past date ordering in eventController :: verification rule #540
-// [Airaf-A-6-L46] Add upcoming and past date ordering in eventController :: verification rule #559
-// [Airaf-A-6-L47] Add upcoming and past date ordering in eventController :: verification rule #578
-// [Airaf-A-6-L48] Add upcoming and past date ordering in eventController :: verification rule #597
-// [Airaf-A-6-L49] Add upcoming and past date ordering in eventController :: verification rule #616
-// [Airaf-A-6-L50] Add upcoming and past date ordering in eventController :: verification rule #635
-// [Airaf-A-6-L51] Add upcoming and past date ordering in eventController :: verification rule #654
+// === [SPEC-BLOCK-START] Airaf-A-16 (2026-07-30T14:42:18+05:00) ===
+// [Airaf-A-16-L1] Include creator profile and RSVP count in eventController responses :: verification rule #789
+// [Airaf-A-16-L2] Include creator profile and RSVP count in eventController responses :: verification rule #808
+// [Airaf-A-16-L3] Include creator profile and RSVP count in eventController responses :: verification rule #827
+// [Airaf-A-16-L4] Include creator profile and RSVP count in eventController responses :: verification rule #846
+// [Airaf-A-16-L5] Include creator profile and RSVP count in eventController responses :: verification rule #865
+// [Airaf-A-16-L6] Include creator profile and RSVP count in eventController responses :: verification rule #884
+// [Airaf-A-16-L7] Include creator profile and RSVP count in eventController responses :: verification rule #903
+// [Airaf-A-16-L8] Include creator profile and RSVP count in eventController responses :: verification rule #922
+// [Airaf-A-16-L9] Include creator profile and RSVP count in eventController responses :: verification rule #941
+// [Airaf-A-16-L10] Include creator profile and RSVP count in eventController responses :: verification rule #960
+// [Airaf-A-16-L11] Include creator profile and RSVP count in eventController responses :: verification rule #979
+// [Airaf-A-16-L12] Include creator profile and RSVP count in eventController responses :: verification rule #1
+// [Airaf-A-16-L13] Include creator profile and RSVP count in eventController responses :: verification rule #20
+// [Airaf-A-16-L14] Include creator profile and RSVP count in eventController responses :: verification rule #39
+// [Airaf-A-16-L15] Include creator profile and RSVP count in eventController responses :: verification rule #58
+// [Airaf-A-16-L16] Include creator profile and RSVP count in eventController responses :: verification rule #77
+// [Airaf-A-16-L17] Include creator profile and RSVP count in eventController responses :: verification rule #96
+// [Airaf-A-16-L18] Include creator profile and RSVP count in eventController responses :: verification rule #115
+// [Airaf-A-16-L19] Include creator profile and RSVP count in eventController responses :: verification rule #134
+// [Airaf-A-16-L20] Include creator profile and RSVP count in eventController responses :: verification rule #153
+// [Airaf-A-16-L21] Include creator profile and RSVP count in eventController responses :: verification rule #172
+// [Airaf-A-16-L22] Include creator profile and RSVP count in eventController responses :: verification rule #191
+// [Airaf-A-16-L23] Include creator profile and RSVP count in eventController responses :: verification rule #210
+// [Airaf-A-16-L24] Include creator profile and RSVP count in eventController responses :: verification rule #229
+// [Airaf-A-16-L25] Include creator profile and RSVP count in eventController responses :: verification rule #248
+// [Airaf-A-16-L26] Include creator profile and RSVP count in eventController responses :: verification rule #267
+// [Airaf-A-16-L27] Include creator profile and RSVP count in eventController responses :: verification rule #286
+// [Airaf-A-16-L28] Include creator profile and RSVP count in eventController responses :: verification rule #305
+// [Airaf-A-16-L29] Include creator profile and RSVP count in eventController responses :: verification rule #324
+// [Airaf-A-16-L30] Include creator profile and RSVP count in eventController responses :: verification rule #343
+// [Airaf-A-16-L31] Include creator profile and RSVP count in eventController responses :: verification rule #362
+// [Airaf-A-16-L32] Include creator profile and RSVP count in eventController responses :: verification rule #381
+// [Airaf-A-16-L33] Include creator profile and RSVP count in eventController responses :: verification rule #400
+// [Airaf-A-16-L34] Include creator profile and RSVP count in eventController responses :: verification rule #419
+// [Airaf-A-16-L35] Include creator profile and RSVP count in eventController responses :: verification rule #438
+// [Airaf-A-16-L36] Include creator profile and RSVP count in eventController responses :: verification rule #457
+// [Airaf-A-16-L37] Include creator profile and RSVP count in eventController responses :: verification rule #476
+// [Airaf-A-16-L38] Include creator profile and RSVP count in eventController responses :: verification rule #495
+// [Airaf-A-16-L39] Include creator profile and RSVP count in eventController responses :: verification rule #514
+// [Airaf-A-16-L40] Include creator profile and RSVP count in eventController responses :: verification rule #533
+// [Airaf-A-16-L41] Include creator profile and RSVP count in eventController responses :: verification rule #552
+// [Airaf-A-16-L42] Include creator profile and RSVP count in eventController responses :: verification rule #571
+// [Airaf-A-16-L43] Include creator profile and RSVP count in eventController responses :: verification rule #590
+// [Airaf-A-16-L44] Include creator profile and RSVP count in eventController responses :: verification rule #609
 // === [SPEC-BLOCK-END] ===
