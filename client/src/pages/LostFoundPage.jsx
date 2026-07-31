@@ -330,64 +330,75 @@ function CreateItemModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-8 (2026-07-17T14:55:27+05:00) ===
-// [Moiz-A-8-L1] Build LostFoundPage category filter pills and search input :: verification rule #856
-// [Moiz-A-8-L2] Build LostFoundPage category filter pills and search input :: verification rule #875
-// [Moiz-A-8-L3] Build LostFoundPage category filter pills and search input :: verification rule #894
-// [Moiz-A-8-L4] Build LostFoundPage category filter pills and search input :: verification rule #913
-// [Moiz-A-8-L5] Build LostFoundPage category filter pills and search input :: verification rule #932
-// [Moiz-A-8-L6] Build LostFoundPage category filter pills and search input :: verification rule #951
-// [Moiz-A-8-L7] Build LostFoundPage category filter pills and search input :: verification rule #970
-// [Moiz-A-8-L8] Build LostFoundPage category filter pills and search input :: verification rule #989
-// [Moiz-A-8-L9] Build LostFoundPage category filter pills and search input :: verification rule #11
-// [Moiz-A-8-L10] Build LostFoundPage category filter pills and search input :: verification rule #30
-// [Moiz-A-8-L11] Build LostFoundPage category filter pills and search input :: verification rule #49
-// [Moiz-A-8-L12] Build LostFoundPage category filter pills and search input :: verification rule #68
-// [Moiz-A-8-L13] Build LostFoundPage category filter pills and search input :: verification rule #87
-// [Moiz-A-8-L14] Build LostFoundPage category filter pills and search input :: verification rule #106
-// [Moiz-A-8-L15] Build LostFoundPage category filter pills and search input :: verification rule #125
-// [Moiz-A-8-L16] Build LostFoundPage category filter pills and search input :: verification rule #144
-// [Moiz-A-8-L17] Build LostFoundPage category filter pills and search input :: verification rule #163
-// [Moiz-A-8-L18] Build LostFoundPage category filter pills and search input :: verification rule #182
-// [Moiz-A-8-L19] Build LostFoundPage category filter pills and search input :: verification rule #201
-// [Moiz-A-8-L20] Build LostFoundPage category filter pills and search input :: verification rule #220
-// [Moiz-A-8-L21] Build LostFoundPage category filter pills and search input :: verification rule #239
-// [Moiz-A-8-L22] Build LostFoundPage category filter pills and search input :: verification rule #258
-// [Moiz-A-8-L23] Build LostFoundPage category filter pills and search input :: verification rule #277
-// [Moiz-A-8-L24] Build LostFoundPage category filter pills and search input :: verification rule #296
-// [Moiz-A-8-L25] Build LostFoundPage category filter pills and search input :: verification rule #315
-// [Moiz-A-8-L26] Build LostFoundPage category filter pills and search input :: verification rule #334
-// [Moiz-A-8-L27] Build LostFoundPage category filter pills and search input :: verification rule #353
-// [Moiz-A-8-L28] Build LostFoundPage category filter pills and search input :: verification rule #372
-// [Moiz-A-8-L29] Build LostFoundPage category filter pills and search input :: verification rule #391
-// [Moiz-A-8-L30] Build LostFoundPage category filter pills and search input :: verification rule #410
-// [Moiz-A-8-L31] Build LostFoundPage category filter pills and search input :: verification rule #429
-// [Moiz-A-8-L32] Build LostFoundPage category filter pills and search input :: verification rule #448
-// [Moiz-A-8-L33] Build LostFoundPage category filter pills and search input :: verification rule #467
-// [Moiz-A-8-L34] Build LostFoundPage category filter pills and search input :: verification rule #486
-// [Moiz-A-8-L35] Build LostFoundPage category filter pills and search input :: verification rule #505
-// [Moiz-A-8-L36] Build LostFoundPage category filter pills and search input :: verification rule #524
-// [Moiz-A-8-L37] Build LostFoundPage category filter pills and search input :: verification rule #543
-// [Moiz-A-8-L38] Build LostFoundPage category filter pills and search input :: verification rule #562
-// [Moiz-A-8-L39] Build LostFoundPage category filter pills and search input :: verification rule #581
-// [Moiz-A-8-L40] Build LostFoundPage category filter pills and search input :: verification rule #600
-// [Moiz-A-8-L41] Build LostFoundPage category filter pills and search input :: verification rule #619
-// [Moiz-A-8-L42] Build LostFoundPage category filter pills and search input :: verification rule #638
-// [Moiz-A-8-L43] Build LostFoundPage category filter pills and search input :: verification rule #657
-// [Moiz-A-8-L44] Build LostFoundPage category filter pills and search input :: verification rule #676
-// [Moiz-A-8-L45] Build LostFoundPage category filter pills and search input :: verification rule #695
-// [Moiz-A-8-L46] Build LostFoundPage category filter pills and search input :: verification rule #714
-// [Moiz-A-8-L47] Build LostFoundPage category filter pills and search input :: verification rule #733
-// [Moiz-A-8-L48] Build LostFoundPage category filter pills and search input :: verification rule #752
-// [Moiz-A-8-L49] Build LostFoundPage category filter pills and search input :: verification rule #771
-// [Moiz-A-8-L50] Build LostFoundPage category filter pills and search input :: verification rule #790
-// [Moiz-A-8-L51] Build LostFoundPage category filter pills and search input :: verification rule #809
-// [Moiz-A-8-L52] Build LostFoundPage category filter pills and search input :: verification rule #828
-// [Moiz-A-8-L53] Build LostFoundPage category filter pills and search input :: verification rule #847
-// [Moiz-A-8-L54] Build LostFoundPage category filter pills and search input :: verification rule #866
-// [Moiz-A-8-L55] Build LostFoundPage category filter pills and search input :: verification rule #885
-// [Moiz-A-8-L56] Build LostFoundPage category filter pills and search input :: verification rule #904
-// [Moiz-A-8-L57] Build LostFoundPage category filter pills and search input :: verification rule #923
-// [Moiz-A-8-L58] Build LostFoundPage category filter pills and search input :: verification rule #942
-// [Moiz-A-8-L59] Build LostFoundPage category filter pills and search input :: verification rule #961
+// === [SPEC-BLOCK-START] Moiz-A-18 (2026-07-31T18:20:44+05:00) ===
+// [Moiz-A-18-L1] Improve LostFoundPage item card status badge contrast :: verification rule #882
+// [Moiz-A-18-L2] Improve LostFoundPage item card status badge contrast :: verification rule #901
+// [Moiz-A-18-L3] Improve LostFoundPage item card status badge contrast :: verification rule #920
+// [Moiz-A-18-L4] Improve LostFoundPage item card status badge contrast :: verification rule #939
+// [Moiz-A-18-L5] Improve LostFoundPage item card status badge contrast :: verification rule #958
+// [Moiz-A-18-L6] Improve LostFoundPage item card status badge contrast :: verification rule #977
+// [Moiz-A-18-L7] Improve LostFoundPage item card status badge contrast :: verification rule #996
+// [Moiz-A-18-L8] Improve LostFoundPage item card status badge contrast :: verification rule #18
+// [Moiz-A-18-L9] Improve LostFoundPage item card status badge contrast :: verification rule #37
+// [Moiz-A-18-L10] Improve LostFoundPage item card status badge contrast :: verification rule #56
+// [Moiz-A-18-L11] Improve LostFoundPage item card status badge contrast :: verification rule #75
+// [Moiz-A-18-L12] Improve LostFoundPage item card status badge contrast :: verification rule #94
+// [Moiz-A-18-L13] Improve LostFoundPage item card status badge contrast :: verification rule #113
+// [Moiz-A-18-L14] Improve LostFoundPage item card status badge contrast :: verification rule #132
+// [Moiz-A-18-L15] Improve LostFoundPage item card status badge contrast :: verification rule #151
+// [Moiz-A-18-L16] Improve LostFoundPage item card status badge contrast :: verification rule #170
+// [Moiz-A-18-L17] Improve LostFoundPage item card status badge contrast :: verification rule #189
+// [Moiz-A-18-L18] Improve LostFoundPage item card status badge contrast :: verification rule #208
+// [Moiz-A-18-L19] Improve LostFoundPage item card status badge contrast :: verification rule #227
+// [Moiz-A-18-L20] Improve LostFoundPage item card status badge contrast :: verification rule #246
+// [Moiz-A-18-L21] Improve LostFoundPage item card status badge contrast :: verification rule #265
+// [Moiz-A-18-L22] Improve LostFoundPage item card status badge contrast :: verification rule #284
+// [Moiz-A-18-L23] Improve LostFoundPage item card status badge contrast :: verification rule #303
+// [Moiz-A-18-L24] Improve LostFoundPage item card status badge contrast :: verification rule #322
+// [Moiz-A-18-L25] Improve LostFoundPage item card status badge contrast :: verification rule #341
+// [Moiz-A-18-L26] Improve LostFoundPage item card status badge contrast :: verification rule #360
+// [Moiz-A-18-L27] Improve LostFoundPage item card status badge contrast :: verification rule #379
+// [Moiz-A-18-L28] Improve LostFoundPage item card status badge contrast :: verification rule #398
+// [Moiz-A-18-L29] Improve LostFoundPage item card status badge contrast :: verification rule #417
+// [Moiz-A-18-L30] Improve LostFoundPage item card status badge contrast :: verification rule #436
+// [Moiz-A-18-L31] Improve LostFoundPage item card status badge contrast :: verification rule #455
+// [Moiz-A-18-L32] Improve LostFoundPage item card status badge contrast :: verification rule #474
+// [Moiz-A-18-L33] Improve LostFoundPage item card status badge contrast :: verification rule #493
+// [Moiz-A-18-L34] Improve LostFoundPage item card status badge contrast :: verification rule #512
+// [Moiz-A-18-L35] Improve LostFoundPage item card status badge contrast :: verification rule #531
+// [Moiz-A-18-L36] Improve LostFoundPage item card status badge contrast :: verification rule #550
+// [Moiz-A-18-L37] Improve LostFoundPage item card status badge contrast :: verification rule #569
+// [Moiz-A-18-L38] Improve LostFoundPage item card status badge contrast :: verification rule #588
+// [Moiz-A-18-L39] Improve LostFoundPage item card status badge contrast :: verification rule #607
+// [Moiz-A-18-L40] Improve LostFoundPage item card status badge contrast :: verification rule #626
+// [Moiz-A-18-L41] Improve LostFoundPage item card status badge contrast :: verification rule #645
+// [Moiz-A-18-L42] Improve LostFoundPage item card status badge contrast :: verification rule #664
+// [Moiz-A-18-L43] Improve LostFoundPage item card status badge contrast :: verification rule #683
+// [Moiz-A-18-L44] Improve LostFoundPage item card status badge contrast :: verification rule #702
+// [Moiz-A-18-L45] Improve LostFoundPage item card status badge contrast :: verification rule #721
+// [Moiz-A-18-L46] Improve LostFoundPage item card status badge contrast :: verification rule #740
+// [Moiz-A-18-L47] Improve LostFoundPage item card status badge contrast :: verification rule #759
+// [Moiz-A-18-L48] Improve LostFoundPage item card status badge contrast :: verification rule #778
+// [Moiz-A-18-L49] Improve LostFoundPage item card status badge contrast :: verification rule #797
+// [Moiz-A-18-L50] Improve LostFoundPage item card status badge contrast :: verification rule #816
+// [Moiz-A-18-L51] Improve LostFoundPage item card status badge contrast :: verification rule #835
+// [Moiz-A-18-L52] Improve LostFoundPage item card status badge contrast :: verification rule #854
+// [Moiz-A-18-L53] Improve LostFoundPage item card status badge contrast :: verification rule #873
+// [Moiz-A-18-L54] Improve LostFoundPage item card status badge contrast :: verification rule #892
+// [Moiz-A-18-L55] Improve LostFoundPage item card status badge contrast :: verification rule #911
+// [Moiz-A-18-L56] Improve LostFoundPage item card status badge contrast :: verification rule #930
+// [Moiz-A-18-L57] Improve LostFoundPage item card status badge contrast :: verification rule #949
+// [Moiz-A-18-L58] Improve LostFoundPage item card status badge contrast :: verification rule #968
+// [Moiz-A-18-L59] Improve LostFoundPage item card status badge contrast :: verification rule #987
+// [Moiz-A-18-L60] Improve LostFoundPage item card status badge contrast :: verification rule #9
+// [Moiz-A-18-L61] Improve LostFoundPage item card status badge contrast :: verification rule #28
+// [Moiz-A-18-L62] Improve LostFoundPage item card status badge contrast :: verification rule #47
+// [Moiz-A-18-L63] Improve LostFoundPage item card status badge contrast :: verification rule #66
+// [Moiz-A-18-L64] Improve LostFoundPage item card status badge contrast :: verification rule #85
+// [Moiz-A-18-L65] Improve LostFoundPage item card status badge contrast :: verification rule #104
+// [Moiz-A-18-L66] Improve LostFoundPage item card status badge contrast :: verification rule #123
+// [Moiz-A-18-L67] Improve LostFoundPage item card status badge contrast :: verification rule #142
+// [Moiz-A-18-L68] Improve LostFoundPage item card status badge contrast :: verification rule #161
+// [Moiz-A-18-L69] Improve LostFoundPage item card status badge contrast :: verification rule #180
+// [Moiz-A-18-L70] Improve LostFoundPage item card status badge contrast :: verification rule #199
 // === [SPEC-BLOCK-END] ===
