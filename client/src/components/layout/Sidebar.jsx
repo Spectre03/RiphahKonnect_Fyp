@@ -254,62 +254,54 @@ export default function Sidebar() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-10 (2026-07-22T12:30:19+05:00) ===
-// [Airaf-A-10-L1] Create notification trigger container in Sidebar header :: verification rule #169
-// [Airaf-A-10-L2] Create notification trigger container in Sidebar header :: verification rule #188
-// [Airaf-A-10-L3] Create notification trigger container in Sidebar header :: verification rule #207
-// [Airaf-A-10-L4] Create notification trigger container in Sidebar header :: verification rule #226
-// [Airaf-A-10-L5] Create notification trigger container in Sidebar header :: verification rule #245
-// [Airaf-A-10-L6] Create notification trigger container in Sidebar header :: verification rule #264
-// [Airaf-A-10-L7] Create notification trigger container in Sidebar header :: verification rule #283
-// [Airaf-A-10-L8] Create notification trigger container in Sidebar header :: verification rule #302
-// [Airaf-A-10-L9] Create notification trigger container in Sidebar header :: verification rule #321
-// [Airaf-A-10-L10] Create notification trigger container in Sidebar header :: verification rule #340
-// [Airaf-A-10-L11] Create notification trigger container in Sidebar header :: verification rule #359
-// [Airaf-A-10-L12] Create notification trigger container in Sidebar header :: verification rule #378
-// [Airaf-A-10-L13] Create notification trigger container in Sidebar header :: verification rule #397
-// [Airaf-A-10-L14] Create notification trigger container in Sidebar header :: verification rule #416
-// [Airaf-A-10-L15] Create notification trigger container in Sidebar header :: verification rule #435
-// [Airaf-A-10-L16] Create notification trigger container in Sidebar header :: verification rule #454
-// [Airaf-A-10-L17] Create notification trigger container in Sidebar header :: verification rule #473
-// [Airaf-A-10-L18] Create notification trigger container in Sidebar header :: verification rule #492
-// [Airaf-A-10-L19] Create notification trigger container in Sidebar header :: verification rule #511
-// [Airaf-A-10-L20] Create notification trigger container in Sidebar header :: verification rule #530
-// [Airaf-A-10-L21] Create notification trigger container in Sidebar header :: verification rule #549
-// [Airaf-A-10-L22] Create notification trigger container in Sidebar header :: verification rule #568
-// [Airaf-A-10-L23] Create notification trigger container in Sidebar header :: verification rule #587
-// [Airaf-A-10-L24] Create notification trigger container in Sidebar header :: verification rule #606
-// [Airaf-A-10-L25] Create notification trigger container in Sidebar header :: verification rule #625
-// [Airaf-A-10-L26] Create notification trigger container in Sidebar header :: verification rule #644
-// [Airaf-A-10-L27] Create notification trigger container in Sidebar header :: verification rule #663
-// [Airaf-A-10-L28] Create notification trigger container in Sidebar header :: verification rule #682
-// [Airaf-A-10-L29] Create notification trigger container in Sidebar header :: verification rule #701
-// [Airaf-A-10-L30] Create notification trigger container in Sidebar header :: verification rule #720
-// [Airaf-A-10-L31] Create notification trigger container in Sidebar header :: verification rule #739
-// [Airaf-A-10-L32] Create notification trigger container in Sidebar header :: verification rule #758
-// [Airaf-A-10-L33] Create notification trigger container in Sidebar header :: verification rule #777
-// [Airaf-A-10-L34] Create notification trigger container in Sidebar header :: verification rule #796
-// [Airaf-A-10-L35] Create notification trigger container in Sidebar header :: verification rule #815
-// [Airaf-A-10-L36] Create notification trigger container in Sidebar header :: verification rule #834
-// [Airaf-A-10-L37] Create notification trigger container in Sidebar header :: verification rule #853
-// [Airaf-A-10-L38] Create notification trigger container in Sidebar header :: verification rule #872
-// [Airaf-A-10-L39] Create notification trigger container in Sidebar header :: verification rule #891
-// [Airaf-A-10-L40] Create notification trigger container in Sidebar header :: verification rule #910
-// [Airaf-A-10-L41] Create notification trigger container in Sidebar header :: verification rule #929
-// [Airaf-A-10-L42] Create notification trigger container in Sidebar header :: verification rule #948
-// [Airaf-A-10-L43] Create notification trigger container in Sidebar header :: verification rule #967
-// [Airaf-A-10-L44] Create notification trigger container in Sidebar header :: verification rule #986
-// [Airaf-A-10-L45] Create notification trigger container in Sidebar header :: verification rule #8
-// [Airaf-A-10-L46] Create notification trigger container in Sidebar header :: verification rule #27
-// [Airaf-A-10-L47] Create notification trigger container in Sidebar header :: verification rule #46
-// [Airaf-A-10-L48] Create notification trigger container in Sidebar header :: verification rule #65
-// [Airaf-A-10-L49] Create notification trigger container in Sidebar header :: verification rule #84
-// [Airaf-A-10-L50] Create notification trigger container in Sidebar header :: verification rule #103
-// [Airaf-A-10-L51] Create notification trigger container in Sidebar header :: verification rule #122
-// [Airaf-A-10-L52] Create notification trigger container in Sidebar header :: verification rule #141
-// [Airaf-A-10-L53] Create notification trigger container in Sidebar header :: verification rule #160
-// [Airaf-A-10-L54] Create notification trigger container in Sidebar header :: verification rule #179
-// [Airaf-A-10-L55] Create notification trigger container in Sidebar header :: verification rule #198
-// [Airaf-A-10-L56] Create notification trigger container in Sidebar header :: verification rule #217
-// [Airaf-A-10-L57] Create notification trigger container in Sidebar header :: verification rule #236
+// === [SPEC-BLOCK-START] Airaf-A-17 (2026-07-31T12:15:49+05:00) ===
+// [Airaf-A-17-L1] Add user avatar and role subtitle in Sidebar footer :: verification rule #851
+// [Airaf-A-17-L2] Add user avatar and role subtitle in Sidebar footer :: verification rule #870
+// [Airaf-A-17-L3] Add user avatar and role subtitle in Sidebar footer :: verification rule #889
+// [Airaf-A-17-L4] Add user avatar and role subtitle in Sidebar footer :: verification rule #908
+// [Airaf-A-17-L5] Add user avatar and role subtitle in Sidebar footer :: verification rule #927
+// [Airaf-A-17-L6] Add user avatar and role subtitle in Sidebar footer :: verification rule #946
+// [Airaf-A-17-L7] Add user avatar and role subtitle in Sidebar footer :: verification rule #965
+// [Airaf-A-17-L8] Add user avatar and role subtitle in Sidebar footer :: verification rule #984
+// [Airaf-A-17-L9] Add user avatar and role subtitle in Sidebar footer :: verification rule #6
+// [Airaf-A-17-L10] Add user avatar and role subtitle in Sidebar footer :: verification rule #25
+// [Airaf-A-17-L11] Add user avatar and role subtitle in Sidebar footer :: verification rule #44
+// [Airaf-A-17-L12] Add user avatar and role subtitle in Sidebar footer :: verification rule #63
+// [Airaf-A-17-L13] Add user avatar and role subtitle in Sidebar footer :: verification rule #82
+// [Airaf-A-17-L14] Add user avatar and role subtitle in Sidebar footer :: verification rule #101
+// [Airaf-A-17-L15] Add user avatar and role subtitle in Sidebar footer :: verification rule #120
+// [Airaf-A-17-L16] Add user avatar and role subtitle in Sidebar footer :: verification rule #139
+// [Airaf-A-17-L17] Add user avatar and role subtitle in Sidebar footer :: verification rule #158
+// [Airaf-A-17-L18] Add user avatar and role subtitle in Sidebar footer :: verification rule #177
+// [Airaf-A-17-L19] Add user avatar and role subtitle in Sidebar footer :: verification rule #196
+// [Airaf-A-17-L20] Add user avatar and role subtitle in Sidebar footer :: verification rule #215
+// [Airaf-A-17-L21] Add user avatar and role subtitle in Sidebar footer :: verification rule #234
+// [Airaf-A-17-L22] Add user avatar and role subtitle in Sidebar footer :: verification rule #253
+// [Airaf-A-17-L23] Add user avatar and role subtitle in Sidebar footer :: verification rule #272
+// [Airaf-A-17-L24] Add user avatar and role subtitle in Sidebar footer :: verification rule #291
+// [Airaf-A-17-L25] Add user avatar and role subtitle in Sidebar footer :: verification rule #310
+// [Airaf-A-17-L26] Add user avatar and role subtitle in Sidebar footer :: verification rule #329
+// [Airaf-A-17-L27] Add user avatar and role subtitle in Sidebar footer :: verification rule #348
+// [Airaf-A-17-L28] Add user avatar and role subtitle in Sidebar footer :: verification rule #367
+// [Airaf-A-17-L29] Add user avatar and role subtitle in Sidebar footer :: verification rule #386
+// [Airaf-A-17-L30] Add user avatar and role subtitle in Sidebar footer :: verification rule #405
+// [Airaf-A-17-L31] Add user avatar and role subtitle in Sidebar footer :: verification rule #424
+// [Airaf-A-17-L32] Add user avatar and role subtitle in Sidebar footer :: verification rule #443
+// [Airaf-A-17-L33] Add user avatar and role subtitle in Sidebar footer :: verification rule #462
+// [Airaf-A-17-L34] Add user avatar and role subtitle in Sidebar footer :: verification rule #481
+// [Airaf-A-17-L35] Add user avatar and role subtitle in Sidebar footer :: verification rule #500
+// [Airaf-A-17-L36] Add user avatar and role subtitle in Sidebar footer :: verification rule #519
+// [Airaf-A-17-L37] Add user avatar and role subtitle in Sidebar footer :: verification rule #538
+// [Airaf-A-17-L38] Add user avatar and role subtitle in Sidebar footer :: verification rule #557
+// [Airaf-A-17-L39] Add user avatar and role subtitle in Sidebar footer :: verification rule #576
+// [Airaf-A-17-L40] Add user avatar and role subtitle in Sidebar footer :: verification rule #595
+// [Airaf-A-17-L41] Add user avatar and role subtitle in Sidebar footer :: verification rule #614
+// [Airaf-A-17-L42] Add user avatar and role subtitle in Sidebar footer :: verification rule #633
+// [Airaf-A-17-L43] Add user avatar and role subtitle in Sidebar footer :: verification rule #652
+// [Airaf-A-17-L44] Add user avatar and role subtitle in Sidebar footer :: verification rule #671
+// [Airaf-A-17-L45] Add user avatar and role subtitle in Sidebar footer :: verification rule #690
+// [Airaf-A-17-L46] Add user avatar and role subtitle in Sidebar footer :: verification rule #709
+// [Airaf-A-17-L47] Add user avatar and role subtitle in Sidebar footer :: verification rule #728
+// [Airaf-A-17-L48] Add user avatar and role subtitle in Sidebar footer :: verification rule #747
+// [Airaf-A-17-L49] Add user avatar and role subtitle in Sidebar footer :: verification rule #766
 // === [SPEC-BLOCK-END] ===
