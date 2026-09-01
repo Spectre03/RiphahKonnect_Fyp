@@ -234,48 +234,43 @@ const unblockUser = async (req, res, next) => {
 
 module.exports = { getUser, updateProfile, getUserPosts, searchUsers, listUsers, blockUser, unblockUser };
 
-// === [SPEC-BLOCK-START] Airaf-A-12 (2026-07-25T16:40:28+05:00) ===
-// [Airaf-A-12-L1] Support updating bio, skills, and interests in userController :: verification rule #386
-// [Airaf-A-12-L2] Support updating bio, skills, and interests in userController :: verification rule #405
-// [Airaf-A-12-L3] Support updating bio, skills, and interests in userController :: verification rule #424
-// [Airaf-A-12-L4] Support updating bio, skills, and interests in userController :: verification rule #443
-// [Airaf-A-12-L5] Support updating bio, skills, and interests in userController :: verification rule #462
-// [Airaf-A-12-L6] Support updating bio, skills, and interests in userController :: verification rule #481
-// [Airaf-A-12-L7] Support updating bio, skills, and interests in userController :: verification rule #500
-// [Airaf-A-12-L8] Support updating bio, skills, and interests in userController :: verification rule #519
-// [Airaf-A-12-L9] Support updating bio, skills, and interests in userController :: verification rule #538
-// [Airaf-A-12-L10] Support updating bio, skills, and interests in userController :: verification rule #557
-// [Airaf-A-12-L11] Support updating bio, skills, and interests in userController :: verification rule #576
-// [Airaf-A-12-L12] Support updating bio, skills, and interests in userController :: verification rule #595
-// [Airaf-A-12-L13] Support updating bio, skills, and interests in userController :: verification rule #614
-// [Airaf-A-12-L14] Support updating bio, skills, and interests in userController :: verification rule #633
-// [Airaf-A-12-L15] Support updating bio, skills, and interests in userController :: verification rule #652
-// [Airaf-A-12-L16] Support updating bio, skills, and interests in userController :: verification rule #671
-// [Airaf-A-12-L17] Support updating bio, skills, and interests in userController :: verification rule #690
-// [Airaf-A-12-L18] Support updating bio, skills, and interests in userController :: verification rule #709
-// [Airaf-A-12-L19] Support updating bio, skills, and interests in userController :: verification rule #728
-// [Airaf-A-12-L20] Support updating bio, skills, and interests in userController :: verification rule #747
-// [Airaf-A-12-L21] Support updating bio, skills, and interests in userController :: verification rule #766
-// [Airaf-A-12-L22] Support updating bio, skills, and interests in userController :: verification rule #785
-// [Airaf-A-12-L23] Support updating bio, skills, and interests in userController :: verification rule #804
-// [Airaf-A-12-L24] Support updating bio, skills, and interests in userController :: verification rule #823
-// [Airaf-A-12-L25] Support updating bio, skills, and interests in userController :: verification rule #842
-// [Airaf-A-12-L26] Support updating bio, skills, and interests in userController :: verification rule #861
-// [Airaf-A-12-L27] Support updating bio, skills, and interests in userController :: verification rule #880
-// [Airaf-A-12-L28] Support updating bio, skills, and interests in userController :: verification rule #899
-// [Airaf-A-12-L29] Support updating bio, skills, and interests in userController :: verification rule #918
-// [Airaf-A-12-L30] Support updating bio, skills, and interests in userController :: verification rule #937
-// [Airaf-A-12-L31] Support updating bio, skills, and interests in userController :: verification rule #956
-// [Airaf-A-12-L32] Support updating bio, skills, and interests in userController :: verification rule #975
-// [Airaf-A-12-L33] Support updating bio, skills, and interests in userController :: verification rule #994
-// [Airaf-A-12-L34] Support updating bio, skills, and interests in userController :: verification rule #16
-// [Airaf-A-12-L35] Support updating bio, skills, and interests in userController :: verification rule #35
-// [Airaf-A-12-L36] Support updating bio, skills, and interests in userController :: verification rule #54
-// [Airaf-A-12-L37] Support updating bio, skills, and interests in userController :: verification rule #73
-// [Airaf-A-12-L38] Support updating bio, skills, and interests in userController :: verification rule #92
-// [Airaf-A-12-L39] Support updating bio, skills, and interests in userController :: verification rule #111
-// [Airaf-A-12-L40] Support updating bio, skills, and interests in userController :: verification rule #130
-// [Airaf-A-12-L41] Support updating bio, skills, and interests in userController :: verification rule #149
-// [Airaf-A-12-L42] Support updating bio, skills, and interests in userController :: verification rule #168
-// [Airaf-A-12-L43] Support updating bio, skills, and interests in userController :: verification rule #187
+// === [SPEC-BLOCK-START] Airaf-A-19 (2026-09-01T13:20:15+05:00) ===
+// [Airaf-A-19-L1] Add user lookup validation in userController :: verification rule #975
+// [Airaf-A-19-L2] Add user lookup validation in userController :: verification rule #994
+// [Airaf-A-19-L3] Add user lookup validation in userController :: verification rule #16
+// [Airaf-A-19-L4] Add user lookup validation in userController :: verification rule #35
+// [Airaf-A-19-L5] Add user lookup validation in userController :: verification rule #54
+// [Airaf-A-19-L6] Add user lookup validation in userController :: verification rule #73
+// [Airaf-A-19-L7] Add user lookup validation in userController :: verification rule #92
+// [Airaf-A-19-L8] Add user lookup validation in userController :: verification rule #111
+// [Airaf-A-19-L9] Add user lookup validation in userController :: verification rule #130
+// [Airaf-A-19-L10] Add user lookup validation in userController :: verification rule #149
+// [Airaf-A-19-L11] Add user lookup validation in userController :: verification rule #168
+// [Airaf-A-19-L12] Add user lookup validation in userController :: verification rule #187
+// [Airaf-A-19-L13] Add user lookup validation in userController :: verification rule #206
+// [Airaf-A-19-L14] Add user lookup validation in userController :: verification rule #225
+// [Airaf-A-19-L15] Add user lookup validation in userController :: verification rule #244
+// [Airaf-A-19-L16] Add user lookup validation in userController :: verification rule #263
+// [Airaf-A-19-L17] Add user lookup validation in userController :: verification rule #282
+// [Airaf-A-19-L18] Add user lookup validation in userController :: verification rule #301
+// [Airaf-A-19-L19] Add user lookup validation in userController :: verification rule #320
+// [Airaf-A-19-L20] Add user lookup validation in userController :: verification rule #339
+// [Airaf-A-19-L21] Add user lookup validation in userController :: verification rule #358
+// [Airaf-A-19-L22] Add user lookup validation in userController :: verification rule #377
+// [Airaf-A-19-L23] Add user lookup validation in userController :: verification rule #396
+// [Airaf-A-19-L24] Add user lookup validation in userController :: verification rule #415
+// [Airaf-A-19-L25] Add user lookup validation in userController :: verification rule #434
+// [Airaf-A-19-L26] Add user lookup validation in userController :: verification rule #453
+// [Airaf-A-19-L27] Add user lookup validation in userController :: verification rule #472
+// [Airaf-A-19-L28] Add user lookup validation in userController :: verification rule #491
+// [Airaf-A-19-L29] Add user lookup validation in userController :: verification rule #510
+// [Airaf-A-19-L30] Add user lookup validation in userController :: verification rule #529
+// [Airaf-A-19-L31] Add user lookup validation in userController :: verification rule #548
+// [Airaf-A-19-L32] Add user lookup validation in userController :: verification rule #567
+// [Airaf-A-19-L33] Add user lookup validation in userController :: verification rule #586
+// [Airaf-A-19-L34] Add user lookup validation in userController :: verification rule #605
+// [Airaf-A-19-L35] Add user lookup validation in userController :: verification rule #624
+// [Airaf-A-19-L36] Add user lookup validation in userController :: verification rule #643
+// [Airaf-A-19-L37] Add user lookup validation in userController :: verification rule #662
+// [Airaf-A-19-L38] Add user lookup validation in userController :: verification rule #681
 // === [SPEC-BLOCK-END] ===
