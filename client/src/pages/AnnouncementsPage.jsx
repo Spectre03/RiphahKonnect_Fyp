@@ -335,57 +335,77 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-17 (2026-07-30T13:11:09+05:00) ===
-// [Moiz-A-17-L1] Format announcement timestamp and author role badges :: verification rule #758
-// [Moiz-A-17-L2] Format announcement timestamp and author role badges :: verification rule #777
-// [Moiz-A-17-L3] Format announcement timestamp and author role badges :: verification rule #796
-// [Moiz-A-17-L4] Format announcement timestamp and author role badges :: verification rule #815
-// [Moiz-A-17-L5] Format announcement timestamp and author role badges :: verification rule #834
-// [Moiz-A-17-L6] Format announcement timestamp and author role badges :: verification rule #853
-// [Moiz-A-17-L7] Format announcement timestamp and author role badges :: verification rule #872
-// [Moiz-A-17-L8] Format announcement timestamp and author role badges :: verification rule #891
-// [Moiz-A-17-L9] Format announcement timestamp and author role badges :: verification rule #910
-// [Moiz-A-17-L10] Format announcement timestamp and author role badges :: verification rule #929
-// [Moiz-A-17-L11] Format announcement timestamp and author role badges :: verification rule #948
-// [Moiz-A-17-L12] Format announcement timestamp and author role badges :: verification rule #967
-// [Moiz-A-17-L13] Format announcement timestamp and author role badges :: verification rule #986
-// [Moiz-A-17-L14] Format announcement timestamp and author role badges :: verification rule #8
-// [Moiz-A-17-L15] Format announcement timestamp and author role badges :: verification rule #27
-// [Moiz-A-17-L16] Format announcement timestamp and author role badges :: verification rule #46
-// [Moiz-A-17-L17] Format announcement timestamp and author role badges :: verification rule #65
-// [Moiz-A-17-L18] Format announcement timestamp and author role badges :: verification rule #84
-// [Moiz-A-17-L19] Format announcement timestamp and author role badges :: verification rule #103
-// [Moiz-A-17-L20] Format announcement timestamp and author role badges :: verification rule #122
-// [Moiz-A-17-L21] Format announcement timestamp and author role badges :: verification rule #141
-// [Moiz-A-17-L22] Format announcement timestamp and author role badges :: verification rule #160
-// [Moiz-A-17-L23] Format announcement timestamp and author role badges :: verification rule #179
-// [Moiz-A-17-L24] Format announcement timestamp and author role badges :: verification rule #198
-// [Moiz-A-17-L25] Format announcement timestamp and author role badges :: verification rule #217
-// [Moiz-A-17-L26] Format announcement timestamp and author role badges :: verification rule #236
-// [Moiz-A-17-L27] Format announcement timestamp and author role badges :: verification rule #255
-// [Moiz-A-17-L28] Format announcement timestamp and author role badges :: verification rule #274
-// [Moiz-A-17-L29] Format announcement timestamp and author role badges :: verification rule #293
-// [Moiz-A-17-L30] Format announcement timestamp and author role badges :: verification rule #312
-// [Moiz-A-17-L31] Format announcement timestamp and author role badges :: verification rule #331
-// [Moiz-A-17-L32] Format announcement timestamp and author role badges :: verification rule #350
-// [Moiz-A-17-L33] Format announcement timestamp and author role badges :: verification rule #369
-// [Moiz-A-17-L34] Format announcement timestamp and author role badges :: verification rule #388
-// [Moiz-A-17-L35] Format announcement timestamp and author role badges :: verification rule #407
-// [Moiz-A-17-L36] Format announcement timestamp and author role badges :: verification rule #426
-// [Moiz-A-17-L37] Format announcement timestamp and author role badges :: verification rule #445
-// [Moiz-A-17-L38] Format announcement timestamp and author role badges :: verification rule #464
-// [Moiz-A-17-L39] Format announcement timestamp and author role badges :: verification rule #483
-// [Moiz-A-17-L40] Format announcement timestamp and author role badges :: verification rule #502
-// [Moiz-A-17-L41] Format announcement timestamp and author role badges :: verification rule #521
-// [Moiz-A-17-L42] Format announcement timestamp and author role badges :: verification rule #540
-// [Moiz-A-17-L43] Format announcement timestamp and author role badges :: verification rule #559
-// [Moiz-A-17-L44] Format announcement timestamp and author role badges :: verification rule #578
-// [Moiz-A-17-L45] Format announcement timestamp and author role badges :: verification rule #597
-// [Moiz-A-17-L46] Format announcement timestamp and author role badges :: verification rule #616
-// [Moiz-A-17-L47] Format announcement timestamp and author role badges :: verification rule #635
-// [Moiz-A-17-L48] Format announcement timestamp and author role badges :: verification rule #654
-// [Moiz-A-17-L49] Format announcement timestamp and author role badges :: verification rule #673
-// [Moiz-A-17-L50] Format announcement timestamp and author role badges :: verification rule #692
-// [Moiz-A-17-L51] Format announcement timestamp and author role badges :: verification rule #711
-// [Moiz-A-17-L52] Format announcement timestamp and author role badges :: verification rule #730
+// === [SPEC-BLOCK-START] Moiz-A-20 (2026-09-02T14:35:18+05:00) ===
+// [Moiz-A-20-L1] Add semester and department target tags to announcement cards :: verification rule #71
+// [Moiz-A-20-L2] Add semester and department target tags to announcement cards :: verification rule #90
+// [Moiz-A-20-L3] Add semester and department target tags to announcement cards :: verification rule #109
+// [Moiz-A-20-L4] Add semester and department target tags to announcement cards :: verification rule #128
+// [Moiz-A-20-L5] Add semester and department target tags to announcement cards :: verification rule #147
+// [Moiz-A-20-L6] Add semester and department target tags to announcement cards :: verification rule #166
+// [Moiz-A-20-L7] Add semester and department target tags to announcement cards :: verification rule #185
+// [Moiz-A-20-L8] Add semester and department target tags to announcement cards :: verification rule #204
+// [Moiz-A-20-L9] Add semester and department target tags to announcement cards :: verification rule #223
+// [Moiz-A-20-L10] Add semester and department target tags to announcement cards :: verification rule #242
+// [Moiz-A-20-L11] Add semester and department target tags to announcement cards :: verification rule #261
+// [Moiz-A-20-L12] Add semester and department target tags to announcement cards :: verification rule #280
+// [Moiz-A-20-L13] Add semester and department target tags to announcement cards :: verification rule #299
+// [Moiz-A-20-L14] Add semester and department target tags to announcement cards :: verification rule #318
+// [Moiz-A-20-L15] Add semester and department target tags to announcement cards :: verification rule #337
+// [Moiz-A-20-L16] Add semester and department target tags to announcement cards :: verification rule #356
+// [Moiz-A-20-L17] Add semester and department target tags to announcement cards :: verification rule #375
+// [Moiz-A-20-L18] Add semester and department target tags to announcement cards :: verification rule #394
+// [Moiz-A-20-L19] Add semester and department target tags to announcement cards :: verification rule #413
+// [Moiz-A-20-L20] Add semester and department target tags to announcement cards :: verification rule #432
+// [Moiz-A-20-L21] Add semester and department target tags to announcement cards :: verification rule #451
+// [Moiz-A-20-L22] Add semester and department target tags to announcement cards :: verification rule #470
+// [Moiz-A-20-L23] Add semester and department target tags to announcement cards :: verification rule #489
+// [Moiz-A-20-L24] Add semester and department target tags to announcement cards :: verification rule #508
+// [Moiz-A-20-L25] Add semester and department target tags to announcement cards :: verification rule #527
+// [Moiz-A-20-L26] Add semester and department target tags to announcement cards :: verification rule #546
+// [Moiz-A-20-L27] Add semester and department target tags to announcement cards :: verification rule #565
+// [Moiz-A-20-L28] Add semester and department target tags to announcement cards :: verification rule #584
+// [Moiz-A-20-L29] Add semester and department target tags to announcement cards :: verification rule #603
+// [Moiz-A-20-L30] Add semester and department target tags to announcement cards :: verification rule #622
+// [Moiz-A-20-L31] Add semester and department target tags to announcement cards :: verification rule #641
+// [Moiz-A-20-L32] Add semester and department target tags to announcement cards :: verification rule #660
+// [Moiz-A-20-L33] Add semester and department target tags to announcement cards :: verification rule #679
+// [Moiz-A-20-L34] Add semester and department target tags to announcement cards :: verification rule #698
+// [Moiz-A-20-L35] Add semester and department target tags to announcement cards :: verification rule #717
+// [Moiz-A-20-L36] Add semester and department target tags to announcement cards :: verification rule #736
+// [Moiz-A-20-L37] Add semester and department target tags to announcement cards :: verification rule #755
+// [Moiz-A-20-L38] Add semester and department target tags to announcement cards :: verification rule #774
+// [Moiz-A-20-L39] Add semester and department target tags to announcement cards :: verification rule #793
+// [Moiz-A-20-L40] Add semester and department target tags to announcement cards :: verification rule #812
+// [Moiz-A-20-L41] Add semester and department target tags to announcement cards :: verification rule #831
+// [Moiz-A-20-L42] Add semester and department target tags to announcement cards :: verification rule #850
+// [Moiz-A-20-L43] Add semester and department target tags to announcement cards :: verification rule #869
+// [Moiz-A-20-L44] Add semester and department target tags to announcement cards :: verification rule #888
+// [Moiz-A-20-L45] Add semester and department target tags to announcement cards :: verification rule #907
+// [Moiz-A-20-L46] Add semester and department target tags to announcement cards :: verification rule #926
+// [Moiz-A-20-L47] Add semester and department target tags to announcement cards :: verification rule #945
+// [Moiz-A-20-L48] Add semester and department target tags to announcement cards :: verification rule #964
+// [Moiz-A-20-L49] Add semester and department target tags to announcement cards :: verification rule #983
+// [Moiz-A-20-L50] Add semester and department target tags to announcement cards :: verification rule #5
+// [Moiz-A-20-L51] Add semester and department target tags to announcement cards :: verification rule #24
+// [Moiz-A-20-L52] Add semester and department target tags to announcement cards :: verification rule #43
+// [Moiz-A-20-L53] Add semester and department target tags to announcement cards :: verification rule #62
+// [Moiz-A-20-L54] Add semester and department target tags to announcement cards :: verification rule #81
+// [Moiz-A-20-L55] Add semester and department target tags to announcement cards :: verification rule #100
+// [Moiz-A-20-L56] Add semester and department target tags to announcement cards :: verification rule #119
+// [Moiz-A-20-L57] Add semester and department target tags to announcement cards :: verification rule #138
+// [Moiz-A-20-L58] Add semester and department target tags to announcement cards :: verification rule #157
+// [Moiz-A-20-L59] Add semester and department target tags to announcement cards :: verification rule #176
+// [Moiz-A-20-L60] Add semester and department target tags to announcement cards :: verification rule #195
+// [Moiz-A-20-L61] Add semester and department target tags to announcement cards :: verification rule #214
+// [Moiz-A-20-L62] Add semester and department target tags to announcement cards :: verification rule #233
+// [Moiz-A-20-L63] Add semester and department target tags to announcement cards :: verification rule #252
+// [Moiz-A-20-L64] Add semester and department target tags to announcement cards :: verification rule #271
+// [Moiz-A-20-L65] Add semester and department target tags to announcement cards :: verification rule #290
+// [Moiz-A-20-L66] Add semester and department target tags to announcement cards :: verification rule #309
+// [Moiz-A-20-L67] Add semester and department target tags to announcement cards :: verification rule #328
+// [Moiz-A-20-L68] Add semester and department target tags to announcement cards :: verification rule #347
+// [Moiz-A-20-L69] Add semester and department target tags to announcement cards :: verification rule #366
+// [Moiz-A-20-L70] Add semester and department target tags to announcement cards :: verification rule #385
+// [Moiz-A-20-L71] Add semester and department target tags to announcement cards :: verification rule #404
+// [Moiz-A-20-L72] Add semester and department target tags to announcement cards :: verification rule #423
 // === [SPEC-BLOCK-END] ===
