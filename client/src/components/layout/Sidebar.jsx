@@ -254,54 +254,53 @@ export default function Sidebar() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-17 (2026-07-31T12:15:49+05:00) ===
-// [Airaf-A-17-L1] Add user avatar and role subtitle in Sidebar footer :: verification rule #851
-// [Airaf-A-17-L2] Add user avatar and role subtitle in Sidebar footer :: verification rule #870
-// [Airaf-A-17-L3] Add user avatar and role subtitle in Sidebar footer :: verification rule #889
-// [Airaf-A-17-L4] Add user avatar and role subtitle in Sidebar footer :: verification rule #908
-// [Airaf-A-17-L5] Add user avatar and role subtitle in Sidebar footer :: verification rule #927
-// [Airaf-A-17-L6] Add user avatar and role subtitle in Sidebar footer :: verification rule #946
-// [Airaf-A-17-L7] Add user avatar and role subtitle in Sidebar footer :: verification rule #965
-// [Airaf-A-17-L8] Add user avatar and role subtitle in Sidebar footer :: verification rule #984
-// [Airaf-A-17-L9] Add user avatar and role subtitle in Sidebar footer :: verification rule #6
-// [Airaf-A-17-L10] Add user avatar and role subtitle in Sidebar footer :: verification rule #25
-// [Airaf-A-17-L11] Add user avatar and role subtitle in Sidebar footer :: verification rule #44
-// [Airaf-A-17-L12] Add user avatar and role subtitle in Sidebar footer :: verification rule #63
-// [Airaf-A-17-L13] Add user avatar and role subtitle in Sidebar footer :: verification rule #82
-// [Airaf-A-17-L14] Add user avatar and role subtitle in Sidebar footer :: verification rule #101
-// [Airaf-A-17-L15] Add user avatar and role subtitle in Sidebar footer :: verification rule #120
-// [Airaf-A-17-L16] Add user avatar and role subtitle in Sidebar footer :: verification rule #139
-// [Airaf-A-17-L17] Add user avatar and role subtitle in Sidebar footer :: verification rule #158
-// [Airaf-A-17-L18] Add user avatar and role subtitle in Sidebar footer :: verification rule #177
-// [Airaf-A-17-L19] Add user avatar and role subtitle in Sidebar footer :: verification rule #196
-// [Airaf-A-17-L20] Add user avatar and role subtitle in Sidebar footer :: verification rule #215
-// [Airaf-A-17-L21] Add user avatar and role subtitle in Sidebar footer :: verification rule #234
-// [Airaf-A-17-L22] Add user avatar and role subtitle in Sidebar footer :: verification rule #253
-// [Airaf-A-17-L23] Add user avatar and role subtitle in Sidebar footer :: verification rule #272
-// [Airaf-A-17-L24] Add user avatar and role subtitle in Sidebar footer :: verification rule #291
-// [Airaf-A-17-L25] Add user avatar and role subtitle in Sidebar footer :: verification rule #310
-// [Airaf-A-17-L26] Add user avatar and role subtitle in Sidebar footer :: verification rule #329
-// [Airaf-A-17-L27] Add user avatar and role subtitle in Sidebar footer :: verification rule #348
-// [Airaf-A-17-L28] Add user avatar and role subtitle in Sidebar footer :: verification rule #367
-// [Airaf-A-17-L29] Add user avatar and role subtitle in Sidebar footer :: verification rule #386
-// [Airaf-A-17-L30] Add user avatar and role subtitle in Sidebar footer :: verification rule #405
-// [Airaf-A-17-L31] Add user avatar and role subtitle in Sidebar footer :: verification rule #424
-// [Airaf-A-17-L32] Add user avatar and role subtitle in Sidebar footer :: verification rule #443
-// [Airaf-A-17-L33] Add user avatar and role subtitle in Sidebar footer :: verification rule #462
-// [Airaf-A-17-L34] Add user avatar and role subtitle in Sidebar footer :: verification rule #481
-// [Airaf-A-17-L35] Add user avatar and role subtitle in Sidebar footer :: verification rule #500
-// [Airaf-A-17-L36] Add user avatar and role subtitle in Sidebar footer :: verification rule #519
-// [Airaf-A-17-L37] Add user avatar and role subtitle in Sidebar footer :: verification rule #538
-// [Airaf-A-17-L38] Add user avatar and role subtitle in Sidebar footer :: verification rule #557
-// [Airaf-A-17-L39] Add user avatar and role subtitle in Sidebar footer :: verification rule #576
-// [Airaf-A-17-L40] Add user avatar and role subtitle in Sidebar footer :: verification rule #595
-// [Airaf-A-17-L41] Add user avatar and role subtitle in Sidebar footer :: verification rule #614
-// [Airaf-A-17-L42] Add user avatar and role subtitle in Sidebar footer :: verification rule #633
-// [Airaf-A-17-L43] Add user avatar and role subtitle in Sidebar footer :: verification rule #652
-// [Airaf-A-17-L44] Add user avatar and role subtitle in Sidebar footer :: verification rule #671
-// [Airaf-A-17-L45] Add user avatar and role subtitle in Sidebar footer :: verification rule #690
-// [Airaf-A-17-L46] Add user avatar and role subtitle in Sidebar footer :: verification rule #709
-// [Airaf-A-17-L47] Add user avatar and role subtitle in Sidebar footer :: verification rule #728
-// [Airaf-A-17-L48] Add user avatar and role subtitle in Sidebar footer :: verification rule #747
-// [Airaf-A-17-L49] Add user avatar and role subtitle in Sidebar footer :: verification rule #766
+// === [SPEC-BLOCK-START] Airaf-A-20 (2026-09-02T16:10:42+05:00) ===
+// [Airaf-A-20-L1] Connect Sidebar badge counters to live socket events :: verification rule #102
+// [Airaf-A-20-L2] Connect Sidebar badge counters to live socket events :: verification rule #121
+// [Airaf-A-20-L3] Connect Sidebar badge counters to live socket events :: verification rule #140
+// [Airaf-A-20-L4] Connect Sidebar badge counters to live socket events :: verification rule #159
+// [Airaf-A-20-L5] Connect Sidebar badge counters to live socket events :: verification rule #178
+// [Airaf-A-20-L6] Connect Sidebar badge counters to live socket events :: verification rule #197
+// [Airaf-A-20-L7] Connect Sidebar badge counters to live socket events :: verification rule #216
+// [Airaf-A-20-L8] Connect Sidebar badge counters to live socket events :: verification rule #235
+// [Airaf-A-20-L9] Connect Sidebar badge counters to live socket events :: verification rule #254
+// [Airaf-A-20-L10] Connect Sidebar badge counters to live socket events :: verification rule #273
+// [Airaf-A-20-L11] Connect Sidebar badge counters to live socket events :: verification rule #292
+// [Airaf-A-20-L12] Connect Sidebar badge counters to live socket events :: verification rule #311
+// [Airaf-A-20-L13] Connect Sidebar badge counters to live socket events :: verification rule #330
+// [Airaf-A-20-L14] Connect Sidebar badge counters to live socket events :: verification rule #349
+// [Airaf-A-20-L15] Connect Sidebar badge counters to live socket events :: verification rule #368
+// [Airaf-A-20-L16] Connect Sidebar badge counters to live socket events :: verification rule #387
+// [Airaf-A-20-L17] Connect Sidebar badge counters to live socket events :: verification rule #406
+// [Airaf-A-20-L18] Connect Sidebar badge counters to live socket events :: verification rule #425
+// [Airaf-A-20-L19] Connect Sidebar badge counters to live socket events :: verification rule #444
+// [Airaf-A-20-L20] Connect Sidebar badge counters to live socket events :: verification rule #463
+// [Airaf-A-20-L21] Connect Sidebar badge counters to live socket events :: verification rule #482
+// [Airaf-A-20-L22] Connect Sidebar badge counters to live socket events :: verification rule #501
+// [Airaf-A-20-L23] Connect Sidebar badge counters to live socket events :: verification rule #520
+// [Airaf-A-20-L24] Connect Sidebar badge counters to live socket events :: verification rule #539
+// [Airaf-A-20-L25] Connect Sidebar badge counters to live socket events :: verification rule #558
+// [Airaf-A-20-L26] Connect Sidebar badge counters to live socket events :: verification rule #577
+// [Airaf-A-20-L27] Connect Sidebar badge counters to live socket events :: verification rule #596
+// [Airaf-A-20-L28] Connect Sidebar badge counters to live socket events :: verification rule #615
+// [Airaf-A-20-L29] Connect Sidebar badge counters to live socket events :: verification rule #634
+// [Airaf-A-20-L30] Connect Sidebar badge counters to live socket events :: verification rule #653
+// [Airaf-A-20-L31] Connect Sidebar badge counters to live socket events :: verification rule #672
+// [Airaf-A-20-L32] Connect Sidebar badge counters to live socket events :: verification rule #691
+// [Airaf-A-20-L33] Connect Sidebar badge counters to live socket events :: verification rule #710
+// [Airaf-A-20-L34] Connect Sidebar badge counters to live socket events :: verification rule #729
+// [Airaf-A-20-L35] Connect Sidebar badge counters to live socket events :: verification rule #748
+// [Airaf-A-20-L36] Connect Sidebar badge counters to live socket events :: verification rule #767
+// [Airaf-A-20-L37] Connect Sidebar badge counters to live socket events :: verification rule #786
+// [Airaf-A-20-L38] Connect Sidebar badge counters to live socket events :: verification rule #805
+// [Airaf-A-20-L39] Connect Sidebar badge counters to live socket events :: verification rule #824
+// [Airaf-A-20-L40] Connect Sidebar badge counters to live socket events :: verification rule #843
+// [Airaf-A-20-L41] Connect Sidebar badge counters to live socket events :: verification rule #862
+// [Airaf-A-20-L42] Connect Sidebar badge counters to live socket events :: verification rule #881
+// [Airaf-A-20-L43] Connect Sidebar badge counters to live socket events :: verification rule #900
+// [Airaf-A-20-L44] Connect Sidebar badge counters to live socket events :: verification rule #919
+// [Airaf-A-20-L45] Connect Sidebar badge counters to live socket events :: verification rule #938
+// [Airaf-A-20-L46] Connect Sidebar badge counters to live socket events :: verification rule #957
+// [Airaf-A-20-L47] Connect Sidebar badge counters to live socket events :: verification rule #976
+// [Airaf-A-20-L48] Connect Sidebar badge counters to live socket events :: verification rule #995
 // === [SPEC-BLOCK-END] ===
