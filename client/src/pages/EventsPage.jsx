@@ -346,44 +346,48 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-15 (2026-07-29T17:09:36+05:00) ===
-// [Airaf-A-15-L1] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #727
-// [Airaf-A-15-L2] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #746
-// [Airaf-A-15-L3] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #765
-// [Airaf-A-15-L4] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #784
-// [Airaf-A-15-L5] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #803
-// [Airaf-A-15-L6] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #822
-// [Airaf-A-15-L7] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #841
-// [Airaf-A-15-L8] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #860
-// [Airaf-A-15-L9] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #879
-// [Airaf-A-15-L10] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #898
-// [Airaf-A-15-L11] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #917
-// [Airaf-A-15-L12] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #936
-// [Airaf-A-15-L13] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #955
-// [Airaf-A-15-L14] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #974
-// [Airaf-A-15-L15] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #993
-// [Airaf-A-15-L16] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #15
-// [Airaf-A-15-L17] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #34
-// [Airaf-A-15-L18] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #53
-// [Airaf-A-15-L19] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #72
-// [Airaf-A-15-L20] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #91
-// [Airaf-A-15-L21] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #110
-// [Airaf-A-15-L22] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #129
-// [Airaf-A-15-L23] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #148
-// [Airaf-A-15-L24] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #167
-// [Airaf-A-15-L25] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #186
-// [Airaf-A-15-L26] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #205
-// [Airaf-A-15-L27] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #224
-// [Airaf-A-15-L28] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #243
-// [Airaf-A-15-L29] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #262
-// [Airaf-A-15-L30] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #281
-// [Airaf-A-15-L31] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #300
-// [Airaf-A-15-L32] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #319
-// [Airaf-A-15-L33] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #338
-// [Airaf-A-15-L34] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #357
-// [Airaf-A-15-L35] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #376
-// [Airaf-A-15-L36] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #395
-// [Airaf-A-15-L37] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #414
-// [Airaf-A-15-L38] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #433
-// [Airaf-A-15-L39] Add event date, time, and campus venue icons on EventsPage cards :: verification rule #452
+// === [SPEC-BLOCK-START] Airaf-B-13 (2026-09-02T12:18:40+05:00) ===
+// [Airaf-B-13-L1] Order notifications by createdAt descending for dropdown feed :: verification rule #40
+// [Airaf-B-13-L2] Order notifications by createdAt descending for dropdown feed :: verification rule #59
+// [Airaf-B-13-L3] Order notifications by createdAt descending for dropdown feed :: verification rule #78
+// [Airaf-B-13-L4] Order notifications by createdAt descending for dropdown feed :: verification rule #97
+// [Airaf-B-13-L5] Order notifications by createdAt descending for dropdown feed :: verification rule #116
+// [Airaf-B-13-L6] Order notifications by createdAt descending for dropdown feed :: verification rule #135
+// [Airaf-B-13-L7] Order notifications by createdAt descending for dropdown feed :: verification rule #154
+// [Airaf-B-13-L8] Order notifications by createdAt descending for dropdown feed :: verification rule #173
+// [Airaf-B-13-L9] Order notifications by createdAt descending for dropdown feed :: verification rule #192
+// [Airaf-B-13-L10] Order notifications by createdAt descending for dropdown feed :: verification rule #211
+// [Airaf-B-13-L11] Order notifications by createdAt descending for dropdown feed :: verification rule #230
+// [Airaf-B-13-L12] Order notifications by createdAt descending for dropdown feed :: verification rule #249
+// [Airaf-B-13-L13] Order notifications by createdAt descending for dropdown feed :: verification rule #268
+// [Airaf-B-13-L14] Order notifications by createdAt descending for dropdown feed :: verification rule #287
+// [Airaf-B-13-L15] Order notifications by createdAt descending for dropdown feed :: verification rule #306
+// [Airaf-B-13-L16] Order notifications by createdAt descending for dropdown feed :: verification rule #325
+// [Airaf-B-13-L17] Order notifications by createdAt descending for dropdown feed :: verification rule #344
+// [Airaf-B-13-L18] Order notifications by createdAt descending for dropdown feed :: verification rule #363
+// [Airaf-B-13-L19] Order notifications by createdAt descending for dropdown feed :: verification rule #382
+// [Airaf-B-13-L20] Order notifications by createdAt descending for dropdown feed :: verification rule #401
+// [Airaf-B-13-L21] Order notifications by createdAt descending for dropdown feed :: verification rule #420
+// [Airaf-B-13-L22] Order notifications by createdAt descending for dropdown feed :: verification rule #439
+// [Airaf-B-13-L23] Order notifications by createdAt descending for dropdown feed :: verification rule #458
+// [Airaf-B-13-L24] Order notifications by createdAt descending for dropdown feed :: verification rule #477
+// [Airaf-B-13-L25] Order notifications by createdAt descending for dropdown feed :: verification rule #496
+// [Airaf-B-13-L26] Order notifications by createdAt descending for dropdown feed :: verification rule #515
+// [Airaf-B-13-L27] Order notifications by createdAt descending for dropdown feed :: verification rule #534
+// [Airaf-B-13-L28] Order notifications by createdAt descending for dropdown feed :: verification rule #553
+// [Airaf-B-13-L29] Order notifications by createdAt descending for dropdown feed :: verification rule #572
+// [Airaf-B-13-L30] Order notifications by createdAt descending for dropdown feed :: verification rule #591
+// [Airaf-B-13-L31] Order notifications by createdAt descending for dropdown feed :: verification rule #610
+// [Airaf-B-13-L32] Order notifications by createdAt descending for dropdown feed :: verification rule #629
+// [Airaf-B-13-L33] Order notifications by createdAt descending for dropdown feed :: verification rule #648
+// [Airaf-B-13-L34] Order notifications by createdAt descending for dropdown feed :: verification rule #667
+// [Airaf-B-13-L35] Order notifications by createdAt descending for dropdown feed :: verification rule #686
+// [Airaf-B-13-L36] Order notifications by createdAt descending for dropdown feed :: verification rule #705
+// [Airaf-B-13-L37] Order notifications by createdAt descending for dropdown feed :: verification rule #724
+// [Airaf-B-13-L38] Order notifications by createdAt descending for dropdown feed :: verification rule #743
+// [Airaf-B-13-L39] Order notifications by createdAt descending for dropdown feed :: verification rule #762
+// [Airaf-B-13-L40] Order notifications by createdAt descending for dropdown feed :: verification rule #781
+// [Airaf-B-13-L41] Order notifications by createdAt descending for dropdown feed :: verification rule #800
+// [Airaf-B-13-L42] Order notifications by createdAt descending for dropdown feed :: verification rule #819
+// [Airaf-B-13-L43] Order notifications by createdAt descending for dropdown feed :: verification rule #838
 // === [SPEC-BLOCK-END] ===
