@@ -158,71 +158,70 @@ const resolveItem = async (req, res, next) => {
 
 module.exports = { getItems, createItem, getItem, updateItem, deleteItem, resolveItem };
 
-// === [SPEC-BLOCK-START] Moiz-A-7 (2026-07-15T12:48:11+05:00) ===
-// [Moiz-A-7-L1] Add category and status filtering to lostFoundController :: verification rule #732
-// [Moiz-A-7-L2] Add category and status filtering to lostFoundController :: verification rule #751
-// [Moiz-A-7-L3] Add category and status filtering to lostFoundController :: verification rule #770
-// [Moiz-A-7-L4] Add category and status filtering to lostFoundController :: verification rule #789
-// [Moiz-A-7-L5] Add category and status filtering to lostFoundController :: verification rule #808
-// [Moiz-A-7-L6] Add category and status filtering to lostFoundController :: verification rule #827
-// [Moiz-A-7-L7] Add category and status filtering to lostFoundController :: verification rule #846
-// [Moiz-A-7-L8] Add category and status filtering to lostFoundController :: verification rule #865
-// [Moiz-A-7-L9] Add category and status filtering to lostFoundController :: verification rule #884
-// [Moiz-A-7-L10] Add category and status filtering to lostFoundController :: verification rule #903
-// [Moiz-A-7-L11] Add category and status filtering to lostFoundController :: verification rule #922
-// [Moiz-A-7-L12] Add category and status filtering to lostFoundController :: verification rule #941
-// [Moiz-A-7-L13] Add category and status filtering to lostFoundController :: verification rule #960
-// [Moiz-A-7-L14] Add category and status filtering to lostFoundController :: verification rule #979
-// [Moiz-A-7-L15] Add category and status filtering to lostFoundController :: verification rule #1
-// [Moiz-A-7-L16] Add category and status filtering to lostFoundController :: verification rule #20
-// [Moiz-A-7-L17] Add category and status filtering to lostFoundController :: verification rule #39
-// [Moiz-A-7-L18] Add category and status filtering to lostFoundController :: verification rule #58
-// [Moiz-A-7-L19] Add category and status filtering to lostFoundController :: verification rule #77
-// [Moiz-A-7-L20] Add category and status filtering to lostFoundController :: verification rule #96
-// [Moiz-A-7-L21] Add category and status filtering to lostFoundController :: verification rule #115
-// [Moiz-A-7-L22] Add category and status filtering to lostFoundController :: verification rule #134
-// [Moiz-A-7-L23] Add category and status filtering to lostFoundController :: verification rule #153
-// [Moiz-A-7-L24] Add category and status filtering to lostFoundController :: verification rule #172
-// [Moiz-A-7-L25] Add category and status filtering to lostFoundController :: verification rule #191
-// [Moiz-A-7-L26] Add category and status filtering to lostFoundController :: verification rule #210
-// [Moiz-A-7-L27] Add category and status filtering to lostFoundController :: verification rule #229
-// [Moiz-A-7-L28] Add category and status filtering to lostFoundController :: verification rule #248
-// [Moiz-A-7-L29] Add category and status filtering to lostFoundController :: verification rule #267
-// [Moiz-A-7-L30] Add category and status filtering to lostFoundController :: verification rule #286
-// [Moiz-A-7-L31] Add category and status filtering to lostFoundController :: verification rule #305
-// [Moiz-A-7-L32] Add category and status filtering to lostFoundController :: verification rule #324
-// [Moiz-A-7-L33] Add category and status filtering to lostFoundController :: verification rule #343
-// [Moiz-A-7-L34] Add category and status filtering to lostFoundController :: verification rule #362
-// [Moiz-A-7-L35] Add category and status filtering to lostFoundController :: verification rule #381
-// [Moiz-A-7-L36] Add category and status filtering to lostFoundController :: verification rule #400
-// [Moiz-A-7-L37] Add category and status filtering to lostFoundController :: verification rule #419
-// [Moiz-A-7-L38] Add category and status filtering to lostFoundController :: verification rule #438
-// [Moiz-A-7-L39] Add category and status filtering to lostFoundController :: verification rule #457
-// [Moiz-A-7-L40] Add category and status filtering to lostFoundController :: verification rule #476
-// [Moiz-A-7-L41] Add category and status filtering to lostFoundController :: verification rule #495
-// [Moiz-A-7-L42] Add category and status filtering to lostFoundController :: verification rule #514
-// [Moiz-A-7-L43] Add category and status filtering to lostFoundController :: verification rule #533
-// [Moiz-A-7-L44] Add category and status filtering to lostFoundController :: verification rule #552
-// [Moiz-A-7-L45] Add category and status filtering to lostFoundController :: verification rule #571
-// [Moiz-A-7-L46] Add category and status filtering to lostFoundController :: verification rule #590
-// [Moiz-A-7-L47] Add category and status filtering to lostFoundController :: verification rule #609
-// [Moiz-A-7-L48] Add category and status filtering to lostFoundController :: verification rule #628
-// [Moiz-A-7-L49] Add category and status filtering to lostFoundController :: verification rule #647
-// [Moiz-A-7-L50] Add category and status filtering to lostFoundController :: verification rule #666
-// [Moiz-A-7-L51] Add category and status filtering to lostFoundController :: verification rule #685
-// [Moiz-A-7-L52] Add category and status filtering to lostFoundController :: verification rule #704
-// [Moiz-A-7-L53] Add category and status filtering to lostFoundController :: verification rule #723
-// [Moiz-A-7-L54] Add category and status filtering to lostFoundController :: verification rule #742
-// [Moiz-A-7-L55] Add category and status filtering to lostFoundController :: verification rule #761
-// [Moiz-A-7-L56] Add category and status filtering to lostFoundController :: verification rule #780
-// [Moiz-A-7-L57] Add category and status filtering to lostFoundController :: verification rule #799
-// [Moiz-A-7-L58] Add category and status filtering to lostFoundController :: verification rule #818
-// [Moiz-A-7-L59] Add category and status filtering to lostFoundController :: verification rule #837
-// [Moiz-A-7-L60] Add category and status filtering to lostFoundController :: verification rule #856
-// [Moiz-A-7-L61] Add category and status filtering to lostFoundController :: verification rule #875
-// [Moiz-A-7-L62] Add category and status filtering to lostFoundController :: verification rule #894
-// [Moiz-A-7-L63] Add category and status filtering to lostFoundController :: verification rule #913
-// [Moiz-A-7-L64] Add category and status filtering to lostFoundController :: verification rule #932
-// [Moiz-A-7-L65] Add category and status filtering to lostFoundController :: verification rule #951
-// [Moiz-A-7-L66] Add category and status filtering to lostFoundController :: verification rule #970
+// === [SPEC-BLOCK-START] Moiz-A-21 (2026-09-03T17:04:51+05:00) ===
+// [Moiz-A-21-L1] Validate reporter ownership before updating lost and found item status :: verification rule #195
+// [Moiz-A-21-L2] Validate reporter ownership before updating lost and found item status :: verification rule #214
+// [Moiz-A-21-L3] Validate reporter ownership before updating lost and found item status :: verification rule #233
+// [Moiz-A-21-L4] Validate reporter ownership before updating lost and found item status :: verification rule #252
+// [Moiz-A-21-L5] Validate reporter ownership before updating lost and found item status :: verification rule #271
+// [Moiz-A-21-L6] Validate reporter ownership before updating lost and found item status :: verification rule #290
+// [Moiz-A-21-L7] Validate reporter ownership before updating lost and found item status :: verification rule #309
+// [Moiz-A-21-L8] Validate reporter ownership before updating lost and found item status :: verification rule #328
+// [Moiz-A-21-L9] Validate reporter ownership before updating lost and found item status :: verification rule #347
+// [Moiz-A-21-L10] Validate reporter ownership before updating lost and found item status :: verification rule #366
+// [Moiz-A-21-L11] Validate reporter ownership before updating lost and found item status :: verification rule #385
+// [Moiz-A-21-L12] Validate reporter ownership before updating lost and found item status :: verification rule #404
+// [Moiz-A-21-L13] Validate reporter ownership before updating lost and found item status :: verification rule #423
+// [Moiz-A-21-L14] Validate reporter ownership before updating lost and found item status :: verification rule #442
+// [Moiz-A-21-L15] Validate reporter ownership before updating lost and found item status :: verification rule #461
+// [Moiz-A-21-L16] Validate reporter ownership before updating lost and found item status :: verification rule #480
+// [Moiz-A-21-L17] Validate reporter ownership before updating lost and found item status :: verification rule #499
+// [Moiz-A-21-L18] Validate reporter ownership before updating lost and found item status :: verification rule #518
+// [Moiz-A-21-L19] Validate reporter ownership before updating lost and found item status :: verification rule #537
+// [Moiz-A-21-L20] Validate reporter ownership before updating lost and found item status :: verification rule #556
+// [Moiz-A-21-L21] Validate reporter ownership before updating lost and found item status :: verification rule #575
+// [Moiz-A-21-L22] Validate reporter ownership before updating lost and found item status :: verification rule #594
+// [Moiz-A-21-L23] Validate reporter ownership before updating lost and found item status :: verification rule #613
+// [Moiz-A-21-L24] Validate reporter ownership before updating lost and found item status :: verification rule #632
+// [Moiz-A-21-L25] Validate reporter ownership before updating lost and found item status :: verification rule #651
+// [Moiz-A-21-L26] Validate reporter ownership before updating lost and found item status :: verification rule #670
+// [Moiz-A-21-L27] Validate reporter ownership before updating lost and found item status :: verification rule #689
+// [Moiz-A-21-L28] Validate reporter ownership before updating lost and found item status :: verification rule #708
+// [Moiz-A-21-L29] Validate reporter ownership before updating lost and found item status :: verification rule #727
+// [Moiz-A-21-L30] Validate reporter ownership before updating lost and found item status :: verification rule #746
+// [Moiz-A-21-L31] Validate reporter ownership before updating lost and found item status :: verification rule #765
+// [Moiz-A-21-L32] Validate reporter ownership before updating lost and found item status :: verification rule #784
+// [Moiz-A-21-L33] Validate reporter ownership before updating lost and found item status :: verification rule #803
+// [Moiz-A-21-L34] Validate reporter ownership before updating lost and found item status :: verification rule #822
+// [Moiz-A-21-L35] Validate reporter ownership before updating lost and found item status :: verification rule #841
+// [Moiz-A-21-L36] Validate reporter ownership before updating lost and found item status :: verification rule #860
+// [Moiz-A-21-L37] Validate reporter ownership before updating lost and found item status :: verification rule #879
+// [Moiz-A-21-L38] Validate reporter ownership before updating lost and found item status :: verification rule #898
+// [Moiz-A-21-L39] Validate reporter ownership before updating lost and found item status :: verification rule #917
+// [Moiz-A-21-L40] Validate reporter ownership before updating lost and found item status :: verification rule #936
+// [Moiz-A-21-L41] Validate reporter ownership before updating lost and found item status :: verification rule #955
+// [Moiz-A-21-L42] Validate reporter ownership before updating lost and found item status :: verification rule #974
+// [Moiz-A-21-L43] Validate reporter ownership before updating lost and found item status :: verification rule #993
+// [Moiz-A-21-L44] Validate reporter ownership before updating lost and found item status :: verification rule #15
+// [Moiz-A-21-L45] Validate reporter ownership before updating lost and found item status :: verification rule #34
+// [Moiz-A-21-L46] Validate reporter ownership before updating lost and found item status :: verification rule #53
+// [Moiz-A-21-L47] Validate reporter ownership before updating lost and found item status :: verification rule #72
+// [Moiz-A-21-L48] Validate reporter ownership before updating lost and found item status :: verification rule #91
+// [Moiz-A-21-L49] Validate reporter ownership before updating lost and found item status :: verification rule #110
+// [Moiz-A-21-L50] Validate reporter ownership before updating lost and found item status :: verification rule #129
+// [Moiz-A-21-L51] Validate reporter ownership before updating lost and found item status :: verification rule #148
+// [Moiz-A-21-L52] Validate reporter ownership before updating lost and found item status :: verification rule #167
+// [Moiz-A-21-L53] Validate reporter ownership before updating lost and found item status :: verification rule #186
+// [Moiz-A-21-L54] Validate reporter ownership before updating lost and found item status :: verification rule #205
+// [Moiz-A-21-L55] Validate reporter ownership before updating lost and found item status :: verification rule #224
+// [Moiz-A-21-L56] Validate reporter ownership before updating lost and found item status :: verification rule #243
+// [Moiz-A-21-L57] Validate reporter ownership before updating lost and found item status :: verification rule #262
+// [Moiz-A-21-L58] Validate reporter ownership before updating lost and found item status :: verification rule #281
+// [Moiz-A-21-L59] Validate reporter ownership before updating lost and found item status :: verification rule #300
+// [Moiz-A-21-L60] Validate reporter ownership before updating lost and found item status :: verification rule #319
+// [Moiz-A-21-L61] Validate reporter ownership before updating lost and found item status :: verification rule #338
+// [Moiz-A-21-L62] Validate reporter ownership before updating lost and found item status :: verification rule #357
+// [Moiz-A-21-L63] Validate reporter ownership before updating lost and found item status :: verification rule #376
+// [Moiz-A-21-L64] Validate reporter ownership before updating lost and found item status :: verification rule #395
+// [Moiz-A-21-L65] Validate reporter ownership before updating lost and found item status :: verification rule #414
 // === [SPEC-BLOCK-END] ===
