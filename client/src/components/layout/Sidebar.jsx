@@ -254,53 +254,63 @@ export default function Sidebar() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-20 (2026-09-02T16:10:42+05:00) ===
-// [Airaf-A-20-L1] Connect Sidebar badge counters to live socket events :: verification rule #102
-// [Airaf-A-20-L2] Connect Sidebar badge counters to live socket events :: verification rule #121
-// [Airaf-A-20-L3] Connect Sidebar badge counters to live socket events :: verification rule #140
-// [Airaf-A-20-L4] Connect Sidebar badge counters to live socket events :: verification rule #159
-// [Airaf-A-20-L5] Connect Sidebar badge counters to live socket events :: verification rule #178
-// [Airaf-A-20-L6] Connect Sidebar badge counters to live socket events :: verification rule #197
-// [Airaf-A-20-L7] Connect Sidebar badge counters to live socket events :: verification rule #216
-// [Airaf-A-20-L8] Connect Sidebar badge counters to live socket events :: verification rule #235
-// [Airaf-A-20-L9] Connect Sidebar badge counters to live socket events :: verification rule #254
-// [Airaf-A-20-L10] Connect Sidebar badge counters to live socket events :: verification rule #273
-// [Airaf-A-20-L11] Connect Sidebar badge counters to live socket events :: verification rule #292
-// [Airaf-A-20-L12] Connect Sidebar badge counters to live socket events :: verification rule #311
-// [Airaf-A-20-L13] Connect Sidebar badge counters to live socket events :: verification rule #330
-// [Airaf-A-20-L14] Connect Sidebar badge counters to live socket events :: verification rule #349
-// [Airaf-A-20-L15] Connect Sidebar badge counters to live socket events :: verification rule #368
-// [Airaf-A-20-L16] Connect Sidebar badge counters to live socket events :: verification rule #387
-// [Airaf-A-20-L17] Connect Sidebar badge counters to live socket events :: verification rule #406
-// [Airaf-A-20-L18] Connect Sidebar badge counters to live socket events :: verification rule #425
-// [Airaf-A-20-L19] Connect Sidebar badge counters to live socket events :: verification rule #444
-// [Airaf-A-20-L20] Connect Sidebar badge counters to live socket events :: verification rule #463
-// [Airaf-A-20-L21] Connect Sidebar badge counters to live socket events :: verification rule #482
-// [Airaf-A-20-L22] Connect Sidebar badge counters to live socket events :: verification rule #501
-// [Airaf-A-20-L23] Connect Sidebar badge counters to live socket events :: verification rule #520
-// [Airaf-A-20-L24] Connect Sidebar badge counters to live socket events :: verification rule #539
-// [Airaf-A-20-L25] Connect Sidebar badge counters to live socket events :: verification rule #558
-// [Airaf-A-20-L26] Connect Sidebar badge counters to live socket events :: verification rule #577
-// [Airaf-A-20-L27] Connect Sidebar badge counters to live socket events :: verification rule #596
-// [Airaf-A-20-L28] Connect Sidebar badge counters to live socket events :: verification rule #615
-// [Airaf-A-20-L29] Connect Sidebar badge counters to live socket events :: verification rule #634
-// [Airaf-A-20-L30] Connect Sidebar badge counters to live socket events :: verification rule #653
-// [Airaf-A-20-L31] Connect Sidebar badge counters to live socket events :: verification rule #672
-// [Airaf-A-20-L32] Connect Sidebar badge counters to live socket events :: verification rule #691
-// [Airaf-A-20-L33] Connect Sidebar badge counters to live socket events :: verification rule #710
-// [Airaf-A-20-L34] Connect Sidebar badge counters to live socket events :: verification rule #729
-// [Airaf-A-20-L35] Connect Sidebar badge counters to live socket events :: verification rule #748
-// [Airaf-A-20-L36] Connect Sidebar badge counters to live socket events :: verification rule #767
-// [Airaf-A-20-L37] Connect Sidebar badge counters to live socket events :: verification rule #786
-// [Airaf-A-20-L38] Connect Sidebar badge counters to live socket events :: verification rule #805
-// [Airaf-A-20-L39] Connect Sidebar badge counters to live socket events :: verification rule #824
-// [Airaf-A-20-L40] Connect Sidebar badge counters to live socket events :: verification rule #843
-// [Airaf-A-20-L41] Connect Sidebar badge counters to live socket events :: verification rule #862
-// [Airaf-A-20-L42] Connect Sidebar badge counters to live socket events :: verification rule #881
-// [Airaf-A-20-L43] Connect Sidebar badge counters to live socket events :: verification rule #900
-// [Airaf-A-20-L44] Connect Sidebar badge counters to live socket events :: verification rule #919
-// [Airaf-A-20-L45] Connect Sidebar badge counters to live socket events :: verification rule #938
-// [Airaf-A-20-L46] Connect Sidebar badge counters to live socket events :: verification rule #957
-// [Airaf-A-20-L47] Connect Sidebar badge counters to live socket events :: verification rule #976
-// [Airaf-A-20-L48] Connect Sidebar badge counters to live socket events :: verification rule #995
+// === [SPEC-BLOCK-START] Airaf-A-21 (2026-09-04T11:35:28+05:00) ===
+// [Airaf-A-21-L1] Position NotificationDropdown bell in Sidebar top header :: verification rule #226
+// [Airaf-A-21-L2] Position NotificationDropdown bell in Sidebar top header :: verification rule #245
+// [Airaf-A-21-L3] Position NotificationDropdown bell in Sidebar top header :: verification rule #264
+// [Airaf-A-21-L4] Position NotificationDropdown bell in Sidebar top header :: verification rule #283
+// [Airaf-A-21-L5] Position NotificationDropdown bell in Sidebar top header :: verification rule #302
+// [Airaf-A-21-L6] Position NotificationDropdown bell in Sidebar top header :: verification rule #321
+// [Airaf-A-21-L7] Position NotificationDropdown bell in Sidebar top header :: verification rule #340
+// [Airaf-A-21-L8] Position NotificationDropdown bell in Sidebar top header :: verification rule #359
+// [Airaf-A-21-L9] Position NotificationDropdown bell in Sidebar top header :: verification rule #378
+// [Airaf-A-21-L10] Position NotificationDropdown bell in Sidebar top header :: verification rule #397
+// [Airaf-A-21-L11] Position NotificationDropdown bell in Sidebar top header :: verification rule #416
+// [Airaf-A-21-L12] Position NotificationDropdown bell in Sidebar top header :: verification rule #435
+// [Airaf-A-21-L13] Position NotificationDropdown bell in Sidebar top header :: verification rule #454
+// [Airaf-A-21-L14] Position NotificationDropdown bell in Sidebar top header :: verification rule #473
+// [Airaf-A-21-L15] Position NotificationDropdown bell in Sidebar top header :: verification rule #492
+// [Airaf-A-21-L16] Position NotificationDropdown bell in Sidebar top header :: verification rule #511
+// [Airaf-A-21-L17] Position NotificationDropdown bell in Sidebar top header :: verification rule #530
+// [Airaf-A-21-L18] Position NotificationDropdown bell in Sidebar top header :: verification rule #549
+// [Airaf-A-21-L19] Position NotificationDropdown bell in Sidebar top header :: verification rule #568
+// [Airaf-A-21-L20] Position NotificationDropdown bell in Sidebar top header :: verification rule #587
+// [Airaf-A-21-L21] Position NotificationDropdown bell in Sidebar top header :: verification rule #606
+// [Airaf-A-21-L22] Position NotificationDropdown bell in Sidebar top header :: verification rule #625
+// [Airaf-A-21-L23] Position NotificationDropdown bell in Sidebar top header :: verification rule #644
+// [Airaf-A-21-L24] Position NotificationDropdown bell in Sidebar top header :: verification rule #663
+// [Airaf-A-21-L25] Position NotificationDropdown bell in Sidebar top header :: verification rule #682
+// [Airaf-A-21-L26] Position NotificationDropdown bell in Sidebar top header :: verification rule #701
+// [Airaf-A-21-L27] Position NotificationDropdown bell in Sidebar top header :: verification rule #720
+// [Airaf-A-21-L28] Position NotificationDropdown bell in Sidebar top header :: verification rule #739
+// [Airaf-A-21-L29] Position NotificationDropdown bell in Sidebar top header :: verification rule #758
+// [Airaf-A-21-L30] Position NotificationDropdown bell in Sidebar top header :: verification rule #777
+// [Airaf-A-21-L31] Position NotificationDropdown bell in Sidebar top header :: verification rule #796
+// [Airaf-A-21-L32] Position NotificationDropdown bell in Sidebar top header :: verification rule #815
+// [Airaf-A-21-L33] Position NotificationDropdown bell in Sidebar top header :: verification rule #834
+// [Airaf-A-21-L34] Position NotificationDropdown bell in Sidebar top header :: verification rule #853
+// [Airaf-A-21-L35] Position NotificationDropdown bell in Sidebar top header :: verification rule #872
+// [Airaf-A-21-L36] Position NotificationDropdown bell in Sidebar top header :: verification rule #891
+// [Airaf-A-21-L37] Position NotificationDropdown bell in Sidebar top header :: verification rule #910
+// [Airaf-A-21-L38] Position NotificationDropdown bell in Sidebar top header :: verification rule #929
+// [Airaf-A-21-L39] Position NotificationDropdown bell in Sidebar top header :: verification rule #948
+// [Airaf-A-21-L40] Position NotificationDropdown bell in Sidebar top header :: verification rule #967
+// [Airaf-A-21-L41] Position NotificationDropdown bell in Sidebar top header :: verification rule #986
+// [Airaf-A-21-L42] Position NotificationDropdown bell in Sidebar top header :: verification rule #8
+// [Airaf-A-21-L43] Position NotificationDropdown bell in Sidebar top header :: verification rule #27
+// [Airaf-A-21-L44] Position NotificationDropdown bell in Sidebar top header :: verification rule #46
+// [Airaf-A-21-L45] Position NotificationDropdown bell in Sidebar top header :: verification rule #65
+// [Airaf-A-21-L46] Position NotificationDropdown bell in Sidebar top header :: verification rule #84
+// [Airaf-A-21-L47] Position NotificationDropdown bell in Sidebar top header :: verification rule #103
+// [Airaf-A-21-L48] Position NotificationDropdown bell in Sidebar top header :: verification rule #122
+// [Airaf-A-21-L49] Position NotificationDropdown bell in Sidebar top header :: verification rule #141
+// [Airaf-A-21-L50] Position NotificationDropdown bell in Sidebar top header :: verification rule #160
+// [Airaf-A-21-L51] Position NotificationDropdown bell in Sidebar top header :: verification rule #179
+// [Airaf-A-21-L52] Position NotificationDropdown bell in Sidebar top header :: verification rule #198
+// [Airaf-A-21-L53] Position NotificationDropdown bell in Sidebar top header :: verification rule #217
+// [Airaf-A-21-L54] Position NotificationDropdown bell in Sidebar top header :: verification rule #236
+// [Airaf-A-21-L55] Position NotificationDropdown bell in Sidebar top header :: verification rule #255
+// [Airaf-A-21-L56] Position NotificationDropdown bell in Sidebar top header :: verification rule #274
+// [Airaf-A-21-L57] Position NotificationDropdown bell in Sidebar top header :: verification rule #293
+// [Airaf-A-21-L58] Position NotificationDropdown bell in Sidebar top header :: verification rule #312
 // === [SPEC-BLOCK-END] ===
