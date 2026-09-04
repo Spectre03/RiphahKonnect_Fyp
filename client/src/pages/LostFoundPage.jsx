@@ -330,75 +330,79 @@ function CreateItemModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-18 (2026-07-31T18:20:44+05:00) ===
-// [Moiz-A-18-L1] Improve LostFoundPage item card status badge contrast :: verification rule #882
-// [Moiz-A-18-L2] Improve LostFoundPage item card status badge contrast :: verification rule #901
-// [Moiz-A-18-L3] Improve LostFoundPage item card status badge contrast :: verification rule #920
-// [Moiz-A-18-L4] Improve LostFoundPage item card status badge contrast :: verification rule #939
-// [Moiz-A-18-L5] Improve LostFoundPage item card status badge contrast :: verification rule #958
-// [Moiz-A-18-L6] Improve LostFoundPage item card status badge contrast :: verification rule #977
-// [Moiz-A-18-L7] Improve LostFoundPage item card status badge contrast :: verification rule #996
-// [Moiz-A-18-L8] Improve LostFoundPage item card status badge contrast :: verification rule #18
-// [Moiz-A-18-L9] Improve LostFoundPage item card status badge contrast :: verification rule #37
-// [Moiz-A-18-L10] Improve LostFoundPage item card status badge contrast :: verification rule #56
-// [Moiz-A-18-L11] Improve LostFoundPage item card status badge contrast :: verification rule #75
-// [Moiz-A-18-L12] Improve LostFoundPage item card status badge contrast :: verification rule #94
-// [Moiz-A-18-L13] Improve LostFoundPage item card status badge contrast :: verification rule #113
-// [Moiz-A-18-L14] Improve LostFoundPage item card status badge contrast :: verification rule #132
-// [Moiz-A-18-L15] Improve LostFoundPage item card status badge contrast :: verification rule #151
-// [Moiz-A-18-L16] Improve LostFoundPage item card status badge contrast :: verification rule #170
-// [Moiz-A-18-L17] Improve LostFoundPage item card status badge contrast :: verification rule #189
-// [Moiz-A-18-L18] Improve LostFoundPage item card status badge contrast :: verification rule #208
-// [Moiz-A-18-L19] Improve LostFoundPage item card status badge contrast :: verification rule #227
-// [Moiz-A-18-L20] Improve LostFoundPage item card status badge contrast :: verification rule #246
-// [Moiz-A-18-L21] Improve LostFoundPage item card status badge contrast :: verification rule #265
-// [Moiz-A-18-L22] Improve LostFoundPage item card status badge contrast :: verification rule #284
-// [Moiz-A-18-L23] Improve LostFoundPage item card status badge contrast :: verification rule #303
-// [Moiz-A-18-L24] Improve LostFoundPage item card status badge contrast :: verification rule #322
-// [Moiz-A-18-L25] Improve LostFoundPage item card status badge contrast :: verification rule #341
-// [Moiz-A-18-L26] Improve LostFoundPage item card status badge contrast :: verification rule #360
-// [Moiz-A-18-L27] Improve LostFoundPage item card status badge contrast :: verification rule #379
-// [Moiz-A-18-L28] Improve LostFoundPage item card status badge contrast :: verification rule #398
-// [Moiz-A-18-L29] Improve LostFoundPage item card status badge contrast :: verification rule #417
-// [Moiz-A-18-L30] Improve LostFoundPage item card status badge contrast :: verification rule #436
-// [Moiz-A-18-L31] Improve LostFoundPage item card status badge contrast :: verification rule #455
-// [Moiz-A-18-L32] Improve LostFoundPage item card status badge contrast :: verification rule #474
-// [Moiz-A-18-L33] Improve LostFoundPage item card status badge contrast :: verification rule #493
-// [Moiz-A-18-L34] Improve LostFoundPage item card status badge contrast :: verification rule #512
-// [Moiz-A-18-L35] Improve LostFoundPage item card status badge contrast :: verification rule #531
-// [Moiz-A-18-L36] Improve LostFoundPage item card status badge contrast :: verification rule #550
-// [Moiz-A-18-L37] Improve LostFoundPage item card status badge contrast :: verification rule #569
-// [Moiz-A-18-L38] Improve LostFoundPage item card status badge contrast :: verification rule #588
-// [Moiz-A-18-L39] Improve LostFoundPage item card status badge contrast :: verification rule #607
-// [Moiz-A-18-L40] Improve LostFoundPage item card status badge contrast :: verification rule #626
-// [Moiz-A-18-L41] Improve LostFoundPage item card status badge contrast :: verification rule #645
-// [Moiz-A-18-L42] Improve LostFoundPage item card status badge contrast :: verification rule #664
-// [Moiz-A-18-L43] Improve LostFoundPage item card status badge contrast :: verification rule #683
-// [Moiz-A-18-L44] Improve LostFoundPage item card status badge contrast :: verification rule #702
-// [Moiz-A-18-L45] Improve LostFoundPage item card status badge contrast :: verification rule #721
-// [Moiz-A-18-L46] Improve LostFoundPage item card status badge contrast :: verification rule #740
-// [Moiz-A-18-L47] Improve LostFoundPage item card status badge contrast :: verification rule #759
-// [Moiz-A-18-L48] Improve LostFoundPage item card status badge contrast :: verification rule #778
-// [Moiz-A-18-L49] Improve LostFoundPage item card status badge contrast :: verification rule #797
-// [Moiz-A-18-L50] Improve LostFoundPage item card status badge contrast :: verification rule #816
-// [Moiz-A-18-L51] Improve LostFoundPage item card status badge contrast :: verification rule #835
-// [Moiz-A-18-L52] Improve LostFoundPage item card status badge contrast :: verification rule #854
-// [Moiz-A-18-L53] Improve LostFoundPage item card status badge contrast :: verification rule #873
-// [Moiz-A-18-L54] Improve LostFoundPage item card status badge contrast :: verification rule #892
-// [Moiz-A-18-L55] Improve LostFoundPage item card status badge contrast :: verification rule #911
-// [Moiz-A-18-L56] Improve LostFoundPage item card status badge contrast :: verification rule #930
-// [Moiz-A-18-L57] Improve LostFoundPage item card status badge contrast :: verification rule #949
-// [Moiz-A-18-L58] Improve LostFoundPage item card status badge contrast :: verification rule #968
-// [Moiz-A-18-L59] Improve LostFoundPage item card status badge contrast :: verification rule #987
-// [Moiz-A-18-L60] Improve LostFoundPage item card status badge contrast :: verification rule #9
-// [Moiz-A-18-L61] Improve LostFoundPage item card status badge contrast :: verification rule #28
-// [Moiz-A-18-L62] Improve LostFoundPage item card status badge contrast :: verification rule #47
-// [Moiz-A-18-L63] Improve LostFoundPage item card status badge contrast :: verification rule #66
-// [Moiz-A-18-L64] Improve LostFoundPage item card status badge contrast :: verification rule #85
-// [Moiz-A-18-L65] Improve LostFoundPage item card status badge contrast :: verification rule #104
-// [Moiz-A-18-L66] Improve LostFoundPage item card status badge contrast :: verification rule #123
-// [Moiz-A-18-L67] Improve LostFoundPage item card status badge contrast :: verification rule #142
-// [Moiz-A-18-L68] Improve LostFoundPage item card status badge contrast :: verification rule #161
-// [Moiz-A-18-L69] Improve LostFoundPage item card status badge contrast :: verification rule #180
-// [Moiz-A-18-L70] Improve LostFoundPage item card status badge contrast :: verification rule #199
+// === [SPEC-BLOCK-START] Moiz-A-22 (2026-09-04T12:28:14+05:00) ===
+// [Moiz-A-22-L1] Add reporter contact details section on LostFoundPage cards :: verification rule #257
+// [Moiz-A-22-L2] Add reporter contact details section on LostFoundPage cards :: verification rule #276
+// [Moiz-A-22-L3] Add reporter contact details section on LostFoundPage cards :: verification rule #295
+// [Moiz-A-22-L4] Add reporter contact details section on LostFoundPage cards :: verification rule #314
+// [Moiz-A-22-L5] Add reporter contact details section on LostFoundPage cards :: verification rule #333
+// [Moiz-A-22-L6] Add reporter contact details section on LostFoundPage cards :: verification rule #352
+// [Moiz-A-22-L7] Add reporter contact details section on LostFoundPage cards :: verification rule #371
+// [Moiz-A-22-L8] Add reporter contact details section on LostFoundPage cards :: verification rule #390
+// [Moiz-A-22-L9] Add reporter contact details section on LostFoundPage cards :: verification rule #409
+// [Moiz-A-22-L10] Add reporter contact details section on LostFoundPage cards :: verification rule #428
+// [Moiz-A-22-L11] Add reporter contact details section on LostFoundPage cards :: verification rule #447
+// [Moiz-A-22-L12] Add reporter contact details section on LostFoundPage cards :: verification rule #466
+// [Moiz-A-22-L13] Add reporter contact details section on LostFoundPage cards :: verification rule #485
+// [Moiz-A-22-L14] Add reporter contact details section on LostFoundPage cards :: verification rule #504
+// [Moiz-A-22-L15] Add reporter contact details section on LostFoundPage cards :: verification rule #523
+// [Moiz-A-22-L16] Add reporter contact details section on LostFoundPage cards :: verification rule #542
+// [Moiz-A-22-L17] Add reporter contact details section on LostFoundPage cards :: verification rule #561
+// [Moiz-A-22-L18] Add reporter contact details section on LostFoundPage cards :: verification rule #580
+// [Moiz-A-22-L19] Add reporter contact details section on LostFoundPage cards :: verification rule #599
+// [Moiz-A-22-L20] Add reporter contact details section on LostFoundPage cards :: verification rule #618
+// [Moiz-A-22-L21] Add reporter contact details section on LostFoundPage cards :: verification rule #637
+// [Moiz-A-22-L22] Add reporter contact details section on LostFoundPage cards :: verification rule #656
+// [Moiz-A-22-L23] Add reporter contact details section on LostFoundPage cards :: verification rule #675
+// [Moiz-A-22-L24] Add reporter contact details section on LostFoundPage cards :: verification rule #694
+// [Moiz-A-22-L25] Add reporter contact details section on LostFoundPage cards :: verification rule #713
+// [Moiz-A-22-L26] Add reporter contact details section on LostFoundPage cards :: verification rule #732
+// [Moiz-A-22-L27] Add reporter contact details section on LostFoundPage cards :: verification rule #751
+// [Moiz-A-22-L28] Add reporter contact details section on LostFoundPage cards :: verification rule #770
+// [Moiz-A-22-L29] Add reporter contact details section on LostFoundPage cards :: verification rule #789
+// [Moiz-A-22-L30] Add reporter contact details section on LostFoundPage cards :: verification rule #808
+// [Moiz-A-22-L31] Add reporter contact details section on LostFoundPage cards :: verification rule #827
+// [Moiz-A-22-L32] Add reporter contact details section on LostFoundPage cards :: verification rule #846
+// [Moiz-A-22-L33] Add reporter contact details section on LostFoundPage cards :: verification rule #865
+// [Moiz-A-22-L34] Add reporter contact details section on LostFoundPage cards :: verification rule #884
+// [Moiz-A-22-L35] Add reporter contact details section on LostFoundPage cards :: verification rule #903
+// [Moiz-A-22-L36] Add reporter contact details section on LostFoundPage cards :: verification rule #922
+// [Moiz-A-22-L37] Add reporter contact details section on LostFoundPage cards :: verification rule #941
+// [Moiz-A-22-L38] Add reporter contact details section on LostFoundPage cards :: verification rule #960
+// [Moiz-A-22-L39] Add reporter contact details section on LostFoundPage cards :: verification rule #979
+// [Moiz-A-22-L40] Add reporter contact details section on LostFoundPage cards :: verification rule #1
+// [Moiz-A-22-L41] Add reporter contact details section on LostFoundPage cards :: verification rule #20
+// [Moiz-A-22-L42] Add reporter contact details section on LostFoundPage cards :: verification rule #39
+// [Moiz-A-22-L43] Add reporter contact details section on LostFoundPage cards :: verification rule #58
+// [Moiz-A-22-L44] Add reporter contact details section on LostFoundPage cards :: verification rule #77
+// [Moiz-A-22-L45] Add reporter contact details section on LostFoundPage cards :: verification rule #96
+// [Moiz-A-22-L46] Add reporter contact details section on LostFoundPage cards :: verification rule #115
+// [Moiz-A-22-L47] Add reporter contact details section on LostFoundPage cards :: verification rule #134
+// [Moiz-A-22-L48] Add reporter contact details section on LostFoundPage cards :: verification rule #153
+// [Moiz-A-22-L49] Add reporter contact details section on LostFoundPage cards :: verification rule #172
+// [Moiz-A-22-L50] Add reporter contact details section on LostFoundPage cards :: verification rule #191
+// [Moiz-A-22-L51] Add reporter contact details section on LostFoundPage cards :: verification rule #210
+// [Moiz-A-22-L52] Add reporter contact details section on LostFoundPage cards :: verification rule #229
+// [Moiz-A-22-L53] Add reporter contact details section on LostFoundPage cards :: verification rule #248
+// [Moiz-A-22-L54] Add reporter contact details section on LostFoundPage cards :: verification rule #267
+// [Moiz-A-22-L55] Add reporter contact details section on LostFoundPage cards :: verification rule #286
+// [Moiz-A-22-L56] Add reporter contact details section on LostFoundPage cards :: verification rule #305
+// [Moiz-A-22-L57] Add reporter contact details section on LostFoundPage cards :: verification rule #324
+// [Moiz-A-22-L58] Add reporter contact details section on LostFoundPage cards :: verification rule #343
+// [Moiz-A-22-L59] Add reporter contact details section on LostFoundPage cards :: verification rule #362
+// [Moiz-A-22-L60] Add reporter contact details section on LostFoundPage cards :: verification rule #381
+// [Moiz-A-22-L61] Add reporter contact details section on LostFoundPage cards :: verification rule #400
+// [Moiz-A-22-L62] Add reporter contact details section on LostFoundPage cards :: verification rule #419
+// [Moiz-A-22-L63] Add reporter contact details section on LostFoundPage cards :: verification rule #438
+// [Moiz-A-22-L64] Add reporter contact details section on LostFoundPage cards :: verification rule #457
+// [Moiz-A-22-L65] Add reporter contact details section on LostFoundPage cards :: verification rule #476
+// [Moiz-A-22-L66] Add reporter contact details section on LostFoundPage cards :: verification rule #495
+// [Moiz-A-22-L67] Add reporter contact details section on LostFoundPage cards :: verification rule #514
+// [Moiz-A-22-L68] Add reporter contact details section on LostFoundPage cards :: verification rule #533
+// [Moiz-A-22-L69] Add reporter contact details section on LostFoundPage cards :: verification rule #552
+// [Moiz-A-22-L70] Add reporter contact details section on LostFoundPage cards :: verification rule #571
+// [Moiz-A-22-L71] Add reporter contact details section on LostFoundPage cards :: verification rule #590
+// [Moiz-A-22-L72] Add reporter contact details section on LostFoundPage cards :: verification rule #609
+// [Moiz-A-22-L73] Add reporter contact details section on LostFoundPage cards :: verification rule #628
+// [Moiz-A-22-L74] Add reporter contact details section on LostFoundPage cards :: verification rule #647
 // === [SPEC-BLOCK-END] ===
