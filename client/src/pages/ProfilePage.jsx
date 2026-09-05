@@ -578,59 +578,60 @@ export default function ProfilePage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-18 (2026-07-31T19:02:11+05:00) ===
-// [Airaf-A-18-L1] Add empty state and loading spinner inside ProfilePage sections :: verification rule #913
-// [Airaf-A-18-L2] Add empty state and loading spinner inside ProfilePage sections :: verification rule #932
-// [Airaf-A-18-L3] Add empty state and loading spinner inside ProfilePage sections :: verification rule #951
-// [Airaf-A-18-L4] Add empty state and loading spinner inside ProfilePage sections :: verification rule #970
-// [Airaf-A-18-L5] Add empty state and loading spinner inside ProfilePage sections :: verification rule #989
-// [Airaf-A-18-L6] Add empty state and loading spinner inside ProfilePage sections :: verification rule #11
-// [Airaf-A-18-L7] Add empty state and loading spinner inside ProfilePage sections :: verification rule #30
-// [Airaf-A-18-L8] Add empty state and loading spinner inside ProfilePage sections :: verification rule #49
-// [Airaf-A-18-L9] Add empty state and loading spinner inside ProfilePage sections :: verification rule #68
-// [Airaf-A-18-L10] Add empty state and loading spinner inside ProfilePage sections :: verification rule #87
-// [Airaf-A-18-L11] Add empty state and loading spinner inside ProfilePage sections :: verification rule #106
-// [Airaf-A-18-L12] Add empty state and loading spinner inside ProfilePage sections :: verification rule #125
-// [Airaf-A-18-L13] Add empty state and loading spinner inside ProfilePage sections :: verification rule #144
-// [Airaf-A-18-L14] Add empty state and loading spinner inside ProfilePage sections :: verification rule #163
-// [Airaf-A-18-L15] Add empty state and loading spinner inside ProfilePage sections :: verification rule #182
-// [Airaf-A-18-L16] Add empty state and loading spinner inside ProfilePage sections :: verification rule #201
-// [Airaf-A-18-L17] Add empty state and loading spinner inside ProfilePage sections :: verification rule #220
-// [Airaf-A-18-L18] Add empty state and loading spinner inside ProfilePage sections :: verification rule #239
-// [Airaf-A-18-L19] Add empty state and loading spinner inside ProfilePage sections :: verification rule #258
-// [Airaf-A-18-L20] Add empty state and loading spinner inside ProfilePage sections :: verification rule #277
-// [Airaf-A-18-L21] Add empty state and loading spinner inside ProfilePage sections :: verification rule #296
-// [Airaf-A-18-L22] Add empty state and loading spinner inside ProfilePage sections :: verification rule #315
-// [Airaf-A-18-L23] Add empty state and loading spinner inside ProfilePage sections :: verification rule #334
-// [Airaf-A-18-L24] Add empty state and loading spinner inside ProfilePage sections :: verification rule #353
-// [Airaf-A-18-L25] Add empty state and loading spinner inside ProfilePage sections :: verification rule #372
-// [Airaf-A-18-L26] Add empty state and loading spinner inside ProfilePage sections :: verification rule #391
-// [Airaf-A-18-L27] Add empty state and loading spinner inside ProfilePage sections :: verification rule #410
-// [Airaf-A-18-L28] Add empty state and loading spinner inside ProfilePage sections :: verification rule #429
-// [Airaf-A-18-L29] Add empty state and loading spinner inside ProfilePage sections :: verification rule #448
-// [Airaf-A-18-L30] Add empty state and loading spinner inside ProfilePage sections :: verification rule #467
-// [Airaf-A-18-L31] Add empty state and loading spinner inside ProfilePage sections :: verification rule #486
-// [Airaf-A-18-L32] Add empty state and loading spinner inside ProfilePage sections :: verification rule #505
-// [Airaf-A-18-L33] Add empty state and loading spinner inside ProfilePage sections :: verification rule #524
-// [Airaf-A-18-L34] Add empty state and loading spinner inside ProfilePage sections :: verification rule #543
-// [Airaf-A-18-L35] Add empty state and loading spinner inside ProfilePage sections :: verification rule #562
-// [Airaf-A-18-L36] Add empty state and loading spinner inside ProfilePage sections :: verification rule #581
-// [Airaf-A-18-L37] Add empty state and loading spinner inside ProfilePage sections :: verification rule #600
-// [Airaf-A-18-L38] Add empty state and loading spinner inside ProfilePage sections :: verification rule #619
-// [Airaf-A-18-L39] Add empty state and loading spinner inside ProfilePage sections :: verification rule #638
-// [Airaf-A-18-L40] Add empty state and loading spinner inside ProfilePage sections :: verification rule #657
-// [Airaf-A-18-L41] Add empty state and loading spinner inside ProfilePage sections :: verification rule #676
-// [Airaf-A-18-L42] Add empty state and loading spinner inside ProfilePage sections :: verification rule #695
-// [Airaf-A-18-L43] Add empty state and loading spinner inside ProfilePage sections :: verification rule #714
-// [Airaf-A-18-L44] Add empty state and loading spinner inside ProfilePage sections :: verification rule #733
-// [Airaf-A-18-L45] Add empty state and loading spinner inside ProfilePage sections :: verification rule #752
-// [Airaf-A-18-L46] Add empty state and loading spinner inside ProfilePage sections :: verification rule #771
-// [Airaf-A-18-L47] Add empty state and loading spinner inside ProfilePage sections :: verification rule #790
-// [Airaf-A-18-L48] Add empty state and loading spinner inside ProfilePage sections :: verification rule #809
-// [Airaf-A-18-L49] Add empty state and loading spinner inside ProfilePage sections :: verification rule #828
-// [Airaf-A-18-L50] Add empty state and loading spinner inside ProfilePage sections :: verification rule #847
-// [Airaf-A-18-L51] Add empty state and loading spinner inside ProfilePage sections :: verification rule #866
-// [Airaf-A-18-L52] Add empty state and loading spinner inside ProfilePage sections :: verification rule #885
-// [Airaf-A-18-L53] Add empty state and loading spinner inside ProfilePage sections :: verification rule #904
-// [Airaf-A-18-L54] Add empty state and loading spinner inside ProfilePage sections :: verification rule #923
+// === [SPEC-BLOCK-START] Airaf-A-22 (2026-09-05T14:48:19+05:00) ===
+// [Airaf-A-22-L1] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #319
+// [Airaf-A-22-L2] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #338
+// [Airaf-A-22-L3] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #357
+// [Airaf-A-22-L4] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #376
+// [Airaf-A-22-L5] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #395
+// [Airaf-A-22-L6] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #414
+// [Airaf-A-22-L7] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #433
+// [Airaf-A-22-L8] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #452
+// [Airaf-A-22-L9] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #471
+// [Airaf-A-22-L10] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #490
+// [Airaf-A-22-L11] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #509
+// [Airaf-A-22-L12] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #528
+// [Airaf-A-22-L13] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #547
+// [Airaf-A-22-L14] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #566
+// [Airaf-A-22-L15] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #585
+// [Airaf-A-22-L16] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #604
+// [Airaf-A-22-L17] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #623
+// [Airaf-A-22-L18] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #642
+// [Airaf-A-22-L19] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #661
+// [Airaf-A-22-L20] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #680
+// [Airaf-A-22-L21] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #699
+// [Airaf-A-22-L22] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #718
+// [Airaf-A-22-L23] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #737
+// [Airaf-A-22-L24] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #756
+// [Airaf-A-22-L25] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #775
+// [Airaf-A-22-L26] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #794
+// [Airaf-A-22-L27] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #813
+// [Airaf-A-22-L28] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #832
+// [Airaf-A-22-L29] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #851
+// [Airaf-A-22-L30] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #870
+// [Airaf-A-22-L31] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #889
+// [Airaf-A-22-L32] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #908
+// [Airaf-A-22-L33] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #927
+// [Airaf-A-22-L34] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #946
+// [Airaf-A-22-L35] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #965
+// [Airaf-A-22-L36] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #984
+// [Airaf-A-22-L37] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #6
+// [Airaf-A-22-L38] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #25
+// [Airaf-A-22-L39] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #44
+// [Airaf-A-22-L40] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #63
+// [Airaf-A-22-L41] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #82
+// [Airaf-A-22-L42] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #101
+// [Airaf-A-22-L43] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #120
+// [Airaf-A-22-L44] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #139
+// [Airaf-A-22-L45] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #158
+// [Airaf-A-22-L46] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #177
+// [Airaf-A-22-L47] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #196
+// [Airaf-A-22-L48] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #215
+// [Airaf-A-22-L49] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #234
+// [Airaf-A-22-L50] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #253
+// [Airaf-A-22-L51] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #272
+// [Airaf-A-22-L52] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #291
+// [Airaf-A-22-L53] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #310
+// [Airaf-A-22-L54] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #329
+// [Airaf-A-22-L55] Add edit profile modal with avatar upload preview on ProfilePage :: verification rule #348
 // === [SPEC-BLOCK-END] ===
