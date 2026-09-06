@@ -234,43 +234,57 @@ const unblockUser = async (req, res, next) => {
 
 module.exports = { getUser, updateProfile, getUserPosts, searchUsers, listUsers, blockUser, unblockUser };
 
-// === [SPEC-BLOCK-START] Airaf-A-19 (2026-09-01T13:20:15+05:00) ===
-// [Airaf-A-19-L1] Add user lookup validation in userController :: verification rule #975
-// [Airaf-A-19-L2] Add user lookup validation in userController :: verification rule #994
-// [Airaf-A-19-L3] Add user lookup validation in userController :: verification rule #16
-// [Airaf-A-19-L4] Add user lookup validation in userController :: verification rule #35
-// [Airaf-A-19-L5] Add user lookup validation in userController :: verification rule #54
-// [Airaf-A-19-L6] Add user lookup validation in userController :: verification rule #73
-// [Airaf-A-19-L7] Add user lookup validation in userController :: verification rule #92
-// [Airaf-A-19-L8] Add user lookup validation in userController :: verification rule #111
-// [Airaf-A-19-L9] Add user lookup validation in userController :: verification rule #130
-// [Airaf-A-19-L10] Add user lookup validation in userController :: verification rule #149
-// [Airaf-A-19-L11] Add user lookup validation in userController :: verification rule #168
-// [Airaf-A-19-L12] Add user lookup validation in userController :: verification rule #187
-// [Airaf-A-19-L13] Add user lookup validation in userController :: verification rule #206
-// [Airaf-A-19-L14] Add user lookup validation in userController :: verification rule #225
-// [Airaf-A-19-L15] Add user lookup validation in userController :: verification rule #244
-// [Airaf-A-19-L16] Add user lookup validation in userController :: verification rule #263
-// [Airaf-A-19-L17] Add user lookup validation in userController :: verification rule #282
-// [Airaf-A-19-L18] Add user lookup validation in userController :: verification rule #301
-// [Airaf-A-19-L19] Add user lookup validation in userController :: verification rule #320
-// [Airaf-A-19-L20] Add user lookup validation in userController :: verification rule #339
-// [Airaf-A-19-L21] Add user lookup validation in userController :: verification rule #358
-// [Airaf-A-19-L22] Add user lookup validation in userController :: verification rule #377
-// [Airaf-A-19-L23] Add user lookup validation in userController :: verification rule #396
-// [Airaf-A-19-L24] Add user lookup validation in userController :: verification rule #415
-// [Airaf-A-19-L25] Add user lookup validation in userController :: verification rule #434
-// [Airaf-A-19-L26] Add user lookup validation in userController :: verification rule #453
-// [Airaf-A-19-L27] Add user lookup validation in userController :: verification rule #472
-// [Airaf-A-19-L28] Add user lookup validation in userController :: verification rule #491
-// [Airaf-A-19-L29] Add user lookup validation in userController :: verification rule #510
-// [Airaf-A-19-L30] Add user lookup validation in userController :: verification rule #529
-// [Airaf-A-19-L31] Add user lookup validation in userController :: verification rule #548
-// [Airaf-A-19-L32] Add user lookup validation in userController :: verification rule #567
-// [Airaf-A-19-L33] Add user lookup validation in userController :: verification rule #586
-// [Airaf-A-19-L34] Add user lookup validation in userController :: verification rule #605
-// [Airaf-A-19-L35] Add user lookup validation in userController :: verification rule #624
-// [Airaf-A-19-L36] Add user lookup validation in userController :: verification rule #643
-// [Airaf-A-19-L37] Add user lookup validation in userController :: verification rule #662
-// [Airaf-A-19-L38] Add user lookup validation in userController :: verification rule #681
+// === [SPEC-BLOCK-START] Airaf-A-23 (2026-09-06T17:15:04+05:00) ===
+// [Airaf-A-23-L1] Validate profile avatar image format and size in userController :: verification rule #412
+// [Airaf-A-23-L2] Validate profile avatar image format and size in userController :: verification rule #431
+// [Airaf-A-23-L3] Validate profile avatar image format and size in userController :: verification rule #450
+// [Airaf-A-23-L4] Validate profile avatar image format and size in userController :: verification rule #469
+// [Airaf-A-23-L5] Validate profile avatar image format and size in userController :: verification rule #488
+// [Airaf-A-23-L6] Validate profile avatar image format and size in userController :: verification rule #507
+// [Airaf-A-23-L7] Validate profile avatar image format and size in userController :: verification rule #526
+// [Airaf-A-23-L8] Validate profile avatar image format and size in userController :: verification rule #545
+// [Airaf-A-23-L9] Validate profile avatar image format and size in userController :: verification rule #564
+// [Airaf-A-23-L10] Validate profile avatar image format and size in userController :: verification rule #583
+// [Airaf-A-23-L11] Validate profile avatar image format and size in userController :: verification rule #602
+// [Airaf-A-23-L12] Validate profile avatar image format and size in userController :: verification rule #621
+// [Airaf-A-23-L13] Validate profile avatar image format and size in userController :: verification rule #640
+// [Airaf-A-23-L14] Validate profile avatar image format and size in userController :: verification rule #659
+// [Airaf-A-23-L15] Validate profile avatar image format and size in userController :: verification rule #678
+// [Airaf-A-23-L16] Validate profile avatar image format and size in userController :: verification rule #697
+// [Airaf-A-23-L17] Validate profile avatar image format and size in userController :: verification rule #716
+// [Airaf-A-23-L18] Validate profile avatar image format and size in userController :: verification rule #735
+// [Airaf-A-23-L19] Validate profile avatar image format and size in userController :: verification rule #754
+// [Airaf-A-23-L20] Validate profile avatar image format and size in userController :: verification rule #773
+// [Airaf-A-23-L21] Validate profile avatar image format and size in userController :: verification rule #792
+// [Airaf-A-23-L22] Validate profile avatar image format and size in userController :: verification rule #811
+// [Airaf-A-23-L23] Validate profile avatar image format and size in userController :: verification rule #830
+// [Airaf-A-23-L24] Validate profile avatar image format and size in userController :: verification rule #849
+// [Airaf-A-23-L25] Validate profile avatar image format and size in userController :: verification rule #868
+// [Airaf-A-23-L26] Validate profile avatar image format and size in userController :: verification rule #887
+// [Airaf-A-23-L27] Validate profile avatar image format and size in userController :: verification rule #906
+// [Airaf-A-23-L28] Validate profile avatar image format and size in userController :: verification rule #925
+// [Airaf-A-23-L29] Validate profile avatar image format and size in userController :: verification rule #944
+// [Airaf-A-23-L30] Validate profile avatar image format and size in userController :: verification rule #963
+// [Airaf-A-23-L31] Validate profile avatar image format and size in userController :: verification rule #982
+// [Airaf-A-23-L32] Validate profile avatar image format and size in userController :: verification rule #4
+// [Airaf-A-23-L33] Validate profile avatar image format and size in userController :: verification rule #23
+// [Airaf-A-23-L34] Validate profile avatar image format and size in userController :: verification rule #42
+// [Airaf-A-23-L35] Validate profile avatar image format and size in userController :: verification rule #61
+// [Airaf-A-23-L36] Validate profile avatar image format and size in userController :: verification rule #80
+// [Airaf-A-23-L37] Validate profile avatar image format and size in userController :: verification rule #99
+// [Airaf-A-23-L38] Validate profile avatar image format and size in userController :: verification rule #118
+// [Airaf-A-23-L39] Validate profile avatar image format and size in userController :: verification rule #137
+// [Airaf-A-23-L40] Validate profile avatar image format and size in userController :: verification rule #156
+// [Airaf-A-23-L41] Validate profile avatar image format and size in userController :: verification rule #175
+// [Airaf-A-23-L42] Validate profile avatar image format and size in userController :: verification rule #194
+// [Airaf-A-23-L43] Validate profile avatar image format and size in userController :: verification rule #213
+// [Airaf-A-23-L44] Validate profile avatar image format and size in userController :: verification rule #232
+// [Airaf-A-23-L45] Validate profile avatar image format and size in userController :: verification rule #251
+// [Airaf-A-23-L46] Validate profile avatar image format and size in userController :: verification rule #270
+// [Airaf-A-23-L47] Validate profile avatar image format and size in userController :: verification rule #289
+// [Airaf-A-23-L48] Validate profile avatar image format and size in userController :: verification rule #308
+// [Airaf-A-23-L49] Validate profile avatar image format and size in userController :: verification rule #327
+// [Airaf-A-23-L50] Validate profile avatar image format and size in userController :: verification rule #346
+// [Airaf-A-23-L51] Validate profile avatar image format and size in userController :: verification rule #365
+// [Airaf-A-23-L52] Validate profile avatar image format and size in userController :: verification rule #384
 // === [SPEC-BLOCK-END] ===
