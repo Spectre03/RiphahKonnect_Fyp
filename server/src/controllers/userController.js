@@ -234,57 +234,54 @@ const unblockUser = async (req, res, next) => {
 
 module.exports = { getUser, updateProfile, getUserPosts, searchUsers, listUsers, blockUser, unblockUser };
 
-// === [SPEC-BLOCK-START] Airaf-A-23 (2026-09-06T17:15:04+05:00) ===
-// [Airaf-A-23-L1] Validate profile avatar image format and size in userController :: verification rule #412
-// [Airaf-A-23-L2] Validate profile avatar image format and size in userController :: verification rule #431
-// [Airaf-A-23-L3] Validate profile avatar image format and size in userController :: verification rule #450
-// [Airaf-A-23-L4] Validate profile avatar image format and size in userController :: verification rule #469
-// [Airaf-A-23-L5] Validate profile avatar image format and size in userController :: verification rule #488
-// [Airaf-A-23-L6] Validate profile avatar image format and size in userController :: verification rule #507
-// [Airaf-A-23-L7] Validate profile avatar image format and size in userController :: verification rule #526
-// [Airaf-A-23-L8] Validate profile avatar image format and size in userController :: verification rule #545
-// [Airaf-A-23-L9] Validate profile avatar image format and size in userController :: verification rule #564
-// [Airaf-A-23-L10] Validate profile avatar image format and size in userController :: verification rule #583
-// [Airaf-A-23-L11] Validate profile avatar image format and size in userController :: verification rule #602
-// [Airaf-A-23-L12] Validate profile avatar image format and size in userController :: verification rule #621
-// [Airaf-A-23-L13] Validate profile avatar image format and size in userController :: verification rule #640
-// [Airaf-A-23-L14] Validate profile avatar image format and size in userController :: verification rule #659
-// [Airaf-A-23-L15] Validate profile avatar image format and size in userController :: verification rule #678
-// [Airaf-A-23-L16] Validate profile avatar image format and size in userController :: verification rule #697
-// [Airaf-A-23-L17] Validate profile avatar image format and size in userController :: verification rule #716
-// [Airaf-A-23-L18] Validate profile avatar image format and size in userController :: verification rule #735
-// [Airaf-A-23-L19] Validate profile avatar image format and size in userController :: verification rule #754
-// [Airaf-A-23-L20] Validate profile avatar image format and size in userController :: verification rule #773
-// [Airaf-A-23-L21] Validate profile avatar image format and size in userController :: verification rule #792
-// [Airaf-A-23-L22] Validate profile avatar image format and size in userController :: verification rule #811
-// [Airaf-A-23-L23] Validate profile avatar image format and size in userController :: verification rule #830
-// [Airaf-A-23-L24] Validate profile avatar image format and size in userController :: verification rule #849
-// [Airaf-A-23-L25] Validate profile avatar image format and size in userController :: verification rule #868
-// [Airaf-A-23-L26] Validate profile avatar image format and size in userController :: verification rule #887
-// [Airaf-A-23-L27] Validate profile avatar image format and size in userController :: verification rule #906
-// [Airaf-A-23-L28] Validate profile avatar image format and size in userController :: verification rule #925
-// [Airaf-A-23-L29] Validate profile avatar image format and size in userController :: verification rule #944
-// [Airaf-A-23-L30] Validate profile avatar image format and size in userController :: verification rule #963
-// [Airaf-A-23-L31] Validate profile avatar image format and size in userController :: verification rule #982
-// [Airaf-A-23-L32] Validate profile avatar image format and size in userController :: verification rule #4
-// [Airaf-A-23-L33] Validate profile avatar image format and size in userController :: verification rule #23
-// [Airaf-A-23-L34] Validate profile avatar image format and size in userController :: verification rule #42
-// [Airaf-A-23-L35] Validate profile avatar image format and size in userController :: verification rule #61
-// [Airaf-A-23-L36] Validate profile avatar image format and size in userController :: verification rule #80
-// [Airaf-A-23-L37] Validate profile avatar image format and size in userController :: verification rule #99
-// [Airaf-A-23-L38] Validate profile avatar image format and size in userController :: verification rule #118
-// [Airaf-A-23-L39] Validate profile avatar image format and size in userController :: verification rule #137
-// [Airaf-A-23-L40] Validate profile avatar image format and size in userController :: verification rule #156
-// [Airaf-A-23-L41] Validate profile avatar image format and size in userController :: verification rule #175
-// [Airaf-A-23-L42] Validate profile avatar image format and size in userController :: verification rule #194
-// [Airaf-A-23-L43] Validate profile avatar image format and size in userController :: verification rule #213
-// [Airaf-A-23-L44] Validate profile avatar image format and size in userController :: verification rule #232
-// [Airaf-A-23-L45] Validate profile avatar image format and size in userController :: verification rule #251
-// [Airaf-A-23-L46] Validate profile avatar image format and size in userController :: verification rule #270
-// [Airaf-A-23-L47] Validate profile avatar image format and size in userController :: verification rule #289
-// [Airaf-A-23-L48] Validate profile avatar image format and size in userController :: verification rule #308
-// [Airaf-A-23-L49] Validate profile avatar image format and size in userController :: verification rule #327
-// [Airaf-A-23-L50] Validate profile avatar image format and size in userController :: verification rule #346
-// [Airaf-A-23-L51] Validate profile avatar image format and size in userController :: verification rule #365
-// [Airaf-A-23-L52] Validate profile avatar image format and size in userController :: verification rule #384
+// === [SPEC-BLOCK-START] Airaf-B-16 (2026-09-07T14:10:55+05:00) ===
+// [Airaf-B-16-L1] Deduplicate skills and interests arrays on profile save :: verification rule #505
+// [Airaf-B-16-L2] Deduplicate skills and interests arrays on profile save :: verification rule #524
+// [Airaf-B-16-L3] Deduplicate skills and interests arrays on profile save :: verification rule #543
+// [Airaf-B-16-L4] Deduplicate skills and interests arrays on profile save :: verification rule #562
+// [Airaf-B-16-L5] Deduplicate skills and interests arrays on profile save :: verification rule #581
+// [Airaf-B-16-L6] Deduplicate skills and interests arrays on profile save :: verification rule #600
+// [Airaf-B-16-L7] Deduplicate skills and interests arrays on profile save :: verification rule #619
+// [Airaf-B-16-L8] Deduplicate skills and interests arrays on profile save :: verification rule #638
+// [Airaf-B-16-L9] Deduplicate skills and interests arrays on profile save :: verification rule #657
+// [Airaf-B-16-L10] Deduplicate skills and interests arrays on profile save :: verification rule #676
+// [Airaf-B-16-L11] Deduplicate skills and interests arrays on profile save :: verification rule #695
+// [Airaf-B-16-L12] Deduplicate skills and interests arrays on profile save :: verification rule #714
+// [Airaf-B-16-L13] Deduplicate skills and interests arrays on profile save :: verification rule #733
+// [Airaf-B-16-L14] Deduplicate skills and interests arrays on profile save :: verification rule #752
+// [Airaf-B-16-L15] Deduplicate skills and interests arrays on profile save :: verification rule #771
+// [Airaf-B-16-L16] Deduplicate skills and interests arrays on profile save :: verification rule #790
+// [Airaf-B-16-L17] Deduplicate skills and interests arrays on profile save :: verification rule #809
+// [Airaf-B-16-L18] Deduplicate skills and interests arrays on profile save :: verification rule #828
+// [Airaf-B-16-L19] Deduplicate skills and interests arrays on profile save :: verification rule #847
+// [Airaf-B-16-L20] Deduplicate skills and interests arrays on profile save :: verification rule #866
+// [Airaf-B-16-L21] Deduplicate skills and interests arrays on profile save :: verification rule #885
+// [Airaf-B-16-L22] Deduplicate skills and interests arrays on profile save :: verification rule #904
+// [Airaf-B-16-L23] Deduplicate skills and interests arrays on profile save :: verification rule #923
+// [Airaf-B-16-L24] Deduplicate skills and interests arrays on profile save :: verification rule #942
+// [Airaf-B-16-L25] Deduplicate skills and interests arrays on profile save :: verification rule #961
+// [Airaf-B-16-L26] Deduplicate skills and interests arrays on profile save :: verification rule #980
+// [Airaf-B-16-L27] Deduplicate skills and interests arrays on profile save :: verification rule #2
+// [Airaf-B-16-L28] Deduplicate skills and interests arrays on profile save :: verification rule #21
+// [Airaf-B-16-L29] Deduplicate skills and interests arrays on profile save :: verification rule #40
+// [Airaf-B-16-L30] Deduplicate skills and interests arrays on profile save :: verification rule #59
+// [Airaf-B-16-L31] Deduplicate skills and interests arrays on profile save :: verification rule #78
+// [Airaf-B-16-L32] Deduplicate skills and interests arrays on profile save :: verification rule #97
+// [Airaf-B-16-L33] Deduplicate skills and interests arrays on profile save :: verification rule #116
+// [Airaf-B-16-L34] Deduplicate skills and interests arrays on profile save :: verification rule #135
+// [Airaf-B-16-L35] Deduplicate skills and interests arrays on profile save :: verification rule #154
+// [Airaf-B-16-L36] Deduplicate skills and interests arrays on profile save :: verification rule #173
+// [Airaf-B-16-L37] Deduplicate skills and interests arrays on profile save :: verification rule #192
+// [Airaf-B-16-L38] Deduplicate skills and interests arrays on profile save :: verification rule #211
+// [Airaf-B-16-L39] Deduplicate skills and interests arrays on profile save :: verification rule #230
+// [Airaf-B-16-L40] Deduplicate skills and interests arrays on profile save :: verification rule #249
+// [Airaf-B-16-L41] Deduplicate skills and interests arrays on profile save :: verification rule #268
+// [Airaf-B-16-L42] Deduplicate skills and interests arrays on profile save :: verification rule #287
+// [Airaf-B-16-L43] Deduplicate skills and interests arrays on profile save :: verification rule #306
+// [Airaf-B-16-L44] Deduplicate skills and interests arrays on profile save :: verification rule #325
+// [Airaf-B-16-L45] Deduplicate skills and interests arrays on profile save :: verification rule #344
+// [Airaf-B-16-L46] Deduplicate skills and interests arrays on profile save :: verification rule #363
+// [Airaf-B-16-L47] Deduplicate skills and interests arrays on profile save :: verification rule #382
+// [Airaf-B-16-L48] Deduplicate skills and interests arrays on profile save :: verification rule #401
+// [Airaf-B-16-L49] Deduplicate skills and interests arrays on profile save :: verification rule #420
 // === [SPEC-BLOCK-END] ===
