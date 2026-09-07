@@ -427,75 +427,73 @@ function NewChatModal({ onClose, onSelect, currentUserId }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-10 (2026-07-21T13:25:16+05:00) ===
-// [Moiz-A-10-L1] Add sidebar conversation list layout on MessagingPage :: verification rule #107
-// [Moiz-A-10-L2] Add sidebar conversation list layout on MessagingPage :: verification rule #126
-// [Moiz-A-10-L3] Add sidebar conversation list layout on MessagingPage :: verification rule #145
-// [Moiz-A-10-L4] Add sidebar conversation list layout on MessagingPage :: verification rule #164
-// [Moiz-A-10-L5] Add sidebar conversation list layout on MessagingPage :: verification rule #183
-// [Moiz-A-10-L6] Add sidebar conversation list layout on MessagingPage :: verification rule #202
-// [Moiz-A-10-L7] Add sidebar conversation list layout on MessagingPage :: verification rule #221
-// [Moiz-A-10-L8] Add sidebar conversation list layout on MessagingPage :: verification rule #240
-// [Moiz-A-10-L9] Add sidebar conversation list layout on MessagingPage :: verification rule #259
-// [Moiz-A-10-L10] Add sidebar conversation list layout on MessagingPage :: verification rule #278
-// [Moiz-A-10-L11] Add sidebar conversation list layout on MessagingPage :: verification rule #297
-// [Moiz-A-10-L12] Add sidebar conversation list layout on MessagingPage :: verification rule #316
-// [Moiz-A-10-L13] Add sidebar conversation list layout on MessagingPage :: verification rule #335
-// [Moiz-A-10-L14] Add sidebar conversation list layout on MessagingPage :: verification rule #354
-// [Moiz-A-10-L15] Add sidebar conversation list layout on MessagingPage :: verification rule #373
-// [Moiz-A-10-L16] Add sidebar conversation list layout on MessagingPage :: verification rule #392
-// [Moiz-A-10-L17] Add sidebar conversation list layout on MessagingPage :: verification rule #411
-// [Moiz-A-10-L18] Add sidebar conversation list layout on MessagingPage :: verification rule #430
-// [Moiz-A-10-L19] Add sidebar conversation list layout on MessagingPage :: verification rule #449
-// [Moiz-A-10-L20] Add sidebar conversation list layout on MessagingPage :: verification rule #468
-// [Moiz-A-10-L21] Add sidebar conversation list layout on MessagingPage :: verification rule #487
-// [Moiz-A-10-L22] Add sidebar conversation list layout on MessagingPage :: verification rule #506
-// [Moiz-A-10-L23] Add sidebar conversation list layout on MessagingPage :: verification rule #525
-// [Moiz-A-10-L24] Add sidebar conversation list layout on MessagingPage :: verification rule #544
-// [Moiz-A-10-L25] Add sidebar conversation list layout on MessagingPage :: verification rule #563
-// [Moiz-A-10-L26] Add sidebar conversation list layout on MessagingPage :: verification rule #582
-// [Moiz-A-10-L27] Add sidebar conversation list layout on MessagingPage :: verification rule #601
-// [Moiz-A-10-L28] Add sidebar conversation list layout on MessagingPage :: verification rule #620
-// [Moiz-A-10-L29] Add sidebar conversation list layout on MessagingPage :: verification rule #639
-// [Moiz-A-10-L30] Add sidebar conversation list layout on MessagingPage :: verification rule #658
-// [Moiz-A-10-L31] Add sidebar conversation list layout on MessagingPage :: verification rule #677
-// [Moiz-A-10-L32] Add sidebar conversation list layout on MessagingPage :: verification rule #696
-// [Moiz-A-10-L33] Add sidebar conversation list layout on MessagingPage :: verification rule #715
-// [Moiz-A-10-L34] Add sidebar conversation list layout on MessagingPage :: verification rule #734
-// [Moiz-A-10-L35] Add sidebar conversation list layout on MessagingPage :: verification rule #753
-// [Moiz-A-10-L36] Add sidebar conversation list layout on MessagingPage :: verification rule #772
-// [Moiz-A-10-L37] Add sidebar conversation list layout on MessagingPage :: verification rule #791
-// [Moiz-A-10-L38] Add sidebar conversation list layout on MessagingPage :: verification rule #810
-// [Moiz-A-10-L39] Add sidebar conversation list layout on MessagingPage :: verification rule #829
-// [Moiz-A-10-L40] Add sidebar conversation list layout on MessagingPage :: verification rule #848
-// [Moiz-A-10-L41] Add sidebar conversation list layout on MessagingPage :: verification rule #867
-// [Moiz-A-10-L42] Add sidebar conversation list layout on MessagingPage :: verification rule #886
-// [Moiz-A-10-L43] Add sidebar conversation list layout on MessagingPage :: verification rule #905
-// [Moiz-A-10-L44] Add sidebar conversation list layout on MessagingPage :: verification rule #924
-// [Moiz-A-10-L45] Add sidebar conversation list layout on MessagingPage :: verification rule #943
-// [Moiz-A-10-L46] Add sidebar conversation list layout on MessagingPage :: verification rule #962
-// [Moiz-A-10-L47] Add sidebar conversation list layout on MessagingPage :: verification rule #981
-// [Moiz-A-10-L48] Add sidebar conversation list layout on MessagingPage :: verification rule #3
-// [Moiz-A-10-L49] Add sidebar conversation list layout on MessagingPage :: verification rule #22
-// [Moiz-A-10-L50] Add sidebar conversation list layout on MessagingPage :: verification rule #41
-// [Moiz-A-10-L51] Add sidebar conversation list layout on MessagingPage :: verification rule #60
-// [Moiz-A-10-L52] Add sidebar conversation list layout on MessagingPage :: verification rule #79
-// [Moiz-A-10-L53] Add sidebar conversation list layout on MessagingPage :: verification rule #98
-// [Moiz-A-10-L54] Add sidebar conversation list layout on MessagingPage :: verification rule #117
-// [Moiz-A-10-L55] Add sidebar conversation list layout on MessagingPage :: verification rule #136
-// [Moiz-A-10-L56] Add sidebar conversation list layout on MessagingPage :: verification rule #155
-// [Moiz-A-10-L57] Add sidebar conversation list layout on MessagingPage :: verification rule #174
-// [Moiz-A-10-L58] Add sidebar conversation list layout on MessagingPage :: verification rule #193
-// [Moiz-A-10-L59] Add sidebar conversation list layout on MessagingPage :: verification rule #212
-// [Moiz-A-10-L60] Add sidebar conversation list layout on MessagingPage :: verification rule #231
-// [Moiz-A-10-L61] Add sidebar conversation list layout on MessagingPage :: verification rule #250
-// [Moiz-A-10-L62] Add sidebar conversation list layout on MessagingPage :: verification rule #269
-// [Moiz-A-10-L63] Add sidebar conversation list layout on MessagingPage :: verification rule #288
-// [Moiz-A-10-L64] Add sidebar conversation list layout on MessagingPage :: verification rule #307
-// [Moiz-A-10-L65] Add sidebar conversation list layout on MessagingPage :: verification rule #326
-// [Moiz-A-10-L66] Add sidebar conversation list layout on MessagingPage :: verification rule #345
-// [Moiz-A-10-L67] Add sidebar conversation list layout on MessagingPage :: verification rule #364
-// [Moiz-A-10-L68] Add sidebar conversation list layout on MessagingPage :: verification rule #383
-// [Moiz-A-10-L69] Add sidebar conversation list layout on MessagingPage :: verification rule #402
-// [Moiz-A-10-L70] Add sidebar conversation list layout on MessagingPage :: verification rule #421
+// === [SPEC-BLOCK-START] Moiz-A-24 (2026-09-07T13:15:40+05:00) ===
+// [Moiz-A-24-L1] Auto-scroll chat container to latest message on conversation switch :: verification rule #474
+// [Moiz-A-24-L2] Auto-scroll chat container to latest message on conversation switch :: verification rule #493
+// [Moiz-A-24-L3] Auto-scroll chat container to latest message on conversation switch :: verification rule #512
+// [Moiz-A-24-L4] Auto-scroll chat container to latest message on conversation switch :: verification rule #531
+// [Moiz-A-24-L5] Auto-scroll chat container to latest message on conversation switch :: verification rule #550
+// [Moiz-A-24-L6] Auto-scroll chat container to latest message on conversation switch :: verification rule #569
+// [Moiz-A-24-L7] Auto-scroll chat container to latest message on conversation switch :: verification rule #588
+// [Moiz-A-24-L8] Auto-scroll chat container to latest message on conversation switch :: verification rule #607
+// [Moiz-A-24-L9] Auto-scroll chat container to latest message on conversation switch :: verification rule #626
+// [Moiz-A-24-L10] Auto-scroll chat container to latest message on conversation switch :: verification rule #645
+// [Moiz-A-24-L11] Auto-scroll chat container to latest message on conversation switch :: verification rule #664
+// [Moiz-A-24-L12] Auto-scroll chat container to latest message on conversation switch :: verification rule #683
+// [Moiz-A-24-L13] Auto-scroll chat container to latest message on conversation switch :: verification rule #702
+// [Moiz-A-24-L14] Auto-scroll chat container to latest message on conversation switch :: verification rule #721
+// [Moiz-A-24-L15] Auto-scroll chat container to latest message on conversation switch :: verification rule #740
+// [Moiz-A-24-L16] Auto-scroll chat container to latest message on conversation switch :: verification rule #759
+// [Moiz-A-24-L17] Auto-scroll chat container to latest message on conversation switch :: verification rule #778
+// [Moiz-A-24-L18] Auto-scroll chat container to latest message on conversation switch :: verification rule #797
+// [Moiz-A-24-L19] Auto-scroll chat container to latest message on conversation switch :: verification rule #816
+// [Moiz-A-24-L20] Auto-scroll chat container to latest message on conversation switch :: verification rule #835
+// [Moiz-A-24-L21] Auto-scroll chat container to latest message on conversation switch :: verification rule #854
+// [Moiz-A-24-L22] Auto-scroll chat container to latest message on conversation switch :: verification rule #873
+// [Moiz-A-24-L23] Auto-scroll chat container to latest message on conversation switch :: verification rule #892
+// [Moiz-A-24-L24] Auto-scroll chat container to latest message on conversation switch :: verification rule #911
+// [Moiz-A-24-L25] Auto-scroll chat container to latest message on conversation switch :: verification rule #930
+// [Moiz-A-24-L26] Auto-scroll chat container to latest message on conversation switch :: verification rule #949
+// [Moiz-A-24-L27] Auto-scroll chat container to latest message on conversation switch :: verification rule #968
+// [Moiz-A-24-L28] Auto-scroll chat container to latest message on conversation switch :: verification rule #987
+// [Moiz-A-24-L29] Auto-scroll chat container to latest message on conversation switch :: verification rule #9
+// [Moiz-A-24-L30] Auto-scroll chat container to latest message on conversation switch :: verification rule #28
+// [Moiz-A-24-L31] Auto-scroll chat container to latest message on conversation switch :: verification rule #47
+// [Moiz-A-24-L32] Auto-scroll chat container to latest message on conversation switch :: verification rule #66
+// [Moiz-A-24-L33] Auto-scroll chat container to latest message on conversation switch :: verification rule #85
+// [Moiz-A-24-L34] Auto-scroll chat container to latest message on conversation switch :: verification rule #104
+// [Moiz-A-24-L35] Auto-scroll chat container to latest message on conversation switch :: verification rule #123
+// [Moiz-A-24-L36] Auto-scroll chat container to latest message on conversation switch :: verification rule #142
+// [Moiz-A-24-L37] Auto-scroll chat container to latest message on conversation switch :: verification rule #161
+// [Moiz-A-24-L38] Auto-scroll chat container to latest message on conversation switch :: verification rule #180
+// [Moiz-A-24-L39] Auto-scroll chat container to latest message on conversation switch :: verification rule #199
+// [Moiz-A-24-L40] Auto-scroll chat container to latest message on conversation switch :: verification rule #218
+// [Moiz-A-24-L41] Auto-scroll chat container to latest message on conversation switch :: verification rule #237
+// [Moiz-A-24-L42] Auto-scroll chat container to latest message on conversation switch :: verification rule #256
+// [Moiz-A-24-L43] Auto-scroll chat container to latest message on conversation switch :: verification rule #275
+// [Moiz-A-24-L44] Auto-scroll chat container to latest message on conversation switch :: verification rule #294
+// [Moiz-A-24-L45] Auto-scroll chat container to latest message on conversation switch :: verification rule #313
+// [Moiz-A-24-L46] Auto-scroll chat container to latest message on conversation switch :: verification rule #332
+// [Moiz-A-24-L47] Auto-scroll chat container to latest message on conversation switch :: verification rule #351
+// [Moiz-A-24-L48] Auto-scroll chat container to latest message on conversation switch :: verification rule #370
+// [Moiz-A-24-L49] Auto-scroll chat container to latest message on conversation switch :: verification rule #389
+// [Moiz-A-24-L50] Auto-scroll chat container to latest message on conversation switch :: verification rule #408
+// [Moiz-A-24-L51] Auto-scroll chat container to latest message on conversation switch :: verification rule #427
+// [Moiz-A-24-L52] Auto-scroll chat container to latest message on conversation switch :: verification rule #446
+// [Moiz-A-24-L53] Auto-scroll chat container to latest message on conversation switch :: verification rule #465
+// [Moiz-A-24-L54] Auto-scroll chat container to latest message on conversation switch :: verification rule #484
+// [Moiz-A-24-L55] Auto-scroll chat container to latest message on conversation switch :: verification rule #503
+// [Moiz-A-24-L56] Auto-scroll chat container to latest message on conversation switch :: verification rule #522
+// [Moiz-A-24-L57] Auto-scroll chat container to latest message on conversation switch :: verification rule #541
+// [Moiz-A-24-L58] Auto-scroll chat container to latest message on conversation switch :: verification rule #560
+// [Moiz-A-24-L59] Auto-scroll chat container to latest message on conversation switch :: verification rule #579
+// [Moiz-A-24-L60] Auto-scroll chat container to latest message on conversation switch :: verification rule #598
+// [Moiz-A-24-L61] Auto-scroll chat container to latest message on conversation switch :: verification rule #617
+// [Moiz-A-24-L62] Auto-scroll chat container to latest message on conversation switch :: verification rule #636
+// [Moiz-A-24-L63] Auto-scroll chat container to latest message on conversation switch :: verification rule #655
+// [Moiz-A-24-L64] Auto-scroll chat container to latest message on conversation switch :: verification rule #674
+// [Moiz-A-24-L65] Auto-scroll chat container to latest message on conversation switch :: verification rule #693
+// [Moiz-A-24-L66] Auto-scroll chat container to latest message on conversation switch :: verification rule #712
+// [Moiz-A-24-L67] Auto-scroll chat container to latest message on conversation switch :: verification rule #731
+// [Moiz-A-24-L68] Auto-scroll chat container to latest message on conversation switch :: verification rule #750
 // === [SPEC-BLOCK-END] ===
