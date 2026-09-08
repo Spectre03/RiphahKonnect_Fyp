@@ -14,6 +14,7 @@ const lostFoundRoutes = require('./routes/lostFoundRoutes');
 const messageRoutes = require('./routes/messageRoutes');
 const userRoutes = require('./routes/userRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
 const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
@@ -52,6 +53,7 @@ app.use('/api/lost-found', lostFoundRoutes);
 app.use('/api/conversations', messageRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/notifications', notificationRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
@@ -64,11 +66,47 @@ app.use(errorHandler);
 // Make io accessible in controllers via req.app.get('io')
 app.set('io', io);
 
+// Track online users: Map<userId, Set<socketId>>
+// (Using a Set of socket IDs allows a user to be connected from multiple tabs/devices)
+const onlineUsers = new Map();
+app.set('onlineUsers', onlineUsers);
+
 // Socket.io
 io.on('connection', (socket) => {
-  console.log('User connected:', socket.id);
+  let currentUserId = socket.handshake.query?.userId || null;
 
-  // Join a conversation room for real-time messaging
+  const registerOnline = (userId) => {
+    if (!userId || userId === 'undefined') return;
+    currentUserId = userId;
+    socket.join(`user:${userId}`);
+
+    if (!onlineUsers.has(userId)) {
+      onlineUsers.set(userId, new Set());
+      socket.broadcast.emit('userOnline', userId);
+    }
+    onlineUsers.get(userId).add(socket.id);
+
+    const list = Array.from(onlineUsers.keys());
+    socket.emit('onlineUsers', list);
+    io.emit('online_users', list);
+  };
+
+  if (currentUserId) {
+    registerOnline(currentUserId);
+  }
+
+  // 1. Identify User
+  socket.on('identify', (userId) => {
+    registerOnline(userId);
+  });
+
+  socket.on('request_online_users', () => {
+    const list = Array.from(onlineUsers.keys());
+    socket.emit('onlineUsers', list);
+    socket.emit('online_users', list);
+  });
+
+  // 2. Conversation Rooms
   socket.on('joinConversation', (conversationId) => {
     socket.join(`conversation:${conversationId}`);
   });
@@ -77,8 +115,19 @@ io.on('connection', (socket) => {
     socket.leave(`conversation:${conversationId}`);
   });
 
+  // 3. Disconnect
   socket.on('disconnect', () => {
-    console.log('User disconnected:', socket.id);
+    if (currentUserId && onlineUsers.has(currentUserId)) {
+      const userSockets = onlineUsers.get(currentUserId);
+      userSockets.delete(socket.id);
+
+      // If no sockets left for this user, they are totally offline
+      if (userSockets.size === 0) {
+        onlineUsers.delete(currentUserId);
+        io.emit('userOffline', currentUserId);
+        io.emit('online_users', Array.from(onlineUsers.keys()));
+      }
+    }
   });
 });
 
