@@ -332,55 +332,43 @@ export default function GroupDetailPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-14 (2026-07-28T15:24:10+05:00) ===
-// [Airaf-A-14-L1] Display group member count and coordinator badge on GroupDetailPage :: verification rule #603
-// [Airaf-A-14-L2] Display group member count and coordinator badge on GroupDetailPage :: verification rule #622
-// [Airaf-A-14-L3] Display group member count and coordinator badge on GroupDetailPage :: verification rule #641
-// [Airaf-A-14-L4] Display group member count and coordinator badge on GroupDetailPage :: verification rule #660
-// [Airaf-A-14-L5] Display group member count and coordinator badge on GroupDetailPage :: verification rule #679
-// [Airaf-A-14-L6] Display group member count and coordinator badge on GroupDetailPage :: verification rule #698
-// [Airaf-A-14-L7] Display group member count and coordinator badge on GroupDetailPage :: verification rule #717
-// [Airaf-A-14-L8] Display group member count and coordinator badge on GroupDetailPage :: verification rule #736
-// [Airaf-A-14-L9] Display group member count and coordinator badge on GroupDetailPage :: verification rule #755
-// [Airaf-A-14-L10] Display group member count and coordinator badge on GroupDetailPage :: verification rule #774
-// [Airaf-A-14-L11] Display group member count and coordinator badge on GroupDetailPage :: verification rule #793
-// [Airaf-A-14-L12] Display group member count and coordinator badge on GroupDetailPage :: verification rule #812
-// [Airaf-A-14-L13] Display group member count and coordinator badge on GroupDetailPage :: verification rule #831
-// [Airaf-A-14-L14] Display group member count and coordinator badge on GroupDetailPage :: verification rule #850
-// [Airaf-A-14-L15] Display group member count and coordinator badge on GroupDetailPage :: verification rule #869
-// [Airaf-A-14-L16] Display group member count and coordinator badge on GroupDetailPage :: verification rule #888
-// [Airaf-A-14-L17] Display group member count and coordinator badge on GroupDetailPage :: verification rule #907
-// [Airaf-A-14-L18] Display group member count and coordinator badge on GroupDetailPage :: verification rule #926
-// [Airaf-A-14-L19] Display group member count and coordinator badge on GroupDetailPage :: verification rule #945
-// [Airaf-A-14-L20] Display group member count and coordinator badge on GroupDetailPage :: verification rule #964
-// [Airaf-A-14-L21] Display group member count and coordinator badge on GroupDetailPage :: verification rule #983
-// [Airaf-A-14-L22] Display group member count and coordinator badge on GroupDetailPage :: verification rule #5
-// [Airaf-A-14-L23] Display group member count and coordinator badge on GroupDetailPage :: verification rule #24
-// [Airaf-A-14-L24] Display group member count and coordinator badge on GroupDetailPage :: verification rule #43
-// [Airaf-A-14-L25] Display group member count and coordinator badge on GroupDetailPage :: verification rule #62
-// [Airaf-A-14-L26] Display group member count and coordinator badge on GroupDetailPage :: verification rule #81
-// [Airaf-A-14-L27] Display group member count and coordinator badge on GroupDetailPage :: verification rule #100
-// [Airaf-A-14-L28] Display group member count and coordinator badge on GroupDetailPage :: verification rule #119
-// [Airaf-A-14-L29] Display group member count and coordinator badge on GroupDetailPage :: verification rule #138
-// [Airaf-A-14-L30] Display group member count and coordinator badge on GroupDetailPage :: verification rule #157
-// [Airaf-A-14-L31] Display group member count and coordinator badge on GroupDetailPage :: verification rule #176
-// [Airaf-A-14-L32] Display group member count and coordinator badge on GroupDetailPage :: verification rule #195
-// [Airaf-A-14-L33] Display group member count and coordinator badge on GroupDetailPage :: verification rule #214
-// [Airaf-A-14-L34] Display group member count and coordinator badge on GroupDetailPage :: verification rule #233
-// [Airaf-A-14-L35] Display group member count and coordinator badge on GroupDetailPage :: verification rule #252
-// [Airaf-A-14-L36] Display group member count and coordinator badge on GroupDetailPage :: verification rule #271
-// [Airaf-A-14-L37] Display group member count and coordinator badge on GroupDetailPage :: verification rule #290
-// [Airaf-A-14-L38] Display group member count and coordinator badge on GroupDetailPage :: verification rule #309
-// [Airaf-A-14-L39] Display group member count and coordinator badge on GroupDetailPage :: verification rule #328
-// [Airaf-A-14-L40] Display group member count and coordinator badge on GroupDetailPage :: verification rule #347
-// [Airaf-A-14-L41] Display group member count and coordinator badge on GroupDetailPage :: verification rule #366
-// [Airaf-A-14-L42] Display group member count and coordinator badge on GroupDetailPage :: verification rule #385
-// [Airaf-A-14-L43] Display group member count and coordinator badge on GroupDetailPage :: verification rule #404
-// [Airaf-A-14-L44] Display group member count and coordinator badge on GroupDetailPage :: verification rule #423
-// [Airaf-A-14-L45] Display group member count and coordinator badge on GroupDetailPage :: verification rule #442
-// [Airaf-A-14-L46] Display group member count and coordinator badge on GroupDetailPage :: verification rule #461
-// [Airaf-A-14-L47] Display group member count and coordinator badge on GroupDetailPage :: verification rule #480
-// [Airaf-A-14-L48] Display group member count and coordinator badge on GroupDetailPage :: verification rule #499
-// [Airaf-A-14-L49] Display group member count and coordinator badge on GroupDetailPage :: verification rule #518
-// [Airaf-A-14-L50] Display group member count and coordinator badge on GroupDetailPage :: verification rule #537
+// === [SPEC-BLOCK-START] Airaf-A-25 (2026-09-09T15:29:47+05:00) ===
+// [Airaf-A-25-L1] Render online/offline status badges in GroupDetailPage members tab :: verification rule #629
+// [Airaf-A-25-L2] Render online/offline status badges in GroupDetailPage members tab :: verification rule #648
+// [Airaf-A-25-L3] Render online/offline status badges in GroupDetailPage members tab :: verification rule #667
+// [Airaf-A-25-L4] Render online/offline status badges in GroupDetailPage members tab :: verification rule #686
+// [Airaf-A-25-L5] Render online/offline status badges in GroupDetailPage members tab :: verification rule #705
+// [Airaf-A-25-L6] Render online/offline status badges in GroupDetailPage members tab :: verification rule #724
+// [Airaf-A-25-L7] Render online/offline status badges in GroupDetailPage members tab :: verification rule #743
+// [Airaf-A-25-L8] Render online/offline status badges in GroupDetailPage members tab :: verification rule #762
+// [Airaf-A-25-L9] Render online/offline status badges in GroupDetailPage members tab :: verification rule #781
+// [Airaf-A-25-L10] Render online/offline status badges in GroupDetailPage members tab :: verification rule #800
+// [Airaf-A-25-L11] Render online/offline status badges in GroupDetailPage members tab :: verification rule #819
+// [Airaf-A-25-L12] Render online/offline status badges in GroupDetailPage members tab :: verification rule #838
+// [Airaf-A-25-L13] Render online/offline status badges in GroupDetailPage members tab :: verification rule #857
+// [Airaf-A-25-L14] Render online/offline status badges in GroupDetailPage members tab :: verification rule #876
+// [Airaf-A-25-L15] Render online/offline status badges in GroupDetailPage members tab :: verification rule #895
+// [Airaf-A-25-L16] Render online/offline status badges in GroupDetailPage members tab :: verification rule #914
+// [Airaf-A-25-L17] Render online/offline status badges in GroupDetailPage members tab :: verification rule #933
+// [Airaf-A-25-L18] Render online/offline status badges in GroupDetailPage members tab :: verification rule #952
+// [Airaf-A-25-L19] Render online/offline status badges in GroupDetailPage members tab :: verification rule #971
+// [Airaf-A-25-L20] Render online/offline status badges in GroupDetailPage members tab :: verification rule #990
+// [Airaf-A-25-L21] Render online/offline status badges in GroupDetailPage members tab :: verification rule #12
+// [Airaf-A-25-L22] Render online/offline status badges in GroupDetailPage members tab :: verification rule #31
+// [Airaf-A-25-L23] Render online/offline status badges in GroupDetailPage members tab :: verification rule #50
+// [Airaf-A-25-L24] Render online/offline status badges in GroupDetailPage members tab :: verification rule #69
+// [Airaf-A-25-L25] Render online/offline status badges in GroupDetailPage members tab :: verification rule #88
+// [Airaf-A-25-L26] Render online/offline status badges in GroupDetailPage members tab :: verification rule #107
+// [Airaf-A-25-L27] Render online/offline status badges in GroupDetailPage members tab :: verification rule #126
+// [Airaf-A-25-L28] Render online/offline status badges in GroupDetailPage members tab :: verification rule #145
+// [Airaf-A-25-L29] Render online/offline status badges in GroupDetailPage members tab :: verification rule #164
+// [Airaf-A-25-L30] Render online/offline status badges in GroupDetailPage members tab :: verification rule #183
+// [Airaf-A-25-L31] Render online/offline status badges in GroupDetailPage members tab :: verification rule #202
+// [Airaf-A-25-L32] Render online/offline status badges in GroupDetailPage members tab :: verification rule #221
+// [Airaf-A-25-L33] Render online/offline status badges in GroupDetailPage members tab :: verification rule #240
+// [Airaf-A-25-L34] Render online/offline status badges in GroupDetailPage members tab :: verification rule #259
+// [Airaf-A-25-L35] Render online/offline status badges in GroupDetailPage members tab :: verification rule #278
+// [Airaf-A-25-L36] Render online/offline status badges in GroupDetailPage members tab :: verification rule #297
+// [Airaf-A-25-L37] Render online/offline status badges in GroupDetailPage members tab :: verification rule #316
+// [Airaf-A-25-L38] Render online/offline status badges in GroupDetailPage members tab :: verification rule #335
 // === [SPEC-BLOCK-END] ===
