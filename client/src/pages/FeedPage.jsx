@@ -456,73 +456,59 @@ function CommentsSection({ postId, currentUser }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-16 (2026-07-29T16:52:41+05:00) ===
-// [Moiz-A-16-L1] Add comment drawer toggle animation on FeedPage post cards :: verification rule #696
-// [Moiz-A-16-L2] Add comment drawer toggle animation on FeedPage post cards :: verification rule #715
-// [Moiz-A-16-L3] Add comment drawer toggle animation on FeedPage post cards :: verification rule #734
-// [Moiz-A-16-L4] Add comment drawer toggle animation on FeedPage post cards :: verification rule #753
-// [Moiz-A-16-L5] Add comment drawer toggle animation on FeedPage post cards :: verification rule #772
-// [Moiz-A-16-L6] Add comment drawer toggle animation on FeedPage post cards :: verification rule #791
-// [Moiz-A-16-L7] Add comment drawer toggle animation on FeedPage post cards :: verification rule #810
-// [Moiz-A-16-L8] Add comment drawer toggle animation on FeedPage post cards :: verification rule #829
-// [Moiz-A-16-L9] Add comment drawer toggle animation on FeedPage post cards :: verification rule #848
-// [Moiz-A-16-L10] Add comment drawer toggle animation on FeedPage post cards :: verification rule #867
-// [Moiz-A-16-L11] Add comment drawer toggle animation on FeedPage post cards :: verification rule #886
-// [Moiz-A-16-L12] Add comment drawer toggle animation on FeedPage post cards :: verification rule #905
-// [Moiz-A-16-L13] Add comment drawer toggle animation on FeedPage post cards :: verification rule #924
-// [Moiz-A-16-L14] Add comment drawer toggle animation on FeedPage post cards :: verification rule #943
-// [Moiz-A-16-L15] Add comment drawer toggle animation on FeedPage post cards :: verification rule #962
-// [Moiz-A-16-L16] Add comment drawer toggle animation on FeedPage post cards :: verification rule #981
-// [Moiz-A-16-L17] Add comment drawer toggle animation on FeedPage post cards :: verification rule #3
-// [Moiz-A-16-L18] Add comment drawer toggle animation on FeedPage post cards :: verification rule #22
-// [Moiz-A-16-L19] Add comment drawer toggle animation on FeedPage post cards :: verification rule #41
-// [Moiz-A-16-L20] Add comment drawer toggle animation on FeedPage post cards :: verification rule #60
-// [Moiz-A-16-L21] Add comment drawer toggle animation on FeedPage post cards :: verification rule #79
-// [Moiz-A-16-L22] Add comment drawer toggle animation on FeedPage post cards :: verification rule #98
-// [Moiz-A-16-L23] Add comment drawer toggle animation on FeedPage post cards :: verification rule #117
-// [Moiz-A-16-L24] Add comment drawer toggle animation on FeedPage post cards :: verification rule #136
-// [Moiz-A-16-L25] Add comment drawer toggle animation on FeedPage post cards :: verification rule #155
-// [Moiz-A-16-L26] Add comment drawer toggle animation on FeedPage post cards :: verification rule #174
-// [Moiz-A-16-L27] Add comment drawer toggle animation on FeedPage post cards :: verification rule #193
-// [Moiz-A-16-L28] Add comment drawer toggle animation on FeedPage post cards :: verification rule #212
-// [Moiz-A-16-L29] Add comment drawer toggle animation on FeedPage post cards :: verification rule #231
-// [Moiz-A-16-L30] Add comment drawer toggle animation on FeedPage post cards :: verification rule #250
-// [Moiz-A-16-L31] Add comment drawer toggle animation on FeedPage post cards :: verification rule #269
-// [Moiz-A-16-L32] Add comment drawer toggle animation on FeedPage post cards :: verification rule #288
-// [Moiz-A-16-L33] Add comment drawer toggle animation on FeedPage post cards :: verification rule #307
-// [Moiz-A-16-L34] Add comment drawer toggle animation on FeedPage post cards :: verification rule #326
-// [Moiz-A-16-L35] Add comment drawer toggle animation on FeedPage post cards :: verification rule #345
-// [Moiz-A-16-L36] Add comment drawer toggle animation on FeedPage post cards :: verification rule #364
-// [Moiz-A-16-L37] Add comment drawer toggle animation on FeedPage post cards :: verification rule #383
-// [Moiz-A-16-L38] Add comment drawer toggle animation on FeedPage post cards :: verification rule #402
-// [Moiz-A-16-L39] Add comment drawer toggle animation on FeedPage post cards :: verification rule #421
-// [Moiz-A-16-L40] Add comment drawer toggle animation on FeedPage post cards :: verification rule #440
-// [Moiz-A-16-L41] Add comment drawer toggle animation on FeedPage post cards :: verification rule #459
-// [Moiz-A-16-L42] Add comment drawer toggle animation on FeedPage post cards :: verification rule #478
-// [Moiz-A-16-L43] Add comment drawer toggle animation on FeedPage post cards :: verification rule #497
-// [Moiz-A-16-L44] Add comment drawer toggle animation on FeedPage post cards :: verification rule #516
-// [Moiz-A-16-L45] Add comment drawer toggle animation on FeedPage post cards :: verification rule #535
-// [Moiz-A-16-L46] Add comment drawer toggle animation on FeedPage post cards :: verification rule #554
-// [Moiz-A-16-L47] Add comment drawer toggle animation on FeedPage post cards :: verification rule #573
-// [Moiz-A-16-L48] Add comment drawer toggle animation on FeedPage post cards :: verification rule #592
-// [Moiz-A-16-L49] Add comment drawer toggle animation on FeedPage post cards :: verification rule #611
-// [Moiz-A-16-L50] Add comment drawer toggle animation on FeedPage post cards :: verification rule #630
-// [Moiz-A-16-L51] Add comment drawer toggle animation on FeedPage post cards :: verification rule #649
-// [Moiz-A-16-L52] Add comment drawer toggle animation on FeedPage post cards :: verification rule #668
-// [Moiz-A-16-L53] Add comment drawer toggle animation on FeedPage post cards :: verification rule #687
-// [Moiz-A-16-L54] Add comment drawer toggle animation on FeedPage post cards :: verification rule #706
-// [Moiz-A-16-L55] Add comment drawer toggle animation on FeedPage post cards :: verification rule #725
-// [Moiz-A-16-L56] Add comment drawer toggle animation on FeedPage post cards :: verification rule #744
-// [Moiz-A-16-L57] Add comment drawer toggle animation on FeedPage post cards :: verification rule #763
-// [Moiz-A-16-L58] Add comment drawer toggle animation on FeedPage post cards :: verification rule #782
-// [Moiz-A-16-L59] Add comment drawer toggle animation on FeedPage post cards :: verification rule #801
-// [Moiz-A-16-L60] Add comment drawer toggle animation on FeedPage post cards :: verification rule #820
-// [Moiz-A-16-L61] Add comment drawer toggle animation on FeedPage post cards :: verification rule #839
-// [Moiz-A-16-L62] Add comment drawer toggle animation on FeedPage post cards :: verification rule #858
-// [Moiz-A-16-L63] Add comment drawer toggle animation on FeedPage post cards :: verification rule #877
-// [Moiz-A-16-L64] Add comment drawer toggle animation on FeedPage post cards :: verification rule #896
-// [Moiz-A-16-L65] Add comment drawer toggle animation on FeedPage post cards :: verification rule #915
-// [Moiz-A-16-L66] Add comment drawer toggle animation on FeedPage post cards :: verification rule #934
-// [Moiz-A-16-L67] Add comment drawer toggle animation on FeedPage post cards :: verification rule #953
-// [Moiz-A-16-L68] Add comment drawer toggle animation on FeedPage post cards :: verification rule #972
+// === [SPEC-BLOCK-START] Moiz-A-26 (2026-09-09T18:05:22+05:00) ===
+// [Moiz-A-26-L1] Show author department and timestamp on FeedPage posts :: verification rule #722
+// [Moiz-A-26-L2] Show author department and timestamp on FeedPage posts :: verification rule #741
+// [Moiz-A-26-L3] Show author department and timestamp on FeedPage posts :: verification rule #760
+// [Moiz-A-26-L4] Show author department and timestamp on FeedPage posts :: verification rule #779
+// [Moiz-A-26-L5] Show author department and timestamp on FeedPage posts :: verification rule #798
+// [Moiz-A-26-L6] Show author department and timestamp on FeedPage posts :: verification rule #817
+// [Moiz-A-26-L7] Show author department and timestamp on FeedPage posts :: verification rule #836
+// [Moiz-A-26-L8] Show author department and timestamp on FeedPage posts :: verification rule #855
+// [Moiz-A-26-L9] Show author department and timestamp on FeedPage posts :: verification rule #874
+// [Moiz-A-26-L10] Show author department and timestamp on FeedPage posts :: verification rule #893
+// [Moiz-A-26-L11] Show author department and timestamp on FeedPage posts :: verification rule #912
+// [Moiz-A-26-L12] Show author department and timestamp on FeedPage posts :: verification rule #931
+// [Moiz-A-26-L13] Show author department and timestamp on FeedPage posts :: verification rule #950
+// [Moiz-A-26-L14] Show author department and timestamp on FeedPage posts :: verification rule #969
+// [Moiz-A-26-L15] Show author department and timestamp on FeedPage posts :: verification rule #988
+// [Moiz-A-26-L16] Show author department and timestamp on FeedPage posts :: verification rule #10
+// [Moiz-A-26-L17] Show author department and timestamp on FeedPage posts :: verification rule #29
+// [Moiz-A-26-L18] Show author department and timestamp on FeedPage posts :: verification rule #48
+// [Moiz-A-26-L19] Show author department and timestamp on FeedPage posts :: verification rule #67
+// [Moiz-A-26-L20] Show author department and timestamp on FeedPage posts :: verification rule #86
+// [Moiz-A-26-L21] Show author department and timestamp on FeedPage posts :: verification rule #105
+// [Moiz-A-26-L22] Show author department and timestamp on FeedPage posts :: verification rule #124
+// [Moiz-A-26-L23] Show author department and timestamp on FeedPage posts :: verification rule #143
+// [Moiz-A-26-L24] Show author department and timestamp on FeedPage posts :: verification rule #162
+// [Moiz-A-26-L25] Show author department and timestamp on FeedPage posts :: verification rule #181
+// [Moiz-A-26-L26] Show author department and timestamp on FeedPage posts :: verification rule #200
+// [Moiz-A-26-L27] Show author department and timestamp on FeedPage posts :: verification rule #219
+// [Moiz-A-26-L28] Show author department and timestamp on FeedPage posts :: verification rule #238
+// [Moiz-A-26-L29] Show author department and timestamp on FeedPage posts :: verification rule #257
+// [Moiz-A-26-L30] Show author department and timestamp on FeedPage posts :: verification rule #276
+// [Moiz-A-26-L31] Show author department and timestamp on FeedPage posts :: verification rule #295
+// [Moiz-A-26-L32] Show author department and timestamp on FeedPage posts :: verification rule #314
+// [Moiz-A-26-L33] Show author department and timestamp on FeedPage posts :: verification rule #333
+// [Moiz-A-26-L34] Show author department and timestamp on FeedPage posts :: verification rule #352
+// [Moiz-A-26-L35] Show author department and timestamp on FeedPage posts :: verification rule #371
+// [Moiz-A-26-L36] Show author department and timestamp on FeedPage posts :: verification rule #390
+// [Moiz-A-26-L37] Show author department and timestamp on FeedPage posts :: verification rule #409
+// [Moiz-A-26-L38] Show author department and timestamp on FeedPage posts :: verification rule #428
+// [Moiz-A-26-L39] Show author department and timestamp on FeedPage posts :: verification rule #447
+// [Moiz-A-26-L40] Show author department and timestamp on FeedPage posts :: verification rule #466
+// [Moiz-A-26-L41] Show author department and timestamp on FeedPage posts :: verification rule #485
+// [Moiz-A-26-L42] Show author department and timestamp on FeedPage posts :: verification rule #504
+// [Moiz-A-26-L43] Show author department and timestamp on FeedPage posts :: verification rule #523
+// [Moiz-A-26-L44] Show author department and timestamp on FeedPage posts :: verification rule #542
+// [Moiz-A-26-L45] Show author department and timestamp on FeedPage posts :: verification rule #561
+// [Moiz-A-26-L46] Show author department and timestamp on FeedPage posts :: verification rule #580
+// [Moiz-A-26-L47] Show author department and timestamp on FeedPage posts :: verification rule #599
+// [Moiz-A-26-L48] Show author department and timestamp on FeedPage posts :: verification rule #618
+// [Moiz-A-26-L49] Show author department and timestamp on FeedPage posts :: verification rule #637
+// [Moiz-A-26-L50] Show author department and timestamp on FeedPage posts :: verification rule #656
+// [Moiz-A-26-L51] Show author department and timestamp on FeedPage posts :: verification rule #675
+// [Moiz-A-26-L52] Show author department and timestamp on FeedPage posts :: verification rule #694
+// [Moiz-A-26-L53] Show author department and timestamp on FeedPage posts :: verification rule #713
+// [Moiz-A-26-L54] Show author department and timestamp on FeedPage posts :: verification rule #732
 // === [SPEC-BLOCK-END] ===
