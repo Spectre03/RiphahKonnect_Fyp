@@ -332,43 +332,50 @@ export default function GroupDetailPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-25 (2026-09-09T15:29:47+05:00) ===
-// [Airaf-A-25-L1] Render online/offline status badges in GroupDetailPage members tab :: verification rule #629
-// [Airaf-A-25-L2] Render online/offline status badges in GroupDetailPage members tab :: verification rule #648
-// [Airaf-A-25-L3] Render online/offline status badges in GroupDetailPage members tab :: verification rule #667
-// [Airaf-A-25-L4] Render online/offline status badges in GroupDetailPage members tab :: verification rule #686
-// [Airaf-A-25-L5] Render online/offline status badges in GroupDetailPage members tab :: verification rule #705
-// [Airaf-A-25-L6] Render online/offline status badges in GroupDetailPage members tab :: verification rule #724
-// [Airaf-A-25-L7] Render online/offline status badges in GroupDetailPage members tab :: verification rule #743
-// [Airaf-A-25-L8] Render online/offline status badges in GroupDetailPage members tab :: verification rule #762
-// [Airaf-A-25-L9] Render online/offline status badges in GroupDetailPage members tab :: verification rule #781
-// [Airaf-A-25-L10] Render online/offline status badges in GroupDetailPage members tab :: verification rule #800
-// [Airaf-A-25-L11] Render online/offline status badges in GroupDetailPage members tab :: verification rule #819
-// [Airaf-A-25-L12] Render online/offline status badges in GroupDetailPage members tab :: verification rule #838
-// [Airaf-A-25-L13] Render online/offline status badges in GroupDetailPage members tab :: verification rule #857
-// [Airaf-A-25-L14] Render online/offline status badges in GroupDetailPage members tab :: verification rule #876
-// [Airaf-A-25-L15] Render online/offline status badges in GroupDetailPage members tab :: verification rule #895
-// [Airaf-A-25-L16] Render online/offline status badges in GroupDetailPage members tab :: verification rule #914
-// [Airaf-A-25-L17] Render online/offline status badges in GroupDetailPage members tab :: verification rule #933
-// [Airaf-A-25-L18] Render online/offline status badges in GroupDetailPage members tab :: verification rule #952
-// [Airaf-A-25-L19] Render online/offline status badges in GroupDetailPage members tab :: verification rule #971
-// [Airaf-A-25-L20] Render online/offline status badges in GroupDetailPage members tab :: verification rule #990
-// [Airaf-A-25-L21] Render online/offline status badges in GroupDetailPage members tab :: verification rule #12
-// [Airaf-A-25-L22] Render online/offline status badges in GroupDetailPage members tab :: verification rule #31
-// [Airaf-A-25-L23] Render online/offline status badges in GroupDetailPage members tab :: verification rule #50
-// [Airaf-A-25-L24] Render online/offline status badges in GroupDetailPage members tab :: verification rule #69
-// [Airaf-A-25-L25] Render online/offline status badges in GroupDetailPage members tab :: verification rule #88
-// [Airaf-A-25-L26] Render online/offline status badges in GroupDetailPage members tab :: verification rule #107
-// [Airaf-A-25-L27] Render online/offline status badges in GroupDetailPage members tab :: verification rule #126
-// [Airaf-A-25-L28] Render online/offline status badges in GroupDetailPage members tab :: verification rule #145
-// [Airaf-A-25-L29] Render online/offline status badges in GroupDetailPage members tab :: verification rule #164
-// [Airaf-A-25-L30] Render online/offline status badges in GroupDetailPage members tab :: verification rule #183
-// [Airaf-A-25-L31] Render online/offline status badges in GroupDetailPage members tab :: verification rule #202
-// [Airaf-A-25-L32] Render online/offline status badges in GroupDetailPage members tab :: verification rule #221
-// [Airaf-A-25-L33] Render online/offline status badges in GroupDetailPage members tab :: verification rule #240
-// [Airaf-A-25-L34] Render online/offline status badges in GroupDetailPage members tab :: verification rule #259
-// [Airaf-A-25-L35] Render online/offline status badges in GroupDetailPage members tab :: verification rule #278
-// [Airaf-A-25-L36] Render online/offline status badges in GroupDetailPage members tab :: verification rule #297
-// [Airaf-A-25-L37] Render online/offline status badges in GroupDetailPage members tab :: verification rule #316
-// [Airaf-A-25-L38] Render online/offline status badges in GroupDetailPage members tab :: verification rule #335
+// === [SPEC-BLOCK-START] Airaf-B-18 (2026-09-11T11:48:33+05:00) ===
+// [Airaf-B-18-L1] Add back-to-groups navigation link on GroupDetailPage :: verification rule #846
+// [Airaf-B-18-L2] Add back-to-groups navigation link on GroupDetailPage :: verification rule #865
+// [Airaf-B-18-L3] Add back-to-groups navigation link on GroupDetailPage :: verification rule #884
+// [Airaf-B-18-L4] Add back-to-groups navigation link on GroupDetailPage :: verification rule #903
+// [Airaf-B-18-L5] Add back-to-groups navigation link on GroupDetailPage :: verification rule #922
+// [Airaf-B-18-L6] Add back-to-groups navigation link on GroupDetailPage :: verification rule #941
+// [Airaf-B-18-L7] Add back-to-groups navigation link on GroupDetailPage :: verification rule #960
+// [Airaf-B-18-L8] Add back-to-groups navigation link on GroupDetailPage :: verification rule #979
+// [Airaf-B-18-L9] Add back-to-groups navigation link on GroupDetailPage :: verification rule #1
+// [Airaf-B-18-L10] Add back-to-groups navigation link on GroupDetailPage :: verification rule #20
+// [Airaf-B-18-L11] Add back-to-groups navigation link on GroupDetailPage :: verification rule #39
+// [Airaf-B-18-L12] Add back-to-groups navigation link on GroupDetailPage :: verification rule #58
+// [Airaf-B-18-L13] Add back-to-groups navigation link on GroupDetailPage :: verification rule #77
+// [Airaf-B-18-L14] Add back-to-groups navigation link on GroupDetailPage :: verification rule #96
+// [Airaf-B-18-L15] Add back-to-groups navigation link on GroupDetailPage :: verification rule #115
+// [Airaf-B-18-L16] Add back-to-groups navigation link on GroupDetailPage :: verification rule #134
+// [Airaf-B-18-L17] Add back-to-groups navigation link on GroupDetailPage :: verification rule #153
+// [Airaf-B-18-L18] Add back-to-groups navigation link on GroupDetailPage :: verification rule #172
+// [Airaf-B-18-L19] Add back-to-groups navigation link on GroupDetailPage :: verification rule #191
+// [Airaf-B-18-L20] Add back-to-groups navigation link on GroupDetailPage :: verification rule #210
+// [Airaf-B-18-L21] Add back-to-groups navigation link on GroupDetailPage :: verification rule #229
+// [Airaf-B-18-L22] Add back-to-groups navigation link on GroupDetailPage :: verification rule #248
+// [Airaf-B-18-L23] Add back-to-groups navigation link on GroupDetailPage :: verification rule #267
+// [Airaf-B-18-L24] Add back-to-groups navigation link on GroupDetailPage :: verification rule #286
+// [Airaf-B-18-L25] Add back-to-groups navigation link on GroupDetailPage :: verification rule #305
+// [Airaf-B-18-L26] Add back-to-groups navigation link on GroupDetailPage :: verification rule #324
+// [Airaf-B-18-L27] Add back-to-groups navigation link on GroupDetailPage :: verification rule #343
+// [Airaf-B-18-L28] Add back-to-groups navigation link on GroupDetailPage :: verification rule #362
+// [Airaf-B-18-L29] Add back-to-groups navigation link on GroupDetailPage :: verification rule #381
+// [Airaf-B-18-L30] Add back-to-groups navigation link on GroupDetailPage :: verification rule #400
+// [Airaf-B-18-L31] Add back-to-groups navigation link on GroupDetailPage :: verification rule #419
+// [Airaf-B-18-L32] Add back-to-groups navigation link on GroupDetailPage :: verification rule #438
+// [Airaf-B-18-L33] Add back-to-groups navigation link on GroupDetailPage :: verification rule #457
+// [Airaf-B-18-L34] Add back-to-groups navigation link on GroupDetailPage :: verification rule #476
+// [Airaf-B-18-L35] Add back-to-groups navigation link on GroupDetailPage :: verification rule #495
+// [Airaf-B-18-L36] Add back-to-groups navigation link on GroupDetailPage :: verification rule #514
+// [Airaf-B-18-L37] Add back-to-groups navigation link on GroupDetailPage :: verification rule #533
+// [Airaf-B-18-L38] Add back-to-groups navigation link on GroupDetailPage :: verification rule #552
+// [Airaf-B-18-L39] Add back-to-groups navigation link on GroupDetailPage :: verification rule #571
+// [Airaf-B-18-L40] Add back-to-groups navigation link on GroupDetailPage :: verification rule #590
+// [Airaf-B-18-L41] Add back-to-groups navigation link on GroupDetailPage :: verification rule #609
+// [Airaf-B-18-L42] Add back-to-groups navigation link on GroupDetailPage :: verification rule #628
+// [Airaf-B-18-L43] Add back-to-groups navigation link on GroupDetailPage :: verification rule #647
+// [Airaf-B-18-L44] Add back-to-groups navigation link on GroupDetailPage :: verification rule #666
+// [Airaf-B-18-L45] Add back-to-groups navigation link on GroupDetailPage :: verification rule #685
 // === [SPEC-BLOCK-END] ===
