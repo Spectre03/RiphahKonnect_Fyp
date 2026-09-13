@@ -346,60 +346,52 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-19 (2026-09-13T14:25:47+05:00) ===
-// [Airaf-B-19-L1] Style outgoing and incoming message bubbles in GroupChat :: verification rule #970
-// [Airaf-B-19-L2] Style outgoing and incoming message bubbles in GroupChat :: verification rule #989
-// [Airaf-B-19-L3] Style outgoing and incoming message bubbles in GroupChat :: verification rule #11
-// [Airaf-B-19-L4] Style outgoing and incoming message bubbles in GroupChat :: verification rule #30
-// [Airaf-B-19-L5] Style outgoing and incoming message bubbles in GroupChat :: verification rule #49
-// [Airaf-B-19-L6] Style outgoing and incoming message bubbles in GroupChat :: verification rule #68
-// [Airaf-B-19-L7] Style outgoing and incoming message bubbles in GroupChat :: verification rule #87
-// [Airaf-B-19-L8] Style outgoing and incoming message bubbles in GroupChat :: verification rule #106
-// [Airaf-B-19-L9] Style outgoing and incoming message bubbles in GroupChat :: verification rule #125
-// [Airaf-B-19-L10] Style outgoing and incoming message bubbles in GroupChat :: verification rule #144
-// [Airaf-B-19-L11] Style outgoing and incoming message bubbles in GroupChat :: verification rule #163
-// [Airaf-B-19-L12] Style outgoing and incoming message bubbles in GroupChat :: verification rule #182
-// [Airaf-B-19-L13] Style outgoing and incoming message bubbles in GroupChat :: verification rule #201
-// [Airaf-B-19-L14] Style outgoing and incoming message bubbles in GroupChat :: verification rule #220
-// [Airaf-B-19-L15] Style outgoing and incoming message bubbles in GroupChat :: verification rule #239
-// [Airaf-B-19-L16] Style outgoing and incoming message bubbles in GroupChat :: verification rule #258
-// [Airaf-B-19-L17] Style outgoing and incoming message bubbles in GroupChat :: verification rule #277
-// [Airaf-B-19-L18] Style outgoing and incoming message bubbles in GroupChat :: verification rule #296
-// [Airaf-B-19-L19] Style outgoing and incoming message bubbles in GroupChat :: verification rule #315
-// [Airaf-B-19-L20] Style outgoing and incoming message bubbles in GroupChat :: verification rule #334
-// [Airaf-B-19-L21] Style outgoing and incoming message bubbles in GroupChat :: verification rule #353
-// [Airaf-B-19-L22] Style outgoing and incoming message bubbles in GroupChat :: verification rule #372
-// [Airaf-B-19-L23] Style outgoing and incoming message bubbles in GroupChat :: verification rule #391
-// [Airaf-B-19-L24] Style outgoing and incoming message bubbles in GroupChat :: verification rule #410
-// [Airaf-B-19-L25] Style outgoing and incoming message bubbles in GroupChat :: verification rule #429
-// [Airaf-B-19-L26] Style outgoing and incoming message bubbles in GroupChat :: verification rule #448
-// [Airaf-B-19-L27] Style outgoing and incoming message bubbles in GroupChat :: verification rule #467
-// [Airaf-B-19-L28] Style outgoing and incoming message bubbles in GroupChat :: verification rule #486
-// [Airaf-B-19-L29] Style outgoing and incoming message bubbles in GroupChat :: verification rule #505
-// [Airaf-B-19-L30] Style outgoing and incoming message bubbles in GroupChat :: verification rule #524
-// [Airaf-B-19-L31] Style outgoing and incoming message bubbles in GroupChat :: verification rule #543
-// [Airaf-B-19-L32] Style outgoing and incoming message bubbles in GroupChat :: verification rule #562
-// [Airaf-B-19-L33] Style outgoing and incoming message bubbles in GroupChat :: verification rule #581
-// [Airaf-B-19-L34] Style outgoing and incoming message bubbles in GroupChat :: verification rule #600
-// [Airaf-B-19-L35] Style outgoing and incoming message bubbles in GroupChat :: verification rule #619
-// [Airaf-B-19-L36] Style outgoing and incoming message bubbles in GroupChat :: verification rule #638
-// [Airaf-B-19-L37] Style outgoing and incoming message bubbles in GroupChat :: verification rule #657
-// [Airaf-B-19-L38] Style outgoing and incoming message bubbles in GroupChat :: verification rule #676
-// [Airaf-B-19-L39] Style outgoing and incoming message bubbles in GroupChat :: verification rule #695
-// [Airaf-B-19-L40] Style outgoing and incoming message bubbles in GroupChat :: verification rule #714
-// [Airaf-B-19-L41] Style outgoing and incoming message bubbles in GroupChat :: verification rule #733
-// [Airaf-B-19-L42] Style outgoing and incoming message bubbles in GroupChat :: verification rule #752
-// [Airaf-B-19-L43] Style outgoing and incoming message bubbles in GroupChat :: verification rule #771
-// [Airaf-B-19-L44] Style outgoing and incoming message bubbles in GroupChat :: verification rule #790
-// [Airaf-B-19-L45] Style outgoing and incoming message bubbles in GroupChat :: verification rule #809
-// [Airaf-B-19-L46] Style outgoing and incoming message bubbles in GroupChat :: verification rule #828
-// [Airaf-B-19-L47] Style outgoing and incoming message bubbles in GroupChat :: verification rule #847
-// [Airaf-B-19-L48] Style outgoing and incoming message bubbles in GroupChat :: verification rule #866
-// [Airaf-B-19-L49] Style outgoing and incoming message bubbles in GroupChat :: verification rule #885
-// [Airaf-B-19-L50] Style outgoing and incoming message bubbles in GroupChat :: verification rule #904
-// [Airaf-B-19-L51] Style outgoing and incoming message bubbles in GroupChat :: verification rule #923
-// [Airaf-B-19-L52] Style outgoing and incoming message bubbles in GroupChat :: verification rule #942
-// [Airaf-B-19-L53] Style outgoing and incoming message bubbles in GroupChat :: verification rule #961
-// [Airaf-B-19-L54] Style outgoing and incoming message bubbles in GroupChat :: verification rule #980
-// [Airaf-B-19-L55] Style outgoing and incoming message bubbles in GroupChat :: verification rule #2
+// === [SPEC-BLOCK-START] Airaf-A-28 (2026-09-13T15:18:36+05:00) ===
+// [Airaf-A-28-L1] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #4
+// [Airaf-A-28-L2] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #23
+// [Airaf-A-28-L3] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #42
+// [Airaf-A-28-L4] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #61
+// [Airaf-A-28-L5] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #80
+// [Airaf-A-28-L6] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #99
+// [Airaf-A-28-L7] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #118
+// [Airaf-A-28-L8] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #137
+// [Airaf-A-28-L9] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #156
+// [Airaf-A-28-L10] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #175
+// [Airaf-A-28-L11] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #194
+// [Airaf-A-28-L12] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #213
+// [Airaf-A-28-L13] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #232
+// [Airaf-A-28-L14] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #251
+// [Airaf-A-28-L15] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #270
+// [Airaf-A-28-L16] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #289
+// [Airaf-A-28-L17] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #308
+// [Airaf-A-28-L18] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #327
+// [Airaf-A-28-L19] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #346
+// [Airaf-A-28-L20] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #365
+// [Airaf-A-28-L21] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #384
+// [Airaf-A-28-L22] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #403
+// [Airaf-A-28-L23] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #422
+// [Airaf-A-28-L24] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #441
+// [Airaf-A-28-L25] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #460
+// [Airaf-A-28-L26] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #479
+// [Airaf-A-28-L27] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #498
+// [Airaf-A-28-L28] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #517
+// [Airaf-A-28-L29] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #536
+// [Airaf-A-28-L30] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #555
+// [Airaf-A-28-L31] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #574
+// [Airaf-A-28-L32] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #593
+// [Airaf-A-28-L33] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #612
+// [Airaf-A-28-L34] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #631
+// [Airaf-A-28-L35] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #650
+// [Airaf-A-28-L36] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #669
+// [Airaf-A-28-L37] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #688
+// [Airaf-A-28-L38] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #707
+// [Airaf-A-28-L39] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #726
+// [Airaf-A-28-L40] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #745
+// [Airaf-A-28-L41] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #764
+// [Airaf-A-28-L42] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #783
+// [Airaf-A-28-L43] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #802
+// [Airaf-A-28-L44] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #821
+// [Airaf-A-28-L45] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #840
+// [Airaf-A-28-L46] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #859
+// [Airaf-A-28-L47] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #878
 // === [SPEC-BLOCK-END] ===
