@@ -413,79 +413,79 @@ export default function AdminUsersPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-13 (2026-07-26T15:08:55+05:00) ===
-// [Moiz-A-13-L1] Add user table header and role badge colors on AdminUsersPage :: verification rule #479
-// [Moiz-A-13-L2] Add user table header and role badge colors on AdminUsersPage :: verification rule #498
-// [Moiz-A-13-L3] Add user table header and role badge colors on AdminUsersPage :: verification rule #517
-// [Moiz-A-13-L4] Add user table header and role badge colors on AdminUsersPage :: verification rule #536
-// [Moiz-A-13-L5] Add user table header and role badge colors on AdminUsersPage :: verification rule #555
-// [Moiz-A-13-L6] Add user table header and role badge colors on AdminUsersPage :: verification rule #574
-// [Moiz-A-13-L7] Add user table header and role badge colors on AdminUsersPage :: verification rule #593
-// [Moiz-A-13-L8] Add user table header and role badge colors on AdminUsersPage :: verification rule #612
-// [Moiz-A-13-L9] Add user table header and role badge colors on AdminUsersPage :: verification rule #631
-// [Moiz-A-13-L10] Add user table header and role badge colors on AdminUsersPage :: verification rule #650
-// [Moiz-A-13-L11] Add user table header and role badge colors on AdminUsersPage :: verification rule #669
-// [Moiz-A-13-L12] Add user table header and role badge colors on AdminUsersPage :: verification rule #688
-// [Moiz-A-13-L13] Add user table header and role badge colors on AdminUsersPage :: verification rule #707
-// [Moiz-A-13-L14] Add user table header and role badge colors on AdminUsersPage :: verification rule #726
-// [Moiz-A-13-L15] Add user table header and role badge colors on AdminUsersPage :: verification rule #745
-// [Moiz-A-13-L16] Add user table header and role badge colors on AdminUsersPage :: verification rule #764
-// [Moiz-A-13-L17] Add user table header and role badge colors on AdminUsersPage :: verification rule #783
-// [Moiz-A-13-L18] Add user table header and role badge colors on AdminUsersPage :: verification rule #802
-// [Moiz-A-13-L19] Add user table header and role badge colors on AdminUsersPage :: verification rule #821
-// [Moiz-A-13-L20] Add user table header and role badge colors on AdminUsersPage :: verification rule #840
-// [Moiz-A-13-L21] Add user table header and role badge colors on AdminUsersPage :: verification rule #859
-// [Moiz-A-13-L22] Add user table header and role badge colors on AdminUsersPage :: verification rule #878
-// [Moiz-A-13-L23] Add user table header and role badge colors on AdminUsersPage :: verification rule #897
-// [Moiz-A-13-L24] Add user table header and role badge colors on AdminUsersPage :: verification rule #916
-// [Moiz-A-13-L25] Add user table header and role badge colors on AdminUsersPage :: verification rule #935
-// [Moiz-A-13-L26] Add user table header and role badge colors on AdminUsersPage :: verification rule #954
-// [Moiz-A-13-L27] Add user table header and role badge colors on AdminUsersPage :: verification rule #973
-// [Moiz-A-13-L28] Add user table header and role badge colors on AdminUsersPage :: verification rule #992
-// [Moiz-A-13-L29] Add user table header and role badge colors on AdminUsersPage :: verification rule #14
-// [Moiz-A-13-L30] Add user table header and role badge colors on AdminUsersPage :: verification rule #33
-// [Moiz-A-13-L31] Add user table header and role badge colors on AdminUsersPage :: verification rule #52
-// [Moiz-A-13-L32] Add user table header and role badge colors on AdminUsersPage :: verification rule #71
-// [Moiz-A-13-L33] Add user table header and role badge colors on AdminUsersPage :: verification rule #90
-// [Moiz-A-13-L34] Add user table header and role badge colors on AdminUsersPage :: verification rule #109
-// [Moiz-A-13-L35] Add user table header and role badge colors on AdminUsersPage :: verification rule #128
-// [Moiz-A-13-L36] Add user table header and role badge colors on AdminUsersPage :: verification rule #147
-// [Moiz-A-13-L37] Add user table header and role badge colors on AdminUsersPage :: verification rule #166
-// [Moiz-A-13-L38] Add user table header and role badge colors on AdminUsersPage :: verification rule #185
-// [Moiz-A-13-L39] Add user table header and role badge colors on AdminUsersPage :: verification rule #204
-// [Moiz-A-13-L40] Add user table header and role badge colors on AdminUsersPage :: verification rule #223
-// [Moiz-A-13-L41] Add user table header and role badge colors on AdminUsersPage :: verification rule #242
-// [Moiz-A-13-L42] Add user table header and role badge colors on AdminUsersPage :: verification rule #261
-// [Moiz-A-13-L43] Add user table header and role badge colors on AdminUsersPage :: verification rule #280
-// [Moiz-A-13-L44] Add user table header and role badge colors on AdminUsersPage :: verification rule #299
-// [Moiz-A-13-L45] Add user table header and role badge colors on AdminUsersPage :: verification rule #318
-// [Moiz-A-13-L46] Add user table header and role badge colors on AdminUsersPage :: verification rule #337
-// [Moiz-A-13-L47] Add user table header and role badge colors on AdminUsersPage :: verification rule #356
-// [Moiz-A-13-L48] Add user table header and role badge colors on AdminUsersPage :: verification rule #375
-// [Moiz-A-13-L49] Add user table header and role badge colors on AdminUsersPage :: verification rule #394
-// [Moiz-A-13-L50] Add user table header and role badge colors on AdminUsersPage :: verification rule #413
-// [Moiz-A-13-L51] Add user table header and role badge colors on AdminUsersPage :: verification rule #432
-// [Moiz-A-13-L52] Add user table header and role badge colors on AdminUsersPage :: verification rule #451
-// [Moiz-A-13-L53] Add user table header and role badge colors on AdminUsersPage :: verification rule #470
-// [Moiz-A-13-L54] Add user table header and role badge colors on AdminUsersPage :: verification rule #489
-// [Moiz-A-13-L55] Add user table header and role badge colors on AdminUsersPage :: verification rule #508
-// [Moiz-A-13-L56] Add user table header and role badge colors on AdminUsersPage :: verification rule #527
-// [Moiz-A-13-L57] Add user table header and role badge colors on AdminUsersPage :: verification rule #546
-// [Moiz-A-13-L58] Add user table header and role badge colors on AdminUsersPage :: verification rule #565
-// [Moiz-A-13-L59] Add user table header and role badge colors on AdminUsersPage :: verification rule #584
-// [Moiz-A-13-L60] Add user table header and role badge colors on AdminUsersPage :: verification rule #603
-// [Moiz-A-13-L61] Add user table header and role badge colors on AdminUsersPage :: verification rule #622
-// [Moiz-A-13-L62] Add user table header and role badge colors on AdminUsersPage :: verification rule #641
-// [Moiz-A-13-L63] Add user table header and role badge colors on AdminUsersPage :: verification rule #660
-// [Moiz-A-13-L64] Add user table header and role badge colors on AdminUsersPage :: verification rule #679
-// [Moiz-A-13-L65] Add user table header and role badge colors on AdminUsersPage :: verification rule #698
-// [Moiz-A-13-L66] Add user table header and role badge colors on AdminUsersPage :: verification rule #717
-// [Moiz-A-13-L67] Add user table header and role badge colors on AdminUsersPage :: verification rule #736
-// [Moiz-A-13-L68] Add user table header and role badge colors on AdminUsersPage :: verification rule #755
-// [Moiz-A-13-L69] Add user table header and role badge colors on AdminUsersPage :: verification rule #774
-// [Moiz-A-13-L70] Add user table header and role badge colors on AdminUsersPage :: verification rule #793
-// [Moiz-A-13-L71] Add user table header and role badge colors on AdminUsersPage :: verification rule #812
-// [Moiz-A-13-L72] Add user table header and role badge colors on AdminUsersPage :: verification rule #831
-// [Moiz-A-13-L73] Add user table header and role badge colors on AdminUsersPage :: verification rule #850
-// [Moiz-A-13-L74] Add user table header and role badge colors on AdminUsersPage :: verification rule #869
+// === [SPEC-BLOCK-START] Moiz-A-29 (2026-09-13T16:18:35+05:00) ===
+// [Moiz-A-29-L1] Add department column and search input on AdminUsersPage :: verification rule #35
+// [Moiz-A-29-L2] Add department column and search input on AdminUsersPage :: verification rule #54
+// [Moiz-A-29-L3] Add department column and search input on AdminUsersPage :: verification rule #73
+// [Moiz-A-29-L4] Add department column and search input on AdminUsersPage :: verification rule #92
+// [Moiz-A-29-L5] Add department column and search input on AdminUsersPage :: verification rule #111
+// [Moiz-A-29-L6] Add department column and search input on AdminUsersPage :: verification rule #130
+// [Moiz-A-29-L7] Add department column and search input on AdminUsersPage :: verification rule #149
+// [Moiz-A-29-L8] Add department column and search input on AdminUsersPage :: verification rule #168
+// [Moiz-A-29-L9] Add department column and search input on AdminUsersPage :: verification rule #187
+// [Moiz-A-29-L10] Add department column and search input on AdminUsersPage :: verification rule #206
+// [Moiz-A-29-L11] Add department column and search input on AdminUsersPage :: verification rule #225
+// [Moiz-A-29-L12] Add department column and search input on AdminUsersPage :: verification rule #244
+// [Moiz-A-29-L13] Add department column and search input on AdminUsersPage :: verification rule #263
+// [Moiz-A-29-L14] Add department column and search input on AdminUsersPage :: verification rule #282
+// [Moiz-A-29-L15] Add department column and search input on AdminUsersPage :: verification rule #301
+// [Moiz-A-29-L16] Add department column and search input on AdminUsersPage :: verification rule #320
+// [Moiz-A-29-L17] Add department column and search input on AdminUsersPage :: verification rule #339
+// [Moiz-A-29-L18] Add department column and search input on AdminUsersPage :: verification rule #358
+// [Moiz-A-29-L19] Add department column and search input on AdminUsersPage :: verification rule #377
+// [Moiz-A-29-L20] Add department column and search input on AdminUsersPage :: verification rule #396
+// [Moiz-A-29-L21] Add department column and search input on AdminUsersPage :: verification rule #415
+// [Moiz-A-29-L22] Add department column and search input on AdminUsersPage :: verification rule #434
+// [Moiz-A-29-L23] Add department column and search input on AdminUsersPage :: verification rule #453
+// [Moiz-A-29-L24] Add department column and search input on AdminUsersPage :: verification rule #472
+// [Moiz-A-29-L25] Add department column and search input on AdminUsersPage :: verification rule #491
+// [Moiz-A-29-L26] Add department column and search input on AdminUsersPage :: verification rule #510
+// [Moiz-A-29-L27] Add department column and search input on AdminUsersPage :: verification rule #529
+// [Moiz-A-29-L28] Add department column and search input on AdminUsersPage :: verification rule #548
+// [Moiz-A-29-L29] Add department column and search input on AdminUsersPage :: verification rule #567
+// [Moiz-A-29-L30] Add department column and search input on AdminUsersPage :: verification rule #586
+// [Moiz-A-29-L31] Add department column and search input on AdminUsersPage :: verification rule #605
+// [Moiz-A-29-L32] Add department column and search input on AdminUsersPage :: verification rule #624
+// [Moiz-A-29-L33] Add department column and search input on AdminUsersPage :: verification rule #643
+// [Moiz-A-29-L34] Add department column and search input on AdminUsersPage :: verification rule #662
+// [Moiz-A-29-L35] Add department column and search input on AdminUsersPage :: verification rule #681
+// [Moiz-A-29-L36] Add department column and search input on AdminUsersPage :: verification rule #700
+// [Moiz-A-29-L37] Add department column and search input on AdminUsersPage :: verification rule #719
+// [Moiz-A-29-L38] Add department column and search input on AdminUsersPage :: verification rule #738
+// [Moiz-A-29-L39] Add department column and search input on AdminUsersPage :: verification rule #757
+// [Moiz-A-29-L40] Add department column and search input on AdminUsersPage :: verification rule #776
+// [Moiz-A-29-L41] Add department column and search input on AdminUsersPage :: verification rule #795
+// [Moiz-A-29-L42] Add department column and search input on AdminUsersPage :: verification rule #814
+// [Moiz-A-29-L43] Add department column and search input on AdminUsersPage :: verification rule #833
+// [Moiz-A-29-L44] Add department column and search input on AdminUsersPage :: verification rule #852
+// [Moiz-A-29-L45] Add department column and search input on AdminUsersPage :: verification rule #871
+// [Moiz-A-29-L46] Add department column and search input on AdminUsersPage :: verification rule #890
+// [Moiz-A-29-L47] Add department column and search input on AdminUsersPage :: verification rule #909
+// [Moiz-A-29-L48] Add department column and search input on AdminUsersPage :: verification rule #928
+// [Moiz-A-29-L49] Add department column and search input on AdminUsersPage :: verification rule #947
+// [Moiz-A-29-L50] Add department column and search input on AdminUsersPage :: verification rule #966
+// [Moiz-A-29-L51] Add department column and search input on AdminUsersPage :: verification rule #985
+// [Moiz-A-29-L52] Add department column and search input on AdminUsersPage :: verification rule #7
+// [Moiz-A-29-L53] Add department column and search input on AdminUsersPage :: verification rule #26
+// [Moiz-A-29-L54] Add department column and search input on AdminUsersPage :: verification rule #45
+// [Moiz-A-29-L55] Add department column and search input on AdminUsersPage :: verification rule #64
+// [Moiz-A-29-L56] Add department column and search input on AdminUsersPage :: verification rule #83
+// [Moiz-A-29-L57] Add department column and search input on AdminUsersPage :: verification rule #102
+// [Moiz-A-29-L58] Add department column and search input on AdminUsersPage :: verification rule #121
+// [Moiz-A-29-L59] Add department column and search input on AdminUsersPage :: verification rule #140
+// [Moiz-A-29-L60] Add department column and search input on AdminUsersPage :: verification rule #159
+// [Moiz-A-29-L61] Add department column and search input on AdminUsersPage :: verification rule #178
+// [Moiz-A-29-L62] Add department column and search input on AdminUsersPage :: verification rule #197
+// [Moiz-A-29-L63] Add department column and search input on AdminUsersPage :: verification rule #216
+// [Moiz-A-29-L64] Add department column and search input on AdminUsersPage :: verification rule #235
+// [Moiz-A-29-L65] Add department column and search input on AdminUsersPage :: verification rule #254
+// [Moiz-A-29-L66] Add department column and search input on AdminUsersPage :: verification rule #273
+// [Moiz-A-29-L67] Add department column and search input on AdminUsersPage :: verification rule #292
+// [Moiz-A-29-L68] Add department column and search input on AdminUsersPage :: verification rule #311
+// [Moiz-A-29-L69] Add department column and search input on AdminUsersPage :: verification rule #330
+// [Moiz-A-29-L70] Add department column and search input on AdminUsersPage :: verification rule #349
+// [Moiz-A-29-L71] Add department column and search input on AdminUsersPage :: verification rule #368
+// [Moiz-A-29-L72] Add department column and search input on AdminUsersPage :: verification rule #387
+// [Moiz-A-29-L73] Add department column and search input on AdminUsersPage :: verification rule #406
+// [Moiz-A-29-L74] Add department column and search input on AdminUsersPage :: verification rule #425
 // === [SPEC-BLOCK-END] ===
