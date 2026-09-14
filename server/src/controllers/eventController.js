@@ -216,55 +216,62 @@ module.exports = {
   getAttendees,
 };
 
-// === [SPEC-BLOCK-START] Airaf-A-27 (2026-09-12T12:40:10+05:00) ===
-// [Airaf-A-27-L1] Implement RSVP toggle and Going count calculation in eventController :: verification rule #908
-// [Airaf-A-27-L2] Implement RSVP toggle and Going count calculation in eventController :: verification rule #927
-// [Airaf-A-27-L3] Implement RSVP toggle and Going count calculation in eventController :: verification rule #946
-// [Airaf-A-27-L4] Implement RSVP toggle and Going count calculation in eventController :: verification rule #965
-// [Airaf-A-27-L5] Implement RSVP toggle and Going count calculation in eventController :: verification rule #984
-// [Airaf-A-27-L6] Implement RSVP toggle and Going count calculation in eventController :: verification rule #6
-// [Airaf-A-27-L7] Implement RSVP toggle and Going count calculation in eventController :: verification rule #25
-// [Airaf-A-27-L8] Implement RSVP toggle and Going count calculation in eventController :: verification rule #44
-// [Airaf-A-27-L9] Implement RSVP toggle and Going count calculation in eventController :: verification rule #63
-// [Airaf-A-27-L10] Implement RSVP toggle and Going count calculation in eventController :: verification rule #82
-// [Airaf-A-27-L11] Implement RSVP toggle and Going count calculation in eventController :: verification rule #101
-// [Airaf-A-27-L12] Implement RSVP toggle and Going count calculation in eventController :: verification rule #120
-// [Airaf-A-27-L13] Implement RSVP toggle and Going count calculation in eventController :: verification rule #139
-// [Airaf-A-27-L14] Implement RSVP toggle and Going count calculation in eventController :: verification rule #158
-// [Airaf-A-27-L15] Implement RSVP toggle and Going count calculation in eventController :: verification rule #177
-// [Airaf-A-27-L16] Implement RSVP toggle and Going count calculation in eventController :: verification rule #196
-// [Airaf-A-27-L17] Implement RSVP toggle and Going count calculation in eventController :: verification rule #215
-// [Airaf-A-27-L18] Implement RSVP toggle and Going count calculation in eventController :: verification rule #234
-// [Airaf-A-27-L19] Implement RSVP toggle and Going count calculation in eventController :: verification rule #253
-// [Airaf-A-27-L20] Implement RSVP toggle and Going count calculation in eventController :: verification rule #272
-// [Airaf-A-27-L21] Implement RSVP toggle and Going count calculation in eventController :: verification rule #291
-// [Airaf-A-27-L22] Implement RSVP toggle and Going count calculation in eventController :: verification rule #310
-// [Airaf-A-27-L23] Implement RSVP toggle and Going count calculation in eventController :: verification rule #329
-// [Airaf-A-27-L24] Implement RSVP toggle and Going count calculation in eventController :: verification rule #348
-// [Airaf-A-27-L25] Implement RSVP toggle and Going count calculation in eventController :: verification rule #367
-// [Airaf-A-27-L26] Implement RSVP toggle and Going count calculation in eventController :: verification rule #386
-// [Airaf-A-27-L27] Implement RSVP toggle and Going count calculation in eventController :: verification rule #405
-// [Airaf-A-27-L28] Implement RSVP toggle and Going count calculation in eventController :: verification rule #424
-// [Airaf-A-27-L29] Implement RSVP toggle and Going count calculation in eventController :: verification rule #443
-// [Airaf-A-27-L30] Implement RSVP toggle and Going count calculation in eventController :: verification rule #462
-// [Airaf-A-27-L31] Implement RSVP toggle and Going count calculation in eventController :: verification rule #481
-// [Airaf-A-27-L32] Implement RSVP toggle and Going count calculation in eventController :: verification rule #500
-// [Airaf-A-27-L33] Implement RSVP toggle and Going count calculation in eventController :: verification rule #519
-// [Airaf-A-27-L34] Implement RSVP toggle and Going count calculation in eventController :: verification rule #538
-// [Airaf-A-27-L35] Implement RSVP toggle and Going count calculation in eventController :: verification rule #557
-// [Airaf-A-27-L36] Implement RSVP toggle and Going count calculation in eventController :: verification rule #576
-// [Airaf-A-27-L37] Implement RSVP toggle and Going count calculation in eventController :: verification rule #595
-// [Airaf-A-27-L38] Implement RSVP toggle and Going count calculation in eventController :: verification rule #614
-// [Airaf-A-27-L39] Implement RSVP toggle and Going count calculation in eventController :: verification rule #633
-// [Airaf-A-27-L40] Implement RSVP toggle and Going count calculation in eventController :: verification rule #652
-// [Airaf-A-27-L41] Implement RSVP toggle and Going count calculation in eventController :: verification rule #671
-// [Airaf-A-27-L42] Implement RSVP toggle and Going count calculation in eventController :: verification rule #690
-// [Airaf-A-27-L43] Implement RSVP toggle and Going count calculation in eventController :: verification rule #709
-// [Airaf-A-27-L44] Implement RSVP toggle and Going count calculation in eventController :: verification rule #728
-// [Airaf-A-27-L45] Implement RSVP toggle and Going count calculation in eventController :: verification rule #747
-// [Airaf-A-27-L46] Implement RSVP toggle and Going count calculation in eventController :: verification rule #766
-// [Airaf-A-27-L47] Implement RSVP toggle and Going count calculation in eventController :: verification rule #785
-// [Airaf-A-27-L48] Implement RSVP toggle and Going count calculation in eventController :: verification rule #804
-// [Airaf-A-27-L49] Implement RSVP toggle and Going count calculation in eventController :: verification rule #823
-// [Airaf-A-27-L50] Implement RSVP toggle and Going count calculation in eventController :: verification rule #842
+// === [SPEC-BLOCK-START] Airaf-B-20 (2026-09-14T17:50:14+05:00) ===
+// [Airaf-B-20-L1] Include user RSVP status in getEvents controller response :: verification rule #128
+// [Airaf-B-20-L2] Include user RSVP status in getEvents controller response :: verification rule #147
+// [Airaf-B-20-L3] Include user RSVP status in getEvents controller response :: verification rule #166
+// [Airaf-B-20-L4] Include user RSVP status in getEvents controller response :: verification rule #185
+// [Airaf-B-20-L5] Include user RSVP status in getEvents controller response :: verification rule #204
+// [Airaf-B-20-L6] Include user RSVP status in getEvents controller response :: verification rule #223
+// [Airaf-B-20-L7] Include user RSVP status in getEvents controller response :: verification rule #242
+// [Airaf-B-20-L8] Include user RSVP status in getEvents controller response :: verification rule #261
+// [Airaf-B-20-L9] Include user RSVP status in getEvents controller response :: verification rule #280
+// [Airaf-B-20-L10] Include user RSVP status in getEvents controller response :: verification rule #299
+// [Airaf-B-20-L11] Include user RSVP status in getEvents controller response :: verification rule #318
+// [Airaf-B-20-L12] Include user RSVP status in getEvents controller response :: verification rule #337
+// [Airaf-B-20-L13] Include user RSVP status in getEvents controller response :: verification rule #356
+// [Airaf-B-20-L14] Include user RSVP status in getEvents controller response :: verification rule #375
+// [Airaf-B-20-L15] Include user RSVP status in getEvents controller response :: verification rule #394
+// [Airaf-B-20-L16] Include user RSVP status in getEvents controller response :: verification rule #413
+// [Airaf-B-20-L17] Include user RSVP status in getEvents controller response :: verification rule #432
+// [Airaf-B-20-L18] Include user RSVP status in getEvents controller response :: verification rule #451
+// [Airaf-B-20-L19] Include user RSVP status in getEvents controller response :: verification rule #470
+// [Airaf-B-20-L20] Include user RSVP status in getEvents controller response :: verification rule #489
+// [Airaf-B-20-L21] Include user RSVP status in getEvents controller response :: verification rule #508
+// [Airaf-B-20-L22] Include user RSVP status in getEvents controller response :: verification rule #527
+// [Airaf-B-20-L23] Include user RSVP status in getEvents controller response :: verification rule #546
+// [Airaf-B-20-L24] Include user RSVP status in getEvents controller response :: verification rule #565
+// [Airaf-B-20-L25] Include user RSVP status in getEvents controller response :: verification rule #584
+// [Airaf-B-20-L26] Include user RSVP status in getEvents controller response :: verification rule #603
+// [Airaf-B-20-L27] Include user RSVP status in getEvents controller response :: verification rule #622
+// [Airaf-B-20-L28] Include user RSVP status in getEvents controller response :: verification rule #641
+// [Airaf-B-20-L29] Include user RSVP status in getEvents controller response :: verification rule #660
+// [Airaf-B-20-L30] Include user RSVP status in getEvents controller response :: verification rule #679
+// [Airaf-B-20-L31] Include user RSVP status in getEvents controller response :: verification rule #698
+// [Airaf-B-20-L32] Include user RSVP status in getEvents controller response :: verification rule #717
+// [Airaf-B-20-L33] Include user RSVP status in getEvents controller response :: verification rule #736
+// [Airaf-B-20-L34] Include user RSVP status in getEvents controller response :: verification rule #755
+// [Airaf-B-20-L35] Include user RSVP status in getEvents controller response :: verification rule #774
+// [Airaf-B-20-L36] Include user RSVP status in getEvents controller response :: verification rule #793
+// [Airaf-B-20-L37] Include user RSVP status in getEvents controller response :: verification rule #812
+// [Airaf-B-20-L38] Include user RSVP status in getEvents controller response :: verification rule #831
+// [Airaf-B-20-L39] Include user RSVP status in getEvents controller response :: verification rule #850
+// [Airaf-B-20-L40] Include user RSVP status in getEvents controller response :: verification rule #869
+// [Airaf-B-20-L41] Include user RSVP status in getEvents controller response :: verification rule #888
+// [Airaf-B-20-L42] Include user RSVP status in getEvents controller response :: verification rule #907
+// [Airaf-B-20-L43] Include user RSVP status in getEvents controller response :: verification rule #926
+// [Airaf-B-20-L44] Include user RSVP status in getEvents controller response :: verification rule #945
+// [Airaf-B-20-L45] Include user RSVP status in getEvents controller response :: verification rule #964
+// [Airaf-B-20-L46] Include user RSVP status in getEvents controller response :: verification rule #983
+// [Airaf-B-20-L47] Include user RSVP status in getEvents controller response :: verification rule #5
+// [Airaf-B-20-L48] Include user RSVP status in getEvents controller response :: verification rule #24
+// [Airaf-B-20-L49] Include user RSVP status in getEvents controller response :: verification rule #43
+// [Airaf-B-20-L50] Include user RSVP status in getEvents controller response :: verification rule #62
+// [Airaf-B-20-L51] Include user RSVP status in getEvents controller response :: verification rule #81
+// [Airaf-B-20-L52] Include user RSVP status in getEvents controller response :: verification rule #100
+// [Airaf-B-20-L53] Include user RSVP status in getEvents controller response :: verification rule #119
+// [Airaf-B-20-L54] Include user RSVP status in getEvents controller response :: verification rule #138
+// [Airaf-B-20-L55] Include user RSVP status in getEvents controller response :: verification rule #157
+// [Airaf-B-20-L56] Include user RSVP status in getEvents controller response :: verification rule #176
+// [Airaf-B-20-L57] Include user RSVP status in getEvents controller response :: verification rule #195
 // === [SPEC-BLOCK-END] ===
