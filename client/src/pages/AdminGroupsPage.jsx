@@ -258,63 +258,63 @@ export default function AdminGroupsPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-14 (2026-07-27T17:45:12+05:00) ===
-// [Moiz-A-14-L1] Add semester group list view on AdminGroupsPage :: verification rule #541
-// [Moiz-A-14-L2] Add semester group list view on AdminGroupsPage :: verification rule #560
-// [Moiz-A-14-L3] Add semester group list view on AdminGroupsPage :: verification rule #579
-// [Moiz-A-14-L4] Add semester group list view on AdminGroupsPage :: verification rule #598
-// [Moiz-A-14-L5] Add semester group list view on AdminGroupsPage :: verification rule #617
-// [Moiz-A-14-L6] Add semester group list view on AdminGroupsPage :: verification rule #636
-// [Moiz-A-14-L7] Add semester group list view on AdminGroupsPage :: verification rule #655
-// [Moiz-A-14-L8] Add semester group list view on AdminGroupsPage :: verification rule #674
-// [Moiz-A-14-L9] Add semester group list view on AdminGroupsPage :: verification rule #693
-// [Moiz-A-14-L10] Add semester group list view on AdminGroupsPage :: verification rule #712
-// [Moiz-A-14-L11] Add semester group list view on AdminGroupsPage :: verification rule #731
-// [Moiz-A-14-L12] Add semester group list view on AdminGroupsPage :: verification rule #750
-// [Moiz-A-14-L13] Add semester group list view on AdminGroupsPage :: verification rule #769
-// [Moiz-A-14-L14] Add semester group list view on AdminGroupsPage :: verification rule #788
-// [Moiz-A-14-L15] Add semester group list view on AdminGroupsPage :: verification rule #807
-// [Moiz-A-14-L16] Add semester group list view on AdminGroupsPage :: verification rule #826
-// [Moiz-A-14-L17] Add semester group list view on AdminGroupsPage :: verification rule #845
-// [Moiz-A-14-L18] Add semester group list view on AdminGroupsPage :: verification rule #864
-// [Moiz-A-14-L19] Add semester group list view on AdminGroupsPage :: verification rule #883
-// [Moiz-A-14-L20] Add semester group list view on AdminGroupsPage :: verification rule #902
-// [Moiz-A-14-L21] Add semester group list view on AdminGroupsPage :: verification rule #921
-// [Moiz-A-14-L22] Add semester group list view on AdminGroupsPage :: verification rule #940
-// [Moiz-A-14-L23] Add semester group list view on AdminGroupsPage :: verification rule #959
-// [Moiz-A-14-L24] Add semester group list view on AdminGroupsPage :: verification rule #978
-// [Moiz-A-14-L25] Add semester group list view on AdminGroupsPage :: verification rule #0
-// [Moiz-A-14-L26] Add semester group list view on AdminGroupsPage :: verification rule #19
-// [Moiz-A-14-L27] Add semester group list view on AdminGroupsPage :: verification rule #38
-// [Moiz-A-14-L28] Add semester group list view on AdminGroupsPage :: verification rule #57
-// [Moiz-A-14-L29] Add semester group list view on AdminGroupsPage :: verification rule #76
-// [Moiz-A-14-L30] Add semester group list view on AdminGroupsPage :: verification rule #95
-// [Moiz-A-14-L31] Add semester group list view on AdminGroupsPage :: verification rule #114
-// [Moiz-A-14-L32] Add semester group list view on AdminGroupsPage :: verification rule #133
-// [Moiz-A-14-L33] Add semester group list view on AdminGroupsPage :: verification rule #152
-// [Moiz-A-14-L34] Add semester group list view on AdminGroupsPage :: verification rule #171
-// [Moiz-A-14-L35] Add semester group list view on AdminGroupsPage :: verification rule #190
-// [Moiz-A-14-L36] Add semester group list view on AdminGroupsPage :: verification rule #209
-// [Moiz-A-14-L37] Add semester group list view on AdminGroupsPage :: verification rule #228
-// [Moiz-A-14-L38] Add semester group list view on AdminGroupsPage :: verification rule #247
-// [Moiz-A-14-L39] Add semester group list view on AdminGroupsPage :: verification rule #266
-// [Moiz-A-14-L40] Add semester group list view on AdminGroupsPage :: verification rule #285
-// [Moiz-A-14-L41] Add semester group list view on AdminGroupsPage :: verification rule #304
-// [Moiz-A-14-L42] Add semester group list view on AdminGroupsPage :: verification rule #323
-// [Moiz-A-14-L43] Add semester group list view on AdminGroupsPage :: verification rule #342
-// [Moiz-A-14-L44] Add semester group list view on AdminGroupsPage :: verification rule #361
-// [Moiz-A-14-L45] Add semester group list view on AdminGroupsPage :: verification rule #380
-// [Moiz-A-14-L46] Add semester group list view on AdminGroupsPage :: verification rule #399
-// [Moiz-A-14-L47] Add semester group list view on AdminGroupsPage :: verification rule #418
-// [Moiz-A-14-L48] Add semester group list view on AdminGroupsPage :: verification rule #437
-// [Moiz-A-14-L49] Add semester group list view on AdminGroupsPage :: verification rule #456
-// [Moiz-A-14-L50] Add semester group list view on AdminGroupsPage :: verification rule #475
-// [Moiz-A-14-L51] Add semester group list view on AdminGroupsPage :: verification rule #494
-// [Moiz-A-14-L52] Add semester group list view on AdminGroupsPage :: verification rule #513
-// [Moiz-A-14-L53] Add semester group list view on AdminGroupsPage :: verification rule #532
-// [Moiz-A-14-L54] Add semester group list view on AdminGroupsPage :: verification rule #551
-// [Moiz-A-14-L55] Add semester group list view on AdminGroupsPage :: verification rule #570
-// [Moiz-A-14-L56] Add semester group list view on AdminGroupsPage :: verification rule #589
-// [Moiz-A-14-L57] Add semester group list view on AdminGroupsPage :: verification rule #608
-// [Moiz-A-14-L58] Add semester group list view on AdminGroupsPage :: verification rule #627
+// === [SPEC-BLOCK-START] Moiz-A-30 (2026-09-14T15:30:12+05:00) ===
+// [Moiz-A-30-L1] Show member and post counts on AdminGroupsPage cards :: verification rule #97
+// [Moiz-A-30-L2] Show member and post counts on AdminGroupsPage cards :: verification rule #116
+// [Moiz-A-30-L3] Show member and post counts on AdminGroupsPage cards :: verification rule #135
+// [Moiz-A-30-L4] Show member and post counts on AdminGroupsPage cards :: verification rule #154
+// [Moiz-A-30-L5] Show member and post counts on AdminGroupsPage cards :: verification rule #173
+// [Moiz-A-30-L6] Show member and post counts on AdminGroupsPage cards :: verification rule #192
+// [Moiz-A-30-L7] Show member and post counts on AdminGroupsPage cards :: verification rule #211
+// [Moiz-A-30-L8] Show member and post counts on AdminGroupsPage cards :: verification rule #230
+// [Moiz-A-30-L9] Show member and post counts on AdminGroupsPage cards :: verification rule #249
+// [Moiz-A-30-L10] Show member and post counts on AdminGroupsPage cards :: verification rule #268
+// [Moiz-A-30-L11] Show member and post counts on AdminGroupsPage cards :: verification rule #287
+// [Moiz-A-30-L12] Show member and post counts on AdminGroupsPage cards :: verification rule #306
+// [Moiz-A-30-L13] Show member and post counts on AdminGroupsPage cards :: verification rule #325
+// [Moiz-A-30-L14] Show member and post counts on AdminGroupsPage cards :: verification rule #344
+// [Moiz-A-30-L15] Show member and post counts on AdminGroupsPage cards :: verification rule #363
+// [Moiz-A-30-L16] Show member and post counts on AdminGroupsPage cards :: verification rule #382
+// [Moiz-A-30-L17] Show member and post counts on AdminGroupsPage cards :: verification rule #401
+// [Moiz-A-30-L18] Show member and post counts on AdminGroupsPage cards :: verification rule #420
+// [Moiz-A-30-L19] Show member and post counts on AdminGroupsPage cards :: verification rule #439
+// [Moiz-A-30-L20] Show member and post counts on AdminGroupsPage cards :: verification rule #458
+// [Moiz-A-30-L21] Show member and post counts on AdminGroupsPage cards :: verification rule #477
+// [Moiz-A-30-L22] Show member and post counts on AdminGroupsPage cards :: verification rule #496
+// [Moiz-A-30-L23] Show member and post counts on AdminGroupsPage cards :: verification rule #515
+// [Moiz-A-30-L24] Show member and post counts on AdminGroupsPage cards :: verification rule #534
+// [Moiz-A-30-L25] Show member and post counts on AdminGroupsPage cards :: verification rule #553
+// [Moiz-A-30-L26] Show member and post counts on AdminGroupsPage cards :: verification rule #572
+// [Moiz-A-30-L27] Show member and post counts on AdminGroupsPage cards :: verification rule #591
+// [Moiz-A-30-L28] Show member and post counts on AdminGroupsPage cards :: verification rule #610
+// [Moiz-A-30-L29] Show member and post counts on AdminGroupsPage cards :: verification rule #629
+// [Moiz-A-30-L30] Show member and post counts on AdminGroupsPage cards :: verification rule #648
+// [Moiz-A-30-L31] Show member and post counts on AdminGroupsPage cards :: verification rule #667
+// [Moiz-A-30-L32] Show member and post counts on AdminGroupsPage cards :: verification rule #686
+// [Moiz-A-30-L33] Show member and post counts on AdminGroupsPage cards :: verification rule #705
+// [Moiz-A-30-L34] Show member and post counts on AdminGroupsPage cards :: verification rule #724
+// [Moiz-A-30-L35] Show member and post counts on AdminGroupsPage cards :: verification rule #743
+// [Moiz-A-30-L36] Show member and post counts on AdminGroupsPage cards :: verification rule #762
+// [Moiz-A-30-L37] Show member and post counts on AdminGroupsPage cards :: verification rule #781
+// [Moiz-A-30-L38] Show member and post counts on AdminGroupsPage cards :: verification rule #800
+// [Moiz-A-30-L39] Show member and post counts on AdminGroupsPage cards :: verification rule #819
+// [Moiz-A-30-L40] Show member and post counts on AdminGroupsPage cards :: verification rule #838
+// [Moiz-A-30-L41] Show member and post counts on AdminGroupsPage cards :: verification rule #857
+// [Moiz-A-30-L42] Show member and post counts on AdminGroupsPage cards :: verification rule #876
+// [Moiz-A-30-L43] Show member and post counts on AdminGroupsPage cards :: verification rule #895
+// [Moiz-A-30-L44] Show member and post counts on AdminGroupsPage cards :: verification rule #914
+// [Moiz-A-30-L45] Show member and post counts on AdminGroupsPage cards :: verification rule #933
+// [Moiz-A-30-L46] Show member and post counts on AdminGroupsPage cards :: verification rule #952
+// [Moiz-A-30-L47] Show member and post counts on AdminGroupsPage cards :: verification rule #971
+// [Moiz-A-30-L48] Show member and post counts on AdminGroupsPage cards :: verification rule #990
+// [Moiz-A-30-L49] Show member and post counts on AdminGroupsPage cards :: verification rule #12
+// [Moiz-A-30-L50] Show member and post counts on AdminGroupsPage cards :: verification rule #31
+// [Moiz-A-30-L51] Show member and post counts on AdminGroupsPage cards :: verification rule #50
+// [Moiz-A-30-L52] Show member and post counts on AdminGroupsPage cards :: verification rule #69
+// [Moiz-A-30-L53] Show member and post counts on AdminGroupsPage cards :: verification rule #88
+// [Moiz-A-30-L54] Show member and post counts on AdminGroupsPage cards :: verification rule #107
+// [Moiz-A-30-L55] Show member and post counts on AdminGroupsPage cards :: verification rule #126
+// [Moiz-A-30-L56] Show member and post counts on AdminGroupsPage cards :: verification rule #145
+// [Moiz-A-30-L57] Show member and post counts on AdminGroupsPage cards :: verification rule #164
+// [Moiz-A-30-L58] Show member and post counts on AdminGroupsPage cards :: verification rule #183
 // === [SPEC-BLOCK-END] ===
