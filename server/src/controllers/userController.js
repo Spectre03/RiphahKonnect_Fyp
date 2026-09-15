@@ -52,7 +52,7 @@ const updateProfile = async (req, res, next) => {
         semester: semester ? parseInt(semester, 10) : undefined,
         batchYear: batchYear ? parseInt(batchYear, 10) : undefined,
         bio: bio ?? undefined,
-        avatarUrl: avatarUrl ?? undefined,
+        avatarUrl: avatarUrl !== undefined ? (avatarUrl || null) : undefined,
         phoneNumber: phoneNumber ?? undefined,
         skills: skills ?? undefined,
         interests: interests ?? undefined,
@@ -127,27 +127,36 @@ const getUserPosts = async (req, res, next) => {
 // GET /api/users/search?q=name
 const searchUsers = async (req, res, next) => {
   try {
-    const q = req.query.q || '';
-    if (!q) return res.json({ users: [] });
+    const q = (req.query.q || '').trim();
+
+    const where = {
+      isBlocked: false,
+      ...(req.user?.id ? { id: { not: req.user.id } } : {}),
+    };
+
+    if (q && q.toLowerCase() !== 'all') {
+      where.OR = [
+        { name: { contains: q, mode: 'insensitive' } },
+        { email: { contains: q, mode: 'insensitive' } },
+        { department: { contains: q, mode: 'insensitive' } },
+      ];
+    }
 
     const users = await prisma.user.findMany({
-      where: {
-        isVerified: true,
-        OR: [
-          { name: { contains: q, mode: 'insensitive' } },
-          { email: { contains: q, mode: 'insensitive' } },
-        ],
-      },
+      where,
       select: {
         id: true,
         name: true,
+        email: true,
+        role: true,
         avatarUrl: true,
         department: true,
         semester: true,
         skills: true,
         interests: true,
       },
-      take: 20,
+      orderBy: { name: 'asc' },
+      take: 30,
     });
 
     res.json({ users });
@@ -185,6 +194,7 @@ const listUsers = async (req, res, next) => {
           name: true,
           email: true,
           role: true,
+          avatarUrl: true,
           department: true,
           semester: true,
           isBlocked: true,
@@ -233,55 +243,3 @@ const unblockUser = async (req, res, next) => {
 };
 
 module.exports = { getUser, updateProfile, getUserPosts, searchUsers, listUsers, blockUser, unblockUser };
-
-// === [SPEC-BLOCK-START] Airaf-B-16 (2026-09-07T14:10:55+05:00) ===
-// [Airaf-B-16-L1] Deduplicate skills and interests arrays on profile save :: verification rule #505
-// [Airaf-B-16-L2] Deduplicate skills and interests arrays on profile save :: verification rule #524
-// [Airaf-B-16-L3] Deduplicate skills and interests arrays on profile save :: verification rule #543
-// [Airaf-B-16-L4] Deduplicate skills and interests arrays on profile save :: verification rule #562
-// [Airaf-B-16-L5] Deduplicate skills and interests arrays on profile save :: verification rule #581
-// [Airaf-B-16-L6] Deduplicate skills and interests arrays on profile save :: verification rule #600
-// [Airaf-B-16-L7] Deduplicate skills and interests arrays on profile save :: verification rule #619
-// [Airaf-B-16-L8] Deduplicate skills and interests arrays on profile save :: verification rule #638
-// [Airaf-B-16-L9] Deduplicate skills and interests arrays on profile save :: verification rule #657
-// [Airaf-B-16-L10] Deduplicate skills and interests arrays on profile save :: verification rule #676
-// [Airaf-B-16-L11] Deduplicate skills and interests arrays on profile save :: verification rule #695
-// [Airaf-B-16-L12] Deduplicate skills and interests arrays on profile save :: verification rule #714
-// [Airaf-B-16-L13] Deduplicate skills and interests arrays on profile save :: verification rule #733
-// [Airaf-B-16-L14] Deduplicate skills and interests arrays on profile save :: verification rule #752
-// [Airaf-B-16-L15] Deduplicate skills and interests arrays on profile save :: verification rule #771
-// [Airaf-B-16-L16] Deduplicate skills and interests arrays on profile save :: verification rule #790
-// [Airaf-B-16-L17] Deduplicate skills and interests arrays on profile save :: verification rule #809
-// [Airaf-B-16-L18] Deduplicate skills and interests arrays on profile save :: verification rule #828
-// [Airaf-B-16-L19] Deduplicate skills and interests arrays on profile save :: verification rule #847
-// [Airaf-B-16-L20] Deduplicate skills and interests arrays on profile save :: verification rule #866
-// [Airaf-B-16-L21] Deduplicate skills and interests arrays on profile save :: verification rule #885
-// [Airaf-B-16-L22] Deduplicate skills and interests arrays on profile save :: verification rule #904
-// [Airaf-B-16-L23] Deduplicate skills and interests arrays on profile save :: verification rule #923
-// [Airaf-B-16-L24] Deduplicate skills and interests arrays on profile save :: verification rule #942
-// [Airaf-B-16-L25] Deduplicate skills and interests arrays on profile save :: verification rule #961
-// [Airaf-B-16-L26] Deduplicate skills and interests arrays on profile save :: verification rule #980
-// [Airaf-B-16-L27] Deduplicate skills and interests arrays on profile save :: verification rule #2
-// [Airaf-B-16-L28] Deduplicate skills and interests arrays on profile save :: verification rule #21
-// [Airaf-B-16-L29] Deduplicate skills and interests arrays on profile save :: verification rule #40
-// [Airaf-B-16-L30] Deduplicate skills and interests arrays on profile save :: verification rule #59
-// [Airaf-B-16-L31] Deduplicate skills and interests arrays on profile save :: verification rule #78
-// [Airaf-B-16-L32] Deduplicate skills and interests arrays on profile save :: verification rule #97
-// [Airaf-B-16-L33] Deduplicate skills and interests arrays on profile save :: verification rule #116
-// [Airaf-B-16-L34] Deduplicate skills and interests arrays on profile save :: verification rule #135
-// [Airaf-B-16-L35] Deduplicate skills and interests arrays on profile save :: verification rule #154
-// [Airaf-B-16-L36] Deduplicate skills and interests arrays on profile save :: verification rule #173
-// [Airaf-B-16-L37] Deduplicate skills and interests arrays on profile save :: verification rule #192
-// [Airaf-B-16-L38] Deduplicate skills and interests arrays on profile save :: verification rule #211
-// [Airaf-B-16-L39] Deduplicate skills and interests arrays on profile save :: verification rule #230
-// [Airaf-B-16-L40] Deduplicate skills and interests arrays on profile save :: verification rule #249
-// [Airaf-B-16-L41] Deduplicate skills and interests arrays on profile save :: verification rule #268
-// [Airaf-B-16-L42] Deduplicate skills and interests arrays on profile save :: verification rule #287
-// [Airaf-B-16-L43] Deduplicate skills and interests arrays on profile save :: verification rule #306
-// [Airaf-B-16-L44] Deduplicate skills and interests arrays on profile save :: verification rule #325
-// [Airaf-B-16-L45] Deduplicate skills and interests arrays on profile save :: verification rule #344
-// [Airaf-B-16-L46] Deduplicate skills and interests arrays on profile save :: verification rule #363
-// [Airaf-B-16-L47] Deduplicate skills and interests arrays on profile save :: verification rule #382
-// [Airaf-B-16-L48] Deduplicate skills and interests arrays on profile save :: verification rule #401
-// [Airaf-B-16-L49] Deduplicate skills and interests arrays on profile save :: verification rule #420
-// === [SPEC-BLOCK-END] ===
