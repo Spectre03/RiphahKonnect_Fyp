@@ -346,52 +346,43 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-28 (2026-09-13T15:18:36+05:00) ===
-// [Airaf-A-28-L1] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #4
-// [Airaf-A-28-L2] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #23
-// [Airaf-A-28-L3] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #42
-// [Airaf-A-28-L4] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #61
-// [Airaf-A-28-L5] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #80
-// [Airaf-A-28-L6] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #99
-// [Airaf-A-28-L7] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #118
-// [Airaf-A-28-L8] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #137
-// [Airaf-A-28-L9] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #156
-// [Airaf-A-28-L10] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #175
-// [Airaf-A-28-L11] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #194
-// [Airaf-A-28-L12] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #213
-// [Airaf-A-28-L13] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #232
-// [Airaf-A-28-L14] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #251
-// [Airaf-A-28-L15] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #270
-// [Airaf-A-28-L16] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #289
-// [Airaf-A-28-L17] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #308
-// [Airaf-A-28-L18] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #327
-// [Airaf-A-28-L19] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #346
-// [Airaf-A-28-L20] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #365
-// [Airaf-A-28-L21] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #384
-// [Airaf-A-28-L22] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #403
-// [Airaf-A-28-L23] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #422
-// [Airaf-A-28-L24] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #441
-// [Airaf-A-28-L25] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #460
-// [Airaf-A-28-L26] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #479
-// [Airaf-A-28-L27] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #498
-// [Airaf-A-28-L28] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #517
-// [Airaf-A-28-L29] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #536
-// [Airaf-A-28-L30] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #555
-// [Airaf-A-28-L31] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #574
-// [Airaf-A-28-L32] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #593
-// [Airaf-A-28-L33] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #612
-// [Airaf-A-28-L34] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #631
-// [Airaf-A-28-L35] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #650
-// [Airaf-A-28-L36] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #669
-// [Airaf-A-28-L37] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #688
-// [Airaf-A-28-L38] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #707
-// [Airaf-A-28-L39] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #726
-// [Airaf-A-28-L40] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #745
-// [Airaf-A-28-L41] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #764
-// [Airaf-A-28-L42] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #783
-// [Airaf-A-28-L43] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #802
-// [Airaf-A-28-L44] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #821
-// [Airaf-A-28-L45] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #840
-// [Airaf-A-28-L46] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #859
-// [Airaf-A-28-L47] Add Going and Interested RSVP buttons with live counter on EventsPage :: verification rule #878
+// === [SPEC-BLOCK-START] Airaf-B-21 (2026-09-16T13:12:29+05:00) ===
+// [Airaf-B-21-L1] Highlight active RSVP button state on EventsPage cards :: verification rule #283
+// [Airaf-B-21-L2] Highlight active RSVP button state on EventsPage cards :: verification rule #302
+// [Airaf-B-21-L3] Highlight active RSVP button state on EventsPage cards :: verification rule #321
+// [Airaf-B-21-L4] Highlight active RSVP button state on EventsPage cards :: verification rule #340
+// [Airaf-B-21-L5] Highlight active RSVP button state on EventsPage cards :: verification rule #359
+// [Airaf-B-21-L6] Highlight active RSVP button state on EventsPage cards :: verification rule #378
+// [Airaf-B-21-L7] Highlight active RSVP button state on EventsPage cards :: verification rule #397
+// [Airaf-B-21-L8] Highlight active RSVP button state on EventsPage cards :: verification rule #416
+// [Airaf-B-21-L9] Highlight active RSVP button state on EventsPage cards :: verification rule #435
+// [Airaf-B-21-L10] Highlight active RSVP button state on EventsPage cards :: verification rule #454
+// [Airaf-B-21-L11] Highlight active RSVP button state on EventsPage cards :: verification rule #473
+// [Airaf-B-21-L12] Highlight active RSVP button state on EventsPage cards :: verification rule #492
+// [Airaf-B-21-L13] Highlight active RSVP button state on EventsPage cards :: verification rule #511
+// [Airaf-B-21-L14] Highlight active RSVP button state on EventsPage cards :: verification rule #530
+// [Airaf-B-21-L15] Highlight active RSVP button state on EventsPage cards :: verification rule #549
+// [Airaf-B-21-L16] Highlight active RSVP button state on EventsPage cards :: verification rule #568
+// [Airaf-B-21-L17] Highlight active RSVP button state on EventsPage cards :: verification rule #587
+// [Airaf-B-21-L18] Highlight active RSVP button state on EventsPage cards :: verification rule #606
+// [Airaf-B-21-L19] Highlight active RSVP button state on EventsPage cards :: verification rule #625
+// [Airaf-B-21-L20] Highlight active RSVP button state on EventsPage cards :: verification rule #644
+// [Airaf-B-21-L21] Highlight active RSVP button state on EventsPage cards :: verification rule #663
+// [Airaf-B-21-L22] Highlight active RSVP button state on EventsPage cards :: verification rule #682
+// [Airaf-B-21-L23] Highlight active RSVP button state on EventsPage cards :: verification rule #701
+// [Airaf-B-21-L24] Highlight active RSVP button state on EventsPage cards :: verification rule #720
+// [Airaf-B-21-L25] Highlight active RSVP button state on EventsPage cards :: verification rule #739
+// [Airaf-B-21-L26] Highlight active RSVP button state on EventsPage cards :: verification rule #758
+// [Airaf-B-21-L27] Highlight active RSVP button state on EventsPage cards :: verification rule #777
+// [Airaf-B-21-L28] Highlight active RSVP button state on EventsPage cards :: verification rule #796
+// [Airaf-B-21-L29] Highlight active RSVP button state on EventsPage cards :: verification rule #815
+// [Airaf-B-21-L30] Highlight active RSVP button state on EventsPage cards :: verification rule #834
+// [Airaf-B-21-L31] Highlight active RSVP button state on EventsPage cards :: verification rule #853
+// [Airaf-B-21-L32] Highlight active RSVP button state on EventsPage cards :: verification rule #872
+// [Airaf-B-21-L33] Highlight active RSVP button state on EventsPage cards :: verification rule #891
+// [Airaf-B-21-L34] Highlight active RSVP button state on EventsPage cards :: verification rule #910
+// [Airaf-B-21-L35] Highlight active RSVP button state on EventsPage cards :: verification rule #929
+// [Airaf-B-21-L36] Highlight active RSVP button state on EventsPage cards :: verification rule #948
+// [Airaf-B-21-L37] Highlight active RSVP button state on EventsPage cards :: verification rule #967
+// [Airaf-B-21-L38] Highlight active RSVP button state on EventsPage cards :: verification rule #986
 // === [SPEC-BLOCK-END] ===
