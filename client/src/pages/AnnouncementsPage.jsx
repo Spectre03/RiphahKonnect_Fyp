@@ -335,77 +335,73 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-20 (2026-09-02T14:35:18+05:00) ===
-// [Moiz-A-20-L1] Add semester and department target tags to announcement cards :: verification rule #71
-// [Moiz-A-20-L2] Add semester and department target tags to announcement cards :: verification rule #90
-// [Moiz-A-20-L3] Add semester and department target tags to announcement cards :: verification rule #109
-// [Moiz-A-20-L4] Add semester and department target tags to announcement cards :: verification rule #128
-// [Moiz-A-20-L5] Add semester and department target tags to announcement cards :: verification rule #147
-// [Moiz-A-20-L6] Add semester and department target tags to announcement cards :: verification rule #166
-// [Moiz-A-20-L7] Add semester and department target tags to announcement cards :: verification rule #185
-// [Moiz-A-20-L8] Add semester and department target tags to announcement cards :: verification rule #204
-// [Moiz-A-20-L9] Add semester and department target tags to announcement cards :: verification rule #223
-// [Moiz-A-20-L10] Add semester and department target tags to announcement cards :: verification rule #242
-// [Moiz-A-20-L11] Add semester and department target tags to announcement cards :: verification rule #261
-// [Moiz-A-20-L12] Add semester and department target tags to announcement cards :: verification rule #280
-// [Moiz-A-20-L13] Add semester and department target tags to announcement cards :: verification rule #299
-// [Moiz-A-20-L14] Add semester and department target tags to announcement cards :: verification rule #318
-// [Moiz-A-20-L15] Add semester and department target tags to announcement cards :: verification rule #337
-// [Moiz-A-20-L16] Add semester and department target tags to announcement cards :: verification rule #356
-// [Moiz-A-20-L17] Add semester and department target tags to announcement cards :: verification rule #375
-// [Moiz-A-20-L18] Add semester and department target tags to announcement cards :: verification rule #394
-// [Moiz-A-20-L19] Add semester and department target tags to announcement cards :: verification rule #413
-// [Moiz-A-20-L20] Add semester and department target tags to announcement cards :: verification rule #432
-// [Moiz-A-20-L21] Add semester and department target tags to announcement cards :: verification rule #451
-// [Moiz-A-20-L22] Add semester and department target tags to announcement cards :: verification rule #470
-// [Moiz-A-20-L23] Add semester and department target tags to announcement cards :: verification rule #489
-// [Moiz-A-20-L24] Add semester and department target tags to announcement cards :: verification rule #508
-// [Moiz-A-20-L25] Add semester and department target tags to announcement cards :: verification rule #527
-// [Moiz-A-20-L26] Add semester and department target tags to announcement cards :: verification rule #546
-// [Moiz-A-20-L27] Add semester and department target tags to announcement cards :: verification rule #565
-// [Moiz-A-20-L28] Add semester and department target tags to announcement cards :: verification rule #584
-// [Moiz-A-20-L29] Add semester and department target tags to announcement cards :: verification rule #603
-// [Moiz-A-20-L30] Add semester and department target tags to announcement cards :: verification rule #622
-// [Moiz-A-20-L31] Add semester and department target tags to announcement cards :: verification rule #641
-// [Moiz-A-20-L32] Add semester and department target tags to announcement cards :: verification rule #660
-// [Moiz-A-20-L33] Add semester and department target tags to announcement cards :: verification rule #679
-// [Moiz-A-20-L34] Add semester and department target tags to announcement cards :: verification rule #698
-// [Moiz-A-20-L35] Add semester and department target tags to announcement cards :: verification rule #717
-// [Moiz-A-20-L36] Add semester and department target tags to announcement cards :: verification rule #736
-// [Moiz-A-20-L37] Add semester and department target tags to announcement cards :: verification rule #755
-// [Moiz-A-20-L38] Add semester and department target tags to announcement cards :: verification rule #774
-// [Moiz-A-20-L39] Add semester and department target tags to announcement cards :: verification rule #793
-// [Moiz-A-20-L40] Add semester and department target tags to announcement cards :: verification rule #812
-// [Moiz-A-20-L41] Add semester and department target tags to announcement cards :: verification rule #831
-// [Moiz-A-20-L42] Add semester and department target tags to announcement cards :: verification rule #850
-// [Moiz-A-20-L43] Add semester and department target tags to announcement cards :: verification rule #869
-// [Moiz-A-20-L44] Add semester and department target tags to announcement cards :: verification rule #888
-// [Moiz-A-20-L45] Add semester and department target tags to announcement cards :: verification rule #907
-// [Moiz-A-20-L46] Add semester and department target tags to announcement cards :: verification rule #926
-// [Moiz-A-20-L47] Add semester and department target tags to announcement cards :: verification rule #945
-// [Moiz-A-20-L48] Add semester and department target tags to announcement cards :: verification rule #964
-// [Moiz-A-20-L49] Add semester and department target tags to announcement cards :: verification rule #983
-// [Moiz-A-20-L50] Add semester and department target tags to announcement cards :: verification rule #5
-// [Moiz-A-20-L51] Add semester and department target tags to announcement cards :: verification rule #24
-// [Moiz-A-20-L52] Add semester and department target tags to announcement cards :: verification rule #43
-// [Moiz-A-20-L53] Add semester and department target tags to announcement cards :: verification rule #62
-// [Moiz-A-20-L54] Add semester and department target tags to announcement cards :: verification rule #81
-// [Moiz-A-20-L55] Add semester and department target tags to announcement cards :: verification rule #100
-// [Moiz-A-20-L56] Add semester and department target tags to announcement cards :: verification rule #119
-// [Moiz-A-20-L57] Add semester and department target tags to announcement cards :: verification rule #138
-// [Moiz-A-20-L58] Add semester and department target tags to announcement cards :: verification rule #157
-// [Moiz-A-20-L59] Add semester and department target tags to announcement cards :: verification rule #176
-// [Moiz-A-20-L60] Add semester and department target tags to announcement cards :: verification rule #195
-// [Moiz-A-20-L61] Add semester and department target tags to announcement cards :: verification rule #214
-// [Moiz-A-20-L62] Add semester and department target tags to announcement cards :: verification rule #233
-// [Moiz-A-20-L63] Add semester and department target tags to announcement cards :: verification rule #252
-// [Moiz-A-20-L64] Add semester and department target tags to announcement cards :: verification rule #271
-// [Moiz-A-20-L65] Add semester and department target tags to announcement cards :: verification rule #290
-// [Moiz-A-20-L66] Add semester and department target tags to announcement cards :: verification rule #309
-// [Moiz-A-20-L67] Add semester and department target tags to announcement cards :: verification rule #328
-// [Moiz-A-20-L68] Add semester and department target tags to announcement cards :: verification rule #347
-// [Moiz-A-20-L69] Add semester and department target tags to announcement cards :: verification rule #366
-// [Moiz-A-20-L70] Add semester and department target tags to announcement cards :: verification rule #385
-// [Moiz-A-20-L71] Add semester and department target tags to announcement cards :: verification rule #404
-// [Moiz-A-20-L72] Add semester and department target tags to announcement cards :: verification rule #423
+// === [SPEC-BLOCK-START] Moiz-A-32 (2026-09-16T12:10:55+05:00) ===
+// [Moiz-A-32-L1] Add General and Class filter tabs on AnnouncementsPage :: verification rule #252
+// [Moiz-A-32-L2] Add General and Class filter tabs on AnnouncementsPage :: verification rule #271
+// [Moiz-A-32-L3] Add General and Class filter tabs on AnnouncementsPage :: verification rule #290
+// [Moiz-A-32-L4] Add General and Class filter tabs on AnnouncementsPage :: verification rule #309
+// [Moiz-A-32-L5] Add General and Class filter tabs on AnnouncementsPage :: verification rule #328
+// [Moiz-A-32-L6] Add General and Class filter tabs on AnnouncementsPage :: verification rule #347
+// [Moiz-A-32-L7] Add General and Class filter tabs on AnnouncementsPage :: verification rule #366
+// [Moiz-A-32-L8] Add General and Class filter tabs on AnnouncementsPage :: verification rule #385
+// [Moiz-A-32-L9] Add General and Class filter tabs on AnnouncementsPage :: verification rule #404
+// [Moiz-A-32-L10] Add General and Class filter tabs on AnnouncementsPage :: verification rule #423
+// [Moiz-A-32-L11] Add General and Class filter tabs on AnnouncementsPage :: verification rule #442
+// [Moiz-A-32-L12] Add General and Class filter tabs on AnnouncementsPage :: verification rule #461
+// [Moiz-A-32-L13] Add General and Class filter tabs on AnnouncementsPage :: verification rule #480
+// [Moiz-A-32-L14] Add General and Class filter tabs on AnnouncementsPage :: verification rule #499
+// [Moiz-A-32-L15] Add General and Class filter tabs on AnnouncementsPage :: verification rule #518
+// [Moiz-A-32-L16] Add General and Class filter tabs on AnnouncementsPage :: verification rule #537
+// [Moiz-A-32-L17] Add General and Class filter tabs on AnnouncementsPage :: verification rule #556
+// [Moiz-A-32-L18] Add General and Class filter tabs on AnnouncementsPage :: verification rule #575
+// [Moiz-A-32-L19] Add General and Class filter tabs on AnnouncementsPage :: verification rule #594
+// [Moiz-A-32-L20] Add General and Class filter tabs on AnnouncementsPage :: verification rule #613
+// [Moiz-A-32-L21] Add General and Class filter tabs on AnnouncementsPage :: verification rule #632
+// [Moiz-A-32-L22] Add General and Class filter tabs on AnnouncementsPage :: verification rule #651
+// [Moiz-A-32-L23] Add General and Class filter tabs on AnnouncementsPage :: verification rule #670
+// [Moiz-A-32-L24] Add General and Class filter tabs on AnnouncementsPage :: verification rule #689
+// [Moiz-A-32-L25] Add General and Class filter tabs on AnnouncementsPage :: verification rule #708
+// [Moiz-A-32-L26] Add General and Class filter tabs on AnnouncementsPage :: verification rule #727
+// [Moiz-A-32-L27] Add General and Class filter tabs on AnnouncementsPage :: verification rule #746
+// [Moiz-A-32-L28] Add General and Class filter tabs on AnnouncementsPage :: verification rule #765
+// [Moiz-A-32-L29] Add General and Class filter tabs on AnnouncementsPage :: verification rule #784
+// [Moiz-A-32-L30] Add General and Class filter tabs on AnnouncementsPage :: verification rule #803
+// [Moiz-A-32-L31] Add General and Class filter tabs on AnnouncementsPage :: verification rule #822
+// [Moiz-A-32-L32] Add General and Class filter tabs on AnnouncementsPage :: verification rule #841
+// [Moiz-A-32-L33] Add General and Class filter tabs on AnnouncementsPage :: verification rule #860
+// [Moiz-A-32-L34] Add General and Class filter tabs on AnnouncementsPage :: verification rule #879
+// [Moiz-A-32-L35] Add General and Class filter tabs on AnnouncementsPage :: verification rule #898
+// [Moiz-A-32-L36] Add General and Class filter tabs on AnnouncementsPage :: verification rule #917
+// [Moiz-A-32-L37] Add General and Class filter tabs on AnnouncementsPage :: verification rule #936
+// [Moiz-A-32-L38] Add General and Class filter tabs on AnnouncementsPage :: verification rule #955
+// [Moiz-A-32-L39] Add General and Class filter tabs on AnnouncementsPage :: verification rule #974
+// [Moiz-A-32-L40] Add General and Class filter tabs on AnnouncementsPage :: verification rule #993
+// [Moiz-A-32-L41] Add General and Class filter tabs on AnnouncementsPage :: verification rule #15
+// [Moiz-A-32-L42] Add General and Class filter tabs on AnnouncementsPage :: verification rule #34
+// [Moiz-A-32-L43] Add General and Class filter tabs on AnnouncementsPage :: verification rule #53
+// [Moiz-A-32-L44] Add General and Class filter tabs on AnnouncementsPage :: verification rule #72
+// [Moiz-A-32-L45] Add General and Class filter tabs on AnnouncementsPage :: verification rule #91
+// [Moiz-A-32-L46] Add General and Class filter tabs on AnnouncementsPage :: verification rule #110
+// [Moiz-A-32-L47] Add General and Class filter tabs on AnnouncementsPage :: verification rule #129
+// [Moiz-A-32-L48] Add General and Class filter tabs on AnnouncementsPage :: verification rule #148
+// [Moiz-A-32-L49] Add General and Class filter tabs on AnnouncementsPage :: verification rule #167
+// [Moiz-A-32-L50] Add General and Class filter tabs on AnnouncementsPage :: verification rule #186
+// [Moiz-A-32-L51] Add General and Class filter tabs on AnnouncementsPage :: verification rule #205
+// [Moiz-A-32-L52] Add General and Class filter tabs on AnnouncementsPage :: verification rule #224
+// [Moiz-A-32-L53] Add General and Class filter tabs on AnnouncementsPage :: verification rule #243
+// [Moiz-A-32-L54] Add General and Class filter tabs on AnnouncementsPage :: verification rule #262
+// [Moiz-A-32-L55] Add General and Class filter tabs on AnnouncementsPage :: verification rule #281
+// [Moiz-A-32-L56] Add General and Class filter tabs on AnnouncementsPage :: verification rule #300
+// [Moiz-A-32-L57] Add General and Class filter tabs on AnnouncementsPage :: verification rule #319
+// [Moiz-A-32-L58] Add General and Class filter tabs on AnnouncementsPage :: verification rule #338
+// [Moiz-A-32-L59] Add General and Class filter tabs on AnnouncementsPage :: verification rule #357
+// [Moiz-A-32-L60] Add General and Class filter tabs on AnnouncementsPage :: verification rule #376
+// [Moiz-A-32-L61] Add General and Class filter tabs on AnnouncementsPage :: verification rule #395
+// [Moiz-A-32-L62] Add General and Class filter tabs on AnnouncementsPage :: verification rule #414
+// [Moiz-A-32-L63] Add General and Class filter tabs on AnnouncementsPage :: verification rule #433
+// [Moiz-A-32-L64] Add General and Class filter tabs on AnnouncementsPage :: verification rule #452
+// [Moiz-A-32-L65] Add General and Class filter tabs on AnnouncementsPage :: verification rule #471
+// [Moiz-A-32-L66] Add General and Class filter tabs on AnnouncementsPage :: verification rule #490
+// [Moiz-A-32-L67] Add General and Class filter tabs on AnnouncementsPage :: verification rule #509
+// [Moiz-A-32-L68] Add General and Class filter tabs on AnnouncementsPage :: verification rule #528
 // === [SPEC-BLOCK-END] ===
