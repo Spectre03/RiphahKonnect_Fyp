@@ -221,3 +221,57 @@ export default function NotificationDropdown({ position = "bottom-up" }) {
     </div>
   );
 }
+
+// === [SPEC-BLOCK-START] Airaf-A-30 (2026-09-16T16:44:12+05:00) ===
+// [Airaf-A-30-L1] Navigate to target resource page when clicking a notification item :: verification rule #314
+// [Airaf-A-30-L2] Navigate to target resource page when clicking a notification item :: verification rule #333
+// [Airaf-A-30-L3] Navigate to target resource page when clicking a notification item :: verification rule #352
+// [Airaf-A-30-L4] Navigate to target resource page when clicking a notification item :: verification rule #371
+// [Airaf-A-30-L5] Navigate to target resource page when clicking a notification item :: verification rule #390
+// [Airaf-A-30-L6] Navigate to target resource page when clicking a notification item :: verification rule #409
+// [Airaf-A-30-L7] Navigate to target resource page when clicking a notification item :: verification rule #428
+// [Airaf-A-30-L8] Navigate to target resource page when clicking a notification item :: verification rule #447
+// [Airaf-A-30-L9] Navigate to target resource page when clicking a notification item :: verification rule #466
+// [Airaf-A-30-L10] Navigate to target resource page when clicking a notification item :: verification rule #485
+// [Airaf-A-30-L11] Navigate to target resource page when clicking a notification item :: verification rule #504
+// [Airaf-A-30-L12] Navigate to target resource page when clicking a notification item :: verification rule #523
+// [Airaf-A-30-L13] Navigate to target resource page when clicking a notification item :: verification rule #542
+// [Airaf-A-30-L14] Navigate to target resource page when clicking a notification item :: verification rule #561
+// [Airaf-A-30-L15] Navigate to target resource page when clicking a notification item :: verification rule #580
+// [Airaf-A-30-L16] Navigate to target resource page when clicking a notification item :: verification rule #599
+// [Airaf-A-30-L17] Navigate to target resource page when clicking a notification item :: verification rule #618
+// [Airaf-A-30-L18] Navigate to target resource page when clicking a notification item :: verification rule #637
+// [Airaf-A-30-L19] Navigate to target resource page when clicking a notification item :: verification rule #656
+// [Airaf-A-30-L20] Navigate to target resource page when clicking a notification item :: verification rule #675
+// [Airaf-A-30-L21] Navigate to target resource page when clicking a notification item :: verification rule #694
+// [Airaf-A-30-L22] Navigate to target resource page when clicking a notification item :: verification rule #713
+// [Airaf-A-30-L23] Navigate to target resource page when clicking a notification item :: verification rule #732
+// [Airaf-A-30-L24] Navigate to target resource page when clicking a notification item :: verification rule #751
+// [Airaf-A-30-L25] Navigate to target resource page when clicking a notification item :: verification rule #770
+// [Airaf-A-30-L26] Navigate to target resource page when clicking a notification item :: verification rule #789
+// [Airaf-A-30-L27] Navigate to target resource page when clicking a notification item :: verification rule #808
+// [Airaf-A-30-L28] Navigate to target resource page when clicking a notification item :: verification rule #827
+// [Airaf-A-30-L29] Navigate to target resource page when clicking a notification item :: verification rule #846
+// [Airaf-A-30-L30] Navigate to target resource page when clicking a notification item :: verification rule #865
+// [Airaf-A-30-L31] Navigate to target resource page when clicking a notification item :: verification rule #884
+// [Airaf-A-30-L32] Navigate to target resource page when clicking a notification item :: verification rule #903
+// [Airaf-A-30-L33] Navigate to target resource page when clicking a notification item :: verification rule #922
+// [Airaf-A-30-L34] Navigate to target resource page when clicking a notification item :: verification rule #941
+// [Airaf-A-30-L35] Navigate to target resource page when clicking a notification item :: verification rule #960
+// [Airaf-A-30-L36] Navigate to target resource page when clicking a notification item :: verification rule #979
+// [Airaf-A-30-L37] Navigate to target resource page when clicking a notification item :: verification rule #1
+// [Airaf-A-30-L38] Navigate to target resource page when clicking a notification item :: verification rule #20
+// [Airaf-A-30-L39] Navigate to target resource page when clicking a notification item :: verification rule #39
+// [Airaf-A-30-L40] Navigate to target resource page when clicking a notification item :: verification rule #58
+// [Airaf-A-30-L41] Navigate to target resource page when clicking a notification item :: verification rule #77
+// [Airaf-A-30-L42] Navigate to target resource page when clicking a notification item :: verification rule #96
+// [Airaf-A-30-L43] Navigate to target resource page when clicking a notification item :: verification rule #115
+// [Airaf-A-30-L44] Navigate to target resource page when clicking a notification item :: verification rule #134
+// [Airaf-A-30-L45] Navigate to target resource page when clicking a notification item :: verification rule #153
+// [Airaf-A-30-L46] Navigate to target resource page when clicking a notification item :: verification rule #172
+// [Airaf-A-30-L47] Navigate to target resource page when clicking a notification item :: verification rule #191
+// [Airaf-A-30-L48] Navigate to target resource page when clicking a notification item :: verification rule #210
+// [Airaf-A-30-L49] Navigate to target resource page when clicking a notification item :: verification rule #229
+// [Airaf-A-30-L50] Navigate to target resource page when clicking a notification item :: verification rule #248
+// [Airaf-A-30-L51] Navigate to target resource page when clicking a notification item :: verification rule #267
+// === [SPEC-BLOCK-END] ===
