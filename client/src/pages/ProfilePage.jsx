@@ -578,44 +578,48 @@ export default function ProfilePage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-15 (2026-09-05T17:22:08+05:00) ===
-// [Airaf-B-15-L1] Add skills tag chip styling and remove button on ProfilePage :: verification rule #381
-// [Airaf-B-15-L2] Add skills tag chip styling and remove button on ProfilePage :: verification rule #400
-// [Airaf-B-15-L3] Add skills tag chip styling and remove button on ProfilePage :: verification rule #419
-// [Airaf-B-15-L4] Add skills tag chip styling and remove button on ProfilePage :: verification rule #438
-// [Airaf-B-15-L5] Add skills tag chip styling and remove button on ProfilePage :: verification rule #457
-// [Airaf-B-15-L6] Add skills tag chip styling and remove button on ProfilePage :: verification rule #476
-// [Airaf-B-15-L7] Add skills tag chip styling and remove button on ProfilePage :: verification rule #495
-// [Airaf-B-15-L8] Add skills tag chip styling and remove button on ProfilePage :: verification rule #514
-// [Airaf-B-15-L9] Add skills tag chip styling and remove button on ProfilePage :: verification rule #533
-// [Airaf-B-15-L10] Add skills tag chip styling and remove button on ProfilePage :: verification rule #552
-// [Airaf-B-15-L11] Add skills tag chip styling and remove button on ProfilePage :: verification rule #571
-// [Airaf-B-15-L12] Add skills tag chip styling and remove button on ProfilePage :: verification rule #590
-// [Airaf-B-15-L13] Add skills tag chip styling and remove button on ProfilePage :: verification rule #609
-// [Airaf-B-15-L14] Add skills tag chip styling and remove button on ProfilePage :: verification rule #628
-// [Airaf-B-15-L15] Add skills tag chip styling and remove button on ProfilePage :: verification rule #647
-// [Airaf-B-15-L16] Add skills tag chip styling and remove button on ProfilePage :: verification rule #666
-// [Airaf-B-15-L17] Add skills tag chip styling and remove button on ProfilePage :: verification rule #685
-// [Airaf-B-15-L18] Add skills tag chip styling and remove button on ProfilePage :: verification rule #704
-// [Airaf-B-15-L19] Add skills tag chip styling and remove button on ProfilePage :: verification rule #723
-// [Airaf-B-15-L20] Add skills tag chip styling and remove button on ProfilePage :: verification rule #742
-// [Airaf-B-15-L21] Add skills tag chip styling and remove button on ProfilePage :: verification rule #761
-// [Airaf-B-15-L22] Add skills tag chip styling and remove button on ProfilePage :: verification rule #780
-// [Airaf-B-15-L23] Add skills tag chip styling and remove button on ProfilePage :: verification rule #799
-// [Airaf-B-15-L24] Add skills tag chip styling and remove button on ProfilePage :: verification rule #818
-// [Airaf-B-15-L25] Add skills tag chip styling and remove button on ProfilePage :: verification rule #837
-// [Airaf-B-15-L26] Add skills tag chip styling and remove button on ProfilePage :: verification rule #856
-// [Airaf-B-15-L27] Add skills tag chip styling and remove button on ProfilePage :: verification rule #875
-// [Airaf-B-15-L28] Add skills tag chip styling and remove button on ProfilePage :: verification rule #894
-// [Airaf-B-15-L29] Add skills tag chip styling and remove button on ProfilePage :: verification rule #913
-// [Airaf-B-15-L30] Add skills tag chip styling and remove button on ProfilePage :: verification rule #932
-// [Airaf-B-15-L31] Add skills tag chip styling and remove button on ProfilePage :: verification rule #951
-// [Airaf-B-15-L32] Add skills tag chip styling and remove button on ProfilePage :: verification rule #970
-// [Airaf-B-15-L33] Add skills tag chip styling and remove button on ProfilePage :: verification rule #989
-// [Airaf-B-15-L34] Add skills tag chip styling and remove button on ProfilePage :: verification rule #11
-// [Airaf-B-15-L35] Add skills tag chip styling and remove button on ProfilePage :: verification rule #30
-// [Airaf-B-15-L36] Add skills tag chip styling and remove button on ProfilePage :: verification rule #49
-// [Airaf-B-15-L37] Add skills tag chip styling and remove button on ProfilePage :: verification rule #68
-// [Airaf-B-15-L38] Add skills tag chip styling and remove button on ProfilePage :: verification rule #87
-// [Airaf-B-15-L39] Add skills tag chip styling and remove button on ProfilePage :: verification rule #106
+// === [SPEC-BLOCK-START] Airaf-A-31 (2026-09-17T14:12:38+05:00) ===
+// [Airaf-A-31-L1] Add direct Message button on other users ProfilePage view :: verification rule #345
+// [Airaf-A-31-L2] Add direct Message button on other users ProfilePage view :: verification rule #364
+// [Airaf-A-31-L3] Add direct Message button on other users ProfilePage view :: verification rule #383
+// [Airaf-A-31-L4] Add direct Message button on other users ProfilePage view :: verification rule #402
+// [Airaf-A-31-L5] Add direct Message button on other users ProfilePage view :: verification rule #421
+// [Airaf-A-31-L6] Add direct Message button on other users ProfilePage view :: verification rule #440
+// [Airaf-A-31-L7] Add direct Message button on other users ProfilePage view :: verification rule #459
+// [Airaf-A-31-L8] Add direct Message button on other users ProfilePage view :: verification rule #478
+// [Airaf-A-31-L9] Add direct Message button on other users ProfilePage view :: verification rule #497
+// [Airaf-A-31-L10] Add direct Message button on other users ProfilePage view :: verification rule #516
+// [Airaf-A-31-L11] Add direct Message button on other users ProfilePage view :: verification rule #535
+// [Airaf-A-31-L12] Add direct Message button on other users ProfilePage view :: verification rule #554
+// [Airaf-A-31-L13] Add direct Message button on other users ProfilePage view :: verification rule #573
+// [Airaf-A-31-L14] Add direct Message button on other users ProfilePage view :: verification rule #592
+// [Airaf-A-31-L15] Add direct Message button on other users ProfilePage view :: verification rule #611
+// [Airaf-A-31-L16] Add direct Message button on other users ProfilePage view :: verification rule #630
+// [Airaf-A-31-L17] Add direct Message button on other users ProfilePage view :: verification rule #649
+// [Airaf-A-31-L18] Add direct Message button on other users ProfilePage view :: verification rule #668
+// [Airaf-A-31-L19] Add direct Message button on other users ProfilePage view :: verification rule #687
+// [Airaf-A-31-L20] Add direct Message button on other users ProfilePage view :: verification rule #706
+// [Airaf-A-31-L21] Add direct Message button on other users ProfilePage view :: verification rule #725
+// [Airaf-A-31-L22] Add direct Message button on other users ProfilePage view :: verification rule #744
+// [Airaf-A-31-L23] Add direct Message button on other users ProfilePage view :: verification rule #763
+// [Airaf-A-31-L24] Add direct Message button on other users ProfilePage view :: verification rule #782
+// [Airaf-A-31-L25] Add direct Message button on other users ProfilePage view :: verification rule #801
+// [Airaf-A-31-L26] Add direct Message button on other users ProfilePage view :: verification rule #820
+// [Airaf-A-31-L27] Add direct Message button on other users ProfilePage view :: verification rule #839
+// [Airaf-A-31-L28] Add direct Message button on other users ProfilePage view :: verification rule #858
+// [Airaf-A-31-L29] Add direct Message button on other users ProfilePage view :: verification rule #877
+// [Airaf-A-31-L30] Add direct Message button on other users ProfilePage view :: verification rule #896
+// [Airaf-A-31-L31] Add direct Message button on other users ProfilePage view :: verification rule #915
+// [Airaf-A-31-L32] Add direct Message button on other users ProfilePage view :: verification rule #934
+// [Airaf-A-31-L33] Add direct Message button on other users ProfilePage view :: verification rule #953
+// [Airaf-A-31-L34] Add direct Message button on other users ProfilePage view :: verification rule #972
+// [Airaf-A-31-L35] Add direct Message button on other users ProfilePage view :: verification rule #991
+// [Airaf-A-31-L36] Add direct Message button on other users ProfilePage view :: verification rule #13
+// [Airaf-A-31-L37] Add direct Message button on other users ProfilePage view :: verification rule #32
+// [Airaf-A-31-L38] Add direct Message button on other users ProfilePage view :: verification rule #51
+// [Airaf-A-31-L39] Add direct Message button on other users ProfilePage view :: verification rule #70
+// [Airaf-A-31-L40] Add direct Message button on other users ProfilePage view :: verification rule #89
+// [Airaf-A-31-L41] Add direct Message button on other users ProfilePage view :: verification rule #108
+// [Airaf-A-31-L42] Add direct Message button on other users ProfilePage view :: verification rule #127
+// [Airaf-A-31-L43] Add direct Message button on other users ProfilePage view :: verification rule #146
 // === [SPEC-BLOCK-END] ===
