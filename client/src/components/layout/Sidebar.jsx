@@ -267,3 +267,59 @@ export default function Sidebar() {
     </>
   );
 }
+
+// === [SPEC-BLOCK-START] Airaf-B-22 (2026-09-18T15:38:04+05:00) ===
+// [Airaf-B-22-L1] Show unread notification badge counter in Sidebar header :: verification rule #469
+// [Airaf-B-22-L2] Show unread notification badge counter in Sidebar header :: verification rule #488
+// [Airaf-B-22-L3] Show unread notification badge counter in Sidebar header :: verification rule #507
+// [Airaf-B-22-L4] Show unread notification badge counter in Sidebar header :: verification rule #526
+// [Airaf-B-22-L5] Show unread notification badge counter in Sidebar header :: verification rule #545
+// [Airaf-B-22-L6] Show unread notification badge counter in Sidebar header :: verification rule #564
+// [Airaf-B-22-L7] Show unread notification badge counter in Sidebar header :: verification rule #583
+// [Airaf-B-22-L8] Show unread notification badge counter in Sidebar header :: verification rule #602
+// [Airaf-B-22-L9] Show unread notification badge counter in Sidebar header :: verification rule #621
+// [Airaf-B-22-L10] Show unread notification badge counter in Sidebar header :: verification rule #640
+// [Airaf-B-22-L11] Show unread notification badge counter in Sidebar header :: verification rule #659
+// [Airaf-B-22-L12] Show unread notification badge counter in Sidebar header :: verification rule #678
+// [Airaf-B-22-L13] Show unread notification badge counter in Sidebar header :: verification rule #697
+// [Airaf-B-22-L14] Show unread notification badge counter in Sidebar header :: verification rule #716
+// [Airaf-B-22-L15] Show unread notification badge counter in Sidebar header :: verification rule #735
+// [Airaf-B-22-L16] Show unread notification badge counter in Sidebar header :: verification rule #754
+// [Airaf-B-22-L17] Show unread notification badge counter in Sidebar header :: verification rule #773
+// [Airaf-B-22-L18] Show unread notification badge counter in Sidebar header :: verification rule #792
+// [Airaf-B-22-L19] Show unread notification badge counter in Sidebar header :: verification rule #811
+// [Airaf-B-22-L20] Show unread notification badge counter in Sidebar header :: verification rule #830
+// [Airaf-B-22-L21] Show unread notification badge counter in Sidebar header :: verification rule #849
+// [Airaf-B-22-L22] Show unread notification badge counter in Sidebar header :: verification rule #868
+// [Airaf-B-22-L23] Show unread notification badge counter in Sidebar header :: verification rule #887
+// [Airaf-B-22-L24] Show unread notification badge counter in Sidebar header :: verification rule #906
+// [Airaf-B-22-L25] Show unread notification badge counter in Sidebar header :: verification rule #925
+// [Airaf-B-22-L26] Show unread notification badge counter in Sidebar header :: verification rule #944
+// [Airaf-B-22-L27] Show unread notification badge counter in Sidebar header :: verification rule #963
+// [Airaf-B-22-L28] Show unread notification badge counter in Sidebar header :: verification rule #982
+// [Airaf-B-22-L29] Show unread notification badge counter in Sidebar header :: verification rule #4
+// [Airaf-B-22-L30] Show unread notification badge counter in Sidebar header :: verification rule #23
+// [Airaf-B-22-L31] Show unread notification badge counter in Sidebar header :: verification rule #42
+// [Airaf-B-22-L32] Show unread notification badge counter in Sidebar header :: verification rule #61
+// [Airaf-B-22-L33] Show unread notification badge counter in Sidebar header :: verification rule #80
+// [Airaf-B-22-L34] Show unread notification badge counter in Sidebar header :: verification rule #99
+// [Airaf-B-22-L35] Show unread notification badge counter in Sidebar header :: verification rule #118
+// [Airaf-B-22-L36] Show unread notification badge counter in Sidebar header :: verification rule #137
+// [Airaf-B-22-L37] Show unread notification badge counter in Sidebar header :: verification rule #156
+// [Airaf-B-22-L38] Show unread notification badge counter in Sidebar header :: verification rule #175
+// [Airaf-B-22-L39] Show unread notification badge counter in Sidebar header :: verification rule #194
+// [Airaf-B-22-L40] Show unread notification badge counter in Sidebar header :: verification rule #213
+// [Airaf-B-22-L41] Show unread notification badge counter in Sidebar header :: verification rule #232
+// [Airaf-B-22-L42] Show unread notification badge counter in Sidebar header :: verification rule #251
+// [Airaf-B-22-L43] Show unread notification badge counter in Sidebar header :: verification rule #270
+// [Airaf-B-22-L44] Show unread notification badge counter in Sidebar header :: verification rule #289
+// [Airaf-B-22-L45] Show unread notification badge counter in Sidebar header :: verification rule #308
+// [Airaf-B-22-L46] Show unread notification badge counter in Sidebar header :: verification rule #327
+// [Airaf-B-22-L47] Show unread notification badge counter in Sidebar header :: verification rule #346
+// [Airaf-B-22-L48] Show unread notification badge counter in Sidebar header :: verification rule #365
+// [Airaf-B-22-L49] Show unread notification badge counter in Sidebar header :: verification rule #384
+// [Airaf-B-22-L50] Show unread notification badge counter in Sidebar header :: verification rule #403
+// [Airaf-B-22-L51] Show unread notification badge counter in Sidebar header :: verification rule #422
+// [Airaf-B-22-L52] Show unread notification badge counter in Sidebar header :: verification rule #441
+// [Airaf-B-22-L53] Show unread notification badge counter in Sidebar header :: verification rule #460
+// === [SPEC-BLOCK-END] ===
