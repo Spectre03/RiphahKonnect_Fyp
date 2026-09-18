@@ -1,4 +1,5 @@
 const prisma = require('../config/db');
+const { checkTextContent, checkImageSafety, validatePostByType } = require('../utils/moderation');
 
 // GET /api/posts — paginated feed
 const getPosts = async (req, res, next) => {
@@ -22,7 +23,7 @@ const getPosts = async (req, res, next) => {
         orderBy: { createdAt: 'desc' },
         include: {
           author: {
-            select: { id: true, name: true, avatarUrl: true, department: true },
+            select: { id: true, name: true, role: true, avatarUrl: true, department: true },
           },
           _count: { select: { comments: true, likes: true } },
           likes: {
@@ -56,6 +57,17 @@ const getPosts = async (req, res, next) => {
 const createPost = async (req, res, next) => {
   try {
     const { content, type, imageUrl, groupId } = req.body;
+    const postType = type || 'GENERAL';
+
+    // Validate content, image safety, and type-specific rules (GENERAL, QUESTION, RESOURCE)
+    const validation = validatePostByType({
+      content,
+      type: postType,
+      imageUrl,
+    });
+    if (!validation.valid) {
+      return res.status(400).json({ error: validation.reason });
+    }
 
     // If posting to a group, verify the user is a member
     if (groupId) {
@@ -67,22 +79,34 @@ const createPost = async (req, res, next) => {
       }
     }
 
+    let finalContent = (content || '').trim();
+    if (postType === 'QUESTION' && finalContent && !finalContent.endsWith('?')) {
+      finalContent = `${finalContent}?`;
+    }
+
     const post = await prisma.post.create({
       data: {
-        content,
-        type: type || 'GENERAL',
-        imageUrl,
+        content: finalContent,
+        type: postType,
+        imageUrl: imageUrl || null,
         authorId: req.user.id,
         groupId: groupId || null,
       },
       include: {
         author: {
-          select: { id: true, name: true, avatarUrl: true, department: true },
+          select: { id: true, name: true, role: true, avatarUrl: true, department: true },
         },
       },
     });
 
-    res.status(201).json({ post });
+    res.status(201).json({
+      post: {
+        ...post,
+        likesCount: 0,
+        commentsCount: 0,
+        isLiked: false,
+      },
+    });
   } catch (err) {
     next(err);
   }
@@ -95,7 +119,7 @@ const getPost = async (req, res, next) => {
       where: { id: req.params.id },
       include: {
         author: {
-          select: { id: true, name: true, avatarUrl: true, department: true },
+          select: { id: true, name: true, role: true, avatarUrl: true, department: true },
         },
         _count: { select: { comments: true, likes: true } },
         likes: {
@@ -131,12 +155,25 @@ const updatePost = async (req, res, next) => {
     if (!post) return res.status(404).json({ error: 'Post not found.' });
     if (post.authorId !== req.user.id) return res.status(403).json({ error: 'Not authorized.' });
 
+    const nextContent = req.body.content ?? post.content;
+    const nextType = req.body.type ?? post.type;
+    const nextImageUrl = req.body.imageUrl !== undefined ? req.body.imageUrl : post.imageUrl;
+
+    const validation = validatePostByType({
+      content: nextContent,
+      type: nextType,
+      imageUrl: nextImageUrl,
+    });
+    if (!validation.valid) {
+      return res.status(400).json({ error: validation.reason });
+    }
+
     const updated = await prisma.post.update({
       where: { id: req.params.id },
       data: {
-        content: req.body.content ?? post.content,
-        type: req.body.type ?? post.type,
-        imageUrl: req.body.imageUrl ?? post.imageUrl,
+        content: nextContent.trim(),
+        type: nextType,
+        imageUrl: nextImageUrl,
       },
     });
 
@@ -192,13 +229,13 @@ const getComments = async (req, res, next) => {
       orderBy: { createdAt: 'asc' },
       include: {
         author: {
-          select: { id: true, name: true, avatarUrl: true },
+          select: { id: true, name: true, role: true, avatarUrl: true },
         },
         replies: {
           orderBy: { createdAt: 'asc' },
           include: {
             author: {
-              select: { id: true, name: true, avatarUrl: true },
+              select: { id: true, name: true, role: true, avatarUrl: true },
             },
           },
         },
@@ -216,22 +253,61 @@ const createComment = async (req, res, next) => {
   try {
     const { content, parentId } = req.body;
 
+    const modCheck = checkTextContent(content, { minLength: 2, fieldName: 'Comment' });
+    if (!modCheck.clean) {
+      return res.status(400).json({ error: modCheck.reason });
+    }
+
     const post = await prisma.post.findUnique({ where: { id: req.params.id } });
     if (!post) return res.status(404).json({ error: 'Post not found.' });
 
     const comment = await prisma.comment.create({
       data: {
-        content,
+        content: content.trim(),
         authorId: req.user.id,
         postId: req.params.id,
         parentId: parentId || null,
       },
       include: {
         author: {
-          select: { id: true, name: true, avatarUrl: true },
+          select: { id: true, name: true, role: true, avatarUrl: true },
         },
       },
     });
+
+    // Notify post author when someone comments or answers their question
+    if (post.authorId !== req.user.id) {
+      const isQuestion = post.type === 'QUESTION';
+      const notifTitle = isQuestion
+        ? `💡 ${comment.author.name} answered your question`
+        : `💬 ${comment.author.name} commented on your post`;
+      const notifContent = comment.content.length > 80
+        ? `${comment.content.slice(0, 80)}...`
+        : comment.content;
+
+      await prisma.notification.create({
+        data: {
+          userId: post.authorId,
+          title: notifTitle,
+          content: notifContent,
+          type: 'COMMENT',
+          link: '/feed',
+        },
+      }).catch(() => {});
+
+      const io = req.app.get('io');
+      if (io) {
+        io.to(`user:${post.authorId}`).emit('notification', {
+          id: `cmt-${comment.id}`,
+          title: notifTitle,
+          content: notifContent,
+          message: `${notifTitle}: "${notifContent}"`,
+          type: 'COMMENT',
+          link: '/feed',
+          createdAt: new Date().toISOString(),
+        });
+      }
+    }
 
     res.status(201).json({ comment });
   } catch (err) {
