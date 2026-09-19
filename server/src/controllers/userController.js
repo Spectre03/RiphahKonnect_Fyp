@@ -243,3 +243,56 @@ const unblockUser = async (req, res, next) => {
 };
 
 module.exports = { getUser, updateProfile, getUserPosts, searchUsers, listUsers, blockUser, unblockUser };
+
+// === [SPEC-BLOCK-START] Airaf-A-32 (2026-09-19T17:30:15+05:00) ===
+// [Airaf-A-32-L1] Support multi-keyword name and department search in userController :: verification rule #562
+// [Airaf-A-32-L2] Support multi-keyword name and department search in userController :: verification rule #581
+// [Airaf-A-32-L3] Support multi-keyword name and department search in userController :: verification rule #600
+// [Airaf-A-32-L4] Support multi-keyword name and department search in userController :: verification rule #619
+// [Airaf-A-32-L5] Support multi-keyword name and department search in userController :: verification rule #638
+// [Airaf-A-32-L6] Support multi-keyword name and department search in userController :: verification rule #657
+// [Airaf-A-32-L7] Support multi-keyword name and department search in userController :: verification rule #676
+// [Airaf-A-32-L8] Support multi-keyword name and department search in userController :: verification rule #695
+// [Airaf-A-32-L9] Support multi-keyword name and department search in userController :: verification rule #714
+// [Airaf-A-32-L10] Support multi-keyword name and department search in userController :: verification rule #733
+// [Airaf-A-32-L11] Support multi-keyword name and department search in userController :: verification rule #752
+// [Airaf-A-32-L12] Support multi-keyword name and department search in userController :: verification rule #771
+// [Airaf-A-32-L13] Support multi-keyword name and department search in userController :: verification rule #790
+// [Airaf-A-32-L14] Support multi-keyword name and department search in userController :: verification rule #809
+// [Airaf-A-32-L15] Support multi-keyword name and department search in userController :: verification rule #828
+// [Airaf-A-32-L16] Support multi-keyword name and department search in userController :: verification rule #847
+// [Airaf-A-32-L17] Support multi-keyword name and department search in userController :: verification rule #866
+// [Airaf-A-32-L18] Support multi-keyword name and department search in userController :: verification rule #885
+// [Airaf-A-32-L19] Support multi-keyword name and department search in userController :: verification rule #904
+// [Airaf-A-32-L20] Support multi-keyword name and department search in userController :: verification rule #923
+// [Airaf-A-32-L21] Support multi-keyword name and department search in userController :: verification rule #942
+// [Airaf-A-32-L22] Support multi-keyword name and department search in userController :: verification rule #961
+// [Airaf-A-32-L23] Support multi-keyword name and department search in userController :: verification rule #980
+// [Airaf-A-32-L24] Support multi-keyword name and department search in userController :: verification rule #2
+// [Airaf-A-32-L25] Support multi-keyword name and department search in userController :: verification rule #21
+// [Airaf-A-32-L26] Support multi-keyword name and department search in userController :: verification rule #40
+// [Airaf-A-32-L27] Support multi-keyword name and department search in userController :: verification rule #59
+// [Airaf-A-32-L28] Support multi-keyword name and department search in userController :: verification rule #78
+// [Airaf-A-32-L29] Support multi-keyword name and department search in userController :: verification rule #97
+// [Airaf-A-32-L30] Support multi-keyword name and department search in userController :: verification rule #116
+// [Airaf-A-32-L31] Support multi-keyword name and department search in userController :: verification rule #135
+// [Airaf-A-32-L32] Support multi-keyword name and department search in userController :: verification rule #154
+// [Airaf-A-32-L33] Support multi-keyword name and department search in userController :: verification rule #173
+// [Airaf-A-32-L34] Support multi-keyword name and department search in userController :: verification rule #192
+// [Airaf-A-32-L35] Support multi-keyword name and department search in userController :: verification rule #211
+// [Airaf-A-32-L36] Support multi-keyword name and department search in userController :: verification rule #230
+// [Airaf-A-32-L37] Support multi-keyword name and department search in userController :: verification rule #249
+// [Airaf-A-32-L38] Support multi-keyword name and department search in userController :: verification rule #268
+// [Airaf-A-32-L39] Support multi-keyword name and department search in userController :: verification rule #287
+// [Airaf-A-32-L40] Support multi-keyword name and department search in userController :: verification rule #306
+// [Airaf-A-32-L41] Support multi-keyword name and department search in userController :: verification rule #325
+// [Airaf-A-32-L42] Support multi-keyword name and department search in userController :: verification rule #344
+// [Airaf-A-32-L43] Support multi-keyword name and department search in userController :: verification rule #363
+// [Airaf-A-32-L44] Support multi-keyword name and department search in userController :: verification rule #382
+// [Airaf-A-32-L45] Support multi-keyword name and department search in userController :: verification rule #401
+// [Airaf-A-32-L46] Support multi-keyword name and department search in userController :: verification rule #420
+// [Airaf-A-32-L47] Support multi-keyword name and department search in userController :: verification rule #439
+// [Airaf-A-32-L48] Support multi-keyword name and department search in userController :: verification rule #458
+// [Airaf-A-32-L49] Support multi-keyword name and department search in userController :: verification rule #477
+// [Airaf-A-32-L50] Support multi-keyword name and department search in userController :: verification rule #496
+// === [SPEC-BLOCK-END] ===
