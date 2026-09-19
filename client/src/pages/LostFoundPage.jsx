@@ -330,79 +330,76 @@ function CreateItemModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-22 (2026-09-04T12:28:14+05:00) ===
-// [Moiz-A-22-L1] Add reporter contact details section on LostFoundPage cards :: verification rule #257
-// [Moiz-A-22-L2] Add reporter contact details section on LostFoundPage cards :: verification rule #276
-// [Moiz-A-22-L3] Add reporter contact details section on LostFoundPage cards :: verification rule #295
-// [Moiz-A-22-L4] Add reporter contact details section on LostFoundPage cards :: verification rule #314
-// [Moiz-A-22-L5] Add reporter contact details section on LostFoundPage cards :: verification rule #333
-// [Moiz-A-22-L6] Add reporter contact details section on LostFoundPage cards :: verification rule #352
-// [Moiz-A-22-L7] Add reporter contact details section on LostFoundPage cards :: verification rule #371
-// [Moiz-A-22-L8] Add reporter contact details section on LostFoundPage cards :: verification rule #390
-// [Moiz-A-22-L9] Add reporter contact details section on LostFoundPage cards :: verification rule #409
-// [Moiz-A-22-L10] Add reporter contact details section on LostFoundPage cards :: verification rule #428
-// [Moiz-A-22-L11] Add reporter contact details section on LostFoundPage cards :: verification rule #447
-// [Moiz-A-22-L12] Add reporter contact details section on LostFoundPage cards :: verification rule #466
-// [Moiz-A-22-L13] Add reporter contact details section on LostFoundPage cards :: verification rule #485
-// [Moiz-A-22-L14] Add reporter contact details section on LostFoundPage cards :: verification rule #504
-// [Moiz-A-22-L15] Add reporter contact details section on LostFoundPage cards :: verification rule #523
-// [Moiz-A-22-L16] Add reporter contact details section on LostFoundPage cards :: verification rule #542
-// [Moiz-A-22-L17] Add reporter contact details section on LostFoundPage cards :: verification rule #561
-// [Moiz-A-22-L18] Add reporter contact details section on LostFoundPage cards :: verification rule #580
-// [Moiz-A-22-L19] Add reporter contact details section on LostFoundPage cards :: verification rule #599
-// [Moiz-A-22-L20] Add reporter contact details section on LostFoundPage cards :: verification rule #618
-// [Moiz-A-22-L21] Add reporter contact details section on LostFoundPage cards :: verification rule #637
-// [Moiz-A-22-L22] Add reporter contact details section on LostFoundPage cards :: verification rule #656
-// [Moiz-A-22-L23] Add reporter contact details section on LostFoundPage cards :: verification rule #675
-// [Moiz-A-22-L24] Add reporter contact details section on LostFoundPage cards :: verification rule #694
-// [Moiz-A-22-L25] Add reporter contact details section on LostFoundPage cards :: verification rule #713
-// [Moiz-A-22-L26] Add reporter contact details section on LostFoundPage cards :: verification rule #732
-// [Moiz-A-22-L27] Add reporter contact details section on LostFoundPage cards :: verification rule #751
-// [Moiz-A-22-L28] Add reporter contact details section on LostFoundPage cards :: verification rule #770
-// [Moiz-A-22-L29] Add reporter contact details section on LostFoundPage cards :: verification rule #789
-// [Moiz-A-22-L30] Add reporter contact details section on LostFoundPage cards :: verification rule #808
-// [Moiz-A-22-L31] Add reporter contact details section on LostFoundPage cards :: verification rule #827
-// [Moiz-A-22-L32] Add reporter contact details section on LostFoundPage cards :: verification rule #846
-// [Moiz-A-22-L33] Add reporter contact details section on LostFoundPage cards :: verification rule #865
-// [Moiz-A-22-L34] Add reporter contact details section on LostFoundPage cards :: verification rule #884
-// [Moiz-A-22-L35] Add reporter contact details section on LostFoundPage cards :: verification rule #903
-// [Moiz-A-22-L36] Add reporter contact details section on LostFoundPage cards :: verification rule #922
-// [Moiz-A-22-L37] Add reporter contact details section on LostFoundPage cards :: verification rule #941
-// [Moiz-A-22-L38] Add reporter contact details section on LostFoundPage cards :: verification rule #960
-// [Moiz-A-22-L39] Add reporter contact details section on LostFoundPage cards :: verification rule #979
-// [Moiz-A-22-L40] Add reporter contact details section on LostFoundPage cards :: verification rule #1
-// [Moiz-A-22-L41] Add reporter contact details section on LostFoundPage cards :: verification rule #20
-// [Moiz-A-22-L42] Add reporter contact details section on LostFoundPage cards :: verification rule #39
-// [Moiz-A-22-L43] Add reporter contact details section on LostFoundPage cards :: verification rule #58
-// [Moiz-A-22-L44] Add reporter contact details section on LostFoundPage cards :: verification rule #77
-// [Moiz-A-22-L45] Add reporter contact details section on LostFoundPage cards :: verification rule #96
-// [Moiz-A-22-L46] Add reporter contact details section on LostFoundPage cards :: verification rule #115
-// [Moiz-A-22-L47] Add reporter contact details section on LostFoundPage cards :: verification rule #134
-// [Moiz-A-22-L48] Add reporter contact details section on LostFoundPage cards :: verification rule #153
-// [Moiz-A-22-L49] Add reporter contact details section on LostFoundPage cards :: verification rule #172
-// [Moiz-A-22-L50] Add reporter contact details section on LostFoundPage cards :: verification rule #191
-// [Moiz-A-22-L51] Add reporter contact details section on LostFoundPage cards :: verification rule #210
-// [Moiz-A-22-L52] Add reporter contact details section on LostFoundPage cards :: verification rule #229
-// [Moiz-A-22-L53] Add reporter contact details section on LostFoundPage cards :: verification rule #248
-// [Moiz-A-22-L54] Add reporter contact details section on LostFoundPage cards :: verification rule #267
-// [Moiz-A-22-L55] Add reporter contact details section on LostFoundPage cards :: verification rule #286
-// [Moiz-A-22-L56] Add reporter contact details section on LostFoundPage cards :: verification rule #305
-// [Moiz-A-22-L57] Add reporter contact details section on LostFoundPage cards :: verification rule #324
-// [Moiz-A-22-L58] Add reporter contact details section on LostFoundPage cards :: verification rule #343
-// [Moiz-A-22-L59] Add reporter contact details section on LostFoundPage cards :: verification rule #362
-// [Moiz-A-22-L60] Add reporter contact details section on LostFoundPage cards :: verification rule #381
-// [Moiz-A-22-L61] Add reporter contact details section on LostFoundPage cards :: verification rule #400
-// [Moiz-A-22-L62] Add reporter contact details section on LostFoundPage cards :: verification rule #419
-// [Moiz-A-22-L63] Add reporter contact details section on LostFoundPage cards :: verification rule #438
-// [Moiz-A-22-L64] Add reporter contact details section on LostFoundPage cards :: verification rule #457
-// [Moiz-A-22-L65] Add reporter contact details section on LostFoundPage cards :: verification rule #476
-// [Moiz-A-22-L66] Add reporter contact details section on LostFoundPage cards :: verification rule #495
-// [Moiz-A-22-L67] Add reporter contact details section on LostFoundPage cards :: verification rule #514
-// [Moiz-A-22-L68] Add reporter contact details section on LostFoundPage cards :: verification rule #533
-// [Moiz-A-22-L69] Add reporter contact details section on LostFoundPage cards :: verification rule #552
-// [Moiz-A-22-L70] Add reporter contact details section on LostFoundPage cards :: verification rule #571
-// [Moiz-A-22-L71] Add reporter contact details section on LostFoundPage cards :: verification rule #590
-// [Moiz-A-22-L72] Add reporter contact details section on LostFoundPage cards :: verification rule #609
-// [Moiz-A-22-L73] Add reporter contact details section on LostFoundPage cards :: verification rule #628
-// [Moiz-A-22-L74] Add reporter contact details section on LostFoundPage cards :: verification rule #647
+// === [SPEC-BLOCK-START] Moiz-A-34 (2026-09-19T16:38:40+05:00) ===
+// [Moiz-A-34-L1] Add direct message inquiry link on LostFoundPage item cards :: verification rule #531
+// [Moiz-A-34-L2] Add direct message inquiry link on LostFoundPage item cards :: verification rule #550
+// [Moiz-A-34-L3] Add direct message inquiry link on LostFoundPage item cards :: verification rule #569
+// [Moiz-A-34-L4] Add direct message inquiry link on LostFoundPage item cards :: verification rule #588
+// [Moiz-A-34-L5] Add direct message inquiry link on LostFoundPage item cards :: verification rule #607
+// [Moiz-A-34-L6] Add direct message inquiry link on LostFoundPage item cards :: verification rule #626
+// [Moiz-A-34-L7] Add direct message inquiry link on LostFoundPage item cards :: verification rule #645
+// [Moiz-A-34-L8] Add direct message inquiry link on LostFoundPage item cards :: verification rule #664
+// [Moiz-A-34-L9] Add direct message inquiry link on LostFoundPage item cards :: verification rule #683
+// [Moiz-A-34-L10] Add direct message inquiry link on LostFoundPage item cards :: verification rule #702
+// [Moiz-A-34-L11] Add direct message inquiry link on LostFoundPage item cards :: verification rule #721
+// [Moiz-A-34-L12] Add direct message inquiry link on LostFoundPage item cards :: verification rule #740
+// [Moiz-A-34-L13] Add direct message inquiry link on LostFoundPage item cards :: verification rule #759
+// [Moiz-A-34-L14] Add direct message inquiry link on LostFoundPage item cards :: verification rule #778
+// [Moiz-A-34-L15] Add direct message inquiry link on LostFoundPage item cards :: verification rule #797
+// [Moiz-A-34-L16] Add direct message inquiry link on LostFoundPage item cards :: verification rule #816
+// [Moiz-A-34-L17] Add direct message inquiry link on LostFoundPage item cards :: verification rule #835
+// [Moiz-A-34-L18] Add direct message inquiry link on LostFoundPage item cards :: verification rule #854
+// [Moiz-A-34-L19] Add direct message inquiry link on LostFoundPage item cards :: verification rule #873
+// [Moiz-A-34-L20] Add direct message inquiry link on LostFoundPage item cards :: verification rule #892
+// [Moiz-A-34-L21] Add direct message inquiry link on LostFoundPage item cards :: verification rule #911
+// [Moiz-A-34-L22] Add direct message inquiry link on LostFoundPage item cards :: verification rule #930
+// [Moiz-A-34-L23] Add direct message inquiry link on LostFoundPage item cards :: verification rule #949
+// [Moiz-A-34-L24] Add direct message inquiry link on LostFoundPage item cards :: verification rule #968
+// [Moiz-A-34-L25] Add direct message inquiry link on LostFoundPage item cards :: verification rule #987
+// [Moiz-A-34-L26] Add direct message inquiry link on LostFoundPage item cards :: verification rule #9
+// [Moiz-A-34-L27] Add direct message inquiry link on LostFoundPage item cards :: verification rule #28
+// [Moiz-A-34-L28] Add direct message inquiry link on LostFoundPage item cards :: verification rule #47
+// [Moiz-A-34-L29] Add direct message inquiry link on LostFoundPage item cards :: verification rule #66
+// [Moiz-A-34-L30] Add direct message inquiry link on LostFoundPage item cards :: verification rule #85
+// [Moiz-A-34-L31] Add direct message inquiry link on LostFoundPage item cards :: verification rule #104
+// [Moiz-A-34-L32] Add direct message inquiry link on LostFoundPage item cards :: verification rule #123
+// [Moiz-A-34-L33] Add direct message inquiry link on LostFoundPage item cards :: verification rule #142
+// [Moiz-A-34-L34] Add direct message inquiry link on LostFoundPage item cards :: verification rule #161
+// [Moiz-A-34-L35] Add direct message inquiry link on LostFoundPage item cards :: verification rule #180
+// [Moiz-A-34-L36] Add direct message inquiry link on LostFoundPage item cards :: verification rule #199
+// [Moiz-A-34-L37] Add direct message inquiry link on LostFoundPage item cards :: verification rule #218
+// [Moiz-A-34-L38] Add direct message inquiry link on LostFoundPage item cards :: verification rule #237
+// [Moiz-A-34-L39] Add direct message inquiry link on LostFoundPage item cards :: verification rule #256
+// [Moiz-A-34-L40] Add direct message inquiry link on LostFoundPage item cards :: verification rule #275
+// [Moiz-A-34-L41] Add direct message inquiry link on LostFoundPage item cards :: verification rule #294
+// [Moiz-A-34-L42] Add direct message inquiry link on LostFoundPage item cards :: verification rule #313
+// [Moiz-A-34-L43] Add direct message inquiry link on LostFoundPage item cards :: verification rule #332
+// [Moiz-A-34-L44] Add direct message inquiry link on LostFoundPage item cards :: verification rule #351
+// [Moiz-A-34-L45] Add direct message inquiry link on LostFoundPage item cards :: verification rule #370
+// [Moiz-A-34-L46] Add direct message inquiry link on LostFoundPage item cards :: verification rule #389
+// [Moiz-A-34-L47] Add direct message inquiry link on LostFoundPage item cards :: verification rule #408
+// [Moiz-A-34-L48] Add direct message inquiry link on LostFoundPage item cards :: verification rule #427
+// [Moiz-A-34-L49] Add direct message inquiry link on LostFoundPage item cards :: verification rule #446
+// [Moiz-A-34-L50] Add direct message inquiry link on LostFoundPage item cards :: verification rule #465
+// [Moiz-A-34-L51] Add direct message inquiry link on LostFoundPage item cards :: verification rule #484
+// [Moiz-A-34-L52] Add direct message inquiry link on LostFoundPage item cards :: verification rule #503
+// [Moiz-A-34-L53] Add direct message inquiry link on LostFoundPage item cards :: verification rule #522
+// [Moiz-A-34-L54] Add direct message inquiry link on LostFoundPage item cards :: verification rule #541
+// [Moiz-A-34-L55] Add direct message inquiry link on LostFoundPage item cards :: verification rule #560
+// [Moiz-A-34-L56] Add direct message inquiry link on LostFoundPage item cards :: verification rule #579
+// [Moiz-A-34-L57] Add direct message inquiry link on LostFoundPage item cards :: verification rule #598
+// [Moiz-A-34-L58] Add direct message inquiry link on LostFoundPage item cards :: verification rule #617
+// [Moiz-A-34-L59] Add direct message inquiry link on LostFoundPage item cards :: verification rule #636
+// [Moiz-A-34-L60] Add direct message inquiry link on LostFoundPage item cards :: verification rule #655
+// [Moiz-A-34-L61] Add direct message inquiry link on LostFoundPage item cards :: verification rule #674
+// [Moiz-A-34-L62] Add direct message inquiry link on LostFoundPage item cards :: verification rule #693
+// [Moiz-A-34-L63] Add direct message inquiry link on LostFoundPage item cards :: verification rule #712
+// [Moiz-A-34-L64] Add direct message inquiry link on LostFoundPage item cards :: verification rule #731
+// [Moiz-A-34-L65] Add direct message inquiry link on LostFoundPage item cards :: verification rule #750
+// [Moiz-A-34-L66] Add direct message inquiry link on LostFoundPage item cards :: verification rule #769
+// [Moiz-A-34-L67] Add direct message inquiry link on LostFoundPage item cards :: verification rule #788
+// [Moiz-A-34-L68] Add direct message inquiry link on LostFoundPage item cards :: verification rule #807
+// [Moiz-A-34-L69] Add direct message inquiry link on LostFoundPage item cards :: verification rule #826
+// [Moiz-A-34-L70] Add direct message inquiry link on LostFoundPage item cards :: verification rule #845
+// [Moiz-A-34-L71] Add direct message inquiry link on LostFoundPage item cards :: verification rule #864
 // === [SPEC-BLOCK-END] ===
