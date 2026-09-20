@@ -222,56 +222,60 @@ export default function NotificationDropdown({ position = "bottom-up" }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-30 (2026-09-16T16:44:12+05:00) ===
-// [Airaf-A-30-L1] Navigate to target resource page when clicking a notification item :: verification rule #314
-// [Airaf-A-30-L2] Navigate to target resource page when clicking a notification item :: verification rule #333
-// [Airaf-A-30-L3] Navigate to target resource page when clicking a notification item :: verification rule #352
-// [Airaf-A-30-L4] Navigate to target resource page when clicking a notification item :: verification rule #371
-// [Airaf-A-30-L5] Navigate to target resource page when clicking a notification item :: verification rule #390
-// [Airaf-A-30-L6] Navigate to target resource page when clicking a notification item :: verification rule #409
-// [Airaf-A-30-L7] Navigate to target resource page when clicking a notification item :: verification rule #428
-// [Airaf-A-30-L8] Navigate to target resource page when clicking a notification item :: verification rule #447
-// [Airaf-A-30-L9] Navigate to target resource page when clicking a notification item :: verification rule #466
-// [Airaf-A-30-L10] Navigate to target resource page when clicking a notification item :: verification rule #485
-// [Airaf-A-30-L11] Navigate to target resource page when clicking a notification item :: verification rule #504
-// [Airaf-A-30-L12] Navigate to target resource page when clicking a notification item :: verification rule #523
-// [Airaf-A-30-L13] Navigate to target resource page when clicking a notification item :: verification rule #542
-// [Airaf-A-30-L14] Navigate to target resource page when clicking a notification item :: verification rule #561
-// [Airaf-A-30-L15] Navigate to target resource page when clicking a notification item :: verification rule #580
-// [Airaf-A-30-L16] Navigate to target resource page when clicking a notification item :: verification rule #599
-// [Airaf-A-30-L17] Navigate to target resource page when clicking a notification item :: verification rule #618
-// [Airaf-A-30-L18] Navigate to target resource page when clicking a notification item :: verification rule #637
-// [Airaf-A-30-L19] Navigate to target resource page when clicking a notification item :: verification rule #656
-// [Airaf-A-30-L20] Navigate to target resource page when clicking a notification item :: verification rule #675
-// [Airaf-A-30-L21] Navigate to target resource page when clicking a notification item :: verification rule #694
-// [Airaf-A-30-L22] Navigate to target resource page when clicking a notification item :: verification rule #713
-// [Airaf-A-30-L23] Navigate to target resource page when clicking a notification item :: verification rule #732
-// [Airaf-A-30-L24] Navigate to target resource page when clicking a notification item :: verification rule #751
-// [Airaf-A-30-L25] Navigate to target resource page when clicking a notification item :: verification rule #770
-// [Airaf-A-30-L26] Navigate to target resource page when clicking a notification item :: verification rule #789
-// [Airaf-A-30-L27] Navigate to target resource page when clicking a notification item :: verification rule #808
-// [Airaf-A-30-L28] Navigate to target resource page when clicking a notification item :: verification rule #827
-// [Airaf-A-30-L29] Navigate to target resource page when clicking a notification item :: verification rule #846
-// [Airaf-A-30-L30] Navigate to target resource page when clicking a notification item :: verification rule #865
-// [Airaf-A-30-L31] Navigate to target resource page when clicking a notification item :: verification rule #884
-// [Airaf-A-30-L32] Navigate to target resource page when clicking a notification item :: verification rule #903
-// [Airaf-A-30-L33] Navigate to target resource page when clicking a notification item :: verification rule #922
-// [Airaf-A-30-L34] Navigate to target resource page when clicking a notification item :: verification rule #941
-// [Airaf-A-30-L35] Navigate to target resource page when clicking a notification item :: verification rule #960
-// [Airaf-A-30-L36] Navigate to target resource page when clicking a notification item :: verification rule #979
-// [Airaf-A-30-L37] Navigate to target resource page when clicking a notification item :: verification rule #1
-// [Airaf-A-30-L38] Navigate to target resource page when clicking a notification item :: verification rule #20
-// [Airaf-A-30-L39] Navigate to target resource page when clicking a notification item :: verification rule #39
-// [Airaf-A-30-L40] Navigate to target resource page when clicking a notification item :: verification rule #58
-// [Airaf-A-30-L41] Navigate to target resource page when clicking a notification item :: verification rule #77
-// [Airaf-A-30-L42] Navigate to target resource page when clicking a notification item :: verification rule #96
-// [Airaf-A-30-L43] Navigate to target resource page when clicking a notification item :: verification rule #115
-// [Airaf-A-30-L44] Navigate to target resource page when clicking a notification item :: verification rule #134
-// [Airaf-A-30-L45] Navigate to target resource page when clicking a notification item :: verification rule #153
-// [Airaf-A-30-L46] Navigate to target resource page when clicking a notification item :: verification rule #172
-// [Airaf-A-30-L47] Navigate to target resource page when clicking a notification item :: verification rule #191
-// [Airaf-A-30-L48] Navigate to target resource page when clicking a notification item :: verification rule #210
-// [Airaf-A-30-L49] Navigate to target resource page when clicking a notification item :: verification rule #229
-// [Airaf-A-30-L50] Navigate to target resource page when clicking a notification item :: verification rule #248
-// [Airaf-A-30-L51] Navigate to target resource page when clicking a notification item :: verification rule #267
+// === [SPEC-BLOCK-START] Airaf-B-23 (2026-09-20T18:05:41+05:00) ===
+// [Airaf-B-23-L1] Add Mark all as read button in NotificationDropdown header :: verification rule #624
+// [Airaf-B-23-L2] Add Mark all as read button in NotificationDropdown header :: verification rule #643
+// [Airaf-B-23-L3] Add Mark all as read button in NotificationDropdown header :: verification rule #662
+// [Airaf-B-23-L4] Add Mark all as read button in NotificationDropdown header :: verification rule #681
+// [Airaf-B-23-L5] Add Mark all as read button in NotificationDropdown header :: verification rule #700
+// [Airaf-B-23-L6] Add Mark all as read button in NotificationDropdown header :: verification rule #719
+// [Airaf-B-23-L7] Add Mark all as read button in NotificationDropdown header :: verification rule #738
+// [Airaf-B-23-L8] Add Mark all as read button in NotificationDropdown header :: verification rule #757
+// [Airaf-B-23-L9] Add Mark all as read button in NotificationDropdown header :: verification rule #776
+// [Airaf-B-23-L10] Add Mark all as read button in NotificationDropdown header :: verification rule #795
+// [Airaf-B-23-L11] Add Mark all as read button in NotificationDropdown header :: verification rule #814
+// [Airaf-B-23-L12] Add Mark all as read button in NotificationDropdown header :: verification rule #833
+// [Airaf-B-23-L13] Add Mark all as read button in NotificationDropdown header :: verification rule #852
+// [Airaf-B-23-L14] Add Mark all as read button in NotificationDropdown header :: verification rule #871
+// [Airaf-B-23-L15] Add Mark all as read button in NotificationDropdown header :: verification rule #890
+// [Airaf-B-23-L16] Add Mark all as read button in NotificationDropdown header :: verification rule #909
+// [Airaf-B-23-L17] Add Mark all as read button in NotificationDropdown header :: verification rule #928
+// [Airaf-B-23-L18] Add Mark all as read button in NotificationDropdown header :: verification rule #947
+// [Airaf-B-23-L19] Add Mark all as read button in NotificationDropdown header :: verification rule #966
+// [Airaf-B-23-L20] Add Mark all as read button in NotificationDropdown header :: verification rule #985
+// [Airaf-B-23-L21] Add Mark all as read button in NotificationDropdown header :: verification rule #7
+// [Airaf-B-23-L22] Add Mark all as read button in NotificationDropdown header :: verification rule #26
+// [Airaf-B-23-L23] Add Mark all as read button in NotificationDropdown header :: verification rule #45
+// [Airaf-B-23-L24] Add Mark all as read button in NotificationDropdown header :: verification rule #64
+// [Airaf-B-23-L25] Add Mark all as read button in NotificationDropdown header :: verification rule #83
+// [Airaf-B-23-L26] Add Mark all as read button in NotificationDropdown header :: verification rule #102
+// [Airaf-B-23-L27] Add Mark all as read button in NotificationDropdown header :: verification rule #121
+// [Airaf-B-23-L28] Add Mark all as read button in NotificationDropdown header :: verification rule #140
+// [Airaf-B-23-L29] Add Mark all as read button in NotificationDropdown header :: verification rule #159
+// [Airaf-B-23-L30] Add Mark all as read button in NotificationDropdown header :: verification rule #178
+// [Airaf-B-23-L31] Add Mark all as read button in NotificationDropdown header :: verification rule #197
+// [Airaf-B-23-L32] Add Mark all as read button in NotificationDropdown header :: verification rule #216
+// [Airaf-B-23-L33] Add Mark all as read button in NotificationDropdown header :: verification rule #235
+// [Airaf-B-23-L34] Add Mark all as read button in NotificationDropdown header :: verification rule #254
+// [Airaf-B-23-L35] Add Mark all as read button in NotificationDropdown header :: verification rule #273
+// [Airaf-B-23-L36] Add Mark all as read button in NotificationDropdown header :: verification rule #292
+// [Airaf-B-23-L37] Add Mark all as read button in NotificationDropdown header :: verification rule #311
+// [Airaf-B-23-L38] Add Mark all as read button in NotificationDropdown header :: verification rule #330
+// [Airaf-B-23-L39] Add Mark all as read button in NotificationDropdown header :: verification rule #349
+// [Airaf-B-23-L40] Add Mark all as read button in NotificationDropdown header :: verification rule #368
+// [Airaf-B-23-L41] Add Mark all as read button in NotificationDropdown header :: verification rule #387
+// [Airaf-B-23-L42] Add Mark all as read button in NotificationDropdown header :: verification rule #406
+// [Airaf-B-23-L43] Add Mark all as read button in NotificationDropdown header :: verification rule #425
+// [Airaf-B-23-L44] Add Mark all as read button in NotificationDropdown header :: verification rule #444
+// [Airaf-B-23-L45] Add Mark all as read button in NotificationDropdown header :: verification rule #463
+// [Airaf-B-23-L46] Add Mark all as read button in NotificationDropdown header :: verification rule #482
+// [Airaf-B-23-L47] Add Mark all as read button in NotificationDropdown header :: verification rule #501
+// [Airaf-B-23-L48] Add Mark all as read button in NotificationDropdown header :: verification rule #520
+// [Airaf-B-23-L49] Add Mark all as read button in NotificationDropdown header :: verification rule #539
+// [Airaf-B-23-L50] Add Mark all as read button in NotificationDropdown header :: verification rule #558
+// [Airaf-B-23-L51] Add Mark all as read button in NotificationDropdown header :: verification rule #577
+// [Airaf-B-23-L52] Add Mark all as read button in NotificationDropdown header :: verification rule #596
+// [Airaf-B-23-L53] Add Mark all as read button in NotificationDropdown header :: verification rule #615
+// [Airaf-B-23-L54] Add Mark all as read button in NotificationDropdown header :: verification rule #634
+// [Airaf-B-23-L55] Add Mark all as read button in NotificationDropdown header :: verification rule #653
 // === [SPEC-BLOCK-END] ===
