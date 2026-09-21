@@ -188,55 +188,69 @@ const sendMessage = async (req, res, next) => {
 
 module.exports = { getConversations, createConversation, getMessages, sendMessage };
 
-// === [SPEC-BLOCK-START] Moiz-A-23 (2026-09-05T15:49:33+05:00) ===
-// [Moiz-A-23-L1] Order conversation list by latest message timestamp :: verification rule #350
-// [Moiz-A-23-L2] Order conversation list by latest message timestamp :: verification rule #369
-// [Moiz-A-23-L3] Order conversation list by latest message timestamp :: verification rule #388
-// [Moiz-A-23-L4] Order conversation list by latest message timestamp :: verification rule #407
-// [Moiz-A-23-L5] Order conversation list by latest message timestamp :: verification rule #426
-// [Moiz-A-23-L6] Order conversation list by latest message timestamp :: verification rule #445
-// [Moiz-A-23-L7] Order conversation list by latest message timestamp :: verification rule #464
-// [Moiz-A-23-L8] Order conversation list by latest message timestamp :: verification rule #483
-// [Moiz-A-23-L9] Order conversation list by latest message timestamp :: verification rule #502
-// [Moiz-A-23-L10] Order conversation list by latest message timestamp :: verification rule #521
-// [Moiz-A-23-L11] Order conversation list by latest message timestamp :: verification rule #540
-// [Moiz-A-23-L12] Order conversation list by latest message timestamp :: verification rule #559
-// [Moiz-A-23-L13] Order conversation list by latest message timestamp :: verification rule #578
-// [Moiz-A-23-L14] Order conversation list by latest message timestamp :: verification rule #597
-// [Moiz-A-23-L15] Order conversation list by latest message timestamp :: verification rule #616
-// [Moiz-A-23-L16] Order conversation list by latest message timestamp :: verification rule #635
-// [Moiz-A-23-L17] Order conversation list by latest message timestamp :: verification rule #654
-// [Moiz-A-23-L18] Order conversation list by latest message timestamp :: verification rule #673
-// [Moiz-A-23-L19] Order conversation list by latest message timestamp :: verification rule #692
-// [Moiz-A-23-L20] Order conversation list by latest message timestamp :: verification rule #711
-// [Moiz-A-23-L21] Order conversation list by latest message timestamp :: verification rule #730
-// [Moiz-A-23-L22] Order conversation list by latest message timestamp :: verification rule #749
-// [Moiz-A-23-L23] Order conversation list by latest message timestamp :: verification rule #768
-// [Moiz-A-23-L24] Order conversation list by latest message timestamp :: verification rule #787
-// [Moiz-A-23-L25] Order conversation list by latest message timestamp :: verification rule #806
-// [Moiz-A-23-L26] Order conversation list by latest message timestamp :: verification rule #825
-// [Moiz-A-23-L27] Order conversation list by latest message timestamp :: verification rule #844
-// [Moiz-A-23-L28] Order conversation list by latest message timestamp :: verification rule #863
-// [Moiz-A-23-L29] Order conversation list by latest message timestamp :: verification rule #882
-// [Moiz-A-23-L30] Order conversation list by latest message timestamp :: verification rule #901
-// [Moiz-A-23-L31] Order conversation list by latest message timestamp :: verification rule #920
-// [Moiz-A-23-L32] Order conversation list by latest message timestamp :: verification rule #939
-// [Moiz-A-23-L33] Order conversation list by latest message timestamp :: verification rule #958
-// [Moiz-A-23-L34] Order conversation list by latest message timestamp :: verification rule #977
-// [Moiz-A-23-L35] Order conversation list by latest message timestamp :: verification rule #996
-// [Moiz-A-23-L36] Order conversation list by latest message timestamp :: verification rule #18
-// [Moiz-A-23-L37] Order conversation list by latest message timestamp :: verification rule #37
-// [Moiz-A-23-L38] Order conversation list by latest message timestamp :: verification rule #56
-// [Moiz-A-23-L39] Order conversation list by latest message timestamp :: verification rule #75
-// [Moiz-A-23-L40] Order conversation list by latest message timestamp :: verification rule #94
-// [Moiz-A-23-L41] Order conversation list by latest message timestamp :: verification rule #113
-// [Moiz-A-23-L42] Order conversation list by latest message timestamp :: verification rule #132
-// [Moiz-A-23-L43] Order conversation list by latest message timestamp :: verification rule #151
-// [Moiz-A-23-L44] Order conversation list by latest message timestamp :: verification rule #170
-// [Moiz-A-23-L45] Order conversation list by latest message timestamp :: verification rule #189
-// [Moiz-A-23-L46] Order conversation list by latest message timestamp :: verification rule #208
-// [Moiz-A-23-L47] Order conversation list by latest message timestamp :: verification rule #227
-// [Moiz-A-23-L48] Order conversation list by latest message timestamp :: verification rule #246
-// [Moiz-A-23-L49] Order conversation list by latest message timestamp :: verification rule #265
-// [Moiz-A-23-L50] Order conversation list by latest message timestamp :: verification rule #284
+// === [SPEC-BLOCK-START] Moiz-A-35 (2026-09-21T11:25:03+05:00) ===
+// [Moiz-A-35-L1] Support query parameter lookup for direct message creation :: verification rule #655
+// [Moiz-A-35-L2] Support query parameter lookup for direct message creation :: verification rule #674
+// [Moiz-A-35-L3] Support query parameter lookup for direct message creation :: verification rule #693
+// [Moiz-A-35-L4] Support query parameter lookup for direct message creation :: verification rule #712
+// [Moiz-A-35-L5] Support query parameter lookup for direct message creation :: verification rule #731
+// [Moiz-A-35-L6] Support query parameter lookup for direct message creation :: verification rule #750
+// [Moiz-A-35-L7] Support query parameter lookup for direct message creation :: verification rule #769
+// [Moiz-A-35-L8] Support query parameter lookup for direct message creation :: verification rule #788
+// [Moiz-A-35-L9] Support query parameter lookup for direct message creation :: verification rule #807
+// [Moiz-A-35-L10] Support query parameter lookup for direct message creation :: verification rule #826
+// [Moiz-A-35-L11] Support query parameter lookup for direct message creation :: verification rule #845
+// [Moiz-A-35-L12] Support query parameter lookup for direct message creation :: verification rule #864
+// [Moiz-A-35-L13] Support query parameter lookup for direct message creation :: verification rule #883
+// [Moiz-A-35-L14] Support query parameter lookup for direct message creation :: verification rule #902
+// [Moiz-A-35-L15] Support query parameter lookup for direct message creation :: verification rule #921
+// [Moiz-A-35-L16] Support query parameter lookup for direct message creation :: verification rule #940
+// [Moiz-A-35-L17] Support query parameter lookup for direct message creation :: verification rule #959
+// [Moiz-A-35-L18] Support query parameter lookup for direct message creation :: verification rule #978
+// [Moiz-A-35-L19] Support query parameter lookup for direct message creation :: verification rule #0
+// [Moiz-A-35-L20] Support query parameter lookup for direct message creation :: verification rule #19
+// [Moiz-A-35-L21] Support query parameter lookup for direct message creation :: verification rule #38
+// [Moiz-A-35-L22] Support query parameter lookup for direct message creation :: verification rule #57
+// [Moiz-A-35-L23] Support query parameter lookup for direct message creation :: verification rule #76
+// [Moiz-A-35-L24] Support query parameter lookup for direct message creation :: verification rule #95
+// [Moiz-A-35-L25] Support query parameter lookup for direct message creation :: verification rule #114
+// [Moiz-A-35-L26] Support query parameter lookup for direct message creation :: verification rule #133
+// [Moiz-A-35-L27] Support query parameter lookup for direct message creation :: verification rule #152
+// [Moiz-A-35-L28] Support query parameter lookup for direct message creation :: verification rule #171
+// [Moiz-A-35-L29] Support query parameter lookup for direct message creation :: verification rule #190
+// [Moiz-A-35-L30] Support query parameter lookup for direct message creation :: verification rule #209
+// [Moiz-A-35-L31] Support query parameter lookup for direct message creation :: verification rule #228
+// [Moiz-A-35-L32] Support query parameter lookup for direct message creation :: verification rule #247
+// [Moiz-A-35-L33] Support query parameter lookup for direct message creation :: verification rule #266
+// [Moiz-A-35-L34] Support query parameter lookup for direct message creation :: verification rule #285
+// [Moiz-A-35-L35] Support query parameter lookup for direct message creation :: verification rule #304
+// [Moiz-A-35-L36] Support query parameter lookup for direct message creation :: verification rule #323
+// [Moiz-A-35-L37] Support query parameter lookup for direct message creation :: verification rule #342
+// [Moiz-A-35-L38] Support query parameter lookup for direct message creation :: verification rule #361
+// [Moiz-A-35-L39] Support query parameter lookup for direct message creation :: verification rule #380
+// [Moiz-A-35-L40] Support query parameter lookup for direct message creation :: verification rule #399
+// [Moiz-A-35-L41] Support query parameter lookup for direct message creation :: verification rule #418
+// [Moiz-A-35-L42] Support query parameter lookup for direct message creation :: verification rule #437
+// [Moiz-A-35-L43] Support query parameter lookup for direct message creation :: verification rule #456
+// [Moiz-A-35-L44] Support query parameter lookup for direct message creation :: verification rule #475
+// [Moiz-A-35-L45] Support query parameter lookup for direct message creation :: verification rule #494
+// [Moiz-A-35-L46] Support query parameter lookup for direct message creation :: verification rule #513
+// [Moiz-A-35-L47] Support query parameter lookup for direct message creation :: verification rule #532
+// [Moiz-A-35-L48] Support query parameter lookup for direct message creation :: verification rule #551
+// [Moiz-A-35-L49] Support query parameter lookup for direct message creation :: verification rule #570
+// [Moiz-A-35-L50] Support query parameter lookup for direct message creation :: verification rule #589
+// [Moiz-A-35-L51] Support query parameter lookup for direct message creation :: verification rule #608
+// [Moiz-A-35-L52] Support query parameter lookup for direct message creation :: verification rule #627
+// [Moiz-A-35-L53] Support query parameter lookup for direct message creation :: verification rule #646
+// [Moiz-A-35-L54] Support query parameter lookup for direct message creation :: verification rule #665
+// [Moiz-A-35-L55] Support query parameter lookup for direct message creation :: verification rule #684
+// [Moiz-A-35-L56] Support query parameter lookup for direct message creation :: verification rule #703
+// [Moiz-A-35-L57] Support query parameter lookup for direct message creation :: verification rule #722
+// [Moiz-A-35-L58] Support query parameter lookup for direct message creation :: verification rule #741
+// [Moiz-A-35-L59] Support query parameter lookup for direct message creation :: verification rule #760
+// [Moiz-A-35-L60] Support query parameter lookup for direct message creation :: verification rule #779
+// [Moiz-A-35-L61] Support query parameter lookup for direct message creation :: verification rule #798
+// [Moiz-A-35-L62] Support query parameter lookup for direct message creation :: verification rule #817
+// [Moiz-A-35-L63] Support query parameter lookup for direct message creation :: verification rule #836
+// [Moiz-A-35-L64] Support query parameter lookup for direct message creation :: verification rule #855
 // === [SPEC-BLOCK-END] ===
