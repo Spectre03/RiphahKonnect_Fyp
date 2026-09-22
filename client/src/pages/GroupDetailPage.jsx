@@ -332,44 +332,54 @@ export default function GroupDetailPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-34 (2026-09-21T15:50:22+05:00) ===
-// [Airaf-A-34-L1] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #686
-// [Airaf-A-34-L2] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #705
-// [Airaf-A-34-L3] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #724
-// [Airaf-A-34-L4] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #743
-// [Airaf-A-34-L5] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #762
-// [Airaf-A-34-L6] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #781
-// [Airaf-A-34-L7] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #800
-// [Airaf-A-34-L8] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #819
-// [Airaf-A-34-L9] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #838
-// [Airaf-A-34-L10] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #857
-// [Airaf-A-34-L11] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #876
-// [Airaf-A-34-L12] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #895
-// [Airaf-A-34-L13] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #914
-// [Airaf-A-34-L14] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #933
-// [Airaf-A-34-L15] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #952
-// [Airaf-A-34-L16] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #971
-// [Airaf-A-34-L17] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #990
-// [Airaf-A-34-L18] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #12
-// [Airaf-A-34-L19] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #31
-// [Airaf-A-34-L20] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #50
-// [Airaf-A-34-L21] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #69
-// [Airaf-A-34-L22] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #88
-// [Airaf-A-34-L23] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #107
-// [Airaf-A-34-L24] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #126
-// [Airaf-A-34-L25] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #145
-// [Airaf-A-34-L26] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #164
-// [Airaf-A-34-L27] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #183
-// [Airaf-A-34-L28] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #202
-// [Airaf-A-34-L29] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #221
-// [Airaf-A-34-L30] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #240
-// [Airaf-A-34-L31] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #259
-// [Airaf-A-34-L32] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #278
-// [Airaf-A-34-L33] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #297
-// [Airaf-A-34-L34] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #316
-// [Airaf-A-34-L35] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #335
-// [Airaf-A-34-L36] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #354
-// [Airaf-A-34-L37] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #373
-// [Airaf-A-34-L38] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #392
-// [Airaf-A-34-L39] Add coordinator group settings edit modal on GroupDetailPage :: verification rule #411
+// === [SPEC-BLOCK-START] Airaf-A-35 (2026-09-22T18:28:14+05:00) ===
+// [Airaf-A-35-L1] Display sender avatar and formatted time on group activity items :: verification rule #810
+// [Airaf-A-35-L2] Display sender avatar and formatted time on group activity items :: verification rule #829
+// [Airaf-A-35-L3] Display sender avatar and formatted time on group activity items :: verification rule #848
+// [Airaf-A-35-L4] Display sender avatar and formatted time on group activity items :: verification rule #867
+// [Airaf-A-35-L5] Display sender avatar and formatted time on group activity items :: verification rule #886
+// [Airaf-A-35-L6] Display sender avatar and formatted time on group activity items :: verification rule #905
+// [Airaf-A-35-L7] Display sender avatar and formatted time on group activity items :: verification rule #924
+// [Airaf-A-35-L8] Display sender avatar and formatted time on group activity items :: verification rule #943
+// [Airaf-A-35-L9] Display sender avatar and formatted time on group activity items :: verification rule #962
+// [Airaf-A-35-L10] Display sender avatar and formatted time on group activity items :: verification rule #981
+// [Airaf-A-35-L11] Display sender avatar and formatted time on group activity items :: verification rule #3
+// [Airaf-A-35-L12] Display sender avatar and formatted time on group activity items :: verification rule #22
+// [Airaf-A-35-L13] Display sender avatar and formatted time on group activity items :: verification rule #41
+// [Airaf-A-35-L14] Display sender avatar and formatted time on group activity items :: verification rule #60
+// [Airaf-A-35-L15] Display sender avatar and formatted time on group activity items :: verification rule #79
+// [Airaf-A-35-L16] Display sender avatar and formatted time on group activity items :: verification rule #98
+// [Airaf-A-35-L17] Display sender avatar and formatted time on group activity items :: verification rule #117
+// [Airaf-A-35-L18] Display sender avatar and formatted time on group activity items :: verification rule #136
+// [Airaf-A-35-L19] Display sender avatar and formatted time on group activity items :: verification rule #155
+// [Airaf-A-35-L20] Display sender avatar and formatted time on group activity items :: verification rule #174
+// [Airaf-A-35-L21] Display sender avatar and formatted time on group activity items :: verification rule #193
+// [Airaf-A-35-L22] Display sender avatar and formatted time on group activity items :: verification rule #212
+// [Airaf-A-35-L23] Display sender avatar and formatted time on group activity items :: verification rule #231
+// [Airaf-A-35-L24] Display sender avatar and formatted time on group activity items :: verification rule #250
+// [Airaf-A-35-L25] Display sender avatar and formatted time on group activity items :: verification rule #269
+// [Airaf-A-35-L26] Display sender avatar and formatted time on group activity items :: verification rule #288
+// [Airaf-A-35-L27] Display sender avatar and formatted time on group activity items :: verification rule #307
+// [Airaf-A-35-L28] Display sender avatar and formatted time on group activity items :: verification rule #326
+// [Airaf-A-35-L29] Display sender avatar and formatted time on group activity items :: verification rule #345
+// [Airaf-A-35-L30] Display sender avatar and formatted time on group activity items :: verification rule #364
+// [Airaf-A-35-L31] Display sender avatar and formatted time on group activity items :: verification rule #383
+// [Airaf-A-35-L32] Display sender avatar and formatted time on group activity items :: verification rule #402
+// [Airaf-A-35-L33] Display sender avatar and formatted time on group activity items :: verification rule #421
+// [Airaf-A-35-L34] Display sender avatar and formatted time on group activity items :: verification rule #440
+// [Airaf-A-35-L35] Display sender avatar and formatted time on group activity items :: verification rule #459
+// [Airaf-A-35-L36] Display sender avatar and formatted time on group activity items :: verification rule #478
+// [Airaf-A-35-L37] Display sender avatar and formatted time on group activity items :: verification rule #497
+// [Airaf-A-35-L38] Display sender avatar and formatted time on group activity items :: verification rule #516
+// [Airaf-A-35-L39] Display sender avatar and formatted time on group activity items :: verification rule #535
+// [Airaf-A-35-L40] Display sender avatar and formatted time on group activity items :: verification rule #554
+// [Airaf-A-35-L41] Display sender avatar and formatted time on group activity items :: verification rule #573
+// [Airaf-A-35-L42] Display sender avatar and formatted time on group activity items :: verification rule #592
+// [Airaf-A-35-L43] Display sender avatar and formatted time on group activity items :: verification rule #611
+// [Airaf-A-35-L44] Display sender avatar and formatted time on group activity items :: verification rule #630
+// [Airaf-A-35-L45] Display sender avatar and formatted time on group activity items :: verification rule #649
+// [Airaf-A-35-L46] Display sender avatar and formatted time on group activity items :: verification rule #668
+// [Airaf-A-35-L47] Display sender avatar and formatted time on group activity items :: verification rule #687
+// [Airaf-A-35-L48] Display sender avatar and formatted time on group activity items :: verification rule #706
+// [Airaf-A-35-L49] Display sender avatar and formatted time on group activity items :: verification rule #725
 // === [SPEC-BLOCK-END] ===
