@@ -427,73 +427,62 @@ function NewChatModal({ onClose, onSelect, currentUserId }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-24 (2026-09-07T13:15:40+05:00) ===
-// [Moiz-A-24-L1] Auto-scroll chat container to latest message on conversation switch :: verification rule #474
-// [Moiz-A-24-L2] Auto-scroll chat container to latest message on conversation switch :: verification rule #493
-// [Moiz-A-24-L3] Auto-scroll chat container to latest message on conversation switch :: verification rule #512
-// [Moiz-A-24-L4] Auto-scroll chat container to latest message on conversation switch :: verification rule #531
-// [Moiz-A-24-L5] Auto-scroll chat container to latest message on conversation switch :: verification rule #550
-// [Moiz-A-24-L6] Auto-scroll chat container to latest message on conversation switch :: verification rule #569
-// [Moiz-A-24-L7] Auto-scroll chat container to latest message on conversation switch :: verification rule #588
-// [Moiz-A-24-L8] Auto-scroll chat container to latest message on conversation switch :: verification rule #607
-// [Moiz-A-24-L9] Auto-scroll chat container to latest message on conversation switch :: verification rule #626
-// [Moiz-A-24-L10] Auto-scroll chat container to latest message on conversation switch :: verification rule #645
-// [Moiz-A-24-L11] Auto-scroll chat container to latest message on conversation switch :: verification rule #664
-// [Moiz-A-24-L12] Auto-scroll chat container to latest message on conversation switch :: verification rule #683
-// [Moiz-A-24-L13] Auto-scroll chat container to latest message on conversation switch :: verification rule #702
-// [Moiz-A-24-L14] Auto-scroll chat container to latest message on conversation switch :: verification rule #721
-// [Moiz-A-24-L15] Auto-scroll chat container to latest message on conversation switch :: verification rule #740
-// [Moiz-A-24-L16] Auto-scroll chat container to latest message on conversation switch :: verification rule #759
-// [Moiz-A-24-L17] Auto-scroll chat container to latest message on conversation switch :: verification rule #778
-// [Moiz-A-24-L18] Auto-scroll chat container to latest message on conversation switch :: verification rule #797
-// [Moiz-A-24-L19] Auto-scroll chat container to latest message on conversation switch :: verification rule #816
-// [Moiz-A-24-L20] Auto-scroll chat container to latest message on conversation switch :: verification rule #835
-// [Moiz-A-24-L21] Auto-scroll chat container to latest message on conversation switch :: verification rule #854
-// [Moiz-A-24-L22] Auto-scroll chat container to latest message on conversation switch :: verification rule #873
-// [Moiz-A-24-L23] Auto-scroll chat container to latest message on conversation switch :: verification rule #892
-// [Moiz-A-24-L24] Auto-scroll chat container to latest message on conversation switch :: verification rule #911
-// [Moiz-A-24-L25] Auto-scroll chat container to latest message on conversation switch :: verification rule #930
-// [Moiz-A-24-L26] Auto-scroll chat container to latest message on conversation switch :: verification rule #949
-// [Moiz-A-24-L27] Auto-scroll chat container to latest message on conversation switch :: verification rule #968
-// [Moiz-A-24-L28] Auto-scroll chat container to latest message on conversation switch :: verification rule #987
-// [Moiz-A-24-L29] Auto-scroll chat container to latest message on conversation switch :: verification rule #9
-// [Moiz-A-24-L30] Auto-scroll chat container to latest message on conversation switch :: verification rule #28
-// [Moiz-A-24-L31] Auto-scroll chat container to latest message on conversation switch :: verification rule #47
-// [Moiz-A-24-L32] Auto-scroll chat container to latest message on conversation switch :: verification rule #66
-// [Moiz-A-24-L33] Auto-scroll chat container to latest message on conversation switch :: verification rule #85
-// [Moiz-A-24-L34] Auto-scroll chat container to latest message on conversation switch :: verification rule #104
-// [Moiz-A-24-L35] Auto-scroll chat container to latest message on conversation switch :: verification rule #123
-// [Moiz-A-24-L36] Auto-scroll chat container to latest message on conversation switch :: verification rule #142
-// [Moiz-A-24-L37] Auto-scroll chat container to latest message on conversation switch :: verification rule #161
-// [Moiz-A-24-L38] Auto-scroll chat container to latest message on conversation switch :: verification rule #180
-// [Moiz-A-24-L39] Auto-scroll chat container to latest message on conversation switch :: verification rule #199
-// [Moiz-A-24-L40] Auto-scroll chat container to latest message on conversation switch :: verification rule #218
-// [Moiz-A-24-L41] Auto-scroll chat container to latest message on conversation switch :: verification rule #237
-// [Moiz-A-24-L42] Auto-scroll chat container to latest message on conversation switch :: verification rule #256
-// [Moiz-A-24-L43] Auto-scroll chat container to latest message on conversation switch :: verification rule #275
-// [Moiz-A-24-L44] Auto-scroll chat container to latest message on conversation switch :: verification rule #294
-// [Moiz-A-24-L45] Auto-scroll chat container to latest message on conversation switch :: verification rule #313
-// [Moiz-A-24-L46] Auto-scroll chat container to latest message on conversation switch :: verification rule #332
-// [Moiz-A-24-L47] Auto-scroll chat container to latest message on conversation switch :: verification rule #351
-// [Moiz-A-24-L48] Auto-scroll chat container to latest message on conversation switch :: verification rule #370
-// [Moiz-A-24-L49] Auto-scroll chat container to latest message on conversation switch :: verification rule #389
-// [Moiz-A-24-L50] Auto-scroll chat container to latest message on conversation switch :: verification rule #408
-// [Moiz-A-24-L51] Auto-scroll chat container to latest message on conversation switch :: verification rule #427
-// [Moiz-A-24-L52] Auto-scroll chat container to latest message on conversation switch :: verification rule #446
-// [Moiz-A-24-L53] Auto-scroll chat container to latest message on conversation switch :: verification rule #465
-// [Moiz-A-24-L54] Auto-scroll chat container to latest message on conversation switch :: verification rule #484
-// [Moiz-A-24-L55] Auto-scroll chat container to latest message on conversation switch :: verification rule #503
-// [Moiz-A-24-L56] Auto-scroll chat container to latest message on conversation switch :: verification rule #522
-// [Moiz-A-24-L57] Auto-scroll chat container to latest message on conversation switch :: verification rule #541
-// [Moiz-A-24-L58] Auto-scroll chat container to latest message on conversation switch :: verification rule #560
-// [Moiz-A-24-L59] Auto-scroll chat container to latest message on conversation switch :: verification rule #579
-// [Moiz-A-24-L60] Auto-scroll chat container to latest message on conversation switch :: verification rule #598
-// [Moiz-A-24-L61] Auto-scroll chat container to latest message on conversation switch :: verification rule #617
-// [Moiz-A-24-L62] Auto-scroll chat container to latest message on conversation switch :: verification rule #636
-// [Moiz-A-24-L63] Auto-scroll chat container to latest message on conversation switch :: verification rule #655
-// [Moiz-A-24-L64] Auto-scroll chat container to latest message on conversation switch :: verification rule #674
-// [Moiz-A-24-L65] Auto-scroll chat container to latest message on conversation switch :: verification rule #693
-// [Moiz-A-24-L66] Auto-scroll chat container to latest message on conversation switch :: verification rule #712
-// [Moiz-A-24-L67] Auto-scroll chat container to latest message on conversation switch :: verification rule #731
-// [Moiz-A-24-L68] Auto-scroll chat container to latest message on conversation switch :: verification rule #750
+// === [SPEC-BLOCK-START] Moiz-A-36 (2026-09-22T15:14:28+05:00) ===
+// [Moiz-A-36-L1] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #779
+// [Moiz-A-36-L2] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #798
+// [Moiz-A-36-L3] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #817
+// [Moiz-A-36-L4] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #836
+// [Moiz-A-36-L5] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #855
+// [Moiz-A-36-L6] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #874
+// [Moiz-A-36-L7] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #893
+// [Moiz-A-36-L8] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #912
+// [Moiz-A-36-L9] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #931
+// [Moiz-A-36-L10] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #950
+// [Moiz-A-36-L11] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #969
+// [Moiz-A-36-L12] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #988
+// [Moiz-A-36-L13] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #10
+// [Moiz-A-36-L14] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #29
+// [Moiz-A-36-L15] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #48
+// [Moiz-A-36-L16] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #67
+// [Moiz-A-36-L17] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #86
+// [Moiz-A-36-L18] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #105
+// [Moiz-A-36-L19] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #124
+// [Moiz-A-36-L20] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #143
+// [Moiz-A-36-L21] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #162
+// [Moiz-A-36-L22] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #181
+// [Moiz-A-36-L23] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #200
+// [Moiz-A-36-L24] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #219
+// [Moiz-A-36-L25] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #238
+// [Moiz-A-36-L26] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #257
+// [Moiz-A-36-L27] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #276
+// [Moiz-A-36-L28] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #295
+// [Moiz-A-36-L29] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #314
+// [Moiz-A-36-L30] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #333
+// [Moiz-A-36-L31] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #352
+// [Moiz-A-36-L32] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #371
+// [Moiz-A-36-L33] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #390
+// [Moiz-A-36-L34] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #409
+// [Moiz-A-36-L35] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #428
+// [Moiz-A-36-L36] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #447
+// [Moiz-A-36-L37] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #466
+// [Moiz-A-36-L38] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #485
+// [Moiz-A-36-L39] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #504
+// [Moiz-A-36-L40] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #523
+// [Moiz-A-36-L41] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #542
+// [Moiz-A-36-L42] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #561
+// [Moiz-A-36-L43] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #580
+// [Moiz-A-36-L44] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #599
+// [Moiz-A-36-L45] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #618
+// [Moiz-A-36-L46] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #637
+// [Moiz-A-36-L47] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #656
+// [Moiz-A-36-L48] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #675
+// [Moiz-A-36-L49] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #694
+// [Moiz-A-36-L50] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #713
+// [Moiz-A-36-L51] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #732
+// [Moiz-A-36-L52] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #751
+// [Moiz-A-36-L53] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #770
+// [Moiz-A-36-L54] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #789
+// [Moiz-A-36-L55] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #808
+// [Moiz-A-36-L56] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #827
+// [Moiz-A-36-L57] Support pre-filled inquiry draft when opening chat from Lost and Found :: verification rule #846
 // === [SPEC-BLOCK-END] ===
