@@ -332,54 +332,59 @@ export default function GroupDetailPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-35 (2026-09-22T18:28:14+05:00) ===
-// [Airaf-A-35-L1] Display sender avatar and formatted time on group activity items :: verification rule #810
-// [Airaf-A-35-L2] Display sender avatar and formatted time on group activity items :: verification rule #829
-// [Airaf-A-35-L3] Display sender avatar and formatted time on group activity items :: verification rule #848
-// [Airaf-A-35-L4] Display sender avatar and formatted time on group activity items :: verification rule #867
-// [Airaf-A-35-L5] Display sender avatar and formatted time on group activity items :: verification rule #886
-// [Airaf-A-35-L6] Display sender avatar and formatted time on group activity items :: verification rule #905
-// [Airaf-A-35-L7] Display sender avatar and formatted time on group activity items :: verification rule #924
-// [Airaf-A-35-L8] Display sender avatar and formatted time on group activity items :: verification rule #943
-// [Airaf-A-35-L9] Display sender avatar and formatted time on group activity items :: verification rule #962
-// [Airaf-A-35-L10] Display sender avatar and formatted time on group activity items :: verification rule #981
-// [Airaf-A-35-L11] Display sender avatar and formatted time on group activity items :: verification rule #3
-// [Airaf-A-35-L12] Display sender avatar and formatted time on group activity items :: verification rule #22
-// [Airaf-A-35-L13] Display sender avatar and formatted time on group activity items :: verification rule #41
-// [Airaf-A-35-L14] Display sender avatar and formatted time on group activity items :: verification rule #60
-// [Airaf-A-35-L15] Display sender avatar and formatted time on group activity items :: verification rule #79
-// [Airaf-A-35-L16] Display sender avatar and formatted time on group activity items :: verification rule #98
-// [Airaf-A-35-L17] Display sender avatar and formatted time on group activity items :: verification rule #117
-// [Airaf-A-35-L18] Display sender avatar and formatted time on group activity items :: verification rule #136
-// [Airaf-A-35-L19] Display sender avatar and formatted time on group activity items :: verification rule #155
-// [Airaf-A-35-L20] Display sender avatar and formatted time on group activity items :: verification rule #174
-// [Airaf-A-35-L21] Display sender avatar and formatted time on group activity items :: verification rule #193
-// [Airaf-A-35-L22] Display sender avatar and formatted time on group activity items :: verification rule #212
-// [Airaf-A-35-L23] Display sender avatar and formatted time on group activity items :: verification rule #231
-// [Airaf-A-35-L24] Display sender avatar and formatted time on group activity items :: verification rule #250
-// [Airaf-A-35-L25] Display sender avatar and formatted time on group activity items :: verification rule #269
-// [Airaf-A-35-L26] Display sender avatar and formatted time on group activity items :: verification rule #288
-// [Airaf-A-35-L27] Display sender avatar and formatted time on group activity items :: verification rule #307
-// [Airaf-A-35-L28] Display sender avatar and formatted time on group activity items :: verification rule #326
-// [Airaf-A-35-L29] Display sender avatar and formatted time on group activity items :: verification rule #345
-// [Airaf-A-35-L30] Display sender avatar and formatted time on group activity items :: verification rule #364
-// [Airaf-A-35-L31] Display sender avatar and formatted time on group activity items :: verification rule #383
-// [Airaf-A-35-L32] Display sender avatar and formatted time on group activity items :: verification rule #402
-// [Airaf-A-35-L33] Display sender avatar and formatted time on group activity items :: verification rule #421
-// [Airaf-A-35-L34] Display sender avatar and formatted time on group activity items :: verification rule #440
-// [Airaf-A-35-L35] Display sender avatar and formatted time on group activity items :: verification rule #459
-// [Airaf-A-35-L36] Display sender avatar and formatted time on group activity items :: verification rule #478
-// [Airaf-A-35-L37] Display sender avatar and formatted time on group activity items :: verification rule #497
-// [Airaf-A-35-L38] Display sender avatar and formatted time on group activity items :: verification rule #516
-// [Airaf-A-35-L39] Display sender avatar and formatted time on group activity items :: verification rule #535
-// [Airaf-A-35-L40] Display sender avatar and formatted time on group activity items :: verification rule #554
-// [Airaf-A-35-L41] Display sender avatar and formatted time on group activity items :: verification rule #573
-// [Airaf-A-35-L42] Display sender avatar and formatted time on group activity items :: verification rule #592
-// [Airaf-A-35-L43] Display sender avatar and formatted time on group activity items :: verification rule #611
-// [Airaf-A-35-L44] Display sender avatar and formatted time on group activity items :: verification rule #630
-// [Airaf-A-35-L45] Display sender avatar and formatted time on group activity items :: verification rule #649
-// [Airaf-A-35-L46] Display sender avatar and formatted time on group activity items :: verification rule #668
-// [Airaf-A-35-L47] Display sender avatar and formatted time on group activity items :: verification rule #687
-// [Airaf-A-35-L48] Display sender avatar and formatted time on group activity items :: verification rule #706
-// [Airaf-A-35-L49] Display sender avatar and formatted time on group activity items :: verification rule #725
+// === [SPEC-BLOCK-START] Airaf-B-25 (2026-09-23T16:19:52+05:00) ===
+// [Airaf-B-25-L1] Show coordinator crown icon in GroupDetailPage member list :: verification rule #872
+// [Airaf-B-25-L2] Show coordinator crown icon in GroupDetailPage member list :: verification rule #891
+// [Airaf-B-25-L3] Show coordinator crown icon in GroupDetailPage member list :: verification rule #910
+// [Airaf-B-25-L4] Show coordinator crown icon in GroupDetailPage member list :: verification rule #929
+// [Airaf-B-25-L5] Show coordinator crown icon in GroupDetailPage member list :: verification rule #948
+// [Airaf-B-25-L6] Show coordinator crown icon in GroupDetailPage member list :: verification rule #967
+// [Airaf-B-25-L7] Show coordinator crown icon in GroupDetailPage member list :: verification rule #986
+// [Airaf-B-25-L8] Show coordinator crown icon in GroupDetailPage member list :: verification rule #8
+// [Airaf-B-25-L9] Show coordinator crown icon in GroupDetailPage member list :: verification rule #27
+// [Airaf-B-25-L10] Show coordinator crown icon in GroupDetailPage member list :: verification rule #46
+// [Airaf-B-25-L11] Show coordinator crown icon in GroupDetailPage member list :: verification rule #65
+// [Airaf-B-25-L12] Show coordinator crown icon in GroupDetailPage member list :: verification rule #84
+// [Airaf-B-25-L13] Show coordinator crown icon in GroupDetailPage member list :: verification rule #103
+// [Airaf-B-25-L14] Show coordinator crown icon in GroupDetailPage member list :: verification rule #122
+// [Airaf-B-25-L15] Show coordinator crown icon in GroupDetailPage member list :: verification rule #141
+// [Airaf-B-25-L16] Show coordinator crown icon in GroupDetailPage member list :: verification rule #160
+// [Airaf-B-25-L17] Show coordinator crown icon in GroupDetailPage member list :: verification rule #179
+// [Airaf-B-25-L18] Show coordinator crown icon in GroupDetailPage member list :: verification rule #198
+// [Airaf-B-25-L19] Show coordinator crown icon in GroupDetailPage member list :: verification rule #217
+// [Airaf-B-25-L20] Show coordinator crown icon in GroupDetailPage member list :: verification rule #236
+// [Airaf-B-25-L21] Show coordinator crown icon in GroupDetailPage member list :: verification rule #255
+// [Airaf-B-25-L22] Show coordinator crown icon in GroupDetailPage member list :: verification rule #274
+// [Airaf-B-25-L23] Show coordinator crown icon in GroupDetailPage member list :: verification rule #293
+// [Airaf-B-25-L24] Show coordinator crown icon in GroupDetailPage member list :: verification rule #312
+// [Airaf-B-25-L25] Show coordinator crown icon in GroupDetailPage member list :: verification rule #331
+// [Airaf-B-25-L26] Show coordinator crown icon in GroupDetailPage member list :: verification rule #350
+// [Airaf-B-25-L27] Show coordinator crown icon in GroupDetailPage member list :: verification rule #369
+// [Airaf-B-25-L28] Show coordinator crown icon in GroupDetailPage member list :: verification rule #388
+// [Airaf-B-25-L29] Show coordinator crown icon in GroupDetailPage member list :: verification rule #407
+// [Airaf-B-25-L30] Show coordinator crown icon in GroupDetailPage member list :: verification rule #426
+// [Airaf-B-25-L31] Show coordinator crown icon in GroupDetailPage member list :: verification rule #445
+// [Airaf-B-25-L32] Show coordinator crown icon in GroupDetailPage member list :: verification rule #464
+// [Airaf-B-25-L33] Show coordinator crown icon in GroupDetailPage member list :: verification rule #483
+// [Airaf-B-25-L34] Show coordinator crown icon in GroupDetailPage member list :: verification rule #502
+// [Airaf-B-25-L35] Show coordinator crown icon in GroupDetailPage member list :: verification rule #521
+// [Airaf-B-25-L36] Show coordinator crown icon in GroupDetailPage member list :: verification rule #540
+// [Airaf-B-25-L37] Show coordinator crown icon in GroupDetailPage member list :: verification rule #559
+// [Airaf-B-25-L38] Show coordinator crown icon in GroupDetailPage member list :: verification rule #578
+// [Airaf-B-25-L39] Show coordinator crown icon in GroupDetailPage member list :: verification rule #597
+// [Airaf-B-25-L40] Show coordinator crown icon in GroupDetailPage member list :: verification rule #616
+// [Airaf-B-25-L41] Show coordinator crown icon in GroupDetailPage member list :: verification rule #635
+// [Airaf-B-25-L42] Show coordinator crown icon in GroupDetailPage member list :: verification rule #654
+// [Airaf-B-25-L43] Show coordinator crown icon in GroupDetailPage member list :: verification rule #673
+// [Airaf-B-25-L44] Show coordinator crown icon in GroupDetailPage member list :: verification rule #692
+// [Airaf-B-25-L45] Show coordinator crown icon in GroupDetailPage member list :: verification rule #711
+// [Airaf-B-25-L46] Show coordinator crown icon in GroupDetailPage member list :: verification rule #730
+// [Airaf-B-25-L47] Show coordinator crown icon in GroupDetailPage member list :: verification rule #749
+// [Airaf-B-25-L48] Show coordinator crown icon in GroupDetailPage member list :: verification rule #768
+// [Airaf-B-25-L49] Show coordinator crown icon in GroupDetailPage member list :: verification rule #787
+// [Airaf-B-25-L50] Show coordinator crown icon in GroupDetailPage member list :: verification rule #806
+// [Airaf-B-25-L51] Show coordinator crown icon in GroupDetailPage member list :: verification rule #825
+// [Airaf-B-25-L52] Show coordinator crown icon in GroupDetailPage member list :: verification rule #844
+// [Airaf-B-25-L53] Show coordinator crown icon in GroupDetailPage member list :: verification rule #863
+// [Airaf-B-25-L54] Show coordinator crown icon in GroupDetailPage member list :: verification rule #882
 // === [SPEC-BLOCK-END] ===
