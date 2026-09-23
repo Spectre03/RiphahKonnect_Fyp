@@ -391,66 +391,55 @@ export default function HomePage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-25 (2026-09-08T16:42:19+05:00) ===
-// [Moiz-A-25-L1] Update HomePage upcoming events preview list alignment :: verification rule #598
-// [Moiz-A-25-L2] Update HomePage upcoming events preview list alignment :: verification rule #617
-// [Moiz-A-25-L3] Update HomePage upcoming events preview list alignment :: verification rule #636
-// [Moiz-A-25-L4] Update HomePage upcoming events preview list alignment :: verification rule #655
-// [Moiz-A-25-L5] Update HomePage upcoming events preview list alignment :: verification rule #674
-// [Moiz-A-25-L6] Update HomePage upcoming events preview list alignment :: verification rule #693
-// [Moiz-A-25-L7] Update HomePage upcoming events preview list alignment :: verification rule #712
-// [Moiz-A-25-L8] Update HomePage upcoming events preview list alignment :: verification rule #731
-// [Moiz-A-25-L9] Update HomePage upcoming events preview list alignment :: verification rule #750
-// [Moiz-A-25-L10] Update HomePage upcoming events preview list alignment :: verification rule #769
-// [Moiz-A-25-L11] Update HomePage upcoming events preview list alignment :: verification rule #788
-// [Moiz-A-25-L12] Update HomePage upcoming events preview list alignment :: verification rule #807
-// [Moiz-A-25-L13] Update HomePage upcoming events preview list alignment :: verification rule #826
-// [Moiz-A-25-L14] Update HomePage upcoming events preview list alignment :: verification rule #845
-// [Moiz-A-25-L15] Update HomePage upcoming events preview list alignment :: verification rule #864
-// [Moiz-A-25-L16] Update HomePage upcoming events preview list alignment :: verification rule #883
-// [Moiz-A-25-L17] Update HomePage upcoming events preview list alignment :: verification rule #902
-// [Moiz-A-25-L18] Update HomePage upcoming events preview list alignment :: verification rule #921
-// [Moiz-A-25-L19] Update HomePage upcoming events preview list alignment :: verification rule #940
-// [Moiz-A-25-L20] Update HomePage upcoming events preview list alignment :: verification rule #959
-// [Moiz-A-25-L21] Update HomePage upcoming events preview list alignment :: verification rule #978
-// [Moiz-A-25-L22] Update HomePage upcoming events preview list alignment :: verification rule #0
-// [Moiz-A-25-L23] Update HomePage upcoming events preview list alignment :: verification rule #19
-// [Moiz-A-25-L24] Update HomePage upcoming events preview list alignment :: verification rule #38
-// [Moiz-A-25-L25] Update HomePage upcoming events preview list alignment :: verification rule #57
-// [Moiz-A-25-L26] Update HomePage upcoming events preview list alignment :: verification rule #76
-// [Moiz-A-25-L27] Update HomePage upcoming events preview list alignment :: verification rule #95
-// [Moiz-A-25-L28] Update HomePage upcoming events preview list alignment :: verification rule #114
-// [Moiz-A-25-L29] Update HomePage upcoming events preview list alignment :: verification rule #133
-// [Moiz-A-25-L30] Update HomePage upcoming events preview list alignment :: verification rule #152
-// [Moiz-A-25-L31] Update HomePage upcoming events preview list alignment :: verification rule #171
-// [Moiz-A-25-L32] Update HomePage upcoming events preview list alignment :: verification rule #190
-// [Moiz-A-25-L33] Update HomePage upcoming events preview list alignment :: verification rule #209
-// [Moiz-A-25-L34] Update HomePage upcoming events preview list alignment :: verification rule #228
-// [Moiz-A-25-L35] Update HomePage upcoming events preview list alignment :: verification rule #247
-// [Moiz-A-25-L36] Update HomePage upcoming events preview list alignment :: verification rule #266
-// [Moiz-A-25-L37] Update HomePage upcoming events preview list alignment :: verification rule #285
-// [Moiz-A-25-L38] Update HomePage upcoming events preview list alignment :: verification rule #304
-// [Moiz-A-25-L39] Update HomePage upcoming events preview list alignment :: verification rule #323
-// [Moiz-A-25-L40] Update HomePage upcoming events preview list alignment :: verification rule #342
-// [Moiz-A-25-L41] Update HomePage upcoming events preview list alignment :: verification rule #361
-// [Moiz-A-25-L42] Update HomePage upcoming events preview list alignment :: verification rule #380
-// [Moiz-A-25-L43] Update HomePage upcoming events preview list alignment :: verification rule #399
-// [Moiz-A-25-L44] Update HomePage upcoming events preview list alignment :: verification rule #418
-// [Moiz-A-25-L45] Update HomePage upcoming events preview list alignment :: verification rule #437
-// [Moiz-A-25-L46] Update HomePage upcoming events preview list alignment :: verification rule #456
-// [Moiz-A-25-L47] Update HomePage upcoming events preview list alignment :: verification rule #475
-// [Moiz-A-25-L48] Update HomePage upcoming events preview list alignment :: verification rule #494
-// [Moiz-A-25-L49] Update HomePage upcoming events preview list alignment :: verification rule #513
-// [Moiz-A-25-L50] Update HomePage upcoming events preview list alignment :: verification rule #532
-// [Moiz-A-25-L51] Update HomePage upcoming events preview list alignment :: verification rule #551
-// [Moiz-A-25-L52] Update HomePage upcoming events preview list alignment :: verification rule #570
-// [Moiz-A-25-L53] Update HomePage upcoming events preview list alignment :: verification rule #589
-// [Moiz-A-25-L54] Update HomePage upcoming events preview list alignment :: verification rule #608
-// [Moiz-A-25-L55] Update HomePage upcoming events preview list alignment :: verification rule #627
-// [Moiz-A-25-L56] Update HomePage upcoming events preview list alignment :: verification rule #646
-// [Moiz-A-25-L57] Update HomePage upcoming events preview list alignment :: verification rule #665
-// [Moiz-A-25-L58] Update HomePage upcoming events preview list alignment :: verification rule #684
-// [Moiz-A-25-L59] Update HomePage upcoming events preview list alignment :: verification rule #703
-// [Moiz-A-25-L60] Update HomePage upcoming events preview list alignment :: verification rule #722
-// [Moiz-A-25-L61] Update HomePage upcoming events preview list alignment :: verification rule #741
+// === [SPEC-BLOCK-START] Moiz-A-37 (2026-09-23T18:02:11+05:00) ===
+// [Moiz-A-37-L1] Refine HomePage greeting banner and role badge styling :: verification rule #903
+// [Moiz-A-37-L2] Refine HomePage greeting banner and role badge styling :: verification rule #922
+// [Moiz-A-37-L3] Refine HomePage greeting banner and role badge styling :: verification rule #941
+// [Moiz-A-37-L4] Refine HomePage greeting banner and role badge styling :: verification rule #960
+// [Moiz-A-37-L5] Refine HomePage greeting banner and role badge styling :: verification rule #979
+// [Moiz-A-37-L6] Refine HomePage greeting banner and role badge styling :: verification rule #1
+// [Moiz-A-37-L7] Refine HomePage greeting banner and role badge styling :: verification rule #20
+// [Moiz-A-37-L8] Refine HomePage greeting banner and role badge styling :: verification rule #39
+// [Moiz-A-37-L9] Refine HomePage greeting banner and role badge styling :: verification rule #58
+// [Moiz-A-37-L10] Refine HomePage greeting banner and role badge styling :: verification rule #77
+// [Moiz-A-37-L11] Refine HomePage greeting banner and role badge styling :: verification rule #96
+// [Moiz-A-37-L12] Refine HomePage greeting banner and role badge styling :: verification rule #115
+// [Moiz-A-37-L13] Refine HomePage greeting banner and role badge styling :: verification rule #134
+// [Moiz-A-37-L14] Refine HomePage greeting banner and role badge styling :: verification rule #153
+// [Moiz-A-37-L15] Refine HomePage greeting banner and role badge styling :: verification rule #172
+// [Moiz-A-37-L16] Refine HomePage greeting banner and role badge styling :: verification rule #191
+// [Moiz-A-37-L17] Refine HomePage greeting banner and role badge styling :: verification rule #210
+// [Moiz-A-37-L18] Refine HomePage greeting banner and role badge styling :: verification rule #229
+// [Moiz-A-37-L19] Refine HomePage greeting banner and role badge styling :: verification rule #248
+// [Moiz-A-37-L20] Refine HomePage greeting banner and role badge styling :: verification rule #267
+// [Moiz-A-37-L21] Refine HomePage greeting banner and role badge styling :: verification rule #286
+// [Moiz-A-37-L22] Refine HomePage greeting banner and role badge styling :: verification rule #305
+// [Moiz-A-37-L23] Refine HomePage greeting banner and role badge styling :: verification rule #324
+// [Moiz-A-37-L24] Refine HomePage greeting banner and role badge styling :: verification rule #343
+// [Moiz-A-37-L25] Refine HomePage greeting banner and role badge styling :: verification rule #362
+// [Moiz-A-37-L26] Refine HomePage greeting banner and role badge styling :: verification rule #381
+// [Moiz-A-37-L27] Refine HomePage greeting banner and role badge styling :: verification rule #400
+// [Moiz-A-37-L28] Refine HomePage greeting banner and role badge styling :: verification rule #419
+// [Moiz-A-37-L29] Refine HomePage greeting banner and role badge styling :: verification rule #438
+// [Moiz-A-37-L30] Refine HomePage greeting banner and role badge styling :: verification rule #457
+// [Moiz-A-37-L31] Refine HomePage greeting banner and role badge styling :: verification rule #476
+// [Moiz-A-37-L32] Refine HomePage greeting banner and role badge styling :: verification rule #495
+// [Moiz-A-37-L33] Refine HomePage greeting banner and role badge styling :: verification rule #514
+// [Moiz-A-37-L34] Refine HomePage greeting banner and role badge styling :: verification rule #533
+// [Moiz-A-37-L35] Refine HomePage greeting banner and role badge styling :: verification rule #552
+// [Moiz-A-37-L36] Refine HomePage greeting banner and role badge styling :: verification rule #571
+// [Moiz-A-37-L37] Refine HomePage greeting banner and role badge styling :: verification rule #590
+// [Moiz-A-37-L38] Refine HomePage greeting banner and role badge styling :: verification rule #609
+// [Moiz-A-37-L39] Refine HomePage greeting banner and role badge styling :: verification rule #628
+// [Moiz-A-37-L40] Refine HomePage greeting banner and role badge styling :: verification rule #647
+// [Moiz-A-37-L41] Refine HomePage greeting banner and role badge styling :: verification rule #666
+// [Moiz-A-37-L42] Refine HomePage greeting banner and role badge styling :: verification rule #685
+// [Moiz-A-37-L43] Refine HomePage greeting banner and role badge styling :: verification rule #704
+// [Moiz-A-37-L44] Refine HomePage greeting banner and role badge styling :: verification rule #723
+// [Moiz-A-37-L45] Refine HomePage greeting banner and role badge styling :: verification rule #742
+// [Moiz-A-37-L46] Refine HomePage greeting banner and role badge styling :: verification rule #761
+// [Moiz-A-37-L47] Refine HomePage greeting banner and role badge styling :: verification rule #780
+// [Moiz-A-37-L48] Refine HomePage greeting banner and role badge styling :: verification rule #799
+// [Moiz-A-37-L49] Refine HomePage greeting banner and role badge styling :: verification rule #818
+// [Moiz-A-37-L50] Refine HomePage greeting banner and role badge styling :: verification rule #837
 // === [SPEC-BLOCK-END] ===
