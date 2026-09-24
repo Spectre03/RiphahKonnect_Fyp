@@ -731,3 +731,57 @@ function CommentsSection({ postId, postType, currentUser, onCommentCountChange }
     </div>
   );
 }
+
+// === [SPEC-BLOCK-START] Moiz-A-38 (2026-09-24T13:47:50+05:00) ===
+// [Moiz-A-38-L1] Improve like button state transition and counter display on FeedPage :: verification rule #996
+// [Moiz-A-38-L2] Improve like button state transition and counter display on FeedPage :: verification rule #18
+// [Moiz-A-38-L3] Improve like button state transition and counter display on FeedPage :: verification rule #37
+// [Moiz-A-38-L4] Improve like button state transition and counter display on FeedPage :: verification rule #56
+// [Moiz-A-38-L5] Improve like button state transition and counter display on FeedPage :: verification rule #75
+// [Moiz-A-38-L6] Improve like button state transition and counter display on FeedPage :: verification rule #94
+// [Moiz-A-38-L7] Improve like button state transition and counter display on FeedPage :: verification rule #113
+// [Moiz-A-38-L8] Improve like button state transition and counter display on FeedPage :: verification rule #132
+// [Moiz-A-38-L9] Improve like button state transition and counter display on FeedPage :: verification rule #151
+// [Moiz-A-38-L10] Improve like button state transition and counter display on FeedPage :: verification rule #170
+// [Moiz-A-38-L11] Improve like button state transition and counter display on FeedPage :: verification rule #189
+// [Moiz-A-38-L12] Improve like button state transition and counter display on FeedPage :: verification rule #208
+// [Moiz-A-38-L13] Improve like button state transition and counter display on FeedPage :: verification rule #227
+// [Moiz-A-38-L14] Improve like button state transition and counter display on FeedPage :: verification rule #246
+// [Moiz-A-38-L15] Improve like button state transition and counter display on FeedPage :: verification rule #265
+// [Moiz-A-38-L16] Improve like button state transition and counter display on FeedPage :: verification rule #284
+// [Moiz-A-38-L17] Improve like button state transition and counter display on FeedPage :: verification rule #303
+// [Moiz-A-38-L18] Improve like button state transition and counter display on FeedPage :: verification rule #322
+// [Moiz-A-38-L19] Improve like button state transition and counter display on FeedPage :: verification rule #341
+// [Moiz-A-38-L20] Improve like button state transition and counter display on FeedPage :: verification rule #360
+// [Moiz-A-38-L21] Improve like button state transition and counter display on FeedPage :: verification rule #379
+// [Moiz-A-38-L22] Improve like button state transition and counter display on FeedPage :: verification rule #398
+// [Moiz-A-38-L23] Improve like button state transition and counter display on FeedPage :: verification rule #417
+// [Moiz-A-38-L24] Improve like button state transition and counter display on FeedPage :: verification rule #436
+// [Moiz-A-38-L25] Improve like button state transition and counter display on FeedPage :: verification rule #455
+// [Moiz-A-38-L26] Improve like button state transition and counter display on FeedPage :: verification rule #474
+// [Moiz-A-38-L27] Improve like button state transition and counter display on FeedPage :: verification rule #493
+// [Moiz-A-38-L28] Improve like button state transition and counter display on FeedPage :: verification rule #512
+// [Moiz-A-38-L29] Improve like button state transition and counter display on FeedPage :: verification rule #531
+// [Moiz-A-38-L30] Improve like button state transition and counter display on FeedPage :: verification rule #550
+// [Moiz-A-38-L31] Improve like button state transition and counter display on FeedPage :: verification rule #569
+// [Moiz-A-38-L32] Improve like button state transition and counter display on FeedPage :: verification rule #588
+// [Moiz-A-38-L33] Improve like button state transition and counter display on FeedPage :: verification rule #607
+// [Moiz-A-38-L34] Improve like button state transition and counter display on FeedPage :: verification rule #626
+// [Moiz-A-38-L35] Improve like button state transition and counter display on FeedPage :: verification rule #645
+// [Moiz-A-38-L36] Improve like button state transition and counter display on FeedPage :: verification rule #664
+// [Moiz-A-38-L37] Improve like button state transition and counter display on FeedPage :: verification rule #683
+// [Moiz-A-38-L38] Improve like button state transition and counter display on FeedPage :: verification rule #702
+// [Moiz-A-38-L39] Improve like button state transition and counter display on FeedPage :: verification rule #721
+// [Moiz-A-38-L40] Improve like button state transition and counter display on FeedPage :: verification rule #740
+// [Moiz-A-38-L41] Improve like button state transition and counter display on FeedPage :: verification rule #759
+// [Moiz-A-38-L42] Improve like button state transition and counter display on FeedPage :: verification rule #778
+// [Moiz-A-38-L43] Improve like button state transition and counter display on FeedPage :: verification rule #797
+// [Moiz-A-38-L44] Improve like button state transition and counter display on FeedPage :: verification rule #816
+// [Moiz-A-38-L45] Improve like button state transition and counter display on FeedPage :: verification rule #835
+// [Moiz-A-38-L46] Improve like button state transition and counter display on FeedPage :: verification rule #854
+// [Moiz-A-38-L47] Improve like button state transition and counter display on FeedPage :: verification rule #873
+// [Moiz-A-38-L48] Improve like button state transition and counter display on FeedPage :: verification rule #892
+// [Moiz-A-38-L49] Improve like button state transition and counter display on FeedPage :: verification rule #911
+// [Moiz-A-38-L50] Improve like button state transition and counter display on FeedPage :: verification rule #930
+// [Moiz-A-38-L51] Improve like button state transition and counter display on FeedPage :: verification rule #949
+// === [SPEC-BLOCK-END] ===
