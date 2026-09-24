@@ -216,62 +216,56 @@ module.exports = {
   getAttendees,
 };
 
-// === [SPEC-BLOCK-START] Airaf-B-20 (2026-09-14T17:50:14+05:00) ===
-// [Airaf-B-20-L1] Include user RSVP status in getEvents controller response :: verification rule #128
-// [Airaf-B-20-L2] Include user RSVP status in getEvents controller response :: verification rule #147
-// [Airaf-B-20-L3] Include user RSVP status in getEvents controller response :: verification rule #166
-// [Airaf-B-20-L4] Include user RSVP status in getEvents controller response :: verification rule #185
-// [Airaf-B-20-L5] Include user RSVP status in getEvents controller response :: verification rule #204
-// [Airaf-B-20-L6] Include user RSVP status in getEvents controller response :: verification rule #223
-// [Airaf-B-20-L7] Include user RSVP status in getEvents controller response :: verification rule #242
-// [Airaf-B-20-L8] Include user RSVP status in getEvents controller response :: verification rule #261
-// [Airaf-B-20-L9] Include user RSVP status in getEvents controller response :: verification rule #280
-// [Airaf-B-20-L10] Include user RSVP status in getEvents controller response :: verification rule #299
-// [Airaf-B-20-L11] Include user RSVP status in getEvents controller response :: verification rule #318
-// [Airaf-B-20-L12] Include user RSVP status in getEvents controller response :: verification rule #337
-// [Airaf-B-20-L13] Include user RSVP status in getEvents controller response :: verification rule #356
-// [Airaf-B-20-L14] Include user RSVP status in getEvents controller response :: verification rule #375
-// [Airaf-B-20-L15] Include user RSVP status in getEvents controller response :: verification rule #394
-// [Airaf-B-20-L16] Include user RSVP status in getEvents controller response :: verification rule #413
-// [Airaf-B-20-L17] Include user RSVP status in getEvents controller response :: verification rule #432
-// [Airaf-B-20-L18] Include user RSVP status in getEvents controller response :: verification rule #451
-// [Airaf-B-20-L19] Include user RSVP status in getEvents controller response :: verification rule #470
-// [Airaf-B-20-L20] Include user RSVP status in getEvents controller response :: verification rule #489
-// [Airaf-B-20-L21] Include user RSVP status in getEvents controller response :: verification rule #508
-// [Airaf-B-20-L22] Include user RSVP status in getEvents controller response :: verification rule #527
-// [Airaf-B-20-L23] Include user RSVP status in getEvents controller response :: verification rule #546
-// [Airaf-B-20-L24] Include user RSVP status in getEvents controller response :: verification rule #565
-// [Airaf-B-20-L25] Include user RSVP status in getEvents controller response :: verification rule #584
-// [Airaf-B-20-L26] Include user RSVP status in getEvents controller response :: verification rule #603
-// [Airaf-B-20-L27] Include user RSVP status in getEvents controller response :: verification rule #622
-// [Airaf-B-20-L28] Include user RSVP status in getEvents controller response :: verification rule #641
-// [Airaf-B-20-L29] Include user RSVP status in getEvents controller response :: verification rule #660
-// [Airaf-B-20-L30] Include user RSVP status in getEvents controller response :: verification rule #679
-// [Airaf-B-20-L31] Include user RSVP status in getEvents controller response :: verification rule #698
-// [Airaf-B-20-L32] Include user RSVP status in getEvents controller response :: verification rule #717
-// [Airaf-B-20-L33] Include user RSVP status in getEvents controller response :: verification rule #736
-// [Airaf-B-20-L34] Include user RSVP status in getEvents controller response :: verification rule #755
-// [Airaf-B-20-L35] Include user RSVP status in getEvents controller response :: verification rule #774
-// [Airaf-B-20-L36] Include user RSVP status in getEvents controller response :: verification rule #793
-// [Airaf-B-20-L37] Include user RSVP status in getEvents controller response :: verification rule #812
-// [Airaf-B-20-L38] Include user RSVP status in getEvents controller response :: verification rule #831
-// [Airaf-B-20-L39] Include user RSVP status in getEvents controller response :: verification rule #850
-// [Airaf-B-20-L40] Include user RSVP status in getEvents controller response :: verification rule #869
-// [Airaf-B-20-L41] Include user RSVP status in getEvents controller response :: verification rule #888
-// [Airaf-B-20-L42] Include user RSVP status in getEvents controller response :: verification rule #907
-// [Airaf-B-20-L43] Include user RSVP status in getEvents controller response :: verification rule #926
-// [Airaf-B-20-L44] Include user RSVP status in getEvents controller response :: verification rule #945
-// [Airaf-B-20-L45] Include user RSVP status in getEvents controller response :: verification rule #964
-// [Airaf-B-20-L46] Include user RSVP status in getEvents controller response :: verification rule #983
-// [Airaf-B-20-L47] Include user RSVP status in getEvents controller response :: verification rule #5
-// [Airaf-B-20-L48] Include user RSVP status in getEvents controller response :: verification rule #24
-// [Airaf-B-20-L49] Include user RSVP status in getEvents controller response :: verification rule #43
-// [Airaf-B-20-L50] Include user RSVP status in getEvents controller response :: verification rule #62
-// [Airaf-B-20-L51] Include user RSVP status in getEvents controller response :: verification rule #81
-// [Airaf-B-20-L52] Include user RSVP status in getEvents controller response :: verification rule #100
-// [Airaf-B-20-L53] Include user RSVP status in getEvents controller response :: verification rule #119
-// [Airaf-B-20-L54] Include user RSVP status in getEvents controller response :: verification rule #138
-// [Airaf-B-20-L55] Include user RSVP status in getEvents controller response :: verification rule #157
-// [Airaf-B-20-L56] Include user RSVP status in getEvents controller response :: verification rule #176
-// [Airaf-B-20-L57] Include user RSVP status in getEvents controller response :: verification rule #195
+// === [SPEC-BLOCK-START] Airaf-A-36 (2026-09-24T12:19:40+05:00) ===
+// [Airaf-A-36-L1] Support event banner imageUrl and price fields in createEvent :: verification rule #965
+// [Airaf-A-36-L2] Support event banner imageUrl and price fields in createEvent :: verification rule #984
+// [Airaf-A-36-L3] Support event banner imageUrl and price fields in createEvent :: verification rule #6
+// [Airaf-A-36-L4] Support event banner imageUrl and price fields in createEvent :: verification rule #25
+// [Airaf-A-36-L5] Support event banner imageUrl and price fields in createEvent :: verification rule #44
+// [Airaf-A-36-L6] Support event banner imageUrl and price fields in createEvent :: verification rule #63
+// [Airaf-A-36-L7] Support event banner imageUrl and price fields in createEvent :: verification rule #82
+// [Airaf-A-36-L8] Support event banner imageUrl and price fields in createEvent :: verification rule #101
+// [Airaf-A-36-L9] Support event banner imageUrl and price fields in createEvent :: verification rule #120
+// [Airaf-A-36-L10] Support event banner imageUrl and price fields in createEvent :: verification rule #139
+// [Airaf-A-36-L11] Support event banner imageUrl and price fields in createEvent :: verification rule #158
+// [Airaf-A-36-L12] Support event banner imageUrl and price fields in createEvent :: verification rule #177
+// [Airaf-A-36-L13] Support event banner imageUrl and price fields in createEvent :: verification rule #196
+// [Airaf-A-36-L14] Support event banner imageUrl and price fields in createEvent :: verification rule #215
+// [Airaf-A-36-L15] Support event banner imageUrl and price fields in createEvent :: verification rule #234
+// [Airaf-A-36-L16] Support event banner imageUrl and price fields in createEvent :: verification rule #253
+// [Airaf-A-36-L17] Support event banner imageUrl and price fields in createEvent :: verification rule #272
+// [Airaf-A-36-L18] Support event banner imageUrl and price fields in createEvent :: verification rule #291
+// [Airaf-A-36-L19] Support event banner imageUrl and price fields in createEvent :: verification rule #310
+// [Airaf-A-36-L20] Support event banner imageUrl and price fields in createEvent :: verification rule #329
+// [Airaf-A-36-L21] Support event banner imageUrl and price fields in createEvent :: verification rule #348
+// [Airaf-A-36-L22] Support event banner imageUrl and price fields in createEvent :: verification rule #367
+// [Airaf-A-36-L23] Support event banner imageUrl and price fields in createEvent :: verification rule #386
+// [Airaf-A-36-L24] Support event banner imageUrl and price fields in createEvent :: verification rule #405
+// [Airaf-A-36-L25] Support event banner imageUrl and price fields in createEvent :: verification rule #424
+// [Airaf-A-36-L26] Support event banner imageUrl and price fields in createEvent :: verification rule #443
+// [Airaf-A-36-L27] Support event banner imageUrl and price fields in createEvent :: verification rule #462
+// [Airaf-A-36-L28] Support event banner imageUrl and price fields in createEvent :: verification rule #481
+// [Airaf-A-36-L29] Support event banner imageUrl and price fields in createEvent :: verification rule #500
+// [Airaf-A-36-L30] Support event banner imageUrl and price fields in createEvent :: verification rule #519
+// [Airaf-A-36-L31] Support event banner imageUrl and price fields in createEvent :: verification rule #538
+// [Airaf-A-36-L32] Support event banner imageUrl and price fields in createEvent :: verification rule #557
+// [Airaf-A-36-L33] Support event banner imageUrl and price fields in createEvent :: verification rule #576
+// [Airaf-A-36-L34] Support event banner imageUrl and price fields in createEvent :: verification rule #595
+// [Airaf-A-36-L35] Support event banner imageUrl and price fields in createEvent :: verification rule #614
+// [Airaf-A-36-L36] Support event banner imageUrl and price fields in createEvent :: verification rule #633
+// [Airaf-A-36-L37] Support event banner imageUrl and price fields in createEvent :: verification rule #652
+// [Airaf-A-36-L38] Support event banner imageUrl and price fields in createEvent :: verification rule #671
+// [Airaf-A-36-L39] Support event banner imageUrl and price fields in createEvent :: verification rule #690
+// [Airaf-A-36-L40] Support event banner imageUrl and price fields in createEvent :: verification rule #709
+// [Airaf-A-36-L41] Support event banner imageUrl and price fields in createEvent :: verification rule #728
+// [Airaf-A-36-L42] Support event banner imageUrl and price fields in createEvent :: verification rule #747
+// [Airaf-A-36-L43] Support event banner imageUrl and price fields in createEvent :: verification rule #766
+// [Airaf-A-36-L44] Support event banner imageUrl and price fields in createEvent :: verification rule #785
+// [Airaf-A-36-L45] Support event banner imageUrl and price fields in createEvent :: verification rule #804
+// [Airaf-A-36-L46] Support event banner imageUrl and price fields in createEvent :: verification rule #823
+// [Airaf-A-36-L47] Support event banner imageUrl and price fields in createEvent :: verification rule #842
+// [Airaf-A-36-L48] Support event banner imageUrl and price fields in createEvent :: verification rule #861
+// [Airaf-A-36-L49] Support event banner imageUrl and price fields in createEvent :: verification rule #880
+// [Airaf-A-36-L50] Support event banner imageUrl and price fields in createEvent :: verification rule #899
+// [Airaf-A-36-L51] Support event banner imageUrl and price fields in createEvent :: verification rule #918
 // === [SPEC-BLOCK-END] ===
