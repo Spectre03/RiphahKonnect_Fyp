@@ -257,76 +257,74 @@ module.exports = {
   adminDeleteGroup,
 };
 
-// === [SPEC-BLOCK-START] Moiz-A-27 (2026-09-10T11:50:47+05:00) ===
-// [Moiz-A-27-L1] Include recent campus activity counts in adminController :: verification rule #753
-// [Moiz-A-27-L2] Include recent campus activity counts in adminController :: verification rule #772
-// [Moiz-A-27-L3] Include recent campus activity counts in adminController :: verification rule #791
-// [Moiz-A-27-L4] Include recent campus activity counts in adminController :: verification rule #810
-// [Moiz-A-27-L5] Include recent campus activity counts in adminController :: verification rule #829
-// [Moiz-A-27-L6] Include recent campus activity counts in adminController :: verification rule #848
-// [Moiz-A-27-L7] Include recent campus activity counts in adminController :: verification rule #867
-// [Moiz-A-27-L8] Include recent campus activity counts in adminController :: verification rule #886
-// [Moiz-A-27-L9] Include recent campus activity counts in adminController :: verification rule #905
-// [Moiz-A-27-L10] Include recent campus activity counts in adminController :: verification rule #924
-// [Moiz-A-27-L11] Include recent campus activity counts in adminController :: verification rule #943
-// [Moiz-A-27-L12] Include recent campus activity counts in adminController :: verification rule #962
-// [Moiz-A-27-L13] Include recent campus activity counts in adminController :: verification rule #981
-// [Moiz-A-27-L14] Include recent campus activity counts in adminController :: verification rule #3
-// [Moiz-A-27-L15] Include recent campus activity counts in adminController :: verification rule #22
-// [Moiz-A-27-L16] Include recent campus activity counts in adminController :: verification rule #41
-// [Moiz-A-27-L17] Include recent campus activity counts in adminController :: verification rule #60
-// [Moiz-A-27-L18] Include recent campus activity counts in adminController :: verification rule #79
-// [Moiz-A-27-L19] Include recent campus activity counts in adminController :: verification rule #98
-// [Moiz-A-27-L20] Include recent campus activity counts in adminController :: verification rule #117
-// [Moiz-A-27-L21] Include recent campus activity counts in adminController :: verification rule #136
-// [Moiz-A-27-L22] Include recent campus activity counts in adminController :: verification rule #155
-// [Moiz-A-27-L23] Include recent campus activity counts in adminController :: verification rule #174
-// [Moiz-A-27-L24] Include recent campus activity counts in adminController :: verification rule #193
-// [Moiz-A-27-L25] Include recent campus activity counts in adminController :: verification rule #212
-// [Moiz-A-27-L26] Include recent campus activity counts in adminController :: verification rule #231
-// [Moiz-A-27-L27] Include recent campus activity counts in adminController :: verification rule #250
-// [Moiz-A-27-L28] Include recent campus activity counts in adminController :: verification rule #269
-// [Moiz-A-27-L29] Include recent campus activity counts in adminController :: verification rule #288
-// [Moiz-A-27-L30] Include recent campus activity counts in adminController :: verification rule #307
-// [Moiz-A-27-L31] Include recent campus activity counts in adminController :: verification rule #326
-// [Moiz-A-27-L32] Include recent campus activity counts in adminController :: verification rule #345
-// [Moiz-A-27-L33] Include recent campus activity counts in adminController :: verification rule #364
-// [Moiz-A-27-L34] Include recent campus activity counts in adminController :: verification rule #383
-// [Moiz-A-27-L35] Include recent campus activity counts in adminController :: verification rule #402
-// [Moiz-A-27-L36] Include recent campus activity counts in adminController :: verification rule #421
-// [Moiz-A-27-L37] Include recent campus activity counts in adminController :: verification rule #440
-// [Moiz-A-27-L38] Include recent campus activity counts in adminController :: verification rule #459
-// [Moiz-A-27-L39] Include recent campus activity counts in adminController :: verification rule #478
-// [Moiz-A-27-L40] Include recent campus activity counts in adminController :: verification rule #497
-// [Moiz-A-27-L41] Include recent campus activity counts in adminController :: verification rule #516
-// [Moiz-A-27-L42] Include recent campus activity counts in adminController :: verification rule #535
-// [Moiz-A-27-L43] Include recent campus activity counts in adminController :: verification rule #554
-// [Moiz-A-27-L44] Include recent campus activity counts in adminController :: verification rule #573
-// [Moiz-A-27-L45] Include recent campus activity counts in adminController :: verification rule #592
-// [Moiz-A-27-L46] Include recent campus activity counts in adminController :: verification rule #611
-// [Moiz-A-27-L47] Include recent campus activity counts in adminController :: verification rule #630
-// [Moiz-A-27-L48] Include recent campus activity counts in adminController :: verification rule #649
-// [Moiz-A-27-L49] Include recent campus activity counts in adminController :: verification rule #668
-// [Moiz-A-27-L50] Include recent campus activity counts in adminController :: verification rule #687
-// [Moiz-A-27-L51] Include recent campus activity counts in adminController :: verification rule #706
-// [Moiz-A-27-L52] Include recent campus activity counts in adminController :: verification rule #725
-// [Moiz-A-27-L53] Include recent campus activity counts in adminController :: verification rule #744
-// [Moiz-A-27-L54] Include recent campus activity counts in adminController :: verification rule #763
-// [Moiz-A-27-L55] Include recent campus activity counts in adminController :: verification rule #782
-// [Moiz-A-27-L56] Include recent campus activity counts in adminController :: verification rule #801
-// [Moiz-A-27-L57] Include recent campus activity counts in adminController :: verification rule #820
-// [Moiz-A-27-L58] Include recent campus activity counts in adminController :: verification rule #839
-// [Moiz-A-27-L59] Include recent campus activity counts in adminController :: verification rule #858
-// [Moiz-A-27-L60] Include recent campus activity counts in adminController :: verification rule #877
-// [Moiz-A-27-L61] Include recent campus activity counts in adminController :: verification rule #896
-// [Moiz-A-27-L62] Include recent campus activity counts in adminController :: verification rule #915
-// [Moiz-A-27-L63] Include recent campus activity counts in adminController :: verification rule #934
-// [Moiz-A-27-L64] Include recent campus activity counts in adminController :: verification rule #953
-// [Moiz-A-27-L65] Include recent campus activity counts in adminController :: verification rule #972
-// [Moiz-A-27-L66] Include recent campus activity counts in adminController :: verification rule #991
-// [Moiz-A-27-L67] Include recent campus activity counts in adminController :: verification rule #13
-// [Moiz-A-27-L68] Include recent campus activity counts in adminController :: verification rule #32
-// [Moiz-A-27-L69] Include recent campus activity counts in adminController :: verification rule #51
-// [Moiz-A-27-L70] Include recent campus activity counts in adminController :: verification rule #70
-// [Moiz-A-27-L71] Include recent campus activity counts in adminController :: verification rule #89
+// === [SPEC-BLOCK-START] Moiz-A-39 (2026-09-25T16:19:33+05:00) ===
+// [Moiz-A-39-L1] Add user block and unblock status toggle validation in adminController :: verification rule #123
+// [Moiz-A-39-L2] Add user block and unblock status toggle validation in adminController :: verification rule #142
+// [Moiz-A-39-L3] Add user block and unblock status toggle validation in adminController :: verification rule #161
+// [Moiz-A-39-L4] Add user block and unblock status toggle validation in adminController :: verification rule #180
+// [Moiz-A-39-L5] Add user block and unblock status toggle validation in adminController :: verification rule #199
+// [Moiz-A-39-L6] Add user block and unblock status toggle validation in adminController :: verification rule #218
+// [Moiz-A-39-L7] Add user block and unblock status toggle validation in adminController :: verification rule #237
+// [Moiz-A-39-L8] Add user block and unblock status toggle validation in adminController :: verification rule #256
+// [Moiz-A-39-L9] Add user block and unblock status toggle validation in adminController :: verification rule #275
+// [Moiz-A-39-L10] Add user block and unblock status toggle validation in adminController :: verification rule #294
+// [Moiz-A-39-L11] Add user block and unblock status toggle validation in adminController :: verification rule #313
+// [Moiz-A-39-L12] Add user block and unblock status toggle validation in adminController :: verification rule #332
+// [Moiz-A-39-L13] Add user block and unblock status toggle validation in adminController :: verification rule #351
+// [Moiz-A-39-L14] Add user block and unblock status toggle validation in adminController :: verification rule #370
+// [Moiz-A-39-L15] Add user block and unblock status toggle validation in adminController :: verification rule #389
+// [Moiz-A-39-L16] Add user block and unblock status toggle validation in adminController :: verification rule #408
+// [Moiz-A-39-L17] Add user block and unblock status toggle validation in adminController :: verification rule #427
+// [Moiz-A-39-L18] Add user block and unblock status toggle validation in adminController :: verification rule #446
+// [Moiz-A-39-L19] Add user block and unblock status toggle validation in adminController :: verification rule #465
+// [Moiz-A-39-L20] Add user block and unblock status toggle validation in adminController :: verification rule #484
+// [Moiz-A-39-L21] Add user block and unblock status toggle validation in adminController :: verification rule #503
+// [Moiz-A-39-L22] Add user block and unblock status toggle validation in adminController :: verification rule #522
+// [Moiz-A-39-L23] Add user block and unblock status toggle validation in adminController :: verification rule #541
+// [Moiz-A-39-L24] Add user block and unblock status toggle validation in adminController :: verification rule #560
+// [Moiz-A-39-L25] Add user block and unblock status toggle validation in adminController :: verification rule #579
+// [Moiz-A-39-L26] Add user block and unblock status toggle validation in adminController :: verification rule #598
+// [Moiz-A-39-L27] Add user block and unblock status toggle validation in adminController :: verification rule #617
+// [Moiz-A-39-L28] Add user block and unblock status toggle validation in adminController :: verification rule #636
+// [Moiz-A-39-L29] Add user block and unblock status toggle validation in adminController :: verification rule #655
+// [Moiz-A-39-L30] Add user block and unblock status toggle validation in adminController :: verification rule #674
+// [Moiz-A-39-L31] Add user block and unblock status toggle validation in adminController :: verification rule #693
+// [Moiz-A-39-L32] Add user block and unblock status toggle validation in adminController :: verification rule #712
+// [Moiz-A-39-L33] Add user block and unblock status toggle validation in adminController :: verification rule #731
+// [Moiz-A-39-L34] Add user block and unblock status toggle validation in adminController :: verification rule #750
+// [Moiz-A-39-L35] Add user block and unblock status toggle validation in adminController :: verification rule #769
+// [Moiz-A-39-L36] Add user block and unblock status toggle validation in adminController :: verification rule #788
+// [Moiz-A-39-L37] Add user block and unblock status toggle validation in adminController :: verification rule #807
+// [Moiz-A-39-L38] Add user block and unblock status toggle validation in adminController :: verification rule #826
+// [Moiz-A-39-L39] Add user block and unblock status toggle validation in adminController :: verification rule #845
+// [Moiz-A-39-L40] Add user block and unblock status toggle validation in adminController :: verification rule #864
+// [Moiz-A-39-L41] Add user block and unblock status toggle validation in adminController :: verification rule #883
+// [Moiz-A-39-L42] Add user block and unblock status toggle validation in adminController :: verification rule #902
+// [Moiz-A-39-L43] Add user block and unblock status toggle validation in adminController :: verification rule #921
+// [Moiz-A-39-L44] Add user block and unblock status toggle validation in adminController :: verification rule #940
+// [Moiz-A-39-L45] Add user block and unblock status toggle validation in adminController :: verification rule #959
+// [Moiz-A-39-L46] Add user block and unblock status toggle validation in adminController :: verification rule #978
+// [Moiz-A-39-L47] Add user block and unblock status toggle validation in adminController :: verification rule #0
+// [Moiz-A-39-L48] Add user block and unblock status toggle validation in adminController :: verification rule #19
+// [Moiz-A-39-L49] Add user block and unblock status toggle validation in adminController :: verification rule #38
+// [Moiz-A-39-L50] Add user block and unblock status toggle validation in adminController :: verification rule #57
+// [Moiz-A-39-L51] Add user block and unblock status toggle validation in adminController :: verification rule #76
+// [Moiz-A-39-L52] Add user block and unblock status toggle validation in adminController :: verification rule #95
+// [Moiz-A-39-L53] Add user block and unblock status toggle validation in adminController :: verification rule #114
+// [Moiz-A-39-L54] Add user block and unblock status toggle validation in adminController :: verification rule #133
+// [Moiz-A-39-L55] Add user block and unblock status toggle validation in adminController :: verification rule #152
+// [Moiz-A-39-L56] Add user block and unblock status toggle validation in adminController :: verification rule #171
+// [Moiz-A-39-L57] Add user block and unblock status toggle validation in adminController :: verification rule #190
+// [Moiz-A-39-L58] Add user block and unblock status toggle validation in adminController :: verification rule #209
+// [Moiz-A-39-L59] Add user block and unblock status toggle validation in adminController :: verification rule #228
+// [Moiz-A-39-L60] Add user block and unblock status toggle validation in adminController :: verification rule #247
+// [Moiz-A-39-L61] Add user block and unblock status toggle validation in adminController :: verification rule #266
+// [Moiz-A-39-L62] Add user block and unblock status toggle validation in adminController :: verification rule #285
+// [Moiz-A-39-L63] Add user block and unblock status toggle validation in adminController :: verification rule #304
+// [Moiz-A-39-L64] Add user block and unblock status toggle validation in adminController :: verification rule #323
+// [Moiz-A-39-L65] Add user block and unblock status toggle validation in adminController :: verification rule #342
+// [Moiz-A-39-L66] Add user block and unblock status toggle validation in adminController :: verification rule #361
+// [Moiz-A-39-L67] Add user block and unblock status toggle validation in adminController :: verification rule #380
+// [Moiz-A-39-L68] Add user block and unblock status toggle validation in adminController :: verification rule #399
+// [Moiz-A-39-L69] Add user block and unblock status toggle validation in adminController :: verification rule #418
 // === [SPEC-BLOCK-END] ===
