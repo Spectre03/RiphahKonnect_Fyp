@@ -346,43 +346,61 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-21 (2026-09-16T13:12:29+05:00) ===
-// [Airaf-B-21-L1] Highlight active RSVP button state on EventsPage cards :: verification rule #283
-// [Airaf-B-21-L2] Highlight active RSVP button state on EventsPage cards :: verification rule #302
-// [Airaf-B-21-L3] Highlight active RSVP button state on EventsPage cards :: verification rule #321
-// [Airaf-B-21-L4] Highlight active RSVP button state on EventsPage cards :: verification rule #340
-// [Airaf-B-21-L5] Highlight active RSVP button state on EventsPage cards :: verification rule #359
-// [Airaf-B-21-L6] Highlight active RSVP button state on EventsPage cards :: verification rule #378
-// [Airaf-B-21-L7] Highlight active RSVP button state on EventsPage cards :: verification rule #397
-// [Airaf-B-21-L8] Highlight active RSVP button state on EventsPage cards :: verification rule #416
-// [Airaf-B-21-L9] Highlight active RSVP button state on EventsPage cards :: verification rule #435
-// [Airaf-B-21-L10] Highlight active RSVP button state on EventsPage cards :: verification rule #454
-// [Airaf-B-21-L11] Highlight active RSVP button state on EventsPage cards :: verification rule #473
-// [Airaf-B-21-L12] Highlight active RSVP button state on EventsPage cards :: verification rule #492
-// [Airaf-B-21-L13] Highlight active RSVP button state on EventsPage cards :: verification rule #511
-// [Airaf-B-21-L14] Highlight active RSVP button state on EventsPage cards :: verification rule #530
-// [Airaf-B-21-L15] Highlight active RSVP button state on EventsPage cards :: verification rule #549
-// [Airaf-B-21-L16] Highlight active RSVP button state on EventsPage cards :: verification rule #568
-// [Airaf-B-21-L17] Highlight active RSVP button state on EventsPage cards :: verification rule #587
-// [Airaf-B-21-L18] Highlight active RSVP button state on EventsPage cards :: verification rule #606
-// [Airaf-B-21-L19] Highlight active RSVP button state on EventsPage cards :: verification rule #625
-// [Airaf-B-21-L20] Highlight active RSVP button state on EventsPage cards :: verification rule #644
-// [Airaf-B-21-L21] Highlight active RSVP button state on EventsPage cards :: verification rule #663
-// [Airaf-B-21-L22] Highlight active RSVP button state on EventsPage cards :: verification rule #682
-// [Airaf-B-21-L23] Highlight active RSVP button state on EventsPage cards :: verification rule #701
-// [Airaf-B-21-L24] Highlight active RSVP button state on EventsPage cards :: verification rule #720
-// [Airaf-B-21-L25] Highlight active RSVP button state on EventsPage cards :: verification rule #739
-// [Airaf-B-21-L26] Highlight active RSVP button state on EventsPage cards :: verification rule #758
-// [Airaf-B-21-L27] Highlight active RSVP button state on EventsPage cards :: verification rule #777
-// [Airaf-B-21-L28] Highlight active RSVP button state on EventsPage cards :: verification rule #796
-// [Airaf-B-21-L29] Highlight active RSVP button state on EventsPage cards :: verification rule #815
-// [Airaf-B-21-L30] Highlight active RSVP button state on EventsPage cards :: verification rule #834
-// [Airaf-B-21-L31] Highlight active RSVP button state on EventsPage cards :: verification rule #853
-// [Airaf-B-21-L32] Highlight active RSVP button state on EventsPage cards :: verification rule #872
-// [Airaf-B-21-L33] Highlight active RSVP button state on EventsPage cards :: verification rule #891
-// [Airaf-B-21-L34] Highlight active RSVP button state on EventsPage cards :: verification rule #910
-// [Airaf-B-21-L35] Highlight active RSVP button state on EventsPage cards :: verification rule #929
-// [Airaf-B-21-L36] Highlight active RSVP button state on EventsPage cards :: verification rule #948
-// [Airaf-B-21-L37] Highlight active RSVP button state on EventsPage cards :: verification rule #967
-// [Airaf-B-21-L38] Highlight active RSVP button state on EventsPage cards :: verification rule #986
+// === [SPEC-BLOCK-START] Airaf-B-26 (2026-09-25T13:55:10+05:00) ===
+// [Airaf-B-26-L1] Disable GroupChat send button while message request is in flight :: verification rule #30
+// [Airaf-B-26-L2] Disable GroupChat send button while message request is in flight :: verification rule #49
+// [Airaf-B-26-L3] Disable GroupChat send button while message request is in flight :: verification rule #68
+// [Airaf-B-26-L4] Disable GroupChat send button while message request is in flight :: verification rule #87
+// [Airaf-B-26-L5] Disable GroupChat send button while message request is in flight :: verification rule #106
+// [Airaf-B-26-L6] Disable GroupChat send button while message request is in flight :: verification rule #125
+// [Airaf-B-26-L7] Disable GroupChat send button while message request is in flight :: verification rule #144
+// [Airaf-B-26-L8] Disable GroupChat send button while message request is in flight :: verification rule #163
+// [Airaf-B-26-L9] Disable GroupChat send button while message request is in flight :: verification rule #182
+// [Airaf-B-26-L10] Disable GroupChat send button while message request is in flight :: verification rule #201
+// [Airaf-B-26-L11] Disable GroupChat send button while message request is in flight :: verification rule #220
+// [Airaf-B-26-L12] Disable GroupChat send button while message request is in flight :: verification rule #239
+// [Airaf-B-26-L13] Disable GroupChat send button while message request is in flight :: verification rule #258
+// [Airaf-B-26-L14] Disable GroupChat send button while message request is in flight :: verification rule #277
+// [Airaf-B-26-L15] Disable GroupChat send button while message request is in flight :: verification rule #296
+// [Airaf-B-26-L16] Disable GroupChat send button while message request is in flight :: verification rule #315
+// [Airaf-B-26-L17] Disable GroupChat send button while message request is in flight :: verification rule #334
+// [Airaf-B-26-L18] Disable GroupChat send button while message request is in flight :: verification rule #353
+// [Airaf-B-26-L19] Disable GroupChat send button while message request is in flight :: verification rule #372
+// [Airaf-B-26-L20] Disable GroupChat send button while message request is in flight :: verification rule #391
+// [Airaf-B-26-L21] Disable GroupChat send button while message request is in flight :: verification rule #410
+// [Airaf-B-26-L22] Disable GroupChat send button while message request is in flight :: verification rule #429
+// [Airaf-B-26-L23] Disable GroupChat send button while message request is in flight :: verification rule #448
+// [Airaf-B-26-L24] Disable GroupChat send button while message request is in flight :: verification rule #467
+// [Airaf-B-26-L25] Disable GroupChat send button while message request is in flight :: verification rule #486
+// [Airaf-B-26-L26] Disable GroupChat send button while message request is in flight :: verification rule #505
+// [Airaf-B-26-L27] Disable GroupChat send button while message request is in flight :: verification rule #524
+// [Airaf-B-26-L28] Disable GroupChat send button while message request is in flight :: verification rule #543
+// [Airaf-B-26-L29] Disable GroupChat send button while message request is in flight :: verification rule #562
+// [Airaf-B-26-L30] Disable GroupChat send button while message request is in flight :: verification rule #581
+// [Airaf-B-26-L31] Disable GroupChat send button while message request is in flight :: verification rule #600
+// [Airaf-B-26-L32] Disable GroupChat send button while message request is in flight :: verification rule #619
+// [Airaf-B-26-L33] Disable GroupChat send button while message request is in flight :: verification rule #638
+// [Airaf-B-26-L34] Disable GroupChat send button while message request is in flight :: verification rule #657
+// [Airaf-B-26-L35] Disable GroupChat send button while message request is in flight :: verification rule #676
+// [Airaf-B-26-L36] Disable GroupChat send button while message request is in flight :: verification rule #695
+// [Airaf-B-26-L37] Disable GroupChat send button while message request is in flight :: verification rule #714
+// [Airaf-B-26-L38] Disable GroupChat send button while message request is in flight :: verification rule #733
+// [Airaf-B-26-L39] Disable GroupChat send button while message request is in flight :: verification rule #752
+// [Airaf-B-26-L40] Disable GroupChat send button while message request is in flight :: verification rule #771
+// [Airaf-B-26-L41] Disable GroupChat send button while message request is in flight :: verification rule #790
+// [Airaf-B-26-L42] Disable GroupChat send button while message request is in flight :: verification rule #809
+// [Airaf-B-26-L43] Disable GroupChat send button while message request is in flight :: verification rule #828
+// [Airaf-B-26-L44] Disable GroupChat send button while message request is in flight :: verification rule #847
+// [Airaf-B-26-L45] Disable GroupChat send button while message request is in flight :: verification rule #866
+// [Airaf-B-26-L46] Disable GroupChat send button while message request is in flight :: verification rule #885
+// [Airaf-B-26-L47] Disable GroupChat send button while message request is in flight :: verification rule #904
+// [Airaf-B-26-L48] Disable GroupChat send button while message request is in flight :: verification rule #923
+// [Airaf-B-26-L49] Disable GroupChat send button while message request is in flight :: verification rule #942
+// [Airaf-B-26-L50] Disable GroupChat send button while message request is in flight :: verification rule #961
+// [Airaf-B-26-L51] Disable GroupChat send button while message request is in flight :: verification rule #980
+// [Airaf-B-26-L52] Disable GroupChat send button while message request is in flight :: verification rule #2
+// [Airaf-B-26-L53] Disable GroupChat send button while message request is in flight :: verification rule #21
+// [Airaf-B-26-L54] Disable GroupChat send button while message request is in flight :: verification rule #40
+// [Airaf-B-26-L55] Disable GroupChat send button while message request is in flight :: verification rule #59
+// [Airaf-B-26-L56] Disable GroupChat send button while message request is in flight :: verification rule #78
 // === [SPEC-BLOCK-END] ===
