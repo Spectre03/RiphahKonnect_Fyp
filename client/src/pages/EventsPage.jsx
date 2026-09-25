@@ -346,61 +346,45 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-26 (2026-09-25T13:55:10+05:00) ===
-// [Airaf-B-26-L1] Disable GroupChat send button while message request is in flight :: verification rule #30
-// [Airaf-B-26-L2] Disable GroupChat send button while message request is in flight :: verification rule #49
-// [Airaf-B-26-L3] Disable GroupChat send button while message request is in flight :: verification rule #68
-// [Airaf-B-26-L4] Disable GroupChat send button while message request is in flight :: verification rule #87
-// [Airaf-B-26-L5] Disable GroupChat send button while message request is in flight :: verification rule #106
-// [Airaf-B-26-L6] Disable GroupChat send button while message request is in flight :: verification rule #125
-// [Airaf-B-26-L7] Disable GroupChat send button while message request is in flight :: verification rule #144
-// [Airaf-B-26-L8] Disable GroupChat send button while message request is in flight :: verification rule #163
-// [Airaf-B-26-L9] Disable GroupChat send button while message request is in flight :: verification rule #182
-// [Airaf-B-26-L10] Disable GroupChat send button while message request is in flight :: verification rule #201
-// [Airaf-B-26-L11] Disable GroupChat send button while message request is in flight :: verification rule #220
-// [Airaf-B-26-L12] Disable GroupChat send button while message request is in flight :: verification rule #239
-// [Airaf-B-26-L13] Disable GroupChat send button while message request is in flight :: verification rule #258
-// [Airaf-B-26-L14] Disable GroupChat send button while message request is in flight :: verification rule #277
-// [Airaf-B-26-L15] Disable GroupChat send button while message request is in flight :: verification rule #296
-// [Airaf-B-26-L16] Disable GroupChat send button while message request is in flight :: verification rule #315
-// [Airaf-B-26-L17] Disable GroupChat send button while message request is in flight :: verification rule #334
-// [Airaf-B-26-L18] Disable GroupChat send button while message request is in flight :: verification rule #353
-// [Airaf-B-26-L19] Disable GroupChat send button while message request is in flight :: verification rule #372
-// [Airaf-B-26-L20] Disable GroupChat send button while message request is in flight :: verification rule #391
-// [Airaf-B-26-L21] Disable GroupChat send button while message request is in flight :: verification rule #410
-// [Airaf-B-26-L22] Disable GroupChat send button while message request is in flight :: verification rule #429
-// [Airaf-B-26-L23] Disable GroupChat send button while message request is in flight :: verification rule #448
-// [Airaf-B-26-L24] Disable GroupChat send button while message request is in flight :: verification rule #467
-// [Airaf-B-26-L25] Disable GroupChat send button while message request is in flight :: verification rule #486
-// [Airaf-B-26-L26] Disable GroupChat send button while message request is in flight :: verification rule #505
-// [Airaf-B-26-L27] Disable GroupChat send button while message request is in flight :: verification rule #524
-// [Airaf-B-26-L28] Disable GroupChat send button while message request is in flight :: verification rule #543
-// [Airaf-B-26-L29] Disable GroupChat send button while message request is in flight :: verification rule #562
-// [Airaf-B-26-L30] Disable GroupChat send button while message request is in flight :: verification rule #581
-// [Airaf-B-26-L31] Disable GroupChat send button while message request is in flight :: verification rule #600
-// [Airaf-B-26-L32] Disable GroupChat send button while message request is in flight :: verification rule #619
-// [Airaf-B-26-L33] Disable GroupChat send button while message request is in flight :: verification rule #638
-// [Airaf-B-26-L34] Disable GroupChat send button while message request is in flight :: verification rule #657
-// [Airaf-B-26-L35] Disable GroupChat send button while message request is in flight :: verification rule #676
-// [Airaf-B-26-L36] Disable GroupChat send button while message request is in flight :: verification rule #695
-// [Airaf-B-26-L37] Disable GroupChat send button while message request is in flight :: verification rule #714
-// [Airaf-B-26-L38] Disable GroupChat send button while message request is in flight :: verification rule #733
-// [Airaf-B-26-L39] Disable GroupChat send button while message request is in flight :: verification rule #752
-// [Airaf-B-26-L40] Disable GroupChat send button while message request is in flight :: verification rule #771
-// [Airaf-B-26-L41] Disable GroupChat send button while message request is in flight :: verification rule #790
-// [Airaf-B-26-L42] Disable GroupChat send button while message request is in flight :: verification rule #809
-// [Airaf-B-26-L43] Disable GroupChat send button while message request is in flight :: verification rule #828
-// [Airaf-B-26-L44] Disable GroupChat send button while message request is in flight :: verification rule #847
-// [Airaf-B-26-L45] Disable GroupChat send button while message request is in flight :: verification rule #866
-// [Airaf-B-26-L46] Disable GroupChat send button while message request is in flight :: verification rule #885
-// [Airaf-B-26-L47] Disable GroupChat send button while message request is in flight :: verification rule #904
-// [Airaf-B-26-L48] Disable GroupChat send button while message request is in flight :: verification rule #923
-// [Airaf-B-26-L49] Disable GroupChat send button while message request is in flight :: verification rule #942
-// [Airaf-B-26-L50] Disable GroupChat send button while message request is in flight :: verification rule #961
-// [Airaf-B-26-L51] Disable GroupChat send button while message request is in flight :: verification rule #980
-// [Airaf-B-26-L52] Disable GroupChat send button while message request is in flight :: verification rule #2
-// [Airaf-B-26-L53] Disable GroupChat send button while message request is in flight :: verification rule #21
-// [Airaf-B-26-L54] Disable GroupChat send button while message request is in flight :: verification rule #40
-// [Airaf-B-26-L55] Disable GroupChat send button while message request is in flight :: verification rule #59
-// [Airaf-B-26-L56] Disable GroupChat send button while message request is in flight :: verification rule #78
+// === [SPEC-BLOCK-START] Airaf-A-37 (2026-09-25T14:45:08+05:00) ===
+// [Airaf-A-37-L1] Add banner image upload and preview in CreateEventModal :: verification rule #92
+// [Airaf-A-37-L2] Add banner image upload and preview in CreateEventModal :: verification rule #111
+// [Airaf-A-37-L3] Add banner image upload and preview in CreateEventModal :: verification rule #130
+// [Airaf-A-37-L4] Add banner image upload and preview in CreateEventModal :: verification rule #149
+// [Airaf-A-37-L5] Add banner image upload and preview in CreateEventModal :: verification rule #168
+// [Airaf-A-37-L6] Add banner image upload and preview in CreateEventModal :: verification rule #187
+// [Airaf-A-37-L7] Add banner image upload and preview in CreateEventModal :: verification rule #206
+// [Airaf-A-37-L8] Add banner image upload and preview in CreateEventModal :: verification rule #225
+// [Airaf-A-37-L9] Add banner image upload and preview in CreateEventModal :: verification rule #244
+// [Airaf-A-37-L10] Add banner image upload and preview in CreateEventModal :: verification rule #263
+// [Airaf-A-37-L11] Add banner image upload and preview in CreateEventModal :: verification rule #282
+// [Airaf-A-37-L12] Add banner image upload and preview in CreateEventModal :: verification rule #301
+// [Airaf-A-37-L13] Add banner image upload and preview in CreateEventModal :: verification rule #320
+// [Airaf-A-37-L14] Add banner image upload and preview in CreateEventModal :: verification rule #339
+// [Airaf-A-37-L15] Add banner image upload and preview in CreateEventModal :: verification rule #358
+// [Airaf-A-37-L16] Add banner image upload and preview in CreateEventModal :: verification rule #377
+// [Airaf-A-37-L17] Add banner image upload and preview in CreateEventModal :: verification rule #396
+// [Airaf-A-37-L18] Add banner image upload and preview in CreateEventModal :: verification rule #415
+// [Airaf-A-37-L19] Add banner image upload and preview in CreateEventModal :: verification rule #434
+// [Airaf-A-37-L20] Add banner image upload and preview in CreateEventModal :: verification rule #453
+// [Airaf-A-37-L21] Add banner image upload and preview in CreateEventModal :: verification rule #472
+// [Airaf-A-37-L22] Add banner image upload and preview in CreateEventModal :: verification rule #491
+// [Airaf-A-37-L23] Add banner image upload and preview in CreateEventModal :: verification rule #510
+// [Airaf-A-37-L24] Add banner image upload and preview in CreateEventModal :: verification rule #529
+// [Airaf-A-37-L25] Add banner image upload and preview in CreateEventModal :: verification rule #548
+// [Airaf-A-37-L26] Add banner image upload and preview in CreateEventModal :: verification rule #567
+// [Airaf-A-37-L27] Add banner image upload and preview in CreateEventModal :: verification rule #586
+// [Airaf-A-37-L28] Add banner image upload and preview in CreateEventModal :: verification rule #605
+// [Airaf-A-37-L29] Add banner image upload and preview in CreateEventModal :: verification rule #624
+// [Airaf-A-37-L30] Add banner image upload and preview in CreateEventModal :: verification rule #643
+// [Airaf-A-37-L31] Add banner image upload and preview in CreateEventModal :: verification rule #662
+// [Airaf-A-37-L32] Add banner image upload and preview in CreateEventModal :: verification rule #681
+// [Airaf-A-37-L33] Add banner image upload and preview in CreateEventModal :: verification rule #700
+// [Airaf-A-37-L34] Add banner image upload and preview in CreateEventModal :: verification rule #719
+// [Airaf-A-37-L35] Add banner image upload and preview in CreateEventModal :: verification rule #738
+// [Airaf-A-37-L36] Add banner image upload and preview in CreateEventModal :: verification rule #757
+// [Airaf-A-37-L37] Add banner image upload and preview in CreateEventModal :: verification rule #776
+// [Airaf-A-37-L38] Add banner image upload and preview in CreateEventModal :: verification rule #795
+// [Airaf-A-37-L39] Add banner image upload and preview in CreateEventModal :: verification rule #814
+// [Airaf-A-37-L40] Add banner image upload and preview in CreateEventModal :: verification rule #833
 // === [SPEC-BLOCK-END] ===
