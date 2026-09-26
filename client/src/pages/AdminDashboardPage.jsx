@@ -470,69 +470,66 @@ export default function AdminDashboardPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-28 (2026-09-11T14:22:08+05:00) ===
-// [Moiz-A-28-L1] Add quick navigation tabs on AdminDashboardPage :: verification rule #877
-// [Moiz-A-28-L2] Add quick navigation tabs on AdminDashboardPage :: verification rule #896
-// [Moiz-A-28-L3] Add quick navigation tabs on AdminDashboardPage :: verification rule #915
-// [Moiz-A-28-L4] Add quick navigation tabs on AdminDashboardPage :: verification rule #934
-// [Moiz-A-28-L5] Add quick navigation tabs on AdminDashboardPage :: verification rule #953
-// [Moiz-A-28-L6] Add quick navigation tabs on AdminDashboardPage :: verification rule #972
-// [Moiz-A-28-L7] Add quick navigation tabs on AdminDashboardPage :: verification rule #991
-// [Moiz-A-28-L8] Add quick navigation tabs on AdminDashboardPage :: verification rule #13
-// [Moiz-A-28-L9] Add quick navigation tabs on AdminDashboardPage :: verification rule #32
-// [Moiz-A-28-L10] Add quick navigation tabs on AdminDashboardPage :: verification rule #51
-// [Moiz-A-28-L11] Add quick navigation tabs on AdminDashboardPage :: verification rule #70
-// [Moiz-A-28-L12] Add quick navigation tabs on AdminDashboardPage :: verification rule #89
-// [Moiz-A-28-L13] Add quick navigation tabs on AdminDashboardPage :: verification rule #108
-// [Moiz-A-28-L14] Add quick navigation tabs on AdminDashboardPage :: verification rule #127
-// [Moiz-A-28-L15] Add quick navigation tabs on AdminDashboardPage :: verification rule #146
-// [Moiz-A-28-L16] Add quick navigation tabs on AdminDashboardPage :: verification rule #165
-// [Moiz-A-28-L17] Add quick navigation tabs on AdminDashboardPage :: verification rule #184
-// [Moiz-A-28-L18] Add quick navigation tabs on AdminDashboardPage :: verification rule #203
-// [Moiz-A-28-L19] Add quick navigation tabs on AdminDashboardPage :: verification rule #222
-// [Moiz-A-28-L20] Add quick navigation tabs on AdminDashboardPage :: verification rule #241
-// [Moiz-A-28-L21] Add quick navigation tabs on AdminDashboardPage :: verification rule #260
-// [Moiz-A-28-L22] Add quick navigation tabs on AdminDashboardPage :: verification rule #279
-// [Moiz-A-28-L23] Add quick navigation tabs on AdminDashboardPage :: verification rule #298
-// [Moiz-A-28-L24] Add quick navigation tabs on AdminDashboardPage :: verification rule #317
-// [Moiz-A-28-L25] Add quick navigation tabs on AdminDashboardPage :: verification rule #336
-// [Moiz-A-28-L26] Add quick navigation tabs on AdminDashboardPage :: verification rule #355
-// [Moiz-A-28-L27] Add quick navigation tabs on AdminDashboardPage :: verification rule #374
-// [Moiz-A-28-L28] Add quick navigation tabs on AdminDashboardPage :: verification rule #393
-// [Moiz-A-28-L29] Add quick navigation tabs on AdminDashboardPage :: verification rule #412
-// [Moiz-A-28-L30] Add quick navigation tabs on AdminDashboardPage :: verification rule #431
-// [Moiz-A-28-L31] Add quick navigation tabs on AdminDashboardPage :: verification rule #450
-// [Moiz-A-28-L32] Add quick navigation tabs on AdminDashboardPage :: verification rule #469
-// [Moiz-A-28-L33] Add quick navigation tabs on AdminDashboardPage :: verification rule #488
-// [Moiz-A-28-L34] Add quick navigation tabs on AdminDashboardPage :: verification rule #507
-// [Moiz-A-28-L35] Add quick navigation tabs on AdminDashboardPage :: verification rule #526
-// [Moiz-A-28-L36] Add quick navigation tabs on AdminDashboardPage :: verification rule #545
-// [Moiz-A-28-L37] Add quick navigation tabs on AdminDashboardPage :: verification rule #564
-// [Moiz-A-28-L38] Add quick navigation tabs on AdminDashboardPage :: verification rule #583
-// [Moiz-A-28-L39] Add quick navigation tabs on AdminDashboardPage :: verification rule #602
-// [Moiz-A-28-L40] Add quick navigation tabs on AdminDashboardPage :: verification rule #621
-// [Moiz-A-28-L41] Add quick navigation tabs on AdminDashboardPage :: verification rule #640
-// [Moiz-A-28-L42] Add quick navigation tabs on AdminDashboardPage :: verification rule #659
-// [Moiz-A-28-L43] Add quick navigation tabs on AdminDashboardPage :: verification rule #678
-// [Moiz-A-28-L44] Add quick navigation tabs on AdminDashboardPage :: verification rule #697
-// [Moiz-A-28-L45] Add quick navigation tabs on AdminDashboardPage :: verification rule #716
-// [Moiz-A-28-L46] Add quick navigation tabs on AdminDashboardPage :: verification rule #735
-// [Moiz-A-28-L47] Add quick navigation tabs on AdminDashboardPage :: verification rule #754
-// [Moiz-A-28-L48] Add quick navigation tabs on AdminDashboardPage :: verification rule #773
-// [Moiz-A-28-L49] Add quick navigation tabs on AdminDashboardPage :: verification rule #792
-// [Moiz-A-28-L50] Add quick navigation tabs on AdminDashboardPage :: verification rule #811
-// [Moiz-A-28-L51] Add quick navigation tabs on AdminDashboardPage :: verification rule #830
-// [Moiz-A-28-L52] Add quick navigation tabs on AdminDashboardPage :: verification rule #849
-// [Moiz-A-28-L53] Add quick navigation tabs on AdminDashboardPage :: verification rule #868
-// [Moiz-A-28-L54] Add quick navigation tabs on AdminDashboardPage :: verification rule #887
-// [Moiz-A-28-L55] Add quick navigation tabs on AdminDashboardPage :: verification rule #906
-// [Moiz-A-28-L56] Add quick navigation tabs on AdminDashboardPage :: verification rule #925
-// [Moiz-A-28-L57] Add quick navigation tabs on AdminDashboardPage :: verification rule #944
-// [Moiz-A-28-L58] Add quick navigation tabs on AdminDashboardPage :: verification rule #963
-// [Moiz-A-28-L59] Add quick navigation tabs on AdminDashboardPage :: verification rule #982
-// [Moiz-A-28-L60] Add quick navigation tabs on AdminDashboardPage :: verification rule #4
-// [Moiz-A-28-L61] Add quick navigation tabs on AdminDashboardPage :: verification rule #23
-// [Moiz-A-28-L62] Add quick navigation tabs on AdminDashboardPage :: verification rule #42
-// [Moiz-A-28-L63] Add quick navigation tabs on AdminDashboardPage :: verification rule #61
-// [Moiz-A-28-L64] Add quick navigation tabs on AdminDashboardPage :: verification rule #80
+// === [SPEC-BLOCK-START] Moiz-A-40 (2026-09-26T14:08:17+05:00) ===
+// [Moiz-A-40-L1] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #154
+// [Moiz-A-40-L2] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #173
+// [Moiz-A-40-L3] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #192
+// [Moiz-A-40-L4] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #211
+// [Moiz-A-40-L5] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #230
+// [Moiz-A-40-L6] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #249
+// [Moiz-A-40-L7] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #268
+// [Moiz-A-40-L8] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #287
+// [Moiz-A-40-L9] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #306
+// [Moiz-A-40-L10] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #325
+// [Moiz-A-40-L11] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #344
+// [Moiz-A-40-L12] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #363
+// [Moiz-A-40-L13] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #382
+// [Moiz-A-40-L14] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #401
+// [Moiz-A-40-L15] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #420
+// [Moiz-A-40-L16] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #439
+// [Moiz-A-40-L17] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #458
+// [Moiz-A-40-L18] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #477
+// [Moiz-A-40-L19] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #496
+// [Moiz-A-40-L20] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #515
+// [Moiz-A-40-L21] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #534
+// [Moiz-A-40-L22] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #553
+// [Moiz-A-40-L23] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #572
+// [Moiz-A-40-L24] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #591
+// [Moiz-A-40-L25] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #610
+// [Moiz-A-40-L26] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #629
+// [Moiz-A-40-L27] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #648
+// [Moiz-A-40-L28] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #667
+// [Moiz-A-40-L29] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #686
+// [Moiz-A-40-L30] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #705
+// [Moiz-A-40-L31] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #724
+// [Moiz-A-40-L32] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #743
+// [Moiz-A-40-L33] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #762
+// [Moiz-A-40-L34] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #781
+// [Moiz-A-40-L35] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #800
+// [Moiz-A-40-L36] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #819
+// [Moiz-A-40-L37] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #838
+// [Moiz-A-40-L38] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #857
+// [Moiz-A-40-L39] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #876
+// [Moiz-A-40-L40] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #895
+// [Moiz-A-40-L41] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #914
+// [Moiz-A-40-L42] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #933
+// [Moiz-A-40-L43] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #952
+// [Moiz-A-40-L44] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #971
+// [Moiz-A-40-L45] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #990
+// [Moiz-A-40-L46] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #12
+// [Moiz-A-40-L47] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #31
+// [Moiz-A-40-L48] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #50
+// [Moiz-A-40-L49] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #69
+// [Moiz-A-40-L50] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #88
+// [Moiz-A-40-L51] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #107
+// [Moiz-A-40-L52] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #126
+// [Moiz-A-40-L53] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #145
+// [Moiz-A-40-L54] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #164
+// [Moiz-A-40-L55] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #183
+// [Moiz-A-40-L56] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #202
+// [Moiz-A-40-L57] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #221
+// [Moiz-A-40-L58] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #240
+// [Moiz-A-40-L59] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #259
+// [Moiz-A-40-L60] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #278
+// [Moiz-A-40-L61] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #297
 // === [SPEC-BLOCK-END] ===
