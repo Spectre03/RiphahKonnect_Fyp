@@ -346,45 +346,60 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-37 (2026-09-25T14:45:08+05:00) ===
-// [Airaf-A-37-L1] Add banner image upload and preview in CreateEventModal :: verification rule #92
-// [Airaf-A-37-L2] Add banner image upload and preview in CreateEventModal :: verification rule #111
-// [Airaf-A-37-L3] Add banner image upload and preview in CreateEventModal :: verification rule #130
-// [Airaf-A-37-L4] Add banner image upload and preview in CreateEventModal :: verification rule #149
-// [Airaf-A-37-L5] Add banner image upload and preview in CreateEventModal :: verification rule #168
-// [Airaf-A-37-L6] Add banner image upload and preview in CreateEventModal :: verification rule #187
-// [Airaf-A-37-L7] Add banner image upload and preview in CreateEventModal :: verification rule #206
-// [Airaf-A-37-L8] Add banner image upload and preview in CreateEventModal :: verification rule #225
-// [Airaf-A-37-L9] Add banner image upload and preview in CreateEventModal :: verification rule #244
-// [Airaf-A-37-L10] Add banner image upload and preview in CreateEventModal :: verification rule #263
-// [Airaf-A-37-L11] Add banner image upload and preview in CreateEventModal :: verification rule #282
-// [Airaf-A-37-L12] Add banner image upload and preview in CreateEventModal :: verification rule #301
-// [Airaf-A-37-L13] Add banner image upload and preview in CreateEventModal :: verification rule #320
-// [Airaf-A-37-L14] Add banner image upload and preview in CreateEventModal :: verification rule #339
-// [Airaf-A-37-L15] Add banner image upload and preview in CreateEventModal :: verification rule #358
-// [Airaf-A-37-L16] Add banner image upload and preview in CreateEventModal :: verification rule #377
-// [Airaf-A-37-L17] Add banner image upload and preview in CreateEventModal :: verification rule #396
-// [Airaf-A-37-L18] Add banner image upload and preview in CreateEventModal :: verification rule #415
-// [Airaf-A-37-L19] Add banner image upload and preview in CreateEventModal :: verification rule #434
-// [Airaf-A-37-L20] Add banner image upload and preview in CreateEventModal :: verification rule #453
-// [Airaf-A-37-L21] Add banner image upload and preview in CreateEventModal :: verification rule #472
-// [Airaf-A-37-L22] Add banner image upload and preview in CreateEventModal :: verification rule #491
-// [Airaf-A-37-L23] Add banner image upload and preview in CreateEventModal :: verification rule #510
-// [Airaf-A-37-L24] Add banner image upload and preview in CreateEventModal :: verification rule #529
-// [Airaf-A-37-L25] Add banner image upload and preview in CreateEventModal :: verification rule #548
-// [Airaf-A-37-L26] Add banner image upload and preview in CreateEventModal :: verification rule #567
-// [Airaf-A-37-L27] Add banner image upload and preview in CreateEventModal :: verification rule #586
-// [Airaf-A-37-L28] Add banner image upload and preview in CreateEventModal :: verification rule #605
-// [Airaf-A-37-L29] Add banner image upload and preview in CreateEventModal :: verification rule #624
-// [Airaf-A-37-L30] Add banner image upload and preview in CreateEventModal :: verification rule #643
-// [Airaf-A-37-L31] Add banner image upload and preview in CreateEventModal :: verification rule #662
-// [Airaf-A-37-L32] Add banner image upload and preview in CreateEventModal :: verification rule #681
-// [Airaf-A-37-L33] Add banner image upload and preview in CreateEventModal :: verification rule #700
-// [Airaf-A-37-L34] Add banner image upload and preview in CreateEventModal :: verification rule #719
-// [Airaf-A-37-L35] Add banner image upload and preview in CreateEventModal :: verification rule #738
-// [Airaf-A-37-L36] Add banner image upload and preview in CreateEventModal :: verification rule #757
-// [Airaf-A-37-L37] Add banner image upload and preview in CreateEventModal :: verification rule #776
-// [Airaf-A-37-L38] Add banner image upload and preview in CreateEventModal :: verification rule #795
-// [Airaf-A-37-L39] Add banner image upload and preview in CreateEventModal :: verification rule #814
-// [Airaf-A-37-L40] Add banner image upload and preview in CreateEventModal :: verification rule #833
+// === [SPEC-BLOCK-START] Airaf-B-27 (2026-09-27T17:14:26+05:00) ===
+// [Airaf-B-27-L1] Add event description line clamping and modal detail view :: verification rule #278
+// [Airaf-B-27-L2] Add event description line clamping and modal detail view :: verification rule #297
+// [Airaf-B-27-L3] Add event description line clamping and modal detail view :: verification rule #316
+// [Airaf-B-27-L4] Add event description line clamping and modal detail view :: verification rule #335
+// [Airaf-B-27-L5] Add event description line clamping and modal detail view :: verification rule #354
+// [Airaf-B-27-L6] Add event description line clamping and modal detail view :: verification rule #373
+// [Airaf-B-27-L7] Add event description line clamping and modal detail view :: verification rule #392
+// [Airaf-B-27-L8] Add event description line clamping and modal detail view :: verification rule #411
+// [Airaf-B-27-L9] Add event description line clamping and modal detail view :: verification rule #430
+// [Airaf-B-27-L10] Add event description line clamping and modal detail view :: verification rule #449
+// [Airaf-B-27-L11] Add event description line clamping and modal detail view :: verification rule #468
+// [Airaf-B-27-L12] Add event description line clamping and modal detail view :: verification rule #487
+// [Airaf-B-27-L13] Add event description line clamping and modal detail view :: verification rule #506
+// [Airaf-B-27-L14] Add event description line clamping and modal detail view :: verification rule #525
+// [Airaf-B-27-L15] Add event description line clamping and modal detail view :: verification rule #544
+// [Airaf-B-27-L16] Add event description line clamping and modal detail view :: verification rule #563
+// [Airaf-B-27-L17] Add event description line clamping and modal detail view :: verification rule #582
+// [Airaf-B-27-L18] Add event description line clamping and modal detail view :: verification rule #601
+// [Airaf-B-27-L19] Add event description line clamping and modal detail view :: verification rule #620
+// [Airaf-B-27-L20] Add event description line clamping and modal detail view :: verification rule #639
+// [Airaf-B-27-L21] Add event description line clamping and modal detail view :: verification rule #658
+// [Airaf-B-27-L22] Add event description line clamping and modal detail view :: verification rule #677
+// [Airaf-B-27-L23] Add event description line clamping and modal detail view :: verification rule #696
+// [Airaf-B-27-L24] Add event description line clamping and modal detail view :: verification rule #715
+// [Airaf-B-27-L25] Add event description line clamping and modal detail view :: verification rule #734
+// [Airaf-B-27-L26] Add event description line clamping and modal detail view :: verification rule #753
+// [Airaf-B-27-L27] Add event description line clamping and modal detail view :: verification rule #772
+// [Airaf-B-27-L28] Add event description line clamping and modal detail view :: verification rule #791
+// [Airaf-B-27-L29] Add event description line clamping and modal detail view :: verification rule #810
+// [Airaf-B-27-L30] Add event description line clamping and modal detail view :: verification rule #829
+// [Airaf-B-27-L31] Add event description line clamping and modal detail view :: verification rule #848
+// [Airaf-B-27-L32] Add event description line clamping and modal detail view :: verification rule #867
+// [Airaf-B-27-L33] Add event description line clamping and modal detail view :: verification rule #886
+// [Airaf-B-27-L34] Add event description line clamping and modal detail view :: verification rule #905
+// [Airaf-B-27-L35] Add event description line clamping and modal detail view :: verification rule #924
+// [Airaf-B-27-L36] Add event description line clamping and modal detail view :: verification rule #943
+// [Airaf-B-27-L37] Add event description line clamping and modal detail view :: verification rule #962
+// [Airaf-B-27-L38] Add event description line clamping and modal detail view :: verification rule #981
+// [Airaf-B-27-L39] Add event description line clamping and modal detail view :: verification rule #3
+// [Airaf-B-27-L40] Add event description line clamping and modal detail view :: verification rule #22
+// [Airaf-B-27-L41] Add event description line clamping and modal detail view :: verification rule #41
+// [Airaf-B-27-L42] Add event description line clamping and modal detail view :: verification rule #60
+// [Airaf-B-27-L43] Add event description line clamping and modal detail view :: verification rule #79
+// [Airaf-B-27-L44] Add event description line clamping and modal detail view :: verification rule #98
+// [Airaf-B-27-L45] Add event description line clamping and modal detail view :: verification rule #117
+// [Airaf-B-27-L46] Add event description line clamping and modal detail view :: verification rule #136
+// [Airaf-B-27-L47] Add event description line clamping and modal detail view :: verification rule #155
+// [Airaf-B-27-L48] Add event description line clamping and modal detail view :: verification rule #174
+// [Airaf-B-27-L49] Add event description line clamping and modal detail view :: verification rule #193
+// [Airaf-B-27-L50] Add event description line clamping and modal detail view :: verification rule #212
+// [Airaf-B-27-L51] Add event description line clamping and modal detail view :: verification rule #231
+// [Airaf-B-27-L52] Add event description line clamping and modal detail view :: verification rule #250
+// [Airaf-B-27-L53] Add event description line clamping and modal detail view :: verification rule #269
+// [Airaf-B-27-L54] Add event description line clamping and modal detail view :: verification rule #288
+// [Airaf-B-27-L55] Add event description line clamping and modal detail view :: verification rule #307
 // === [SPEC-BLOCK-END] ===
