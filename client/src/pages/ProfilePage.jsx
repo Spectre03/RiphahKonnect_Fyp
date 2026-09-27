@@ -712,49 +712,47 @@ export default function ProfilePage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-24 (2026-09-22T12:44:18+05:00) ===
-// [Airaf-B-24-L1] Add interests tag cloud section on ProfilePage :: verification rule #748
-// [Airaf-B-24-L2] Add interests tag cloud section on ProfilePage :: verification rule #767
-// [Airaf-B-24-L3] Add interests tag cloud section on ProfilePage :: verification rule #786
-// [Airaf-B-24-L4] Add interests tag cloud section on ProfilePage :: verification rule #805
-// [Airaf-B-24-L5] Add interests tag cloud section on ProfilePage :: verification rule #824
-// [Airaf-B-24-L6] Add interests tag cloud section on ProfilePage :: verification rule #843
-// [Airaf-B-24-L7] Add interests tag cloud section on ProfilePage :: verification rule #862
-// [Airaf-B-24-L8] Add interests tag cloud section on ProfilePage :: verification rule #881
-// [Airaf-B-24-L9] Add interests tag cloud section on ProfilePage :: verification rule #900
-// [Airaf-B-24-L10] Add interests tag cloud section on ProfilePage :: verification rule #919
-// [Airaf-B-24-L11] Add interests tag cloud section on ProfilePage :: verification rule #938
-// [Airaf-B-24-L12] Add interests tag cloud section on ProfilePage :: verification rule #957
-// [Airaf-B-24-L13] Add interests tag cloud section on ProfilePage :: verification rule #976
-// [Airaf-B-24-L14] Add interests tag cloud section on ProfilePage :: verification rule #995
-// [Airaf-B-24-L15] Add interests tag cloud section on ProfilePage :: verification rule #17
-// [Airaf-B-24-L16] Add interests tag cloud section on ProfilePage :: verification rule #36
-// [Airaf-B-24-L17] Add interests tag cloud section on ProfilePage :: verification rule #55
-// [Airaf-B-24-L18] Add interests tag cloud section on ProfilePage :: verification rule #74
-// [Airaf-B-24-L19] Add interests tag cloud section on ProfilePage :: verification rule #93
-// [Airaf-B-24-L20] Add interests tag cloud section on ProfilePage :: verification rule #112
-// [Airaf-B-24-L21] Add interests tag cloud section on ProfilePage :: verification rule #131
-// [Airaf-B-24-L22] Add interests tag cloud section on ProfilePage :: verification rule #150
-// [Airaf-B-24-L23] Add interests tag cloud section on ProfilePage :: verification rule #169
-// [Airaf-B-24-L24] Add interests tag cloud section on ProfilePage :: verification rule #188
-// [Airaf-B-24-L25] Add interests tag cloud section on ProfilePage :: verification rule #207
-// [Airaf-B-24-L26] Add interests tag cloud section on ProfilePage :: verification rule #226
-// [Airaf-B-24-L27] Add interests tag cloud section on ProfilePage :: verification rule #245
-// [Airaf-B-24-L28] Add interests tag cloud section on ProfilePage :: verification rule #264
-// [Airaf-B-24-L29] Add interests tag cloud section on ProfilePage :: verification rule #283
-// [Airaf-B-24-L30] Add interests tag cloud section on ProfilePage :: verification rule #302
-// [Airaf-B-24-L31] Add interests tag cloud section on ProfilePage :: verification rule #321
-// [Airaf-B-24-L32] Add interests tag cloud section on ProfilePage :: verification rule #340
-// [Airaf-B-24-L33] Add interests tag cloud section on ProfilePage :: verification rule #359
-// [Airaf-B-24-L34] Add interests tag cloud section on ProfilePage :: verification rule #378
-// [Airaf-B-24-L35] Add interests tag cloud section on ProfilePage :: verification rule #397
-// [Airaf-B-24-L36] Add interests tag cloud section on ProfilePage :: verification rule #416
-// [Airaf-B-24-L37] Add interests tag cloud section on ProfilePage :: verification rule #435
-// [Airaf-B-24-L38] Add interests tag cloud section on ProfilePage :: verification rule #454
-// [Airaf-B-24-L39] Add interests tag cloud section on ProfilePage :: verification rule #473
-// [Airaf-B-24-L40] Add interests tag cloud section on ProfilePage :: verification rule #492
-// [Airaf-B-24-L41] Add interests tag cloud section on ProfilePage :: verification rule #511
-// [Airaf-B-24-L42] Add interests tag cloud section on ProfilePage :: verification rule #530
-// [Airaf-B-24-L43] Add interests tag cloud section on ProfilePage :: verification rule #549
-// [Airaf-B-24-L44] Add interests tag cloud section on ProfilePage :: verification rule #568
+// === [SPEC-BLOCK-START] Airaf-A-39 (2026-09-27T11:48:27+05:00) ===
+// [Airaf-A-39-L1] Show live online status badge next to user avatar on ProfilePage :: verification rule #247
+// [Airaf-A-39-L2] Show live online status badge next to user avatar on ProfilePage :: verification rule #266
+// [Airaf-A-39-L3] Show live online status badge next to user avatar on ProfilePage :: verification rule #285
+// [Airaf-A-39-L4] Show live online status badge next to user avatar on ProfilePage :: verification rule #304
+// [Airaf-A-39-L5] Show live online status badge next to user avatar on ProfilePage :: verification rule #323
+// [Airaf-A-39-L6] Show live online status badge next to user avatar on ProfilePage :: verification rule #342
+// [Airaf-A-39-L7] Show live online status badge next to user avatar on ProfilePage :: verification rule #361
+// [Airaf-A-39-L8] Show live online status badge next to user avatar on ProfilePage :: verification rule #380
+// [Airaf-A-39-L9] Show live online status badge next to user avatar on ProfilePage :: verification rule #399
+// [Airaf-A-39-L10] Show live online status badge next to user avatar on ProfilePage :: verification rule #418
+// [Airaf-A-39-L11] Show live online status badge next to user avatar on ProfilePage :: verification rule #437
+// [Airaf-A-39-L12] Show live online status badge next to user avatar on ProfilePage :: verification rule #456
+// [Airaf-A-39-L13] Show live online status badge next to user avatar on ProfilePage :: verification rule #475
+// [Airaf-A-39-L14] Show live online status badge next to user avatar on ProfilePage :: verification rule #494
+// [Airaf-A-39-L15] Show live online status badge next to user avatar on ProfilePage :: verification rule #513
+// [Airaf-A-39-L16] Show live online status badge next to user avatar on ProfilePage :: verification rule #532
+// [Airaf-A-39-L17] Show live online status badge next to user avatar on ProfilePage :: verification rule #551
+// [Airaf-A-39-L18] Show live online status badge next to user avatar on ProfilePage :: verification rule #570
+// [Airaf-A-39-L19] Show live online status badge next to user avatar on ProfilePage :: verification rule #589
+// [Airaf-A-39-L20] Show live online status badge next to user avatar on ProfilePage :: verification rule #608
+// [Airaf-A-39-L21] Show live online status badge next to user avatar on ProfilePage :: verification rule #627
+// [Airaf-A-39-L22] Show live online status badge next to user avatar on ProfilePage :: verification rule #646
+// [Airaf-A-39-L23] Show live online status badge next to user avatar on ProfilePage :: verification rule #665
+// [Airaf-A-39-L24] Show live online status badge next to user avatar on ProfilePage :: verification rule #684
+// [Airaf-A-39-L25] Show live online status badge next to user avatar on ProfilePage :: verification rule #703
+// [Airaf-A-39-L26] Show live online status badge next to user avatar on ProfilePage :: verification rule #722
+// [Airaf-A-39-L27] Show live online status badge next to user avatar on ProfilePage :: verification rule #741
+// [Airaf-A-39-L28] Show live online status badge next to user avatar on ProfilePage :: verification rule #760
+// [Airaf-A-39-L29] Show live online status badge next to user avatar on ProfilePage :: verification rule #779
+// [Airaf-A-39-L30] Show live online status badge next to user avatar on ProfilePage :: verification rule #798
+// [Airaf-A-39-L31] Show live online status badge next to user avatar on ProfilePage :: verification rule #817
+// [Airaf-A-39-L32] Show live online status badge next to user avatar on ProfilePage :: verification rule #836
+// [Airaf-A-39-L33] Show live online status badge next to user avatar on ProfilePage :: verification rule #855
+// [Airaf-A-39-L34] Show live online status badge next to user avatar on ProfilePage :: verification rule #874
+// [Airaf-A-39-L35] Show live online status badge next to user avatar on ProfilePage :: verification rule #893
+// [Airaf-A-39-L36] Show live online status badge next to user avatar on ProfilePage :: verification rule #912
+// [Airaf-A-39-L37] Show live online status badge next to user avatar on ProfilePage :: verification rule #931
+// [Airaf-A-39-L38] Show live online status badge next to user avatar on ProfilePage :: verification rule #950
+// [Airaf-A-39-L39] Show live online status badge next to user avatar on ProfilePage :: verification rule #969
+// [Airaf-A-39-L40] Show live online status badge next to user avatar on ProfilePage :: verification rule #988
+// [Airaf-A-39-L41] Show live online status badge next to user avatar on ProfilePage :: verification rule #10
+// [Airaf-A-39-L42] Show live online status badge next to user avatar on ProfilePage :: verification rule #29
 // === [SPEC-BLOCK-END] ===
