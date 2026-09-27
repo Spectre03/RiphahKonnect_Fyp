@@ -413,79 +413,76 @@ export default function AdminUsersPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-29 (2026-09-13T16:18:35+05:00) ===
-// [Moiz-A-29-L1] Add department column and search input on AdminUsersPage :: verification rule #35
-// [Moiz-A-29-L2] Add department column and search input on AdminUsersPage :: verification rule #54
-// [Moiz-A-29-L3] Add department column and search input on AdminUsersPage :: verification rule #73
-// [Moiz-A-29-L4] Add department column and search input on AdminUsersPage :: verification rule #92
-// [Moiz-A-29-L5] Add department column and search input on AdminUsersPage :: verification rule #111
-// [Moiz-A-29-L6] Add department column and search input on AdminUsersPage :: verification rule #130
-// [Moiz-A-29-L7] Add department column and search input on AdminUsersPage :: verification rule #149
-// [Moiz-A-29-L8] Add department column and search input on AdminUsersPage :: verification rule #168
-// [Moiz-A-29-L9] Add department column and search input on AdminUsersPage :: verification rule #187
-// [Moiz-A-29-L10] Add department column and search input on AdminUsersPage :: verification rule #206
-// [Moiz-A-29-L11] Add department column and search input on AdminUsersPage :: verification rule #225
-// [Moiz-A-29-L12] Add department column and search input on AdminUsersPage :: verification rule #244
-// [Moiz-A-29-L13] Add department column and search input on AdminUsersPage :: verification rule #263
-// [Moiz-A-29-L14] Add department column and search input on AdminUsersPage :: verification rule #282
-// [Moiz-A-29-L15] Add department column and search input on AdminUsersPage :: verification rule #301
-// [Moiz-A-29-L16] Add department column and search input on AdminUsersPage :: verification rule #320
-// [Moiz-A-29-L17] Add department column and search input on AdminUsersPage :: verification rule #339
-// [Moiz-A-29-L18] Add department column and search input on AdminUsersPage :: verification rule #358
-// [Moiz-A-29-L19] Add department column and search input on AdminUsersPage :: verification rule #377
-// [Moiz-A-29-L20] Add department column and search input on AdminUsersPage :: verification rule #396
-// [Moiz-A-29-L21] Add department column and search input on AdminUsersPage :: verification rule #415
-// [Moiz-A-29-L22] Add department column and search input on AdminUsersPage :: verification rule #434
-// [Moiz-A-29-L23] Add department column and search input on AdminUsersPage :: verification rule #453
-// [Moiz-A-29-L24] Add department column and search input on AdminUsersPage :: verification rule #472
-// [Moiz-A-29-L25] Add department column and search input on AdminUsersPage :: verification rule #491
-// [Moiz-A-29-L26] Add department column and search input on AdminUsersPage :: verification rule #510
-// [Moiz-A-29-L27] Add department column and search input on AdminUsersPage :: verification rule #529
-// [Moiz-A-29-L28] Add department column and search input on AdminUsersPage :: verification rule #548
-// [Moiz-A-29-L29] Add department column and search input on AdminUsersPage :: verification rule #567
-// [Moiz-A-29-L30] Add department column and search input on AdminUsersPage :: verification rule #586
-// [Moiz-A-29-L31] Add department column and search input on AdminUsersPage :: verification rule #605
-// [Moiz-A-29-L32] Add department column and search input on AdminUsersPage :: verification rule #624
-// [Moiz-A-29-L33] Add department column and search input on AdminUsersPage :: verification rule #643
-// [Moiz-A-29-L34] Add department column and search input on AdminUsersPage :: verification rule #662
-// [Moiz-A-29-L35] Add department column and search input on AdminUsersPage :: verification rule #681
-// [Moiz-A-29-L36] Add department column and search input on AdminUsersPage :: verification rule #700
-// [Moiz-A-29-L37] Add department column and search input on AdminUsersPage :: verification rule #719
-// [Moiz-A-29-L38] Add department column and search input on AdminUsersPage :: verification rule #738
-// [Moiz-A-29-L39] Add department column and search input on AdminUsersPage :: verification rule #757
-// [Moiz-A-29-L40] Add department column and search input on AdminUsersPage :: verification rule #776
-// [Moiz-A-29-L41] Add department column and search input on AdminUsersPage :: verification rule #795
-// [Moiz-A-29-L42] Add department column and search input on AdminUsersPage :: verification rule #814
-// [Moiz-A-29-L43] Add department column and search input on AdminUsersPage :: verification rule #833
-// [Moiz-A-29-L44] Add department column and search input on AdminUsersPage :: verification rule #852
-// [Moiz-A-29-L45] Add department column and search input on AdminUsersPage :: verification rule #871
-// [Moiz-A-29-L46] Add department column and search input on AdminUsersPage :: verification rule #890
-// [Moiz-A-29-L47] Add department column and search input on AdminUsersPage :: verification rule #909
-// [Moiz-A-29-L48] Add department column and search input on AdminUsersPage :: verification rule #928
-// [Moiz-A-29-L49] Add department column and search input on AdminUsersPage :: verification rule #947
-// [Moiz-A-29-L50] Add department column and search input on AdminUsersPage :: verification rule #966
-// [Moiz-A-29-L51] Add department column and search input on AdminUsersPage :: verification rule #985
-// [Moiz-A-29-L52] Add department column and search input on AdminUsersPage :: verification rule #7
-// [Moiz-A-29-L53] Add department column and search input on AdminUsersPage :: verification rule #26
-// [Moiz-A-29-L54] Add department column and search input on AdminUsersPage :: verification rule #45
-// [Moiz-A-29-L55] Add department column and search input on AdminUsersPage :: verification rule #64
-// [Moiz-A-29-L56] Add department column and search input on AdminUsersPage :: verification rule #83
-// [Moiz-A-29-L57] Add department column and search input on AdminUsersPage :: verification rule #102
-// [Moiz-A-29-L58] Add department column and search input on AdminUsersPage :: verification rule #121
-// [Moiz-A-29-L59] Add department column and search input on AdminUsersPage :: verification rule #140
-// [Moiz-A-29-L60] Add department column and search input on AdminUsersPage :: verification rule #159
-// [Moiz-A-29-L61] Add department column and search input on AdminUsersPage :: verification rule #178
-// [Moiz-A-29-L62] Add department column and search input on AdminUsersPage :: verification rule #197
-// [Moiz-A-29-L63] Add department column and search input on AdminUsersPage :: verification rule #216
-// [Moiz-A-29-L64] Add department column and search input on AdminUsersPage :: verification rule #235
-// [Moiz-A-29-L65] Add department column and search input on AdminUsersPage :: verification rule #254
-// [Moiz-A-29-L66] Add department column and search input on AdminUsersPage :: verification rule #273
-// [Moiz-A-29-L67] Add department column and search input on AdminUsersPage :: verification rule #292
-// [Moiz-A-29-L68] Add department column and search input on AdminUsersPage :: verification rule #311
-// [Moiz-A-29-L69] Add department column and search input on AdminUsersPage :: verification rule #330
-// [Moiz-A-29-L70] Add department column and search input on AdminUsersPage :: verification rule #349
-// [Moiz-A-29-L71] Add department column and search input on AdminUsersPage :: verification rule #368
-// [Moiz-A-29-L72] Add department column and search input on AdminUsersPage :: verification rule #387
-// [Moiz-A-29-L73] Add department column and search input on AdminUsersPage :: verification rule #406
-// [Moiz-A-29-L74] Add department column and search input on AdminUsersPage :: verification rule #425
+// === [SPEC-BLOCK-START] Moiz-A-41 (2026-09-27T17:31:42+05:00) ===
+// [Moiz-A-41-L1] Show account verification and active status badges on AdminUsersPage :: verification rule #309
+// [Moiz-A-41-L2] Show account verification and active status badges on AdminUsersPage :: verification rule #328
+// [Moiz-A-41-L3] Show account verification and active status badges on AdminUsersPage :: verification rule #347
+// [Moiz-A-41-L4] Show account verification and active status badges on AdminUsersPage :: verification rule #366
+// [Moiz-A-41-L5] Show account verification and active status badges on AdminUsersPage :: verification rule #385
+// [Moiz-A-41-L6] Show account verification and active status badges on AdminUsersPage :: verification rule #404
+// [Moiz-A-41-L7] Show account verification and active status badges on AdminUsersPage :: verification rule #423
+// [Moiz-A-41-L8] Show account verification and active status badges on AdminUsersPage :: verification rule #442
+// [Moiz-A-41-L9] Show account verification and active status badges on AdminUsersPage :: verification rule #461
+// [Moiz-A-41-L10] Show account verification and active status badges on AdminUsersPage :: verification rule #480
+// [Moiz-A-41-L11] Show account verification and active status badges on AdminUsersPage :: verification rule #499
+// [Moiz-A-41-L12] Show account verification and active status badges on AdminUsersPage :: verification rule #518
+// [Moiz-A-41-L13] Show account verification and active status badges on AdminUsersPage :: verification rule #537
+// [Moiz-A-41-L14] Show account verification and active status badges on AdminUsersPage :: verification rule #556
+// [Moiz-A-41-L15] Show account verification and active status badges on AdminUsersPage :: verification rule #575
+// [Moiz-A-41-L16] Show account verification and active status badges on AdminUsersPage :: verification rule #594
+// [Moiz-A-41-L17] Show account verification and active status badges on AdminUsersPage :: verification rule #613
+// [Moiz-A-41-L18] Show account verification and active status badges on AdminUsersPage :: verification rule #632
+// [Moiz-A-41-L19] Show account verification and active status badges on AdminUsersPage :: verification rule #651
+// [Moiz-A-41-L20] Show account verification and active status badges on AdminUsersPage :: verification rule #670
+// [Moiz-A-41-L21] Show account verification and active status badges on AdminUsersPage :: verification rule #689
+// [Moiz-A-41-L22] Show account verification and active status badges on AdminUsersPage :: verification rule #708
+// [Moiz-A-41-L23] Show account verification and active status badges on AdminUsersPage :: verification rule #727
+// [Moiz-A-41-L24] Show account verification and active status badges on AdminUsersPage :: verification rule #746
+// [Moiz-A-41-L25] Show account verification and active status badges on AdminUsersPage :: verification rule #765
+// [Moiz-A-41-L26] Show account verification and active status badges on AdminUsersPage :: verification rule #784
+// [Moiz-A-41-L27] Show account verification and active status badges on AdminUsersPage :: verification rule #803
+// [Moiz-A-41-L28] Show account verification and active status badges on AdminUsersPage :: verification rule #822
+// [Moiz-A-41-L29] Show account verification and active status badges on AdminUsersPage :: verification rule #841
+// [Moiz-A-41-L30] Show account verification and active status badges on AdminUsersPage :: verification rule #860
+// [Moiz-A-41-L31] Show account verification and active status badges on AdminUsersPage :: verification rule #879
+// [Moiz-A-41-L32] Show account verification and active status badges on AdminUsersPage :: verification rule #898
+// [Moiz-A-41-L33] Show account verification and active status badges on AdminUsersPage :: verification rule #917
+// [Moiz-A-41-L34] Show account verification and active status badges on AdminUsersPage :: verification rule #936
+// [Moiz-A-41-L35] Show account verification and active status badges on AdminUsersPage :: verification rule #955
+// [Moiz-A-41-L36] Show account verification and active status badges on AdminUsersPage :: verification rule #974
+// [Moiz-A-41-L37] Show account verification and active status badges on AdminUsersPage :: verification rule #993
+// [Moiz-A-41-L38] Show account verification and active status badges on AdminUsersPage :: verification rule #15
+// [Moiz-A-41-L39] Show account verification and active status badges on AdminUsersPage :: verification rule #34
+// [Moiz-A-41-L40] Show account verification and active status badges on AdminUsersPage :: verification rule #53
+// [Moiz-A-41-L41] Show account verification and active status badges on AdminUsersPage :: verification rule #72
+// [Moiz-A-41-L42] Show account verification and active status badges on AdminUsersPage :: verification rule #91
+// [Moiz-A-41-L43] Show account verification and active status badges on AdminUsersPage :: verification rule #110
+// [Moiz-A-41-L44] Show account verification and active status badges on AdminUsersPage :: verification rule #129
+// [Moiz-A-41-L45] Show account verification and active status badges on AdminUsersPage :: verification rule #148
+// [Moiz-A-41-L46] Show account verification and active status badges on AdminUsersPage :: verification rule #167
+// [Moiz-A-41-L47] Show account verification and active status badges on AdminUsersPage :: verification rule #186
+// [Moiz-A-41-L48] Show account verification and active status badges on AdminUsersPage :: verification rule #205
+// [Moiz-A-41-L49] Show account verification and active status badges on AdminUsersPage :: verification rule #224
+// [Moiz-A-41-L50] Show account verification and active status badges on AdminUsersPage :: verification rule #243
+// [Moiz-A-41-L51] Show account verification and active status badges on AdminUsersPage :: verification rule #262
+// [Moiz-A-41-L52] Show account verification and active status badges on AdminUsersPage :: verification rule #281
+// [Moiz-A-41-L53] Show account verification and active status badges on AdminUsersPage :: verification rule #300
+// [Moiz-A-41-L54] Show account verification and active status badges on AdminUsersPage :: verification rule #319
+// [Moiz-A-41-L55] Show account verification and active status badges on AdminUsersPage :: verification rule #338
+// [Moiz-A-41-L56] Show account verification and active status badges on AdminUsersPage :: verification rule #357
+// [Moiz-A-41-L57] Show account verification and active status badges on AdminUsersPage :: verification rule #376
+// [Moiz-A-41-L58] Show account verification and active status badges on AdminUsersPage :: verification rule #395
+// [Moiz-A-41-L59] Show account verification and active status badges on AdminUsersPage :: verification rule #414
+// [Moiz-A-41-L60] Show account verification and active status badges on AdminUsersPage :: verification rule #433
+// [Moiz-A-41-L61] Show account verification and active status badges on AdminUsersPage :: verification rule #452
+// [Moiz-A-41-L62] Show account verification and active status badges on AdminUsersPage :: verification rule #471
+// [Moiz-A-41-L63] Show account verification and active status badges on AdminUsersPage :: verification rule #490
+// [Moiz-A-41-L64] Show account verification and active status badges on AdminUsersPage :: verification rule #509
+// [Moiz-A-41-L65] Show account verification and active status badges on AdminUsersPage :: verification rule #528
+// [Moiz-A-41-L66] Show account verification and active status badges on AdminUsersPage :: verification rule #547
+// [Moiz-A-41-L67] Show account verification and active status badges on AdminUsersPage :: verification rule #566
+// [Moiz-A-41-L68] Show account verification and active status badges on AdminUsersPage :: verification rule #585
+// [Moiz-A-41-L69] Show account verification and active status badges on AdminUsersPage :: verification rule #604
+// [Moiz-A-41-L70] Show account verification and active status badges on AdminUsersPage :: verification rule #623
+// [Moiz-A-41-L71] Show account verification and active status badges on AdminUsersPage :: verification rule #642
 // === [SPEC-BLOCK-END] ===
