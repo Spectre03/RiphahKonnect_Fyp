@@ -258,63 +258,61 @@ export default function AdminGroupsPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-30 (2026-09-14T15:30:12+05:00) ===
-// [Moiz-A-30-L1] Show member and post counts on AdminGroupsPage cards :: verification rule #97
-// [Moiz-A-30-L2] Show member and post counts on AdminGroupsPage cards :: verification rule #116
-// [Moiz-A-30-L3] Show member and post counts on AdminGroupsPage cards :: verification rule #135
-// [Moiz-A-30-L4] Show member and post counts on AdminGroupsPage cards :: verification rule #154
-// [Moiz-A-30-L5] Show member and post counts on AdminGroupsPage cards :: verification rule #173
-// [Moiz-A-30-L6] Show member and post counts on AdminGroupsPage cards :: verification rule #192
-// [Moiz-A-30-L7] Show member and post counts on AdminGroupsPage cards :: verification rule #211
-// [Moiz-A-30-L8] Show member and post counts on AdminGroupsPage cards :: verification rule #230
-// [Moiz-A-30-L9] Show member and post counts on AdminGroupsPage cards :: verification rule #249
-// [Moiz-A-30-L10] Show member and post counts on AdminGroupsPage cards :: verification rule #268
-// [Moiz-A-30-L11] Show member and post counts on AdminGroupsPage cards :: verification rule #287
-// [Moiz-A-30-L12] Show member and post counts on AdminGroupsPage cards :: verification rule #306
-// [Moiz-A-30-L13] Show member and post counts on AdminGroupsPage cards :: verification rule #325
-// [Moiz-A-30-L14] Show member and post counts on AdminGroupsPage cards :: verification rule #344
-// [Moiz-A-30-L15] Show member and post counts on AdminGroupsPage cards :: verification rule #363
-// [Moiz-A-30-L16] Show member and post counts on AdminGroupsPage cards :: verification rule #382
-// [Moiz-A-30-L17] Show member and post counts on AdminGroupsPage cards :: verification rule #401
-// [Moiz-A-30-L18] Show member and post counts on AdminGroupsPage cards :: verification rule #420
-// [Moiz-A-30-L19] Show member and post counts on AdminGroupsPage cards :: verification rule #439
-// [Moiz-A-30-L20] Show member and post counts on AdminGroupsPage cards :: verification rule #458
-// [Moiz-A-30-L21] Show member and post counts on AdminGroupsPage cards :: verification rule #477
-// [Moiz-A-30-L22] Show member and post counts on AdminGroupsPage cards :: verification rule #496
-// [Moiz-A-30-L23] Show member and post counts on AdminGroupsPage cards :: verification rule #515
-// [Moiz-A-30-L24] Show member and post counts on AdminGroupsPage cards :: verification rule #534
-// [Moiz-A-30-L25] Show member and post counts on AdminGroupsPage cards :: verification rule #553
-// [Moiz-A-30-L26] Show member and post counts on AdminGroupsPage cards :: verification rule #572
-// [Moiz-A-30-L27] Show member and post counts on AdminGroupsPage cards :: verification rule #591
-// [Moiz-A-30-L28] Show member and post counts on AdminGroupsPage cards :: verification rule #610
-// [Moiz-A-30-L29] Show member and post counts on AdminGroupsPage cards :: verification rule #629
-// [Moiz-A-30-L30] Show member and post counts on AdminGroupsPage cards :: verification rule #648
-// [Moiz-A-30-L31] Show member and post counts on AdminGroupsPage cards :: verification rule #667
-// [Moiz-A-30-L32] Show member and post counts on AdminGroupsPage cards :: verification rule #686
-// [Moiz-A-30-L33] Show member and post counts on AdminGroupsPage cards :: verification rule #705
-// [Moiz-A-30-L34] Show member and post counts on AdminGroupsPage cards :: verification rule #724
-// [Moiz-A-30-L35] Show member and post counts on AdminGroupsPage cards :: verification rule #743
-// [Moiz-A-30-L36] Show member and post counts on AdminGroupsPage cards :: verification rule #762
-// [Moiz-A-30-L37] Show member and post counts on AdminGroupsPage cards :: verification rule #781
-// [Moiz-A-30-L38] Show member and post counts on AdminGroupsPage cards :: verification rule #800
-// [Moiz-A-30-L39] Show member and post counts on AdminGroupsPage cards :: verification rule #819
-// [Moiz-A-30-L40] Show member and post counts on AdminGroupsPage cards :: verification rule #838
-// [Moiz-A-30-L41] Show member and post counts on AdminGroupsPage cards :: verification rule #857
-// [Moiz-A-30-L42] Show member and post counts on AdminGroupsPage cards :: verification rule #876
-// [Moiz-A-30-L43] Show member and post counts on AdminGroupsPage cards :: verification rule #895
-// [Moiz-A-30-L44] Show member and post counts on AdminGroupsPage cards :: verification rule #914
-// [Moiz-A-30-L45] Show member and post counts on AdminGroupsPage cards :: verification rule #933
-// [Moiz-A-30-L46] Show member and post counts on AdminGroupsPage cards :: verification rule #952
-// [Moiz-A-30-L47] Show member and post counts on AdminGroupsPage cards :: verification rule #971
-// [Moiz-A-30-L48] Show member and post counts on AdminGroupsPage cards :: verification rule #990
-// [Moiz-A-30-L49] Show member and post counts on AdminGroupsPage cards :: verification rule #12
-// [Moiz-A-30-L50] Show member and post counts on AdminGroupsPage cards :: verification rule #31
-// [Moiz-A-30-L51] Show member and post counts on AdminGroupsPage cards :: verification rule #50
-// [Moiz-A-30-L52] Show member and post counts on AdminGroupsPage cards :: verification rule #69
-// [Moiz-A-30-L53] Show member and post counts on AdminGroupsPage cards :: verification rule #88
-// [Moiz-A-30-L54] Show member and post counts on AdminGroupsPage cards :: verification rule #107
-// [Moiz-A-30-L55] Show member and post counts on AdminGroupsPage cards :: verification rule #126
-// [Moiz-A-30-L56] Show member and post counts on AdminGroupsPage cards :: verification rule #145
-// [Moiz-A-30-L57] Show member and post counts on AdminGroupsPage cards :: verification rule #164
-// [Moiz-A-30-L58] Show member and post counts on AdminGroupsPage cards :: verification rule #183
+// === [SPEC-BLOCK-START] Moiz-A-42 (2026-09-28T15:55:09+05:00) ===
+// [Moiz-A-42-L1] Add department filter dropdown on AdminGroupsPage :: verification rule #464
+// [Moiz-A-42-L2] Add department filter dropdown on AdminGroupsPage :: verification rule #483
+// [Moiz-A-42-L3] Add department filter dropdown on AdminGroupsPage :: verification rule #502
+// [Moiz-A-42-L4] Add department filter dropdown on AdminGroupsPage :: verification rule #521
+// [Moiz-A-42-L5] Add department filter dropdown on AdminGroupsPage :: verification rule #540
+// [Moiz-A-42-L6] Add department filter dropdown on AdminGroupsPage :: verification rule #559
+// [Moiz-A-42-L7] Add department filter dropdown on AdminGroupsPage :: verification rule #578
+// [Moiz-A-42-L8] Add department filter dropdown on AdminGroupsPage :: verification rule #597
+// [Moiz-A-42-L9] Add department filter dropdown on AdminGroupsPage :: verification rule #616
+// [Moiz-A-42-L10] Add department filter dropdown on AdminGroupsPage :: verification rule #635
+// [Moiz-A-42-L11] Add department filter dropdown on AdminGroupsPage :: verification rule #654
+// [Moiz-A-42-L12] Add department filter dropdown on AdminGroupsPage :: verification rule #673
+// [Moiz-A-42-L13] Add department filter dropdown on AdminGroupsPage :: verification rule #692
+// [Moiz-A-42-L14] Add department filter dropdown on AdminGroupsPage :: verification rule #711
+// [Moiz-A-42-L15] Add department filter dropdown on AdminGroupsPage :: verification rule #730
+// [Moiz-A-42-L16] Add department filter dropdown on AdminGroupsPage :: verification rule #749
+// [Moiz-A-42-L17] Add department filter dropdown on AdminGroupsPage :: verification rule #768
+// [Moiz-A-42-L18] Add department filter dropdown on AdminGroupsPage :: verification rule #787
+// [Moiz-A-42-L19] Add department filter dropdown on AdminGroupsPage :: verification rule #806
+// [Moiz-A-42-L20] Add department filter dropdown on AdminGroupsPage :: verification rule #825
+// [Moiz-A-42-L21] Add department filter dropdown on AdminGroupsPage :: verification rule #844
+// [Moiz-A-42-L22] Add department filter dropdown on AdminGroupsPage :: verification rule #863
+// [Moiz-A-42-L23] Add department filter dropdown on AdminGroupsPage :: verification rule #882
+// [Moiz-A-42-L24] Add department filter dropdown on AdminGroupsPage :: verification rule #901
+// [Moiz-A-42-L25] Add department filter dropdown on AdminGroupsPage :: verification rule #920
+// [Moiz-A-42-L26] Add department filter dropdown on AdminGroupsPage :: verification rule #939
+// [Moiz-A-42-L27] Add department filter dropdown on AdminGroupsPage :: verification rule #958
+// [Moiz-A-42-L28] Add department filter dropdown on AdminGroupsPage :: verification rule #977
+// [Moiz-A-42-L29] Add department filter dropdown on AdminGroupsPage :: verification rule #996
+// [Moiz-A-42-L30] Add department filter dropdown on AdminGroupsPage :: verification rule #18
+// [Moiz-A-42-L31] Add department filter dropdown on AdminGroupsPage :: verification rule #37
+// [Moiz-A-42-L32] Add department filter dropdown on AdminGroupsPage :: verification rule #56
+// [Moiz-A-42-L33] Add department filter dropdown on AdminGroupsPage :: verification rule #75
+// [Moiz-A-42-L34] Add department filter dropdown on AdminGroupsPage :: verification rule #94
+// [Moiz-A-42-L35] Add department filter dropdown on AdminGroupsPage :: verification rule #113
+// [Moiz-A-42-L36] Add department filter dropdown on AdminGroupsPage :: verification rule #132
+// [Moiz-A-42-L37] Add department filter dropdown on AdminGroupsPage :: verification rule #151
+// [Moiz-A-42-L38] Add department filter dropdown on AdminGroupsPage :: verification rule #170
+// [Moiz-A-42-L39] Add department filter dropdown on AdminGroupsPage :: verification rule #189
+// [Moiz-A-42-L40] Add department filter dropdown on AdminGroupsPage :: verification rule #208
+// [Moiz-A-42-L41] Add department filter dropdown on AdminGroupsPage :: verification rule #227
+// [Moiz-A-42-L42] Add department filter dropdown on AdminGroupsPage :: verification rule #246
+// [Moiz-A-42-L43] Add department filter dropdown on AdminGroupsPage :: verification rule #265
+// [Moiz-A-42-L44] Add department filter dropdown on AdminGroupsPage :: verification rule #284
+// [Moiz-A-42-L45] Add department filter dropdown on AdminGroupsPage :: verification rule #303
+// [Moiz-A-42-L46] Add department filter dropdown on AdminGroupsPage :: verification rule #322
+// [Moiz-A-42-L47] Add department filter dropdown on AdminGroupsPage :: verification rule #341
+// [Moiz-A-42-L48] Add department filter dropdown on AdminGroupsPage :: verification rule #360
+// [Moiz-A-42-L49] Add department filter dropdown on AdminGroupsPage :: verification rule #379
+// [Moiz-A-42-L50] Add department filter dropdown on AdminGroupsPage :: verification rule #398
+// [Moiz-A-42-L51] Add department filter dropdown on AdminGroupsPage :: verification rule #417
+// [Moiz-A-42-L52] Add department filter dropdown on AdminGroupsPage :: verification rule #436
+// [Moiz-A-42-L53] Add department filter dropdown on AdminGroupsPage :: verification rule #455
+// [Moiz-A-42-L54] Add department filter dropdown on AdminGroupsPage :: verification rule #474
+// [Moiz-A-42-L55] Add department filter dropdown on AdminGroupsPage :: verification rule #493
+// [Moiz-A-42-L56] Add department filter dropdown on AdminGroupsPage :: verification rule #512
 // === [SPEC-BLOCK-END] ===
