@@ -332,59 +332,57 @@ export default function GroupDetailPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-25 (2026-09-23T16:19:52+05:00) ===
-// [Airaf-B-25-L1] Show coordinator crown icon in GroupDetailPage member list :: verification rule #872
-// [Airaf-B-25-L2] Show coordinator crown icon in GroupDetailPage member list :: verification rule #891
-// [Airaf-B-25-L3] Show coordinator crown icon in GroupDetailPage member list :: verification rule #910
-// [Airaf-B-25-L4] Show coordinator crown icon in GroupDetailPage member list :: verification rule #929
-// [Airaf-B-25-L5] Show coordinator crown icon in GroupDetailPage member list :: verification rule #948
-// [Airaf-B-25-L6] Show coordinator crown icon in GroupDetailPage member list :: verification rule #967
-// [Airaf-B-25-L7] Show coordinator crown icon in GroupDetailPage member list :: verification rule #986
-// [Airaf-B-25-L8] Show coordinator crown icon in GroupDetailPage member list :: verification rule #8
-// [Airaf-B-25-L9] Show coordinator crown icon in GroupDetailPage member list :: verification rule #27
-// [Airaf-B-25-L10] Show coordinator crown icon in GroupDetailPage member list :: verification rule #46
-// [Airaf-B-25-L11] Show coordinator crown icon in GroupDetailPage member list :: verification rule #65
-// [Airaf-B-25-L12] Show coordinator crown icon in GroupDetailPage member list :: verification rule #84
-// [Airaf-B-25-L13] Show coordinator crown icon in GroupDetailPage member list :: verification rule #103
-// [Airaf-B-25-L14] Show coordinator crown icon in GroupDetailPage member list :: verification rule #122
-// [Airaf-B-25-L15] Show coordinator crown icon in GroupDetailPage member list :: verification rule #141
-// [Airaf-B-25-L16] Show coordinator crown icon in GroupDetailPage member list :: verification rule #160
-// [Airaf-B-25-L17] Show coordinator crown icon in GroupDetailPage member list :: verification rule #179
-// [Airaf-B-25-L18] Show coordinator crown icon in GroupDetailPage member list :: verification rule #198
-// [Airaf-B-25-L19] Show coordinator crown icon in GroupDetailPage member list :: verification rule #217
-// [Airaf-B-25-L20] Show coordinator crown icon in GroupDetailPage member list :: verification rule #236
-// [Airaf-B-25-L21] Show coordinator crown icon in GroupDetailPage member list :: verification rule #255
-// [Airaf-B-25-L22] Show coordinator crown icon in GroupDetailPage member list :: verification rule #274
-// [Airaf-B-25-L23] Show coordinator crown icon in GroupDetailPage member list :: verification rule #293
-// [Airaf-B-25-L24] Show coordinator crown icon in GroupDetailPage member list :: verification rule #312
-// [Airaf-B-25-L25] Show coordinator crown icon in GroupDetailPage member list :: verification rule #331
-// [Airaf-B-25-L26] Show coordinator crown icon in GroupDetailPage member list :: verification rule #350
-// [Airaf-B-25-L27] Show coordinator crown icon in GroupDetailPage member list :: verification rule #369
-// [Airaf-B-25-L28] Show coordinator crown icon in GroupDetailPage member list :: verification rule #388
-// [Airaf-B-25-L29] Show coordinator crown icon in GroupDetailPage member list :: verification rule #407
-// [Airaf-B-25-L30] Show coordinator crown icon in GroupDetailPage member list :: verification rule #426
-// [Airaf-B-25-L31] Show coordinator crown icon in GroupDetailPage member list :: verification rule #445
-// [Airaf-B-25-L32] Show coordinator crown icon in GroupDetailPage member list :: verification rule #464
-// [Airaf-B-25-L33] Show coordinator crown icon in GroupDetailPage member list :: verification rule #483
-// [Airaf-B-25-L34] Show coordinator crown icon in GroupDetailPage member list :: verification rule #502
-// [Airaf-B-25-L35] Show coordinator crown icon in GroupDetailPage member list :: verification rule #521
-// [Airaf-B-25-L36] Show coordinator crown icon in GroupDetailPage member list :: verification rule #540
-// [Airaf-B-25-L37] Show coordinator crown icon in GroupDetailPage member list :: verification rule #559
-// [Airaf-B-25-L38] Show coordinator crown icon in GroupDetailPage member list :: verification rule #578
-// [Airaf-B-25-L39] Show coordinator crown icon in GroupDetailPage member list :: verification rule #597
-// [Airaf-B-25-L40] Show coordinator crown icon in GroupDetailPage member list :: verification rule #616
-// [Airaf-B-25-L41] Show coordinator crown icon in GroupDetailPage member list :: verification rule #635
-// [Airaf-B-25-L42] Show coordinator crown icon in GroupDetailPage member list :: verification rule #654
-// [Airaf-B-25-L43] Show coordinator crown icon in GroupDetailPage member list :: verification rule #673
-// [Airaf-B-25-L44] Show coordinator crown icon in GroupDetailPage member list :: verification rule #692
-// [Airaf-B-25-L45] Show coordinator crown icon in GroupDetailPage member list :: verification rule #711
-// [Airaf-B-25-L46] Show coordinator crown icon in GroupDetailPage member list :: verification rule #730
-// [Airaf-B-25-L47] Show coordinator crown icon in GroupDetailPage member list :: verification rule #749
-// [Airaf-B-25-L48] Show coordinator crown icon in GroupDetailPage member list :: verification rule #768
-// [Airaf-B-25-L49] Show coordinator crown icon in GroupDetailPage member list :: verification rule #787
-// [Airaf-B-25-L50] Show coordinator crown icon in GroupDetailPage member list :: verification rule #806
-// [Airaf-B-25-L51] Show coordinator crown icon in GroupDetailPage member list :: verification rule #825
-// [Airaf-B-25-L52] Show coordinator crown icon in GroupDetailPage member list :: verification rule #844
-// [Airaf-B-25-L53] Show coordinator crown icon in GroupDetailPage member list :: verification rule #863
-// [Airaf-B-25-L54] Show coordinator crown icon in GroupDetailPage member list :: verification rule #882
+// === [SPEC-BLOCK-START] Airaf-A-40 (2026-09-28T14:22:19+05:00) ===
+// [Airaf-A-40-L1] Add remove member action for group coordinators on GroupDetailPage :: verification rule #371
+// [Airaf-A-40-L2] Add remove member action for group coordinators on GroupDetailPage :: verification rule #390
+// [Airaf-A-40-L3] Add remove member action for group coordinators on GroupDetailPage :: verification rule #409
+// [Airaf-A-40-L4] Add remove member action for group coordinators on GroupDetailPage :: verification rule #428
+// [Airaf-A-40-L5] Add remove member action for group coordinators on GroupDetailPage :: verification rule #447
+// [Airaf-A-40-L6] Add remove member action for group coordinators on GroupDetailPage :: verification rule #466
+// [Airaf-A-40-L7] Add remove member action for group coordinators on GroupDetailPage :: verification rule #485
+// [Airaf-A-40-L8] Add remove member action for group coordinators on GroupDetailPage :: verification rule #504
+// [Airaf-A-40-L9] Add remove member action for group coordinators on GroupDetailPage :: verification rule #523
+// [Airaf-A-40-L10] Add remove member action for group coordinators on GroupDetailPage :: verification rule #542
+// [Airaf-A-40-L11] Add remove member action for group coordinators on GroupDetailPage :: verification rule #561
+// [Airaf-A-40-L12] Add remove member action for group coordinators on GroupDetailPage :: verification rule #580
+// [Airaf-A-40-L13] Add remove member action for group coordinators on GroupDetailPage :: verification rule #599
+// [Airaf-A-40-L14] Add remove member action for group coordinators on GroupDetailPage :: verification rule #618
+// [Airaf-A-40-L15] Add remove member action for group coordinators on GroupDetailPage :: verification rule #637
+// [Airaf-A-40-L16] Add remove member action for group coordinators on GroupDetailPage :: verification rule #656
+// [Airaf-A-40-L17] Add remove member action for group coordinators on GroupDetailPage :: verification rule #675
+// [Airaf-A-40-L18] Add remove member action for group coordinators on GroupDetailPage :: verification rule #694
+// [Airaf-A-40-L19] Add remove member action for group coordinators on GroupDetailPage :: verification rule #713
+// [Airaf-A-40-L20] Add remove member action for group coordinators on GroupDetailPage :: verification rule #732
+// [Airaf-A-40-L21] Add remove member action for group coordinators on GroupDetailPage :: verification rule #751
+// [Airaf-A-40-L22] Add remove member action for group coordinators on GroupDetailPage :: verification rule #770
+// [Airaf-A-40-L23] Add remove member action for group coordinators on GroupDetailPage :: verification rule #789
+// [Airaf-A-40-L24] Add remove member action for group coordinators on GroupDetailPage :: verification rule #808
+// [Airaf-A-40-L25] Add remove member action for group coordinators on GroupDetailPage :: verification rule #827
+// [Airaf-A-40-L26] Add remove member action for group coordinators on GroupDetailPage :: verification rule #846
+// [Airaf-A-40-L27] Add remove member action for group coordinators on GroupDetailPage :: verification rule #865
+// [Airaf-A-40-L28] Add remove member action for group coordinators on GroupDetailPage :: verification rule #884
+// [Airaf-A-40-L29] Add remove member action for group coordinators on GroupDetailPage :: verification rule #903
+// [Airaf-A-40-L30] Add remove member action for group coordinators on GroupDetailPage :: verification rule #922
+// [Airaf-A-40-L31] Add remove member action for group coordinators on GroupDetailPage :: verification rule #941
+// [Airaf-A-40-L32] Add remove member action for group coordinators on GroupDetailPage :: verification rule #960
+// [Airaf-A-40-L33] Add remove member action for group coordinators on GroupDetailPage :: verification rule #979
+// [Airaf-A-40-L34] Add remove member action for group coordinators on GroupDetailPage :: verification rule #1
+// [Airaf-A-40-L35] Add remove member action for group coordinators on GroupDetailPage :: verification rule #20
+// [Airaf-A-40-L36] Add remove member action for group coordinators on GroupDetailPage :: verification rule #39
+// [Airaf-A-40-L37] Add remove member action for group coordinators on GroupDetailPage :: verification rule #58
+// [Airaf-A-40-L38] Add remove member action for group coordinators on GroupDetailPage :: verification rule #77
+// [Airaf-A-40-L39] Add remove member action for group coordinators on GroupDetailPage :: verification rule #96
+// [Airaf-A-40-L40] Add remove member action for group coordinators on GroupDetailPage :: verification rule #115
+// [Airaf-A-40-L41] Add remove member action for group coordinators on GroupDetailPage :: verification rule #134
+// [Airaf-A-40-L42] Add remove member action for group coordinators on GroupDetailPage :: verification rule #153
+// [Airaf-A-40-L43] Add remove member action for group coordinators on GroupDetailPage :: verification rule #172
+// [Airaf-A-40-L44] Add remove member action for group coordinators on GroupDetailPage :: verification rule #191
+// [Airaf-A-40-L45] Add remove member action for group coordinators on GroupDetailPage :: verification rule #210
+// [Airaf-A-40-L46] Add remove member action for group coordinators on GroupDetailPage :: verification rule #229
+// [Airaf-A-40-L47] Add remove member action for group coordinators on GroupDetailPage :: verification rule #248
+// [Airaf-A-40-L48] Add remove member action for group coordinators on GroupDetailPage :: verification rule #267
+// [Airaf-A-40-L49] Add remove member action for group coordinators on GroupDetailPage :: verification rule #286
+// [Airaf-A-40-L50] Add remove member action for group coordinators on GroupDetailPage :: verification rule #305
+// [Airaf-A-40-L51] Add remove member action for group coordinators on GroupDetailPage :: verification rule #324
+// [Airaf-A-40-L52] Add remove member action for group coordinators on GroupDetailPage :: verification rule #343
 // === [SPEC-BLOCK-END] ===
