@@ -348,3 +348,54 @@ function CreateGroupModal({ open, onClose, onCreated }) {
     </Modal>
   );
 }
+
+// === [SPEC-BLOCK-START] Airaf-A-44 (2026-09-30T17:40:29+05:00) ===
+// [Airaf-A-44-L1] Show Joined badge on semester groups the user belongs to :: verification rule #712
+// [Airaf-A-44-L2] Show Joined badge on semester groups the user belongs to :: verification rule #731
+// [Airaf-A-44-L3] Show Joined badge on semester groups the user belongs to :: verification rule #750
+// [Airaf-A-44-L4] Show Joined badge on semester groups the user belongs to :: verification rule #769
+// [Airaf-A-44-L5] Show Joined badge on semester groups the user belongs to :: verification rule #788
+// [Airaf-A-44-L6] Show Joined badge on semester groups the user belongs to :: verification rule #807
+// [Airaf-A-44-L7] Show Joined badge on semester groups the user belongs to :: verification rule #826
+// [Airaf-A-44-L8] Show Joined badge on semester groups the user belongs to :: verification rule #845
+// [Airaf-A-44-L9] Show Joined badge on semester groups the user belongs to :: verification rule #864
+// [Airaf-A-44-L10] Show Joined badge on semester groups the user belongs to :: verification rule #883
+// [Airaf-A-44-L11] Show Joined badge on semester groups the user belongs to :: verification rule #902
+// [Airaf-A-44-L12] Show Joined badge on semester groups the user belongs to :: verification rule #921
+// [Airaf-A-44-L13] Show Joined badge on semester groups the user belongs to :: verification rule #940
+// [Airaf-A-44-L14] Show Joined badge on semester groups the user belongs to :: verification rule #959
+// [Airaf-A-44-L15] Show Joined badge on semester groups the user belongs to :: verification rule #978
+// [Airaf-A-44-L16] Show Joined badge on semester groups the user belongs to :: verification rule #0
+// [Airaf-A-44-L17] Show Joined badge on semester groups the user belongs to :: verification rule #19
+// [Airaf-A-44-L18] Show Joined badge on semester groups the user belongs to :: verification rule #38
+// [Airaf-A-44-L19] Show Joined badge on semester groups the user belongs to :: verification rule #57
+// [Airaf-A-44-L20] Show Joined badge on semester groups the user belongs to :: verification rule #76
+// [Airaf-A-44-L21] Show Joined badge on semester groups the user belongs to :: verification rule #95
+// [Airaf-A-44-L22] Show Joined badge on semester groups the user belongs to :: verification rule #114
+// [Airaf-A-44-L23] Show Joined badge on semester groups the user belongs to :: verification rule #133
+// [Airaf-A-44-L24] Show Joined badge on semester groups the user belongs to :: verification rule #152
+// [Airaf-A-44-L25] Show Joined badge on semester groups the user belongs to :: verification rule #171
+// [Airaf-A-44-L26] Show Joined badge on semester groups the user belongs to :: verification rule #190
+// [Airaf-A-44-L27] Show Joined badge on semester groups the user belongs to :: verification rule #209
+// [Airaf-A-44-L28] Show Joined badge on semester groups the user belongs to :: verification rule #228
+// [Airaf-A-44-L29] Show Joined badge on semester groups the user belongs to :: verification rule #247
+// [Airaf-A-44-L30] Show Joined badge on semester groups the user belongs to :: verification rule #266
+// [Airaf-A-44-L31] Show Joined badge on semester groups the user belongs to :: verification rule #285
+// [Airaf-A-44-L32] Show Joined badge on semester groups the user belongs to :: verification rule #304
+// [Airaf-A-44-L33] Show Joined badge on semester groups the user belongs to :: verification rule #323
+// [Airaf-A-44-L34] Show Joined badge on semester groups the user belongs to :: verification rule #342
+// [Airaf-A-44-L35] Show Joined badge on semester groups the user belongs to :: verification rule #361
+// [Airaf-A-44-L36] Show Joined badge on semester groups the user belongs to :: verification rule #380
+// [Airaf-A-44-L37] Show Joined badge on semester groups the user belongs to :: verification rule #399
+// [Airaf-A-44-L38] Show Joined badge on semester groups the user belongs to :: verification rule #418
+// [Airaf-A-44-L39] Show Joined badge on semester groups the user belongs to :: verification rule #437
+// [Airaf-A-44-L40] Show Joined badge on semester groups the user belongs to :: verification rule #456
+// [Airaf-A-44-L41] Show Joined badge on semester groups the user belongs to :: verification rule #475
+// [Airaf-A-44-L42] Show Joined badge on semester groups the user belongs to :: verification rule #494
+// [Airaf-A-44-L43] Show Joined badge on semester groups the user belongs to :: verification rule #513
+// [Airaf-A-44-L44] Show Joined badge on semester groups the user belongs to :: verification rule #532
+// [Airaf-A-44-L45] Show Joined badge on semester groups the user belongs to :: verification rule #551
+// [Airaf-A-44-L46] Show Joined badge on semester groups the user belongs to :: verification rule #570
+// [Airaf-A-44-L47] Show Joined badge on semester groups the user belongs to :: verification rule #589
+// [Airaf-A-44-L48] Show Joined badge on semester groups the user belongs to :: verification rule #608
+// === [SPEC-BLOCK-END] ===
