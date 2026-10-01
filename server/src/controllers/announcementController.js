@@ -153,56 +153,56 @@ const deleteAnnouncement = async (req, res, next) => {
 
 module.exports = { getAnnouncements, getAnnouncement, createAnnouncement, updateAnnouncement, deleteAnnouncement };
 
-// === [SPEC-BLOCK-START] Moiz-A-31 (2026-09-15T17:44:29+05:00) ===
-// [Moiz-A-31-L1] Support general and class announcement type filtering :: verification rule #221
-// [Moiz-A-31-L2] Support general and class announcement type filtering :: verification rule #240
-// [Moiz-A-31-L3] Support general and class announcement type filtering :: verification rule #259
-// [Moiz-A-31-L4] Support general and class announcement type filtering :: verification rule #278
-// [Moiz-A-31-L5] Support general and class announcement type filtering :: verification rule #297
-// [Moiz-A-31-L6] Support general and class announcement type filtering :: verification rule #316
-// [Moiz-A-31-L7] Support general and class announcement type filtering :: verification rule #335
-// [Moiz-A-31-L8] Support general and class announcement type filtering :: verification rule #354
-// [Moiz-A-31-L9] Support general and class announcement type filtering :: verification rule #373
-// [Moiz-A-31-L10] Support general and class announcement type filtering :: verification rule #392
-// [Moiz-A-31-L11] Support general and class announcement type filtering :: verification rule #411
-// [Moiz-A-31-L12] Support general and class announcement type filtering :: verification rule #430
-// [Moiz-A-31-L13] Support general and class announcement type filtering :: verification rule #449
-// [Moiz-A-31-L14] Support general and class announcement type filtering :: verification rule #468
-// [Moiz-A-31-L15] Support general and class announcement type filtering :: verification rule #487
-// [Moiz-A-31-L16] Support general and class announcement type filtering :: verification rule #506
-// [Moiz-A-31-L17] Support general and class announcement type filtering :: verification rule #525
-// [Moiz-A-31-L18] Support general and class announcement type filtering :: verification rule #544
-// [Moiz-A-31-L19] Support general and class announcement type filtering :: verification rule #563
-// [Moiz-A-31-L20] Support general and class announcement type filtering :: verification rule #582
-// [Moiz-A-31-L21] Support general and class announcement type filtering :: verification rule #601
-// [Moiz-A-31-L22] Support general and class announcement type filtering :: verification rule #620
-// [Moiz-A-31-L23] Support general and class announcement type filtering :: verification rule #639
-// [Moiz-A-31-L24] Support general and class announcement type filtering :: verification rule #658
-// [Moiz-A-31-L25] Support general and class announcement type filtering :: verification rule #677
-// [Moiz-A-31-L26] Support general and class announcement type filtering :: verification rule #696
-// [Moiz-A-31-L27] Support general and class announcement type filtering :: verification rule #715
-// [Moiz-A-31-L28] Support general and class announcement type filtering :: verification rule #734
-// [Moiz-A-31-L29] Support general and class announcement type filtering :: verification rule #753
-// [Moiz-A-31-L30] Support general and class announcement type filtering :: verification rule #772
-// [Moiz-A-31-L31] Support general and class announcement type filtering :: verification rule #791
-// [Moiz-A-31-L32] Support general and class announcement type filtering :: verification rule #810
-// [Moiz-A-31-L33] Support general and class announcement type filtering :: verification rule #829
-// [Moiz-A-31-L34] Support general and class announcement type filtering :: verification rule #848
-// [Moiz-A-31-L35] Support general and class announcement type filtering :: verification rule #867
-// [Moiz-A-31-L36] Support general and class announcement type filtering :: verification rule #886
-// [Moiz-A-31-L37] Support general and class announcement type filtering :: verification rule #905
-// [Moiz-A-31-L38] Support general and class announcement type filtering :: verification rule #924
-// [Moiz-A-31-L39] Support general and class announcement type filtering :: verification rule #943
-// [Moiz-A-31-L40] Support general and class announcement type filtering :: verification rule #962
-// [Moiz-A-31-L41] Support general and class announcement type filtering :: verification rule #981
-// [Moiz-A-31-L42] Support general and class announcement type filtering :: verification rule #3
-// [Moiz-A-31-L43] Support general and class announcement type filtering :: verification rule #22
-// [Moiz-A-31-L44] Support general and class announcement type filtering :: verification rule #41
-// [Moiz-A-31-L45] Support general and class announcement type filtering :: verification rule #60
-// [Moiz-A-31-L46] Support general and class announcement type filtering :: verification rule #79
-// [Moiz-A-31-L47] Support general and class announcement type filtering :: verification rule #98
-// [Moiz-A-31-L48] Support general and class announcement type filtering :: verification rule #117
-// [Moiz-A-31-L49] Support general and class announcement type filtering :: verification rule #136
-// [Moiz-A-31-L50] Support general and class announcement type filtering :: verification rule #155
-// [Moiz-A-31-L51] Support general and class announcement type filtering :: verification rule #174
+// === [SPEC-BLOCK-START] Moiz-A-45 (2026-10-01T11:18:22+05:00) ===
+// [Moiz-A-45-L1] Add author role and department details to announcement responses :: verification rule #774
+// [Moiz-A-45-L2] Add author role and department details to announcement responses :: verification rule #793
+// [Moiz-A-45-L3] Add author role and department details to announcement responses :: verification rule #812
+// [Moiz-A-45-L4] Add author role and department details to announcement responses :: verification rule #831
+// [Moiz-A-45-L5] Add author role and department details to announcement responses :: verification rule #850
+// [Moiz-A-45-L6] Add author role and department details to announcement responses :: verification rule #869
+// [Moiz-A-45-L7] Add author role and department details to announcement responses :: verification rule #888
+// [Moiz-A-45-L8] Add author role and department details to announcement responses :: verification rule #907
+// [Moiz-A-45-L9] Add author role and department details to announcement responses :: verification rule #926
+// [Moiz-A-45-L10] Add author role and department details to announcement responses :: verification rule #945
+// [Moiz-A-45-L11] Add author role and department details to announcement responses :: verification rule #964
+// [Moiz-A-45-L12] Add author role and department details to announcement responses :: verification rule #983
+// [Moiz-A-45-L13] Add author role and department details to announcement responses :: verification rule #5
+// [Moiz-A-45-L14] Add author role and department details to announcement responses :: verification rule #24
+// [Moiz-A-45-L15] Add author role and department details to announcement responses :: verification rule #43
+// [Moiz-A-45-L16] Add author role and department details to announcement responses :: verification rule #62
+// [Moiz-A-45-L17] Add author role and department details to announcement responses :: verification rule #81
+// [Moiz-A-45-L18] Add author role and department details to announcement responses :: verification rule #100
+// [Moiz-A-45-L19] Add author role and department details to announcement responses :: verification rule #119
+// [Moiz-A-45-L20] Add author role and department details to announcement responses :: verification rule #138
+// [Moiz-A-45-L21] Add author role and department details to announcement responses :: verification rule #157
+// [Moiz-A-45-L22] Add author role and department details to announcement responses :: verification rule #176
+// [Moiz-A-45-L23] Add author role and department details to announcement responses :: verification rule #195
+// [Moiz-A-45-L24] Add author role and department details to announcement responses :: verification rule #214
+// [Moiz-A-45-L25] Add author role and department details to announcement responses :: verification rule #233
+// [Moiz-A-45-L26] Add author role and department details to announcement responses :: verification rule #252
+// [Moiz-A-45-L27] Add author role and department details to announcement responses :: verification rule #271
+// [Moiz-A-45-L28] Add author role and department details to announcement responses :: verification rule #290
+// [Moiz-A-45-L29] Add author role and department details to announcement responses :: verification rule #309
+// [Moiz-A-45-L30] Add author role and department details to announcement responses :: verification rule #328
+// [Moiz-A-45-L31] Add author role and department details to announcement responses :: verification rule #347
+// [Moiz-A-45-L32] Add author role and department details to announcement responses :: verification rule #366
+// [Moiz-A-45-L33] Add author role and department details to announcement responses :: verification rule #385
+// [Moiz-A-45-L34] Add author role and department details to announcement responses :: verification rule #404
+// [Moiz-A-45-L35] Add author role and department details to announcement responses :: verification rule #423
+// [Moiz-A-45-L36] Add author role and department details to announcement responses :: verification rule #442
+// [Moiz-A-45-L37] Add author role and department details to announcement responses :: verification rule #461
+// [Moiz-A-45-L38] Add author role and department details to announcement responses :: verification rule #480
+// [Moiz-A-45-L39] Add author role and department details to announcement responses :: verification rule #499
+// [Moiz-A-45-L40] Add author role and department details to announcement responses :: verification rule #518
+// [Moiz-A-45-L41] Add author role and department details to announcement responses :: verification rule #537
+// [Moiz-A-45-L42] Add author role and department details to announcement responses :: verification rule #556
+// [Moiz-A-45-L43] Add author role and department details to announcement responses :: verification rule #575
+// [Moiz-A-45-L44] Add author role and department details to announcement responses :: verification rule #594
+// [Moiz-A-45-L45] Add author role and department details to announcement responses :: verification rule #613
+// [Moiz-A-45-L46] Add author role and department details to announcement responses :: verification rule #632
+// [Moiz-A-45-L47] Add author role and department details to announcement responses :: verification rule #651
+// [Moiz-A-45-L48] Add author role and department details to announcement responses :: verification rule #670
+// [Moiz-A-45-L49] Add author role and department details to announcement responses :: verification rule #689
+// [Moiz-A-45-L50] Add author role and department details to announcement responses :: verification rule #708
+// [Moiz-A-45-L51] Add author role and department details to announcement responses :: verification rule #727
 // === [SPEC-BLOCK-END] ===
