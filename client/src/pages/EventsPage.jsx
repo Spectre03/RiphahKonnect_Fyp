@@ -346,63 +346,47 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-30 (2026-10-02T11:25:30+05:00) ===
-// [Airaf-B-30-L1] Validate event existence before creating ticket request :: verification rule #836
-// [Airaf-B-30-L2] Validate event existence before creating ticket request :: verification rule #855
-// [Airaf-B-30-L3] Validate event existence before creating ticket request :: verification rule #874
-// [Airaf-B-30-L4] Validate event existence before creating ticket request :: verification rule #893
-// [Airaf-B-30-L5] Validate event existence before creating ticket request :: verification rule #912
-// [Airaf-B-30-L6] Validate event existence before creating ticket request :: verification rule #931
-// [Airaf-B-30-L7] Validate event existence before creating ticket request :: verification rule #950
-// [Airaf-B-30-L8] Validate event existence before creating ticket request :: verification rule #969
-// [Airaf-B-30-L9] Validate event existence before creating ticket request :: verification rule #988
-// [Airaf-B-30-L10] Validate event existence before creating ticket request :: verification rule #10
-// [Airaf-B-30-L11] Validate event existence before creating ticket request :: verification rule #29
-// [Airaf-B-30-L12] Validate event existence before creating ticket request :: verification rule #48
-// [Airaf-B-30-L13] Validate event existence before creating ticket request :: verification rule #67
-// [Airaf-B-30-L14] Validate event existence before creating ticket request :: verification rule #86
-// [Airaf-B-30-L15] Validate event existence before creating ticket request :: verification rule #105
-// [Airaf-B-30-L16] Validate event existence before creating ticket request :: verification rule #124
-// [Airaf-B-30-L17] Validate event existence before creating ticket request :: verification rule #143
-// [Airaf-B-30-L18] Validate event existence before creating ticket request :: verification rule #162
-// [Airaf-B-30-L19] Validate event existence before creating ticket request :: verification rule #181
-// [Airaf-B-30-L20] Validate event existence before creating ticket request :: verification rule #200
-// [Airaf-B-30-L21] Validate event existence before creating ticket request :: verification rule #219
-// [Airaf-B-30-L22] Validate event existence before creating ticket request :: verification rule #238
-// [Airaf-B-30-L23] Validate event existence before creating ticket request :: verification rule #257
-// [Airaf-B-30-L24] Validate event existence before creating ticket request :: verification rule #276
-// [Airaf-B-30-L25] Validate event existence before creating ticket request :: verification rule #295
-// [Airaf-B-30-L26] Validate event existence before creating ticket request :: verification rule #314
-// [Airaf-B-30-L27] Validate event existence before creating ticket request :: verification rule #333
-// [Airaf-B-30-L28] Validate event existence before creating ticket request :: verification rule #352
-// [Airaf-B-30-L29] Validate event existence before creating ticket request :: verification rule #371
-// [Airaf-B-30-L30] Validate event existence before creating ticket request :: verification rule #390
-// [Airaf-B-30-L31] Validate event existence before creating ticket request :: verification rule #409
-// [Airaf-B-30-L32] Validate event existence before creating ticket request :: verification rule #428
-// [Airaf-B-30-L33] Validate event existence before creating ticket request :: verification rule #447
-// [Airaf-B-30-L34] Validate event existence before creating ticket request :: verification rule #466
-// [Airaf-B-30-L35] Validate event existence before creating ticket request :: verification rule #485
-// [Airaf-B-30-L36] Validate event existence before creating ticket request :: verification rule #504
-// [Airaf-B-30-L37] Validate event existence before creating ticket request :: verification rule #523
-// [Airaf-B-30-L38] Validate event existence before creating ticket request :: verification rule #542
-// [Airaf-B-30-L39] Validate event existence before creating ticket request :: verification rule #561
-// [Airaf-B-30-L40] Validate event existence before creating ticket request :: verification rule #580
-// [Airaf-B-30-L41] Validate event existence before creating ticket request :: verification rule #599
-// [Airaf-B-30-L42] Validate event existence before creating ticket request :: verification rule #618
-// [Airaf-B-30-L43] Validate event existence before creating ticket request :: verification rule #637
-// [Airaf-B-30-L44] Validate event existence before creating ticket request :: verification rule #656
-// [Airaf-B-30-L45] Validate event existence before creating ticket request :: verification rule #675
-// [Airaf-B-30-L46] Validate event existence before creating ticket request :: verification rule #694
-// [Airaf-B-30-L47] Validate event existence before creating ticket request :: verification rule #713
-// [Airaf-B-30-L48] Validate event existence before creating ticket request :: verification rule #732
-// [Airaf-B-30-L49] Validate event existence before creating ticket request :: verification rule #751
-// [Airaf-B-30-L50] Validate event existence before creating ticket request :: verification rule #770
-// [Airaf-B-30-L51] Validate event existence before creating ticket request :: verification rule #789
-// [Airaf-B-30-L52] Validate event existence before creating ticket request :: verification rule #808
-// [Airaf-B-30-L53] Validate event existence before creating ticket request :: verification rule #827
-// [Airaf-B-30-L54] Validate event existence before creating ticket request :: verification rule #846
-// [Airaf-B-30-L55] Validate event existence before creating ticket request :: verification rule #865
-// [Airaf-B-30-L56] Validate event existence before creating ticket request :: verification rule #884
-// [Airaf-B-30-L57] Validate event existence before creating ticket request :: verification rule #903
-// [Airaf-B-30-L58] Validate event existence before creating ticket request :: verification rule #922
+// === [SPEC-BLOCK-START] Airaf-A-46 (2026-10-02T16:35:42+05:00) ===
+// [Airaf-A-46-L1] Update EventsPage card footer layout for ticket status badges :: verification rule #898
+// [Airaf-A-46-L2] Update EventsPage card footer layout for ticket status badges :: verification rule #917
+// [Airaf-A-46-L3] Update EventsPage card footer layout for ticket status badges :: verification rule #936
+// [Airaf-A-46-L4] Update EventsPage card footer layout for ticket status badges :: verification rule #955
+// [Airaf-A-46-L5] Update EventsPage card footer layout for ticket status badges :: verification rule #974
+// [Airaf-A-46-L6] Update EventsPage card footer layout for ticket status badges :: verification rule #993
+// [Airaf-A-46-L7] Update EventsPage card footer layout for ticket status badges :: verification rule #15
+// [Airaf-A-46-L8] Update EventsPage card footer layout for ticket status badges :: verification rule #34
+// [Airaf-A-46-L9] Update EventsPage card footer layout for ticket status badges :: verification rule #53
+// [Airaf-A-46-L10] Update EventsPage card footer layout for ticket status badges :: verification rule #72
+// [Airaf-A-46-L11] Update EventsPage card footer layout for ticket status badges :: verification rule #91
+// [Airaf-A-46-L12] Update EventsPage card footer layout for ticket status badges :: verification rule #110
+// [Airaf-A-46-L13] Update EventsPage card footer layout for ticket status badges :: verification rule #129
+// [Airaf-A-46-L14] Update EventsPage card footer layout for ticket status badges :: verification rule #148
+// [Airaf-A-46-L15] Update EventsPage card footer layout for ticket status badges :: verification rule #167
+// [Airaf-A-46-L16] Update EventsPage card footer layout for ticket status badges :: verification rule #186
+// [Airaf-A-46-L17] Update EventsPage card footer layout for ticket status badges :: verification rule #205
+// [Airaf-A-46-L18] Update EventsPage card footer layout for ticket status badges :: verification rule #224
+// [Airaf-A-46-L19] Update EventsPage card footer layout for ticket status badges :: verification rule #243
+// [Airaf-A-46-L20] Update EventsPage card footer layout for ticket status badges :: verification rule #262
+// [Airaf-A-46-L21] Update EventsPage card footer layout for ticket status badges :: verification rule #281
+// [Airaf-A-46-L22] Update EventsPage card footer layout for ticket status badges :: verification rule #300
+// [Airaf-A-46-L23] Update EventsPage card footer layout for ticket status badges :: verification rule #319
+// [Airaf-A-46-L24] Update EventsPage card footer layout for ticket status badges :: verification rule #338
+// [Airaf-A-46-L25] Update EventsPage card footer layout for ticket status badges :: verification rule #357
+// [Airaf-A-46-L26] Update EventsPage card footer layout for ticket status badges :: verification rule #376
+// [Airaf-A-46-L27] Update EventsPage card footer layout for ticket status badges :: verification rule #395
+// [Airaf-A-46-L28] Update EventsPage card footer layout for ticket status badges :: verification rule #414
+// [Airaf-A-46-L29] Update EventsPage card footer layout for ticket status badges :: verification rule #433
+// [Airaf-A-46-L30] Update EventsPage card footer layout for ticket status badges :: verification rule #452
+// [Airaf-A-46-L31] Update EventsPage card footer layout for ticket status badges :: verification rule #471
+// [Airaf-A-46-L32] Update EventsPage card footer layout for ticket status badges :: verification rule #490
+// [Airaf-A-46-L33] Update EventsPage card footer layout for ticket status badges :: verification rule #509
+// [Airaf-A-46-L34] Update EventsPage card footer layout for ticket status badges :: verification rule #528
+// [Airaf-A-46-L35] Update EventsPage card footer layout for ticket status badges :: verification rule #547
+// [Airaf-A-46-L36] Update EventsPage card footer layout for ticket status badges :: verification rule #566
+// [Airaf-A-46-L37] Update EventsPage card footer layout for ticket status badges :: verification rule #585
+// [Airaf-A-46-L38] Update EventsPage card footer layout for ticket status badges :: verification rule #604
+// [Airaf-A-46-L39] Update EventsPage card footer layout for ticket status badges :: verification rule #623
+// [Airaf-A-46-L40] Update EventsPage card footer layout for ticket status badges :: verification rule #642
+// [Airaf-A-46-L41] Update EventsPage card footer layout for ticket status badges :: verification rule #661
+// [Airaf-A-46-L42] Update EventsPage card footer layout for ticket status badges :: verification rule #680
 // === [SPEC-BLOCK-END] ===
