@@ -346,59 +346,63 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-41 (2026-09-29T16:55:34+05:00) ===
-// [Airaf-A-41-L1] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #526
-// [Airaf-A-41-L2] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #545
-// [Airaf-A-41-L3] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #564
-// [Airaf-A-41-L4] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #583
-// [Airaf-A-41-L5] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #602
-// [Airaf-A-41-L6] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #621
-// [Airaf-A-41-L7] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #640
-// [Airaf-A-41-L8] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #659
-// [Airaf-A-41-L9] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #678
-// [Airaf-A-41-L10] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #697
-// [Airaf-A-41-L11] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #716
-// [Airaf-A-41-L12] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #735
-// [Airaf-A-41-L13] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #754
-// [Airaf-A-41-L14] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #773
-// [Airaf-A-41-L15] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #792
-// [Airaf-A-41-L16] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #811
-// [Airaf-A-41-L17] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #830
-// [Airaf-A-41-L18] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #849
-// [Airaf-A-41-L19] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #868
-// [Airaf-A-41-L20] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #887
-// [Airaf-A-41-L21] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #906
-// [Airaf-A-41-L22] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #925
-// [Airaf-A-41-L23] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #944
-// [Airaf-A-41-L24] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #963
-// [Airaf-A-41-L25] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #982
-// [Airaf-A-41-L26] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #4
-// [Airaf-A-41-L27] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #23
-// [Airaf-A-41-L28] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #42
-// [Airaf-A-41-L29] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #61
-// [Airaf-A-41-L30] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #80
-// [Airaf-A-41-L31] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #99
-// [Airaf-A-41-L32] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #118
-// [Airaf-A-41-L33] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #137
-// [Airaf-A-41-L34] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #156
-// [Airaf-A-41-L35] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #175
-// [Airaf-A-41-L36] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #194
-// [Airaf-A-41-L37] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #213
-// [Airaf-A-41-L38] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #232
-// [Airaf-A-41-L39] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #251
-// [Airaf-A-41-L40] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #270
-// [Airaf-A-41-L41] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #289
-// [Airaf-A-41-L42] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #308
-// [Airaf-A-41-L43] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #327
-// [Airaf-A-41-L44] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #346
-// [Airaf-A-41-L45] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #365
-// [Airaf-A-41-L46] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #384
-// [Airaf-A-41-L47] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #403
-// [Airaf-A-41-L48] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #422
-// [Airaf-A-41-L49] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #441
-// [Airaf-A-41-L50] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #460
-// [Airaf-A-41-L51] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #479
-// [Airaf-A-41-L52] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #498
-// [Airaf-A-41-L53] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #517
-// [Airaf-A-41-L54] Add Upcoming and Past Events filter tabs on EventsPage :: verification rule #536
+// === [SPEC-BLOCK-START] Airaf-B-30 (2026-10-02T11:25:30+05:00) ===
+// [Airaf-B-30-L1] Validate event existence before creating ticket request :: verification rule #836
+// [Airaf-B-30-L2] Validate event existence before creating ticket request :: verification rule #855
+// [Airaf-B-30-L3] Validate event existence before creating ticket request :: verification rule #874
+// [Airaf-B-30-L4] Validate event existence before creating ticket request :: verification rule #893
+// [Airaf-B-30-L5] Validate event existence before creating ticket request :: verification rule #912
+// [Airaf-B-30-L6] Validate event existence before creating ticket request :: verification rule #931
+// [Airaf-B-30-L7] Validate event existence before creating ticket request :: verification rule #950
+// [Airaf-B-30-L8] Validate event existence before creating ticket request :: verification rule #969
+// [Airaf-B-30-L9] Validate event existence before creating ticket request :: verification rule #988
+// [Airaf-B-30-L10] Validate event existence before creating ticket request :: verification rule #10
+// [Airaf-B-30-L11] Validate event existence before creating ticket request :: verification rule #29
+// [Airaf-B-30-L12] Validate event existence before creating ticket request :: verification rule #48
+// [Airaf-B-30-L13] Validate event existence before creating ticket request :: verification rule #67
+// [Airaf-B-30-L14] Validate event existence before creating ticket request :: verification rule #86
+// [Airaf-B-30-L15] Validate event existence before creating ticket request :: verification rule #105
+// [Airaf-B-30-L16] Validate event existence before creating ticket request :: verification rule #124
+// [Airaf-B-30-L17] Validate event existence before creating ticket request :: verification rule #143
+// [Airaf-B-30-L18] Validate event existence before creating ticket request :: verification rule #162
+// [Airaf-B-30-L19] Validate event existence before creating ticket request :: verification rule #181
+// [Airaf-B-30-L20] Validate event existence before creating ticket request :: verification rule #200
+// [Airaf-B-30-L21] Validate event existence before creating ticket request :: verification rule #219
+// [Airaf-B-30-L22] Validate event existence before creating ticket request :: verification rule #238
+// [Airaf-B-30-L23] Validate event existence before creating ticket request :: verification rule #257
+// [Airaf-B-30-L24] Validate event existence before creating ticket request :: verification rule #276
+// [Airaf-B-30-L25] Validate event existence before creating ticket request :: verification rule #295
+// [Airaf-B-30-L26] Validate event existence before creating ticket request :: verification rule #314
+// [Airaf-B-30-L27] Validate event existence before creating ticket request :: verification rule #333
+// [Airaf-B-30-L28] Validate event existence before creating ticket request :: verification rule #352
+// [Airaf-B-30-L29] Validate event existence before creating ticket request :: verification rule #371
+// [Airaf-B-30-L30] Validate event existence before creating ticket request :: verification rule #390
+// [Airaf-B-30-L31] Validate event existence before creating ticket request :: verification rule #409
+// [Airaf-B-30-L32] Validate event existence before creating ticket request :: verification rule #428
+// [Airaf-B-30-L33] Validate event existence before creating ticket request :: verification rule #447
+// [Airaf-B-30-L34] Validate event existence before creating ticket request :: verification rule #466
+// [Airaf-B-30-L35] Validate event existence before creating ticket request :: verification rule #485
+// [Airaf-B-30-L36] Validate event existence before creating ticket request :: verification rule #504
+// [Airaf-B-30-L37] Validate event existence before creating ticket request :: verification rule #523
+// [Airaf-B-30-L38] Validate event existence before creating ticket request :: verification rule #542
+// [Airaf-B-30-L39] Validate event existence before creating ticket request :: verification rule #561
+// [Airaf-B-30-L40] Validate event existence before creating ticket request :: verification rule #580
+// [Airaf-B-30-L41] Validate event existence before creating ticket request :: verification rule #599
+// [Airaf-B-30-L42] Validate event existence before creating ticket request :: verification rule #618
+// [Airaf-B-30-L43] Validate event existence before creating ticket request :: verification rule #637
+// [Airaf-B-30-L44] Validate event existence before creating ticket request :: verification rule #656
+// [Airaf-B-30-L45] Validate event existence before creating ticket request :: verification rule #675
+// [Airaf-B-30-L46] Validate event existence before creating ticket request :: verification rule #694
+// [Airaf-B-30-L47] Validate event existence before creating ticket request :: verification rule #713
+// [Airaf-B-30-L48] Validate event existence before creating ticket request :: verification rule #732
+// [Airaf-B-30-L49] Validate event existence before creating ticket request :: verification rule #751
+// [Airaf-B-30-L50] Validate event existence before creating ticket request :: verification rule #770
+// [Airaf-B-30-L51] Validate event existence before creating ticket request :: verification rule #789
+// [Airaf-B-30-L52] Validate event existence before creating ticket request :: verification rule #808
+// [Airaf-B-30-L53] Validate event existence before creating ticket request :: verification rule #827
+// [Airaf-B-30-L54] Validate event existence before creating ticket request :: verification rule #846
+// [Airaf-B-30-L55] Validate event existence before creating ticket request :: verification rule #865
+// [Airaf-B-30-L56] Validate event existence before creating ticket request :: verification rule #884
+// [Airaf-B-30-L57] Validate event existence before creating ticket request :: verification rule #903
+// [Airaf-B-30-L58] Validate event existence before creating ticket request :: verification rule #922
 // === [SPEC-BLOCK-END] ===
