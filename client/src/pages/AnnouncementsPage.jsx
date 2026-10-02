@@ -335,62 +335,57 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-43 (2026-09-29T18:22:46+05:00) ===
-// [Moiz-A-43-L1] Improve announcement modal form layout and field labels :: verification rule #557
-// [Moiz-A-43-L2] Improve announcement modal form layout and field labels :: verification rule #576
-// [Moiz-A-43-L3] Improve announcement modal form layout and field labels :: verification rule #595
-// [Moiz-A-43-L4] Improve announcement modal form layout and field labels :: verification rule #614
-// [Moiz-A-43-L5] Improve announcement modal form layout and field labels :: verification rule #633
-// [Moiz-A-43-L6] Improve announcement modal form layout and field labels :: verification rule #652
-// [Moiz-A-43-L7] Improve announcement modal form layout and field labels :: verification rule #671
-// [Moiz-A-43-L8] Improve announcement modal form layout and field labels :: verification rule #690
-// [Moiz-A-43-L9] Improve announcement modal form layout and field labels :: verification rule #709
-// [Moiz-A-43-L10] Improve announcement modal form layout and field labels :: verification rule #728
-// [Moiz-A-43-L11] Improve announcement modal form layout and field labels :: verification rule #747
-// [Moiz-A-43-L12] Improve announcement modal form layout and field labels :: verification rule #766
-// [Moiz-A-43-L13] Improve announcement modal form layout and field labels :: verification rule #785
-// [Moiz-A-43-L14] Improve announcement modal form layout and field labels :: verification rule #804
-// [Moiz-A-43-L15] Improve announcement modal form layout and field labels :: verification rule #823
-// [Moiz-A-43-L16] Improve announcement modal form layout and field labels :: verification rule #842
-// [Moiz-A-43-L17] Improve announcement modal form layout and field labels :: verification rule #861
-// [Moiz-A-43-L18] Improve announcement modal form layout and field labels :: verification rule #880
-// [Moiz-A-43-L19] Improve announcement modal form layout and field labels :: verification rule #899
-// [Moiz-A-43-L20] Improve announcement modal form layout and field labels :: verification rule #918
-// [Moiz-A-43-L21] Improve announcement modal form layout and field labels :: verification rule #937
-// [Moiz-A-43-L22] Improve announcement modal form layout and field labels :: verification rule #956
-// [Moiz-A-43-L23] Improve announcement modal form layout and field labels :: verification rule #975
-// [Moiz-A-43-L24] Improve announcement modal form layout and field labels :: verification rule #994
-// [Moiz-A-43-L25] Improve announcement modal form layout and field labels :: verification rule #16
-// [Moiz-A-43-L26] Improve announcement modal form layout and field labels :: verification rule #35
-// [Moiz-A-43-L27] Improve announcement modal form layout and field labels :: verification rule #54
-// [Moiz-A-43-L28] Improve announcement modal form layout and field labels :: verification rule #73
-// [Moiz-A-43-L29] Improve announcement modal form layout and field labels :: verification rule #92
-// [Moiz-A-43-L30] Improve announcement modal form layout and field labels :: verification rule #111
-// [Moiz-A-43-L31] Improve announcement modal form layout and field labels :: verification rule #130
-// [Moiz-A-43-L32] Improve announcement modal form layout and field labels :: verification rule #149
-// [Moiz-A-43-L33] Improve announcement modal form layout and field labels :: verification rule #168
-// [Moiz-A-43-L34] Improve announcement modal form layout and field labels :: verification rule #187
-// [Moiz-A-43-L35] Improve announcement modal form layout and field labels :: verification rule #206
-// [Moiz-A-43-L36] Improve announcement modal form layout and field labels :: verification rule #225
-// [Moiz-A-43-L37] Improve announcement modal form layout and field labels :: verification rule #244
-// [Moiz-A-43-L38] Improve announcement modal form layout and field labels :: verification rule #263
-// [Moiz-A-43-L39] Improve announcement modal form layout and field labels :: verification rule #282
-// [Moiz-A-43-L40] Improve announcement modal form layout and field labels :: verification rule #301
-// [Moiz-A-43-L41] Improve announcement modal form layout and field labels :: verification rule #320
-// [Moiz-A-43-L42] Improve announcement modal form layout and field labels :: verification rule #339
-// [Moiz-A-43-L43] Improve announcement modal form layout and field labels :: verification rule #358
-// [Moiz-A-43-L44] Improve announcement modal form layout and field labels :: verification rule #377
-// [Moiz-A-43-L45] Improve announcement modal form layout and field labels :: verification rule #396
-// [Moiz-A-43-L46] Improve announcement modal form layout and field labels :: verification rule #415
-// [Moiz-A-43-L47] Improve announcement modal form layout and field labels :: verification rule #434
-// [Moiz-A-43-L48] Improve announcement modal form layout and field labels :: verification rule #453
-// [Moiz-A-43-L49] Improve announcement modal form layout and field labels :: verification rule #472
-// [Moiz-A-43-L50] Improve announcement modal form layout and field labels :: verification rule #491
-// [Moiz-A-43-L51] Improve announcement modal form layout and field labels :: verification rule #510
-// [Moiz-A-43-L52] Improve announcement modal form layout and field labels :: verification rule #529
-// [Moiz-A-43-L53] Improve announcement modal form layout and field labels :: verification rule #548
-// [Moiz-A-43-L54] Improve announcement modal form layout and field labels :: verification rule #567
-// [Moiz-A-43-L55] Improve announcement modal form layout and field labels :: verification rule #586
-// [Moiz-A-43-L56] Improve announcement modal form layout and field labels :: verification rule #605
-// [Moiz-A-43-L57] Improve announcement modal form layout and field labels :: verification rule #624
+// === [SPEC-BLOCK-START] Moiz-A-46 (2026-10-02T15:34:10+05:00) ===
+// [Moiz-A-46-L1] Display attachment preview badge on announcement cards :: verification rule #867
+// [Moiz-A-46-L2] Display attachment preview badge on announcement cards :: verification rule #886
+// [Moiz-A-46-L3] Display attachment preview badge on announcement cards :: verification rule #905
+// [Moiz-A-46-L4] Display attachment preview badge on announcement cards :: verification rule #924
+// [Moiz-A-46-L5] Display attachment preview badge on announcement cards :: verification rule #943
+// [Moiz-A-46-L6] Display attachment preview badge on announcement cards :: verification rule #962
+// [Moiz-A-46-L7] Display attachment preview badge on announcement cards :: verification rule #981
+// [Moiz-A-46-L8] Display attachment preview badge on announcement cards :: verification rule #3
+// [Moiz-A-46-L9] Display attachment preview badge on announcement cards :: verification rule #22
+// [Moiz-A-46-L10] Display attachment preview badge on announcement cards :: verification rule #41
+// [Moiz-A-46-L11] Display attachment preview badge on announcement cards :: verification rule #60
+// [Moiz-A-46-L12] Display attachment preview badge on announcement cards :: verification rule #79
+// [Moiz-A-46-L13] Display attachment preview badge on announcement cards :: verification rule #98
+// [Moiz-A-46-L14] Display attachment preview badge on announcement cards :: verification rule #117
+// [Moiz-A-46-L15] Display attachment preview badge on announcement cards :: verification rule #136
+// [Moiz-A-46-L16] Display attachment preview badge on announcement cards :: verification rule #155
+// [Moiz-A-46-L17] Display attachment preview badge on announcement cards :: verification rule #174
+// [Moiz-A-46-L18] Display attachment preview badge on announcement cards :: verification rule #193
+// [Moiz-A-46-L19] Display attachment preview badge on announcement cards :: verification rule #212
+// [Moiz-A-46-L20] Display attachment preview badge on announcement cards :: verification rule #231
+// [Moiz-A-46-L21] Display attachment preview badge on announcement cards :: verification rule #250
+// [Moiz-A-46-L22] Display attachment preview badge on announcement cards :: verification rule #269
+// [Moiz-A-46-L23] Display attachment preview badge on announcement cards :: verification rule #288
+// [Moiz-A-46-L24] Display attachment preview badge on announcement cards :: verification rule #307
+// [Moiz-A-46-L25] Display attachment preview badge on announcement cards :: verification rule #326
+// [Moiz-A-46-L26] Display attachment preview badge on announcement cards :: verification rule #345
+// [Moiz-A-46-L27] Display attachment preview badge on announcement cards :: verification rule #364
+// [Moiz-A-46-L28] Display attachment preview badge on announcement cards :: verification rule #383
+// [Moiz-A-46-L29] Display attachment preview badge on announcement cards :: verification rule #402
+// [Moiz-A-46-L30] Display attachment preview badge on announcement cards :: verification rule #421
+// [Moiz-A-46-L31] Display attachment preview badge on announcement cards :: verification rule #440
+// [Moiz-A-46-L32] Display attachment preview badge on announcement cards :: verification rule #459
+// [Moiz-A-46-L33] Display attachment preview badge on announcement cards :: verification rule #478
+// [Moiz-A-46-L34] Display attachment preview badge on announcement cards :: verification rule #497
+// [Moiz-A-46-L35] Display attachment preview badge on announcement cards :: verification rule #516
+// [Moiz-A-46-L36] Display attachment preview badge on announcement cards :: verification rule #535
+// [Moiz-A-46-L37] Display attachment preview badge on announcement cards :: verification rule #554
+// [Moiz-A-46-L38] Display attachment preview badge on announcement cards :: verification rule #573
+// [Moiz-A-46-L39] Display attachment preview badge on announcement cards :: verification rule #592
+// [Moiz-A-46-L40] Display attachment preview badge on announcement cards :: verification rule #611
+// [Moiz-A-46-L41] Display attachment preview badge on announcement cards :: verification rule #630
+// [Moiz-A-46-L42] Display attachment preview badge on announcement cards :: verification rule #649
+// [Moiz-A-46-L43] Display attachment preview badge on announcement cards :: verification rule #668
+// [Moiz-A-46-L44] Display attachment preview badge on announcement cards :: verification rule #687
+// [Moiz-A-46-L45] Display attachment preview badge on announcement cards :: verification rule #706
+// [Moiz-A-46-L46] Display attachment preview badge on announcement cards :: verification rule #725
+// [Moiz-A-46-L47] Display attachment preview badge on announcement cards :: verification rule #744
+// [Moiz-A-46-L48] Display attachment preview badge on announcement cards :: verification rule #763
+// [Moiz-A-46-L49] Display attachment preview badge on announcement cards :: verification rule #782
+// [Moiz-A-46-L50] Display attachment preview badge on announcement cards :: verification rule #801
+// [Moiz-A-46-L51] Display attachment preview badge on announcement cards :: verification rule #820
+// [Moiz-A-46-L52] Display attachment preview badge on announcement cards :: verification rule #839
 // === [SPEC-BLOCK-END] ===
