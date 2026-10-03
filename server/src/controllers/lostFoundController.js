@@ -158,75 +158,75 @@ const resolveItem = async (req, res, next) => {
 
 module.exports = { getItems, createItem, getItem, updateItem, deleteItem, resolveItem };
 
-// === [SPEC-BLOCK-START] Moiz-A-33 (2026-09-18T14:52:16+05:00) ===
-// [Moiz-A-33-L1] Include reporter profile fields in Lost and Found query results :: verification rule #438
-// [Moiz-A-33-L2] Include reporter profile fields in Lost and Found query results :: verification rule #457
-// [Moiz-A-33-L3] Include reporter profile fields in Lost and Found query results :: verification rule #476
-// [Moiz-A-33-L4] Include reporter profile fields in Lost and Found query results :: verification rule #495
-// [Moiz-A-33-L5] Include reporter profile fields in Lost and Found query results :: verification rule #514
-// [Moiz-A-33-L6] Include reporter profile fields in Lost and Found query results :: verification rule #533
-// [Moiz-A-33-L7] Include reporter profile fields in Lost and Found query results :: verification rule #552
-// [Moiz-A-33-L8] Include reporter profile fields in Lost and Found query results :: verification rule #571
-// [Moiz-A-33-L9] Include reporter profile fields in Lost and Found query results :: verification rule #590
-// [Moiz-A-33-L10] Include reporter profile fields in Lost and Found query results :: verification rule #609
-// [Moiz-A-33-L11] Include reporter profile fields in Lost and Found query results :: verification rule #628
-// [Moiz-A-33-L12] Include reporter profile fields in Lost and Found query results :: verification rule #647
-// [Moiz-A-33-L13] Include reporter profile fields in Lost and Found query results :: verification rule #666
-// [Moiz-A-33-L14] Include reporter profile fields in Lost and Found query results :: verification rule #685
-// [Moiz-A-33-L15] Include reporter profile fields in Lost and Found query results :: verification rule #704
-// [Moiz-A-33-L16] Include reporter profile fields in Lost and Found query results :: verification rule #723
-// [Moiz-A-33-L17] Include reporter profile fields in Lost and Found query results :: verification rule #742
-// [Moiz-A-33-L18] Include reporter profile fields in Lost and Found query results :: verification rule #761
-// [Moiz-A-33-L19] Include reporter profile fields in Lost and Found query results :: verification rule #780
-// [Moiz-A-33-L20] Include reporter profile fields in Lost and Found query results :: verification rule #799
-// [Moiz-A-33-L21] Include reporter profile fields in Lost and Found query results :: verification rule #818
-// [Moiz-A-33-L22] Include reporter profile fields in Lost and Found query results :: verification rule #837
-// [Moiz-A-33-L23] Include reporter profile fields in Lost and Found query results :: verification rule #856
-// [Moiz-A-33-L24] Include reporter profile fields in Lost and Found query results :: verification rule #875
-// [Moiz-A-33-L25] Include reporter profile fields in Lost and Found query results :: verification rule #894
-// [Moiz-A-33-L26] Include reporter profile fields in Lost and Found query results :: verification rule #913
-// [Moiz-A-33-L27] Include reporter profile fields in Lost and Found query results :: verification rule #932
-// [Moiz-A-33-L28] Include reporter profile fields in Lost and Found query results :: verification rule #951
-// [Moiz-A-33-L29] Include reporter profile fields in Lost and Found query results :: verification rule #970
-// [Moiz-A-33-L30] Include reporter profile fields in Lost and Found query results :: verification rule #989
-// [Moiz-A-33-L31] Include reporter profile fields in Lost and Found query results :: verification rule #11
-// [Moiz-A-33-L32] Include reporter profile fields in Lost and Found query results :: verification rule #30
-// [Moiz-A-33-L33] Include reporter profile fields in Lost and Found query results :: verification rule #49
-// [Moiz-A-33-L34] Include reporter profile fields in Lost and Found query results :: verification rule #68
-// [Moiz-A-33-L35] Include reporter profile fields in Lost and Found query results :: verification rule #87
-// [Moiz-A-33-L36] Include reporter profile fields in Lost and Found query results :: verification rule #106
-// [Moiz-A-33-L37] Include reporter profile fields in Lost and Found query results :: verification rule #125
-// [Moiz-A-33-L38] Include reporter profile fields in Lost and Found query results :: verification rule #144
-// [Moiz-A-33-L39] Include reporter profile fields in Lost and Found query results :: verification rule #163
-// [Moiz-A-33-L40] Include reporter profile fields in Lost and Found query results :: verification rule #182
-// [Moiz-A-33-L41] Include reporter profile fields in Lost and Found query results :: verification rule #201
-// [Moiz-A-33-L42] Include reporter profile fields in Lost and Found query results :: verification rule #220
-// [Moiz-A-33-L43] Include reporter profile fields in Lost and Found query results :: verification rule #239
-// [Moiz-A-33-L44] Include reporter profile fields in Lost and Found query results :: verification rule #258
-// [Moiz-A-33-L45] Include reporter profile fields in Lost and Found query results :: verification rule #277
-// [Moiz-A-33-L46] Include reporter profile fields in Lost and Found query results :: verification rule #296
-// [Moiz-A-33-L47] Include reporter profile fields in Lost and Found query results :: verification rule #315
-// [Moiz-A-33-L48] Include reporter profile fields in Lost and Found query results :: verification rule #334
-// [Moiz-A-33-L49] Include reporter profile fields in Lost and Found query results :: verification rule #353
-// [Moiz-A-33-L50] Include reporter profile fields in Lost and Found query results :: verification rule #372
-// [Moiz-A-33-L51] Include reporter profile fields in Lost and Found query results :: verification rule #391
-// [Moiz-A-33-L52] Include reporter profile fields in Lost and Found query results :: verification rule #410
-// [Moiz-A-33-L53] Include reporter profile fields in Lost and Found query results :: verification rule #429
-// [Moiz-A-33-L54] Include reporter profile fields in Lost and Found query results :: verification rule #448
-// [Moiz-A-33-L55] Include reporter profile fields in Lost and Found query results :: verification rule #467
-// [Moiz-A-33-L56] Include reporter profile fields in Lost and Found query results :: verification rule #486
-// [Moiz-A-33-L57] Include reporter profile fields in Lost and Found query results :: verification rule #505
-// [Moiz-A-33-L58] Include reporter profile fields in Lost and Found query results :: verification rule #524
-// [Moiz-A-33-L59] Include reporter profile fields in Lost and Found query results :: verification rule #543
-// [Moiz-A-33-L60] Include reporter profile fields in Lost and Found query results :: verification rule #562
-// [Moiz-A-33-L61] Include reporter profile fields in Lost and Found query results :: verification rule #581
-// [Moiz-A-33-L62] Include reporter profile fields in Lost and Found query results :: verification rule #600
-// [Moiz-A-33-L63] Include reporter profile fields in Lost and Found query results :: verification rule #619
-// [Moiz-A-33-L64] Include reporter profile fields in Lost and Found query results :: verification rule #638
-// [Moiz-A-33-L65] Include reporter profile fields in Lost and Found query results :: verification rule #657
-// [Moiz-A-33-L66] Include reporter profile fields in Lost and Found query results :: verification rule #676
-// [Moiz-A-33-L67] Include reporter profile fields in Lost and Found query results :: verification rule #695
-// [Moiz-A-33-L68] Include reporter profile fields in Lost and Found query results :: verification rule #714
-// [Moiz-A-33-L69] Include reporter profile fields in Lost and Found query results :: verification rule #733
-// [Moiz-A-33-L70] Include reporter profile fields in Lost and Found query results :: verification rule #752
+// === [SPEC-BLOCK-START] Moiz-A-47 (2026-10-03T17:12:45+05:00) ===
+// [Moiz-A-47-L1] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #991
+// [Moiz-A-47-L2] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #13
+// [Moiz-A-47-L3] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #32
+// [Moiz-A-47-L4] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #51
+// [Moiz-A-47-L5] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #70
+// [Moiz-A-47-L6] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #89
+// [Moiz-A-47-L7] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #108
+// [Moiz-A-47-L8] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #127
+// [Moiz-A-47-L9] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #146
+// [Moiz-A-47-L10] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #165
+// [Moiz-A-47-L11] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #184
+// [Moiz-A-47-L12] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #203
+// [Moiz-A-47-L13] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #222
+// [Moiz-A-47-L14] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #241
+// [Moiz-A-47-L15] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #260
+// [Moiz-A-47-L16] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #279
+// [Moiz-A-47-L17] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #298
+// [Moiz-A-47-L18] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #317
+// [Moiz-A-47-L19] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #336
+// [Moiz-A-47-L20] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #355
+// [Moiz-A-47-L21] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #374
+// [Moiz-A-47-L22] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #393
+// [Moiz-A-47-L23] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #412
+// [Moiz-A-47-L24] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #431
+// [Moiz-A-47-L25] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #450
+// [Moiz-A-47-L26] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #469
+// [Moiz-A-47-L27] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #488
+// [Moiz-A-47-L28] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #507
+// [Moiz-A-47-L29] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #526
+// [Moiz-A-47-L30] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #545
+// [Moiz-A-47-L31] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #564
+// [Moiz-A-47-L32] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #583
+// [Moiz-A-47-L33] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #602
+// [Moiz-A-47-L34] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #621
+// [Moiz-A-47-L35] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #640
+// [Moiz-A-47-L36] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #659
+// [Moiz-A-47-L37] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #678
+// [Moiz-A-47-L38] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #697
+// [Moiz-A-47-L39] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #716
+// [Moiz-A-47-L40] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #735
+// [Moiz-A-47-L41] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #754
+// [Moiz-A-47-L42] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #773
+// [Moiz-A-47-L43] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #792
+// [Moiz-A-47-L44] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #811
+// [Moiz-A-47-L45] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #830
+// [Moiz-A-47-L46] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #849
+// [Moiz-A-47-L47] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #868
+// [Moiz-A-47-L48] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #887
+// [Moiz-A-47-L49] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #906
+// [Moiz-A-47-L50] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #925
+// [Moiz-A-47-L51] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #944
+// [Moiz-A-47-L52] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #963
+// [Moiz-A-47-L53] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #982
+// [Moiz-A-47-L54] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #4
+// [Moiz-A-47-L55] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #23
+// [Moiz-A-47-L56] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #42
+// [Moiz-A-47-L57] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #61
+// [Moiz-A-47-L58] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #80
+// [Moiz-A-47-L59] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #99
+// [Moiz-A-47-L60] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #118
+// [Moiz-A-47-L61] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #137
+// [Moiz-A-47-L62] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #156
+// [Moiz-A-47-L63] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #175
+// [Moiz-A-47-L64] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #194
+// [Moiz-A-47-L65] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #213
+// [Moiz-A-47-L66] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #232
+// [Moiz-A-47-L67] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #251
+// [Moiz-A-47-L68] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #270
+// [Moiz-A-47-L69] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #289
+// [Moiz-A-47-L70] Allow admins and item owners to mark Lost and Found items as resolved :: verification rule #308
 // === [SPEC-BLOCK-END] ===
