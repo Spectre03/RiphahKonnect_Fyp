@@ -1,5 +1,6 @@
 const prisma = require('../config/db');
 const { coordinatorCanManage, getDepartmentsForFaculty } = require('../utils/faculties');
+const { checkTextContent } = require('../utils/moderation');
 
 // GET /api/announcements
 // Returns announcements relevant to the logged-in user
@@ -17,14 +18,15 @@ const getAnnouncements = async (req, res, next) => {
         type ? { type } : {},
         {
           OR: [
-            { targetDepartment: null },                                          // broadcast to all
-            { targetDepartment: user.department },                               // their department
+            { targetDepartments: { isEmpty: true } },
+            { targetDepartments: { has: 'All' } },
+            { targetDepartments: { has: user.department } },
           ],
         },
         {
           OR: [
-            { targetSemester: null },                                            // all semesters
-            { targetSemester: user.semester },                                   // their semester
+            { targetSemesters: { isEmpty: true } },
+            { targetSemesters: { has: user.semester } },
           ],
         },
       ],
@@ -70,38 +72,124 @@ const getAnnouncement = async (req, res, next) => {
 };
 
 // POST /api/announcements
-// UNIVERSITY_ADMIN, COORDINATION → type OFFICIAL
-// TEACHER → type CLASS
 const createAnnouncement = async (req, res, next) => {
   try {
-    const { title, content, targetDepartment, targetSemester } = req.body;
+    const {
+      title,
+      content,
+      type: requestedType,
+      targetDepartments,
+      targetSemesters,
+      publishDate,
+      attachmentUrl,
+      attachmentName,
+    } = req.body;
     const user = req.user;
 
+    const titleCheck = checkTextContent(title, { minLength: 3, fieldName: 'Announcement title' });
+    if (!titleCheck.clean) return res.status(400).json({ error: titleCheck.reason });
+
+    const contentCheck = checkTextContent(content, { minLength: 5, fieldName: 'Announcement content' });
+    if (!contentCheck.clean) return res.status(400).json({ error: contentCheck.reason });
+
     // COORDINATION is faculty-scoped — they can only target their own faculty's departments
-    if (user.role === 'COORDINATION' && targetDepartment) {
-      if (!coordinatorCanManage(user.department, targetDepartment)) {
-        return res.status(403).json({
-          error: `Your coordination office (${user.department}) does not manage the ${targetDepartment} department.`,
-        });
+    if (user.role === 'COORDINATION' && targetDepartments && targetDepartments.length > 0) {
+      for (const dept of targetDepartments) {
+        if (dept !== 'All' && !coordinatorCanManage(user.department, dept)) {
+          return res.status(403).json({
+            error: `Your coordination office (${user.department}) does not manage the ${dept} department.`,
+          });
+        }
       }
     }
 
-    // Determine type from role
-    const type = user.role === 'TEACHER' ? 'CLASS' : 'OFFICIAL';
+    // Determine type from role or requestedType
+    const type = user.role === 'TEACHER'
+      ? 'CLASS'
+      : requestedType === 'CLASS'
+      ? 'CLASS'
+      : 'GENERAL';
+
+    // Encode optional attachment metadata & publishDate cleanly if provided
+    let storedContent = content.trim();
+    if (attachmentUrl && !storedContent.includes('<!--RK_META:')) {
+      const metaObj = {
+        attachmentUrl,
+        attachmentName: attachmentName || 'Attachment',
+        publishDate: publishDate || new Date().toISOString(),
+      };
+      storedContent = `${storedContent}\n<!--RK_META:${JSON.stringify(metaObj)}-->`;
+    } else if (publishDate && !storedContent.includes('<!--RK_META:')) {
+      const metaObj = {
+        publishDate,
+      };
+      storedContent = `${storedContent}\n<!--RK_META:${JSON.stringify(metaObj)}-->`;
+    }
+
+    const createdAtDate = publishDate && !Number.isNaN(new Date(publishDate).getTime())
+      ? new Date(publishDate)
+      : undefined;
 
     const announcement = await prisma.announcement.create({
       data: {
-        title,
-        content,
+        title: title.trim(),
+        content: storedContent,
         type,
-        targetDepartment: targetDepartment || null,
-        targetSemester:   targetSemester ? parseInt(targetSemester) : null,
+        targetDepartments: targetDepartments || [],
+        targetSemesters:   targetSemesters ? targetSemesters.map(s => parseInt(s)) : [],
         authorId: user.id,
+        ...(createdAtDate ? { createdAt: createdAtDate } : {}),
       },
       include: {
-        author: { select: { id: true, name: true, avatarUrl: true, role: true } },
+        author: { select: { id: true, name: true, avatarUrl: true, role: true, department: true } },
       },
     });
+
+    // Spawn Notifications for targeted users
+    // Build user filter based on targetDepartments and targetSemesters
+    const userWhere = {};
+    const dArray = targetDepartments || [];
+    const sArray = targetSemesters ? targetSemesters.map(s => parseInt(s)) : [];
+
+    if (dArray.length > 0 && !dArray.includes('All')) {
+      userWhere.department = { in: dArray };
+    }
+    if (sArray.length > 0) {
+      userWhere.semester = { in: sArray };
+    }
+    
+    // exclude the author from being notified
+    userWhere.id = { not: user.id };
+
+    const targetUsers = await prisma.user.findMany({
+      where: userWhere,
+      select: { id: true },
+    });
+
+    if (targetUsers.length > 0) {
+      const notifications = targetUsers.map(u => ({
+        userId: u.id,
+        title: `New ${type === 'CLASS' ? 'Class' : 'General'} Announcement`,
+        content: title,
+        type: 'ANNOUNCEMENT',
+        link: `/announcements?id=${announcement.id}`,
+      }));
+      
+      await prisma.notification.createMany({ data: notifications });
+
+      // Emit socket event to online users
+      const io = req.app.get('io');
+      if (io) {
+        targetUsers.forEach(u => {
+          io.to(`user:${u.id}`).emit('notification', {
+            title: `New ${type === 'CLASS' ? 'Class' : 'General'} Announcement`,
+            content: title,
+            type: 'ANNOUNCEMENT',
+            link: `/announcements?id=${announcement.id}`
+          });
+        });
+      }
+    }
 
     res.status(201).json({ announcement });
   } catch (err) {
@@ -123,8 +211,8 @@ const updateAnnouncement = async (req, res, next) => {
       data: {
         title:           req.body.title           ?? announcement.title,
         content:         req.body.content         ?? announcement.content,
-        targetDepartment: req.body.targetDepartment !== undefined ? req.body.targetDepartment : announcement.targetDepartment,
-        targetSemester:  req.body.targetSemester  !== undefined ? parseInt(req.body.targetSemester) : announcement.targetSemester,
+        targetDepartments: req.body.targetDepartments !== undefined ? req.body.targetDepartments : announcement.targetDepartments,
+        targetSemesters:  req.body.targetSemesters  !== undefined ? req.body.targetSemesters.map(s => parseInt(s)) : announcement.targetSemesters,
       },
     });
 
@@ -152,57 +240,3 @@ const deleteAnnouncement = async (req, res, next) => {
 };
 
 module.exports = { getAnnouncements, getAnnouncement, createAnnouncement, updateAnnouncement, deleteAnnouncement };
-
-// === [SPEC-BLOCK-START] Moiz-A-45 (2026-10-01T11:18:22+05:00) ===
-// [Moiz-A-45-L1] Add author role and department details to announcement responses :: verification rule #774
-// [Moiz-A-45-L2] Add author role and department details to announcement responses :: verification rule #793
-// [Moiz-A-45-L3] Add author role and department details to announcement responses :: verification rule #812
-// [Moiz-A-45-L4] Add author role and department details to announcement responses :: verification rule #831
-// [Moiz-A-45-L5] Add author role and department details to announcement responses :: verification rule #850
-// [Moiz-A-45-L6] Add author role and department details to announcement responses :: verification rule #869
-// [Moiz-A-45-L7] Add author role and department details to announcement responses :: verification rule #888
-// [Moiz-A-45-L8] Add author role and department details to announcement responses :: verification rule #907
-// [Moiz-A-45-L9] Add author role and department details to announcement responses :: verification rule #926
-// [Moiz-A-45-L10] Add author role and department details to announcement responses :: verification rule #945
-// [Moiz-A-45-L11] Add author role and department details to announcement responses :: verification rule #964
-// [Moiz-A-45-L12] Add author role and department details to announcement responses :: verification rule #983
-// [Moiz-A-45-L13] Add author role and department details to announcement responses :: verification rule #5
-// [Moiz-A-45-L14] Add author role and department details to announcement responses :: verification rule #24
-// [Moiz-A-45-L15] Add author role and department details to announcement responses :: verification rule #43
-// [Moiz-A-45-L16] Add author role and department details to announcement responses :: verification rule #62
-// [Moiz-A-45-L17] Add author role and department details to announcement responses :: verification rule #81
-// [Moiz-A-45-L18] Add author role and department details to announcement responses :: verification rule #100
-// [Moiz-A-45-L19] Add author role and department details to announcement responses :: verification rule #119
-// [Moiz-A-45-L20] Add author role and department details to announcement responses :: verification rule #138
-// [Moiz-A-45-L21] Add author role and department details to announcement responses :: verification rule #157
-// [Moiz-A-45-L22] Add author role and department details to announcement responses :: verification rule #176
-// [Moiz-A-45-L23] Add author role and department details to announcement responses :: verification rule #195
-// [Moiz-A-45-L24] Add author role and department details to announcement responses :: verification rule #214
-// [Moiz-A-45-L25] Add author role and department details to announcement responses :: verification rule #233
-// [Moiz-A-45-L26] Add author role and department details to announcement responses :: verification rule #252
-// [Moiz-A-45-L27] Add author role and department details to announcement responses :: verification rule #271
-// [Moiz-A-45-L28] Add author role and department details to announcement responses :: verification rule #290
-// [Moiz-A-45-L29] Add author role and department details to announcement responses :: verification rule #309
-// [Moiz-A-45-L30] Add author role and department details to announcement responses :: verification rule #328
-// [Moiz-A-45-L31] Add author role and department details to announcement responses :: verification rule #347
-// [Moiz-A-45-L32] Add author role and department details to announcement responses :: verification rule #366
-// [Moiz-A-45-L33] Add author role and department details to announcement responses :: verification rule #385
-// [Moiz-A-45-L34] Add author role and department details to announcement responses :: verification rule #404
-// [Moiz-A-45-L35] Add author role and department details to announcement responses :: verification rule #423
-// [Moiz-A-45-L36] Add author role and department details to announcement responses :: verification rule #442
-// [Moiz-A-45-L37] Add author role and department details to announcement responses :: verification rule #461
-// [Moiz-A-45-L38] Add author role and department details to announcement responses :: verification rule #480
-// [Moiz-A-45-L39] Add author role and department details to announcement responses :: verification rule #499
-// [Moiz-A-45-L40] Add author role and department details to announcement responses :: verification rule #518
-// [Moiz-A-45-L41] Add author role and department details to announcement responses :: verification rule #537
-// [Moiz-A-45-L42] Add author role and department details to announcement responses :: verification rule #556
-// [Moiz-A-45-L43] Add author role and department details to announcement responses :: verification rule #575
-// [Moiz-A-45-L44] Add author role and department details to announcement responses :: verification rule #594
-// [Moiz-A-45-L45] Add author role and department details to announcement responses :: verification rule #613
-// [Moiz-A-45-L46] Add author role and department details to announcement responses :: verification rule #632
-// [Moiz-A-45-L47] Add author role and department details to announcement responses :: verification rule #651
-// [Moiz-A-45-L48] Add author role and department details to announcement responses :: verification rule #670
-// [Moiz-A-45-L49] Add author role and department details to announcement responses :: verification rule #689
-// [Moiz-A-45-L50] Add author role and department details to announcement responses :: verification rule #708
-// [Moiz-A-45-L51] Add author role and department details to announcement responses :: verification rule #727
-// === [SPEC-BLOCK-END] ===
