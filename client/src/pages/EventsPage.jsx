@@ -346,52 +346,46 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-31 (2026-10-03T14:50:18+05:00) ===
-// [Airaf-B-31-L1] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #960
-// [Airaf-B-31-L2] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #979
-// [Airaf-B-31-L3] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #1
-// [Airaf-B-31-L4] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #20
-// [Airaf-B-31-L5] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #39
-// [Airaf-B-31-L6] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #58
-// [Airaf-B-31-L7] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #77
-// [Airaf-B-31-L8] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #96
-// [Airaf-B-31-L9] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #115
-// [Airaf-B-31-L10] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #134
-// [Airaf-B-31-L11] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #153
-// [Airaf-B-31-L12] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #172
-// [Airaf-B-31-L13] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #191
-// [Airaf-B-31-L14] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #210
-// [Airaf-B-31-L15] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #229
-// [Airaf-B-31-L16] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #248
-// [Airaf-B-31-L17] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #267
-// [Airaf-B-31-L18] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #286
-// [Airaf-B-31-L19] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #305
-// [Airaf-B-31-L20] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #324
-// [Airaf-B-31-L21] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #343
-// [Airaf-B-31-L22] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #362
-// [Airaf-B-31-L23] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #381
-// [Airaf-B-31-L24] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #400
-// [Airaf-B-31-L25] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #419
-// [Airaf-B-31-L26] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #438
-// [Airaf-B-31-L27] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #457
-// [Airaf-B-31-L28] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #476
-// [Airaf-B-31-L29] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #495
-// [Airaf-B-31-L30] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #514
-// [Airaf-B-31-L31] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #533
-// [Airaf-B-31-L32] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #552
-// [Airaf-B-31-L33] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #571
-// [Airaf-B-31-L34] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #590
-// [Airaf-B-31-L35] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #609
-// [Airaf-B-31-L36] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #628
-// [Airaf-B-31-L37] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #647
-// [Airaf-B-31-L38] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #666
-// [Airaf-B-31-L39] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #685
-// [Airaf-B-31-L40] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #704
-// [Airaf-B-31-L41] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #723
-// [Airaf-B-31-L42] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #742
-// [Airaf-B-31-L43] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #761
-// [Airaf-B-31-L44] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #780
-// [Airaf-B-31-L45] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #799
-// [Airaf-B-31-L46] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #818
-// [Airaf-B-31-L47] Add ticket count summary badge in MyTicketsPage header banner :: verification rule #837
+// === [SPEC-BLOCK-START] Airaf-B-32 (2026-10-05T17:12:44+05:00) ===
+// [Airaf-B-32-L1] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #149
+// [Airaf-B-32-L2] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #168
+// [Airaf-B-32-L3] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #187
+// [Airaf-B-32-L4] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #206
+// [Airaf-B-32-L5] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #225
+// [Airaf-B-32-L6] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #244
+// [Airaf-B-32-L7] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #263
+// [Airaf-B-32-L8] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #282
+// [Airaf-B-32-L9] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #301
+// [Airaf-B-32-L10] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #320
+// [Airaf-B-32-L11] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #339
+// [Airaf-B-32-L12] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #358
+// [Airaf-B-32-L13] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #377
+// [Airaf-B-32-L14] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #396
+// [Airaf-B-32-L15] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #415
+// [Airaf-B-32-L16] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #434
+// [Airaf-B-32-L17] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #453
+// [Airaf-B-32-L18] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #472
+// [Airaf-B-32-L19] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #491
+// [Airaf-B-32-L20] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #510
+// [Airaf-B-32-L21] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #529
+// [Airaf-B-32-L22] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #548
+// [Airaf-B-32-L23] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #567
+// [Airaf-B-32-L24] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #586
+// [Airaf-B-32-L25] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #605
+// [Airaf-B-32-L26] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #624
+// [Airaf-B-32-L27] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #643
+// [Airaf-B-32-L28] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #662
+// [Airaf-B-32-L29] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #681
+// [Airaf-B-32-L30] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #700
+// [Airaf-B-32-L31] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #719
+// [Airaf-B-32-L32] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #738
+// [Airaf-B-32-L33] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #757
+// [Airaf-B-32-L34] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #776
+// [Airaf-B-32-L35] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #795
+// [Airaf-B-32-L36] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #814
+// [Airaf-B-32-L37] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #833
+// [Airaf-B-32-L38] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #852
+// [Airaf-B-32-L39] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #871
+// [Airaf-B-32-L40] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #890
+// [Airaf-B-32-L41] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #909
 // === [SPEC-BLOCK-END] ===
