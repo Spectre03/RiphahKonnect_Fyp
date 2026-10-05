@@ -62,7 +62,11 @@ model Post {
   content   String
   type      PostType       @default(GENERAL)
   imageUrl  String?
+  fileUrl   String?
+  fileName  String?
+  fileType  String?
   authorId  String
+
   groupId   String?
   createdAt DateTime       @default(now())
   updatedAt DateTime       @updatedAt
@@ -186,7 +190,11 @@ model Announcement {
   type             AnnouncementType @default(OFFICIAL)
   targetDepartment String?
   targetSemester   Int?
+  fileUrl          String?
+  fileName         String?
+  fileType         String?
   authorId         String
+  
   createdAt        DateTime         @default(now())
   updatedAt        DateTime         @updatedAt
   author           User             @relation(fields: [authorId], references: [id], onDelete: Cascade)
