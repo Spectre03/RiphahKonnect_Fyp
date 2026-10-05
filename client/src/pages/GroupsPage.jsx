@@ -218,9 +218,11 @@ export default function GroupsPage() {
                       <Users size={12} /> {group.memberCount} members
                     </span>
                     {group.isMember ? (
-                      group.myRole === 'COORDINATOR' ? (
-                        <Badge variant="violet" size="sm">Coordinator</Badge>
-                      ) : canJoin ? (
+  group.myRole === 'COORDINATOR' ? (
+    <Badge variant="violet" size="sm">
+      {user?.role === 'TEACHER' ? 'Teacher' : 'Coordinator'}
+    </Badge>
+  ) : canJoin ? (
                         <button
                           onClick={(e) => { e.preventDefault(); handleLeave(group.id); }}
                           className="text-[11px] text-red-500 hover:text-red-600 font-bold px-2.5 py-1 hover:bg-red-50 rounded-full cursor-pointer transition-colors"

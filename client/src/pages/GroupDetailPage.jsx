@@ -157,9 +157,11 @@ export default function GroupDetailPage() {
               </div>
               <div className="flex-shrink-0 ml-3">
                 {isMember ? (
-                  isCoordinator ? (
-                    <Badge variant="violet" size="sm">Coordinator</Badge>
-                  ) : canJoin ? (
+  isCoordinator ? (
+    <Badge variant="violet" size="sm">
+      {user?.role === 'TEACHER' ? 'Teacher' : 'Coordinator'}
+    </Badge>
+  ) : canJoin ? (
                     <Button variant="secondary" size="sm" onClick={handleLeave}>Leave</Button>
                   ) : null
                 ) : canJoin ? (
@@ -297,33 +299,43 @@ export default function GroupDetailPage() {
             {!group.members || group.members.length === 0 ? (
               <div className="text-center py-12 text-slate-500 text-sm">No members yet</div>
             ) : (
-              group.members.map((member, i) => {
-                const isCoord = member.role === 'COORDINATOR';
-                return (
-                  <Link
-                    key={member.id}
-                    to={`/profile/${member.user?.id}`}
-                    className={cn(
-                      'flex items-center justify-between px-5 py-3.5 hover:bg-slate-50 transition-colors',
-                      i !== 0 && 'border-t border-slate-100'
-                    )}
-                  >
-                    <div className="flex items-center gap-3 min-w-0">
-                      <Avatar name={member.user?.name || ''} size="md" />
-                      <div className="min-w-0">
-                        <p className="text-sm font-semibold text-slate-900 truncate">{member.user?.name}</p>
-                        {member.user?.department && (
-                          <p className="text-xs text-slate-500 truncate">{member.user.department}</p>
-                        )}
-                      </div>
-                    </div>
-                    <Badge variant={isCoord ? 'violet' : 'slate'} size="sm">
-                      {isCoord ? <Crown className="h-3 w-3" /> : <User className="h-3 w-3" />}
-                      {isCoord ? 'Coordinator' : 'Member'}
-                    </Badge>
-                  </Link>
-                );
-              })
+            group.members.map((member, i) => {
+  const isCoord = member.role === 'COORDINATOR';
+  const isTeacher = member.user?.role === 'TEACHER';
+  const label = isTeacher ? 'Teacher' : isCoord ? 'Coordinator' : 'Member';
+  const variant = (isTeacher || isCoord) ? 'violet' : 'slate';
+
+  return (
+    <Link
+      key={member.id}
+      to={`/profile/${member.user?.id}`}
+      className={cn(
+        'flex items-center justify-between px-5 py-3.5 hover:bg-slate-50 transition-colors',
+        i !== 0 && 'border-t border-slate-100'
+      )}
+    >
+      <div className="flex items-center gap-3 min-w-0">
+        <Avatar name={member.user?.name || ''} size="md" />
+        <div className="min-w-0">
+          <p className="text-sm font-semibold text-slate-900 truncate">{member.user?.name}</p>
+          {member.user?.department && (
+            <p className="text-xs text-slate-500 truncate">{member.user.department}</p>
+          )}
+        </div>
+      </div>
+      <Badge variant={variant} size="sm">
+        {isTeacher ? (
+          <GraduationCap className="h-3 w-3" />
+        ) : isCoord ? (
+          <Crown className="h-3 w-3" />
+        ) : (
+          <User className="h-3 w-3" />
+        )}
+        {label}
+      </Badge>
+    </Link>
+  );
+})
             )}
           </Card>
         )}
