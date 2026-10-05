@@ -216,50 +216,54 @@ module.exports = {
   getAttendees,
 };
 
-// === [SPEC-BLOCK-START] Airaf-A-45 (2026-10-01T14:10:18+05:00) ===
-// [Airaf-A-45-L1] Prepare eventController schema fields for campus event ticket requests :: verification rule #805
-// [Airaf-A-45-L2] Prepare eventController schema fields for campus event ticket requests :: verification rule #824
-// [Airaf-A-45-L3] Prepare eventController schema fields for campus event ticket requests :: verification rule #843
-// [Airaf-A-45-L4] Prepare eventController schema fields for campus event ticket requests :: verification rule #862
-// [Airaf-A-45-L5] Prepare eventController schema fields for campus event ticket requests :: verification rule #881
-// [Airaf-A-45-L6] Prepare eventController schema fields for campus event ticket requests :: verification rule #900
-// [Airaf-A-45-L7] Prepare eventController schema fields for campus event ticket requests :: verification rule #919
-// [Airaf-A-45-L8] Prepare eventController schema fields for campus event ticket requests :: verification rule #938
-// [Airaf-A-45-L9] Prepare eventController schema fields for campus event ticket requests :: verification rule #957
-// [Airaf-A-45-L10] Prepare eventController schema fields for campus event ticket requests :: verification rule #976
-// [Airaf-A-45-L11] Prepare eventController schema fields for campus event ticket requests :: verification rule #995
-// [Airaf-A-45-L12] Prepare eventController schema fields for campus event ticket requests :: verification rule #17
-// [Airaf-A-45-L13] Prepare eventController schema fields for campus event ticket requests :: verification rule #36
-// [Airaf-A-45-L14] Prepare eventController schema fields for campus event ticket requests :: verification rule #55
-// [Airaf-A-45-L15] Prepare eventController schema fields for campus event ticket requests :: verification rule #74
-// [Airaf-A-45-L16] Prepare eventController schema fields for campus event ticket requests :: verification rule #93
-// [Airaf-A-45-L17] Prepare eventController schema fields for campus event ticket requests :: verification rule #112
-// [Airaf-A-45-L18] Prepare eventController schema fields for campus event ticket requests :: verification rule #131
-// [Airaf-A-45-L19] Prepare eventController schema fields for campus event ticket requests :: verification rule #150
-// [Airaf-A-45-L20] Prepare eventController schema fields for campus event ticket requests :: verification rule #169
-// [Airaf-A-45-L21] Prepare eventController schema fields for campus event ticket requests :: verification rule #188
-// [Airaf-A-45-L22] Prepare eventController schema fields for campus event ticket requests :: verification rule #207
-// [Airaf-A-45-L23] Prepare eventController schema fields for campus event ticket requests :: verification rule #226
-// [Airaf-A-45-L24] Prepare eventController schema fields for campus event ticket requests :: verification rule #245
-// [Airaf-A-45-L25] Prepare eventController schema fields for campus event ticket requests :: verification rule #264
-// [Airaf-A-45-L26] Prepare eventController schema fields for campus event ticket requests :: verification rule #283
-// [Airaf-A-45-L27] Prepare eventController schema fields for campus event ticket requests :: verification rule #302
-// [Airaf-A-45-L28] Prepare eventController schema fields for campus event ticket requests :: verification rule #321
-// [Airaf-A-45-L29] Prepare eventController schema fields for campus event ticket requests :: verification rule #340
-// [Airaf-A-45-L30] Prepare eventController schema fields for campus event ticket requests :: verification rule #359
-// [Airaf-A-45-L31] Prepare eventController schema fields for campus event ticket requests :: verification rule #378
-// [Airaf-A-45-L32] Prepare eventController schema fields for campus event ticket requests :: verification rule #397
-// [Airaf-A-45-L33] Prepare eventController schema fields for campus event ticket requests :: verification rule #416
-// [Airaf-A-45-L34] Prepare eventController schema fields for campus event ticket requests :: verification rule #435
-// [Airaf-A-45-L35] Prepare eventController schema fields for campus event ticket requests :: verification rule #454
-// [Airaf-A-45-L36] Prepare eventController schema fields for campus event ticket requests :: verification rule #473
-// [Airaf-A-45-L37] Prepare eventController schema fields for campus event ticket requests :: verification rule #492
-// [Airaf-A-45-L38] Prepare eventController schema fields for campus event ticket requests :: verification rule #511
-// [Airaf-A-45-L39] Prepare eventController schema fields for campus event ticket requests :: verification rule #530
-// [Airaf-A-45-L40] Prepare eventController schema fields for campus event ticket requests :: verification rule #549
-// [Airaf-A-45-L41] Prepare eventController schema fields for campus event ticket requests :: verification rule #568
-// [Airaf-A-45-L42] Prepare eventController schema fields for campus event ticket requests :: verification rule #587
-// [Airaf-A-45-L43] Prepare eventController schema fields for campus event ticket requests :: verification rule #606
-// [Airaf-A-45-L44] Prepare eventController schema fields for campus event ticket requests :: verification rule #625
-// [Airaf-A-45-L45] Prepare eventController schema fields for campus event ticket requests :: verification rule #644
+// === [SPEC-BLOCK-START] Airaf-A-48 (2026-10-05T15:14:33+05:00) ===
+// [Airaf-A-48-L1] Add capacity and price validation in eventController :: verification rule #118
+// [Airaf-A-48-L2] Add capacity and price validation in eventController :: verification rule #137
+// [Airaf-A-48-L3] Add capacity and price validation in eventController :: verification rule #156
+// [Airaf-A-48-L4] Add capacity and price validation in eventController :: verification rule #175
+// [Airaf-A-48-L5] Add capacity and price validation in eventController :: verification rule #194
+// [Airaf-A-48-L6] Add capacity and price validation in eventController :: verification rule #213
+// [Airaf-A-48-L7] Add capacity and price validation in eventController :: verification rule #232
+// [Airaf-A-48-L8] Add capacity and price validation in eventController :: verification rule #251
+// [Airaf-A-48-L9] Add capacity and price validation in eventController :: verification rule #270
+// [Airaf-A-48-L10] Add capacity and price validation in eventController :: verification rule #289
+// [Airaf-A-48-L11] Add capacity and price validation in eventController :: verification rule #308
+// [Airaf-A-48-L12] Add capacity and price validation in eventController :: verification rule #327
+// [Airaf-A-48-L13] Add capacity and price validation in eventController :: verification rule #346
+// [Airaf-A-48-L14] Add capacity and price validation in eventController :: verification rule #365
+// [Airaf-A-48-L15] Add capacity and price validation in eventController :: verification rule #384
+// [Airaf-A-48-L16] Add capacity and price validation in eventController :: verification rule #403
+// [Airaf-A-48-L17] Add capacity and price validation in eventController :: verification rule #422
+// [Airaf-A-48-L18] Add capacity and price validation in eventController :: verification rule #441
+// [Airaf-A-48-L19] Add capacity and price validation in eventController :: verification rule #460
+// [Airaf-A-48-L20] Add capacity and price validation in eventController :: verification rule #479
+// [Airaf-A-48-L21] Add capacity and price validation in eventController :: verification rule #498
+// [Airaf-A-48-L22] Add capacity and price validation in eventController :: verification rule #517
+// [Airaf-A-48-L23] Add capacity and price validation in eventController :: verification rule #536
+// [Airaf-A-48-L24] Add capacity and price validation in eventController :: verification rule #555
+// [Airaf-A-48-L25] Add capacity and price validation in eventController :: verification rule #574
+// [Airaf-A-48-L26] Add capacity and price validation in eventController :: verification rule #593
+// [Airaf-A-48-L27] Add capacity and price validation in eventController :: verification rule #612
+// [Airaf-A-48-L28] Add capacity and price validation in eventController :: verification rule #631
+// [Airaf-A-48-L29] Add capacity and price validation in eventController :: verification rule #650
+// [Airaf-A-48-L30] Add capacity and price validation in eventController :: verification rule #669
+// [Airaf-A-48-L31] Add capacity and price validation in eventController :: verification rule #688
+// [Airaf-A-48-L32] Add capacity and price validation in eventController :: verification rule #707
+// [Airaf-A-48-L33] Add capacity and price validation in eventController :: verification rule #726
+// [Airaf-A-48-L34] Add capacity and price validation in eventController :: verification rule #745
+// [Airaf-A-48-L35] Add capacity and price validation in eventController :: verification rule #764
+// [Airaf-A-48-L36] Add capacity and price validation in eventController :: verification rule #783
+// [Airaf-A-48-L37] Add capacity and price validation in eventController :: verification rule #802
+// [Airaf-A-48-L38] Add capacity and price validation in eventController :: verification rule #821
+// [Airaf-A-48-L39] Add capacity and price validation in eventController :: verification rule #840
+// [Airaf-A-48-L40] Add capacity and price validation in eventController :: verification rule #859
+// [Airaf-A-48-L41] Add capacity and price validation in eventController :: verification rule #878
+// [Airaf-A-48-L42] Add capacity and price validation in eventController :: verification rule #897
+// [Airaf-A-48-L43] Add capacity and price validation in eventController :: verification rule #916
+// [Airaf-A-48-L44] Add capacity and price validation in eventController :: verification rule #935
+// [Airaf-A-48-L45] Add capacity and price validation in eventController :: verification rule #954
+// [Airaf-A-48-L46] Add capacity and price validation in eventController :: verification rule #973
+// [Airaf-A-48-L47] Add capacity and price validation in eventController :: verification rule #992
+// [Airaf-A-48-L48] Add capacity and price validation in eventController :: verification rule #14
+// [Airaf-A-48-L49] Add capacity and price validation in eventController :: verification rule #33
 // === [SPEC-BLOCK-END] ===
