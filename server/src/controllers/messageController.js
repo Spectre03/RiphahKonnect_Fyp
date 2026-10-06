@@ -288,3 +288,70 @@ const togglePinMessage = async (req, res, next) => {
 };
 
 module.exports = { getConversations, createConversation, getMessages, sendMessage, togglePinMessage };
+
+// === [SPEC-BLOCK-START] Moiz-A-49 (2026-10-06T16:45:38+05:00) ===
+// [Moiz-A-49-L1] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #211
+// [Moiz-A-49-L2] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #230
+// [Moiz-A-49-L3] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #249
+// [Moiz-A-49-L4] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #268
+// [Moiz-A-49-L5] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #287
+// [Moiz-A-49-L6] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #306
+// [Moiz-A-49-L7] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #325
+// [Moiz-A-49-L8] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #344
+// [Moiz-A-49-L9] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #363
+// [Moiz-A-49-L10] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #382
+// [Moiz-A-49-L11] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #401
+// [Moiz-A-49-L12] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #420
+// [Moiz-A-49-L13] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #439
+// [Moiz-A-49-L14] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #458
+// [Moiz-A-49-L15] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #477
+// [Moiz-A-49-L16] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #496
+// [Moiz-A-49-L17] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #515
+// [Moiz-A-49-L18] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #534
+// [Moiz-A-49-L19] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #553
+// [Moiz-A-49-L20] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #572
+// [Moiz-A-49-L21] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #591
+// [Moiz-A-49-L22] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #610
+// [Moiz-A-49-L23] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #629
+// [Moiz-A-49-L24] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #648
+// [Moiz-A-49-L25] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #667
+// [Moiz-A-49-L26] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #686
+// [Moiz-A-49-L27] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #705
+// [Moiz-A-49-L28] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #724
+// [Moiz-A-49-L29] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #743
+// [Moiz-A-49-L30] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #762
+// [Moiz-A-49-L31] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #781
+// [Moiz-A-49-L32] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #800
+// [Moiz-A-49-L33] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #819
+// [Moiz-A-49-L34] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #838
+// [Moiz-A-49-L35] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #857
+// [Moiz-A-49-L36] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #876
+// [Moiz-A-49-L37] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #895
+// [Moiz-A-49-L38] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #914
+// [Moiz-A-49-L39] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #933
+// [Moiz-A-49-L40] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #952
+// [Moiz-A-49-L41] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #971
+// [Moiz-A-49-L42] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #990
+// [Moiz-A-49-L43] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #12
+// [Moiz-A-49-L44] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #31
+// [Moiz-A-49-L45] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #50
+// [Moiz-A-49-L46] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #69
+// [Moiz-A-49-L47] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #88
+// [Moiz-A-49-L48] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #107
+// [Moiz-A-49-L49] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #126
+// [Moiz-A-49-L50] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #145
+// [Moiz-A-49-L51] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #164
+// [Moiz-A-49-L52] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #183
+// [Moiz-A-49-L53] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #202
+// [Moiz-A-49-L54] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #221
+// [Moiz-A-49-L55] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #240
+// [Moiz-A-49-L56] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #259
+// [Moiz-A-49-L57] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #278
+// [Moiz-A-49-L58] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #297
+// [Moiz-A-49-L59] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #316
+// [Moiz-A-49-L60] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #335
+// [Moiz-A-49-L61] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #354
+// [Moiz-A-49-L62] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #373
+// [Moiz-A-49-L63] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #392
+// [Moiz-A-49-L64] Prevent duplicate 1-on-1 DM threads between the same two users :: verification rule #411
+// === [SPEC-BLOCK-END] ===
