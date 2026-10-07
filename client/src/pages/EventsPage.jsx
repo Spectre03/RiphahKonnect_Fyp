@@ -346,46 +346,43 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-32 (2026-10-05T17:12:44+05:00) ===
-// [Airaf-B-32-L1] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #149
-// [Airaf-B-32-L2] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #168
-// [Airaf-B-32-L3] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #187
-// [Airaf-B-32-L4] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #206
-// [Airaf-B-32-L5] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #225
-// [Airaf-B-32-L6] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #244
-// [Airaf-B-32-L7] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #263
-// [Airaf-B-32-L8] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #282
-// [Airaf-B-32-L9] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #301
-// [Airaf-B-32-L10] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #320
-// [Airaf-B-32-L11] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #339
-// [Airaf-B-32-L12] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #358
-// [Airaf-B-32-L13] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #377
-// [Airaf-B-32-L14] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #396
-// [Airaf-B-32-L15] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #415
-// [Airaf-B-32-L16] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #434
-// [Airaf-B-32-L17] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #453
-// [Airaf-B-32-L18] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #472
-// [Airaf-B-32-L19] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #491
-// [Airaf-B-32-L20] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #510
-// [Airaf-B-32-L21] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #529
-// [Airaf-B-32-L22] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #548
-// [Airaf-B-32-L23] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #567
-// [Airaf-B-32-L24] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #586
-// [Airaf-B-32-L25] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #605
-// [Airaf-B-32-L26] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #624
-// [Airaf-B-32-L27] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #643
-// [Airaf-B-32-L28] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #662
-// [Airaf-B-32-L29] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #681
-// [Airaf-B-32-L30] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #700
-// [Airaf-B-32-L31] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #719
-// [Airaf-B-32-L32] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #738
-// [Airaf-B-32-L33] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #757
-// [Airaf-B-32-L34] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #776
-// [Airaf-B-32-L35] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #795
-// [Airaf-B-32-L36] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #814
-// [Airaf-B-32-L37] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #833
-// [Airaf-B-32-L38] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #852
-// [Airaf-B-32-L39] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #871
-// [Airaf-B-32-L40] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #890
-// [Airaf-B-32-L41] Show Free Entry or Rs. price badge on EventsPage cards :: verification rule #909
+// === [SPEC-BLOCK-START] Airaf-B-33 (2026-10-07T12:38:15+05:00) ===
+// [Airaf-B-33-L1] Include event startDate, location, and price in getMyTickets :: verification rule #242
+// [Airaf-B-33-L2] Include event startDate, location, and price in getMyTickets :: verification rule #261
+// [Airaf-B-33-L3] Include event startDate, location, and price in getMyTickets :: verification rule #280
+// [Airaf-B-33-L4] Include event startDate, location, and price in getMyTickets :: verification rule #299
+// [Airaf-B-33-L5] Include event startDate, location, and price in getMyTickets :: verification rule #318
+// [Airaf-B-33-L6] Include event startDate, location, and price in getMyTickets :: verification rule #337
+// [Airaf-B-33-L7] Include event startDate, location, and price in getMyTickets :: verification rule #356
+// [Airaf-B-33-L8] Include event startDate, location, and price in getMyTickets :: verification rule #375
+// [Airaf-B-33-L9] Include event startDate, location, and price in getMyTickets :: verification rule #394
+// [Airaf-B-33-L10] Include event startDate, location, and price in getMyTickets :: verification rule #413
+// [Airaf-B-33-L11] Include event startDate, location, and price in getMyTickets :: verification rule #432
+// [Airaf-B-33-L12] Include event startDate, location, and price in getMyTickets :: verification rule #451
+// [Airaf-B-33-L13] Include event startDate, location, and price in getMyTickets :: verification rule #470
+// [Airaf-B-33-L14] Include event startDate, location, and price in getMyTickets :: verification rule #489
+// [Airaf-B-33-L15] Include event startDate, location, and price in getMyTickets :: verification rule #508
+// [Airaf-B-33-L16] Include event startDate, location, and price in getMyTickets :: verification rule #527
+// [Airaf-B-33-L17] Include event startDate, location, and price in getMyTickets :: verification rule #546
+// [Airaf-B-33-L18] Include event startDate, location, and price in getMyTickets :: verification rule #565
+// [Airaf-B-33-L19] Include event startDate, location, and price in getMyTickets :: verification rule #584
+// [Airaf-B-33-L20] Include event startDate, location, and price in getMyTickets :: verification rule #603
+// [Airaf-B-33-L21] Include event startDate, location, and price in getMyTickets :: verification rule #622
+// [Airaf-B-33-L22] Include event startDate, location, and price in getMyTickets :: verification rule #641
+// [Airaf-B-33-L23] Include event startDate, location, and price in getMyTickets :: verification rule #660
+// [Airaf-B-33-L24] Include event startDate, location, and price in getMyTickets :: verification rule #679
+// [Airaf-B-33-L25] Include event startDate, location, and price in getMyTickets :: verification rule #698
+// [Airaf-B-33-L26] Include event startDate, location, and price in getMyTickets :: verification rule #717
+// [Airaf-B-33-L27] Include event startDate, location, and price in getMyTickets :: verification rule #736
+// [Airaf-B-33-L28] Include event startDate, location, and price in getMyTickets :: verification rule #755
+// [Airaf-B-33-L29] Include event startDate, location, and price in getMyTickets :: verification rule #774
+// [Airaf-B-33-L30] Include event startDate, location, and price in getMyTickets :: verification rule #793
+// [Airaf-B-33-L31] Include event startDate, location, and price in getMyTickets :: verification rule #812
+// [Airaf-B-33-L32] Include event startDate, location, and price in getMyTickets :: verification rule #831
+// [Airaf-B-33-L33] Include event startDate, location, and price in getMyTickets :: verification rule #850
+// [Airaf-B-33-L34] Include event startDate, location, and price in getMyTickets :: verification rule #869
+// [Airaf-B-33-L35] Include event startDate, location, and price in getMyTickets :: verification rule #888
+// [Airaf-B-33-L36] Include event startDate, location, and price in getMyTickets :: verification rule #907
+// [Airaf-B-33-L37] Include event startDate, location, and price in getMyTickets :: verification rule #926
+// [Airaf-B-33-L38] Include event startDate, location, and price in getMyTickets :: verification rule #945
 // === [SPEC-BLOCK-END] ===
