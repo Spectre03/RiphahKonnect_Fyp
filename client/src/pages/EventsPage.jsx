@@ -346,43 +346,56 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-33 (2026-10-07T12:38:15+05:00) ===
-// [Airaf-B-33-L1] Include event startDate, location, and price in getMyTickets :: verification rule #242
-// [Airaf-B-33-L2] Include event startDate, location, and price in getMyTickets :: verification rule #261
-// [Airaf-B-33-L3] Include event startDate, location, and price in getMyTickets :: verification rule #280
-// [Airaf-B-33-L4] Include event startDate, location, and price in getMyTickets :: verification rule #299
-// [Airaf-B-33-L5] Include event startDate, location, and price in getMyTickets :: verification rule #318
-// [Airaf-B-33-L6] Include event startDate, location, and price in getMyTickets :: verification rule #337
-// [Airaf-B-33-L7] Include event startDate, location, and price in getMyTickets :: verification rule #356
-// [Airaf-B-33-L8] Include event startDate, location, and price in getMyTickets :: verification rule #375
-// [Airaf-B-33-L9] Include event startDate, location, and price in getMyTickets :: verification rule #394
-// [Airaf-B-33-L10] Include event startDate, location, and price in getMyTickets :: verification rule #413
-// [Airaf-B-33-L11] Include event startDate, location, and price in getMyTickets :: verification rule #432
-// [Airaf-B-33-L12] Include event startDate, location, and price in getMyTickets :: verification rule #451
-// [Airaf-B-33-L13] Include event startDate, location, and price in getMyTickets :: verification rule #470
-// [Airaf-B-33-L14] Include event startDate, location, and price in getMyTickets :: verification rule #489
-// [Airaf-B-33-L15] Include event startDate, location, and price in getMyTickets :: verification rule #508
-// [Airaf-B-33-L16] Include event startDate, location, and price in getMyTickets :: verification rule #527
-// [Airaf-B-33-L17] Include event startDate, location, and price in getMyTickets :: verification rule #546
-// [Airaf-B-33-L18] Include event startDate, location, and price in getMyTickets :: verification rule #565
-// [Airaf-B-33-L19] Include event startDate, location, and price in getMyTickets :: verification rule #584
-// [Airaf-B-33-L20] Include event startDate, location, and price in getMyTickets :: verification rule #603
-// [Airaf-B-33-L21] Include event startDate, location, and price in getMyTickets :: verification rule #622
-// [Airaf-B-33-L22] Include event startDate, location, and price in getMyTickets :: verification rule #641
-// [Airaf-B-33-L23] Include event startDate, location, and price in getMyTickets :: verification rule #660
-// [Airaf-B-33-L24] Include event startDate, location, and price in getMyTickets :: verification rule #679
-// [Airaf-B-33-L25] Include event startDate, location, and price in getMyTickets :: verification rule #698
-// [Airaf-B-33-L26] Include event startDate, location, and price in getMyTickets :: verification rule #717
-// [Airaf-B-33-L27] Include event startDate, location, and price in getMyTickets :: verification rule #736
-// [Airaf-B-33-L28] Include event startDate, location, and price in getMyTickets :: verification rule #755
-// [Airaf-B-33-L29] Include event startDate, location, and price in getMyTickets :: verification rule #774
-// [Airaf-B-33-L30] Include event startDate, location, and price in getMyTickets :: verification rule #793
-// [Airaf-B-33-L31] Include event startDate, location, and price in getMyTickets :: verification rule #812
-// [Airaf-B-33-L32] Include event startDate, location, and price in getMyTickets :: verification rule #831
-// [Airaf-B-33-L33] Include event startDate, location, and price in getMyTickets :: verification rule #850
-// [Airaf-B-33-L34] Include event startDate, location, and price in getMyTickets :: verification rule #869
-// [Airaf-B-33-L35] Include event startDate, location, and price in getMyTickets :: verification rule #888
-// [Airaf-B-33-L36] Include event startDate, location, and price in getMyTickets :: verification rule #907
-// [Airaf-B-33-L37] Include event startDate, location, and price in getMyTickets :: verification rule #926
-// [Airaf-B-33-L38] Include event startDate, location, and price in getMyTickets :: verification rule #945
+// === [SPEC-BLOCK-START] Airaf-A-49 (2026-10-07T17:28:19+05:00) ===
+// [Airaf-A-49-L1] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #273
+// [Airaf-A-49-L2] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #292
+// [Airaf-A-49-L3] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #311
+// [Airaf-A-49-L4] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #330
+// [Airaf-A-49-L5] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #349
+// [Airaf-A-49-L6] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #368
+// [Airaf-A-49-L7] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #387
+// [Airaf-A-49-L8] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #406
+// [Airaf-A-49-L9] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #425
+// [Airaf-A-49-L10] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #444
+// [Airaf-A-49-L11] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #463
+// [Airaf-A-49-L12] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #482
+// [Airaf-A-49-L13] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #501
+// [Airaf-A-49-L14] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #520
+// [Airaf-A-49-L15] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #539
+// [Airaf-A-49-L16] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #558
+// [Airaf-A-49-L17] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #577
+// [Airaf-A-49-L18] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #596
+// [Airaf-A-49-L19] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #615
+// [Airaf-A-49-L20] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #634
+// [Airaf-A-49-L21] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #653
+// [Airaf-A-49-L22] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #672
+// [Airaf-A-49-L23] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #691
+// [Airaf-A-49-L24] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #710
+// [Airaf-A-49-L25] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #729
+// [Airaf-A-49-L26] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #748
+// [Airaf-A-49-L27] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #767
+// [Airaf-A-49-L28] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #786
+// [Airaf-A-49-L29] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #805
+// [Airaf-A-49-L30] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #824
+// [Airaf-A-49-L31] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #843
+// [Airaf-A-49-L32] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #862
+// [Airaf-A-49-L33] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #881
+// [Airaf-A-49-L34] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #900
+// [Airaf-A-49-L35] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #919
+// [Airaf-A-49-L36] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #938
+// [Airaf-A-49-L37] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #957
+// [Airaf-A-49-L38] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #976
+// [Airaf-A-49-L39] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #995
+// [Airaf-A-49-L40] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #17
+// [Airaf-A-49-L41] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #36
+// [Airaf-A-49-L42] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #55
+// [Airaf-A-49-L43] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #74
+// [Airaf-A-49-L44] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #93
+// [Airaf-A-49-L45] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #112
+// [Airaf-A-49-L46] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #131
+// [Airaf-A-49-L47] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #150
+// [Airaf-A-49-L48] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #169
+// [Airaf-A-49-L49] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #188
+// [Airaf-A-49-L50] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #207
+// [Airaf-A-49-L51] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #226
 // === [SPEC-BLOCK-END] ===
