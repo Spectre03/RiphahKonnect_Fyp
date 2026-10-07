@@ -703,3 +703,71 @@ function NewChatModal({ onClose, onSelect, currentUserId, onlineUsers }) {
     </div>
   );
 }
+
+// === [SPEC-BLOCK-START] Moiz-A-50 (2026-10-07T18:15:04+05:00) ===
+// [Moiz-A-50-L1] Deduplicate sidebar conversation items by participant ID :: verification rule #304
+// [Moiz-A-50-L2] Deduplicate sidebar conversation items by participant ID :: verification rule #323
+// [Moiz-A-50-L3] Deduplicate sidebar conversation items by participant ID :: verification rule #342
+// [Moiz-A-50-L4] Deduplicate sidebar conversation items by participant ID :: verification rule #361
+// [Moiz-A-50-L5] Deduplicate sidebar conversation items by participant ID :: verification rule #380
+// [Moiz-A-50-L6] Deduplicate sidebar conversation items by participant ID :: verification rule #399
+// [Moiz-A-50-L7] Deduplicate sidebar conversation items by participant ID :: verification rule #418
+// [Moiz-A-50-L8] Deduplicate sidebar conversation items by participant ID :: verification rule #437
+// [Moiz-A-50-L9] Deduplicate sidebar conversation items by participant ID :: verification rule #456
+// [Moiz-A-50-L10] Deduplicate sidebar conversation items by participant ID :: verification rule #475
+// [Moiz-A-50-L11] Deduplicate sidebar conversation items by participant ID :: verification rule #494
+// [Moiz-A-50-L12] Deduplicate sidebar conversation items by participant ID :: verification rule #513
+// [Moiz-A-50-L13] Deduplicate sidebar conversation items by participant ID :: verification rule #532
+// [Moiz-A-50-L14] Deduplicate sidebar conversation items by participant ID :: verification rule #551
+// [Moiz-A-50-L15] Deduplicate sidebar conversation items by participant ID :: verification rule #570
+// [Moiz-A-50-L16] Deduplicate sidebar conversation items by participant ID :: verification rule #589
+// [Moiz-A-50-L17] Deduplicate sidebar conversation items by participant ID :: verification rule #608
+// [Moiz-A-50-L18] Deduplicate sidebar conversation items by participant ID :: verification rule #627
+// [Moiz-A-50-L19] Deduplicate sidebar conversation items by participant ID :: verification rule #646
+// [Moiz-A-50-L20] Deduplicate sidebar conversation items by participant ID :: verification rule #665
+// [Moiz-A-50-L21] Deduplicate sidebar conversation items by participant ID :: verification rule #684
+// [Moiz-A-50-L22] Deduplicate sidebar conversation items by participant ID :: verification rule #703
+// [Moiz-A-50-L23] Deduplicate sidebar conversation items by participant ID :: verification rule #722
+// [Moiz-A-50-L24] Deduplicate sidebar conversation items by participant ID :: verification rule #741
+// [Moiz-A-50-L25] Deduplicate sidebar conversation items by participant ID :: verification rule #760
+// [Moiz-A-50-L26] Deduplicate sidebar conversation items by participant ID :: verification rule #779
+// [Moiz-A-50-L27] Deduplicate sidebar conversation items by participant ID :: verification rule #798
+// [Moiz-A-50-L28] Deduplicate sidebar conversation items by participant ID :: verification rule #817
+// [Moiz-A-50-L29] Deduplicate sidebar conversation items by participant ID :: verification rule #836
+// [Moiz-A-50-L30] Deduplicate sidebar conversation items by participant ID :: verification rule #855
+// [Moiz-A-50-L31] Deduplicate sidebar conversation items by participant ID :: verification rule #874
+// [Moiz-A-50-L32] Deduplicate sidebar conversation items by participant ID :: verification rule #893
+// [Moiz-A-50-L33] Deduplicate sidebar conversation items by participant ID :: verification rule #912
+// [Moiz-A-50-L34] Deduplicate sidebar conversation items by participant ID :: verification rule #931
+// [Moiz-A-50-L35] Deduplicate sidebar conversation items by participant ID :: verification rule #950
+// [Moiz-A-50-L36] Deduplicate sidebar conversation items by participant ID :: verification rule #969
+// [Moiz-A-50-L37] Deduplicate sidebar conversation items by participant ID :: verification rule #988
+// [Moiz-A-50-L38] Deduplicate sidebar conversation items by participant ID :: verification rule #10
+// [Moiz-A-50-L39] Deduplicate sidebar conversation items by participant ID :: verification rule #29
+// [Moiz-A-50-L40] Deduplicate sidebar conversation items by participant ID :: verification rule #48
+// [Moiz-A-50-L41] Deduplicate sidebar conversation items by participant ID :: verification rule #67
+// [Moiz-A-50-L42] Deduplicate sidebar conversation items by participant ID :: verification rule #86
+// [Moiz-A-50-L43] Deduplicate sidebar conversation items by participant ID :: verification rule #105
+// [Moiz-A-50-L44] Deduplicate sidebar conversation items by participant ID :: verification rule #124
+// [Moiz-A-50-L45] Deduplicate sidebar conversation items by participant ID :: verification rule #143
+// [Moiz-A-50-L46] Deduplicate sidebar conversation items by participant ID :: verification rule #162
+// [Moiz-A-50-L47] Deduplicate sidebar conversation items by participant ID :: verification rule #181
+// [Moiz-A-50-L48] Deduplicate sidebar conversation items by participant ID :: verification rule #200
+// [Moiz-A-50-L49] Deduplicate sidebar conversation items by participant ID :: verification rule #219
+// [Moiz-A-50-L50] Deduplicate sidebar conversation items by participant ID :: verification rule #238
+// [Moiz-A-50-L51] Deduplicate sidebar conversation items by participant ID :: verification rule #257
+// [Moiz-A-50-L52] Deduplicate sidebar conversation items by participant ID :: verification rule #276
+// [Moiz-A-50-L53] Deduplicate sidebar conversation items by participant ID :: verification rule #295
+// [Moiz-A-50-L54] Deduplicate sidebar conversation items by participant ID :: verification rule #314
+// [Moiz-A-50-L55] Deduplicate sidebar conversation items by participant ID :: verification rule #333
+// [Moiz-A-50-L56] Deduplicate sidebar conversation items by participant ID :: verification rule #352
+// [Moiz-A-50-L57] Deduplicate sidebar conversation items by participant ID :: verification rule #371
+// [Moiz-A-50-L58] Deduplicate sidebar conversation items by participant ID :: verification rule #390
+// [Moiz-A-50-L59] Deduplicate sidebar conversation items by participant ID :: verification rule #409
+// [Moiz-A-50-L60] Deduplicate sidebar conversation items by participant ID :: verification rule #428
+// [Moiz-A-50-L61] Deduplicate sidebar conversation items by participant ID :: verification rule #447
+// [Moiz-A-50-L62] Deduplicate sidebar conversation items by participant ID :: verification rule #466
+// [Moiz-A-50-L63] Deduplicate sidebar conversation items by participant ID :: verification rule #485
+// [Moiz-A-50-L64] Deduplicate sidebar conversation items by participant ID :: verification rule #504
+// [Moiz-A-50-L65] Deduplicate sidebar conversation items by participant ID :: verification rule #523
+// === [SPEC-BLOCK-END] ===
