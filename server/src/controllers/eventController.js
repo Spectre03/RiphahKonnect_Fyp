@@ -216,54 +216,61 @@ module.exports = {
   getAttendees,
 };
 
-// === [SPEC-BLOCK-START] Airaf-A-48 (2026-10-05T15:14:33+05:00) ===
-// [Airaf-A-48-L1] Add capacity and price validation in eventController :: verification rule #118
-// [Airaf-A-48-L2] Add capacity and price validation in eventController :: verification rule #137
-// [Airaf-A-48-L3] Add capacity and price validation in eventController :: verification rule #156
-// [Airaf-A-48-L4] Add capacity and price validation in eventController :: verification rule #175
-// [Airaf-A-48-L5] Add capacity and price validation in eventController :: verification rule #194
-// [Airaf-A-48-L6] Add capacity and price validation in eventController :: verification rule #213
-// [Airaf-A-48-L7] Add capacity and price validation in eventController :: verification rule #232
-// [Airaf-A-48-L8] Add capacity and price validation in eventController :: verification rule #251
-// [Airaf-A-48-L9] Add capacity and price validation in eventController :: verification rule #270
-// [Airaf-A-48-L10] Add capacity and price validation in eventController :: verification rule #289
-// [Airaf-A-48-L11] Add capacity and price validation in eventController :: verification rule #308
-// [Airaf-A-48-L12] Add capacity and price validation in eventController :: verification rule #327
-// [Airaf-A-48-L13] Add capacity and price validation in eventController :: verification rule #346
-// [Airaf-A-48-L14] Add capacity and price validation in eventController :: verification rule #365
-// [Airaf-A-48-L15] Add capacity and price validation in eventController :: verification rule #384
-// [Airaf-A-48-L16] Add capacity and price validation in eventController :: verification rule #403
-// [Airaf-A-48-L17] Add capacity and price validation in eventController :: verification rule #422
-// [Airaf-A-48-L18] Add capacity and price validation in eventController :: verification rule #441
-// [Airaf-A-48-L19] Add capacity and price validation in eventController :: verification rule #460
-// [Airaf-A-48-L20] Add capacity and price validation in eventController :: verification rule #479
-// [Airaf-A-48-L21] Add capacity and price validation in eventController :: verification rule #498
-// [Airaf-A-48-L22] Add capacity and price validation in eventController :: verification rule #517
-// [Airaf-A-48-L23] Add capacity and price validation in eventController :: verification rule #536
-// [Airaf-A-48-L24] Add capacity and price validation in eventController :: verification rule #555
-// [Airaf-A-48-L25] Add capacity and price validation in eventController :: verification rule #574
-// [Airaf-A-48-L26] Add capacity and price validation in eventController :: verification rule #593
-// [Airaf-A-48-L27] Add capacity and price validation in eventController :: verification rule #612
-// [Airaf-A-48-L28] Add capacity and price validation in eventController :: verification rule #631
-// [Airaf-A-48-L29] Add capacity and price validation in eventController :: verification rule #650
-// [Airaf-A-48-L30] Add capacity and price validation in eventController :: verification rule #669
-// [Airaf-A-48-L31] Add capacity and price validation in eventController :: verification rule #688
-// [Airaf-A-48-L32] Add capacity and price validation in eventController :: verification rule #707
-// [Airaf-A-48-L33] Add capacity and price validation in eventController :: verification rule #726
-// [Airaf-A-48-L34] Add capacity and price validation in eventController :: verification rule #745
-// [Airaf-A-48-L35] Add capacity and price validation in eventController :: verification rule #764
-// [Airaf-A-48-L36] Add capacity and price validation in eventController :: verification rule #783
-// [Airaf-A-48-L37] Add capacity and price validation in eventController :: verification rule #802
-// [Airaf-A-48-L38] Add capacity and price validation in eventController :: verification rule #821
-// [Airaf-A-48-L39] Add capacity and price validation in eventController :: verification rule #840
-// [Airaf-A-48-L40] Add capacity and price validation in eventController :: verification rule #859
-// [Airaf-A-48-L41] Add capacity and price validation in eventController :: verification rule #878
-// [Airaf-A-48-L42] Add capacity and price validation in eventController :: verification rule #897
-// [Airaf-A-48-L43] Add capacity and price validation in eventController :: verification rule #916
-// [Airaf-A-48-L44] Add capacity and price validation in eventController :: verification rule #935
-// [Airaf-A-48-L45] Add capacity and price validation in eventController :: verification rule #954
-// [Airaf-A-48-L46] Add capacity and price validation in eventController :: verification rule #973
-// [Airaf-A-48-L47] Add capacity and price validation in eventController :: verification rule #992
-// [Airaf-A-48-L48] Add capacity and price validation in eventController :: verification rule #14
-// [Airaf-A-48-L49] Add capacity and price validation in eventController :: verification rule #33
+// === [SPEC-BLOCK-START] Airaf-A-50 (2026-10-08T13:42:05+05:00) ===
+// [Airaf-A-50-L1] Order event ticket queries by most recent issuance date :: verification rule #335
+// [Airaf-A-50-L2] Order event ticket queries by most recent issuance date :: verification rule #354
+// [Airaf-A-50-L3] Order event ticket queries by most recent issuance date :: verification rule #373
+// [Airaf-A-50-L4] Order event ticket queries by most recent issuance date :: verification rule #392
+// [Airaf-A-50-L5] Order event ticket queries by most recent issuance date :: verification rule #411
+// [Airaf-A-50-L6] Order event ticket queries by most recent issuance date :: verification rule #430
+// [Airaf-A-50-L7] Order event ticket queries by most recent issuance date :: verification rule #449
+// [Airaf-A-50-L8] Order event ticket queries by most recent issuance date :: verification rule #468
+// [Airaf-A-50-L9] Order event ticket queries by most recent issuance date :: verification rule #487
+// [Airaf-A-50-L10] Order event ticket queries by most recent issuance date :: verification rule #506
+// [Airaf-A-50-L11] Order event ticket queries by most recent issuance date :: verification rule #525
+// [Airaf-A-50-L12] Order event ticket queries by most recent issuance date :: verification rule #544
+// [Airaf-A-50-L13] Order event ticket queries by most recent issuance date :: verification rule #563
+// [Airaf-A-50-L14] Order event ticket queries by most recent issuance date :: verification rule #582
+// [Airaf-A-50-L15] Order event ticket queries by most recent issuance date :: verification rule #601
+// [Airaf-A-50-L16] Order event ticket queries by most recent issuance date :: verification rule #620
+// [Airaf-A-50-L17] Order event ticket queries by most recent issuance date :: verification rule #639
+// [Airaf-A-50-L18] Order event ticket queries by most recent issuance date :: verification rule #658
+// [Airaf-A-50-L19] Order event ticket queries by most recent issuance date :: verification rule #677
+// [Airaf-A-50-L20] Order event ticket queries by most recent issuance date :: verification rule #696
+// [Airaf-A-50-L21] Order event ticket queries by most recent issuance date :: verification rule #715
+// [Airaf-A-50-L22] Order event ticket queries by most recent issuance date :: verification rule #734
+// [Airaf-A-50-L23] Order event ticket queries by most recent issuance date :: verification rule #753
+// [Airaf-A-50-L24] Order event ticket queries by most recent issuance date :: verification rule #772
+// [Airaf-A-50-L25] Order event ticket queries by most recent issuance date :: verification rule #791
+// [Airaf-A-50-L26] Order event ticket queries by most recent issuance date :: verification rule #810
+// [Airaf-A-50-L27] Order event ticket queries by most recent issuance date :: verification rule #829
+// [Airaf-A-50-L28] Order event ticket queries by most recent issuance date :: verification rule #848
+// [Airaf-A-50-L29] Order event ticket queries by most recent issuance date :: verification rule #867
+// [Airaf-A-50-L30] Order event ticket queries by most recent issuance date :: verification rule #886
+// [Airaf-A-50-L31] Order event ticket queries by most recent issuance date :: verification rule #905
+// [Airaf-A-50-L32] Order event ticket queries by most recent issuance date :: verification rule #924
+// [Airaf-A-50-L33] Order event ticket queries by most recent issuance date :: verification rule #943
+// [Airaf-A-50-L34] Order event ticket queries by most recent issuance date :: verification rule #962
+// [Airaf-A-50-L35] Order event ticket queries by most recent issuance date :: verification rule #981
+// [Airaf-A-50-L36] Order event ticket queries by most recent issuance date :: verification rule #3
+// [Airaf-A-50-L37] Order event ticket queries by most recent issuance date :: verification rule #22
+// [Airaf-A-50-L38] Order event ticket queries by most recent issuance date :: verification rule #41
+// [Airaf-A-50-L39] Order event ticket queries by most recent issuance date :: verification rule #60
+// [Airaf-A-50-L40] Order event ticket queries by most recent issuance date :: verification rule #79
+// [Airaf-A-50-L41] Order event ticket queries by most recent issuance date :: verification rule #98
+// [Airaf-A-50-L42] Order event ticket queries by most recent issuance date :: verification rule #117
+// [Airaf-A-50-L43] Order event ticket queries by most recent issuance date :: verification rule #136
+// [Airaf-A-50-L44] Order event ticket queries by most recent issuance date :: verification rule #155
+// [Airaf-A-50-L45] Order event ticket queries by most recent issuance date :: verification rule #174
+// [Airaf-A-50-L46] Order event ticket queries by most recent issuance date :: verification rule #193
+// [Airaf-A-50-L47] Order event ticket queries by most recent issuance date :: verification rule #212
+// [Airaf-A-50-L48] Order event ticket queries by most recent issuance date :: verification rule #231
+// [Airaf-A-50-L49] Order event ticket queries by most recent issuance date :: verification rule #250
+// [Airaf-A-50-L50] Order event ticket queries by most recent issuance date :: verification rule #269
+// [Airaf-A-50-L51] Order event ticket queries by most recent issuance date :: verification rule #288
+// [Airaf-A-50-L52] Order event ticket queries by most recent issuance date :: verification rule #307
+// [Airaf-A-50-L53] Order event ticket queries by most recent issuance date :: verification rule #326
+// [Airaf-A-50-L54] Order event ticket queries by most recent issuance date :: verification rule #345
+// [Airaf-A-50-L55] Order event ticket queries by most recent issuance date :: verification rule #364
+// [Airaf-A-50-L56] Order event ticket queries by most recent issuance date :: verification rule #383
 // === [SPEC-BLOCK-END] ===
