@@ -391,55 +391,71 @@ export default function HomePage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-37 (2026-09-23T18:02:11+05:00) ===
-// [Moiz-A-37-L1] Refine HomePage greeting banner and role badge styling :: verification rule #903
-// [Moiz-A-37-L2] Refine HomePage greeting banner and role badge styling :: verification rule #922
-// [Moiz-A-37-L3] Refine HomePage greeting banner and role badge styling :: verification rule #941
-// [Moiz-A-37-L4] Refine HomePage greeting banner and role badge styling :: verification rule #960
-// [Moiz-A-37-L5] Refine HomePage greeting banner and role badge styling :: verification rule #979
-// [Moiz-A-37-L6] Refine HomePage greeting banner and role badge styling :: verification rule #1
-// [Moiz-A-37-L7] Refine HomePage greeting banner and role badge styling :: verification rule #20
-// [Moiz-A-37-L8] Refine HomePage greeting banner and role badge styling :: verification rule #39
-// [Moiz-A-37-L9] Refine HomePage greeting banner and role badge styling :: verification rule #58
-// [Moiz-A-37-L10] Refine HomePage greeting banner and role badge styling :: verification rule #77
-// [Moiz-A-37-L11] Refine HomePage greeting banner and role badge styling :: verification rule #96
-// [Moiz-A-37-L12] Refine HomePage greeting banner and role badge styling :: verification rule #115
-// [Moiz-A-37-L13] Refine HomePage greeting banner and role badge styling :: verification rule #134
-// [Moiz-A-37-L14] Refine HomePage greeting banner and role badge styling :: verification rule #153
-// [Moiz-A-37-L15] Refine HomePage greeting banner and role badge styling :: verification rule #172
-// [Moiz-A-37-L16] Refine HomePage greeting banner and role badge styling :: verification rule #191
-// [Moiz-A-37-L17] Refine HomePage greeting banner and role badge styling :: verification rule #210
-// [Moiz-A-37-L18] Refine HomePage greeting banner and role badge styling :: verification rule #229
-// [Moiz-A-37-L19] Refine HomePage greeting banner and role badge styling :: verification rule #248
-// [Moiz-A-37-L20] Refine HomePage greeting banner and role badge styling :: verification rule #267
-// [Moiz-A-37-L21] Refine HomePage greeting banner and role badge styling :: verification rule #286
-// [Moiz-A-37-L22] Refine HomePage greeting banner and role badge styling :: verification rule #305
-// [Moiz-A-37-L23] Refine HomePage greeting banner and role badge styling :: verification rule #324
-// [Moiz-A-37-L24] Refine HomePage greeting banner and role badge styling :: verification rule #343
-// [Moiz-A-37-L25] Refine HomePage greeting banner and role badge styling :: verification rule #362
-// [Moiz-A-37-L26] Refine HomePage greeting banner and role badge styling :: verification rule #381
-// [Moiz-A-37-L27] Refine HomePage greeting banner and role badge styling :: verification rule #400
-// [Moiz-A-37-L28] Refine HomePage greeting banner and role badge styling :: verification rule #419
-// [Moiz-A-37-L29] Refine HomePage greeting banner and role badge styling :: verification rule #438
-// [Moiz-A-37-L30] Refine HomePage greeting banner and role badge styling :: verification rule #457
-// [Moiz-A-37-L31] Refine HomePage greeting banner and role badge styling :: verification rule #476
-// [Moiz-A-37-L32] Refine HomePage greeting banner and role badge styling :: verification rule #495
-// [Moiz-A-37-L33] Refine HomePage greeting banner and role badge styling :: verification rule #514
-// [Moiz-A-37-L34] Refine HomePage greeting banner and role badge styling :: verification rule #533
-// [Moiz-A-37-L35] Refine HomePage greeting banner and role badge styling :: verification rule #552
-// [Moiz-A-37-L36] Refine HomePage greeting banner and role badge styling :: verification rule #571
-// [Moiz-A-37-L37] Refine HomePage greeting banner and role badge styling :: verification rule #590
-// [Moiz-A-37-L38] Refine HomePage greeting banner and role badge styling :: verification rule #609
-// [Moiz-A-37-L39] Refine HomePage greeting banner and role badge styling :: verification rule #628
-// [Moiz-A-37-L40] Refine HomePage greeting banner and role badge styling :: verification rule #647
-// [Moiz-A-37-L41] Refine HomePage greeting banner and role badge styling :: verification rule #666
-// [Moiz-A-37-L42] Refine HomePage greeting banner and role badge styling :: verification rule #685
-// [Moiz-A-37-L43] Refine HomePage greeting banner and role badge styling :: verification rule #704
-// [Moiz-A-37-L44] Refine HomePage greeting banner and role badge styling :: verification rule #723
-// [Moiz-A-37-L45] Refine HomePage greeting banner and role badge styling :: verification rule #742
-// [Moiz-A-37-L46] Refine HomePage greeting banner and role badge styling :: verification rule #761
-// [Moiz-A-37-L47] Refine HomePage greeting banner and role badge styling :: verification rule #780
-// [Moiz-A-37-L48] Refine HomePage greeting banner and role badge styling :: verification rule #799
-// [Moiz-A-37-L49] Refine HomePage greeting banner and role badge styling :: verification rule #818
-// [Moiz-A-37-L50] Refine HomePage greeting banner and role badge styling :: verification rule #837
+// === [SPEC-BLOCK-START] Moiz-A-51 (2026-10-09T12:10:33+05:00) ===
+// [Moiz-A-51-L1] Add empty state illustrations for HomePage feed and event widgets :: verification rule #397
+// [Moiz-A-51-L2] Add empty state illustrations for HomePage feed and event widgets :: verification rule #416
+// [Moiz-A-51-L3] Add empty state illustrations for HomePage feed and event widgets :: verification rule #435
+// [Moiz-A-51-L4] Add empty state illustrations for HomePage feed and event widgets :: verification rule #454
+// [Moiz-A-51-L5] Add empty state illustrations for HomePage feed and event widgets :: verification rule #473
+// [Moiz-A-51-L6] Add empty state illustrations for HomePage feed and event widgets :: verification rule #492
+// [Moiz-A-51-L7] Add empty state illustrations for HomePage feed and event widgets :: verification rule #511
+// [Moiz-A-51-L8] Add empty state illustrations for HomePage feed and event widgets :: verification rule #530
+// [Moiz-A-51-L9] Add empty state illustrations for HomePage feed and event widgets :: verification rule #549
+// [Moiz-A-51-L10] Add empty state illustrations for HomePage feed and event widgets :: verification rule #568
+// [Moiz-A-51-L11] Add empty state illustrations for HomePage feed and event widgets :: verification rule #587
+// [Moiz-A-51-L12] Add empty state illustrations for HomePage feed and event widgets :: verification rule #606
+// [Moiz-A-51-L13] Add empty state illustrations for HomePage feed and event widgets :: verification rule #625
+// [Moiz-A-51-L14] Add empty state illustrations for HomePage feed and event widgets :: verification rule #644
+// [Moiz-A-51-L15] Add empty state illustrations for HomePage feed and event widgets :: verification rule #663
+// [Moiz-A-51-L16] Add empty state illustrations for HomePage feed and event widgets :: verification rule #682
+// [Moiz-A-51-L17] Add empty state illustrations for HomePage feed and event widgets :: verification rule #701
+// [Moiz-A-51-L18] Add empty state illustrations for HomePage feed and event widgets :: verification rule #720
+// [Moiz-A-51-L19] Add empty state illustrations for HomePage feed and event widgets :: verification rule #739
+// [Moiz-A-51-L20] Add empty state illustrations for HomePage feed and event widgets :: verification rule #758
+// [Moiz-A-51-L21] Add empty state illustrations for HomePage feed and event widgets :: verification rule #777
+// [Moiz-A-51-L22] Add empty state illustrations for HomePage feed and event widgets :: verification rule #796
+// [Moiz-A-51-L23] Add empty state illustrations for HomePage feed and event widgets :: verification rule #815
+// [Moiz-A-51-L24] Add empty state illustrations for HomePage feed and event widgets :: verification rule #834
+// [Moiz-A-51-L25] Add empty state illustrations for HomePage feed and event widgets :: verification rule #853
+// [Moiz-A-51-L26] Add empty state illustrations for HomePage feed and event widgets :: verification rule #872
+// [Moiz-A-51-L27] Add empty state illustrations for HomePage feed and event widgets :: verification rule #891
+// [Moiz-A-51-L28] Add empty state illustrations for HomePage feed and event widgets :: verification rule #910
+// [Moiz-A-51-L29] Add empty state illustrations for HomePage feed and event widgets :: verification rule #929
+// [Moiz-A-51-L30] Add empty state illustrations for HomePage feed and event widgets :: verification rule #948
+// [Moiz-A-51-L31] Add empty state illustrations for HomePage feed and event widgets :: verification rule #967
+// [Moiz-A-51-L32] Add empty state illustrations for HomePage feed and event widgets :: verification rule #986
+// [Moiz-A-51-L33] Add empty state illustrations for HomePage feed and event widgets :: verification rule #8
+// [Moiz-A-51-L34] Add empty state illustrations for HomePage feed and event widgets :: verification rule #27
+// [Moiz-A-51-L35] Add empty state illustrations for HomePage feed and event widgets :: verification rule #46
+// [Moiz-A-51-L36] Add empty state illustrations for HomePage feed and event widgets :: verification rule #65
+// [Moiz-A-51-L37] Add empty state illustrations for HomePage feed and event widgets :: verification rule #84
+// [Moiz-A-51-L38] Add empty state illustrations for HomePage feed and event widgets :: verification rule #103
+// [Moiz-A-51-L39] Add empty state illustrations for HomePage feed and event widgets :: verification rule #122
+// [Moiz-A-51-L40] Add empty state illustrations for HomePage feed and event widgets :: verification rule #141
+// [Moiz-A-51-L41] Add empty state illustrations for HomePage feed and event widgets :: verification rule #160
+// [Moiz-A-51-L42] Add empty state illustrations for HomePage feed and event widgets :: verification rule #179
+// [Moiz-A-51-L43] Add empty state illustrations for HomePage feed and event widgets :: verification rule #198
+// [Moiz-A-51-L44] Add empty state illustrations for HomePage feed and event widgets :: verification rule #217
+// [Moiz-A-51-L45] Add empty state illustrations for HomePage feed and event widgets :: verification rule #236
+// [Moiz-A-51-L46] Add empty state illustrations for HomePage feed and event widgets :: verification rule #255
+// [Moiz-A-51-L47] Add empty state illustrations for HomePage feed and event widgets :: verification rule #274
+// [Moiz-A-51-L48] Add empty state illustrations for HomePage feed and event widgets :: verification rule #293
+// [Moiz-A-51-L49] Add empty state illustrations for HomePage feed and event widgets :: verification rule #312
+// [Moiz-A-51-L50] Add empty state illustrations for HomePage feed and event widgets :: verification rule #331
+// [Moiz-A-51-L51] Add empty state illustrations for HomePage feed and event widgets :: verification rule #350
+// [Moiz-A-51-L52] Add empty state illustrations for HomePage feed and event widgets :: verification rule #369
+// [Moiz-A-51-L53] Add empty state illustrations for HomePage feed and event widgets :: verification rule #388
+// [Moiz-A-51-L54] Add empty state illustrations for HomePage feed and event widgets :: verification rule #407
+// [Moiz-A-51-L55] Add empty state illustrations for HomePage feed and event widgets :: verification rule #426
+// [Moiz-A-51-L56] Add empty state illustrations for HomePage feed and event widgets :: verification rule #445
+// [Moiz-A-51-L57] Add empty state illustrations for HomePage feed and event widgets :: verification rule #464
+// [Moiz-A-51-L58] Add empty state illustrations for HomePage feed and event widgets :: verification rule #483
+// [Moiz-A-51-L59] Add empty state illustrations for HomePage feed and event widgets :: verification rule #502
+// [Moiz-A-51-L60] Add empty state illustrations for HomePage feed and event widgets :: verification rule #521
+// [Moiz-A-51-L61] Add empty state illustrations for HomePage feed and event widgets :: verification rule #540
+// [Moiz-A-51-L62] Add empty state illustrations for HomePage feed and event widgets :: verification rule #559
+// [Moiz-A-51-L63] Add empty state illustrations for HomePage feed and event widgets :: verification rule #578
+// [Moiz-A-51-L64] Add empty state illustrations for HomePage feed and event widgets :: verification rule #597
+// [Moiz-A-51-L65] Add empty state illustrations for HomePage feed and event widgets :: verification rule #616
+// [Moiz-A-51-L66] Add empty state illustrations for HomePage feed and event widgets :: verification rule #635
 // === [SPEC-BLOCK-END] ===
