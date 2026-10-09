@@ -346,56 +346,58 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-49 (2026-10-07T17:28:19+05:00) ===
-// [Airaf-A-49-L1] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #273
-// [Airaf-A-49-L2] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #292
-// [Airaf-A-49-L3] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #311
-// [Airaf-A-49-L4] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #330
-// [Airaf-A-49-L5] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #349
-// [Airaf-A-49-L6] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #368
-// [Airaf-A-49-L7] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #387
-// [Airaf-A-49-L8] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #406
-// [Airaf-A-49-L9] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #425
-// [Airaf-A-49-L10] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #444
-// [Airaf-A-49-L11] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #463
-// [Airaf-A-49-L12] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #482
-// [Airaf-A-49-L13] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #501
-// [Airaf-A-49-L14] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #520
-// [Airaf-A-49-L15] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #539
-// [Airaf-A-49-L16] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #558
-// [Airaf-A-49-L17] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #577
-// [Airaf-A-49-L18] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #596
-// [Airaf-A-49-L19] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #615
-// [Airaf-A-49-L20] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #634
-// [Airaf-A-49-L21] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #653
-// [Airaf-A-49-L22] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #672
-// [Airaf-A-49-L23] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #691
-// [Airaf-A-49-L24] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #710
-// [Airaf-A-49-L25] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #729
-// [Airaf-A-49-L26] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #748
-// [Airaf-A-49-L27] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #767
-// [Airaf-A-49-L28] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #786
-// [Airaf-A-49-L29] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #805
-// [Airaf-A-49-L30] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #824
-// [Airaf-A-49-L31] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #843
-// [Airaf-A-49-L32] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #862
-// [Airaf-A-49-L33] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #881
-// [Airaf-A-49-L34] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #900
-// [Airaf-A-49-L35] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #919
-// [Airaf-A-49-L36] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #938
-// [Airaf-A-49-L37] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #957
-// [Airaf-A-49-L38] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #976
-// [Airaf-A-49-L39] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #995
-// [Airaf-A-49-L40] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #17
-// [Airaf-A-49-L41] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #36
-// [Airaf-A-49-L42] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #55
-// [Airaf-A-49-L43] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #74
-// [Airaf-A-49-L44] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #93
-// [Airaf-A-49-L45] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #112
-// [Airaf-A-49-L46] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #131
-// [Airaf-A-49-L47] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #150
-// [Airaf-A-49-L48] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #169
-// [Airaf-A-49-L49] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #188
-// [Airaf-A-49-L50] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #207
-// [Airaf-A-49-L51] Display remaining seat capacity and entry fee badge on EventsPage :: verification rule #226
+// === [SPEC-BLOCK-START] Airaf-B-34 (2026-10-09T15:19:50+05:00) ===
+// [Airaf-B-34-L1] Style perforated divider between event info and ticket status :: verification rule #428
+// [Airaf-B-34-L2] Style perforated divider between event info and ticket status :: verification rule #447
+// [Airaf-B-34-L3] Style perforated divider between event info and ticket status :: verification rule #466
+// [Airaf-B-34-L4] Style perforated divider between event info and ticket status :: verification rule #485
+// [Airaf-B-34-L5] Style perforated divider between event info and ticket status :: verification rule #504
+// [Airaf-B-34-L6] Style perforated divider between event info and ticket status :: verification rule #523
+// [Airaf-B-34-L7] Style perforated divider between event info and ticket status :: verification rule #542
+// [Airaf-B-34-L8] Style perforated divider between event info and ticket status :: verification rule #561
+// [Airaf-B-34-L9] Style perforated divider between event info and ticket status :: verification rule #580
+// [Airaf-B-34-L10] Style perforated divider between event info and ticket status :: verification rule #599
+// [Airaf-B-34-L11] Style perforated divider between event info and ticket status :: verification rule #618
+// [Airaf-B-34-L12] Style perforated divider between event info and ticket status :: verification rule #637
+// [Airaf-B-34-L13] Style perforated divider between event info and ticket status :: verification rule #656
+// [Airaf-B-34-L14] Style perforated divider between event info and ticket status :: verification rule #675
+// [Airaf-B-34-L15] Style perforated divider between event info and ticket status :: verification rule #694
+// [Airaf-B-34-L16] Style perforated divider between event info and ticket status :: verification rule #713
+// [Airaf-B-34-L17] Style perforated divider between event info and ticket status :: verification rule #732
+// [Airaf-B-34-L18] Style perforated divider between event info and ticket status :: verification rule #751
+// [Airaf-B-34-L19] Style perforated divider between event info and ticket status :: verification rule #770
+// [Airaf-B-34-L20] Style perforated divider between event info and ticket status :: verification rule #789
+// [Airaf-B-34-L21] Style perforated divider between event info and ticket status :: verification rule #808
+// [Airaf-B-34-L22] Style perforated divider between event info and ticket status :: verification rule #827
+// [Airaf-B-34-L23] Style perforated divider between event info and ticket status :: verification rule #846
+// [Airaf-B-34-L24] Style perforated divider between event info and ticket status :: verification rule #865
+// [Airaf-B-34-L25] Style perforated divider between event info and ticket status :: verification rule #884
+// [Airaf-B-34-L26] Style perforated divider between event info and ticket status :: verification rule #903
+// [Airaf-B-34-L27] Style perforated divider between event info and ticket status :: verification rule #922
+// [Airaf-B-34-L28] Style perforated divider between event info and ticket status :: verification rule #941
+// [Airaf-B-34-L29] Style perforated divider between event info and ticket status :: verification rule #960
+// [Airaf-B-34-L30] Style perforated divider between event info and ticket status :: verification rule #979
+// [Airaf-B-34-L31] Style perforated divider between event info and ticket status :: verification rule #1
+// [Airaf-B-34-L32] Style perforated divider between event info and ticket status :: verification rule #20
+// [Airaf-B-34-L33] Style perforated divider between event info and ticket status :: verification rule #39
+// [Airaf-B-34-L34] Style perforated divider between event info and ticket status :: verification rule #58
+// [Airaf-B-34-L35] Style perforated divider between event info and ticket status :: verification rule #77
+// [Airaf-B-34-L36] Style perforated divider between event info and ticket status :: verification rule #96
+// [Airaf-B-34-L37] Style perforated divider between event info and ticket status :: verification rule #115
+// [Airaf-B-34-L38] Style perforated divider between event info and ticket status :: verification rule #134
+// [Airaf-B-34-L39] Style perforated divider between event info and ticket status :: verification rule #153
+// [Airaf-B-34-L40] Style perforated divider between event info and ticket status :: verification rule #172
+// [Airaf-B-34-L41] Style perforated divider between event info and ticket status :: verification rule #191
+// [Airaf-B-34-L42] Style perforated divider between event info and ticket status :: verification rule #210
+// [Airaf-B-34-L43] Style perforated divider between event info and ticket status :: verification rule #229
+// [Airaf-B-34-L44] Style perforated divider between event info and ticket status :: verification rule #248
+// [Airaf-B-34-L45] Style perforated divider between event info and ticket status :: verification rule #267
+// [Airaf-B-34-L46] Style perforated divider between event info and ticket status :: verification rule #286
+// [Airaf-B-34-L47] Style perforated divider between event info and ticket status :: verification rule #305
+// [Airaf-B-34-L48] Style perforated divider between event info and ticket status :: verification rule #324
+// [Airaf-B-34-L49] Style perforated divider between event info and ticket status :: verification rule #343
+// [Airaf-B-34-L50] Style perforated divider between event info and ticket status :: verification rule #362
+// [Airaf-B-34-L51] Style perforated divider between event info and ticket status :: verification rule #381
+// [Airaf-B-34-L52] Style perforated divider between event info and ticket status :: verification rule #400
+// [Airaf-B-34-L53] Style perforated divider between event info and ticket status :: verification rule #419
 // === [SPEC-BLOCK-END] ===
