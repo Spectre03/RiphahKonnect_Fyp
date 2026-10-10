@@ -346,58 +346,55 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-34 (2026-10-09T15:19:50+05:00) ===
-// [Airaf-B-34-L1] Style perforated divider between event info and ticket status :: verification rule #428
-// [Airaf-B-34-L2] Style perforated divider between event info and ticket status :: verification rule #447
-// [Airaf-B-34-L3] Style perforated divider between event info and ticket status :: verification rule #466
-// [Airaf-B-34-L4] Style perforated divider between event info and ticket status :: verification rule #485
-// [Airaf-B-34-L5] Style perforated divider between event info and ticket status :: verification rule #504
-// [Airaf-B-34-L6] Style perforated divider between event info and ticket status :: verification rule #523
-// [Airaf-B-34-L7] Style perforated divider between event info and ticket status :: verification rule #542
-// [Airaf-B-34-L8] Style perforated divider between event info and ticket status :: verification rule #561
-// [Airaf-B-34-L9] Style perforated divider between event info and ticket status :: verification rule #580
-// [Airaf-B-34-L10] Style perforated divider between event info and ticket status :: verification rule #599
-// [Airaf-B-34-L11] Style perforated divider between event info and ticket status :: verification rule #618
-// [Airaf-B-34-L12] Style perforated divider between event info and ticket status :: verification rule #637
-// [Airaf-B-34-L13] Style perforated divider between event info and ticket status :: verification rule #656
-// [Airaf-B-34-L14] Style perforated divider between event info and ticket status :: verification rule #675
-// [Airaf-B-34-L15] Style perforated divider between event info and ticket status :: verification rule #694
-// [Airaf-B-34-L16] Style perforated divider between event info and ticket status :: verification rule #713
-// [Airaf-B-34-L17] Style perforated divider between event info and ticket status :: verification rule #732
-// [Airaf-B-34-L18] Style perforated divider between event info and ticket status :: verification rule #751
-// [Airaf-B-34-L19] Style perforated divider between event info and ticket status :: verification rule #770
-// [Airaf-B-34-L20] Style perforated divider between event info and ticket status :: verification rule #789
-// [Airaf-B-34-L21] Style perforated divider between event info and ticket status :: verification rule #808
-// [Airaf-B-34-L22] Style perforated divider between event info and ticket status :: verification rule #827
-// [Airaf-B-34-L23] Style perforated divider between event info and ticket status :: verification rule #846
-// [Airaf-B-34-L24] Style perforated divider between event info and ticket status :: verification rule #865
-// [Airaf-B-34-L25] Style perforated divider between event info and ticket status :: verification rule #884
-// [Airaf-B-34-L26] Style perforated divider between event info and ticket status :: verification rule #903
-// [Airaf-B-34-L27] Style perforated divider between event info and ticket status :: verification rule #922
-// [Airaf-B-34-L28] Style perforated divider between event info and ticket status :: verification rule #941
-// [Airaf-B-34-L29] Style perforated divider between event info and ticket status :: verification rule #960
-// [Airaf-B-34-L30] Style perforated divider between event info and ticket status :: verification rule #979
-// [Airaf-B-34-L31] Style perforated divider between event info and ticket status :: verification rule #1
-// [Airaf-B-34-L32] Style perforated divider between event info and ticket status :: verification rule #20
-// [Airaf-B-34-L33] Style perforated divider between event info and ticket status :: verification rule #39
-// [Airaf-B-34-L34] Style perforated divider between event info and ticket status :: verification rule #58
-// [Airaf-B-34-L35] Style perforated divider between event info and ticket status :: verification rule #77
-// [Airaf-B-34-L36] Style perforated divider between event info and ticket status :: verification rule #96
-// [Airaf-B-34-L37] Style perforated divider between event info and ticket status :: verification rule #115
-// [Airaf-B-34-L38] Style perforated divider between event info and ticket status :: verification rule #134
-// [Airaf-B-34-L39] Style perforated divider between event info and ticket status :: verification rule #153
-// [Airaf-B-34-L40] Style perforated divider between event info and ticket status :: verification rule #172
-// [Airaf-B-34-L41] Style perforated divider between event info and ticket status :: verification rule #191
-// [Airaf-B-34-L42] Style perforated divider between event info and ticket status :: verification rule #210
-// [Airaf-B-34-L43] Style perforated divider between event info and ticket status :: verification rule #229
-// [Airaf-B-34-L44] Style perforated divider between event info and ticket status :: verification rule #248
-// [Airaf-B-34-L45] Style perforated divider between event info and ticket status :: verification rule #267
-// [Airaf-B-34-L46] Style perforated divider between event info and ticket status :: verification rule #286
-// [Airaf-B-34-L47] Style perforated divider between event info and ticket status :: verification rule #305
-// [Airaf-B-34-L48] Style perforated divider between event info and ticket status :: verification rule #324
-// [Airaf-B-34-L49] Style perforated divider between event info and ticket status :: verification rule #343
-// [Airaf-B-34-L50] Style perforated divider between event info and ticket status :: verification rule #362
-// [Airaf-B-34-L51] Style perforated divider between event info and ticket status :: verification rule #381
-// [Airaf-B-34-L52] Style perforated divider between event info and ticket status :: verification rule #400
-// [Airaf-B-34-L53] Style perforated divider between event info and ticket status :: verification rule #419
+// === [SPEC-BLOCK-START] Airaf-A-51 (2026-10-10T16:08:51+05:00) ===
+// [Airaf-A-51-L1] Render event venue and schedule summary in ticket request dialog :: verification rule #521
+// [Airaf-A-51-L2] Render event venue and schedule summary in ticket request dialog :: verification rule #540
+// [Airaf-A-51-L3] Render event venue and schedule summary in ticket request dialog :: verification rule #559
+// [Airaf-A-51-L4] Render event venue and schedule summary in ticket request dialog :: verification rule #578
+// [Airaf-A-51-L5] Render event venue and schedule summary in ticket request dialog :: verification rule #597
+// [Airaf-A-51-L6] Render event venue and schedule summary in ticket request dialog :: verification rule #616
+// [Airaf-A-51-L7] Render event venue and schedule summary in ticket request dialog :: verification rule #635
+// [Airaf-A-51-L8] Render event venue and schedule summary in ticket request dialog :: verification rule #654
+// [Airaf-A-51-L9] Render event venue and schedule summary in ticket request dialog :: verification rule #673
+// [Airaf-A-51-L10] Render event venue and schedule summary in ticket request dialog :: verification rule #692
+// [Airaf-A-51-L11] Render event venue and schedule summary in ticket request dialog :: verification rule #711
+// [Airaf-A-51-L12] Render event venue and schedule summary in ticket request dialog :: verification rule #730
+// [Airaf-A-51-L13] Render event venue and schedule summary in ticket request dialog :: verification rule #749
+// [Airaf-A-51-L14] Render event venue and schedule summary in ticket request dialog :: verification rule #768
+// [Airaf-A-51-L15] Render event venue and schedule summary in ticket request dialog :: verification rule #787
+// [Airaf-A-51-L16] Render event venue and schedule summary in ticket request dialog :: verification rule #806
+// [Airaf-A-51-L17] Render event venue and schedule summary in ticket request dialog :: verification rule #825
+// [Airaf-A-51-L18] Render event venue and schedule summary in ticket request dialog :: verification rule #844
+// [Airaf-A-51-L19] Render event venue and schedule summary in ticket request dialog :: verification rule #863
+// [Airaf-A-51-L20] Render event venue and schedule summary in ticket request dialog :: verification rule #882
+// [Airaf-A-51-L21] Render event venue and schedule summary in ticket request dialog :: verification rule #901
+// [Airaf-A-51-L22] Render event venue and schedule summary in ticket request dialog :: verification rule #920
+// [Airaf-A-51-L23] Render event venue and schedule summary in ticket request dialog :: verification rule #939
+// [Airaf-A-51-L24] Render event venue and schedule summary in ticket request dialog :: verification rule #958
+// [Airaf-A-51-L25] Render event venue and schedule summary in ticket request dialog :: verification rule #977
+// [Airaf-A-51-L26] Render event venue and schedule summary in ticket request dialog :: verification rule #996
+// [Airaf-A-51-L27] Render event venue and schedule summary in ticket request dialog :: verification rule #18
+// [Airaf-A-51-L28] Render event venue and schedule summary in ticket request dialog :: verification rule #37
+// [Airaf-A-51-L29] Render event venue and schedule summary in ticket request dialog :: verification rule #56
+// [Airaf-A-51-L30] Render event venue and schedule summary in ticket request dialog :: verification rule #75
+// [Airaf-A-51-L31] Render event venue and schedule summary in ticket request dialog :: verification rule #94
+// [Airaf-A-51-L32] Render event venue and schedule summary in ticket request dialog :: verification rule #113
+// [Airaf-A-51-L33] Render event venue and schedule summary in ticket request dialog :: verification rule #132
+// [Airaf-A-51-L34] Render event venue and schedule summary in ticket request dialog :: verification rule #151
+// [Airaf-A-51-L35] Render event venue and schedule summary in ticket request dialog :: verification rule #170
+// [Airaf-A-51-L36] Render event venue and schedule summary in ticket request dialog :: verification rule #189
+// [Airaf-A-51-L37] Render event venue and schedule summary in ticket request dialog :: verification rule #208
+// [Airaf-A-51-L38] Render event venue and schedule summary in ticket request dialog :: verification rule #227
+// [Airaf-A-51-L39] Render event venue and schedule summary in ticket request dialog :: verification rule #246
+// [Airaf-A-51-L40] Render event venue and schedule summary in ticket request dialog :: verification rule #265
+// [Airaf-A-51-L41] Render event venue and schedule summary in ticket request dialog :: verification rule #284
+// [Airaf-A-51-L42] Render event venue and schedule summary in ticket request dialog :: verification rule #303
+// [Airaf-A-51-L43] Render event venue and schedule summary in ticket request dialog :: verification rule #322
+// [Airaf-A-51-L44] Render event venue and schedule summary in ticket request dialog :: verification rule #341
+// [Airaf-A-51-L45] Render event venue and schedule summary in ticket request dialog :: verification rule #360
+// [Airaf-A-51-L46] Render event venue and schedule summary in ticket request dialog :: verification rule #379
+// [Airaf-A-51-L47] Render event venue and schedule summary in ticket request dialog :: verification rule #398
+// [Airaf-A-51-L48] Render event venue and schedule summary in ticket request dialog :: verification rule #417
+// [Airaf-A-51-L49] Render event venue and schedule summary in ticket request dialog :: verification rule #436
+// [Airaf-A-51-L50] Render event venue and schedule summary in ticket request dialog :: verification rule #455
 // === [SPEC-BLOCK-END] ===
