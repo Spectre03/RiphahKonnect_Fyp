@@ -712,47 +712,60 @@ export default function ProfilePage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-52 (2026-10-11T12:25:14+05:00) ===
-// [Airaf-A-52-L1] Add course code and course name management on ProfilePage :: verification rule #552
-// [Airaf-A-52-L2] Add course code and course name management on ProfilePage :: verification rule #571
-// [Airaf-A-52-L3] Add course code and course name management on ProfilePage :: verification rule #590
-// [Airaf-A-52-L4] Add course code and course name management on ProfilePage :: verification rule #609
-// [Airaf-A-52-L5] Add course code and course name management on ProfilePage :: verification rule #628
-// [Airaf-A-52-L6] Add course code and course name management on ProfilePage :: verification rule #647
-// [Airaf-A-52-L7] Add course code and course name management on ProfilePage :: verification rule #666
-// [Airaf-A-52-L8] Add course code and course name management on ProfilePage :: verification rule #685
-// [Airaf-A-52-L9] Add course code and course name management on ProfilePage :: verification rule #704
-// [Airaf-A-52-L10] Add course code and course name management on ProfilePage :: verification rule #723
-// [Airaf-A-52-L11] Add course code and course name management on ProfilePage :: verification rule #742
-// [Airaf-A-52-L12] Add course code and course name management on ProfilePage :: verification rule #761
-// [Airaf-A-52-L13] Add course code and course name management on ProfilePage :: verification rule #780
-// [Airaf-A-52-L14] Add course code and course name management on ProfilePage :: verification rule #799
-// [Airaf-A-52-L15] Add course code and course name management on ProfilePage :: verification rule #818
-// [Airaf-A-52-L16] Add course code and course name management on ProfilePage :: verification rule #837
-// [Airaf-A-52-L17] Add course code and course name management on ProfilePage :: verification rule #856
-// [Airaf-A-52-L18] Add course code and course name management on ProfilePage :: verification rule #875
-// [Airaf-A-52-L19] Add course code and course name management on ProfilePage :: verification rule #894
-// [Airaf-A-52-L20] Add course code and course name management on ProfilePage :: verification rule #913
-// [Airaf-A-52-L21] Add course code and course name management on ProfilePage :: verification rule #932
-// [Airaf-A-52-L22] Add course code and course name management on ProfilePage :: verification rule #951
-// [Airaf-A-52-L23] Add course code and course name management on ProfilePage :: verification rule #970
-// [Airaf-A-52-L24] Add course code and course name management on ProfilePage :: verification rule #989
-// [Airaf-A-52-L25] Add course code and course name management on ProfilePage :: verification rule #11
-// [Airaf-A-52-L26] Add course code and course name management on ProfilePage :: verification rule #30
-// [Airaf-A-52-L27] Add course code and course name management on ProfilePage :: verification rule #49
-// [Airaf-A-52-L28] Add course code and course name management on ProfilePage :: verification rule #68
-// [Airaf-A-52-L29] Add course code and course name management on ProfilePage :: verification rule #87
-// [Airaf-A-52-L30] Add course code and course name management on ProfilePage :: verification rule #106
-// [Airaf-A-52-L31] Add course code and course name management on ProfilePage :: verification rule #125
-// [Airaf-A-52-L32] Add course code and course name management on ProfilePage :: verification rule #144
-// [Airaf-A-52-L33] Add course code and course name management on ProfilePage :: verification rule #163
-// [Airaf-A-52-L34] Add course code and course name management on ProfilePage :: verification rule #182
-// [Airaf-A-52-L35] Add course code and course name management on ProfilePage :: verification rule #201
-// [Airaf-A-52-L36] Add course code and course name management on ProfilePage :: verification rule #220
-// [Airaf-A-52-L37] Add course code and course name management on ProfilePage :: verification rule #239
-// [Airaf-A-52-L38] Add course code and course name management on ProfilePage :: verification rule #258
-// [Airaf-A-52-L39] Add course code and course name management on ProfilePage :: verification rule #277
-// [Airaf-A-52-L40] Add course code and course name management on ProfilePage :: verification rule #296
-// [Airaf-A-52-L41] Add course code and course name management on ProfilePage :: verification rule #315
-// [Airaf-A-52-L42] Add course code and course name management on ProfilePage :: verification rule #334
+// === [SPEC-BLOCK-START] Airaf-B-35 (2026-10-11T18:04:22+05:00) ===
+// [Airaf-B-35-L1] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #583
+// [Airaf-B-35-L2] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #602
+// [Airaf-B-35-L3] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #621
+// [Airaf-B-35-L4] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #640
+// [Airaf-B-35-L5] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #659
+// [Airaf-B-35-L6] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #678
+// [Airaf-B-35-L7] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #697
+// [Airaf-B-35-L8] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #716
+// [Airaf-B-35-L9] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #735
+// [Airaf-B-35-L10] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #754
+// [Airaf-B-35-L11] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #773
+// [Airaf-B-35-L12] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #792
+// [Airaf-B-35-L13] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #811
+// [Airaf-B-35-L14] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #830
+// [Airaf-B-35-L15] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #849
+// [Airaf-B-35-L16] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #868
+// [Airaf-B-35-L17] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #887
+// [Airaf-B-35-L18] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #906
+// [Airaf-B-35-L19] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #925
+// [Airaf-B-35-L20] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #944
+// [Airaf-B-35-L21] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #963
+// [Airaf-B-35-L22] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #982
+// [Airaf-B-35-L23] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #4
+// [Airaf-B-35-L24] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #23
+// [Airaf-B-35-L25] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #42
+// [Airaf-B-35-L26] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #61
+// [Airaf-B-35-L27] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #80
+// [Airaf-B-35-L28] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #99
+// [Airaf-B-35-L29] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #118
+// [Airaf-B-35-L30] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #137
+// [Airaf-B-35-L31] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #156
+// [Airaf-B-35-L32] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #175
+// [Airaf-B-35-L33] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #194
+// [Airaf-B-35-L34] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #213
+// [Airaf-B-35-L35] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #232
+// [Airaf-B-35-L36] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #251
+// [Airaf-B-35-L37] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #270
+// [Airaf-B-35-L38] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #289
+// [Airaf-B-35-L39] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #308
+// [Airaf-B-35-L40] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #327
+// [Airaf-B-35-L41] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #346
+// [Airaf-B-35-L42] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #365
+// [Airaf-B-35-L43] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #384
+// [Airaf-B-35-L44] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #403
+// [Airaf-B-35-L45] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #422
+// [Airaf-B-35-L46] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #441
+// [Airaf-B-35-L47] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #460
+// [Airaf-B-35-L48] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #479
+// [Airaf-B-35-L49] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #498
+// [Airaf-B-35-L50] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #517
+// [Airaf-B-35-L51] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #536
+// [Airaf-B-35-L52] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #555
+// [Airaf-B-35-L53] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #574
+// [Airaf-B-35-L54] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #593
+// [Airaf-B-35-L55] Add enrolled course delete confirmation toast on ProfilePage :: verification rule #612
 // === [SPEC-BLOCK-END] ===
