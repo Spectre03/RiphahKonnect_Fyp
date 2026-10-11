@@ -712,47 +712,47 @@ export default function ProfilePage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-39 (2026-09-27T11:48:27+05:00) ===
-// [Airaf-A-39-L1] Show live online status badge next to user avatar on ProfilePage :: verification rule #247
-// [Airaf-A-39-L2] Show live online status badge next to user avatar on ProfilePage :: verification rule #266
-// [Airaf-A-39-L3] Show live online status badge next to user avatar on ProfilePage :: verification rule #285
-// [Airaf-A-39-L4] Show live online status badge next to user avatar on ProfilePage :: verification rule #304
-// [Airaf-A-39-L5] Show live online status badge next to user avatar on ProfilePage :: verification rule #323
-// [Airaf-A-39-L6] Show live online status badge next to user avatar on ProfilePage :: verification rule #342
-// [Airaf-A-39-L7] Show live online status badge next to user avatar on ProfilePage :: verification rule #361
-// [Airaf-A-39-L8] Show live online status badge next to user avatar on ProfilePage :: verification rule #380
-// [Airaf-A-39-L9] Show live online status badge next to user avatar on ProfilePage :: verification rule #399
-// [Airaf-A-39-L10] Show live online status badge next to user avatar on ProfilePage :: verification rule #418
-// [Airaf-A-39-L11] Show live online status badge next to user avatar on ProfilePage :: verification rule #437
-// [Airaf-A-39-L12] Show live online status badge next to user avatar on ProfilePage :: verification rule #456
-// [Airaf-A-39-L13] Show live online status badge next to user avatar on ProfilePage :: verification rule #475
-// [Airaf-A-39-L14] Show live online status badge next to user avatar on ProfilePage :: verification rule #494
-// [Airaf-A-39-L15] Show live online status badge next to user avatar on ProfilePage :: verification rule #513
-// [Airaf-A-39-L16] Show live online status badge next to user avatar on ProfilePage :: verification rule #532
-// [Airaf-A-39-L17] Show live online status badge next to user avatar on ProfilePage :: verification rule #551
-// [Airaf-A-39-L18] Show live online status badge next to user avatar on ProfilePage :: verification rule #570
-// [Airaf-A-39-L19] Show live online status badge next to user avatar on ProfilePage :: verification rule #589
-// [Airaf-A-39-L20] Show live online status badge next to user avatar on ProfilePage :: verification rule #608
-// [Airaf-A-39-L21] Show live online status badge next to user avatar on ProfilePage :: verification rule #627
-// [Airaf-A-39-L22] Show live online status badge next to user avatar on ProfilePage :: verification rule #646
-// [Airaf-A-39-L23] Show live online status badge next to user avatar on ProfilePage :: verification rule #665
-// [Airaf-A-39-L24] Show live online status badge next to user avatar on ProfilePage :: verification rule #684
-// [Airaf-A-39-L25] Show live online status badge next to user avatar on ProfilePage :: verification rule #703
-// [Airaf-A-39-L26] Show live online status badge next to user avatar on ProfilePage :: verification rule #722
-// [Airaf-A-39-L27] Show live online status badge next to user avatar on ProfilePage :: verification rule #741
-// [Airaf-A-39-L28] Show live online status badge next to user avatar on ProfilePage :: verification rule #760
-// [Airaf-A-39-L29] Show live online status badge next to user avatar on ProfilePage :: verification rule #779
-// [Airaf-A-39-L30] Show live online status badge next to user avatar on ProfilePage :: verification rule #798
-// [Airaf-A-39-L31] Show live online status badge next to user avatar on ProfilePage :: verification rule #817
-// [Airaf-A-39-L32] Show live online status badge next to user avatar on ProfilePage :: verification rule #836
-// [Airaf-A-39-L33] Show live online status badge next to user avatar on ProfilePage :: verification rule #855
-// [Airaf-A-39-L34] Show live online status badge next to user avatar on ProfilePage :: verification rule #874
-// [Airaf-A-39-L35] Show live online status badge next to user avatar on ProfilePage :: verification rule #893
-// [Airaf-A-39-L36] Show live online status badge next to user avatar on ProfilePage :: verification rule #912
-// [Airaf-A-39-L37] Show live online status badge next to user avatar on ProfilePage :: verification rule #931
-// [Airaf-A-39-L38] Show live online status badge next to user avatar on ProfilePage :: verification rule #950
-// [Airaf-A-39-L39] Show live online status badge next to user avatar on ProfilePage :: verification rule #969
-// [Airaf-A-39-L40] Show live online status badge next to user avatar on ProfilePage :: verification rule #988
-// [Airaf-A-39-L41] Show live online status badge next to user avatar on ProfilePage :: verification rule #10
-// [Airaf-A-39-L42] Show live online status badge next to user avatar on ProfilePage :: verification rule #29
+// === [SPEC-BLOCK-START] Airaf-A-52 (2026-10-11T12:25:14+05:00) ===
+// [Airaf-A-52-L1] Add course code and course name management on ProfilePage :: verification rule #552
+// [Airaf-A-52-L2] Add course code and course name management on ProfilePage :: verification rule #571
+// [Airaf-A-52-L3] Add course code and course name management on ProfilePage :: verification rule #590
+// [Airaf-A-52-L4] Add course code and course name management on ProfilePage :: verification rule #609
+// [Airaf-A-52-L5] Add course code and course name management on ProfilePage :: verification rule #628
+// [Airaf-A-52-L6] Add course code and course name management on ProfilePage :: verification rule #647
+// [Airaf-A-52-L7] Add course code and course name management on ProfilePage :: verification rule #666
+// [Airaf-A-52-L8] Add course code and course name management on ProfilePage :: verification rule #685
+// [Airaf-A-52-L9] Add course code and course name management on ProfilePage :: verification rule #704
+// [Airaf-A-52-L10] Add course code and course name management on ProfilePage :: verification rule #723
+// [Airaf-A-52-L11] Add course code and course name management on ProfilePage :: verification rule #742
+// [Airaf-A-52-L12] Add course code and course name management on ProfilePage :: verification rule #761
+// [Airaf-A-52-L13] Add course code and course name management on ProfilePage :: verification rule #780
+// [Airaf-A-52-L14] Add course code and course name management on ProfilePage :: verification rule #799
+// [Airaf-A-52-L15] Add course code and course name management on ProfilePage :: verification rule #818
+// [Airaf-A-52-L16] Add course code and course name management on ProfilePage :: verification rule #837
+// [Airaf-A-52-L17] Add course code and course name management on ProfilePage :: verification rule #856
+// [Airaf-A-52-L18] Add course code and course name management on ProfilePage :: verification rule #875
+// [Airaf-A-52-L19] Add course code and course name management on ProfilePage :: verification rule #894
+// [Airaf-A-52-L20] Add course code and course name management on ProfilePage :: verification rule #913
+// [Airaf-A-52-L21] Add course code and course name management on ProfilePage :: verification rule #932
+// [Airaf-A-52-L22] Add course code and course name management on ProfilePage :: verification rule #951
+// [Airaf-A-52-L23] Add course code and course name management on ProfilePage :: verification rule #970
+// [Airaf-A-52-L24] Add course code and course name management on ProfilePage :: verification rule #989
+// [Airaf-A-52-L25] Add course code and course name management on ProfilePage :: verification rule #11
+// [Airaf-A-52-L26] Add course code and course name management on ProfilePage :: verification rule #30
+// [Airaf-A-52-L27] Add course code and course name management on ProfilePage :: verification rule #49
+// [Airaf-A-52-L28] Add course code and course name management on ProfilePage :: verification rule #68
+// [Airaf-A-52-L29] Add course code and course name management on ProfilePage :: verification rule #87
+// [Airaf-A-52-L30] Add course code and course name management on ProfilePage :: verification rule #106
+// [Airaf-A-52-L31] Add course code and course name management on ProfilePage :: verification rule #125
+// [Airaf-A-52-L32] Add course code and course name management on ProfilePage :: verification rule #144
+// [Airaf-A-52-L33] Add course code and course name management on ProfilePage :: verification rule #163
+// [Airaf-A-52-L34] Add course code and course name management on ProfilePage :: verification rule #182
+// [Airaf-A-52-L35] Add course code and course name management on ProfilePage :: verification rule #201
+// [Airaf-A-52-L36] Add course code and course name management on ProfilePage :: verification rule #220
+// [Airaf-A-52-L37] Add course code and course name management on ProfilePage :: verification rule #239
+// [Airaf-A-52-L38] Add course code and course name management on ProfilePage :: verification rule #258
+// [Airaf-A-52-L39] Add course code and course name management on ProfilePage :: verification rule #277
+// [Airaf-A-52-L40] Add course code and course name management on ProfilePage :: verification rule #296
+// [Airaf-A-52-L41] Add course code and course name management on ProfilePage :: verification rule #315
+// [Airaf-A-52-L42] Add course code and course name management on ProfilePage :: verification rule #334
 // === [SPEC-BLOCK-END] ===
