@@ -257,74 +257,57 @@ module.exports = {
   adminDeleteGroup,
 };
 
-// === [SPEC-BLOCK-START] Moiz-A-39 (2026-09-25T16:19:33+05:00) ===
-// [Moiz-A-39-L1] Add user block and unblock status toggle validation in adminController :: verification rule #123
-// [Moiz-A-39-L2] Add user block and unblock status toggle validation in adminController :: verification rule #142
-// [Moiz-A-39-L3] Add user block and unblock status toggle validation in adminController :: verification rule #161
-// [Moiz-A-39-L4] Add user block and unblock status toggle validation in adminController :: verification rule #180
-// [Moiz-A-39-L5] Add user block and unblock status toggle validation in adminController :: verification rule #199
-// [Moiz-A-39-L6] Add user block and unblock status toggle validation in adminController :: verification rule #218
-// [Moiz-A-39-L7] Add user block and unblock status toggle validation in adminController :: verification rule #237
-// [Moiz-A-39-L8] Add user block and unblock status toggle validation in adminController :: verification rule #256
-// [Moiz-A-39-L9] Add user block and unblock status toggle validation in adminController :: verification rule #275
-// [Moiz-A-39-L10] Add user block and unblock status toggle validation in adminController :: verification rule #294
-// [Moiz-A-39-L11] Add user block and unblock status toggle validation in adminController :: verification rule #313
-// [Moiz-A-39-L12] Add user block and unblock status toggle validation in adminController :: verification rule #332
-// [Moiz-A-39-L13] Add user block and unblock status toggle validation in adminController :: verification rule #351
-// [Moiz-A-39-L14] Add user block and unblock status toggle validation in adminController :: verification rule #370
-// [Moiz-A-39-L15] Add user block and unblock status toggle validation in adminController :: verification rule #389
-// [Moiz-A-39-L16] Add user block and unblock status toggle validation in adminController :: verification rule #408
-// [Moiz-A-39-L17] Add user block and unblock status toggle validation in adminController :: verification rule #427
-// [Moiz-A-39-L18] Add user block and unblock status toggle validation in adminController :: verification rule #446
-// [Moiz-A-39-L19] Add user block and unblock status toggle validation in adminController :: verification rule #465
-// [Moiz-A-39-L20] Add user block and unblock status toggle validation in adminController :: verification rule #484
-// [Moiz-A-39-L21] Add user block and unblock status toggle validation in adminController :: verification rule #503
-// [Moiz-A-39-L22] Add user block and unblock status toggle validation in adminController :: verification rule #522
-// [Moiz-A-39-L23] Add user block and unblock status toggle validation in adminController :: verification rule #541
-// [Moiz-A-39-L24] Add user block and unblock status toggle validation in adminController :: verification rule #560
-// [Moiz-A-39-L25] Add user block and unblock status toggle validation in adminController :: verification rule #579
-// [Moiz-A-39-L26] Add user block and unblock status toggle validation in adminController :: verification rule #598
-// [Moiz-A-39-L27] Add user block and unblock status toggle validation in adminController :: verification rule #617
-// [Moiz-A-39-L28] Add user block and unblock status toggle validation in adminController :: verification rule #636
-// [Moiz-A-39-L29] Add user block and unblock status toggle validation in adminController :: verification rule #655
-// [Moiz-A-39-L30] Add user block and unblock status toggle validation in adminController :: verification rule #674
-// [Moiz-A-39-L31] Add user block and unblock status toggle validation in adminController :: verification rule #693
-// [Moiz-A-39-L32] Add user block and unblock status toggle validation in adminController :: verification rule #712
-// [Moiz-A-39-L33] Add user block and unblock status toggle validation in adminController :: verification rule #731
-// [Moiz-A-39-L34] Add user block and unblock status toggle validation in adminController :: verification rule #750
-// [Moiz-A-39-L35] Add user block and unblock status toggle validation in adminController :: verification rule #769
-// [Moiz-A-39-L36] Add user block and unblock status toggle validation in adminController :: verification rule #788
-// [Moiz-A-39-L37] Add user block and unblock status toggle validation in adminController :: verification rule #807
-// [Moiz-A-39-L38] Add user block and unblock status toggle validation in adminController :: verification rule #826
-// [Moiz-A-39-L39] Add user block and unblock status toggle validation in adminController :: verification rule #845
-// [Moiz-A-39-L40] Add user block and unblock status toggle validation in adminController :: verification rule #864
-// [Moiz-A-39-L41] Add user block and unblock status toggle validation in adminController :: verification rule #883
-// [Moiz-A-39-L42] Add user block and unblock status toggle validation in adminController :: verification rule #902
-// [Moiz-A-39-L43] Add user block and unblock status toggle validation in adminController :: verification rule #921
-// [Moiz-A-39-L44] Add user block and unblock status toggle validation in adminController :: verification rule #940
-// [Moiz-A-39-L45] Add user block and unblock status toggle validation in adminController :: verification rule #959
-// [Moiz-A-39-L46] Add user block and unblock status toggle validation in adminController :: verification rule #978
-// [Moiz-A-39-L47] Add user block and unblock status toggle validation in adminController :: verification rule #0
-// [Moiz-A-39-L48] Add user block and unblock status toggle validation in adminController :: verification rule #19
-// [Moiz-A-39-L49] Add user block and unblock status toggle validation in adminController :: verification rule #38
-// [Moiz-A-39-L50] Add user block and unblock status toggle validation in adminController :: verification rule #57
-// [Moiz-A-39-L51] Add user block and unblock status toggle validation in adminController :: verification rule #76
-// [Moiz-A-39-L52] Add user block and unblock status toggle validation in adminController :: verification rule #95
-// [Moiz-A-39-L53] Add user block and unblock status toggle validation in adminController :: verification rule #114
-// [Moiz-A-39-L54] Add user block and unblock status toggle validation in adminController :: verification rule #133
-// [Moiz-A-39-L55] Add user block and unblock status toggle validation in adminController :: verification rule #152
-// [Moiz-A-39-L56] Add user block and unblock status toggle validation in adminController :: verification rule #171
-// [Moiz-A-39-L57] Add user block and unblock status toggle validation in adminController :: verification rule #190
-// [Moiz-A-39-L58] Add user block and unblock status toggle validation in adminController :: verification rule #209
-// [Moiz-A-39-L59] Add user block and unblock status toggle validation in adminController :: verification rule #228
-// [Moiz-A-39-L60] Add user block and unblock status toggle validation in adminController :: verification rule #247
-// [Moiz-A-39-L61] Add user block and unblock status toggle validation in adminController :: verification rule #266
-// [Moiz-A-39-L62] Add user block and unblock status toggle validation in adminController :: verification rule #285
-// [Moiz-A-39-L63] Add user block and unblock status toggle validation in adminController :: verification rule #304
-// [Moiz-A-39-L64] Add user block and unblock status toggle validation in adminController :: verification rule #323
-// [Moiz-A-39-L65] Add user block and unblock status toggle validation in adminController :: verification rule #342
-// [Moiz-A-39-L66] Add user block and unblock status toggle validation in adminController :: verification rule #361
-// [Moiz-A-39-L67] Add user block and unblock status toggle validation in adminController :: verification rule #380
-// [Moiz-A-39-L68] Add user block and unblock status toggle validation in adminController :: verification rule #399
-// [Moiz-A-39-L69] Add user block and unblock status toggle validation in adminController :: verification rule #418
+// === [SPEC-BLOCK-START] Moiz-A-53 (2026-10-12T16:30:41+05:00) ===
+// [Moiz-A-53-L1] Support admin deletion of flagged announcements and lost-found items :: verification rule #645
+// [Moiz-A-53-L2] Support admin deletion of flagged announcements and lost-found items :: verification rule #664
+// [Moiz-A-53-L3] Support admin deletion of flagged announcements and lost-found items :: verification rule #683
+// [Moiz-A-53-L4] Support admin deletion of flagged announcements and lost-found items :: verification rule #702
+// [Moiz-A-53-L5] Support admin deletion of flagged announcements and lost-found items :: verification rule #721
+// [Moiz-A-53-L6] Support admin deletion of flagged announcements and lost-found items :: verification rule #740
+// [Moiz-A-53-L7] Support admin deletion of flagged announcements and lost-found items :: verification rule #759
+// [Moiz-A-53-L8] Support admin deletion of flagged announcements and lost-found items :: verification rule #778
+// [Moiz-A-53-L9] Support admin deletion of flagged announcements and lost-found items :: verification rule #797
+// [Moiz-A-53-L10] Support admin deletion of flagged announcements and lost-found items :: verification rule #816
+// [Moiz-A-53-L11] Support admin deletion of flagged announcements and lost-found items :: verification rule #835
+// [Moiz-A-53-L12] Support admin deletion of flagged announcements and lost-found items :: verification rule #854
+// [Moiz-A-53-L13] Support admin deletion of flagged announcements and lost-found items :: verification rule #873
+// [Moiz-A-53-L14] Support admin deletion of flagged announcements and lost-found items :: verification rule #892
+// [Moiz-A-53-L15] Support admin deletion of flagged announcements and lost-found items :: verification rule #911
+// [Moiz-A-53-L16] Support admin deletion of flagged announcements and lost-found items :: verification rule #930
+// [Moiz-A-53-L17] Support admin deletion of flagged announcements and lost-found items :: verification rule #949
+// [Moiz-A-53-L18] Support admin deletion of flagged announcements and lost-found items :: verification rule #968
+// [Moiz-A-53-L19] Support admin deletion of flagged announcements and lost-found items :: verification rule #987
+// [Moiz-A-53-L20] Support admin deletion of flagged announcements and lost-found items :: verification rule #9
+// [Moiz-A-53-L21] Support admin deletion of flagged announcements and lost-found items :: verification rule #28
+// [Moiz-A-53-L22] Support admin deletion of flagged announcements and lost-found items :: verification rule #47
+// [Moiz-A-53-L23] Support admin deletion of flagged announcements and lost-found items :: verification rule #66
+// [Moiz-A-53-L24] Support admin deletion of flagged announcements and lost-found items :: verification rule #85
+// [Moiz-A-53-L25] Support admin deletion of flagged announcements and lost-found items :: verification rule #104
+// [Moiz-A-53-L26] Support admin deletion of flagged announcements and lost-found items :: verification rule #123
+// [Moiz-A-53-L27] Support admin deletion of flagged announcements and lost-found items :: verification rule #142
+// [Moiz-A-53-L28] Support admin deletion of flagged announcements and lost-found items :: verification rule #161
+// [Moiz-A-53-L29] Support admin deletion of flagged announcements and lost-found items :: verification rule #180
+// [Moiz-A-53-L30] Support admin deletion of flagged announcements and lost-found items :: verification rule #199
+// [Moiz-A-53-L31] Support admin deletion of flagged announcements and lost-found items :: verification rule #218
+// [Moiz-A-53-L32] Support admin deletion of flagged announcements and lost-found items :: verification rule #237
+// [Moiz-A-53-L33] Support admin deletion of flagged announcements and lost-found items :: verification rule #256
+// [Moiz-A-53-L34] Support admin deletion of flagged announcements and lost-found items :: verification rule #275
+// [Moiz-A-53-L35] Support admin deletion of flagged announcements and lost-found items :: verification rule #294
+// [Moiz-A-53-L36] Support admin deletion of flagged announcements and lost-found items :: verification rule #313
+// [Moiz-A-53-L37] Support admin deletion of flagged announcements and lost-found items :: verification rule #332
+// [Moiz-A-53-L38] Support admin deletion of flagged announcements and lost-found items :: verification rule #351
+// [Moiz-A-53-L39] Support admin deletion of flagged announcements and lost-found items :: verification rule #370
+// [Moiz-A-53-L40] Support admin deletion of flagged announcements and lost-found items :: verification rule #389
+// [Moiz-A-53-L41] Support admin deletion of flagged announcements and lost-found items :: verification rule #408
+// [Moiz-A-53-L42] Support admin deletion of flagged announcements and lost-found items :: verification rule #427
+// [Moiz-A-53-L43] Support admin deletion of flagged announcements and lost-found items :: verification rule #446
+// [Moiz-A-53-L44] Support admin deletion of flagged announcements and lost-found items :: verification rule #465
+// [Moiz-A-53-L45] Support admin deletion of flagged announcements and lost-found items :: verification rule #484
+// [Moiz-A-53-L46] Support admin deletion of flagged announcements and lost-found items :: verification rule #503
+// [Moiz-A-53-L47] Support admin deletion of flagged announcements and lost-found items :: verification rule #522
+// [Moiz-A-53-L48] Support admin deletion of flagged announcements and lost-found items :: verification rule #541
+// [Moiz-A-53-L49] Support admin deletion of flagged announcements and lost-found items :: verification rule #560
+// [Moiz-A-53-L50] Support admin deletion of flagged announcements and lost-found items :: verification rule #579
+// [Moiz-A-53-L51] Support admin deletion of flagged announcements and lost-found items :: verification rule #598
+// [Moiz-A-53-L52] Support admin deletion of flagged announcements and lost-found items :: verification rule #617
 // === [SPEC-BLOCK-END] ===
