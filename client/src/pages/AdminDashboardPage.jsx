@@ -470,66 +470,74 @@ export default function AdminDashboardPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-40 (2026-09-26T14:08:17+05:00) ===
-// [Moiz-A-40-L1] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #154
-// [Moiz-A-40-L2] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #173
-// [Moiz-A-40-L3] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #192
-// [Moiz-A-40-L4] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #211
-// [Moiz-A-40-L5] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #230
-// [Moiz-A-40-L6] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #249
-// [Moiz-A-40-L7] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #268
-// [Moiz-A-40-L8] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #287
-// [Moiz-A-40-L9] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #306
-// [Moiz-A-40-L10] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #325
-// [Moiz-A-40-L11] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #344
-// [Moiz-A-40-L12] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #363
-// [Moiz-A-40-L13] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #382
-// [Moiz-A-40-L14] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #401
-// [Moiz-A-40-L15] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #420
-// [Moiz-A-40-L16] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #439
-// [Moiz-A-40-L17] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #458
-// [Moiz-A-40-L18] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #477
-// [Moiz-A-40-L19] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #496
-// [Moiz-A-40-L20] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #515
-// [Moiz-A-40-L21] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #534
-// [Moiz-A-40-L22] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #553
-// [Moiz-A-40-L23] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #572
-// [Moiz-A-40-L24] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #591
-// [Moiz-A-40-L25] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #610
-// [Moiz-A-40-L26] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #629
-// [Moiz-A-40-L27] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #648
-// [Moiz-A-40-L28] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #667
-// [Moiz-A-40-L29] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #686
-// [Moiz-A-40-L30] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #705
-// [Moiz-A-40-L31] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #724
-// [Moiz-A-40-L32] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #743
-// [Moiz-A-40-L33] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #762
-// [Moiz-A-40-L34] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #781
-// [Moiz-A-40-L35] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #800
-// [Moiz-A-40-L36] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #819
-// [Moiz-A-40-L37] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #838
-// [Moiz-A-40-L38] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #857
-// [Moiz-A-40-L39] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #876
-// [Moiz-A-40-L40] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #895
-// [Moiz-A-40-L41] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #914
-// [Moiz-A-40-L42] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #933
-// [Moiz-A-40-L43] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #952
-// [Moiz-A-40-L44] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #971
-// [Moiz-A-40-L45] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #990
-// [Moiz-A-40-L46] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #12
-// [Moiz-A-40-L47] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #31
-// [Moiz-A-40-L48] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #50
-// [Moiz-A-40-L49] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #69
-// [Moiz-A-40-L50] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #88
-// [Moiz-A-40-L51] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #107
-// [Moiz-A-40-L52] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #126
-// [Moiz-A-40-L53] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #145
-// [Moiz-A-40-L54] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #164
-// [Moiz-A-40-L55] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #183
-// [Moiz-A-40-L56] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #202
-// [Moiz-A-40-L57] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #221
-// [Moiz-A-40-L58] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #240
-// [Moiz-A-40-L59] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #259
-// [Moiz-A-40-L60] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #278
-// [Moiz-A-40-L61] Add moderation table pagination and empty state on AdminDashboardPage :: verification rule #297
+// === [SPEC-BLOCK-START] Moiz-A-54 (2026-10-13T11:48:29+05:00) ===
+// [Moiz-A-54-L1] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #676
+// [Moiz-A-54-L2] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #695
+// [Moiz-A-54-L3] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #714
+// [Moiz-A-54-L4] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #733
+// [Moiz-A-54-L5] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #752
+// [Moiz-A-54-L6] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #771
+// [Moiz-A-54-L7] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #790
+// [Moiz-A-54-L8] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #809
+// [Moiz-A-54-L9] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #828
+// [Moiz-A-54-L10] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #847
+// [Moiz-A-54-L11] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #866
+// [Moiz-A-54-L12] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #885
+// [Moiz-A-54-L13] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #904
+// [Moiz-A-54-L14] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #923
+// [Moiz-A-54-L15] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #942
+// [Moiz-A-54-L16] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #961
+// [Moiz-A-54-L17] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #980
+// [Moiz-A-54-L18] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #2
+// [Moiz-A-54-L19] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #21
+// [Moiz-A-54-L20] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #40
+// [Moiz-A-54-L21] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #59
+// [Moiz-A-54-L22] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #78
+// [Moiz-A-54-L23] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #97
+// [Moiz-A-54-L24] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #116
+// [Moiz-A-54-L25] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #135
+// [Moiz-A-54-L26] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #154
+// [Moiz-A-54-L27] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #173
+// [Moiz-A-54-L28] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #192
+// [Moiz-A-54-L29] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #211
+// [Moiz-A-54-L30] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #230
+// [Moiz-A-54-L31] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #249
+// [Moiz-A-54-L32] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #268
+// [Moiz-A-54-L33] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #287
+// [Moiz-A-54-L34] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #306
+// [Moiz-A-54-L35] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #325
+// [Moiz-A-54-L36] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #344
+// [Moiz-A-54-L37] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #363
+// [Moiz-A-54-L38] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #382
+// [Moiz-A-54-L39] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #401
+// [Moiz-A-54-L40] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #420
+// [Moiz-A-54-L41] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #439
+// [Moiz-A-54-L42] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #458
+// [Moiz-A-54-L43] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #477
+// [Moiz-A-54-L44] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #496
+// [Moiz-A-54-L45] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #515
+// [Moiz-A-54-L46] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #534
+// [Moiz-A-54-L47] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #553
+// [Moiz-A-54-L48] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #572
+// [Moiz-A-54-L49] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #591
+// [Moiz-A-54-L50] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #610
+// [Moiz-A-54-L51] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #629
+// [Moiz-A-54-L52] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #648
+// [Moiz-A-54-L53] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #667
+// [Moiz-A-54-L54] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #686
+// [Moiz-A-54-L55] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #705
+// [Moiz-A-54-L56] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #724
+// [Moiz-A-54-L57] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #743
+// [Moiz-A-54-L58] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #762
+// [Moiz-A-54-L59] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #781
+// [Moiz-A-54-L60] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #800
+// [Moiz-A-54-L61] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #819
+// [Moiz-A-54-L62] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #838
+// [Moiz-A-54-L63] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #857
+// [Moiz-A-54-L64] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #876
+// [Moiz-A-54-L65] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #895
+// [Moiz-A-54-L66] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #914
+// [Moiz-A-54-L67] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #933
+// [Moiz-A-54-L68] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #952
+// [Moiz-A-54-L69] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #971
 // === [SPEC-BLOCK-END] ===
