@@ -27,6 +27,16 @@ api.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+// ─── File Upload ──────────────────────────────────────────────────────────────
+export const uploadAPI = {
+  upload: (file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+    return api.post('/upload', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    });
+  },
+};
 
 // ─── Auth ────────────────────────────────────────────────────────────────────
 export const authAPI = {
@@ -38,6 +48,8 @@ export const authAPI = {
   resetPassword: (data) => api.post('/auth/reset-password', data),
   getMe: () => api.get('/auth/me'),
 };
+
+
 
 // ─── Posts ───────────────────────────────────────────────────────────────────
 export const postsAPI = {
