@@ -55,7 +55,7 @@ const getPosts = async (req, res, next) => {
 // POST /api/posts
 const createPost = async (req, res, next) => {
   try {
-    const { content, type, imageUrl, groupId } = req.body;
+    const { content, type, imageUrl, fileUrl, fileName, fileType, groupId } = req.body;
 
     // If posting to a group, verify the user is a member
     if (groupId) {
@@ -68,13 +68,16 @@ const createPost = async (req, res, next) => {
     }
 
     const post = await prisma.post.create({
-      data: {
-        content,
-        type: type || 'GENERAL',
-        imageUrl,
-        authorId: req.user.id,
-        groupId: groupId || null,
-      },
+  data: {
+    content,
+    type: type || 'GENERAL',
+    imageUrl,
+    fileUrl,
+    fileName,
+    fileType,
+    authorId: req.user.id,
+    groupId: groupId || null,
+  },
       include: {
         author: {
           select: { id: true, name: true, avatarUrl: true, department: true },
@@ -131,14 +134,17 @@ const updatePost = async (req, res, next) => {
     if (!post) return res.status(404).json({ error: 'Post not found.' });
     if (post.authorId !== req.user.id) return res.status(403).json({ error: 'Not authorized.' });
 
-    const updated = await prisma.post.update({
-      where: { id: req.params.id },
-      data: {
-        content: req.body.content ?? post.content,
-        type: req.body.type ?? post.type,
-        imageUrl: req.body.imageUrl ?? post.imageUrl,
-      },
-    });
+   const updated = await prisma.post.update({
+  where: { id: req.params.id },
+  data: {
+    content: req.body.content ?? post.content,
+    type: req.body.type ?? post.type,
+    imageUrl: req.body.imageUrl ?? post.imageUrl,
+    fileUrl: req.body.fileUrl ?? post.fileUrl,
+    fileName: req.body.fileName ?? post.fileName,
+    fileType: req.body.fileType ?? post.fileType,
+  },
+});
 
     res.json({ post: updated });
   } catch (err) {
