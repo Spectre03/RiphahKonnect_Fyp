@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { announcementsAPI } from '../services/api';
+import { announcementsAPI, uploadAPI } from '../services/api';
 import { timeAgo } from '../utils/brand';
 import { cn } from '../utils/cn';
 import { Card, Button, Badge, Modal, Avatar } from '../components/ui';
@@ -8,7 +8,7 @@ import { DEPARTMENTS, SEMESTERS, getDepartmentsForUser } from '../utils/constant
 import toast from 'react-hot-toast';
 import {
   Megaphone, Plus, Loader2, Trash2, Shield,
-  BookOpen, Bell, Sparkles,
+  BookOpen, Bell, Sparkles, Paperclip, FileText, X,
 } from 'lucide-react';
 
 const CAN_CREATE = ['UNIVERSITY_ADMIN', 'COORDINATION', 'TEACHER', 'SYSTEM_ADMIN'];
@@ -210,6 +210,30 @@ export default function AnnouncementsPage() {
                     {/* Content */}
                     <p className="text-sm text-slate-700 leading-relaxed whitespace-pre-wrap break-words">{ann.content}</p>
 
+                    {/* File attachment */}
+                    {ann.fileUrl && (
+                      ann.fileType?.startsWith('image/') ? (
+                        <a href={ann.fileUrl} target="_blank" rel="noopener noreferrer" className="block mt-3">
+                          <img
+                            src={ann.fileUrl}
+                            alt={ann.fileName || 'attachment'}
+                            className="max-h-80 w-auto rounded-xl border border-slate-200 hover:opacity-90 transition-opacity"
+                          />
+                        </a>
+                      ) : (
+                        <a
+                          href={ann.fileUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-3 flex items-center gap-2 px-3 py-2.5 bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-200 rounded-xl text-xs font-medium text-slate-700 hover:text-amber-700 transition-colors"
+                        >
+                          <FileText className="h-4 w-4 text-amber-600 flex-shrink-0" />
+                          <span className="truncate flex-1">{ann.fileName || 'Attachment'}</span>
+                          <span className="text-amber-600 font-bold">Download</span>
+                        </a>
+                      )
+                    )}
+
                     {/* Target info */}
                     {(ann.targetDepartment || ann.targetSemester) && (
                       <div className="flex items-center gap-2 mt-3 pt-3 border-t border-slate-50">
@@ -256,7 +280,25 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
     targetDepartment: '', targetSemester: '',
   });
   const [submitting, setSubmitting] = useState(false);
+  const [attachment, setAttachment] = useState(null);
+  const [uploading, setUploading] = useState(false);
   const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
+
+  const handleFileUpload = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    try {
+      setUploading(true);
+      const res = await uploadAPI.upload(file);
+      setAttachment(res.data);
+      toast.success('File uploaded!');
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Upload failed.');
+    } finally {
+      setUploading(false);
+      e.target.value = '';
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -267,10 +309,14 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
         ...form,
         targetSemester: form.targetSemester ? parseInt(form.targetSemester) : undefined,
         targetDepartment: form.targetDepartment || undefined,
+        fileUrl: attachment?.url,
+        fileName: attachment?.fileName,
+        fileType: attachment?.fileType,
       };
       const res = await announcementsAPI.create(payload);
       onCreated(res.data.announcement);
       setForm({ title: '', content: '', type: defaultType, targetDepartment: '', targetSemester: '' });
+      setAttachment(null);
     } catch (err) {
       toast.error(err.response?.data?.error || 'Failed to post announcement.');
     } finally { setSubmitting(false); }
@@ -311,6 +357,39 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
           <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Content *</label>
           <textarea value={form.content} onChange={(e) => set('content', e.target.value)} placeholder="Write your announcement..." rows={4} className={`${inputCls} resize-none`} required />
         </div>
+
+        {/* Attachment */}
+        <div>
+          <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Attachment <span className="text-slate-400 normal-case font-medium">(optional)</span></label>
+          {attachment ? (
+            <div className="flex items-center gap-2 px-3 py-2 bg-amber-50 border border-amber-100 rounded-xl">
+              <FileText className="h-4 w-4 text-amber-600 flex-shrink-0" />
+              <span className="text-xs font-medium text-amber-700 truncate flex-1">{attachment.fileName}</span>
+              <button
+                type="button"
+                onClick={() => setAttachment(null)}
+                className="p-1 text-amber-600 hover:text-red-500 hover:bg-red-50 rounded cursor-pointer transition-colors"
+              >
+                <X className="h-3.5 w-3.5" />
+              </button>
+            </div>
+          ) : (
+            <label className="flex items-center justify-center gap-2 w-full py-2.5 border-2 border-dashed border-slate-200 hover:border-amber-400 rounded-xl cursor-pointer transition-colors">
+              <Paperclip className="h-4 w-4 text-slate-400" />
+              <span className="text-xs font-semibold text-slate-500">
+                {uploading ? 'Uploading...' : 'Click to attach a file'}
+              </span>
+              <input
+                type="file"
+                className="hidden"
+                onChange={handleFileUpload}
+                disabled={uploading}
+                accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.zip"
+              />
+            </label>
+          )}
+        </div>
+
         <div className="grid grid-cols-2 gap-3">
           <div>
             <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Department <span className="text-slate-400 normal-case font-medium">(optional)</span></label>

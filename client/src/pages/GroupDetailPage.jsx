@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { groupsAPI, postsAPI } from '../services/api';
+import { groupsAPI, postsAPI, uploadAPI } from '../services/api';
 import { timeAgo } from '../utils/brand';
 import { cn } from '../utils/cn';
 import { Card, Button, Badge, Avatar } from '../components/ui';
@@ -9,6 +9,7 @@ import toast from 'react-hot-toast';
 import {
   Users, ArrowLeft, Send, Heart, MessageCircle, Trash2,
   Loader2, BookOpen, Crown, User, GraduationCap,
+  Paperclip, FileText, X,
 } from 'lucide-react';
 
 const CAN_JOIN = ['STUDENT', 'TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN'];
@@ -21,9 +22,11 @@ export default function GroupDetailPage() {
   const [group, setGroup] = useState(null);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [newPost, setNewPost] = useState('');
-  const [posting, setPosting] = useState(false);
-  const [tab, setTab] = useState('posts');
+ const [newPost, setNewPost] = useState('');
+const [posting, setPosting] = useState(false);
+const [tab, setTab] = useState('posts');
+const [attachment, setAttachment] = useState(null);
+const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
     const load = async () => {
@@ -44,21 +47,44 @@ export default function GroupDetailPage() {
     load();
   }, [id]);
 
-  const handlePost = async (e) => {
-    e.preventDefault();
-    if (!newPost.trim()) return;
-    try {
-      setPosting(true);
-      const res = await postsAPI.create({ content: newPost, groupId: id });
-      setPosts([{ ...res.data.post, likesCount: 0, commentsCount: 0, isLiked: false }, ...posts]);
-      setNewPost('');
-      toast.success('Posted!');
-    } catch {
-      toast.error('Failed to post.');
-    } finally {
-      setPosting(false);
-    }
-  };
+ const handleFileUpload = async (e) => {
+  const file = e.target.files?.[0];
+  if (!file) return;
+  try {
+    setUploading(true);
+    const res = await uploadAPI.upload(file);
+    setAttachment(res.data);
+    toast.success('File uploaded!');
+  } catch (err) {
+    toast.error(err.response?.data?.error || 'Upload failed.');
+  } finally {
+    setUploading(false);
+    e.target.value = ''; // allow re-uploading the same file
+  }
+};
+
+const handlePost = async (e) => {
+  e.preventDefault();
+  if (!newPost.trim()) return;
+  try {
+    setPosting(true);
+    const res = await postsAPI.create({
+      content: newPost,
+      groupId: id,
+      fileUrl: attachment?.url,
+      fileName: attachment?.fileName,
+      fileType: attachment?.fileType,
+    });
+    setPosts([{ ...res.data.post, likesCount: 0, commentsCount: 0, isLiked: false }, ...posts]);
+    setNewPost('');
+    setAttachment(null);
+    toast.success('Posted!');
+  } catch {
+    toast.error('Failed to post.');
+  } finally {
+    setPosting(false);
+  }
+};
 
   const handleLike = async (postId) => {
     try {
@@ -157,9 +183,11 @@ export default function GroupDetailPage() {
               </div>
               <div className="flex-shrink-0 ml-3">
                 {isMember ? (
-                  isCoordinator ? (
-                    <Badge variant="violet" size="sm">Coordinator</Badge>
-                  ) : canJoin ? (
+  isCoordinator ? (
+    <Badge variant="violet" size="sm">
+      {user?.role === 'TEACHER' ? 'Teacher' : 'Coordinator'}
+    </Badge>
+  ) : canJoin ? (
                     <Button variant="secondary" size="sm" onClick={handleLeave}>Leave</Button>
                   ) : null
                 ) : canJoin ? (
@@ -212,9 +240,37 @@ export default function GroupDetailPage() {
                       />
                     </div>
                   </div>
-                  <div className="flex justify-end px-4 py-3 border-t border-slate-100">
-                    <Button type="submit" disabled={posting || !newPost.trim()} loading={posting} icon={Send} size="sm">Post</Button>
-                  </div>
+                 {/* Attachment preview */}
+{attachment && (
+  <div className="px-4 pb-2">
+    <div className="flex items-center gap-2 px-3 py-2 bg-blue-50 border border-blue-100 rounded-lg">
+      <FileText className="h-4 w-4 text-blue-600 flex-shrink-0" />
+      <span className="text-xs font-medium text-blue-700 truncate flex-1">{attachment.fileName}</span>
+      <button
+        type="button"
+        onClick={() => setAttachment(null)}
+        className="p-1 text-blue-600 hover:text-red-500 hover:bg-red-50 rounded cursor-pointer transition-colors"
+      >
+        <X className="h-3.5 w-3.5" />
+      </button>
+    </div>
+  </div>
+)}
+
+<div className="flex items-center justify-between px-4 py-3 border-t border-slate-100">
+  <label className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-blue-600 px-2.5 py-1.5 rounded-lg hover:bg-blue-50 cursor-pointer transition-colors">
+    <Paperclip className="h-4 w-4" />
+    {uploading ? 'Uploading...' : 'Attach file'}
+    <input
+      type="file"
+      className="hidden"
+      onChange={handleFileUpload}
+      disabled={uploading}
+      accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.zip"
+    />
+  </label>
+  <Button type="submit" disabled={posting || !newPost.trim()} loading={posting} icon={Send} size="sm">Post</Button>
+</div>
                 </form>
               </Card>
             )}
@@ -263,8 +319,36 @@ export default function GroupDetailPage() {
                             </button>
                           )}
                         </div>
-                        <p className="mt-3 text-[15px] text-slate-800 whitespace-pre-wrap leading-relaxed break-words">{post.content}</p>
-                      </div>
+                     <p className="mt-3 text-[15px] text-slate-800 whitespace-pre-wrap leading-relaxed break-words">{post.content}</p>
+
+{post.fileUrl && (
+  post.fileType?.startsWith('image/') ? (
+    <a
+      href={post.fileUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block mt-3"
+    >
+      <img
+        src={post.fileUrl}
+        alt={post.fileName || 'attachment'}
+        className="max-h-80 w-auto rounded-xl border border-slate-200 hover:opacity-90 transition-opacity"
+      />
+    </a>
+  ) : (
+    <a
+      href={post.fileUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mt-3 flex items-center gap-2 px-3 py-2.5 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 rounded-xl text-xs font-medium text-slate-700 hover:text-blue-700 transition-colors"
+    >
+      <FileText className="h-4 w-4 text-blue-600 flex-shrink-0" />
+      <span className="truncate flex-1">{post.fileName || 'Attachment'}</span>
+      <span className="text-blue-600 font-bold">Download</span>
+    </a>
+  )
+)}
+</div>
                       <div className="flex items-center gap-1 px-5 py-2.5 border-t border-slate-100 bg-slate-50/30">
                         {canPost ? (
                           <button
@@ -297,33 +381,43 @@ export default function GroupDetailPage() {
             {!group.members || group.members.length === 0 ? (
               <div className="text-center py-12 text-slate-500 text-sm">No members yet</div>
             ) : (
-              group.members.map((member, i) => {
-                const isCoord = member.role === 'COORDINATOR';
-                return (
-                  <Link
-                    key={member.id}
-                    to={`/profile/${member.user?.id}`}
-                    className={cn(
-                      'flex items-center justify-between px-5 py-3.5 hover:bg-slate-50 transition-colors',
-                      i !== 0 && 'border-t border-slate-100'
-                    )}
-                  >
-                    <div className="flex items-center gap-3 min-w-0">
-                      <Avatar name={member.user?.name || ''} size="md" />
-                      <div className="min-w-0">
-                        <p className="text-sm font-semibold text-slate-900 truncate">{member.user?.name}</p>
-                        {member.user?.department && (
-                          <p className="text-xs text-slate-500 truncate">{member.user.department}</p>
-                        )}
-                      </div>
-                    </div>
-                    <Badge variant={isCoord ? 'violet' : 'slate'} size="sm">
-                      {isCoord ? <Crown className="h-3 w-3" /> : <User className="h-3 w-3" />}
-                      {isCoord ? 'Coordinator' : 'Member'}
-                    </Badge>
-                  </Link>
-                );
-              })
+            group.members.map((member, i) => {
+  const isCoord = member.role === 'COORDINATOR';
+  const isTeacher = member.user?.role === 'TEACHER';
+  const label = isTeacher ? 'Teacher' : isCoord ? 'Coordinator' : 'Member';
+  const variant = (isTeacher || isCoord) ? 'violet' : 'slate';
+
+  return (
+    <Link
+      key={member.id}
+      to={`/profile/${member.user?.id}`}
+      className={cn(
+        'flex items-center justify-between px-5 py-3.5 hover:bg-slate-50 transition-colors',
+        i !== 0 && 'border-t border-slate-100'
+      )}
+    >
+      <div className="flex items-center gap-3 min-w-0">
+        <Avatar name={member.user?.name || ''} size="md" />
+        <div className="min-w-0">
+          <p className="text-sm font-semibold text-slate-900 truncate">{member.user?.name}</p>
+          {member.user?.department && (
+            <p className="text-xs text-slate-500 truncate">{member.user.department}</p>
+          )}
+        </div>
+      </div>
+      <Badge variant={variant} size="sm">
+        {isTeacher ? (
+          <GraduationCap className="h-3 w-3" />
+        ) : isCoord ? (
+          <Crown className="h-3 w-3" />
+        ) : (
+          <User className="h-3 w-3" />
+        )}
+        {label}
+      </Badge>
+    </Link>
+  );
+})
             )}
           </Card>
         )}

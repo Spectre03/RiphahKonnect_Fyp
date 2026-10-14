@@ -14,7 +14,8 @@ const lostFoundRoutes = require('./routes/lostFoundRoutes');
 const messageRoutes = require('./routes/messageRoutes');
 const userRoutes = require('./routes/userRoutes');
 const adminRoutes = require('./routes/adminRoutes');
-const errorHandler = require('./middleware/errorHandler');
+const authenticate = require('./middleware/authenticate');
+const upload = require('./middleware/upload');
 
 const app = express();
 const httpServer = createServer(app);
@@ -33,6 +34,8 @@ app.use(cors({
   credentials: true,
 }));
 app.use(express.json({ limit: '10mb' }));
+// Serve uploaded files
+app.use('/uploads', express.static('uploads'));
 
 // Rate limiting
 const limiter = rateLimit({
@@ -52,6 +55,17 @@ app.use('/api/lost-found', lostFoundRoutes);
 app.use('/api/conversations', messageRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/admin', adminRoutes);
+
+// File upload — any authenticated user
+app.post('/api/upload', authenticate, upload.single('file'), (req, res) => {
+  if (!req.file) return res.status(400).json({ error: 'No file uploaded.' });
+  res.json({
+    url: `/uploads/${req.file.filename}`,
+    fileName: req.file.originalname,
+    fileType: req.file.mimetype,
+    size: req.file.size,
+  });
+});
 
 // Health check
 app.get('/api/health', (req, res) => {

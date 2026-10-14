@@ -96,11 +96,11 @@ const getGroup = async (req, res, next) => {
       where: { id: req.params.id },
       include: {
         _count: { select: { members: true, posts: true } },
-        members: {
-          include: {
-            user: { select: { id: true, name: true, avatarUrl: true, department: true } },
-          },
-        },
+      members: {
+  include: {
+    user: { select: { id: true, name: true, avatarUrl: true, department: true, role: true } },
+  },
+},
       },
     });
 

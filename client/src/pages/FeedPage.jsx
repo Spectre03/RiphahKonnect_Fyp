@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { postsAPI } from '../services/api';
+import { postsAPI, uploadAPI } from '../services/api';
 import { timeAgo } from '../utils/brand';
 import { cn } from '../utils/cn';
 import { Card, Button, Badge, Avatar } from '../components/ui';
@@ -9,7 +9,7 @@ import toast from 'react-hot-toast';
 import {
   Heart, MessageCircle, Send, Trash2, Loader2,
   ChevronDown, ChevronUp, Newspaper, HelpCircle, BookOpen,
-  MoreHorizontal, Globe,
+  MoreHorizontal, Globe, Paperclip, FileText, X,
 } from 'lucide-react';
 
 const POST_TYPES = [
@@ -38,6 +38,8 @@ export default function FeedPage() {
   const [posting, setPosting] = useState(false);
   const [expandedComments, setExpandedComments] = useState({});
   const [filterType, setFilterType] = useState('ALL');
+  const [attachment, setAttachment] = useState(null);
+  const [uploading, setUploading] = useState(false);
 
   const fetchPosts = async (p = 1, type = filterType) => {
     try {
@@ -59,15 +61,38 @@ export default function FeedPage() {
 
   useEffect(() => { fetchPosts(1, filterType); }, [filterType]);
 
+  const handleFileUpload = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    try {
+      setUploading(true);
+      const res = await uploadAPI.upload(file);
+      setAttachment(res.data);
+      toast.success('File uploaded!');
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Upload failed.');
+    } finally {
+      setUploading(false);
+      e.target.value = '';
+    }
+  };
+
   const handleCreatePost = async (e) => {
     e.preventDefault();
     if (!newPost.trim()) return;
     try {
       setPosting(true);
-      const res = await postsAPI.create({ content: newPost, type: postType });
+      const res = await postsAPI.create({
+        content: newPost,
+        type: postType,
+        fileUrl: attachment?.url,
+        fileName: attachment?.fileName,
+        fileType: attachment?.fileType,
+      });
       setPosts([{ ...res.data.post, likesCount: 0, commentsCount: 0, isLiked: false }, ...posts]);
       setNewPost('');
       setPostType('GENERAL');
+      setAttachment(null);
       toast.success('Post shared!');
     } catch {
       toast.error('Failed to create post.');
@@ -96,7 +121,6 @@ export default function FeedPage() {
     } catch { toast.error('Failed to delete post.'); }
   };
 
-  // Posts are already filtered server-side; no client-side filter needed
   const filteredPosts = posts;
 
   return (
@@ -149,6 +173,23 @@ export default function FeedPage() {
                     />
                   </div>
                 </div>
+
+                {/* Attachment preview */}
+                {attachment && (
+                  <div className="mt-3 ml-13">
+                    <div className="flex items-center gap-2 px-3 py-2 bg-blue-50 border border-blue-100 rounded-lg">
+                      <FileText className="h-4 w-4 text-blue-600 flex-shrink-0" />
+                      <span className="text-xs font-medium text-blue-700 truncate flex-1">{attachment.fileName}</span>
+                      <button
+                        type="button"
+                        onClick={() => setAttachment(null)}
+                        className="p-1 text-blue-600 hover:text-red-500 hover:bg-red-50 rounded cursor-pointer transition-colors"
+                      >
+                        <X className="h-3.5 w-3.5" />
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Post controls */}
@@ -172,6 +213,18 @@ export default function FeedPage() {
                       </button>
                     );
                   })}
+
+                  <label className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 cursor-pointer transition-colors ml-1">
+                    <Paperclip size={12} />
+                    {uploading ? 'Uploading...' : 'Attach'}
+                    <input
+                      type="file"
+                      className="hidden"
+                      onChange={handleFileUpload}
+                      disabled={uploading}
+                      accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.zip"
+                    />
+                  </label>
                 </div>
                 <Button
                   type="submit"
@@ -318,6 +371,30 @@ function PostCard({ post, currentUser, canModDelete, onLike, onDelete, isComment
 
         {post.imageUrl && (
           <img src={post.imageUrl} alt="" className="mt-3 rounded-xl w-full object-cover max-h-80 border border-slate-100" />
+        )}
+
+        {/* File attachment */}
+        {post.fileUrl && (
+          post.fileType?.startsWith('image/') ? (
+            <a href={post.fileUrl} target="_blank" rel="noopener noreferrer" className="block mt-3">
+              <img
+                src={post.fileUrl}
+                alt={post.fileName || 'attachment'}
+                className="max-h-80 w-auto rounded-xl border border-slate-100 hover:opacity-90 transition-opacity"
+              />
+            </a>
+          ) : (
+            <a
+              href={post.fileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 flex items-center gap-2 px-3 py-2.5 bg-slate-50 hover:bg-indigo-50 border border-slate-200 hover:border-indigo-200 rounded-xl text-xs font-medium text-slate-700 hover:text-indigo-700 transition-colors"
+            >
+              <FileText className="h-4 w-4 text-indigo-600 flex-shrink-0" />
+              <span className="truncate flex-1">{post.fileName || 'Attachment'}</span>
+              <span className="text-indigo-600 font-bold">Download</span>
+            </a>
+          )
         )}
       </div>
 

@@ -74,7 +74,7 @@ const getAnnouncement = async (req, res, next) => {
 // TEACHER → type CLASS
 const createAnnouncement = async (req, res, next) => {
   try {
-    const { title, content, targetDepartment, targetSemester } = req.body;
+    const { title, content, targetDepartment, targetSemester, fileUrl, fileName, fileType } = req.body;
     const user = req.user;
 
     // COORDINATION is faculty-scoped — they can only target their own faculty's departments
@@ -89,15 +89,18 @@ const createAnnouncement = async (req, res, next) => {
     // Determine type from role
     const type = user.role === 'TEACHER' ? 'CLASS' : 'OFFICIAL';
 
-    const announcement = await prisma.announcement.create({
-      data: {
-        title,
-        content,
-        type,
-        targetDepartment: targetDepartment || null,
-        targetSemester:   targetSemester ? parseInt(targetSemester) : null,
-        authorId: user.id,
-      },
+   const announcement = await prisma.announcement.create({
+  data: {
+    title,
+    content,
+    type,
+    targetDepartment: targetDepartment || null,
+    targetSemester:   targetSemester ? parseInt(targetSemester) : null,
+    fileUrl,
+    fileName,
+    fileType,
+    authorId: user.id,
+  },
       include: {
         author: { select: { id: true, name: true, avatarUrl: true, role: true } },
       },
@@ -118,15 +121,18 @@ const updateAnnouncement = async (req, res, next) => {
       return res.status(403).json({ error: 'Not authorized.' });
     }
 
-    const updated = await prisma.announcement.update({
-      where: { id: req.params.id },
-      data: {
-        title:           req.body.title           ?? announcement.title,
-        content:         req.body.content         ?? announcement.content,
-        targetDepartment: req.body.targetDepartment !== undefined ? req.body.targetDepartment : announcement.targetDepartment,
-        targetSemester:  req.body.targetSemester  !== undefined ? parseInt(req.body.targetSemester) : announcement.targetSemester,
-      },
-    });
+   const updated = await prisma.announcement.update({
+  where: { id: req.params.id },
+  data: {
+    title:           req.body.title           ?? announcement.title,
+    content:         req.body.content         ?? announcement.content,
+    targetDepartment: req.body.targetDepartment !== undefined ? req.body.targetDepartment : announcement.targetDepartment,
+    targetSemester:  req.body.targetSemester  !== undefined ? parseInt(req.body.targetSemester) : announcement.targetSemester,
+    fileUrl:         req.body.fileUrl         ?? announcement.fileUrl,
+    fileName:        req.body.fileName        ?? announcement.fileName,
+    fileType:        req.body.fileType        ?? announcement.fileType,
+  },
+});
 
     res.json({ announcement: updated });
   } catch (err) {
