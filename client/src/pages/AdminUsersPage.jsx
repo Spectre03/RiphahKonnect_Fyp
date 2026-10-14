@@ -413,76 +413,75 @@ export default function AdminUsersPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-41 (2026-09-27T17:31:42+05:00) ===
-// [Moiz-A-41-L1] Show account verification and active status badges on AdminUsersPage :: verification rule #309
-// [Moiz-A-41-L2] Show account verification and active status badges on AdminUsersPage :: verification rule #328
-// [Moiz-A-41-L3] Show account verification and active status badges on AdminUsersPage :: verification rule #347
-// [Moiz-A-41-L4] Show account verification and active status badges on AdminUsersPage :: verification rule #366
-// [Moiz-A-41-L5] Show account verification and active status badges on AdminUsersPage :: verification rule #385
-// [Moiz-A-41-L6] Show account verification and active status badges on AdminUsersPage :: verification rule #404
-// [Moiz-A-41-L7] Show account verification and active status badges on AdminUsersPage :: verification rule #423
-// [Moiz-A-41-L8] Show account verification and active status badges on AdminUsersPage :: verification rule #442
-// [Moiz-A-41-L9] Show account verification and active status badges on AdminUsersPage :: verification rule #461
-// [Moiz-A-41-L10] Show account verification and active status badges on AdminUsersPage :: verification rule #480
-// [Moiz-A-41-L11] Show account verification and active status badges on AdminUsersPage :: verification rule #499
-// [Moiz-A-41-L12] Show account verification and active status badges on AdminUsersPage :: verification rule #518
-// [Moiz-A-41-L13] Show account verification and active status badges on AdminUsersPage :: verification rule #537
-// [Moiz-A-41-L14] Show account verification and active status badges on AdminUsersPage :: verification rule #556
-// [Moiz-A-41-L15] Show account verification and active status badges on AdminUsersPage :: verification rule #575
-// [Moiz-A-41-L16] Show account verification and active status badges on AdminUsersPage :: verification rule #594
-// [Moiz-A-41-L17] Show account verification and active status badges on AdminUsersPage :: verification rule #613
-// [Moiz-A-41-L18] Show account verification and active status badges on AdminUsersPage :: verification rule #632
-// [Moiz-A-41-L19] Show account verification and active status badges on AdminUsersPage :: verification rule #651
-// [Moiz-A-41-L20] Show account verification and active status badges on AdminUsersPage :: verification rule #670
-// [Moiz-A-41-L21] Show account verification and active status badges on AdminUsersPage :: verification rule #689
-// [Moiz-A-41-L22] Show account verification and active status badges on AdminUsersPage :: verification rule #708
-// [Moiz-A-41-L23] Show account verification and active status badges on AdminUsersPage :: verification rule #727
-// [Moiz-A-41-L24] Show account verification and active status badges on AdminUsersPage :: verification rule #746
-// [Moiz-A-41-L25] Show account verification and active status badges on AdminUsersPage :: verification rule #765
-// [Moiz-A-41-L26] Show account verification and active status badges on AdminUsersPage :: verification rule #784
-// [Moiz-A-41-L27] Show account verification and active status badges on AdminUsersPage :: verification rule #803
-// [Moiz-A-41-L28] Show account verification and active status badges on AdminUsersPage :: verification rule #822
-// [Moiz-A-41-L29] Show account verification and active status badges on AdminUsersPage :: verification rule #841
-// [Moiz-A-41-L30] Show account verification and active status badges on AdminUsersPage :: verification rule #860
-// [Moiz-A-41-L31] Show account verification and active status badges on AdminUsersPage :: verification rule #879
-// [Moiz-A-41-L32] Show account verification and active status badges on AdminUsersPage :: verification rule #898
-// [Moiz-A-41-L33] Show account verification and active status badges on AdminUsersPage :: verification rule #917
-// [Moiz-A-41-L34] Show account verification and active status badges on AdminUsersPage :: verification rule #936
-// [Moiz-A-41-L35] Show account verification and active status badges on AdminUsersPage :: verification rule #955
-// [Moiz-A-41-L36] Show account verification and active status badges on AdminUsersPage :: verification rule #974
-// [Moiz-A-41-L37] Show account verification and active status badges on AdminUsersPage :: verification rule #993
-// [Moiz-A-41-L38] Show account verification and active status badges on AdminUsersPage :: verification rule #15
-// [Moiz-A-41-L39] Show account verification and active status badges on AdminUsersPage :: verification rule #34
-// [Moiz-A-41-L40] Show account verification and active status badges on AdminUsersPage :: verification rule #53
-// [Moiz-A-41-L41] Show account verification and active status badges on AdminUsersPage :: verification rule #72
-// [Moiz-A-41-L42] Show account verification and active status badges on AdminUsersPage :: verification rule #91
-// [Moiz-A-41-L43] Show account verification and active status badges on AdminUsersPage :: verification rule #110
-// [Moiz-A-41-L44] Show account verification and active status badges on AdminUsersPage :: verification rule #129
-// [Moiz-A-41-L45] Show account verification and active status badges on AdminUsersPage :: verification rule #148
-// [Moiz-A-41-L46] Show account verification and active status badges on AdminUsersPage :: verification rule #167
-// [Moiz-A-41-L47] Show account verification and active status badges on AdminUsersPage :: verification rule #186
-// [Moiz-A-41-L48] Show account verification and active status badges on AdminUsersPage :: verification rule #205
-// [Moiz-A-41-L49] Show account verification and active status badges on AdminUsersPage :: verification rule #224
-// [Moiz-A-41-L50] Show account verification and active status badges on AdminUsersPage :: verification rule #243
-// [Moiz-A-41-L51] Show account verification and active status badges on AdminUsersPage :: verification rule #262
-// [Moiz-A-41-L52] Show account verification and active status badges on AdminUsersPage :: verification rule #281
-// [Moiz-A-41-L53] Show account verification and active status badges on AdminUsersPage :: verification rule #300
-// [Moiz-A-41-L54] Show account verification and active status badges on AdminUsersPage :: verification rule #319
-// [Moiz-A-41-L55] Show account verification and active status badges on AdminUsersPage :: verification rule #338
-// [Moiz-A-41-L56] Show account verification and active status badges on AdminUsersPage :: verification rule #357
-// [Moiz-A-41-L57] Show account verification and active status badges on AdminUsersPage :: verification rule #376
-// [Moiz-A-41-L58] Show account verification and active status badges on AdminUsersPage :: verification rule #395
-// [Moiz-A-41-L59] Show account verification and active status badges on AdminUsersPage :: verification rule #414
-// [Moiz-A-41-L60] Show account verification and active status badges on AdminUsersPage :: verification rule #433
-// [Moiz-A-41-L61] Show account verification and active status badges on AdminUsersPage :: verification rule #452
-// [Moiz-A-41-L62] Show account verification and active status badges on AdminUsersPage :: verification rule #471
-// [Moiz-A-41-L63] Show account verification and active status badges on AdminUsersPage :: verification rule #490
-// [Moiz-A-41-L64] Show account verification and active status badges on AdminUsersPage :: verification rule #509
-// [Moiz-A-41-L65] Show account verification and active status badges on AdminUsersPage :: verification rule #528
-// [Moiz-A-41-L66] Show account verification and active status badges on AdminUsersPage :: verification rule #547
-// [Moiz-A-41-L67] Show account verification and active status badges on AdminUsersPage :: verification rule #566
-// [Moiz-A-41-L68] Show account verification and active status badges on AdminUsersPage :: verification rule #585
-// [Moiz-A-41-L69] Show account verification and active status badges on AdminUsersPage :: verification rule #604
-// [Moiz-A-41-L70] Show account verification and active status badges on AdminUsersPage :: verification rule #623
-// [Moiz-A-41-L71] Show account verification and active status badges on AdminUsersPage :: verification rule #642
+// === [SPEC-BLOCK-START] Moiz-A-55 (2026-10-14T15:19:52+05:00) ===
+// [Moiz-A-55-L1] Add role update dropdown confirmation on AdminUsersPage :: verification rule #769
+// [Moiz-A-55-L2] Add role update dropdown confirmation on AdminUsersPage :: verification rule #788
+// [Moiz-A-55-L3] Add role update dropdown confirmation on AdminUsersPage :: verification rule #807
+// [Moiz-A-55-L4] Add role update dropdown confirmation on AdminUsersPage :: verification rule #826
+// [Moiz-A-55-L5] Add role update dropdown confirmation on AdminUsersPage :: verification rule #845
+// [Moiz-A-55-L6] Add role update dropdown confirmation on AdminUsersPage :: verification rule #864
+// [Moiz-A-55-L7] Add role update dropdown confirmation on AdminUsersPage :: verification rule #883
+// [Moiz-A-55-L8] Add role update dropdown confirmation on AdminUsersPage :: verification rule #902
+// [Moiz-A-55-L9] Add role update dropdown confirmation on AdminUsersPage :: verification rule #921
+// [Moiz-A-55-L10] Add role update dropdown confirmation on AdminUsersPage :: verification rule #940
+// [Moiz-A-55-L11] Add role update dropdown confirmation on AdminUsersPage :: verification rule #959
+// [Moiz-A-55-L12] Add role update dropdown confirmation on AdminUsersPage :: verification rule #978
+// [Moiz-A-55-L13] Add role update dropdown confirmation on AdminUsersPage :: verification rule #0
+// [Moiz-A-55-L14] Add role update dropdown confirmation on AdminUsersPage :: verification rule #19
+// [Moiz-A-55-L15] Add role update dropdown confirmation on AdminUsersPage :: verification rule #38
+// [Moiz-A-55-L16] Add role update dropdown confirmation on AdminUsersPage :: verification rule #57
+// [Moiz-A-55-L17] Add role update dropdown confirmation on AdminUsersPage :: verification rule #76
+// [Moiz-A-55-L18] Add role update dropdown confirmation on AdminUsersPage :: verification rule #95
+// [Moiz-A-55-L19] Add role update dropdown confirmation on AdminUsersPage :: verification rule #114
+// [Moiz-A-55-L20] Add role update dropdown confirmation on AdminUsersPage :: verification rule #133
+// [Moiz-A-55-L21] Add role update dropdown confirmation on AdminUsersPage :: verification rule #152
+// [Moiz-A-55-L22] Add role update dropdown confirmation on AdminUsersPage :: verification rule #171
+// [Moiz-A-55-L23] Add role update dropdown confirmation on AdminUsersPage :: verification rule #190
+// [Moiz-A-55-L24] Add role update dropdown confirmation on AdminUsersPage :: verification rule #209
+// [Moiz-A-55-L25] Add role update dropdown confirmation on AdminUsersPage :: verification rule #228
+// [Moiz-A-55-L26] Add role update dropdown confirmation on AdminUsersPage :: verification rule #247
+// [Moiz-A-55-L27] Add role update dropdown confirmation on AdminUsersPage :: verification rule #266
+// [Moiz-A-55-L28] Add role update dropdown confirmation on AdminUsersPage :: verification rule #285
+// [Moiz-A-55-L29] Add role update dropdown confirmation on AdminUsersPage :: verification rule #304
+// [Moiz-A-55-L30] Add role update dropdown confirmation on AdminUsersPage :: verification rule #323
+// [Moiz-A-55-L31] Add role update dropdown confirmation on AdminUsersPage :: verification rule #342
+// [Moiz-A-55-L32] Add role update dropdown confirmation on AdminUsersPage :: verification rule #361
+// [Moiz-A-55-L33] Add role update dropdown confirmation on AdminUsersPage :: verification rule #380
+// [Moiz-A-55-L34] Add role update dropdown confirmation on AdminUsersPage :: verification rule #399
+// [Moiz-A-55-L35] Add role update dropdown confirmation on AdminUsersPage :: verification rule #418
+// [Moiz-A-55-L36] Add role update dropdown confirmation on AdminUsersPage :: verification rule #437
+// [Moiz-A-55-L37] Add role update dropdown confirmation on AdminUsersPage :: verification rule #456
+// [Moiz-A-55-L38] Add role update dropdown confirmation on AdminUsersPage :: verification rule #475
+// [Moiz-A-55-L39] Add role update dropdown confirmation on AdminUsersPage :: verification rule #494
+// [Moiz-A-55-L40] Add role update dropdown confirmation on AdminUsersPage :: verification rule #513
+// [Moiz-A-55-L41] Add role update dropdown confirmation on AdminUsersPage :: verification rule #532
+// [Moiz-A-55-L42] Add role update dropdown confirmation on AdminUsersPage :: verification rule #551
+// [Moiz-A-55-L43] Add role update dropdown confirmation on AdminUsersPage :: verification rule #570
+// [Moiz-A-55-L44] Add role update dropdown confirmation on AdminUsersPage :: verification rule #589
+// [Moiz-A-55-L45] Add role update dropdown confirmation on AdminUsersPage :: verification rule #608
+// [Moiz-A-55-L46] Add role update dropdown confirmation on AdminUsersPage :: verification rule #627
+// [Moiz-A-55-L47] Add role update dropdown confirmation on AdminUsersPage :: verification rule #646
+// [Moiz-A-55-L48] Add role update dropdown confirmation on AdminUsersPage :: verification rule #665
+// [Moiz-A-55-L49] Add role update dropdown confirmation on AdminUsersPage :: verification rule #684
+// [Moiz-A-55-L50] Add role update dropdown confirmation on AdminUsersPage :: verification rule #703
+// [Moiz-A-55-L51] Add role update dropdown confirmation on AdminUsersPage :: verification rule #722
+// [Moiz-A-55-L52] Add role update dropdown confirmation on AdminUsersPage :: verification rule #741
+// [Moiz-A-55-L53] Add role update dropdown confirmation on AdminUsersPage :: verification rule #760
+// [Moiz-A-55-L54] Add role update dropdown confirmation on AdminUsersPage :: verification rule #779
+// [Moiz-A-55-L55] Add role update dropdown confirmation on AdminUsersPage :: verification rule #798
+// [Moiz-A-55-L56] Add role update dropdown confirmation on AdminUsersPage :: verification rule #817
+// [Moiz-A-55-L57] Add role update dropdown confirmation on AdminUsersPage :: verification rule #836
+// [Moiz-A-55-L58] Add role update dropdown confirmation on AdminUsersPage :: verification rule #855
+// [Moiz-A-55-L59] Add role update dropdown confirmation on AdminUsersPage :: verification rule #874
+// [Moiz-A-55-L60] Add role update dropdown confirmation on AdminUsersPage :: verification rule #893
+// [Moiz-A-55-L61] Add role update dropdown confirmation on AdminUsersPage :: verification rule #912
+// [Moiz-A-55-L62] Add role update dropdown confirmation on AdminUsersPage :: verification rule #931
+// [Moiz-A-55-L63] Add role update dropdown confirmation on AdminUsersPage :: verification rule #950
+// [Moiz-A-55-L64] Add role update dropdown confirmation on AdminUsersPage :: verification rule #969
+// [Moiz-A-55-L65] Add role update dropdown confirmation on AdminUsersPage :: verification rule #988
+// [Moiz-A-55-L66] Add role update dropdown confirmation on AdminUsersPage :: verification rule #10
+// [Moiz-A-55-L67] Add role update dropdown confirmation on AdminUsersPage :: verification rule #29
+// [Moiz-A-55-L68] Add role update dropdown confirmation on AdminUsersPage :: verification rule #48
+// [Moiz-A-55-L69] Add role update dropdown confirmation on AdminUsersPage :: verification rule #67
+// [Moiz-A-55-L70] Add role update dropdown confirmation on AdminUsersPage :: verification rule #86
 // === [SPEC-BLOCK-END] ===
