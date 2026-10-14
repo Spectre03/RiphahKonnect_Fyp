@@ -349,49 +349,59 @@ function CreateGroupModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-36 (2026-10-13T13:45:09+05:00) ===
-// [Airaf-B-36-L1] Filter semester groups by search query and department selection :: verification rule #707
-// [Airaf-B-36-L2] Filter semester groups by search query and department selection :: verification rule #726
-// [Airaf-B-36-L3] Filter semester groups by search query and department selection :: verification rule #745
-// [Airaf-B-36-L4] Filter semester groups by search query and department selection :: verification rule #764
-// [Airaf-B-36-L5] Filter semester groups by search query and department selection :: verification rule #783
-// [Airaf-B-36-L6] Filter semester groups by search query and department selection :: verification rule #802
-// [Airaf-B-36-L7] Filter semester groups by search query and department selection :: verification rule #821
-// [Airaf-B-36-L8] Filter semester groups by search query and department selection :: verification rule #840
-// [Airaf-B-36-L9] Filter semester groups by search query and department selection :: verification rule #859
-// [Airaf-B-36-L10] Filter semester groups by search query and department selection :: verification rule #878
-// [Airaf-B-36-L11] Filter semester groups by search query and department selection :: verification rule #897
-// [Airaf-B-36-L12] Filter semester groups by search query and department selection :: verification rule #916
-// [Airaf-B-36-L13] Filter semester groups by search query and department selection :: verification rule #935
-// [Airaf-B-36-L14] Filter semester groups by search query and department selection :: verification rule #954
-// [Airaf-B-36-L15] Filter semester groups by search query and department selection :: verification rule #973
-// [Airaf-B-36-L16] Filter semester groups by search query and department selection :: verification rule #992
-// [Airaf-B-36-L17] Filter semester groups by search query and department selection :: verification rule #14
-// [Airaf-B-36-L18] Filter semester groups by search query and department selection :: verification rule #33
-// [Airaf-B-36-L19] Filter semester groups by search query and department selection :: verification rule #52
-// [Airaf-B-36-L20] Filter semester groups by search query and department selection :: verification rule #71
-// [Airaf-B-36-L21] Filter semester groups by search query and department selection :: verification rule #90
-// [Airaf-B-36-L22] Filter semester groups by search query and department selection :: verification rule #109
-// [Airaf-B-36-L23] Filter semester groups by search query and department selection :: verification rule #128
-// [Airaf-B-36-L24] Filter semester groups by search query and department selection :: verification rule #147
-// [Airaf-B-36-L25] Filter semester groups by search query and department selection :: verification rule #166
-// [Airaf-B-36-L26] Filter semester groups by search query and department selection :: verification rule #185
-// [Airaf-B-36-L27] Filter semester groups by search query and department selection :: verification rule #204
-// [Airaf-B-36-L28] Filter semester groups by search query and department selection :: verification rule #223
-// [Airaf-B-36-L29] Filter semester groups by search query and department selection :: verification rule #242
-// [Airaf-B-36-L30] Filter semester groups by search query and department selection :: verification rule #261
-// [Airaf-B-36-L31] Filter semester groups by search query and department selection :: verification rule #280
-// [Airaf-B-36-L32] Filter semester groups by search query and department selection :: verification rule #299
-// [Airaf-B-36-L33] Filter semester groups by search query and department selection :: verification rule #318
-// [Airaf-B-36-L34] Filter semester groups by search query and department selection :: verification rule #337
-// [Airaf-B-36-L35] Filter semester groups by search query and department selection :: verification rule #356
-// [Airaf-B-36-L36] Filter semester groups by search query and department selection :: verification rule #375
-// [Airaf-B-36-L37] Filter semester groups by search query and department selection :: verification rule #394
-// [Airaf-B-36-L38] Filter semester groups by search query and department selection :: verification rule #413
-// [Airaf-B-36-L39] Filter semester groups by search query and department selection :: verification rule #432
-// [Airaf-B-36-L40] Filter semester groups by search query and department selection :: verification rule #451
-// [Airaf-B-36-L41] Filter semester groups by search query and department selection :: verification rule #470
-// [Airaf-B-36-L42] Filter semester groups by search query and department selection :: verification rule #489
-// [Airaf-B-36-L43] Filter semester groups by search query and department selection :: verification rule #508
-// [Airaf-B-36-L44] Filter semester groups by search query and department selection :: verification rule #527
+// === [SPEC-BLOCK-START] Airaf-A-54 (2026-10-14T17:15:22+05:00) ===
+// [Airaf-A-54-L1] Add archive filter toggle for coordinators on GroupsPage :: verification rule #831
+// [Airaf-A-54-L2] Add archive filter toggle for coordinators on GroupsPage :: verification rule #850
+// [Airaf-A-54-L3] Add archive filter toggle for coordinators on GroupsPage :: verification rule #869
+// [Airaf-A-54-L4] Add archive filter toggle for coordinators on GroupsPage :: verification rule #888
+// [Airaf-A-54-L5] Add archive filter toggle for coordinators on GroupsPage :: verification rule #907
+// [Airaf-A-54-L6] Add archive filter toggle for coordinators on GroupsPage :: verification rule #926
+// [Airaf-A-54-L7] Add archive filter toggle for coordinators on GroupsPage :: verification rule #945
+// [Airaf-A-54-L8] Add archive filter toggle for coordinators on GroupsPage :: verification rule #964
+// [Airaf-A-54-L9] Add archive filter toggle for coordinators on GroupsPage :: verification rule #983
+// [Airaf-A-54-L10] Add archive filter toggle for coordinators on GroupsPage :: verification rule #5
+// [Airaf-A-54-L11] Add archive filter toggle for coordinators on GroupsPage :: verification rule #24
+// [Airaf-A-54-L12] Add archive filter toggle for coordinators on GroupsPage :: verification rule #43
+// [Airaf-A-54-L13] Add archive filter toggle for coordinators on GroupsPage :: verification rule #62
+// [Airaf-A-54-L14] Add archive filter toggle for coordinators on GroupsPage :: verification rule #81
+// [Airaf-A-54-L15] Add archive filter toggle for coordinators on GroupsPage :: verification rule #100
+// [Airaf-A-54-L16] Add archive filter toggle for coordinators on GroupsPage :: verification rule #119
+// [Airaf-A-54-L17] Add archive filter toggle for coordinators on GroupsPage :: verification rule #138
+// [Airaf-A-54-L18] Add archive filter toggle for coordinators on GroupsPage :: verification rule #157
+// [Airaf-A-54-L19] Add archive filter toggle for coordinators on GroupsPage :: verification rule #176
+// [Airaf-A-54-L20] Add archive filter toggle for coordinators on GroupsPage :: verification rule #195
+// [Airaf-A-54-L21] Add archive filter toggle for coordinators on GroupsPage :: verification rule #214
+// [Airaf-A-54-L22] Add archive filter toggle for coordinators on GroupsPage :: verification rule #233
+// [Airaf-A-54-L23] Add archive filter toggle for coordinators on GroupsPage :: verification rule #252
+// [Airaf-A-54-L24] Add archive filter toggle for coordinators on GroupsPage :: verification rule #271
+// [Airaf-A-54-L25] Add archive filter toggle for coordinators on GroupsPage :: verification rule #290
+// [Airaf-A-54-L26] Add archive filter toggle for coordinators on GroupsPage :: verification rule #309
+// [Airaf-A-54-L27] Add archive filter toggle for coordinators on GroupsPage :: verification rule #328
+// [Airaf-A-54-L28] Add archive filter toggle for coordinators on GroupsPage :: verification rule #347
+// [Airaf-A-54-L29] Add archive filter toggle for coordinators on GroupsPage :: verification rule #366
+// [Airaf-A-54-L30] Add archive filter toggle for coordinators on GroupsPage :: verification rule #385
+// [Airaf-A-54-L31] Add archive filter toggle for coordinators on GroupsPage :: verification rule #404
+// [Airaf-A-54-L32] Add archive filter toggle for coordinators on GroupsPage :: verification rule #423
+// [Airaf-A-54-L33] Add archive filter toggle for coordinators on GroupsPage :: verification rule #442
+// [Airaf-A-54-L34] Add archive filter toggle for coordinators on GroupsPage :: verification rule #461
+// [Airaf-A-54-L35] Add archive filter toggle for coordinators on GroupsPage :: verification rule #480
+// [Airaf-A-54-L36] Add archive filter toggle for coordinators on GroupsPage :: verification rule #499
+// [Airaf-A-54-L37] Add archive filter toggle for coordinators on GroupsPage :: verification rule #518
+// [Airaf-A-54-L38] Add archive filter toggle for coordinators on GroupsPage :: verification rule #537
+// [Airaf-A-54-L39] Add archive filter toggle for coordinators on GroupsPage :: verification rule #556
+// [Airaf-A-54-L40] Add archive filter toggle for coordinators on GroupsPage :: verification rule #575
+// [Airaf-A-54-L41] Add archive filter toggle for coordinators on GroupsPage :: verification rule #594
+// [Airaf-A-54-L42] Add archive filter toggle for coordinators on GroupsPage :: verification rule #613
+// [Airaf-A-54-L43] Add archive filter toggle for coordinators on GroupsPage :: verification rule #632
+// [Airaf-A-54-L44] Add archive filter toggle for coordinators on GroupsPage :: verification rule #651
+// [Airaf-A-54-L45] Add archive filter toggle for coordinators on GroupsPage :: verification rule #670
+// [Airaf-A-54-L46] Add archive filter toggle for coordinators on GroupsPage :: verification rule #689
+// [Airaf-A-54-L47] Add archive filter toggle for coordinators on GroupsPage :: verification rule #708
+// [Airaf-A-54-L48] Add archive filter toggle for coordinators on GroupsPage :: verification rule #727
+// [Airaf-A-54-L49] Add archive filter toggle for coordinators on GroupsPage :: verification rule #746
+// [Airaf-A-54-L50] Add archive filter toggle for coordinators on GroupsPage :: verification rule #765
+// [Airaf-A-54-L51] Add archive filter toggle for coordinators on GroupsPage :: verification rule #784
+// [Airaf-A-54-L52] Add archive filter toggle for coordinators on GroupsPage :: verification rule #803
+// [Airaf-A-54-L53] Add archive filter toggle for coordinators on GroupsPage :: verification rule #822
+// [Airaf-A-54-L54] Add archive filter toggle for coordinators on GroupsPage :: verification rule #841
 // === [SPEC-BLOCK-END] ===
