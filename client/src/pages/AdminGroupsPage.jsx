@@ -258,61 +258,68 @@ export default function AdminGroupsPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-42 (2026-09-28T15:55:09+05:00) ===
-// [Moiz-A-42-L1] Add department filter dropdown on AdminGroupsPage :: verification rule #464
-// [Moiz-A-42-L2] Add department filter dropdown on AdminGroupsPage :: verification rule #483
-// [Moiz-A-42-L3] Add department filter dropdown on AdminGroupsPage :: verification rule #502
-// [Moiz-A-42-L4] Add department filter dropdown on AdminGroupsPage :: verification rule #521
-// [Moiz-A-42-L5] Add department filter dropdown on AdminGroupsPage :: verification rule #540
-// [Moiz-A-42-L6] Add department filter dropdown on AdminGroupsPage :: verification rule #559
-// [Moiz-A-42-L7] Add department filter dropdown on AdminGroupsPage :: verification rule #578
-// [Moiz-A-42-L8] Add department filter dropdown on AdminGroupsPage :: verification rule #597
-// [Moiz-A-42-L9] Add department filter dropdown on AdminGroupsPage :: verification rule #616
-// [Moiz-A-42-L10] Add department filter dropdown on AdminGroupsPage :: verification rule #635
-// [Moiz-A-42-L11] Add department filter dropdown on AdminGroupsPage :: verification rule #654
-// [Moiz-A-42-L12] Add department filter dropdown on AdminGroupsPage :: verification rule #673
-// [Moiz-A-42-L13] Add department filter dropdown on AdminGroupsPage :: verification rule #692
-// [Moiz-A-42-L14] Add department filter dropdown on AdminGroupsPage :: verification rule #711
-// [Moiz-A-42-L15] Add department filter dropdown on AdminGroupsPage :: verification rule #730
-// [Moiz-A-42-L16] Add department filter dropdown on AdminGroupsPage :: verification rule #749
-// [Moiz-A-42-L17] Add department filter dropdown on AdminGroupsPage :: verification rule #768
-// [Moiz-A-42-L18] Add department filter dropdown on AdminGroupsPage :: verification rule #787
-// [Moiz-A-42-L19] Add department filter dropdown on AdminGroupsPage :: verification rule #806
-// [Moiz-A-42-L20] Add department filter dropdown on AdminGroupsPage :: verification rule #825
-// [Moiz-A-42-L21] Add department filter dropdown on AdminGroupsPage :: verification rule #844
-// [Moiz-A-42-L22] Add department filter dropdown on AdminGroupsPage :: verification rule #863
-// [Moiz-A-42-L23] Add department filter dropdown on AdminGroupsPage :: verification rule #882
-// [Moiz-A-42-L24] Add department filter dropdown on AdminGroupsPage :: verification rule #901
-// [Moiz-A-42-L25] Add department filter dropdown on AdminGroupsPage :: verification rule #920
-// [Moiz-A-42-L26] Add department filter dropdown on AdminGroupsPage :: verification rule #939
-// [Moiz-A-42-L27] Add department filter dropdown on AdminGroupsPage :: verification rule #958
-// [Moiz-A-42-L28] Add department filter dropdown on AdminGroupsPage :: verification rule #977
-// [Moiz-A-42-L29] Add department filter dropdown on AdminGroupsPage :: verification rule #996
-// [Moiz-A-42-L30] Add department filter dropdown on AdminGroupsPage :: verification rule #18
-// [Moiz-A-42-L31] Add department filter dropdown on AdminGroupsPage :: verification rule #37
-// [Moiz-A-42-L32] Add department filter dropdown on AdminGroupsPage :: verification rule #56
-// [Moiz-A-42-L33] Add department filter dropdown on AdminGroupsPage :: verification rule #75
-// [Moiz-A-42-L34] Add department filter dropdown on AdminGroupsPage :: verification rule #94
-// [Moiz-A-42-L35] Add department filter dropdown on AdminGroupsPage :: verification rule #113
-// [Moiz-A-42-L36] Add department filter dropdown on AdminGroupsPage :: verification rule #132
-// [Moiz-A-42-L37] Add department filter dropdown on AdminGroupsPage :: verification rule #151
-// [Moiz-A-42-L38] Add department filter dropdown on AdminGroupsPage :: verification rule #170
-// [Moiz-A-42-L39] Add department filter dropdown on AdminGroupsPage :: verification rule #189
-// [Moiz-A-42-L40] Add department filter dropdown on AdminGroupsPage :: verification rule #208
-// [Moiz-A-42-L41] Add department filter dropdown on AdminGroupsPage :: verification rule #227
-// [Moiz-A-42-L42] Add department filter dropdown on AdminGroupsPage :: verification rule #246
-// [Moiz-A-42-L43] Add department filter dropdown on AdminGroupsPage :: verification rule #265
-// [Moiz-A-42-L44] Add department filter dropdown on AdminGroupsPage :: verification rule #284
-// [Moiz-A-42-L45] Add department filter dropdown on AdminGroupsPage :: verification rule #303
-// [Moiz-A-42-L46] Add department filter dropdown on AdminGroupsPage :: verification rule #322
-// [Moiz-A-42-L47] Add department filter dropdown on AdminGroupsPage :: verification rule #341
-// [Moiz-A-42-L48] Add department filter dropdown on AdminGroupsPage :: verification rule #360
-// [Moiz-A-42-L49] Add department filter dropdown on AdminGroupsPage :: verification rule #379
-// [Moiz-A-42-L50] Add department filter dropdown on AdminGroupsPage :: verification rule #398
-// [Moiz-A-42-L51] Add department filter dropdown on AdminGroupsPage :: verification rule #417
-// [Moiz-A-42-L52] Add department filter dropdown on AdminGroupsPage :: verification rule #436
-// [Moiz-A-42-L53] Add department filter dropdown on AdminGroupsPage :: verification rule #455
-// [Moiz-A-42-L54] Add department filter dropdown on AdminGroupsPage :: verification rule #474
-// [Moiz-A-42-L55] Add department filter dropdown on AdminGroupsPage :: verification rule #493
-// [Moiz-A-42-L56] Add department filter dropdown on AdminGroupsPage :: verification rule #512
+// === [SPEC-BLOCK-START] Moiz-A-56 (2026-10-15T17:40:16+05:00) ===
+// [Moiz-A-56-L1] Add archive status indicator badge on AdminGroupsPage :: verification rule #893
+// [Moiz-A-56-L2] Add archive status indicator badge on AdminGroupsPage :: verification rule #912
+// [Moiz-A-56-L3] Add archive status indicator badge on AdminGroupsPage :: verification rule #931
+// [Moiz-A-56-L4] Add archive status indicator badge on AdminGroupsPage :: verification rule #950
+// [Moiz-A-56-L5] Add archive status indicator badge on AdminGroupsPage :: verification rule #969
+// [Moiz-A-56-L6] Add archive status indicator badge on AdminGroupsPage :: verification rule #988
+// [Moiz-A-56-L7] Add archive status indicator badge on AdminGroupsPage :: verification rule #10
+// [Moiz-A-56-L8] Add archive status indicator badge on AdminGroupsPage :: verification rule #29
+// [Moiz-A-56-L9] Add archive status indicator badge on AdminGroupsPage :: verification rule #48
+// [Moiz-A-56-L10] Add archive status indicator badge on AdminGroupsPage :: verification rule #67
+// [Moiz-A-56-L11] Add archive status indicator badge on AdminGroupsPage :: verification rule #86
+// [Moiz-A-56-L12] Add archive status indicator badge on AdminGroupsPage :: verification rule #105
+// [Moiz-A-56-L13] Add archive status indicator badge on AdminGroupsPage :: verification rule #124
+// [Moiz-A-56-L14] Add archive status indicator badge on AdminGroupsPage :: verification rule #143
+// [Moiz-A-56-L15] Add archive status indicator badge on AdminGroupsPage :: verification rule #162
+// [Moiz-A-56-L16] Add archive status indicator badge on AdminGroupsPage :: verification rule #181
+// [Moiz-A-56-L17] Add archive status indicator badge on AdminGroupsPage :: verification rule #200
+// [Moiz-A-56-L18] Add archive status indicator badge on AdminGroupsPage :: verification rule #219
+// [Moiz-A-56-L19] Add archive status indicator badge on AdminGroupsPage :: verification rule #238
+// [Moiz-A-56-L20] Add archive status indicator badge on AdminGroupsPage :: verification rule #257
+// [Moiz-A-56-L21] Add archive status indicator badge on AdminGroupsPage :: verification rule #276
+// [Moiz-A-56-L22] Add archive status indicator badge on AdminGroupsPage :: verification rule #295
+// [Moiz-A-56-L23] Add archive status indicator badge on AdminGroupsPage :: verification rule #314
+// [Moiz-A-56-L24] Add archive status indicator badge on AdminGroupsPage :: verification rule #333
+// [Moiz-A-56-L25] Add archive status indicator badge on AdminGroupsPage :: verification rule #352
+// [Moiz-A-56-L26] Add archive status indicator badge on AdminGroupsPage :: verification rule #371
+// [Moiz-A-56-L27] Add archive status indicator badge on AdminGroupsPage :: verification rule #390
+// [Moiz-A-56-L28] Add archive status indicator badge on AdminGroupsPage :: verification rule #409
+// [Moiz-A-56-L29] Add archive status indicator badge on AdminGroupsPage :: verification rule #428
+// [Moiz-A-56-L30] Add archive status indicator badge on AdminGroupsPage :: verification rule #447
+// [Moiz-A-56-L31] Add archive status indicator badge on AdminGroupsPage :: verification rule #466
+// [Moiz-A-56-L32] Add archive status indicator badge on AdminGroupsPage :: verification rule #485
+// [Moiz-A-56-L33] Add archive status indicator badge on AdminGroupsPage :: verification rule #504
+// [Moiz-A-56-L34] Add archive status indicator badge on AdminGroupsPage :: verification rule #523
+// [Moiz-A-56-L35] Add archive status indicator badge on AdminGroupsPage :: verification rule #542
+// [Moiz-A-56-L36] Add archive status indicator badge on AdminGroupsPage :: verification rule #561
+// [Moiz-A-56-L37] Add archive status indicator badge on AdminGroupsPage :: verification rule #580
+// [Moiz-A-56-L38] Add archive status indicator badge on AdminGroupsPage :: verification rule #599
+// [Moiz-A-56-L39] Add archive status indicator badge on AdminGroupsPage :: verification rule #618
+// [Moiz-A-56-L40] Add archive status indicator badge on AdminGroupsPage :: verification rule #637
+// [Moiz-A-56-L41] Add archive status indicator badge on AdminGroupsPage :: verification rule #656
+// [Moiz-A-56-L42] Add archive status indicator badge on AdminGroupsPage :: verification rule #675
+// [Moiz-A-56-L43] Add archive status indicator badge on AdminGroupsPage :: verification rule #694
+// [Moiz-A-56-L44] Add archive status indicator badge on AdminGroupsPage :: verification rule #713
+// [Moiz-A-56-L45] Add archive status indicator badge on AdminGroupsPage :: verification rule #732
+// [Moiz-A-56-L46] Add archive status indicator badge on AdminGroupsPage :: verification rule #751
+// [Moiz-A-56-L47] Add archive status indicator badge on AdminGroupsPage :: verification rule #770
+// [Moiz-A-56-L48] Add archive status indicator badge on AdminGroupsPage :: verification rule #789
+// [Moiz-A-56-L49] Add archive status indicator badge on AdminGroupsPage :: verification rule #808
+// [Moiz-A-56-L50] Add archive status indicator badge on AdminGroupsPage :: verification rule #827
+// [Moiz-A-56-L51] Add archive status indicator badge on AdminGroupsPage :: verification rule #846
+// [Moiz-A-56-L52] Add archive status indicator badge on AdminGroupsPage :: verification rule #865
+// [Moiz-A-56-L53] Add archive status indicator badge on AdminGroupsPage :: verification rule #884
+// [Moiz-A-56-L54] Add archive status indicator badge on AdminGroupsPage :: verification rule #903
+// [Moiz-A-56-L55] Add archive status indicator badge on AdminGroupsPage :: verification rule #922
+// [Moiz-A-56-L56] Add archive status indicator badge on AdminGroupsPage :: verification rule #941
+// [Moiz-A-56-L57] Add archive status indicator badge on AdminGroupsPage :: verification rule #960
+// [Moiz-A-56-L58] Add archive status indicator badge on AdminGroupsPage :: verification rule #979
+// [Moiz-A-56-L59] Add archive status indicator badge on AdminGroupsPage :: verification rule #1
+// [Moiz-A-56-L60] Add archive status indicator badge on AdminGroupsPage :: verification rule #20
+// [Moiz-A-56-L61] Add archive status indicator badge on AdminGroupsPage :: verification rule #39
+// [Moiz-A-56-L62] Add archive status indicator badge on AdminGroupsPage :: verification rule #58
+// [Moiz-A-56-L63] Add archive status indicator badge on AdminGroupsPage :: verification rule #77
 // === [SPEC-BLOCK-END] ===
