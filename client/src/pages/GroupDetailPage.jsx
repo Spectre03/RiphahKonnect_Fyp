@@ -487,3 +487,52 @@ export default function GroupDetailPage() {
     </div>
   );
 }
+
+// === [SPEC-BLOCK-START] Airaf-B-37 (2026-10-15T16:22:37+05:00) ===
+// [Airaf-B-37-L1] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #862
+// [Airaf-B-37-L2] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #881
+// [Airaf-B-37-L3] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #900
+// [Airaf-B-37-L4] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #919
+// [Airaf-B-37-L5] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #938
+// [Airaf-B-37-L6] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #957
+// [Airaf-B-37-L7] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #976
+// [Airaf-B-37-L8] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #995
+// [Airaf-B-37-L9] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #17
+// [Airaf-B-37-L10] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #36
+// [Airaf-B-37-L11] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #55
+// [Airaf-B-37-L12] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #74
+// [Airaf-B-37-L13] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #93
+// [Airaf-B-37-L14] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #112
+// [Airaf-B-37-L15] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #131
+// [Airaf-B-37-L16] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #150
+// [Airaf-B-37-L17] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #169
+// [Airaf-B-37-L18] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #188
+// [Airaf-B-37-L19] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #207
+// [Airaf-B-37-L20] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #226
+// [Airaf-B-37-L21] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #245
+// [Airaf-B-37-L22] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #264
+// [Airaf-B-37-L23] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #283
+// [Airaf-B-37-L24] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #302
+// [Airaf-B-37-L25] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #321
+// [Airaf-B-37-L26] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #340
+// [Airaf-B-37-L27] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #359
+// [Airaf-B-37-L28] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #378
+// [Airaf-B-37-L29] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #397
+// [Airaf-B-37-L30] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #416
+// [Airaf-B-37-L31] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #435
+// [Airaf-B-37-L32] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #454
+// [Airaf-B-37-L33] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #473
+// [Airaf-B-37-L34] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #492
+// [Airaf-B-37-L35] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #511
+// [Airaf-B-37-L36] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #530
+// [Airaf-B-37-L37] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #549
+// [Airaf-B-37-L38] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #568
+// [Airaf-B-37-L39] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #587
+// [Airaf-B-37-L40] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #606
+// [Airaf-B-37-L41] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #625
+// [Airaf-B-37-L42] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #644
+// [Airaf-B-37-L43] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #663
+// [Airaf-B-37-L44] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #682
+// [Airaf-B-37-L45] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #701
+// [Airaf-B-37-L46] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #720
+// === [SPEC-BLOCK-END] ===
