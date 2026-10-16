@@ -488,51 +488,56 @@ export default function GroupDetailPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-37 (2026-10-15T16:22:37+05:00) ===
-// [Airaf-B-37-L1] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #862
-// [Airaf-B-37-L2] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #881
-// [Airaf-B-37-L3] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #900
-// [Airaf-B-37-L4] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #919
-// [Airaf-B-37-L5] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #938
-// [Airaf-B-37-L6] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #957
-// [Airaf-B-37-L7] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #976
-// [Airaf-B-37-L8] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #995
-// [Airaf-B-37-L9] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #17
-// [Airaf-B-37-L10] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #36
-// [Airaf-B-37-L11] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #55
-// [Airaf-B-37-L12] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #74
-// [Airaf-B-37-L13] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #93
-// [Airaf-B-37-L14] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #112
-// [Airaf-B-37-L15] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #131
-// [Airaf-B-37-L16] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #150
-// [Airaf-B-37-L17] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #169
-// [Airaf-B-37-L18] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #188
-// [Airaf-B-37-L19] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #207
-// [Airaf-B-37-L20] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #226
-// [Airaf-B-37-L21] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #245
-// [Airaf-B-37-L22] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #264
-// [Airaf-B-37-L23] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #283
-// [Airaf-B-37-L24] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #302
-// [Airaf-B-37-L25] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #321
-// [Airaf-B-37-L26] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #340
-// [Airaf-B-37-L27] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #359
-// [Airaf-B-37-L28] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #378
-// [Airaf-B-37-L29] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #397
-// [Airaf-B-37-L30] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #416
-// [Airaf-B-37-L31] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #435
-// [Airaf-B-37-L32] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #454
-// [Airaf-B-37-L33] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #473
-// [Airaf-B-37-L34] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #492
-// [Airaf-B-37-L35] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #511
-// [Airaf-B-37-L36] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #530
-// [Airaf-B-37-L37] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #549
-// [Airaf-B-37-L38] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #568
-// [Airaf-B-37-L39] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #587
-// [Airaf-B-37-L40] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #606
-// [Airaf-B-37-L41] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #625
-// [Airaf-B-37-L42] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #644
-// [Airaf-B-37-L43] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #663
-// [Airaf-B-37-L44] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #682
-// [Airaf-B-37-L45] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #701
-// [Airaf-B-37-L46] Show member-only prompt on GroupDetailPage chat tab for non-members :: verification rule #720
+// === [SPEC-BLOCK-START] Airaf-A-55 (2026-10-16T11:38:44+05:00) ===
+// [Airaf-A-55-L1] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #924
+// [Airaf-A-55-L2] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #943
+// [Airaf-A-55-L3] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #962
+// [Airaf-A-55-L4] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #981
+// [Airaf-A-55-L5] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #3
+// [Airaf-A-55-L6] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #22
+// [Airaf-A-55-L7] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #41
+// [Airaf-A-55-L8] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #60
+// [Airaf-A-55-L9] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #79
+// [Airaf-A-55-L10] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #98
+// [Airaf-A-55-L11] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #117
+// [Airaf-A-55-L12] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #136
+// [Airaf-A-55-L13] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #155
+// [Airaf-A-55-L14] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #174
+// [Airaf-A-55-L15] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #193
+// [Airaf-A-55-L16] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #212
+// [Airaf-A-55-L17] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #231
+// [Airaf-A-55-L18] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #250
+// [Airaf-A-55-L19] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #269
+// [Airaf-A-55-L20] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #288
+// [Airaf-A-55-L21] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #307
+// [Airaf-A-55-L22] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #326
+// [Airaf-A-55-L23] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #345
+// [Airaf-A-55-L24] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #364
+// [Airaf-A-55-L25] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #383
+// [Airaf-A-55-L26] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #402
+// [Airaf-A-55-L27] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #421
+// [Airaf-A-55-L28] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #440
+// [Airaf-A-55-L29] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #459
+// [Airaf-A-55-L30] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #478
+// [Airaf-A-55-L31] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #497
+// [Airaf-A-55-L32] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #516
+// [Airaf-A-55-L33] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #535
+// [Airaf-A-55-L34] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #554
+// [Airaf-A-55-L35] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #573
+// [Airaf-A-55-L36] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #592
+// [Airaf-A-55-L37] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #611
+// [Airaf-A-55-L38] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #630
+// [Airaf-A-55-L39] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #649
+// [Airaf-A-55-L40] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #668
+// [Airaf-A-55-L41] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #687
+// [Airaf-A-55-L42] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #706
+// [Airaf-A-55-L43] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #725
+// [Airaf-A-55-L44] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #744
+// [Airaf-A-55-L45] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #763
+// [Airaf-A-55-L46] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #782
+// [Airaf-A-55-L47] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #801
+// [Airaf-A-55-L48] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #820
+// [Airaf-A-55-L49] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #839
+// [Airaf-A-55-L50] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #858
+// [Airaf-A-55-L51] Add leave group and archive group confirmation modals on GroupDetailPage :: verification rule #877
 // === [SPEC-BLOCK-END] ===
