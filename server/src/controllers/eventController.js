@@ -1,4 +1,5 @@
 const prisma = require('../config/db');
+const { checkTextContent } = require('../utils/moderation');
 
 // GET /api/events
 const getEvents = async (req, res, next) => {
@@ -20,23 +21,26 @@ const getEvents = async (req, res, next) => {
           createdBy: {
             select: { id: true, name: true, avatarUrl: true },
           },
-          _count: { select: { rsvps: true } },
           rsvps: {
-            where: { userId: req.user.id },
-            select: { id: true, status: true },
+            select: { id: true, userId: true, status: true },
           },
         },
       }),
       prisma.event.count({ where }),
     ]);
 
-    const formatted = events.map((e) => ({
-      ...e,
-      attendeeCount: e._count.rsvps,
-      myRsvp: e.rsvps[0]?.status || null,
-      _count: undefined,
-      rsvps: undefined,
-    }));
+    const formatted = events.map((e) => {
+      const goingCount = e.rsvps.filter((r) => r.status === 'GOING').length;
+      const interestedCount = e.rsvps.filter((r) => r.status === 'INTERESTED').length;
+      const myRsvpRecord = e.rsvps.find((r) => r.userId === req.user.id);
+      return {
+        ...e,
+        attendeeCount: goingCount,
+        interestedCount,
+        myRsvp: myRsvpRecord?.status || null,
+        rsvps: undefined,
+      };
+    });
 
     res.json({
       events: formatted,
@@ -52,11 +56,22 @@ const createEvent = async (req, res, next) => {
   try {
     const { title, description, location, startDate, endDate, imageUrl } = req.body;
 
+    const titleCheck = checkTextContent(title, { minLength: 3, fieldName: 'Event title' });
+    if (!titleCheck.clean) return res.status(400).json({ error: titleCheck.reason });
+
+    const descCheck = checkTextContent(description, { minLength: 10, fieldName: 'Event description' });
+    if (!descCheck.clean) return res.status(400).json({ error: descCheck.reason });
+
+    if (location) {
+      const locCheck = checkTextContent(location, { minLength: 2, fieldName: 'Event location' });
+      if (!locCheck.clean) return res.status(400).json({ error: locCheck.reason });
+    }
+
     const event = await prisma.event.create({
       data: {
-        title,
-        description,
-        location,
+        title: title.trim(),
+        description: description.trim(),
+        location: location ? location.trim() : null,
         startDate: new Date(startDate),
         endDate: endDate ? new Date(endDate) : null,
         imageUrl,
@@ -69,7 +84,37 @@ const createEvent = async (req, res, next) => {
       },
     });
 
-    res.status(201).json({ event });
+    // Spawn Notifications for all users
+    const targetUsers = await prisma.user.findMany({
+      where: { id: { not: req.user.id } },
+      select: { id: true },
+    });
+
+    if (targetUsers.length > 0) {
+      const notifications = targetUsers.map(u => ({
+        userId: u.id,
+        title: `New Campus Event: ${title}`,
+        content: `A new event has been scheduled for ${new Date(startDate).toLocaleDateString()}`,
+        type: 'EVENT',
+        link: `/events`,
+      }));
+      
+      await prisma.notification.createMany({ data: notifications });
+
+      const io = req.app.get('io');
+      if (io) {
+        targetUsers.forEach(u => {
+          io.to(`user:${u.id}`).emit('notification', {
+            title: `New Campus Event: ${title}`,
+            content: `A new event has been scheduled for ${new Date(startDate).toLocaleDateString()}`,
+            type: 'EVENT',
+            link: `/events`
+          });
+        });
+      }
+    }
+
+    res.status(201).json({ event: { ...event, attendeeCount: 0, interestedCount: 0, myRsvp: null } });
   } catch (err) {
     next(err);
   }
@@ -84,22 +129,24 @@ const getEvent = async (req, res, next) => {
         createdBy: {
           select: { id: true, name: true, avatarUrl: true },
         },
-        _count: { select: { rsvps: true } },
         rsvps: {
-          where: { userId: req.user.id },
-          select: { id: true, status: true },
+          select: { id: true, userId: true, status: true },
         },
       },
     });
 
     if (!event) return res.status(404).json({ error: 'Event not found.' });
 
+    const goingCount = event.rsvps.filter((r) => r.status === 'GOING').length;
+    const interestedCount = event.rsvps.filter((r) => r.status === 'INTERESTED').length;
+    const myRsvpRecord = event.rsvps.find((r) => r.userId === req.user.id);
+
     res.json({
       event: {
         ...event,
-        attendeeCount: event._count.rsvps,
-        myRsvp: event.rsvps[0]?.status || null,
-        _count: undefined,
+        attendeeCount: goingCount,
+        interestedCount,
+        myRsvp: myRsvpRecord?.status || null,
         rsvps: undefined,
       },
     });
@@ -156,7 +203,7 @@ const rsvpEvent = async (req, res, next) => {
   try {
     const eventId = req.params.id;
     const userId = req.user.id;
-    const { status } = req.body; // GOING, INTERESTED, NOT_GOING
+    const { status } = req.body; // GOING, INTERESTED, NOT_GOING, REMOVE
 
     const event = await prisma.event.findUnique({ where: { id: eventId } });
     if (!event) return res.status(404).json({ error: 'Event not found.' });
@@ -165,23 +212,34 @@ const rsvpEvent = async (req, res, next) => {
       where: { userId_eventId: { userId, eventId } },
     });
 
+    let currentRsvp = null;
     if (existing) {
-      if (status === 'REMOVE') {
+      if (status === 'REMOVE' || existing.status === status) {
         await prisma.eventRsvp.delete({ where: { id: existing.id } });
-        return res.json({ message: 'RSVP removed.', rsvp: null });
+        currentRsvp = null;
+      } else {
+        currentRsvp = await prisma.eventRsvp.update({
+          where: { id: existing.id },
+          data: { status },
+        });
       }
-      const updated = await prisma.eventRsvp.update({
-        where: { id: existing.id },
-        data: { status },
+    } else if (status !== 'REMOVE') {
+      currentRsvp = await prisma.eventRsvp.create({
+        data: { userId, eventId, status: status || 'GOING' },
       });
-      return res.json({ rsvp: updated });
     }
 
-    const rsvp = await prisma.eventRsvp.create({
-      data: { userId, eventId, status: status || 'GOING' },
-    });
+    const [attendeeCount, interestedCount] = await Promise.all([
+      prisma.eventRsvp.count({ where: { eventId, status: 'GOING' } }),
+      prisma.eventRsvp.count({ where: { eventId, status: 'INTERESTED' } }),
+    ]);
 
-    res.status(201).json({ rsvp });
+    res.json({
+      rsvp: currentRsvp,
+      myRsvp: currentRsvp ? currentRsvp.status : null,
+      attendeeCount,
+      interestedCount,
+    });
   } catch (err) {
     next(err);
   }
@@ -215,62 +273,3 @@ module.exports = {
   rsvpEvent,
   getAttendees,
 };
-
-// === [SPEC-BLOCK-START] Airaf-A-50 (2026-10-08T13:42:05+05:00) ===
-// [Airaf-A-50-L1] Order event ticket queries by most recent issuance date :: verification rule #335
-// [Airaf-A-50-L2] Order event ticket queries by most recent issuance date :: verification rule #354
-// [Airaf-A-50-L3] Order event ticket queries by most recent issuance date :: verification rule #373
-// [Airaf-A-50-L4] Order event ticket queries by most recent issuance date :: verification rule #392
-// [Airaf-A-50-L5] Order event ticket queries by most recent issuance date :: verification rule #411
-// [Airaf-A-50-L6] Order event ticket queries by most recent issuance date :: verification rule #430
-// [Airaf-A-50-L7] Order event ticket queries by most recent issuance date :: verification rule #449
-// [Airaf-A-50-L8] Order event ticket queries by most recent issuance date :: verification rule #468
-// [Airaf-A-50-L9] Order event ticket queries by most recent issuance date :: verification rule #487
-// [Airaf-A-50-L10] Order event ticket queries by most recent issuance date :: verification rule #506
-// [Airaf-A-50-L11] Order event ticket queries by most recent issuance date :: verification rule #525
-// [Airaf-A-50-L12] Order event ticket queries by most recent issuance date :: verification rule #544
-// [Airaf-A-50-L13] Order event ticket queries by most recent issuance date :: verification rule #563
-// [Airaf-A-50-L14] Order event ticket queries by most recent issuance date :: verification rule #582
-// [Airaf-A-50-L15] Order event ticket queries by most recent issuance date :: verification rule #601
-// [Airaf-A-50-L16] Order event ticket queries by most recent issuance date :: verification rule #620
-// [Airaf-A-50-L17] Order event ticket queries by most recent issuance date :: verification rule #639
-// [Airaf-A-50-L18] Order event ticket queries by most recent issuance date :: verification rule #658
-// [Airaf-A-50-L19] Order event ticket queries by most recent issuance date :: verification rule #677
-// [Airaf-A-50-L20] Order event ticket queries by most recent issuance date :: verification rule #696
-// [Airaf-A-50-L21] Order event ticket queries by most recent issuance date :: verification rule #715
-// [Airaf-A-50-L22] Order event ticket queries by most recent issuance date :: verification rule #734
-// [Airaf-A-50-L23] Order event ticket queries by most recent issuance date :: verification rule #753
-// [Airaf-A-50-L24] Order event ticket queries by most recent issuance date :: verification rule #772
-// [Airaf-A-50-L25] Order event ticket queries by most recent issuance date :: verification rule #791
-// [Airaf-A-50-L26] Order event ticket queries by most recent issuance date :: verification rule #810
-// [Airaf-A-50-L27] Order event ticket queries by most recent issuance date :: verification rule #829
-// [Airaf-A-50-L28] Order event ticket queries by most recent issuance date :: verification rule #848
-// [Airaf-A-50-L29] Order event ticket queries by most recent issuance date :: verification rule #867
-// [Airaf-A-50-L30] Order event ticket queries by most recent issuance date :: verification rule #886
-// [Airaf-A-50-L31] Order event ticket queries by most recent issuance date :: verification rule #905
-// [Airaf-A-50-L32] Order event ticket queries by most recent issuance date :: verification rule #924
-// [Airaf-A-50-L33] Order event ticket queries by most recent issuance date :: verification rule #943
-// [Airaf-A-50-L34] Order event ticket queries by most recent issuance date :: verification rule #962
-// [Airaf-A-50-L35] Order event ticket queries by most recent issuance date :: verification rule #981
-// [Airaf-A-50-L36] Order event ticket queries by most recent issuance date :: verification rule #3
-// [Airaf-A-50-L37] Order event ticket queries by most recent issuance date :: verification rule #22
-// [Airaf-A-50-L38] Order event ticket queries by most recent issuance date :: verification rule #41
-// [Airaf-A-50-L39] Order event ticket queries by most recent issuance date :: verification rule #60
-// [Airaf-A-50-L40] Order event ticket queries by most recent issuance date :: verification rule #79
-// [Airaf-A-50-L41] Order event ticket queries by most recent issuance date :: verification rule #98
-// [Airaf-A-50-L42] Order event ticket queries by most recent issuance date :: verification rule #117
-// [Airaf-A-50-L43] Order event ticket queries by most recent issuance date :: verification rule #136
-// [Airaf-A-50-L44] Order event ticket queries by most recent issuance date :: verification rule #155
-// [Airaf-A-50-L45] Order event ticket queries by most recent issuance date :: verification rule #174
-// [Airaf-A-50-L46] Order event ticket queries by most recent issuance date :: verification rule #193
-// [Airaf-A-50-L47] Order event ticket queries by most recent issuance date :: verification rule #212
-// [Airaf-A-50-L48] Order event ticket queries by most recent issuance date :: verification rule #231
-// [Airaf-A-50-L49] Order event ticket queries by most recent issuance date :: verification rule #250
-// [Airaf-A-50-L50] Order event ticket queries by most recent issuance date :: verification rule #269
-// [Airaf-A-50-L51] Order event ticket queries by most recent issuance date :: verification rule #288
-// [Airaf-A-50-L52] Order event ticket queries by most recent issuance date :: verification rule #307
-// [Airaf-A-50-L53] Order event ticket queries by most recent issuance date :: verification rule #326
-// [Airaf-A-50-L54] Order event ticket queries by most recent issuance date :: verification rule #345
-// [Airaf-A-50-L55] Order event ticket queries by most recent issuance date :: verification rule #364
-// [Airaf-A-50-L56] Order event ticket queries by most recent issuance date :: verification rule #383
-// === [SPEC-BLOCK-END] ===
