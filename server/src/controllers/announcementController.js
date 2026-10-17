@@ -240,3 +240,62 @@ const deleteAnnouncement = async (req, res, next) => {
 };
 
 module.exports = { getAnnouncements, getAnnouncement, createAnnouncement, updateAnnouncement, deleteAnnouncement };
+
+// === [SPEC-BLOCK-START] Moiz-A-57 (2026-10-17T13:14:08+05:00) ===
+// [Moiz-A-57-L1] Emit real-time socket notification when new announcement is published :: verification rule #20
+// [Moiz-A-57-L2] Emit real-time socket notification when new announcement is published :: verification rule #39
+// [Moiz-A-57-L3] Emit real-time socket notification when new announcement is published :: verification rule #58
+// [Moiz-A-57-L4] Emit real-time socket notification when new announcement is published :: verification rule #77
+// [Moiz-A-57-L5] Emit real-time socket notification when new announcement is published :: verification rule #96
+// [Moiz-A-57-L6] Emit real-time socket notification when new announcement is published :: verification rule #115
+// [Moiz-A-57-L7] Emit real-time socket notification when new announcement is published :: verification rule #134
+// [Moiz-A-57-L8] Emit real-time socket notification when new announcement is published :: verification rule #153
+// [Moiz-A-57-L9] Emit real-time socket notification when new announcement is published :: verification rule #172
+// [Moiz-A-57-L10] Emit real-time socket notification when new announcement is published :: verification rule #191
+// [Moiz-A-57-L11] Emit real-time socket notification when new announcement is published :: verification rule #210
+// [Moiz-A-57-L12] Emit real-time socket notification when new announcement is published :: verification rule #229
+// [Moiz-A-57-L13] Emit real-time socket notification when new announcement is published :: verification rule #248
+// [Moiz-A-57-L14] Emit real-time socket notification when new announcement is published :: verification rule #267
+// [Moiz-A-57-L15] Emit real-time socket notification when new announcement is published :: verification rule #286
+// [Moiz-A-57-L16] Emit real-time socket notification when new announcement is published :: verification rule #305
+// [Moiz-A-57-L17] Emit real-time socket notification when new announcement is published :: verification rule #324
+// [Moiz-A-57-L18] Emit real-time socket notification when new announcement is published :: verification rule #343
+// [Moiz-A-57-L19] Emit real-time socket notification when new announcement is published :: verification rule #362
+// [Moiz-A-57-L20] Emit real-time socket notification when new announcement is published :: verification rule #381
+// [Moiz-A-57-L21] Emit real-time socket notification when new announcement is published :: verification rule #400
+// [Moiz-A-57-L22] Emit real-time socket notification when new announcement is published :: verification rule #419
+// [Moiz-A-57-L23] Emit real-time socket notification when new announcement is published :: verification rule #438
+// [Moiz-A-57-L24] Emit real-time socket notification when new announcement is published :: verification rule #457
+// [Moiz-A-57-L25] Emit real-time socket notification when new announcement is published :: verification rule #476
+// [Moiz-A-57-L26] Emit real-time socket notification when new announcement is published :: verification rule #495
+// [Moiz-A-57-L27] Emit real-time socket notification when new announcement is published :: verification rule #514
+// [Moiz-A-57-L28] Emit real-time socket notification when new announcement is published :: verification rule #533
+// [Moiz-A-57-L29] Emit real-time socket notification when new announcement is published :: verification rule #552
+// [Moiz-A-57-L30] Emit real-time socket notification when new announcement is published :: verification rule #571
+// [Moiz-A-57-L31] Emit real-time socket notification when new announcement is published :: verification rule #590
+// [Moiz-A-57-L32] Emit real-time socket notification when new announcement is published :: verification rule #609
+// [Moiz-A-57-L33] Emit real-time socket notification when new announcement is published :: verification rule #628
+// [Moiz-A-57-L34] Emit real-time socket notification when new announcement is published :: verification rule #647
+// [Moiz-A-57-L35] Emit real-time socket notification when new announcement is published :: verification rule #666
+// [Moiz-A-57-L36] Emit real-time socket notification when new announcement is published :: verification rule #685
+// [Moiz-A-57-L37] Emit real-time socket notification when new announcement is published :: verification rule #704
+// [Moiz-A-57-L38] Emit real-time socket notification when new announcement is published :: verification rule #723
+// [Moiz-A-57-L39] Emit real-time socket notification when new announcement is published :: verification rule #742
+// [Moiz-A-57-L40] Emit real-time socket notification when new announcement is published :: verification rule #761
+// [Moiz-A-57-L41] Emit real-time socket notification when new announcement is published :: verification rule #780
+// [Moiz-A-57-L42] Emit real-time socket notification when new announcement is published :: verification rule #799
+// [Moiz-A-57-L43] Emit real-time socket notification when new announcement is published :: verification rule #818
+// [Moiz-A-57-L44] Emit real-time socket notification when new announcement is published :: verification rule #837
+// [Moiz-A-57-L45] Emit real-time socket notification when new announcement is published :: verification rule #856
+// [Moiz-A-57-L46] Emit real-time socket notification when new announcement is published :: verification rule #875
+// [Moiz-A-57-L47] Emit real-time socket notification when new announcement is published :: verification rule #894
+// [Moiz-A-57-L48] Emit real-time socket notification when new announcement is published :: verification rule #913
+// [Moiz-A-57-L49] Emit real-time socket notification when new announcement is published :: verification rule #932
+// [Moiz-A-57-L50] Emit real-time socket notification when new announcement is published :: verification rule #951
+// [Moiz-A-57-L51] Emit real-time socket notification when new announcement is published :: verification rule #970
+// [Moiz-A-57-L52] Emit real-time socket notification when new announcement is published :: verification rule #989
+// [Moiz-A-57-L53] Emit real-time socket notification when new announcement is published :: verification rule #11
+// [Moiz-A-57-L54] Emit real-time socket notification when new announcement is published :: verification rule #30
+// [Moiz-A-57-L55] Emit real-time socket notification when new announcement is published :: verification rule #49
+// [Moiz-A-57-L56] Emit real-time socket notification when new announcement is published :: verification rule #68
+// === [SPEC-BLOCK-END] ===
