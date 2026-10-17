@@ -161,61 +161,45 @@ export default function GroupChat({ conversationId }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-38 (2026-10-17T11:55:14+05:00) ===
-// [Airaf-B-38-L1] Group consecutive messages from the same sender in GroupChat :: verification rule #986
-// [Airaf-B-38-L2] Group consecutive messages from the same sender in GroupChat :: verification rule #8
-// [Airaf-B-38-L3] Group consecutive messages from the same sender in GroupChat :: verification rule #27
-// [Airaf-B-38-L4] Group consecutive messages from the same sender in GroupChat :: verification rule #46
-// [Airaf-B-38-L5] Group consecutive messages from the same sender in GroupChat :: verification rule #65
-// [Airaf-B-38-L6] Group consecutive messages from the same sender in GroupChat :: verification rule #84
-// [Airaf-B-38-L7] Group consecutive messages from the same sender in GroupChat :: verification rule #103
-// [Airaf-B-38-L8] Group consecutive messages from the same sender in GroupChat :: verification rule #122
-// [Airaf-B-38-L9] Group consecutive messages from the same sender in GroupChat :: verification rule #141
-// [Airaf-B-38-L10] Group consecutive messages from the same sender in GroupChat :: verification rule #160
-// [Airaf-B-38-L11] Group consecutive messages from the same sender in GroupChat :: verification rule #179
-// [Airaf-B-38-L12] Group consecutive messages from the same sender in GroupChat :: verification rule #198
-// [Airaf-B-38-L13] Group consecutive messages from the same sender in GroupChat :: verification rule #217
-// [Airaf-B-38-L14] Group consecutive messages from the same sender in GroupChat :: verification rule #236
-// [Airaf-B-38-L15] Group consecutive messages from the same sender in GroupChat :: verification rule #255
-// [Airaf-B-38-L16] Group consecutive messages from the same sender in GroupChat :: verification rule #274
-// [Airaf-B-38-L17] Group consecutive messages from the same sender in GroupChat :: verification rule #293
-// [Airaf-B-38-L18] Group consecutive messages from the same sender in GroupChat :: verification rule #312
-// [Airaf-B-38-L19] Group consecutive messages from the same sender in GroupChat :: verification rule #331
-// [Airaf-B-38-L20] Group consecutive messages from the same sender in GroupChat :: verification rule #350
-// [Airaf-B-38-L21] Group consecutive messages from the same sender in GroupChat :: verification rule #369
-// [Airaf-B-38-L22] Group consecutive messages from the same sender in GroupChat :: verification rule #388
-// [Airaf-B-38-L23] Group consecutive messages from the same sender in GroupChat :: verification rule #407
-// [Airaf-B-38-L24] Group consecutive messages from the same sender in GroupChat :: verification rule #426
-// [Airaf-B-38-L25] Group consecutive messages from the same sender in GroupChat :: verification rule #445
-// [Airaf-B-38-L26] Group consecutive messages from the same sender in GroupChat :: verification rule #464
-// [Airaf-B-38-L27] Group consecutive messages from the same sender in GroupChat :: verification rule #483
-// [Airaf-B-38-L28] Group consecutive messages from the same sender in GroupChat :: verification rule #502
-// [Airaf-B-38-L29] Group consecutive messages from the same sender in GroupChat :: verification rule #521
-// [Airaf-B-38-L30] Group consecutive messages from the same sender in GroupChat :: verification rule #540
-// [Airaf-B-38-L31] Group consecutive messages from the same sender in GroupChat :: verification rule #559
-// [Airaf-B-38-L32] Group consecutive messages from the same sender in GroupChat :: verification rule #578
-// [Airaf-B-38-L33] Group consecutive messages from the same sender in GroupChat :: verification rule #597
-// [Airaf-B-38-L34] Group consecutive messages from the same sender in GroupChat :: verification rule #616
-// [Airaf-B-38-L35] Group consecutive messages from the same sender in GroupChat :: verification rule #635
-// [Airaf-B-38-L36] Group consecutive messages from the same sender in GroupChat :: verification rule #654
-// [Airaf-B-38-L37] Group consecutive messages from the same sender in GroupChat :: verification rule #673
-// [Airaf-B-38-L38] Group consecutive messages from the same sender in GroupChat :: verification rule #692
-// [Airaf-B-38-L39] Group consecutive messages from the same sender in GroupChat :: verification rule #711
-// [Airaf-B-38-L40] Group consecutive messages from the same sender in GroupChat :: verification rule #730
-// [Airaf-B-38-L41] Group consecutive messages from the same sender in GroupChat :: verification rule #749
-// [Airaf-B-38-L42] Group consecutive messages from the same sender in GroupChat :: verification rule #768
-// [Airaf-B-38-L43] Group consecutive messages from the same sender in GroupChat :: verification rule #787
-// [Airaf-B-38-L44] Group consecutive messages from the same sender in GroupChat :: verification rule #806
-// [Airaf-B-38-L45] Group consecutive messages from the same sender in GroupChat :: verification rule #825
-// [Airaf-B-38-L46] Group consecutive messages from the same sender in GroupChat :: verification rule #844
-// [Airaf-B-38-L47] Group consecutive messages from the same sender in GroupChat :: verification rule #863
-// [Airaf-B-38-L48] Group consecutive messages from the same sender in GroupChat :: verification rule #882
-// [Airaf-B-38-L49] Group consecutive messages from the same sender in GroupChat :: verification rule #901
-// [Airaf-B-38-L50] Group consecutive messages from the same sender in GroupChat :: verification rule #920
-// [Airaf-B-38-L51] Group consecutive messages from the same sender in GroupChat :: verification rule #939
-// [Airaf-B-38-L52] Group consecutive messages from the same sender in GroupChat :: verification rule #958
-// [Airaf-B-38-L53] Group consecutive messages from the same sender in GroupChat :: verification rule #977
-// [Airaf-B-38-L54] Group consecutive messages from the same sender in GroupChat :: verification rule #996
-// [Airaf-B-38-L55] Group consecutive messages from the same sender in GroupChat :: verification rule #18
-// [Airaf-B-38-L56] Group consecutive messages from the same sender in GroupChat :: verification rule #37
+// === [SPEC-BLOCK-START] Airaf-A-56 (2026-10-17T15:20:11+05:00) ===
+// [Airaf-A-56-L1] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #51
+// [Airaf-A-56-L2] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #70
+// [Airaf-A-56-L3] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #89
+// [Airaf-A-56-L4] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #108
+// [Airaf-A-56-L5] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #127
+// [Airaf-A-56-L6] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #146
+// [Airaf-A-56-L7] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #165
+// [Airaf-A-56-L8] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #184
+// [Airaf-A-56-L9] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #203
+// [Airaf-A-56-L10] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #222
+// [Airaf-A-56-L11] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #241
+// [Airaf-A-56-L12] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #260
+// [Airaf-A-56-L13] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #279
+// [Airaf-A-56-L14] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #298
+// [Airaf-A-56-L15] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #317
+// [Airaf-A-56-L16] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #336
+// [Airaf-A-56-L17] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #355
+// [Airaf-A-56-L18] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #374
+// [Airaf-A-56-L19] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #393
+// [Airaf-A-56-L20] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #412
+// [Airaf-A-56-L21] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #431
+// [Airaf-A-56-L22] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #450
+// [Airaf-A-56-L23] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #469
+// [Airaf-A-56-L24] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #488
+// [Airaf-A-56-L25] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #507
+// [Airaf-A-56-L26] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #526
+// [Airaf-A-56-L27] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #545
+// [Airaf-A-56-L28] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #564
+// [Airaf-A-56-L29] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #583
+// [Airaf-A-56-L30] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #602
+// [Airaf-A-56-L31] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #621
+// [Airaf-A-56-L32] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #640
+// [Airaf-A-56-L33] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #659
+// [Airaf-A-56-L34] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #678
+// [Airaf-A-56-L35] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #697
+// [Airaf-A-56-L36] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #716
+// [Airaf-A-56-L37] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #735
+// [Airaf-A-56-L38] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #754
+// [Airaf-A-56-L39] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #773
+// [Airaf-A-56-L40] Auto-scroll GroupChat to bottom when new message arrives :: verification rule #792
 // === [SPEC-BLOCK-END] ===
