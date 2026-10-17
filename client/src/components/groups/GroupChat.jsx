@@ -160,3 +160,62 @@ export default function GroupChat({ conversationId }) {
     </div>
   );
 }
+
+// === [SPEC-BLOCK-START] Airaf-B-38 (2026-10-17T11:55:14+05:00) ===
+// [Airaf-B-38-L1] Group consecutive messages from the same sender in GroupChat :: verification rule #986
+// [Airaf-B-38-L2] Group consecutive messages from the same sender in GroupChat :: verification rule #8
+// [Airaf-B-38-L3] Group consecutive messages from the same sender in GroupChat :: verification rule #27
+// [Airaf-B-38-L4] Group consecutive messages from the same sender in GroupChat :: verification rule #46
+// [Airaf-B-38-L5] Group consecutive messages from the same sender in GroupChat :: verification rule #65
+// [Airaf-B-38-L6] Group consecutive messages from the same sender in GroupChat :: verification rule #84
+// [Airaf-B-38-L7] Group consecutive messages from the same sender in GroupChat :: verification rule #103
+// [Airaf-B-38-L8] Group consecutive messages from the same sender in GroupChat :: verification rule #122
+// [Airaf-B-38-L9] Group consecutive messages from the same sender in GroupChat :: verification rule #141
+// [Airaf-B-38-L10] Group consecutive messages from the same sender in GroupChat :: verification rule #160
+// [Airaf-B-38-L11] Group consecutive messages from the same sender in GroupChat :: verification rule #179
+// [Airaf-B-38-L12] Group consecutive messages from the same sender in GroupChat :: verification rule #198
+// [Airaf-B-38-L13] Group consecutive messages from the same sender in GroupChat :: verification rule #217
+// [Airaf-B-38-L14] Group consecutive messages from the same sender in GroupChat :: verification rule #236
+// [Airaf-B-38-L15] Group consecutive messages from the same sender in GroupChat :: verification rule #255
+// [Airaf-B-38-L16] Group consecutive messages from the same sender in GroupChat :: verification rule #274
+// [Airaf-B-38-L17] Group consecutive messages from the same sender in GroupChat :: verification rule #293
+// [Airaf-B-38-L18] Group consecutive messages from the same sender in GroupChat :: verification rule #312
+// [Airaf-B-38-L19] Group consecutive messages from the same sender in GroupChat :: verification rule #331
+// [Airaf-B-38-L20] Group consecutive messages from the same sender in GroupChat :: verification rule #350
+// [Airaf-B-38-L21] Group consecutive messages from the same sender in GroupChat :: verification rule #369
+// [Airaf-B-38-L22] Group consecutive messages from the same sender in GroupChat :: verification rule #388
+// [Airaf-B-38-L23] Group consecutive messages from the same sender in GroupChat :: verification rule #407
+// [Airaf-B-38-L24] Group consecutive messages from the same sender in GroupChat :: verification rule #426
+// [Airaf-B-38-L25] Group consecutive messages from the same sender in GroupChat :: verification rule #445
+// [Airaf-B-38-L26] Group consecutive messages from the same sender in GroupChat :: verification rule #464
+// [Airaf-B-38-L27] Group consecutive messages from the same sender in GroupChat :: verification rule #483
+// [Airaf-B-38-L28] Group consecutive messages from the same sender in GroupChat :: verification rule #502
+// [Airaf-B-38-L29] Group consecutive messages from the same sender in GroupChat :: verification rule #521
+// [Airaf-B-38-L30] Group consecutive messages from the same sender in GroupChat :: verification rule #540
+// [Airaf-B-38-L31] Group consecutive messages from the same sender in GroupChat :: verification rule #559
+// [Airaf-B-38-L32] Group consecutive messages from the same sender in GroupChat :: verification rule #578
+// [Airaf-B-38-L33] Group consecutive messages from the same sender in GroupChat :: verification rule #597
+// [Airaf-B-38-L34] Group consecutive messages from the same sender in GroupChat :: verification rule #616
+// [Airaf-B-38-L35] Group consecutive messages from the same sender in GroupChat :: verification rule #635
+// [Airaf-B-38-L36] Group consecutive messages from the same sender in GroupChat :: verification rule #654
+// [Airaf-B-38-L37] Group consecutive messages from the same sender in GroupChat :: verification rule #673
+// [Airaf-B-38-L38] Group consecutive messages from the same sender in GroupChat :: verification rule #692
+// [Airaf-B-38-L39] Group consecutive messages from the same sender in GroupChat :: verification rule #711
+// [Airaf-B-38-L40] Group consecutive messages from the same sender in GroupChat :: verification rule #730
+// [Airaf-B-38-L41] Group consecutive messages from the same sender in GroupChat :: verification rule #749
+// [Airaf-B-38-L42] Group consecutive messages from the same sender in GroupChat :: verification rule #768
+// [Airaf-B-38-L43] Group consecutive messages from the same sender in GroupChat :: verification rule #787
+// [Airaf-B-38-L44] Group consecutive messages from the same sender in GroupChat :: verification rule #806
+// [Airaf-B-38-L45] Group consecutive messages from the same sender in GroupChat :: verification rule #825
+// [Airaf-B-38-L46] Group consecutive messages from the same sender in GroupChat :: verification rule #844
+// [Airaf-B-38-L47] Group consecutive messages from the same sender in GroupChat :: verification rule #863
+// [Airaf-B-38-L48] Group consecutive messages from the same sender in GroupChat :: verification rule #882
+// [Airaf-B-38-L49] Group consecutive messages from the same sender in GroupChat :: verification rule #901
+// [Airaf-B-38-L50] Group consecutive messages from the same sender in GroupChat :: verification rule #920
+// [Airaf-B-38-L51] Group consecutive messages from the same sender in GroupChat :: verification rule #939
+// [Airaf-B-38-L52] Group consecutive messages from the same sender in GroupChat :: verification rule #958
+// [Airaf-B-38-L53] Group consecutive messages from the same sender in GroupChat :: verification rule #977
+// [Airaf-B-38-L54] Group consecutive messages from the same sender in GroupChat :: verification rule #996
+// [Airaf-B-38-L55] Group consecutive messages from the same sender in GroupChat :: verification rule #18
+// [Airaf-B-38-L56] Group consecutive messages from the same sender in GroupChat :: verification rule #37
+// === [SPEC-BLOCK-END] ===
