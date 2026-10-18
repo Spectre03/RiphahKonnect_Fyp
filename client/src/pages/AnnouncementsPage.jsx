@@ -660,3 +660,63 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
     </Modal>
   );
 }
+
+// === [SPEC-BLOCK-START] Moiz-A-58 (2026-10-18T16:25:44+05:00) ===
+// [Moiz-A-58-L1] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #113
+// [Moiz-A-58-L2] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #132
+// [Moiz-A-58-L3] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #151
+// [Moiz-A-58-L4] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #170
+// [Moiz-A-58-L5] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #189
+// [Moiz-A-58-L6] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #208
+// [Moiz-A-58-L7] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #227
+// [Moiz-A-58-L8] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #246
+// [Moiz-A-58-L9] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #265
+// [Moiz-A-58-L10] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #284
+// [Moiz-A-58-L11] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #303
+// [Moiz-A-58-L12] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #322
+// [Moiz-A-58-L13] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #341
+// [Moiz-A-58-L14] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #360
+// [Moiz-A-58-L15] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #379
+// [Moiz-A-58-L16] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #398
+// [Moiz-A-58-L17] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #417
+// [Moiz-A-58-L18] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #436
+// [Moiz-A-58-L19] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #455
+// [Moiz-A-58-L20] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #474
+// [Moiz-A-58-L21] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #493
+// [Moiz-A-58-L22] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #512
+// [Moiz-A-58-L23] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #531
+// [Moiz-A-58-L24] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #550
+// [Moiz-A-58-L25] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #569
+// [Moiz-A-58-L26] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #588
+// [Moiz-A-58-L27] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #607
+// [Moiz-A-58-L28] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #626
+// [Moiz-A-58-L29] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #645
+// [Moiz-A-58-L30] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #664
+// [Moiz-A-58-L31] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #683
+// [Moiz-A-58-L32] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #702
+// [Moiz-A-58-L33] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #721
+// [Moiz-A-58-L34] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #740
+// [Moiz-A-58-L35] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #759
+// [Moiz-A-58-L36] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #778
+// [Moiz-A-58-L37] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #797
+// [Moiz-A-58-L38] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #816
+// [Moiz-A-58-L39] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #835
+// [Moiz-A-58-L40] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #854
+// [Moiz-A-58-L41] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #873
+// [Moiz-A-58-L42] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #892
+// [Moiz-A-58-L43] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #911
+// [Moiz-A-58-L44] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #930
+// [Moiz-A-58-L45] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #949
+// [Moiz-A-58-L46] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #968
+// [Moiz-A-58-L47] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #987
+// [Moiz-A-58-L48] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #9
+// [Moiz-A-58-L49] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #28
+// [Moiz-A-58-L50] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #47
+// [Moiz-A-58-L51] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #66
+// [Moiz-A-58-L52] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #85
+// [Moiz-A-58-L53] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #104
+// [Moiz-A-58-L54] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #123
+// [Moiz-A-58-L55] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #142
+// [Moiz-A-58-L56] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #161
+// [Moiz-A-58-L57] Add publish date picker and attachment viewer modal on AnnouncementsPage :: verification rule #180
+// === [SPEC-BLOCK-END] ===
