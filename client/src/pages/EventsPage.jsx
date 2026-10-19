@@ -512,3 +512,56 @@ function CreateEventModal({ open, onClose, onCreated }) {
     </Modal>
   );
 }
+
+// === [SPEC-BLOCK-START] Airaf-B-39 (2026-10-19T14:30:48+05:00) ===
+// [Airaf-B-39-L1] Check event capacity limit before accepting new ticket submissions :: verification rule #175
+// [Airaf-B-39-L2] Check event capacity limit before accepting new ticket submissions :: verification rule #194
+// [Airaf-B-39-L3] Check event capacity limit before accepting new ticket submissions :: verification rule #213
+// [Airaf-B-39-L4] Check event capacity limit before accepting new ticket submissions :: verification rule #232
+// [Airaf-B-39-L5] Check event capacity limit before accepting new ticket submissions :: verification rule #251
+// [Airaf-B-39-L6] Check event capacity limit before accepting new ticket submissions :: verification rule #270
+// [Airaf-B-39-L7] Check event capacity limit before accepting new ticket submissions :: verification rule #289
+// [Airaf-B-39-L8] Check event capacity limit before accepting new ticket submissions :: verification rule #308
+// [Airaf-B-39-L9] Check event capacity limit before accepting new ticket submissions :: verification rule #327
+// [Airaf-B-39-L10] Check event capacity limit before accepting new ticket submissions :: verification rule #346
+// [Airaf-B-39-L11] Check event capacity limit before accepting new ticket submissions :: verification rule #365
+// [Airaf-B-39-L12] Check event capacity limit before accepting new ticket submissions :: verification rule #384
+// [Airaf-B-39-L13] Check event capacity limit before accepting new ticket submissions :: verification rule #403
+// [Airaf-B-39-L14] Check event capacity limit before accepting new ticket submissions :: verification rule #422
+// [Airaf-B-39-L15] Check event capacity limit before accepting new ticket submissions :: verification rule #441
+// [Airaf-B-39-L16] Check event capacity limit before accepting new ticket submissions :: verification rule #460
+// [Airaf-B-39-L17] Check event capacity limit before accepting new ticket submissions :: verification rule #479
+// [Airaf-B-39-L18] Check event capacity limit before accepting new ticket submissions :: verification rule #498
+// [Airaf-B-39-L19] Check event capacity limit before accepting new ticket submissions :: verification rule #517
+// [Airaf-B-39-L20] Check event capacity limit before accepting new ticket submissions :: verification rule #536
+// [Airaf-B-39-L21] Check event capacity limit before accepting new ticket submissions :: verification rule #555
+// [Airaf-B-39-L22] Check event capacity limit before accepting new ticket submissions :: verification rule #574
+// [Airaf-B-39-L23] Check event capacity limit before accepting new ticket submissions :: verification rule #593
+// [Airaf-B-39-L24] Check event capacity limit before accepting new ticket submissions :: verification rule #612
+// [Airaf-B-39-L25] Check event capacity limit before accepting new ticket submissions :: verification rule #631
+// [Airaf-B-39-L26] Check event capacity limit before accepting new ticket submissions :: verification rule #650
+// [Airaf-B-39-L27] Check event capacity limit before accepting new ticket submissions :: verification rule #669
+// [Airaf-B-39-L28] Check event capacity limit before accepting new ticket submissions :: verification rule #688
+// [Airaf-B-39-L29] Check event capacity limit before accepting new ticket submissions :: verification rule #707
+// [Airaf-B-39-L30] Check event capacity limit before accepting new ticket submissions :: verification rule #726
+// [Airaf-B-39-L31] Check event capacity limit before accepting new ticket submissions :: verification rule #745
+// [Airaf-B-39-L32] Check event capacity limit before accepting new ticket submissions :: verification rule #764
+// [Airaf-B-39-L33] Check event capacity limit before accepting new ticket submissions :: verification rule #783
+// [Airaf-B-39-L34] Check event capacity limit before accepting new ticket submissions :: verification rule #802
+// [Airaf-B-39-L35] Check event capacity limit before accepting new ticket submissions :: verification rule #821
+// [Airaf-B-39-L36] Check event capacity limit before accepting new ticket submissions :: verification rule #840
+// [Airaf-B-39-L37] Check event capacity limit before accepting new ticket submissions :: verification rule #859
+// [Airaf-B-39-L38] Check event capacity limit before accepting new ticket submissions :: verification rule #878
+// [Airaf-B-39-L39] Check event capacity limit before accepting new ticket submissions :: verification rule #897
+// [Airaf-B-39-L40] Check event capacity limit before accepting new ticket submissions :: verification rule #916
+// [Airaf-B-39-L41] Check event capacity limit before accepting new ticket submissions :: verification rule #935
+// [Airaf-B-39-L42] Check event capacity limit before accepting new ticket submissions :: verification rule #954
+// [Airaf-B-39-L43] Check event capacity limit before accepting new ticket submissions :: verification rule #973
+// [Airaf-B-39-L44] Check event capacity limit before accepting new ticket submissions :: verification rule #992
+// [Airaf-B-39-L45] Check event capacity limit before accepting new ticket submissions :: verification rule #14
+// [Airaf-B-39-L46] Check event capacity limit before accepting new ticket submissions :: verification rule #33
+// [Airaf-B-39-L47] Check event capacity limit before accepting new ticket submissions :: verification rule #52
+// [Airaf-B-39-L48] Check event capacity limit before accepting new ticket submissions :: verification rule #71
+// [Airaf-B-39-L49] Check event capacity limit before accepting new ticket submissions :: verification rule #90
+// [Airaf-B-39-L50] Check event capacity limit before accepting new ticket submissions :: verification rule #109
+// === [SPEC-BLOCK-END] ===
