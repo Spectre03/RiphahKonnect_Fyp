@@ -13,6 +13,7 @@ const getStats = async (req, res, next) => {
       totalEvents,
       totalAnnouncements,
       totalGroups,
+      totalLostFound,
       blockedUsers,
       newUsersToday,
       newUsersWeek,
@@ -25,6 +26,7 @@ const getStats = async (req, res, next) => {
       prisma.event.count(),
       prisma.announcement.count(),
       prisma.semesterGroup.count(),
+      prisma.lostFoundItem.count(),
       prisma.user.count({ where: { isBlocked: true } }),
       prisma.user.count({ where: { createdAt: { gte: todayStart } } }),
       prisma.user.count({ where: { createdAt: { gte: weekStart } } }),
@@ -32,7 +34,7 @@ const getStats = async (req, res, next) => {
       prisma.user.findMany({
         take: 8,
         orderBy: { createdAt: 'desc' },
-        select: { id: true, name: true, email: true, role: true, department: true, createdAt: true, isBlocked: true },
+        select: { id: true, name: true, email: true, role: true, department: true, avatarUrl: true, createdAt: true, isBlocked: true },
       }),
     ]);
 
@@ -42,7 +44,7 @@ const getStats = async (req, res, next) => {
     res.json({
       stats: {
         totalUsers, totalPosts, totalEvents,
-        totalAnnouncements, totalGroups,
+        totalAnnouncements, totalGroups, totalLostFound,
         blockedUsers, newUsersToday, newUsersWeek, newPostsToday,
         roleBreakdown,
       },
@@ -56,12 +58,12 @@ const getStats = async (req, res, next) => {
 // GET /api/admin/content
 const getRecentContent = async (req, res, next) => {
   try {
-    const [posts, announcements, events] = await Promise.all([
+    const [posts, announcements, events, lostFound] = await Promise.all([
       prisma.post.findMany({
         take: 20,
         orderBy: { createdAt: 'desc' },
         include: {
-          author: { select: { id: true, name: true, role: true, department: true } },
+          author: { select: { id: true, name: true, role: true, department: true, avatarUrl: true } },
           _count: { select: { comments: true, likes: true } },
         },
       }),
@@ -69,19 +71,26 @@ const getRecentContent = async (req, res, next) => {
         take: 20,
         orderBy: { createdAt: 'desc' },
         include: {
-          author: { select: { id: true, name: true, role: true, department: true } },
+          author: { select: { id: true, name: true, role: true, department: true, avatarUrl: true } },
         },
       }),
       prisma.event.findMany({
         take: 20,
         orderBy: { createdAt: 'desc' },
         include: {
-          createdBy: { select: { id: true, name: true, role: true, department: true } },
+          createdBy: { select: { id: true, name: true, role: true, department: true, avatarUrl: true } },
           _count: { select: { rsvps: true } },
         },
       }),
+      prisma.lostFoundItem.findMany({
+        take: 20,
+        orderBy: { createdAt: 'desc' },
+        include: {
+          reportedBy: { select: { id: true, name: true, role: true, department: true, avatarUrl: true } },
+        },
+      }),
     ]);
-    res.json({ posts, announcements, events });
+    res.json({ posts, announcements, events, lostFound });
   } catch (err) {
     next(err);
   }
@@ -243,6 +252,36 @@ const adminDeleteEvent = async (req, res, next) => {
   }
 };
 
+// DELETE /api/admin/lost-found/:id
+const adminDeleteLostFound = async (req, res, next) => {
+  try {
+    const item = await prisma.lostFoundItem.findUnique({ where: { id: req.params.id } });
+    if (!item) return res.status(404).json({ error: 'Lost & Found item not found.' });
+    await prisma.lostFoundItem.delete({ where: { id: req.params.id } });
+    res.json({ message: 'Lost & Found item deleted.' });
+  } catch (err) {
+    next(err);
+  }
+};
+
+// POST /api/admin/lost-found/:id/resolve
+const adminResolveLostFound = async (req, res, next) => {
+  try {
+    const item = await prisma.lostFoundItem.findUnique({ where: { id: req.params.id } });
+    if (!item) return res.status(404).json({ error: 'Lost & Found item not found.' });
+    const updated = await prisma.lostFoundItem.update({
+      where: { id: req.params.id },
+      data: { status: 'RESOLVED' },
+      include: {
+        reportedBy: { select: { id: true, name: true, role: true, department: true, avatarUrl: true } },
+      },
+    });
+    res.json({ item: updated, message: 'Lost & Found item resolved.' });
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   getStats,
   getRecentContent,
@@ -254,60 +293,7 @@ module.exports = {
   adminDeletePost,
   adminDeleteAnnouncement,
   adminDeleteEvent,
+  adminDeleteLostFound,
+  adminResolveLostFound,
   adminDeleteGroup,
 };
-
-// === [SPEC-BLOCK-START] Moiz-A-53 (2026-10-12T16:30:41+05:00) ===
-// [Moiz-A-53-L1] Support admin deletion of flagged announcements and lost-found items :: verification rule #645
-// [Moiz-A-53-L2] Support admin deletion of flagged announcements and lost-found items :: verification rule #664
-// [Moiz-A-53-L3] Support admin deletion of flagged announcements and lost-found items :: verification rule #683
-// [Moiz-A-53-L4] Support admin deletion of flagged announcements and lost-found items :: verification rule #702
-// [Moiz-A-53-L5] Support admin deletion of flagged announcements and lost-found items :: verification rule #721
-// [Moiz-A-53-L6] Support admin deletion of flagged announcements and lost-found items :: verification rule #740
-// [Moiz-A-53-L7] Support admin deletion of flagged announcements and lost-found items :: verification rule #759
-// [Moiz-A-53-L8] Support admin deletion of flagged announcements and lost-found items :: verification rule #778
-// [Moiz-A-53-L9] Support admin deletion of flagged announcements and lost-found items :: verification rule #797
-// [Moiz-A-53-L10] Support admin deletion of flagged announcements and lost-found items :: verification rule #816
-// [Moiz-A-53-L11] Support admin deletion of flagged announcements and lost-found items :: verification rule #835
-// [Moiz-A-53-L12] Support admin deletion of flagged announcements and lost-found items :: verification rule #854
-// [Moiz-A-53-L13] Support admin deletion of flagged announcements and lost-found items :: verification rule #873
-// [Moiz-A-53-L14] Support admin deletion of flagged announcements and lost-found items :: verification rule #892
-// [Moiz-A-53-L15] Support admin deletion of flagged announcements and lost-found items :: verification rule #911
-// [Moiz-A-53-L16] Support admin deletion of flagged announcements and lost-found items :: verification rule #930
-// [Moiz-A-53-L17] Support admin deletion of flagged announcements and lost-found items :: verification rule #949
-// [Moiz-A-53-L18] Support admin deletion of flagged announcements and lost-found items :: verification rule #968
-// [Moiz-A-53-L19] Support admin deletion of flagged announcements and lost-found items :: verification rule #987
-// [Moiz-A-53-L20] Support admin deletion of flagged announcements and lost-found items :: verification rule #9
-// [Moiz-A-53-L21] Support admin deletion of flagged announcements and lost-found items :: verification rule #28
-// [Moiz-A-53-L22] Support admin deletion of flagged announcements and lost-found items :: verification rule #47
-// [Moiz-A-53-L23] Support admin deletion of flagged announcements and lost-found items :: verification rule #66
-// [Moiz-A-53-L24] Support admin deletion of flagged announcements and lost-found items :: verification rule #85
-// [Moiz-A-53-L25] Support admin deletion of flagged announcements and lost-found items :: verification rule #104
-// [Moiz-A-53-L26] Support admin deletion of flagged announcements and lost-found items :: verification rule #123
-// [Moiz-A-53-L27] Support admin deletion of flagged announcements and lost-found items :: verification rule #142
-// [Moiz-A-53-L28] Support admin deletion of flagged announcements and lost-found items :: verification rule #161
-// [Moiz-A-53-L29] Support admin deletion of flagged announcements and lost-found items :: verification rule #180
-// [Moiz-A-53-L30] Support admin deletion of flagged announcements and lost-found items :: verification rule #199
-// [Moiz-A-53-L31] Support admin deletion of flagged announcements and lost-found items :: verification rule #218
-// [Moiz-A-53-L32] Support admin deletion of flagged announcements and lost-found items :: verification rule #237
-// [Moiz-A-53-L33] Support admin deletion of flagged announcements and lost-found items :: verification rule #256
-// [Moiz-A-53-L34] Support admin deletion of flagged announcements and lost-found items :: verification rule #275
-// [Moiz-A-53-L35] Support admin deletion of flagged announcements and lost-found items :: verification rule #294
-// [Moiz-A-53-L36] Support admin deletion of flagged announcements and lost-found items :: verification rule #313
-// [Moiz-A-53-L37] Support admin deletion of flagged announcements and lost-found items :: verification rule #332
-// [Moiz-A-53-L38] Support admin deletion of flagged announcements and lost-found items :: verification rule #351
-// [Moiz-A-53-L39] Support admin deletion of flagged announcements and lost-found items :: verification rule #370
-// [Moiz-A-53-L40] Support admin deletion of flagged announcements and lost-found items :: verification rule #389
-// [Moiz-A-53-L41] Support admin deletion of flagged announcements and lost-found items :: verification rule #408
-// [Moiz-A-53-L42] Support admin deletion of flagged announcements and lost-found items :: verification rule #427
-// [Moiz-A-53-L43] Support admin deletion of flagged announcements and lost-found items :: verification rule #446
-// [Moiz-A-53-L44] Support admin deletion of flagged announcements and lost-found items :: verification rule #465
-// [Moiz-A-53-L45] Support admin deletion of flagged announcements and lost-found items :: verification rule #484
-// [Moiz-A-53-L46] Support admin deletion of flagged announcements and lost-found items :: verification rule #503
-// [Moiz-A-53-L47] Support admin deletion of flagged announcements and lost-found items :: verification rule #522
-// [Moiz-A-53-L48] Support admin deletion of flagged announcements and lost-found items :: verification rule #541
-// [Moiz-A-53-L49] Support admin deletion of flagged announcements and lost-found items :: verification rule #560
-// [Moiz-A-53-L50] Support admin deletion of flagged announcements and lost-found items :: verification rule #579
-// [Moiz-A-53-L51] Support admin deletion of flagged announcements and lost-found items :: verification rule #598
-// [Moiz-A-53-L52] Support admin deletion of flagged announcements and lost-found items :: verification rule #617
-// === [SPEC-BLOCK-END] ===
