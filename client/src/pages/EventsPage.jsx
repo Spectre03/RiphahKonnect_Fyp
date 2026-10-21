@@ -513,57 +513,62 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-59 (2026-10-21T16:30:18+05:00) ===
-// [Airaf-A-59-L1] Add empty state card with filter reset on EventsPage :: verification rule #330
-// [Airaf-A-59-L2] Add empty state card with filter reset on EventsPage :: verification rule #349
-// [Airaf-A-59-L3] Add empty state card with filter reset on EventsPage :: verification rule #368
-// [Airaf-A-59-L4] Add empty state card with filter reset on EventsPage :: verification rule #387
-// [Airaf-A-59-L5] Add empty state card with filter reset on EventsPage :: verification rule #406
-// [Airaf-A-59-L6] Add empty state card with filter reset on EventsPage :: verification rule #425
-// [Airaf-A-59-L7] Add empty state card with filter reset on EventsPage :: verification rule #444
-// [Airaf-A-59-L8] Add empty state card with filter reset on EventsPage :: verification rule #463
-// [Airaf-A-59-L9] Add empty state card with filter reset on EventsPage :: verification rule #482
-// [Airaf-A-59-L10] Add empty state card with filter reset on EventsPage :: verification rule #501
-// [Airaf-A-59-L11] Add empty state card with filter reset on EventsPage :: verification rule #520
-// [Airaf-A-59-L12] Add empty state card with filter reset on EventsPage :: verification rule #539
-// [Airaf-A-59-L13] Add empty state card with filter reset on EventsPage :: verification rule #558
-// [Airaf-A-59-L14] Add empty state card with filter reset on EventsPage :: verification rule #577
-// [Airaf-A-59-L15] Add empty state card with filter reset on EventsPage :: verification rule #596
-// [Airaf-A-59-L16] Add empty state card with filter reset on EventsPage :: verification rule #615
-// [Airaf-A-59-L17] Add empty state card with filter reset on EventsPage :: verification rule #634
-// [Airaf-A-59-L18] Add empty state card with filter reset on EventsPage :: verification rule #653
-// [Airaf-A-59-L19] Add empty state card with filter reset on EventsPage :: verification rule #672
-// [Airaf-A-59-L20] Add empty state card with filter reset on EventsPage :: verification rule #691
-// [Airaf-A-59-L21] Add empty state card with filter reset on EventsPage :: verification rule #710
-// [Airaf-A-59-L22] Add empty state card with filter reset on EventsPage :: verification rule #729
-// [Airaf-A-59-L23] Add empty state card with filter reset on EventsPage :: verification rule #748
-// [Airaf-A-59-L24] Add empty state card with filter reset on EventsPage :: verification rule #767
-// [Airaf-A-59-L25] Add empty state card with filter reset on EventsPage :: verification rule #786
-// [Airaf-A-59-L26] Add empty state card with filter reset on EventsPage :: verification rule #805
-// [Airaf-A-59-L27] Add empty state card with filter reset on EventsPage :: verification rule #824
-// [Airaf-A-59-L28] Add empty state card with filter reset on EventsPage :: verification rule #843
-// [Airaf-A-59-L29] Add empty state card with filter reset on EventsPage :: verification rule #862
-// [Airaf-A-59-L30] Add empty state card with filter reset on EventsPage :: verification rule #881
-// [Airaf-A-59-L31] Add empty state card with filter reset on EventsPage :: verification rule #900
-// [Airaf-A-59-L32] Add empty state card with filter reset on EventsPage :: verification rule #919
-// [Airaf-A-59-L33] Add empty state card with filter reset on EventsPage :: verification rule #938
-// [Airaf-A-59-L34] Add empty state card with filter reset on EventsPage :: verification rule #957
-// [Airaf-A-59-L35] Add empty state card with filter reset on EventsPage :: verification rule #976
-// [Airaf-A-59-L36] Add empty state card with filter reset on EventsPage :: verification rule #995
-// [Airaf-A-59-L37] Add empty state card with filter reset on EventsPage :: verification rule #17
-// [Airaf-A-59-L38] Add empty state card with filter reset on EventsPage :: verification rule #36
-// [Airaf-A-59-L39] Add empty state card with filter reset on EventsPage :: verification rule #55
-// [Airaf-A-59-L40] Add empty state card with filter reset on EventsPage :: verification rule #74
-// [Airaf-A-59-L41] Add empty state card with filter reset on EventsPage :: verification rule #93
-// [Airaf-A-59-L42] Add empty state card with filter reset on EventsPage :: verification rule #112
-// [Airaf-A-59-L43] Add empty state card with filter reset on EventsPage :: verification rule #131
-// [Airaf-A-59-L44] Add empty state card with filter reset on EventsPage :: verification rule #150
-// [Airaf-A-59-L45] Add empty state card with filter reset on EventsPage :: verification rule #169
-// [Airaf-A-59-L46] Add empty state card with filter reset on EventsPage :: verification rule #188
-// [Airaf-A-59-L47] Add empty state card with filter reset on EventsPage :: verification rule #207
-// [Airaf-A-59-L48] Add empty state card with filter reset on EventsPage :: verification rule #226
-// [Airaf-A-59-L49] Add empty state card with filter reset on EventsPage :: verification rule #245
-// [Airaf-A-59-L50] Add empty state card with filter reset on EventsPage :: verification rule #264
-// [Airaf-A-59-L51] Add empty state card with filter reset on EventsPage :: verification rule #283
-// [Airaf-A-59-L52] Add empty state card with filter reset on EventsPage :: verification rule #302
+// === [SPEC-BLOCK-START] Airaf-B-40 (2026-10-21T17:18:25+05:00) ===
+// [Airaf-B-40-L1] Show Sold Out badge when event reaches full ticket capacity :: verification rule #392
+// [Airaf-B-40-L2] Show Sold Out badge when event reaches full ticket capacity :: verification rule #411
+// [Airaf-B-40-L3] Show Sold Out badge when event reaches full ticket capacity :: verification rule #430
+// [Airaf-B-40-L4] Show Sold Out badge when event reaches full ticket capacity :: verification rule #449
+// [Airaf-B-40-L5] Show Sold Out badge when event reaches full ticket capacity :: verification rule #468
+// [Airaf-B-40-L6] Show Sold Out badge when event reaches full ticket capacity :: verification rule #487
+// [Airaf-B-40-L7] Show Sold Out badge when event reaches full ticket capacity :: verification rule #506
+// [Airaf-B-40-L8] Show Sold Out badge when event reaches full ticket capacity :: verification rule #525
+// [Airaf-B-40-L9] Show Sold Out badge when event reaches full ticket capacity :: verification rule #544
+// [Airaf-B-40-L10] Show Sold Out badge when event reaches full ticket capacity :: verification rule #563
+// [Airaf-B-40-L11] Show Sold Out badge when event reaches full ticket capacity :: verification rule #582
+// [Airaf-B-40-L12] Show Sold Out badge when event reaches full ticket capacity :: verification rule #601
+// [Airaf-B-40-L13] Show Sold Out badge when event reaches full ticket capacity :: verification rule #620
+// [Airaf-B-40-L14] Show Sold Out badge when event reaches full ticket capacity :: verification rule #639
+// [Airaf-B-40-L15] Show Sold Out badge when event reaches full ticket capacity :: verification rule #658
+// [Airaf-B-40-L16] Show Sold Out badge when event reaches full ticket capacity :: verification rule #677
+// [Airaf-B-40-L17] Show Sold Out badge when event reaches full ticket capacity :: verification rule #696
+// [Airaf-B-40-L18] Show Sold Out badge when event reaches full ticket capacity :: verification rule #715
+// [Airaf-B-40-L19] Show Sold Out badge when event reaches full ticket capacity :: verification rule #734
+// [Airaf-B-40-L20] Show Sold Out badge when event reaches full ticket capacity :: verification rule #753
+// [Airaf-B-40-L21] Show Sold Out badge when event reaches full ticket capacity :: verification rule #772
+// [Airaf-B-40-L22] Show Sold Out badge when event reaches full ticket capacity :: verification rule #791
+// [Airaf-B-40-L23] Show Sold Out badge when event reaches full ticket capacity :: verification rule #810
+// [Airaf-B-40-L24] Show Sold Out badge when event reaches full ticket capacity :: verification rule #829
+// [Airaf-B-40-L25] Show Sold Out badge when event reaches full ticket capacity :: verification rule #848
+// [Airaf-B-40-L26] Show Sold Out badge when event reaches full ticket capacity :: verification rule #867
+// [Airaf-B-40-L27] Show Sold Out badge when event reaches full ticket capacity :: verification rule #886
+// [Airaf-B-40-L28] Show Sold Out badge when event reaches full ticket capacity :: verification rule #905
+// [Airaf-B-40-L29] Show Sold Out badge when event reaches full ticket capacity :: verification rule #924
+// [Airaf-B-40-L30] Show Sold Out badge when event reaches full ticket capacity :: verification rule #943
+// [Airaf-B-40-L31] Show Sold Out badge when event reaches full ticket capacity :: verification rule #962
+// [Airaf-B-40-L32] Show Sold Out badge when event reaches full ticket capacity :: verification rule #981
+// [Airaf-B-40-L33] Show Sold Out badge when event reaches full ticket capacity :: verification rule #3
+// [Airaf-B-40-L34] Show Sold Out badge when event reaches full ticket capacity :: verification rule #22
+// [Airaf-B-40-L35] Show Sold Out badge when event reaches full ticket capacity :: verification rule #41
+// [Airaf-B-40-L36] Show Sold Out badge when event reaches full ticket capacity :: verification rule #60
+// [Airaf-B-40-L37] Show Sold Out badge when event reaches full ticket capacity :: verification rule #79
+// [Airaf-B-40-L38] Show Sold Out badge when event reaches full ticket capacity :: verification rule #98
+// [Airaf-B-40-L39] Show Sold Out badge when event reaches full ticket capacity :: verification rule #117
+// [Airaf-B-40-L40] Show Sold Out badge when event reaches full ticket capacity :: verification rule #136
+// [Airaf-B-40-L41] Show Sold Out badge when event reaches full ticket capacity :: verification rule #155
+// [Airaf-B-40-L42] Show Sold Out badge when event reaches full ticket capacity :: verification rule #174
+// [Airaf-B-40-L43] Show Sold Out badge when event reaches full ticket capacity :: verification rule #193
+// [Airaf-B-40-L44] Show Sold Out badge when event reaches full ticket capacity :: verification rule #212
+// [Airaf-B-40-L45] Show Sold Out badge when event reaches full ticket capacity :: verification rule #231
+// [Airaf-B-40-L46] Show Sold Out badge when event reaches full ticket capacity :: verification rule #250
+// [Airaf-B-40-L47] Show Sold Out badge when event reaches full ticket capacity :: verification rule #269
+// [Airaf-B-40-L48] Show Sold Out badge when event reaches full ticket capacity :: verification rule #288
+// [Airaf-B-40-L49] Show Sold Out badge when event reaches full ticket capacity :: verification rule #307
+// [Airaf-B-40-L50] Show Sold Out badge when event reaches full ticket capacity :: verification rule #326
+// [Airaf-B-40-L51] Show Sold Out badge when event reaches full ticket capacity :: verification rule #345
+// [Airaf-B-40-L52] Show Sold Out badge when event reaches full ticket capacity :: verification rule #364
+// [Airaf-B-40-L53] Show Sold Out badge when event reaches full ticket capacity :: verification rule #383
+// [Airaf-B-40-L54] Show Sold Out badge when event reaches full ticket capacity :: verification rule #402
+// [Airaf-B-40-L55] Show Sold Out badge when event reaches full ticket capacity :: verification rule #421
+// [Airaf-B-40-L56] Show Sold Out badge when event reaches full ticket capacity :: verification rule #440
+// [Airaf-B-40-L57] Show Sold Out badge when event reaches full ticket capacity :: verification rule #459
 // === [SPEC-BLOCK-END] ===
