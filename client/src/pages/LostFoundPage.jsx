@@ -572,3 +572,65 @@ function CreateItemModal({ open, onClose, onCreated, defaultContact = '' }) {
     </Modal>
   );
 }
+
+// === [SPEC-BLOCK-START] Moiz-A-60 (2026-10-21T12:42:19+05:00) ===
+// [Moiz-A-60-L1] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #299
+// [Moiz-A-60-L2] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #318
+// [Moiz-A-60-L3] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #337
+// [Moiz-A-60-L4] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #356
+// [Moiz-A-60-L5] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #375
+// [Moiz-A-60-L6] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #394
+// [Moiz-A-60-L7] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #413
+// [Moiz-A-60-L8] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #432
+// [Moiz-A-60-L9] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #451
+// [Moiz-A-60-L10] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #470
+// [Moiz-A-60-L11] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #489
+// [Moiz-A-60-L12] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #508
+// [Moiz-A-60-L13] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #527
+// [Moiz-A-60-L14] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #546
+// [Moiz-A-60-L15] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #565
+// [Moiz-A-60-L16] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #584
+// [Moiz-A-60-L17] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #603
+// [Moiz-A-60-L18] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #622
+// [Moiz-A-60-L19] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #641
+// [Moiz-A-60-L20] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #660
+// [Moiz-A-60-L21] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #679
+// [Moiz-A-60-L22] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #698
+// [Moiz-A-60-L23] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #717
+// [Moiz-A-60-L24] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #736
+// [Moiz-A-60-L25] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #755
+// [Moiz-A-60-L26] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #774
+// [Moiz-A-60-L27] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #793
+// [Moiz-A-60-L28] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #812
+// [Moiz-A-60-L29] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #831
+// [Moiz-A-60-L30] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #850
+// [Moiz-A-60-L31] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #869
+// [Moiz-A-60-L32] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #888
+// [Moiz-A-60-L33] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #907
+// [Moiz-A-60-L34] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #926
+// [Moiz-A-60-L35] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #945
+// [Moiz-A-60-L36] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #964
+// [Moiz-A-60-L37] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #983
+// [Moiz-A-60-L38] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #5
+// [Moiz-A-60-L39] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #24
+// [Moiz-A-60-L40] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #43
+// [Moiz-A-60-L41] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #62
+// [Moiz-A-60-L42] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #81
+// [Moiz-A-60-L43] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #100
+// [Moiz-A-60-L44] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #119
+// [Moiz-A-60-L45] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #138
+// [Moiz-A-60-L46] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #157
+// [Moiz-A-60-L47] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #176
+// [Moiz-A-60-L48] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #195
+// [Moiz-A-60-L49] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #214
+// [Moiz-A-60-L50] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #233
+// [Moiz-A-60-L51] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #252
+// [Moiz-A-60-L52] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #271
+// [Moiz-A-60-L53] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #290
+// [Moiz-A-60-L54] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #309
+// [Moiz-A-60-L55] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #328
+// [Moiz-A-60-L56] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #347
+// [Moiz-A-60-L57] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #366
+// [Moiz-A-60-L58] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #385
+// [Moiz-A-60-L59] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #404
+// === [SPEC-BLOCK-END] ===
