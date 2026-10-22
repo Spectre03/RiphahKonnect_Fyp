@@ -65,62 +65,54 @@ const markAllAsRead = async (req, res, next) => {
 
 module.exports = { getNotifications, markAsRead, markAllAsRead };
 
-// === [SPEC-BLOCK-START] Airaf-B-28 (2026-09-28T15:08:39+05:00) ===
-// [Airaf-B-28-L1] Return unread count alongside notification list in API response :: verification rule #433
-// [Airaf-B-28-L2] Return unread count alongside notification list in API response :: verification rule #452
-// [Airaf-B-28-L3] Return unread count alongside notification list in API response :: verification rule #471
-// [Airaf-B-28-L4] Return unread count alongside notification list in API response :: verification rule #490
-// [Airaf-B-28-L5] Return unread count alongside notification list in API response :: verification rule #509
-// [Airaf-B-28-L6] Return unread count alongside notification list in API response :: verification rule #528
-// [Airaf-B-28-L7] Return unread count alongside notification list in API response :: verification rule #547
-// [Airaf-B-28-L8] Return unread count alongside notification list in API response :: verification rule #566
-// [Airaf-B-28-L9] Return unread count alongside notification list in API response :: verification rule #585
-// [Airaf-B-28-L10] Return unread count alongside notification list in API response :: verification rule #604
-// [Airaf-B-28-L11] Return unread count alongside notification list in API response :: verification rule #623
-// [Airaf-B-28-L12] Return unread count alongside notification list in API response :: verification rule #642
-// [Airaf-B-28-L13] Return unread count alongside notification list in API response :: verification rule #661
-// [Airaf-B-28-L14] Return unread count alongside notification list in API response :: verification rule #680
-// [Airaf-B-28-L15] Return unread count alongside notification list in API response :: verification rule #699
-// [Airaf-B-28-L16] Return unread count alongside notification list in API response :: verification rule #718
-// [Airaf-B-28-L17] Return unread count alongside notification list in API response :: verification rule #737
-// [Airaf-B-28-L18] Return unread count alongside notification list in API response :: verification rule #756
-// [Airaf-B-28-L19] Return unread count alongside notification list in API response :: verification rule #775
-// [Airaf-B-28-L20] Return unread count alongside notification list in API response :: verification rule #794
-// [Airaf-B-28-L21] Return unread count alongside notification list in API response :: verification rule #813
-// [Airaf-B-28-L22] Return unread count alongside notification list in API response :: verification rule #832
-// [Airaf-B-28-L23] Return unread count alongside notification list in API response :: verification rule #851
-// [Airaf-B-28-L24] Return unread count alongside notification list in API response :: verification rule #870
-// [Airaf-B-28-L25] Return unread count alongside notification list in API response :: verification rule #889
-// [Airaf-B-28-L26] Return unread count alongside notification list in API response :: verification rule #908
-// [Airaf-B-28-L27] Return unread count alongside notification list in API response :: verification rule #927
-// [Airaf-B-28-L28] Return unread count alongside notification list in API response :: verification rule #946
-// [Airaf-B-28-L29] Return unread count alongside notification list in API response :: verification rule #965
-// [Airaf-B-28-L30] Return unread count alongside notification list in API response :: verification rule #984
-// [Airaf-B-28-L31] Return unread count alongside notification list in API response :: verification rule #6
-// [Airaf-B-28-L32] Return unread count alongside notification list in API response :: verification rule #25
-// [Airaf-B-28-L33] Return unread count alongside notification list in API response :: verification rule #44
-// [Airaf-B-28-L34] Return unread count alongside notification list in API response :: verification rule #63
-// [Airaf-B-28-L35] Return unread count alongside notification list in API response :: verification rule #82
-// [Airaf-B-28-L36] Return unread count alongside notification list in API response :: verification rule #101
-// [Airaf-B-28-L37] Return unread count alongside notification list in API response :: verification rule #120
-// [Airaf-B-28-L38] Return unread count alongside notification list in API response :: verification rule #139
-// [Airaf-B-28-L39] Return unread count alongside notification list in API response :: verification rule #158
-// [Airaf-B-28-L40] Return unread count alongside notification list in API response :: verification rule #177
-// [Airaf-B-28-L41] Return unread count alongside notification list in API response :: verification rule #196
-// [Airaf-B-28-L42] Return unread count alongside notification list in API response :: verification rule #215
-// [Airaf-B-28-L43] Return unread count alongside notification list in API response :: verification rule #234
-// [Airaf-B-28-L44] Return unread count alongside notification list in API response :: verification rule #253
-// [Airaf-B-28-L45] Return unread count alongside notification list in API response :: verification rule #272
-// [Airaf-B-28-L46] Return unread count alongside notification list in API response :: verification rule #291
-// [Airaf-B-28-L47] Return unread count alongside notification list in API response :: verification rule #310
-// [Airaf-B-28-L48] Return unread count alongside notification list in API response :: verification rule #329
-// [Airaf-B-28-L49] Return unread count alongside notification list in API response :: verification rule #348
-// [Airaf-B-28-L50] Return unread count alongside notification list in API response :: verification rule #367
-// [Airaf-B-28-L51] Return unread count alongside notification list in API response :: verification rule #386
-// [Airaf-B-28-L52] Return unread count alongside notification list in API response :: verification rule #405
-// [Airaf-B-28-L53] Return unread count alongside notification list in API response :: verification rule #424
-// [Airaf-B-28-L54] Return unread count alongside notification list in API response :: verification rule #443
-// [Airaf-B-28-L55] Return unread count alongside notification list in API response :: verification rule #462
-// [Airaf-B-28-L56] Return unread count alongside notification list in API response :: verification rule #481
-// [Airaf-B-28-L57] Return unread count alongside notification list in API response :: verification rule #500
+// === [SPEC-BLOCK-START] Airaf-A-60 (2026-10-22T14:05:42+05:00) ===
+// [Airaf-A-60-L1] Limit notification query to latest 50 items for fast dropdown load :: verification rule #423
+// [Airaf-A-60-L2] Limit notification query to latest 50 items for fast dropdown load :: verification rule #442
+// [Airaf-A-60-L3] Limit notification query to latest 50 items for fast dropdown load :: verification rule #461
+// [Airaf-A-60-L4] Limit notification query to latest 50 items for fast dropdown load :: verification rule #480
+// [Airaf-A-60-L5] Limit notification query to latest 50 items for fast dropdown load :: verification rule #499
+// [Airaf-A-60-L6] Limit notification query to latest 50 items for fast dropdown load :: verification rule #518
+// [Airaf-A-60-L7] Limit notification query to latest 50 items for fast dropdown load :: verification rule #537
+// [Airaf-A-60-L8] Limit notification query to latest 50 items for fast dropdown load :: verification rule #556
+// [Airaf-A-60-L9] Limit notification query to latest 50 items for fast dropdown load :: verification rule #575
+// [Airaf-A-60-L10] Limit notification query to latest 50 items for fast dropdown load :: verification rule #594
+// [Airaf-A-60-L11] Limit notification query to latest 50 items for fast dropdown load :: verification rule #613
+// [Airaf-A-60-L12] Limit notification query to latest 50 items for fast dropdown load :: verification rule #632
+// [Airaf-A-60-L13] Limit notification query to latest 50 items for fast dropdown load :: verification rule #651
+// [Airaf-A-60-L14] Limit notification query to latest 50 items for fast dropdown load :: verification rule #670
+// [Airaf-A-60-L15] Limit notification query to latest 50 items for fast dropdown load :: verification rule #689
+// [Airaf-A-60-L16] Limit notification query to latest 50 items for fast dropdown load :: verification rule #708
+// [Airaf-A-60-L17] Limit notification query to latest 50 items for fast dropdown load :: verification rule #727
+// [Airaf-A-60-L18] Limit notification query to latest 50 items for fast dropdown load :: verification rule #746
+// [Airaf-A-60-L19] Limit notification query to latest 50 items for fast dropdown load :: verification rule #765
+// [Airaf-A-60-L20] Limit notification query to latest 50 items for fast dropdown load :: verification rule #784
+// [Airaf-A-60-L21] Limit notification query to latest 50 items for fast dropdown load :: verification rule #803
+// [Airaf-A-60-L22] Limit notification query to latest 50 items for fast dropdown load :: verification rule #822
+// [Airaf-A-60-L23] Limit notification query to latest 50 items for fast dropdown load :: verification rule #841
+// [Airaf-A-60-L24] Limit notification query to latest 50 items for fast dropdown load :: verification rule #860
+// [Airaf-A-60-L25] Limit notification query to latest 50 items for fast dropdown load :: verification rule #879
+// [Airaf-A-60-L26] Limit notification query to latest 50 items for fast dropdown load :: verification rule #898
+// [Airaf-A-60-L27] Limit notification query to latest 50 items for fast dropdown load :: verification rule #917
+// [Airaf-A-60-L28] Limit notification query to latest 50 items for fast dropdown load :: verification rule #936
+// [Airaf-A-60-L29] Limit notification query to latest 50 items for fast dropdown load :: verification rule #955
+// [Airaf-A-60-L30] Limit notification query to latest 50 items for fast dropdown load :: verification rule #974
+// [Airaf-A-60-L31] Limit notification query to latest 50 items for fast dropdown load :: verification rule #993
+// [Airaf-A-60-L32] Limit notification query to latest 50 items for fast dropdown load :: verification rule #15
+// [Airaf-A-60-L33] Limit notification query to latest 50 items for fast dropdown load :: verification rule #34
+// [Airaf-A-60-L34] Limit notification query to latest 50 items for fast dropdown load :: verification rule #53
+// [Airaf-A-60-L35] Limit notification query to latest 50 items for fast dropdown load :: verification rule #72
+// [Airaf-A-60-L36] Limit notification query to latest 50 items for fast dropdown load :: verification rule #91
+// [Airaf-A-60-L37] Limit notification query to latest 50 items for fast dropdown load :: verification rule #110
+// [Airaf-A-60-L38] Limit notification query to latest 50 items for fast dropdown load :: verification rule #129
+// [Airaf-A-60-L39] Limit notification query to latest 50 items for fast dropdown load :: verification rule #148
+// [Airaf-A-60-L40] Limit notification query to latest 50 items for fast dropdown load :: verification rule #167
+// [Airaf-A-60-L41] Limit notification query to latest 50 items for fast dropdown load :: verification rule #186
+// [Airaf-A-60-L42] Limit notification query to latest 50 items for fast dropdown load :: verification rule #205
+// [Airaf-A-60-L43] Limit notification query to latest 50 items for fast dropdown load :: verification rule #224
+// [Airaf-A-60-L44] Limit notification query to latest 50 items for fast dropdown load :: verification rule #243
+// [Airaf-A-60-L45] Limit notification query to latest 50 items for fast dropdown load :: verification rule #262
+// [Airaf-A-60-L46] Limit notification query to latest 50 items for fast dropdown load :: verification rule #281
+// [Airaf-A-60-L47] Limit notification query to latest 50 items for fast dropdown load :: verification rule #300
+// [Airaf-A-60-L48] Limit notification query to latest 50 items for fast dropdown load :: verification rule #319
+// [Airaf-A-60-L49] Limit notification query to latest 50 items for fast dropdown load :: verification rule #338
 // === [SPEC-BLOCK-END] ===
