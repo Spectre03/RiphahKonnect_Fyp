@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { adminAPI } from '../services/api';
 import { timeAgo, getAvatarGradient } from '../utils/brand';
 import { cn } from '../utils/cn';
-import { Card, Badge } from '../components/ui';
+import { Card, Badge, Modal, Button } from '../components/ui';
 import toast from 'react-hot-toast';
 import {
   ShieldCheck, Users, Newspaper, Calendar, Megaphone,
@@ -26,6 +26,7 @@ const CONTENT_TABS = [
   { key: 'posts',         label: 'Posts',         type: 'post',         icon: Newspaper },
   { key: 'announcements', label: 'Announcements', type: 'announcement', icon: Megaphone },
   { key: 'events',        label: 'Events',        type: 'event',        icon: Calendar },
+  { key: 'lostFound',     label: 'Lost & Found',  type: 'lostFound',    icon: PackageSearch },
 ];
 
 const NAV_SECTIONS = [
@@ -46,6 +47,7 @@ export default function AdminDashboardPage() {
   const [tab,          setTab]          = useState('posts');
   const [search,       setSearch]       = useState('');
   const [deleting,     setDeleting]     = useState({});
+  const [confirmModal, setConfirmModal] = useState(null); // { action: 'delete' | 'resolve', type, item }
 
   const fetchAll = async () => {
     try {
@@ -63,30 +65,45 @@ export default function AdminDashboardPage() {
 
   useEffect(() => { fetchAll(); }, []);
 
-  const handleDelete = async (type, id) => {
-    if (!confirm(`Delete this ${type}? This cannot be undone.`)) return;
-    const key = `${type}-${id}`;
+  const executeConfirmModal = async () => {
+    if (!confirmModal) return;
+    const { action, type, item } = confirmModal;
+    const id = item.id;
+    const key = `${action}-${type}-${id}`;
     setDeleting((p) => ({ ...p, [key]: true }));
     try {
-      if (type === 'post')         await adminAPI.deletePost(id);
-      if (type === 'announcement') await adminAPI.deleteAnnouncement(id);
-      if (type === 'event')        await adminAPI.deleteEvent(id);
+      if (action === 'resolve' && type === 'lostFound') {
+        await adminAPI.resolveLostFound(id);
+        setContent((prev) => ({
+          ...prev,
+          lostFound: (prev.lostFound || []).map((x) => (x.id === id ? { ...x, status: 'RESOLVED' } : x)),
+        }));
+        toast.success('Lost & Found item marked as resolved.');
+      } else if (action === 'delete') {
+        if (type === 'post')         await adminAPI.deletePost(id);
+        if (type === 'announcement') await adminAPI.deleteAnnouncement(id);
+        if (type === 'event')        await adminAPI.deleteEvent(id);
+        if (type === 'lostFound')    await adminAPI.deleteLostFound(id);
 
-      setContent((prev) => ({
-        ...prev,
-        posts:         type === 'post'         ? prev.posts.filter((x) => x.id !== id)         : prev.posts,
-        announcements: type === 'announcement' ? prev.announcements.filter((x) => x.id !== id) : prev.announcements,
-        events:        type === 'event'        ? prev.events.filter((x) => x.id !== id)        : prev.events,
-      }));
-      setStats((s) => s ? ({
-        ...s,
-        totalPosts:         type === 'post'         ? s.totalPosts - 1         : s.totalPosts,
-        totalAnnouncements: type === 'announcement' ? s.totalAnnouncements - 1 : s.totalAnnouncements,
-        totalEvents:        type === 'event'        ? s.totalEvents - 1        : s.totalEvents,
-      }) : s);
-      toast.success('Deleted successfully.');
+        setContent((prev) => ({
+          ...prev,
+          posts:         type === 'post'         ? (prev.posts || []).filter((x) => x.id !== id)         : prev.posts,
+          announcements: type === 'announcement' ? (prev.announcements || []).filter((x) => x.id !== id) : prev.announcements,
+          events:        type === 'event'        ? (prev.events || []).filter((x) => x.id !== id)        : prev.events,
+          lostFound:     type === 'lostFound'    ? (prev.lostFound || []).filter((x) => x.id !== id)     : prev.lostFound,
+        }));
+        setStats((s) => s ? ({
+          ...s,
+          totalPosts:         type === 'post'         ? s.totalPosts - 1         : s.totalPosts,
+          totalAnnouncements: type === 'announcement' ? s.totalAnnouncements - 1 : s.totalAnnouncements,
+          totalEvents:        type === 'event'        ? s.totalEvents - 1        : s.totalEvents,
+          totalLostFound:     type === 'lostFound'    ? (s.totalLostFound || 1) - 1 : s.totalLostFound,
+        }) : s);
+        toast.success('Deleted successfully.');
+      }
+      setConfirmModal(null);
     } catch (err) {
-      toast.error(err.response?.data?.error || 'Failed to delete.');
+      toast.error(err.response?.data?.error || 'Action failed.');
     } finally {
       setDeleting((p) => ({ ...p, [key]: false }));
     }
@@ -96,8 +113,8 @@ export default function AdminDashboardPage() {
   const rawContent   = content?.[tab] || [];
   const filtered     = search.trim()
     ? rawContent.filter((item) => {
-        const text = (item.title || item.content || '').toLowerCase();
-        const name = (item.author?.name || item.createdBy?.name || '').toLowerCase();
+        const text = (item.title || item.content || item.description || '').toLowerCase();
+        const name = (item.author?.name || item.createdBy?.name || item.reportedBy?.name || '').toLowerCase();
         return text.includes(search.toLowerCase()) || name.includes(search.toLowerCase());
       })
     : rawContent;
@@ -107,7 +124,7 @@ export default function AdminDashboardPage() {
     { label: 'Posts',           value: stats?.totalPosts,       sub: `+${stats?.newPostsToday || 0} today`,     icon: Newspaper, gradient: 'from-blue-500 to-cyan-500',     alert: false },
     { label: 'Events',          value: stats?.totalEvents,      sub: 'campus events',                            icon: Calendar,  gradient: 'from-violet-500 to-purple-600', alert: false },
     { label: 'Announcements',   value: stats?.totalAnnouncements, sub: 'total posted',                          icon: Megaphone, gradient: 'from-amber-500 to-orange-500',  alert: false },
-    { label: 'Groups',          value: stats?.totalGroups,      sub: 'semester groups',                          icon: BookOpen,  gradient: 'from-teal-500 to-emerald-600',  alert: false },
+    { label: 'Lost & Found',    value: stats?.totalLostFound ?? (content?.lostFound?.length || 0), sub: 'reported items', icon: PackageSearch, gradient: 'from-rose-500 to-pink-600', alert: false },
     { label: 'Blocked',         value: stats?.blockedUsers,     sub: 'blocked accounts',                         icon: UserX,     gradient: 'from-red-500 to-rose-600',      alert: stats?.blockedUsers > 0 },
   ];
 
@@ -115,12 +132,11 @@ export default function AdminDashboardPage() {
     <div className="page-wrapper">
 
       {/* ── Header ── */}
-      <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)' }}>
+      <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0c1a4a 0%, #1a2b6b 100%)' }}>
         <div className="absolute inset-0 banner-grid pointer-events-none opacity-20" />
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -right-24 -top-20 w-96 h-96 rounded-full bg-violet-500/[0.07] blur-3xl" />
-          <div className="absolute -left-20 bottom-0 w-80 h-80 rounded-full bg-indigo-500/[0.07] blur-3xl" />
-          <div className="absolute top-0 left-1/2 w-[600px] h-48 rounded-full bg-purple-500/[0.05] blur-3xl" />
+          <div className="absolute -right-24 -top-20 w-96 h-96 rounded-full blur-3xl" style={{ background: 'radial-gradient(ellipse, rgba(201,151,58,0.07) 0%, transparent 70%)' }} />
+          <div className="absolute -left-20 bottom-0 w-80 h-80 rounded-full blur-3xl" style={{ background: 'radial-gradient(ellipse, rgba(26,43,107,0.5) 0%, transparent 70%)' }} />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 relative z-10">
@@ -130,8 +146,8 @@ export default function AdminDashboardPage() {
                 <div className="h-9 w-9 bg-red-500/20 border border-red-400/30 rounded-xl flex items-center justify-center">
                   <ShieldCheck size={17} className="text-red-400" />
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-purple-300">System Administration</span>
+              <div className="flex items-center gap-2">
+                  <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: '#c9973a' }}>System Administration</span>
                   <span className="flex items-center gap-1 px-2 py-0.5 bg-green-500/15 border border-green-500/25 rounded-full text-[9px] font-bold text-green-400 uppercase tracking-wider">
                     <span className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse" />
                     Live
@@ -139,9 +155,9 @@ export default function AdminDashboardPage() {
                 </div>
               </div>
               <h1 className="text-3xl font-extrabold text-white tracking-tight">Admin Control Panel</h1>
-              <p className="text-purple-300 text-sm mt-1.5">
+              <p className="text-slate-400 text-sm mt-1.5">
                 Welcome back, <span className="text-white font-semibold">{user?.name}</span>
-                {stats && <span className="ml-2 text-purple-400">· {stats.newUsersToday} new users today</span>}
+                {stats && <span className="ml-2" style={{ color: '#c9973a' }}>· {stats.newUsersToday} new users today</span>}
               </p>
             </div>
 
@@ -156,7 +172,8 @@ export default function AdminDashboardPage() {
               </button>
               <Link
                 to="/admin/users"
-                className="flex items-center gap-2 px-4 py-2.5 bg-indigo-500 text-white text-sm font-bold rounded-xl hover:bg-indigo-600 transition-all shadow-lg shadow-indigo-500/25"
+                className="flex items-center gap-2 px-4 py-2.5 text-white text-sm font-bold rounded-xl transition-all shadow-lg"
+                style={{ background: 'linear-gradient(135deg, #1a2b6b, #2251b8)', boxShadow: '0 4px 14px rgba(26,43,107,0.35)' }}
               >
                 <UserCog size={14} /> Manage Users
               </Link>
@@ -376,10 +393,11 @@ export default function AdminDashboardPage() {
                 ) : (
                   filtered.map((item) => {
                     const type   = activeTab?.type;
-                    const delKey = `${type}-${item.id}`;
-                    const author = item.author || item.createdBy;
-                    const title  = item.title || (item.content?.substring(0, 80) + (item.content?.length > 80 ? '…' : ''));
-                    const meta   = item.type ? item.type : '';
+                    const delKey = `delete-${type}-${item.id}`;
+                    const resKey = `resolve-${type}-${item.id}`;
+                    const author = item.author || item.createdBy || item.reportedBy;
+                    const title  = item.title || (item.content?.substring(0, 80) + (item.content?.length > 80 ? '…' : '')) || 'Untitled';
+                    const meta   = item.type || item.status || '';
 
                     return (
                       <div key={item.id} className="flex items-start gap-3 px-5 py-3.5 hover:bg-slate-50/50 transition-colors group">
@@ -399,7 +417,13 @@ export default function AdminDashboardPage() {
                               </span>
                             )}
                             {meta && (
-                              <span className="text-[9px] font-bold text-indigo-500 bg-indigo-50 px-1.5 py-0.5 rounded-full">
+                              <span className={cn(
+                                'text-[9px] font-bold px-1.5 py-0.5 rounded-full',
+                                meta === 'RESOLVED' ? 'bg-slate-100 text-slate-600' :
+                                meta === 'LOST' ? 'bg-red-50 text-red-600' :
+                                meta === 'FOUND' ? 'bg-teal-50 text-teal-600' :
+                                'text-indigo-500 bg-indigo-50'
+                              )}>
                                 {meta}
                               </span>
                             )}
@@ -418,17 +442,30 @@ export default function AdminDashboardPage() {
                             )}
                           </div>
                         </div>
-                        <button
-                          onClick={() => handleDelete(type, item.id)}
-                          disabled={deleting[delKey]}
-                          className="p-1.5 text-slate-300 hover:text-red-500 hover:bg-red-50 rounded-lg transition-all cursor-pointer flex-shrink-0 opacity-0 group-hover:opacity-100"
-                          title="Delete"
-                        >
-                          {deleting[delKey]
-                            ? <Loader2 size={13} className="animate-spin" />
-                            : <Trash2 size={13} />
-                          }
-                        </button>
+                        <div className="flex items-center gap-1.5 flex-shrink-0">
+                          {type === 'lostFound' && item.status !== 'RESOLVED' && (
+                            <button
+                              onClick={() => setConfirmModal({ action: 'resolve', type, item })}
+                              disabled={deleting[resKey]}
+                              className="px-2 py-1 text-[10px] font-bold text-teal-700 bg-teal-50 hover:bg-teal-100 border border-teal-200 rounded-lg transition-all cursor-pointer flex items-center gap-1"
+                              title="Mark Resolved"
+                            >
+                              {deleting[resKey] ? <Loader2 size={11} className="animate-spin" /> : <CheckCircle2 size={11} />}
+                              Resolve
+                            </button>
+                          )}
+                          <button
+                            onClick={() => setConfirmModal({ action: 'delete', type, item })}
+                            disabled={deleting[delKey]}
+                            className="p-1.5 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-all cursor-pointer flex-shrink-0"
+                            title="Delete"
+                          >
+                            {deleting[delKey]
+                              ? <Loader2 size={13} className="animate-spin" />
+                              : <Trash2 size={13} />
+                            }
+                          </button>
+                        </div>
                       </div>
                     );
                   })
@@ -466,78 +503,56 @@ export default function AdminDashboardPage() {
           </div>
         </div>
       </div>
+
+      {/* Confirmation Pop-up Modal */}
+      <Modal
+        open={!!confirmModal}
+        onClose={() => setConfirmModal(null)}
+        title={confirmModal?.action === 'resolve' ? 'Mark Lost & Found Item Resolved' : 'Confirm Deletion'}
+        subtitle={
+          confirmModal?.action === 'resolve'
+            ? 'Confirm that this item has been resolved'
+            : 'This action cannot be undone'
+        }
+        icon={confirmModal?.action === 'resolve' ? CheckCircle2 : Trash2}
+        iconColor={
+          confirmModal?.action === 'resolve'
+            ? 'bg-gradient-to-br from-teal-500 to-emerald-600'
+            : 'bg-gradient-to-br from-red-500 to-rose-600'
+        }
+        size="sm"
+      >
+        <div className="space-y-4">
+          <p className="text-sm text-slate-600 leading-relaxed">
+            {confirmModal?.action === 'resolve' ? (
+              <>
+                Mark <span className="font-bold text-slate-900">&ldquo;{confirmModal?.item?.title}&rdquo;</span> as{' '}
+                <span className="font-bold text-teal-700">Resolved</span>?
+              </>
+            ) : (
+              <>
+                Are you sure you want to permanently delete{' '}
+                <span className="font-bold text-slate-900">
+                  &ldquo;{confirmModal?.item?.title || confirmModal?.item?.content?.substring(0, 40) || 'this item'}&rdquo;
+                </span>?
+              </>
+            )}
+          </p>
+          <div className="flex items-center justify-end gap-2.5 pt-2">
+            <Button type="button" variant="secondary" onClick={() => setConfirmModal(null)}>
+              Cancel
+            </Button>
+            <Button
+              type="button"
+              variant={confirmModal?.action === 'resolve' ? 'primary' : 'danger'}
+              onClick={executeConfirmModal}
+              icon={confirmModal?.action === 'resolve' ? CheckCircle2 : Trash2}
+            >
+              {confirmModal?.action === 'resolve' ? 'Mark Resolved' : 'Delete'}
+            </Button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 }
-
-// === [SPEC-BLOCK-START] Moiz-A-54 (2026-10-13T11:48:29+05:00) ===
-// [Moiz-A-54-L1] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #676
-// [Moiz-A-54-L2] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #695
-// [Moiz-A-54-L3] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #714
-// [Moiz-A-54-L4] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #733
-// [Moiz-A-54-L5] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #752
-// [Moiz-A-54-L6] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #771
-// [Moiz-A-54-L7] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #790
-// [Moiz-A-54-L8] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #809
-// [Moiz-A-54-L9] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #828
-// [Moiz-A-54-L10] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #847
-// [Moiz-A-54-L11] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #866
-// [Moiz-A-54-L12] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #885
-// [Moiz-A-54-L13] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #904
-// [Moiz-A-54-L14] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #923
-// [Moiz-A-54-L15] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #942
-// [Moiz-A-54-L16] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #961
-// [Moiz-A-54-L17] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #980
-// [Moiz-A-54-L18] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #2
-// [Moiz-A-54-L19] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #21
-// [Moiz-A-54-L20] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #40
-// [Moiz-A-54-L21] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #59
-// [Moiz-A-54-L22] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #78
-// [Moiz-A-54-L23] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #97
-// [Moiz-A-54-L24] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #116
-// [Moiz-A-54-L25] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #135
-// [Moiz-A-54-L26] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #154
-// [Moiz-A-54-L27] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #173
-// [Moiz-A-54-L28] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #192
-// [Moiz-A-54-L29] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #211
-// [Moiz-A-54-L30] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #230
-// [Moiz-A-54-L31] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #249
-// [Moiz-A-54-L32] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #268
-// [Moiz-A-54-L33] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #287
-// [Moiz-A-54-L34] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #306
-// [Moiz-A-54-L35] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #325
-// [Moiz-A-54-L36] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #344
-// [Moiz-A-54-L37] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #363
-// [Moiz-A-54-L38] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #382
-// [Moiz-A-54-L39] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #401
-// [Moiz-A-54-L40] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #420
-// [Moiz-A-54-L41] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #439
-// [Moiz-A-54-L42] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #458
-// [Moiz-A-54-L43] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #477
-// [Moiz-A-54-L44] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #496
-// [Moiz-A-54-L45] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #515
-// [Moiz-A-54-L46] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #534
-// [Moiz-A-54-L47] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #553
-// [Moiz-A-54-L48] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #572
-// [Moiz-A-54-L49] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #591
-// [Moiz-A-54-L50] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #610
-// [Moiz-A-54-L51] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #629
-// [Moiz-A-54-L52] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #648
-// [Moiz-A-54-L53] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #667
-// [Moiz-A-54-L54] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #686
-// [Moiz-A-54-L55] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #705
-// [Moiz-A-54-L56] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #724
-// [Moiz-A-54-L57] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #743
-// [Moiz-A-54-L58] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #762
-// [Moiz-A-54-L59] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #781
-// [Moiz-A-54-L60] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #800
-// [Moiz-A-54-L61] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #819
-// [Moiz-A-54-L62] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #838
-// [Moiz-A-54-L63] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #857
-// [Moiz-A-54-L64] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #876
-// [Moiz-A-54-L65] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #895
-// [Moiz-A-54-L66] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #914
-// [Moiz-A-54-L67] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #933
-// [Moiz-A-54-L68] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #952
-// [Moiz-A-54-L69] Add Events, Announcements, and Lost & Found moderation tabs in AdminDashboard :: verification rule #971
-// === [SPEC-BLOCK-END] ===
