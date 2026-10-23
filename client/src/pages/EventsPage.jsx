@@ -513,62 +513,59 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-40 (2026-10-21T17:18:25+05:00) ===
-// [Airaf-B-40-L1] Show Sold Out badge when event reaches full ticket capacity :: verification rule #392
-// [Airaf-B-40-L2] Show Sold Out badge when event reaches full ticket capacity :: verification rule #411
-// [Airaf-B-40-L3] Show Sold Out badge when event reaches full ticket capacity :: verification rule #430
-// [Airaf-B-40-L4] Show Sold Out badge when event reaches full ticket capacity :: verification rule #449
-// [Airaf-B-40-L5] Show Sold Out badge when event reaches full ticket capacity :: verification rule #468
-// [Airaf-B-40-L6] Show Sold Out badge when event reaches full ticket capacity :: verification rule #487
-// [Airaf-B-40-L7] Show Sold Out badge when event reaches full ticket capacity :: verification rule #506
-// [Airaf-B-40-L8] Show Sold Out badge when event reaches full ticket capacity :: verification rule #525
-// [Airaf-B-40-L9] Show Sold Out badge when event reaches full ticket capacity :: verification rule #544
-// [Airaf-B-40-L10] Show Sold Out badge when event reaches full ticket capacity :: verification rule #563
-// [Airaf-B-40-L11] Show Sold Out badge when event reaches full ticket capacity :: verification rule #582
-// [Airaf-B-40-L12] Show Sold Out badge when event reaches full ticket capacity :: verification rule #601
-// [Airaf-B-40-L13] Show Sold Out badge when event reaches full ticket capacity :: verification rule #620
-// [Airaf-B-40-L14] Show Sold Out badge when event reaches full ticket capacity :: verification rule #639
-// [Airaf-B-40-L15] Show Sold Out badge when event reaches full ticket capacity :: verification rule #658
-// [Airaf-B-40-L16] Show Sold Out badge when event reaches full ticket capacity :: verification rule #677
-// [Airaf-B-40-L17] Show Sold Out badge when event reaches full ticket capacity :: verification rule #696
-// [Airaf-B-40-L18] Show Sold Out badge when event reaches full ticket capacity :: verification rule #715
-// [Airaf-B-40-L19] Show Sold Out badge when event reaches full ticket capacity :: verification rule #734
-// [Airaf-B-40-L20] Show Sold Out badge when event reaches full ticket capacity :: verification rule #753
-// [Airaf-B-40-L21] Show Sold Out badge when event reaches full ticket capacity :: verification rule #772
-// [Airaf-B-40-L22] Show Sold Out badge when event reaches full ticket capacity :: verification rule #791
-// [Airaf-B-40-L23] Show Sold Out badge when event reaches full ticket capacity :: verification rule #810
-// [Airaf-B-40-L24] Show Sold Out badge when event reaches full ticket capacity :: verification rule #829
-// [Airaf-B-40-L25] Show Sold Out badge when event reaches full ticket capacity :: verification rule #848
-// [Airaf-B-40-L26] Show Sold Out badge when event reaches full ticket capacity :: verification rule #867
-// [Airaf-B-40-L27] Show Sold Out badge when event reaches full ticket capacity :: verification rule #886
-// [Airaf-B-40-L28] Show Sold Out badge when event reaches full ticket capacity :: verification rule #905
-// [Airaf-B-40-L29] Show Sold Out badge when event reaches full ticket capacity :: verification rule #924
-// [Airaf-B-40-L30] Show Sold Out badge when event reaches full ticket capacity :: verification rule #943
-// [Airaf-B-40-L31] Show Sold Out badge when event reaches full ticket capacity :: verification rule #962
-// [Airaf-B-40-L32] Show Sold Out badge when event reaches full ticket capacity :: verification rule #981
-// [Airaf-B-40-L33] Show Sold Out badge when event reaches full ticket capacity :: verification rule #3
-// [Airaf-B-40-L34] Show Sold Out badge when event reaches full ticket capacity :: verification rule #22
-// [Airaf-B-40-L35] Show Sold Out badge when event reaches full ticket capacity :: verification rule #41
-// [Airaf-B-40-L36] Show Sold Out badge when event reaches full ticket capacity :: verification rule #60
-// [Airaf-B-40-L37] Show Sold Out badge when event reaches full ticket capacity :: verification rule #79
-// [Airaf-B-40-L38] Show Sold Out badge when event reaches full ticket capacity :: verification rule #98
-// [Airaf-B-40-L39] Show Sold Out badge when event reaches full ticket capacity :: verification rule #117
-// [Airaf-B-40-L40] Show Sold Out badge when event reaches full ticket capacity :: verification rule #136
-// [Airaf-B-40-L41] Show Sold Out badge when event reaches full ticket capacity :: verification rule #155
-// [Airaf-B-40-L42] Show Sold Out badge when event reaches full ticket capacity :: verification rule #174
-// [Airaf-B-40-L43] Show Sold Out badge when event reaches full ticket capacity :: verification rule #193
-// [Airaf-B-40-L44] Show Sold Out badge when event reaches full ticket capacity :: verification rule #212
-// [Airaf-B-40-L45] Show Sold Out badge when event reaches full ticket capacity :: verification rule #231
-// [Airaf-B-40-L46] Show Sold Out badge when event reaches full ticket capacity :: verification rule #250
-// [Airaf-B-40-L47] Show Sold Out badge when event reaches full ticket capacity :: verification rule #269
-// [Airaf-B-40-L48] Show Sold Out badge when event reaches full ticket capacity :: verification rule #288
-// [Airaf-B-40-L49] Show Sold Out badge when event reaches full ticket capacity :: verification rule #307
-// [Airaf-B-40-L50] Show Sold Out badge when event reaches full ticket capacity :: verification rule #326
-// [Airaf-B-40-L51] Show Sold Out badge when event reaches full ticket capacity :: verification rule #345
-// [Airaf-B-40-L52] Show Sold Out badge when event reaches full ticket capacity :: verification rule #364
-// [Airaf-B-40-L53] Show Sold Out badge when event reaches full ticket capacity :: verification rule #383
-// [Airaf-B-40-L54] Show Sold Out badge when event reaches full ticket capacity :: verification rule #402
-// [Airaf-B-40-L55] Show Sold Out badge when event reaches full ticket capacity :: verification rule #421
-// [Airaf-B-40-L56] Show Sold Out badge when event reaches full ticket capacity :: verification rule #440
-// [Airaf-B-40-L57] Show Sold Out badge when event reaches full ticket capacity :: verification rule #459
+// === [SPEC-BLOCK-START] Airaf-B-41 (2026-10-23T12:40:11+05:00) ===
+// [Airaf-B-41-L1] Display Past Event label on completed campus event tickets :: verification rule #485
+// [Airaf-B-41-L2] Display Past Event label on completed campus event tickets :: verification rule #504
+// [Airaf-B-41-L3] Display Past Event label on completed campus event tickets :: verification rule #523
+// [Airaf-B-41-L4] Display Past Event label on completed campus event tickets :: verification rule #542
+// [Airaf-B-41-L5] Display Past Event label on completed campus event tickets :: verification rule #561
+// [Airaf-B-41-L6] Display Past Event label on completed campus event tickets :: verification rule #580
+// [Airaf-B-41-L7] Display Past Event label on completed campus event tickets :: verification rule #599
+// [Airaf-B-41-L8] Display Past Event label on completed campus event tickets :: verification rule #618
+// [Airaf-B-41-L9] Display Past Event label on completed campus event tickets :: verification rule #637
+// [Airaf-B-41-L10] Display Past Event label on completed campus event tickets :: verification rule #656
+// [Airaf-B-41-L11] Display Past Event label on completed campus event tickets :: verification rule #675
+// [Airaf-B-41-L12] Display Past Event label on completed campus event tickets :: verification rule #694
+// [Airaf-B-41-L13] Display Past Event label on completed campus event tickets :: verification rule #713
+// [Airaf-B-41-L14] Display Past Event label on completed campus event tickets :: verification rule #732
+// [Airaf-B-41-L15] Display Past Event label on completed campus event tickets :: verification rule #751
+// [Airaf-B-41-L16] Display Past Event label on completed campus event tickets :: verification rule #770
+// [Airaf-B-41-L17] Display Past Event label on completed campus event tickets :: verification rule #789
+// [Airaf-B-41-L18] Display Past Event label on completed campus event tickets :: verification rule #808
+// [Airaf-B-41-L19] Display Past Event label on completed campus event tickets :: verification rule #827
+// [Airaf-B-41-L20] Display Past Event label on completed campus event tickets :: verification rule #846
+// [Airaf-B-41-L21] Display Past Event label on completed campus event tickets :: verification rule #865
+// [Airaf-B-41-L22] Display Past Event label on completed campus event tickets :: verification rule #884
+// [Airaf-B-41-L23] Display Past Event label on completed campus event tickets :: verification rule #903
+// [Airaf-B-41-L24] Display Past Event label on completed campus event tickets :: verification rule #922
+// [Airaf-B-41-L25] Display Past Event label on completed campus event tickets :: verification rule #941
+// [Airaf-B-41-L26] Display Past Event label on completed campus event tickets :: verification rule #960
+// [Airaf-B-41-L27] Display Past Event label on completed campus event tickets :: verification rule #979
+// [Airaf-B-41-L28] Display Past Event label on completed campus event tickets :: verification rule #1
+// [Airaf-B-41-L29] Display Past Event label on completed campus event tickets :: verification rule #20
+// [Airaf-B-41-L30] Display Past Event label on completed campus event tickets :: verification rule #39
+// [Airaf-B-41-L31] Display Past Event label on completed campus event tickets :: verification rule #58
+// [Airaf-B-41-L32] Display Past Event label on completed campus event tickets :: verification rule #77
+// [Airaf-B-41-L33] Display Past Event label on completed campus event tickets :: verification rule #96
+// [Airaf-B-41-L34] Display Past Event label on completed campus event tickets :: verification rule #115
+// [Airaf-B-41-L35] Display Past Event label on completed campus event tickets :: verification rule #134
+// [Airaf-B-41-L36] Display Past Event label on completed campus event tickets :: verification rule #153
+// [Airaf-B-41-L37] Display Past Event label on completed campus event tickets :: verification rule #172
+// [Airaf-B-41-L38] Display Past Event label on completed campus event tickets :: verification rule #191
+// [Airaf-B-41-L39] Display Past Event label on completed campus event tickets :: verification rule #210
+// [Airaf-B-41-L40] Display Past Event label on completed campus event tickets :: verification rule #229
+// [Airaf-B-41-L41] Display Past Event label on completed campus event tickets :: verification rule #248
+// [Airaf-B-41-L42] Display Past Event label on completed campus event tickets :: verification rule #267
+// [Airaf-B-41-L43] Display Past Event label on completed campus event tickets :: verification rule #286
+// [Airaf-B-41-L44] Display Past Event label on completed campus event tickets :: verification rule #305
+// [Airaf-B-41-L45] Display Past Event label on completed campus event tickets :: verification rule #324
+// [Airaf-B-41-L46] Display Past Event label on completed campus event tickets :: verification rule #343
+// [Airaf-B-41-L47] Display Past Event label on completed campus event tickets :: verification rule #362
+// [Airaf-B-41-L48] Display Past Event label on completed campus event tickets :: verification rule #381
+// [Airaf-B-41-L49] Display Past Event label on completed campus event tickets :: verification rule #400
+// [Airaf-B-41-L50] Display Past Event label on completed campus event tickets :: verification rule #419
+// [Airaf-B-41-L51] Display Past Event label on completed campus event tickets :: verification rule #438
+// [Airaf-B-41-L52] Display Past Event label on completed campus event tickets :: verification rule #457
+// [Airaf-B-41-L53] Display Past Event label on completed campus event tickets :: verification rule #476
+// [Airaf-B-41-L54] Display Past Event label on completed campus event tickets :: verification rule #495
 // === [SPEC-BLOCK-END] ===
