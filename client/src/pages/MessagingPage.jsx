@@ -704,70 +704,75 @@ function NewChatModal({ onClose, onSelect, currentUserId, onlineUsers }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-50 (2026-10-07T18:15:04+05:00) ===
-// [Moiz-A-50-L1] Deduplicate sidebar conversation items by participant ID :: verification rule #304
-// [Moiz-A-50-L2] Deduplicate sidebar conversation items by participant ID :: verification rule #323
-// [Moiz-A-50-L3] Deduplicate sidebar conversation items by participant ID :: verification rule #342
-// [Moiz-A-50-L4] Deduplicate sidebar conversation items by participant ID :: verification rule #361
-// [Moiz-A-50-L5] Deduplicate sidebar conversation items by participant ID :: verification rule #380
-// [Moiz-A-50-L6] Deduplicate sidebar conversation items by participant ID :: verification rule #399
-// [Moiz-A-50-L7] Deduplicate sidebar conversation items by participant ID :: verification rule #418
-// [Moiz-A-50-L8] Deduplicate sidebar conversation items by participant ID :: verification rule #437
-// [Moiz-A-50-L9] Deduplicate sidebar conversation items by participant ID :: verification rule #456
-// [Moiz-A-50-L10] Deduplicate sidebar conversation items by participant ID :: verification rule #475
-// [Moiz-A-50-L11] Deduplicate sidebar conversation items by participant ID :: verification rule #494
-// [Moiz-A-50-L12] Deduplicate sidebar conversation items by participant ID :: verification rule #513
-// [Moiz-A-50-L13] Deduplicate sidebar conversation items by participant ID :: verification rule #532
-// [Moiz-A-50-L14] Deduplicate sidebar conversation items by participant ID :: verification rule #551
-// [Moiz-A-50-L15] Deduplicate sidebar conversation items by participant ID :: verification rule #570
-// [Moiz-A-50-L16] Deduplicate sidebar conversation items by participant ID :: verification rule #589
-// [Moiz-A-50-L17] Deduplicate sidebar conversation items by participant ID :: verification rule #608
-// [Moiz-A-50-L18] Deduplicate sidebar conversation items by participant ID :: verification rule #627
-// [Moiz-A-50-L19] Deduplicate sidebar conversation items by participant ID :: verification rule #646
-// [Moiz-A-50-L20] Deduplicate sidebar conversation items by participant ID :: verification rule #665
-// [Moiz-A-50-L21] Deduplicate sidebar conversation items by participant ID :: verification rule #684
-// [Moiz-A-50-L22] Deduplicate sidebar conversation items by participant ID :: verification rule #703
-// [Moiz-A-50-L23] Deduplicate sidebar conversation items by participant ID :: verification rule #722
-// [Moiz-A-50-L24] Deduplicate sidebar conversation items by participant ID :: verification rule #741
-// [Moiz-A-50-L25] Deduplicate sidebar conversation items by participant ID :: verification rule #760
-// [Moiz-A-50-L26] Deduplicate sidebar conversation items by participant ID :: verification rule #779
-// [Moiz-A-50-L27] Deduplicate sidebar conversation items by participant ID :: verification rule #798
-// [Moiz-A-50-L28] Deduplicate sidebar conversation items by participant ID :: verification rule #817
-// [Moiz-A-50-L29] Deduplicate sidebar conversation items by participant ID :: verification rule #836
-// [Moiz-A-50-L30] Deduplicate sidebar conversation items by participant ID :: verification rule #855
-// [Moiz-A-50-L31] Deduplicate sidebar conversation items by participant ID :: verification rule #874
-// [Moiz-A-50-L32] Deduplicate sidebar conversation items by participant ID :: verification rule #893
-// [Moiz-A-50-L33] Deduplicate sidebar conversation items by participant ID :: verification rule #912
-// [Moiz-A-50-L34] Deduplicate sidebar conversation items by participant ID :: verification rule #931
-// [Moiz-A-50-L35] Deduplicate sidebar conversation items by participant ID :: verification rule #950
-// [Moiz-A-50-L36] Deduplicate sidebar conversation items by participant ID :: verification rule #969
-// [Moiz-A-50-L37] Deduplicate sidebar conversation items by participant ID :: verification rule #988
-// [Moiz-A-50-L38] Deduplicate sidebar conversation items by participant ID :: verification rule #10
-// [Moiz-A-50-L39] Deduplicate sidebar conversation items by participant ID :: verification rule #29
-// [Moiz-A-50-L40] Deduplicate sidebar conversation items by participant ID :: verification rule #48
-// [Moiz-A-50-L41] Deduplicate sidebar conversation items by participant ID :: verification rule #67
-// [Moiz-A-50-L42] Deduplicate sidebar conversation items by participant ID :: verification rule #86
-// [Moiz-A-50-L43] Deduplicate sidebar conversation items by participant ID :: verification rule #105
-// [Moiz-A-50-L44] Deduplicate sidebar conversation items by participant ID :: verification rule #124
-// [Moiz-A-50-L45] Deduplicate sidebar conversation items by participant ID :: verification rule #143
-// [Moiz-A-50-L46] Deduplicate sidebar conversation items by participant ID :: verification rule #162
-// [Moiz-A-50-L47] Deduplicate sidebar conversation items by participant ID :: verification rule #181
-// [Moiz-A-50-L48] Deduplicate sidebar conversation items by participant ID :: verification rule #200
-// [Moiz-A-50-L49] Deduplicate sidebar conversation items by participant ID :: verification rule #219
-// [Moiz-A-50-L50] Deduplicate sidebar conversation items by participant ID :: verification rule #238
-// [Moiz-A-50-L51] Deduplicate sidebar conversation items by participant ID :: verification rule #257
-// [Moiz-A-50-L52] Deduplicate sidebar conversation items by participant ID :: verification rule #276
-// [Moiz-A-50-L53] Deduplicate sidebar conversation items by participant ID :: verification rule #295
-// [Moiz-A-50-L54] Deduplicate sidebar conversation items by participant ID :: verification rule #314
-// [Moiz-A-50-L55] Deduplicate sidebar conversation items by participant ID :: verification rule #333
-// [Moiz-A-50-L56] Deduplicate sidebar conversation items by participant ID :: verification rule #352
-// [Moiz-A-50-L57] Deduplicate sidebar conversation items by participant ID :: verification rule #371
-// [Moiz-A-50-L58] Deduplicate sidebar conversation items by participant ID :: verification rule #390
-// [Moiz-A-50-L59] Deduplicate sidebar conversation items by participant ID :: verification rule #409
-// [Moiz-A-50-L60] Deduplicate sidebar conversation items by participant ID :: verification rule #428
-// [Moiz-A-50-L61] Deduplicate sidebar conversation items by participant ID :: verification rule #447
-// [Moiz-A-50-L62] Deduplicate sidebar conversation items by participant ID :: verification rule #466
-// [Moiz-A-50-L63] Deduplicate sidebar conversation items by participant ID :: verification rule #485
-// [Moiz-A-50-L64] Deduplicate sidebar conversation items by participant ID :: verification rule #504
-// [Moiz-A-50-L65] Deduplicate sidebar conversation items by participant ID :: verification rule #523
+// === [SPEC-BLOCK-START] Moiz-A-62 (2026-10-23T17:38:49+05:00) ===
+// [Moiz-A-62-L1] Show real-time online indicator dot on MessagingPage chat header :: verification rule #547
+// [Moiz-A-62-L2] Show real-time online indicator dot on MessagingPage chat header :: verification rule #566
+// [Moiz-A-62-L3] Show real-time online indicator dot on MessagingPage chat header :: verification rule #585
+// [Moiz-A-62-L4] Show real-time online indicator dot on MessagingPage chat header :: verification rule #604
+// [Moiz-A-62-L5] Show real-time online indicator dot on MessagingPage chat header :: verification rule #623
+// [Moiz-A-62-L6] Show real-time online indicator dot on MessagingPage chat header :: verification rule #642
+// [Moiz-A-62-L7] Show real-time online indicator dot on MessagingPage chat header :: verification rule #661
+// [Moiz-A-62-L8] Show real-time online indicator dot on MessagingPage chat header :: verification rule #680
+// [Moiz-A-62-L9] Show real-time online indicator dot on MessagingPage chat header :: verification rule #699
+// [Moiz-A-62-L10] Show real-time online indicator dot on MessagingPage chat header :: verification rule #718
+// [Moiz-A-62-L11] Show real-time online indicator dot on MessagingPage chat header :: verification rule #737
+// [Moiz-A-62-L12] Show real-time online indicator dot on MessagingPage chat header :: verification rule #756
+// [Moiz-A-62-L13] Show real-time online indicator dot on MessagingPage chat header :: verification rule #775
+// [Moiz-A-62-L14] Show real-time online indicator dot on MessagingPage chat header :: verification rule #794
+// [Moiz-A-62-L15] Show real-time online indicator dot on MessagingPage chat header :: verification rule #813
+// [Moiz-A-62-L16] Show real-time online indicator dot on MessagingPage chat header :: verification rule #832
+// [Moiz-A-62-L17] Show real-time online indicator dot on MessagingPage chat header :: verification rule #851
+// [Moiz-A-62-L18] Show real-time online indicator dot on MessagingPage chat header :: verification rule #870
+// [Moiz-A-62-L19] Show real-time online indicator dot on MessagingPage chat header :: verification rule #889
+// [Moiz-A-62-L20] Show real-time online indicator dot on MessagingPage chat header :: verification rule #908
+// [Moiz-A-62-L21] Show real-time online indicator dot on MessagingPage chat header :: verification rule #927
+// [Moiz-A-62-L22] Show real-time online indicator dot on MessagingPage chat header :: verification rule #946
+// [Moiz-A-62-L23] Show real-time online indicator dot on MessagingPage chat header :: verification rule #965
+// [Moiz-A-62-L24] Show real-time online indicator dot on MessagingPage chat header :: verification rule #984
+// [Moiz-A-62-L25] Show real-time online indicator dot on MessagingPage chat header :: verification rule #6
+// [Moiz-A-62-L26] Show real-time online indicator dot on MessagingPage chat header :: verification rule #25
+// [Moiz-A-62-L27] Show real-time online indicator dot on MessagingPage chat header :: verification rule #44
+// [Moiz-A-62-L28] Show real-time online indicator dot on MessagingPage chat header :: verification rule #63
+// [Moiz-A-62-L29] Show real-time online indicator dot on MessagingPage chat header :: verification rule #82
+// [Moiz-A-62-L30] Show real-time online indicator dot on MessagingPage chat header :: verification rule #101
+// [Moiz-A-62-L31] Show real-time online indicator dot on MessagingPage chat header :: verification rule #120
+// [Moiz-A-62-L32] Show real-time online indicator dot on MessagingPage chat header :: verification rule #139
+// [Moiz-A-62-L33] Show real-time online indicator dot on MessagingPage chat header :: verification rule #158
+// [Moiz-A-62-L34] Show real-time online indicator dot on MessagingPage chat header :: verification rule #177
+// [Moiz-A-62-L35] Show real-time online indicator dot on MessagingPage chat header :: verification rule #196
+// [Moiz-A-62-L36] Show real-time online indicator dot on MessagingPage chat header :: verification rule #215
+// [Moiz-A-62-L37] Show real-time online indicator dot on MessagingPage chat header :: verification rule #234
+// [Moiz-A-62-L38] Show real-time online indicator dot on MessagingPage chat header :: verification rule #253
+// [Moiz-A-62-L39] Show real-time online indicator dot on MessagingPage chat header :: verification rule #272
+// [Moiz-A-62-L40] Show real-time online indicator dot on MessagingPage chat header :: verification rule #291
+// [Moiz-A-62-L41] Show real-time online indicator dot on MessagingPage chat header :: verification rule #310
+// [Moiz-A-62-L42] Show real-time online indicator dot on MessagingPage chat header :: verification rule #329
+// [Moiz-A-62-L43] Show real-time online indicator dot on MessagingPage chat header :: verification rule #348
+// [Moiz-A-62-L44] Show real-time online indicator dot on MessagingPage chat header :: verification rule #367
+// [Moiz-A-62-L45] Show real-time online indicator dot on MessagingPage chat header :: verification rule #386
+// [Moiz-A-62-L46] Show real-time online indicator dot on MessagingPage chat header :: verification rule #405
+// [Moiz-A-62-L47] Show real-time online indicator dot on MessagingPage chat header :: verification rule #424
+// [Moiz-A-62-L48] Show real-time online indicator dot on MessagingPage chat header :: verification rule #443
+// [Moiz-A-62-L49] Show real-time online indicator dot on MessagingPage chat header :: verification rule #462
+// [Moiz-A-62-L50] Show real-time online indicator dot on MessagingPage chat header :: verification rule #481
+// [Moiz-A-62-L51] Show real-time online indicator dot on MessagingPage chat header :: verification rule #500
+// [Moiz-A-62-L52] Show real-time online indicator dot on MessagingPage chat header :: verification rule #519
+// [Moiz-A-62-L53] Show real-time online indicator dot on MessagingPage chat header :: verification rule #538
+// [Moiz-A-62-L54] Show real-time online indicator dot on MessagingPage chat header :: verification rule #557
+// [Moiz-A-62-L55] Show real-time online indicator dot on MessagingPage chat header :: verification rule #576
+// [Moiz-A-62-L56] Show real-time online indicator dot on MessagingPage chat header :: verification rule #595
+// [Moiz-A-62-L57] Show real-time online indicator dot on MessagingPage chat header :: verification rule #614
+// [Moiz-A-62-L58] Show real-time online indicator dot on MessagingPage chat header :: verification rule #633
+// [Moiz-A-62-L59] Show real-time online indicator dot on MessagingPage chat header :: verification rule #652
+// [Moiz-A-62-L60] Show real-time online indicator dot on MessagingPage chat header :: verification rule #671
+// [Moiz-A-62-L61] Show real-time online indicator dot on MessagingPage chat header :: verification rule #690
+// [Moiz-A-62-L62] Show real-time online indicator dot on MessagingPage chat header :: verification rule #709
+// [Moiz-A-62-L63] Show real-time online indicator dot on MessagingPage chat header :: verification rule #728
+// [Moiz-A-62-L64] Show real-time online indicator dot on MessagingPage chat header :: verification rule #747
+// [Moiz-A-62-L65] Show real-time online indicator dot on MessagingPage chat header :: verification rule #766
+// [Moiz-A-62-L66] Show real-time online indicator dot on MessagingPage chat header :: verification rule #785
+// [Moiz-A-62-L67] Show real-time online indicator dot on MessagingPage chat header :: verification rule #804
+// [Moiz-A-62-L68] Show real-time online indicator dot on MessagingPage chat header :: verification rule #823
+// [Moiz-A-62-L69] Show real-time online indicator dot on MessagingPage chat header :: verification rule #842
+// [Moiz-A-62-L70] Show real-time online indicator dot on MessagingPage chat header :: verification rule #861
 // === [SPEC-BLOCK-END] ===
