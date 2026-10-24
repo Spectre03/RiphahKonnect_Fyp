@@ -1,14 +1,15 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { usersAPI, adminAPI } from '../services/api';
+import { usersAPI, adminAPI, authAPI } from '../services/api';
+import { useOnlineUsers } from '../services/socket';
 import { getAvatarGradient } from '../utils/brand';
 import { cn } from '../utils/cn';
-import { Card, Badge, Button } from '../components/ui';
-import { DEPARTMENTS } from '../utils/constants';
+import { Card, Badge, Button, Modal, Avatar } from '../components/ui';
+import { DEPARTMENTS, SEMESTERS } from '../utils/constants';
 import toast from 'react-hot-toast';
 import {
   UserCog, Search, Loader2, ShieldOff, ShieldCheck,
-  ChevronLeft, ChevronRight, Filter, Users, Trash2, ArrowLeft,
+  ChevronLeft, ChevronRight, Filter, Users, Trash2, ArrowLeft, Plus, UserPlus,
 } from 'lucide-react';
 
 const ROLES = ['STUDENT', 'TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'];
@@ -26,6 +27,7 @@ const MANAGEABLE_ROLES = ['STUDENT', 'TEACHER', 'COORDINATION', 'UNIVERSITY_ADMI
 const CHANGEABLE_ROLES = ['STUDENT', 'TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN'];
 
 export default function AdminUsersPage() {
+  const onlineUsers = useOnlineUsers();
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [actionLoading, setActionLoading] = useState({});
@@ -33,6 +35,8 @@ export default function AdminUsersPage() {
   const [page, setPage] = useState(1);
   const [filters, setFilters] = useState({ search: '', role: '', department: '' });
   const [appliedFilters, setAppliedFilters] = useState({ search: '', role: '', department: '' });
+  const [deleteTarget, setDeleteTarget] = useState(null);
+  const [showCreateUser, setShowCreateUser] = useState(false);
 
   const fetchUsers = useCallback(async (p = 1, f = appliedFilters) => {
     try {
@@ -74,12 +78,14 @@ export default function AdminUsersPage() {
     }
   };
 
-  const handleDelete = async (userId, userName) => {
-    if (!confirm(`Delete ${userName}? This cannot be undone.`)) return;
+  const confirmDeleteUser = async () => {
+    if (!deleteTarget) return;
+    const userId = deleteTarget.id;
     setActionLoading((p) => ({ ...p, [`del-${userId}`]: true }));
     try {
       await adminAPI.deleteUser(userId);
       setUsers(users.filter((u) => u.id !== userId));
+      setDeleteTarget(null);
       toast.success('User deleted.');
     } catch (err) {
       toast.error(err.response?.data?.error || 'Failed to delete.');
@@ -106,33 +112,41 @@ export default function AdminUsersPage() {
   return (
     <div className="page-wrapper">
       {/* ── Gradient Banner ── */}
-      <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)' }}>
+      <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0c1a4a 0%, #1a2b6b 100%)' }}>
         <div className="absolute inset-0 banner-grid pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -right-20 -top-16 w-72 h-72 rounded-full bg-white/[0.07] blur-3xl" />
-          <div className="absolute -left-16 bottom-0 w-64 h-64 rounded-full bg-white/[0.05] blur-3xl" />
-          <div className="absolute top-0 left-1/2 w-72 h-40 rounded-full bg-violet-400/[0.12] blur-3xl" />
+          <div className="absolute -right-20 -top-16 w-72 h-72 rounded-full blur-3xl" style={{ background: 'radial-gradient(ellipse, rgba(201,151,58,0.07) 0%, transparent 70%)' }} />
+          <div className="absolute -left-16 bottom-0 w-64 h-64 rounded-full blur-3xl" style={{ background: 'radial-gradient(ellipse, rgba(26,43,107,0.5) 0%, transparent 70%)' }} />
         </div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 relative z-10">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-4 flex-wrap">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-purple-300">System Administration</span>
-                <span className="text-purple-500">›</span>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-purple-300">Users</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: '#c9973a' }}>System Administration</span>
+                <span style={{ color: '#c9973a' }}>›</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: '#c9973a' }}>Users</span>
               </div>
               <h1 className="text-3xl font-extrabold text-white tracking-tight">User Management</h1>
-              <p className="text-purple-300 text-sm mt-1.5">Block, delete, change roles — full control over every account</p>
+              <p className="text-slate-400 text-sm mt-1.5">Create accounts, monitor online status, block, delete &amp; manage roles</p>
             </div>
-            {pagination && (
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-4 py-3">
-                <Users className="h-5 w-5 text-violet-200" />
-                <div>
-                  <span className="text-2xl font-extrabold text-white leading-none">{pagination.total}</span>
-                  <p className="text-[11px] text-violet-300 font-medium">Total Users</p>
+            <div className="flex items-center gap-3 flex-wrap">
+              {pagination && (
+                <div className="flex items-center gap-2 backdrop-blur-sm border rounded-2xl px-4 py-3" style={{ background: 'rgba(255,255,255,0.06)', borderColor: 'rgba(255,255,255,0.1)' }}>
+                  <Users className="h-5 w-5" style={{ color: '#c9973a' }} />
+                  <div>
+                    <span className="text-2xl font-extrabold text-white leading-none">{pagination.total}</span>
+                    <p className="text-[11px] font-medium" style={{ color: '#c9973a' }}>Total Users</p>
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
+              <button
+                onClick={() => setShowCreateUser(true)}
+                className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-bold transition-all cursor-pointer shadow-md"
+                style={{ background: '#c9973a', color: '#0c1a4a' }}
+              >
+                <UserPlus size={15} /> Create User
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -174,7 +188,8 @@ export default function AdminUsersPage() {
             </select>
             <button
               type="submit"
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-bold hover:bg-indigo-700 transition-colors cursor-pointer shadow-sm flex-shrink-0"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-white text-sm font-bold transition-colors cursor-pointer shadow-sm flex-shrink-0"
+              style={{ background: 'linear-gradient(135deg, #1a2b6b, #2251b8)' }}
             >
               <Filter className="h-4 w-4" /> Apply
             </button>
@@ -215,17 +230,13 @@ export default function AdminUsersPage() {
                     {users.map((u) => {
                       const roleMeta  = ROLE_BADGE[u.role] || { variant: 'slate', label: u.role };
                       const canManage = MANAGEABLE_ROLES.includes(u.role);
+                      const isOnline  = onlineUsers.has(u.id);
 
                       return (
                         <tr key={u.id} className={cn('hover:bg-slate-50/60 transition-colors', u.isBlocked && 'opacity-60')}>
                           <td className="px-5 py-3.5">
                             <Link to={`/profile/${u.id}`} className="flex items-center gap-3 min-w-0 group">
-                              <div
-                                className="h-9 w-9 rounded-xl flex items-center justify-center text-white text-sm font-bold flex-shrink-0"
-                                style={{ background: getAvatarGradient(u.name || '') }}
-                              >
-                                {u.name?.charAt(0)?.toUpperCase()}
-                              </div>
+                              <Avatar name={u.name || ''} src={u.avatarUrl} size="sm" online={isOnline} />
                               <div className="min-w-0">
                                 <p className="text-sm font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors truncate">{u.name}</p>
                                 <p className="text-xs text-slate-400 truncate">{u.email}</p>
@@ -241,10 +252,23 @@ export default function AdminUsersPage() {
                             </span>
                           </td>
                           <td className="px-4 py-3.5">
-                            {u.isBlocked
-                              ? <Badge variant="red" size="sm" dot>Blocked</Badge>
-                              : <Badge variant="green" size="sm" dot>Active</Badge>
-                            }
+                            <div className="flex items-center gap-1.5 flex-wrap">
+                              {u.isBlocked
+                                ? <Badge variant="red" size="sm" dot>Blocked</Badge>
+                                : <Badge variant="green" size="sm" dot>Active</Badge>
+                              }
+                              <span
+                                className={cn(
+                                  'inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold border',
+                                  isOnline
+                                    ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                                    : 'bg-slate-100 text-slate-500 border-slate-200'
+                                )}
+                              >
+                                <span className={cn('h-1.5 w-1.5 rounded-full', isOnline ? 'bg-emerald-500 animate-pulse' : 'bg-slate-400')} />
+                                {isOnline ? 'Online' : 'Offline'}
+                              </span>
+                            </div>
                           </td>
                           {/* Role change */}
                           <td className="px-4 py-3.5">
@@ -285,7 +309,7 @@ export default function AdminUsersPage() {
                                   {u.isBlocked ? 'Unblock' : 'Block'}
                                 </button>
                                 <button
-                                  onClick={() => handleDelete(u.id, u.name)}
+                                  onClick={() => setDeleteTarget(u)}
                                   disabled={!!actionLoading[`del-${u.id}`]}
                                   className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold text-red-600 bg-red-50 border border-red-200 hover:bg-red-100 transition-all cursor-pointer"
                                 >
@@ -314,17 +338,13 @@ export default function AdminUsersPage() {
                   const canManage = MANAGEABLE_ROLES.includes(u.role);
                   const isBlocking = actionLoading[`block-${u.id}`];
                   const isDeleting = actionLoading[`del-${u.id}`];
+                  const isOnline   = onlineUsers.has(u.id);
 
                   return (
                     <div key={u.id} className={cn('p-4', u.isBlocked && 'opacity-60')}>
                       <div className="flex items-start justify-between gap-3">
                         <Link to={`/profile/${u.id}`} className="flex items-center gap-3 min-w-0">
-                          <div
-                            className="h-10 w-10 rounded-xl flex items-center justify-center text-white text-sm font-bold flex-shrink-0"
-                            style={{ background: getAvatarGradient(u.name || '') }}
-                          >
-                            {u.name?.charAt(0)?.toUpperCase()}
-                          </div>
+                          <Avatar name={u.name || ''} src={u.avatarUrl} size="md" online={isOnline} />
                           <div className="min-w-0">
                             <p className="text-sm font-semibold text-slate-900 truncate">{u.name}</p>
                             <p className="text-xs text-slate-400 truncate">{u.email}</p>
@@ -345,7 +365,7 @@ export default function AdminUsersPage() {
                               {u.isBlocked ? 'Unblock' : 'Block'}
                             </button>
                             <button
-                              onClick={() => handleDelete(u.id, u.name)}
+                              onClick={() => setDeleteTarget(u)}
                               disabled={isDeleting}
                               className="flex items-center gap-1 px-2 py-1.5 rounded-lg text-xs font-semibold text-red-600 bg-red-50 border border-red-200 cursor-pointer"
                             >
@@ -360,6 +380,17 @@ export default function AdminUsersPage() {
                           ? <Badge variant="red" size="sm" dot>Blocked</Badge>
                           : <Badge variant="green" size="sm" dot>Active</Badge>
                         }
+                        <span
+                          className={cn(
+                            'inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold border',
+                            isOnline
+                              ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                              : 'bg-slate-100 text-slate-500 border-slate-200'
+                          )}
+                        >
+                          <span className={cn('h-1.5 w-1.5 rounded-full', isOnline ? 'bg-emerald-500' : 'bg-slate-400')} />
+                          {isOnline ? 'Online' : 'Offline'}
+                        </span>
                         {u.department && (
                           <span className="text-xs text-slate-400 truncate">{u.department}</span>
                         )}
@@ -408,80 +439,137 @@ export default function AdminUsersPage() {
             </>
           )}
         </Card>
+
+        {/* Delete User Confirmation Modal */}
+        <Modal
+          open={!!deleteTarget}
+          onClose={() => setDeleteTarget(null)}
+          title="Delete User Account"
+          subtitle="This action cannot be undone"
+          icon={Trash2}
+          iconColor="bg-gradient-to-br from-red-500 to-rose-600"
+          size="sm"
+        >
+          <div className="space-y-4">
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Are you sure you want to permanently delete{' '}
+              <span className="font-bold text-slate-900">{deleteTarget?.name}</span> ({deleteTarget?.email})?
+            </p>
+            <div className="flex items-center justify-end gap-2.5 pt-2">
+              <Button type="button" variant="secondary" onClick={() => setDeleteTarget(null)}>
+                Cancel
+              </Button>
+              <Button
+                type="button"
+                variant="danger"
+                onClick={confirmDeleteUser}
+                loading={!!actionLoading[`del-${deleteTarget?.id}`]}
+                icon={Trash2}
+              >
+                Delete User
+              </Button>
+            </div>
+          </div>
+        </Modal>
+
+        {/* Create User Modal */}
+        <CreateUserModal
+          open={showCreateUser}
+          onClose={() => setShowCreateUser(false)}
+          onCreated={() => {
+            setShowCreateUser(false);
+            fetchUsers(1, appliedFilters);
+          }}
+        />
       </div>
     </div>
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-55 (2026-10-14T15:19:52+05:00) ===
-// [Moiz-A-55-L1] Add role update dropdown confirmation on AdminUsersPage :: verification rule #769
-// [Moiz-A-55-L2] Add role update dropdown confirmation on AdminUsersPage :: verification rule #788
-// [Moiz-A-55-L3] Add role update dropdown confirmation on AdminUsersPage :: verification rule #807
-// [Moiz-A-55-L4] Add role update dropdown confirmation on AdminUsersPage :: verification rule #826
-// [Moiz-A-55-L5] Add role update dropdown confirmation on AdminUsersPage :: verification rule #845
-// [Moiz-A-55-L6] Add role update dropdown confirmation on AdminUsersPage :: verification rule #864
-// [Moiz-A-55-L7] Add role update dropdown confirmation on AdminUsersPage :: verification rule #883
-// [Moiz-A-55-L8] Add role update dropdown confirmation on AdminUsersPage :: verification rule #902
-// [Moiz-A-55-L9] Add role update dropdown confirmation on AdminUsersPage :: verification rule #921
-// [Moiz-A-55-L10] Add role update dropdown confirmation on AdminUsersPage :: verification rule #940
-// [Moiz-A-55-L11] Add role update dropdown confirmation on AdminUsersPage :: verification rule #959
-// [Moiz-A-55-L12] Add role update dropdown confirmation on AdminUsersPage :: verification rule #978
-// [Moiz-A-55-L13] Add role update dropdown confirmation on AdminUsersPage :: verification rule #0
-// [Moiz-A-55-L14] Add role update dropdown confirmation on AdminUsersPage :: verification rule #19
-// [Moiz-A-55-L15] Add role update dropdown confirmation on AdminUsersPage :: verification rule #38
-// [Moiz-A-55-L16] Add role update dropdown confirmation on AdminUsersPage :: verification rule #57
-// [Moiz-A-55-L17] Add role update dropdown confirmation on AdminUsersPage :: verification rule #76
-// [Moiz-A-55-L18] Add role update dropdown confirmation on AdminUsersPage :: verification rule #95
-// [Moiz-A-55-L19] Add role update dropdown confirmation on AdminUsersPage :: verification rule #114
-// [Moiz-A-55-L20] Add role update dropdown confirmation on AdminUsersPage :: verification rule #133
-// [Moiz-A-55-L21] Add role update dropdown confirmation on AdminUsersPage :: verification rule #152
-// [Moiz-A-55-L22] Add role update dropdown confirmation on AdminUsersPage :: verification rule #171
-// [Moiz-A-55-L23] Add role update dropdown confirmation on AdminUsersPage :: verification rule #190
-// [Moiz-A-55-L24] Add role update dropdown confirmation on AdminUsersPage :: verification rule #209
-// [Moiz-A-55-L25] Add role update dropdown confirmation on AdminUsersPage :: verification rule #228
-// [Moiz-A-55-L26] Add role update dropdown confirmation on AdminUsersPage :: verification rule #247
-// [Moiz-A-55-L27] Add role update dropdown confirmation on AdminUsersPage :: verification rule #266
-// [Moiz-A-55-L28] Add role update dropdown confirmation on AdminUsersPage :: verification rule #285
-// [Moiz-A-55-L29] Add role update dropdown confirmation on AdminUsersPage :: verification rule #304
-// [Moiz-A-55-L30] Add role update dropdown confirmation on AdminUsersPage :: verification rule #323
-// [Moiz-A-55-L31] Add role update dropdown confirmation on AdminUsersPage :: verification rule #342
-// [Moiz-A-55-L32] Add role update dropdown confirmation on AdminUsersPage :: verification rule #361
-// [Moiz-A-55-L33] Add role update dropdown confirmation on AdminUsersPage :: verification rule #380
-// [Moiz-A-55-L34] Add role update dropdown confirmation on AdminUsersPage :: verification rule #399
-// [Moiz-A-55-L35] Add role update dropdown confirmation on AdminUsersPage :: verification rule #418
-// [Moiz-A-55-L36] Add role update dropdown confirmation on AdminUsersPage :: verification rule #437
-// [Moiz-A-55-L37] Add role update dropdown confirmation on AdminUsersPage :: verification rule #456
-// [Moiz-A-55-L38] Add role update dropdown confirmation on AdminUsersPage :: verification rule #475
-// [Moiz-A-55-L39] Add role update dropdown confirmation on AdminUsersPage :: verification rule #494
-// [Moiz-A-55-L40] Add role update dropdown confirmation on AdminUsersPage :: verification rule #513
-// [Moiz-A-55-L41] Add role update dropdown confirmation on AdminUsersPage :: verification rule #532
-// [Moiz-A-55-L42] Add role update dropdown confirmation on AdminUsersPage :: verification rule #551
-// [Moiz-A-55-L43] Add role update dropdown confirmation on AdminUsersPage :: verification rule #570
-// [Moiz-A-55-L44] Add role update dropdown confirmation on AdminUsersPage :: verification rule #589
-// [Moiz-A-55-L45] Add role update dropdown confirmation on AdminUsersPage :: verification rule #608
-// [Moiz-A-55-L46] Add role update dropdown confirmation on AdminUsersPage :: verification rule #627
-// [Moiz-A-55-L47] Add role update dropdown confirmation on AdminUsersPage :: verification rule #646
-// [Moiz-A-55-L48] Add role update dropdown confirmation on AdminUsersPage :: verification rule #665
-// [Moiz-A-55-L49] Add role update dropdown confirmation on AdminUsersPage :: verification rule #684
-// [Moiz-A-55-L50] Add role update dropdown confirmation on AdminUsersPage :: verification rule #703
-// [Moiz-A-55-L51] Add role update dropdown confirmation on AdminUsersPage :: verification rule #722
-// [Moiz-A-55-L52] Add role update dropdown confirmation on AdminUsersPage :: verification rule #741
-// [Moiz-A-55-L53] Add role update dropdown confirmation on AdminUsersPage :: verification rule #760
-// [Moiz-A-55-L54] Add role update dropdown confirmation on AdminUsersPage :: verification rule #779
-// [Moiz-A-55-L55] Add role update dropdown confirmation on AdminUsersPage :: verification rule #798
-// [Moiz-A-55-L56] Add role update dropdown confirmation on AdminUsersPage :: verification rule #817
-// [Moiz-A-55-L57] Add role update dropdown confirmation on AdminUsersPage :: verification rule #836
-// [Moiz-A-55-L58] Add role update dropdown confirmation on AdminUsersPage :: verification rule #855
-// [Moiz-A-55-L59] Add role update dropdown confirmation on AdminUsersPage :: verification rule #874
-// [Moiz-A-55-L60] Add role update dropdown confirmation on AdminUsersPage :: verification rule #893
-// [Moiz-A-55-L61] Add role update dropdown confirmation on AdminUsersPage :: verification rule #912
-// [Moiz-A-55-L62] Add role update dropdown confirmation on AdminUsersPage :: verification rule #931
-// [Moiz-A-55-L63] Add role update dropdown confirmation on AdminUsersPage :: verification rule #950
-// [Moiz-A-55-L64] Add role update dropdown confirmation on AdminUsersPage :: verification rule #969
-// [Moiz-A-55-L65] Add role update dropdown confirmation on AdminUsersPage :: verification rule #988
-// [Moiz-A-55-L66] Add role update dropdown confirmation on AdminUsersPage :: verification rule #10
-// [Moiz-A-55-L67] Add role update dropdown confirmation on AdminUsersPage :: verification rule #29
-// [Moiz-A-55-L68] Add role update dropdown confirmation on AdminUsersPage :: verification rule #48
-// [Moiz-A-55-L69] Add role update dropdown confirmation on AdminUsersPage :: verification rule #67
-// [Moiz-A-55-L70] Add role update dropdown confirmation on AdminUsersPage :: verification rule #86
-// === [SPEC-BLOCK-END] ===
+function CreateUserModal({ open, onClose, onCreated }) {
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    password: '',
+    role: 'STUDENT',
+    department: '',
+    semester: '',
+  });
+  const [submitting, setSubmitting] = useState(false);
+  const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      setSubmitting(true);
+      await authAPI.registerUser({
+        name: form.name.trim(),
+        email: form.email.trim(),
+        password: form.password,
+        role: form.role,
+        department: form.department || undefined,
+        semester: form.role === 'STUDENT' && form.semester ? parseInt(form.semester) : undefined,
+      });
+      toast.success('User account created successfully!');
+      setForm({ name: '', email: '', password: '', role: 'STUDENT', department: '', semester: '' });
+      onCreated();
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to create user.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const inputCls = 'w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium placeholder-slate-400 focus:border-[#1a2b6b] focus:outline-none focus:ring-2 focus:ring-indigo-500/15 transition-all';
+
+  return (
+    <Modal open={open} onClose={onClose} title="Create Campus User" subtitle="Register a new student, teacher, coordinator, or admin" icon={UserPlus} iconColor="bg-gradient-to-br from-indigo-500 to-blue-600">
+      <form onSubmit={handleSubmit} className="space-y-3.5">
+        <div>
+          <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Full Name *</label>
+          <input value={form.name} onChange={(e) => set('name', e.target.value)} placeholder="e.g. Muhammad Ali" className={inputCls} required />
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">University Email *</label>
+          <input type="email" value={form.email} onChange={(e) => set('email', e.target.value)} placeholder="user@students.riphah.edu.pk or user@riphah.edu.pk" className={inputCls} required />
+        </div>
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Password *</label>
+            <input type="password" value={form.password} onChange={(e) => set('password', e.target.value)} placeholder="Min 6 characters" className={inputCls} required minLength={6} />
+          </div>
+          <div>
+            <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Role *</label>
+            <select value={form.role} onChange={(e) => set('role', e.target.value)} className={inputCls}>
+              <option value="STUDENT">Student</option>
+              <option value="TEACHER">Teacher</option>
+              <option value="COORDINATION">Coordination</option>
+              <option value="UNIVERSITY_ADMIN">University Admin</option>
+            </select>
+          </div>
+        </div>
+        <div className={form.role === 'STUDENT' ? 'grid grid-cols-2 gap-3' : ''}>
+          <div>
+            <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Department</label>
+            <select value={form.department} onChange={(e) => set('department', e.target.value)} className={inputCls}>
+              <option value="">Select Department</option>
+              {DEPARTMENTS.map((d) => <option key={d} value={d}>{d}</option>)}
+            </select>
+          </div>
+          {form.role === 'STUDENT' && (
+            <div>
+              <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Semester</label>
+              <select value={form.semester} onChange={(e) => set('semester', e.target.value)} className={inputCls}>
+                <option value="">Select Semester</option>
+                {SEMESTERS.map((s) => <option key={s} value={s}>Semester {s}</option>)}
+              </select>
+            </div>
+          )}
+        </div>
+        <Button type="submit" loading={submitting} disabled={!form.name.trim() || !form.email.trim() || form.password.length < 6} className="w-full">
+          Create Account
+        </Button>
+      </form>
+    </Modal>
+  );
+}
