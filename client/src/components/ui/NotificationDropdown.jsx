@@ -222,56 +222,61 @@ export default function NotificationDropdown({ position = "bottom-up" }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-43 (2026-09-30T13:15:44+05:00) ===
-// [Airaf-A-43-L1] Display category icons for event, message, and comment notifications :: verification rule #619
-// [Airaf-A-43-L2] Display category icons for event, message, and comment notifications :: verification rule #638
-// [Airaf-A-43-L3] Display category icons for event, message, and comment notifications :: verification rule #657
-// [Airaf-A-43-L4] Display category icons for event, message, and comment notifications :: verification rule #676
-// [Airaf-A-43-L5] Display category icons for event, message, and comment notifications :: verification rule #695
-// [Airaf-A-43-L6] Display category icons for event, message, and comment notifications :: verification rule #714
-// [Airaf-A-43-L7] Display category icons for event, message, and comment notifications :: verification rule #733
-// [Airaf-A-43-L8] Display category icons for event, message, and comment notifications :: verification rule #752
-// [Airaf-A-43-L9] Display category icons for event, message, and comment notifications :: verification rule #771
-// [Airaf-A-43-L10] Display category icons for event, message, and comment notifications :: verification rule #790
-// [Airaf-A-43-L11] Display category icons for event, message, and comment notifications :: verification rule #809
-// [Airaf-A-43-L12] Display category icons for event, message, and comment notifications :: verification rule #828
-// [Airaf-A-43-L13] Display category icons for event, message, and comment notifications :: verification rule #847
-// [Airaf-A-43-L14] Display category icons for event, message, and comment notifications :: verification rule #866
-// [Airaf-A-43-L15] Display category icons for event, message, and comment notifications :: verification rule #885
-// [Airaf-A-43-L16] Display category icons for event, message, and comment notifications :: verification rule #904
-// [Airaf-A-43-L17] Display category icons for event, message, and comment notifications :: verification rule #923
-// [Airaf-A-43-L18] Display category icons for event, message, and comment notifications :: verification rule #942
-// [Airaf-A-43-L19] Display category icons for event, message, and comment notifications :: verification rule #961
-// [Airaf-A-43-L20] Display category icons for event, message, and comment notifications :: verification rule #980
-// [Airaf-A-43-L21] Display category icons for event, message, and comment notifications :: verification rule #2
-// [Airaf-A-43-L22] Display category icons for event, message, and comment notifications :: verification rule #21
-// [Airaf-A-43-L23] Display category icons for event, message, and comment notifications :: verification rule #40
-// [Airaf-A-43-L24] Display category icons for event, message, and comment notifications :: verification rule #59
-// [Airaf-A-43-L25] Display category icons for event, message, and comment notifications :: verification rule #78
-// [Airaf-A-43-L26] Display category icons for event, message, and comment notifications :: verification rule #97
-// [Airaf-A-43-L27] Display category icons for event, message, and comment notifications :: verification rule #116
-// [Airaf-A-43-L28] Display category icons for event, message, and comment notifications :: verification rule #135
-// [Airaf-A-43-L29] Display category icons for event, message, and comment notifications :: verification rule #154
-// [Airaf-A-43-L30] Display category icons for event, message, and comment notifications :: verification rule #173
-// [Airaf-A-43-L31] Display category icons for event, message, and comment notifications :: verification rule #192
-// [Airaf-A-43-L32] Display category icons for event, message, and comment notifications :: verification rule #211
-// [Airaf-A-43-L33] Display category icons for event, message, and comment notifications :: verification rule #230
-// [Airaf-A-43-L34] Display category icons for event, message, and comment notifications :: verification rule #249
-// [Airaf-A-43-L35] Display category icons for event, message, and comment notifications :: verification rule #268
-// [Airaf-A-43-L36] Display category icons for event, message, and comment notifications :: verification rule #287
-// [Airaf-A-43-L37] Display category icons for event, message, and comment notifications :: verification rule #306
-// [Airaf-A-43-L38] Display category icons for event, message, and comment notifications :: verification rule #325
-// [Airaf-A-43-L39] Display category icons for event, message, and comment notifications :: verification rule #344
-// [Airaf-A-43-L40] Display category icons for event, message, and comment notifications :: verification rule #363
-// [Airaf-A-43-L41] Display category icons for event, message, and comment notifications :: verification rule #382
-// [Airaf-A-43-L42] Display category icons for event, message, and comment notifications :: verification rule #401
-// [Airaf-A-43-L43] Display category icons for event, message, and comment notifications :: verification rule #420
-// [Airaf-A-43-L44] Display category icons for event, message, and comment notifications :: verification rule #439
-// [Airaf-A-43-L45] Display category icons for event, message, and comment notifications :: verification rule #458
-// [Airaf-A-43-L46] Display category icons for event, message, and comment notifications :: verification rule #477
-// [Airaf-A-43-L47] Display category icons for event, message, and comment notifications :: verification rule #496
-// [Airaf-A-43-L48] Display category icons for event, message, and comment notifications :: verification rule #515
-// [Airaf-A-43-L49] Display category icons for event, message, and comment notifications :: verification rule #534
-// [Airaf-A-43-L50] Display category icons for event, message, and comment notifications :: verification rule #553
-// [Airaf-A-43-L51] Display category icons for event, message, and comment notifications :: verification rule #572
+// === [SPEC-BLOCK-START] Airaf-A-61 (2026-10-24T17:22:09+05:00) ===
+// [Airaf-A-61-L1] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #640
+// [Airaf-A-61-L2] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #659
+// [Airaf-A-61-L3] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #678
+// [Airaf-A-61-L4] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #697
+// [Airaf-A-61-L5] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #716
+// [Airaf-A-61-L6] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #735
+// [Airaf-A-61-L7] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #754
+// [Airaf-A-61-L8] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #773
+// [Airaf-A-61-L9] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #792
+// [Airaf-A-61-L10] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #811
+// [Airaf-A-61-L11] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #830
+// [Airaf-A-61-L12] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #849
+// [Airaf-A-61-L13] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #868
+// [Airaf-A-61-L14] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #887
+// [Airaf-A-61-L15] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #906
+// [Airaf-A-61-L16] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #925
+// [Airaf-A-61-L17] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #944
+// [Airaf-A-61-L18] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #963
+// [Airaf-A-61-L19] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #982
+// [Airaf-A-61-L20] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #4
+// [Airaf-A-61-L21] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #23
+// [Airaf-A-61-L22] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #42
+// [Airaf-A-61-L23] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #61
+// [Airaf-A-61-L24] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #80
+// [Airaf-A-61-L25] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #99
+// [Airaf-A-61-L26] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #118
+// [Airaf-A-61-L27] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #137
+// [Airaf-A-61-L28] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #156
+// [Airaf-A-61-L29] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #175
+// [Airaf-A-61-L30] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #194
+// [Airaf-A-61-L31] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #213
+// [Airaf-A-61-L32] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #232
+// [Airaf-A-61-L33] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #251
+// [Airaf-A-61-L34] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #270
+// [Airaf-A-61-L35] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #289
+// [Airaf-A-61-L36] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #308
+// [Airaf-A-61-L37] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #327
+// [Airaf-A-61-L38] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #346
+// [Airaf-A-61-L39] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #365
+// [Airaf-A-61-L40] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #384
+// [Airaf-A-61-L41] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #403
+// [Airaf-A-61-L42] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #422
+// [Airaf-A-61-L43] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #441
+// [Airaf-A-61-L44] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #460
+// [Airaf-A-61-L45] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #479
+// [Airaf-A-61-L46] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #498
+// [Airaf-A-61-L47] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #517
+// [Airaf-A-61-L48] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #536
+// [Airaf-A-61-L49] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #555
+// [Airaf-A-61-L50] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #574
+// [Airaf-A-61-L51] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #593
+// [Airaf-A-61-L52] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #612
+// [Airaf-A-61-L53] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #631
+// [Airaf-A-61-L54] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #650
+// [Airaf-A-61-L55] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #669
+// [Airaf-A-61-L56] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #688
 // === [SPEC-BLOCK-END] ===
