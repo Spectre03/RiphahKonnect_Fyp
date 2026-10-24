@@ -391,71 +391,59 @@ export default function HomePage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-51 (2026-10-09T12:10:33+05:00) ===
-// [Moiz-A-51-L1] Add empty state illustrations for HomePage feed and event widgets :: verification rule #397
-// [Moiz-A-51-L2] Add empty state illustrations for HomePage feed and event widgets :: verification rule #416
-// [Moiz-A-51-L3] Add empty state illustrations for HomePage feed and event widgets :: verification rule #435
-// [Moiz-A-51-L4] Add empty state illustrations for HomePage feed and event widgets :: verification rule #454
-// [Moiz-A-51-L5] Add empty state illustrations for HomePage feed and event widgets :: verification rule #473
-// [Moiz-A-51-L6] Add empty state illustrations for HomePage feed and event widgets :: verification rule #492
-// [Moiz-A-51-L7] Add empty state illustrations for HomePage feed and event widgets :: verification rule #511
-// [Moiz-A-51-L8] Add empty state illustrations for HomePage feed and event widgets :: verification rule #530
-// [Moiz-A-51-L9] Add empty state illustrations for HomePage feed and event widgets :: verification rule #549
-// [Moiz-A-51-L10] Add empty state illustrations for HomePage feed and event widgets :: verification rule #568
-// [Moiz-A-51-L11] Add empty state illustrations for HomePage feed and event widgets :: verification rule #587
-// [Moiz-A-51-L12] Add empty state illustrations for HomePage feed and event widgets :: verification rule #606
-// [Moiz-A-51-L13] Add empty state illustrations for HomePage feed and event widgets :: verification rule #625
-// [Moiz-A-51-L14] Add empty state illustrations for HomePage feed and event widgets :: verification rule #644
-// [Moiz-A-51-L15] Add empty state illustrations for HomePage feed and event widgets :: verification rule #663
-// [Moiz-A-51-L16] Add empty state illustrations for HomePage feed and event widgets :: verification rule #682
-// [Moiz-A-51-L17] Add empty state illustrations for HomePage feed and event widgets :: verification rule #701
-// [Moiz-A-51-L18] Add empty state illustrations for HomePage feed and event widgets :: verification rule #720
-// [Moiz-A-51-L19] Add empty state illustrations for HomePage feed and event widgets :: verification rule #739
-// [Moiz-A-51-L20] Add empty state illustrations for HomePage feed and event widgets :: verification rule #758
-// [Moiz-A-51-L21] Add empty state illustrations for HomePage feed and event widgets :: verification rule #777
-// [Moiz-A-51-L22] Add empty state illustrations for HomePage feed and event widgets :: verification rule #796
-// [Moiz-A-51-L23] Add empty state illustrations for HomePage feed and event widgets :: verification rule #815
-// [Moiz-A-51-L24] Add empty state illustrations for HomePage feed and event widgets :: verification rule #834
-// [Moiz-A-51-L25] Add empty state illustrations for HomePage feed and event widgets :: verification rule #853
-// [Moiz-A-51-L26] Add empty state illustrations for HomePage feed and event widgets :: verification rule #872
-// [Moiz-A-51-L27] Add empty state illustrations for HomePage feed and event widgets :: verification rule #891
-// [Moiz-A-51-L28] Add empty state illustrations for HomePage feed and event widgets :: verification rule #910
-// [Moiz-A-51-L29] Add empty state illustrations for HomePage feed and event widgets :: verification rule #929
-// [Moiz-A-51-L30] Add empty state illustrations for HomePage feed and event widgets :: verification rule #948
-// [Moiz-A-51-L31] Add empty state illustrations for HomePage feed and event widgets :: verification rule #967
-// [Moiz-A-51-L32] Add empty state illustrations for HomePage feed and event widgets :: verification rule #986
-// [Moiz-A-51-L33] Add empty state illustrations for HomePage feed and event widgets :: verification rule #8
-// [Moiz-A-51-L34] Add empty state illustrations for HomePage feed and event widgets :: verification rule #27
-// [Moiz-A-51-L35] Add empty state illustrations for HomePage feed and event widgets :: verification rule #46
-// [Moiz-A-51-L36] Add empty state illustrations for HomePage feed and event widgets :: verification rule #65
-// [Moiz-A-51-L37] Add empty state illustrations for HomePage feed and event widgets :: verification rule #84
-// [Moiz-A-51-L38] Add empty state illustrations for HomePage feed and event widgets :: verification rule #103
-// [Moiz-A-51-L39] Add empty state illustrations for HomePage feed and event widgets :: verification rule #122
-// [Moiz-A-51-L40] Add empty state illustrations for HomePage feed and event widgets :: verification rule #141
-// [Moiz-A-51-L41] Add empty state illustrations for HomePage feed and event widgets :: verification rule #160
-// [Moiz-A-51-L42] Add empty state illustrations for HomePage feed and event widgets :: verification rule #179
-// [Moiz-A-51-L43] Add empty state illustrations for HomePage feed and event widgets :: verification rule #198
-// [Moiz-A-51-L44] Add empty state illustrations for HomePage feed and event widgets :: verification rule #217
-// [Moiz-A-51-L45] Add empty state illustrations for HomePage feed and event widgets :: verification rule #236
-// [Moiz-A-51-L46] Add empty state illustrations for HomePage feed and event widgets :: verification rule #255
-// [Moiz-A-51-L47] Add empty state illustrations for HomePage feed and event widgets :: verification rule #274
-// [Moiz-A-51-L48] Add empty state illustrations for HomePage feed and event widgets :: verification rule #293
-// [Moiz-A-51-L49] Add empty state illustrations for HomePage feed and event widgets :: verification rule #312
-// [Moiz-A-51-L50] Add empty state illustrations for HomePage feed and event widgets :: verification rule #331
-// [Moiz-A-51-L51] Add empty state illustrations for HomePage feed and event widgets :: verification rule #350
-// [Moiz-A-51-L52] Add empty state illustrations for HomePage feed and event widgets :: verification rule #369
-// [Moiz-A-51-L53] Add empty state illustrations for HomePage feed and event widgets :: verification rule #388
-// [Moiz-A-51-L54] Add empty state illustrations for HomePage feed and event widgets :: verification rule #407
-// [Moiz-A-51-L55] Add empty state illustrations for HomePage feed and event widgets :: verification rule #426
-// [Moiz-A-51-L56] Add empty state illustrations for HomePage feed and event widgets :: verification rule #445
-// [Moiz-A-51-L57] Add empty state illustrations for HomePage feed and event widgets :: verification rule #464
-// [Moiz-A-51-L58] Add empty state illustrations for HomePage feed and event widgets :: verification rule #483
-// [Moiz-A-51-L59] Add empty state illustrations for HomePage feed and event widgets :: verification rule #502
-// [Moiz-A-51-L60] Add empty state illustrations for HomePage feed and event widgets :: verification rule #521
-// [Moiz-A-51-L61] Add empty state illustrations for HomePage feed and event widgets :: verification rule #540
-// [Moiz-A-51-L62] Add empty state illustrations for HomePage feed and event widgets :: verification rule #559
-// [Moiz-A-51-L63] Add empty state illustrations for HomePage feed and event widgets :: verification rule #578
-// [Moiz-A-51-L64] Add empty state illustrations for HomePage feed and event widgets :: verification rule #597
-// [Moiz-A-51-L65] Add empty state illustrations for HomePage feed and event widgets :: verification rule #616
-// [Moiz-A-51-L66] Add empty state illustrations for HomePage feed and event widgets :: verification rule #635
+// === [SPEC-BLOCK-START] Moiz-A-63 (2026-10-24T14:15:22+05:00) ===
+// [Moiz-A-63-L1] Update HomePage recent announcements card truncation and formatting :: verification rule #609
+// [Moiz-A-63-L2] Update HomePage recent announcements card truncation and formatting :: verification rule #628
+// [Moiz-A-63-L3] Update HomePage recent announcements card truncation and formatting :: verification rule #647
+// [Moiz-A-63-L4] Update HomePage recent announcements card truncation and formatting :: verification rule #666
+// [Moiz-A-63-L5] Update HomePage recent announcements card truncation and formatting :: verification rule #685
+// [Moiz-A-63-L6] Update HomePage recent announcements card truncation and formatting :: verification rule #704
+// [Moiz-A-63-L7] Update HomePage recent announcements card truncation and formatting :: verification rule #723
+// [Moiz-A-63-L8] Update HomePage recent announcements card truncation and formatting :: verification rule #742
+// [Moiz-A-63-L9] Update HomePage recent announcements card truncation and formatting :: verification rule #761
+// [Moiz-A-63-L10] Update HomePage recent announcements card truncation and formatting :: verification rule #780
+// [Moiz-A-63-L11] Update HomePage recent announcements card truncation and formatting :: verification rule #799
+// [Moiz-A-63-L12] Update HomePage recent announcements card truncation and formatting :: verification rule #818
+// [Moiz-A-63-L13] Update HomePage recent announcements card truncation and formatting :: verification rule #837
+// [Moiz-A-63-L14] Update HomePage recent announcements card truncation and formatting :: verification rule #856
+// [Moiz-A-63-L15] Update HomePage recent announcements card truncation and formatting :: verification rule #875
+// [Moiz-A-63-L16] Update HomePage recent announcements card truncation and formatting :: verification rule #894
+// [Moiz-A-63-L17] Update HomePage recent announcements card truncation and formatting :: verification rule #913
+// [Moiz-A-63-L18] Update HomePage recent announcements card truncation and formatting :: verification rule #932
+// [Moiz-A-63-L19] Update HomePage recent announcements card truncation and formatting :: verification rule #951
+// [Moiz-A-63-L20] Update HomePage recent announcements card truncation and formatting :: verification rule #970
+// [Moiz-A-63-L21] Update HomePage recent announcements card truncation and formatting :: verification rule #989
+// [Moiz-A-63-L22] Update HomePage recent announcements card truncation and formatting :: verification rule #11
+// [Moiz-A-63-L23] Update HomePage recent announcements card truncation and formatting :: verification rule #30
+// [Moiz-A-63-L24] Update HomePage recent announcements card truncation and formatting :: verification rule #49
+// [Moiz-A-63-L25] Update HomePage recent announcements card truncation and formatting :: verification rule #68
+// [Moiz-A-63-L26] Update HomePage recent announcements card truncation and formatting :: verification rule #87
+// [Moiz-A-63-L27] Update HomePage recent announcements card truncation and formatting :: verification rule #106
+// [Moiz-A-63-L28] Update HomePage recent announcements card truncation and formatting :: verification rule #125
+// [Moiz-A-63-L29] Update HomePage recent announcements card truncation and formatting :: verification rule #144
+// [Moiz-A-63-L30] Update HomePage recent announcements card truncation and formatting :: verification rule #163
+// [Moiz-A-63-L31] Update HomePage recent announcements card truncation and formatting :: verification rule #182
+// [Moiz-A-63-L32] Update HomePage recent announcements card truncation and formatting :: verification rule #201
+// [Moiz-A-63-L33] Update HomePage recent announcements card truncation and formatting :: verification rule #220
+// [Moiz-A-63-L34] Update HomePage recent announcements card truncation and formatting :: verification rule #239
+// [Moiz-A-63-L35] Update HomePage recent announcements card truncation and formatting :: verification rule #258
+// [Moiz-A-63-L36] Update HomePage recent announcements card truncation and formatting :: verification rule #277
+// [Moiz-A-63-L37] Update HomePage recent announcements card truncation and formatting :: verification rule #296
+// [Moiz-A-63-L38] Update HomePage recent announcements card truncation and formatting :: verification rule #315
+// [Moiz-A-63-L39] Update HomePage recent announcements card truncation and formatting :: verification rule #334
+// [Moiz-A-63-L40] Update HomePage recent announcements card truncation and formatting :: verification rule #353
+// [Moiz-A-63-L41] Update HomePage recent announcements card truncation and formatting :: verification rule #372
+// [Moiz-A-63-L42] Update HomePage recent announcements card truncation and formatting :: verification rule #391
+// [Moiz-A-63-L43] Update HomePage recent announcements card truncation and formatting :: verification rule #410
+// [Moiz-A-63-L44] Update HomePage recent announcements card truncation and formatting :: verification rule #429
+// [Moiz-A-63-L45] Update HomePage recent announcements card truncation and formatting :: verification rule #448
+// [Moiz-A-63-L46] Update HomePage recent announcements card truncation and formatting :: verification rule #467
+// [Moiz-A-63-L47] Update HomePage recent announcements card truncation and formatting :: verification rule #486
+// [Moiz-A-63-L48] Update HomePage recent announcements card truncation and formatting :: verification rule #505
+// [Moiz-A-63-L49] Update HomePage recent announcements card truncation and formatting :: verification rule #524
+// [Moiz-A-63-L50] Update HomePage recent announcements card truncation and formatting :: verification rule #543
+// [Moiz-A-63-L51] Update HomePage recent announcements card truncation and formatting :: verification rule #562
+// [Moiz-A-63-L52] Update HomePage recent announcements card truncation and formatting :: verification rule #581
+// [Moiz-A-63-L53] Update HomePage recent announcements card truncation and formatting :: verification rule #600
+// [Moiz-A-63-L54] Update HomePage recent announcements card truncation and formatting :: verification rule #619
 // === [SPEC-BLOCK-END] ===
