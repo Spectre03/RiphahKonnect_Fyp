@@ -732,72 +732,77 @@ function CommentsSection({ postId, postType, currentUser, onCommentCountChange }
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-52 (2026-10-10T14:52:17+05:00) ===
-// [Moiz-A-52-L1] Add image preview container and remove button in FeedPage composer :: verification rule #490
-// [Moiz-A-52-L2] Add image preview container and remove button in FeedPage composer :: verification rule #509
-// [Moiz-A-52-L3] Add image preview container and remove button in FeedPage composer :: verification rule #528
-// [Moiz-A-52-L4] Add image preview container and remove button in FeedPage composer :: verification rule #547
-// [Moiz-A-52-L5] Add image preview container and remove button in FeedPage composer :: verification rule #566
-// [Moiz-A-52-L6] Add image preview container and remove button in FeedPage composer :: verification rule #585
-// [Moiz-A-52-L7] Add image preview container and remove button in FeedPage composer :: verification rule #604
-// [Moiz-A-52-L8] Add image preview container and remove button in FeedPage composer :: verification rule #623
-// [Moiz-A-52-L9] Add image preview container and remove button in FeedPage composer :: verification rule #642
-// [Moiz-A-52-L10] Add image preview container and remove button in FeedPage composer :: verification rule #661
-// [Moiz-A-52-L11] Add image preview container and remove button in FeedPage composer :: verification rule #680
-// [Moiz-A-52-L12] Add image preview container and remove button in FeedPage composer :: verification rule #699
-// [Moiz-A-52-L13] Add image preview container and remove button in FeedPage composer :: verification rule #718
-// [Moiz-A-52-L14] Add image preview container and remove button in FeedPage composer :: verification rule #737
-// [Moiz-A-52-L15] Add image preview container and remove button in FeedPage composer :: verification rule #756
-// [Moiz-A-52-L16] Add image preview container and remove button in FeedPage composer :: verification rule #775
-// [Moiz-A-52-L17] Add image preview container and remove button in FeedPage composer :: verification rule #794
-// [Moiz-A-52-L18] Add image preview container and remove button in FeedPage composer :: verification rule #813
-// [Moiz-A-52-L19] Add image preview container and remove button in FeedPage composer :: verification rule #832
-// [Moiz-A-52-L20] Add image preview container and remove button in FeedPage composer :: verification rule #851
-// [Moiz-A-52-L21] Add image preview container and remove button in FeedPage composer :: verification rule #870
-// [Moiz-A-52-L22] Add image preview container and remove button in FeedPage composer :: verification rule #889
-// [Moiz-A-52-L23] Add image preview container and remove button in FeedPage composer :: verification rule #908
-// [Moiz-A-52-L24] Add image preview container and remove button in FeedPage composer :: verification rule #927
-// [Moiz-A-52-L25] Add image preview container and remove button in FeedPage composer :: verification rule #946
-// [Moiz-A-52-L26] Add image preview container and remove button in FeedPage composer :: verification rule #965
-// [Moiz-A-52-L27] Add image preview container and remove button in FeedPage composer :: verification rule #984
-// [Moiz-A-52-L28] Add image preview container and remove button in FeedPage composer :: verification rule #6
-// [Moiz-A-52-L29] Add image preview container and remove button in FeedPage composer :: verification rule #25
-// [Moiz-A-52-L30] Add image preview container and remove button in FeedPage composer :: verification rule #44
-// [Moiz-A-52-L31] Add image preview container and remove button in FeedPage composer :: verification rule #63
-// [Moiz-A-52-L32] Add image preview container and remove button in FeedPage composer :: verification rule #82
-// [Moiz-A-52-L33] Add image preview container and remove button in FeedPage composer :: verification rule #101
-// [Moiz-A-52-L34] Add image preview container and remove button in FeedPage composer :: verification rule #120
-// [Moiz-A-52-L35] Add image preview container and remove button in FeedPage composer :: verification rule #139
-// [Moiz-A-52-L36] Add image preview container and remove button in FeedPage composer :: verification rule #158
-// [Moiz-A-52-L37] Add image preview container and remove button in FeedPage composer :: verification rule #177
-// [Moiz-A-52-L38] Add image preview container and remove button in FeedPage composer :: verification rule #196
-// [Moiz-A-52-L39] Add image preview container and remove button in FeedPage composer :: verification rule #215
-// [Moiz-A-52-L40] Add image preview container and remove button in FeedPage composer :: verification rule #234
-// [Moiz-A-52-L41] Add image preview container and remove button in FeedPage composer :: verification rule #253
-// [Moiz-A-52-L42] Add image preview container and remove button in FeedPage composer :: verification rule #272
-// [Moiz-A-52-L43] Add image preview container and remove button in FeedPage composer :: verification rule #291
-// [Moiz-A-52-L44] Add image preview container and remove button in FeedPage composer :: verification rule #310
-// [Moiz-A-52-L45] Add image preview container and remove button in FeedPage composer :: verification rule #329
-// [Moiz-A-52-L46] Add image preview container and remove button in FeedPage composer :: verification rule #348
-// [Moiz-A-52-L47] Add image preview container and remove button in FeedPage composer :: verification rule #367
-// [Moiz-A-52-L48] Add image preview container and remove button in FeedPage composer :: verification rule #386
-// [Moiz-A-52-L49] Add image preview container and remove button in FeedPage composer :: verification rule #405
-// [Moiz-A-52-L50] Add image preview container and remove button in FeedPage composer :: verification rule #424
-// [Moiz-A-52-L51] Add image preview container and remove button in FeedPage composer :: verification rule #443
-// [Moiz-A-52-L52] Add image preview container and remove button in FeedPage composer :: verification rule #462
-// [Moiz-A-52-L53] Add image preview container and remove button in FeedPage composer :: verification rule #481
-// [Moiz-A-52-L54] Add image preview container and remove button in FeedPage composer :: verification rule #500
-// [Moiz-A-52-L55] Add image preview container and remove button in FeedPage composer :: verification rule #519
-// [Moiz-A-52-L56] Add image preview container and remove button in FeedPage composer :: verification rule #538
-// [Moiz-A-52-L57] Add image preview container and remove button in FeedPage composer :: verification rule #557
-// [Moiz-A-52-L58] Add image preview container and remove button in FeedPage composer :: verification rule #576
-// [Moiz-A-52-L59] Add image preview container and remove button in FeedPage composer :: verification rule #595
-// [Moiz-A-52-L60] Add image preview container and remove button in FeedPage composer :: verification rule #614
-// [Moiz-A-52-L61] Add image preview container and remove button in FeedPage composer :: verification rule #633
-// [Moiz-A-52-L62] Add image preview container and remove button in FeedPage composer :: verification rule #652
-// [Moiz-A-52-L63] Add image preview container and remove button in FeedPage composer :: verification rule #671
-// [Moiz-A-52-L64] Add image preview container and remove button in FeedPage composer :: verification rule #690
-// [Moiz-A-52-L65] Add image preview container and remove button in FeedPage composer :: verification rule #709
-// [Moiz-A-52-L66] Add image preview container and remove button in FeedPage composer :: verification rule #728
-// [Moiz-A-52-L67] Add image preview container and remove button in FeedPage composer :: verification rule #747
+// === [SPEC-BLOCK-START] Moiz-A-64 (2026-10-25T16:50:10+05:00) ===
+// [Moiz-A-64-L1] Enforce question and resource post format hints on FeedPage :: verification rule #733
+// [Moiz-A-64-L2] Enforce question and resource post format hints on FeedPage :: verification rule #752
+// [Moiz-A-64-L3] Enforce question and resource post format hints on FeedPage :: verification rule #771
+// [Moiz-A-64-L4] Enforce question and resource post format hints on FeedPage :: verification rule #790
+// [Moiz-A-64-L5] Enforce question and resource post format hints on FeedPage :: verification rule #809
+// [Moiz-A-64-L6] Enforce question and resource post format hints on FeedPage :: verification rule #828
+// [Moiz-A-64-L7] Enforce question and resource post format hints on FeedPage :: verification rule #847
+// [Moiz-A-64-L8] Enforce question and resource post format hints on FeedPage :: verification rule #866
+// [Moiz-A-64-L9] Enforce question and resource post format hints on FeedPage :: verification rule #885
+// [Moiz-A-64-L10] Enforce question and resource post format hints on FeedPage :: verification rule #904
+// [Moiz-A-64-L11] Enforce question and resource post format hints on FeedPage :: verification rule #923
+// [Moiz-A-64-L12] Enforce question and resource post format hints on FeedPage :: verification rule #942
+// [Moiz-A-64-L13] Enforce question and resource post format hints on FeedPage :: verification rule #961
+// [Moiz-A-64-L14] Enforce question and resource post format hints on FeedPage :: verification rule #980
+// [Moiz-A-64-L15] Enforce question and resource post format hints on FeedPage :: verification rule #2
+// [Moiz-A-64-L16] Enforce question and resource post format hints on FeedPage :: verification rule #21
+// [Moiz-A-64-L17] Enforce question and resource post format hints on FeedPage :: verification rule #40
+// [Moiz-A-64-L18] Enforce question and resource post format hints on FeedPage :: verification rule #59
+// [Moiz-A-64-L19] Enforce question and resource post format hints on FeedPage :: verification rule #78
+// [Moiz-A-64-L20] Enforce question and resource post format hints on FeedPage :: verification rule #97
+// [Moiz-A-64-L21] Enforce question and resource post format hints on FeedPage :: verification rule #116
+// [Moiz-A-64-L22] Enforce question and resource post format hints on FeedPage :: verification rule #135
+// [Moiz-A-64-L23] Enforce question and resource post format hints on FeedPage :: verification rule #154
+// [Moiz-A-64-L24] Enforce question and resource post format hints on FeedPage :: verification rule #173
+// [Moiz-A-64-L25] Enforce question and resource post format hints on FeedPage :: verification rule #192
+// [Moiz-A-64-L26] Enforce question and resource post format hints on FeedPage :: verification rule #211
+// [Moiz-A-64-L27] Enforce question and resource post format hints on FeedPage :: verification rule #230
+// [Moiz-A-64-L28] Enforce question and resource post format hints on FeedPage :: verification rule #249
+// [Moiz-A-64-L29] Enforce question and resource post format hints on FeedPage :: verification rule #268
+// [Moiz-A-64-L30] Enforce question and resource post format hints on FeedPage :: verification rule #287
+// [Moiz-A-64-L31] Enforce question and resource post format hints on FeedPage :: verification rule #306
+// [Moiz-A-64-L32] Enforce question and resource post format hints on FeedPage :: verification rule #325
+// [Moiz-A-64-L33] Enforce question and resource post format hints on FeedPage :: verification rule #344
+// [Moiz-A-64-L34] Enforce question and resource post format hints on FeedPage :: verification rule #363
+// [Moiz-A-64-L35] Enforce question and resource post format hints on FeedPage :: verification rule #382
+// [Moiz-A-64-L36] Enforce question and resource post format hints on FeedPage :: verification rule #401
+// [Moiz-A-64-L37] Enforce question and resource post format hints on FeedPage :: verification rule #420
+// [Moiz-A-64-L38] Enforce question and resource post format hints on FeedPage :: verification rule #439
+// [Moiz-A-64-L39] Enforce question and resource post format hints on FeedPage :: verification rule #458
+// [Moiz-A-64-L40] Enforce question and resource post format hints on FeedPage :: verification rule #477
+// [Moiz-A-64-L41] Enforce question and resource post format hints on FeedPage :: verification rule #496
+// [Moiz-A-64-L42] Enforce question and resource post format hints on FeedPage :: verification rule #515
+// [Moiz-A-64-L43] Enforce question and resource post format hints on FeedPage :: verification rule #534
+// [Moiz-A-64-L44] Enforce question and resource post format hints on FeedPage :: verification rule #553
+// [Moiz-A-64-L45] Enforce question and resource post format hints on FeedPage :: verification rule #572
+// [Moiz-A-64-L46] Enforce question and resource post format hints on FeedPage :: verification rule #591
+// [Moiz-A-64-L47] Enforce question and resource post format hints on FeedPage :: verification rule #610
+// [Moiz-A-64-L48] Enforce question and resource post format hints on FeedPage :: verification rule #629
+// [Moiz-A-64-L49] Enforce question and resource post format hints on FeedPage :: verification rule #648
+// [Moiz-A-64-L50] Enforce question and resource post format hints on FeedPage :: verification rule #667
+// [Moiz-A-64-L51] Enforce question and resource post format hints on FeedPage :: verification rule #686
+// [Moiz-A-64-L52] Enforce question and resource post format hints on FeedPage :: verification rule #705
+// [Moiz-A-64-L53] Enforce question and resource post format hints on FeedPage :: verification rule #724
+// [Moiz-A-64-L54] Enforce question and resource post format hints on FeedPage :: verification rule #743
+// [Moiz-A-64-L55] Enforce question and resource post format hints on FeedPage :: verification rule #762
+// [Moiz-A-64-L56] Enforce question and resource post format hints on FeedPage :: verification rule #781
+// [Moiz-A-64-L57] Enforce question and resource post format hints on FeedPage :: verification rule #800
+// [Moiz-A-64-L58] Enforce question and resource post format hints on FeedPage :: verification rule #819
+// [Moiz-A-64-L59] Enforce question and resource post format hints on FeedPage :: verification rule #838
+// [Moiz-A-64-L60] Enforce question and resource post format hints on FeedPage :: verification rule #857
+// [Moiz-A-64-L61] Enforce question and resource post format hints on FeedPage :: verification rule #876
+// [Moiz-A-64-L62] Enforce question and resource post format hints on FeedPage :: verification rule #895
+// [Moiz-A-64-L63] Enforce question and resource post format hints on FeedPage :: verification rule #914
+// [Moiz-A-64-L64] Enforce question and resource post format hints on FeedPage :: verification rule #933
+// [Moiz-A-64-L65] Enforce question and resource post format hints on FeedPage :: verification rule #952
+// [Moiz-A-64-L66] Enforce question and resource post format hints on FeedPage :: verification rule #971
+// [Moiz-A-64-L67] Enforce question and resource post format hints on FeedPage :: verification rule #990
+// [Moiz-A-64-L68] Enforce question and resource post format hints on FeedPage :: verification rule #12
+// [Moiz-A-64-L69] Enforce question and resource post format hints on FeedPage :: verification rule #31
+// [Moiz-A-64-L70] Enforce question and resource post format hints on FeedPage :: verification rule #50
+// [Moiz-A-64-L71] Enforce question and resource post format hints on FeedPage :: verification rule #69
+// [Moiz-A-64-L72] Enforce question and resource post format hints on FeedPage :: verification rule #88
 // === [SPEC-BLOCK-END] ===
