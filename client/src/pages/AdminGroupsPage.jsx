@@ -74,30 +74,30 @@ export default function AdminGroupsPage() {
     <div className="page-wrapper">
 
       {/* Header */}
-      <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)' }}>
+      <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0c1a4a 0%, #1a2b6b 100%)' }}>
         <div className="absolute inset-0 banner-grid pointer-events-none opacity-20" />
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -right-20 -top-16 w-72 h-72 rounded-full bg-violet-500/[0.07] blur-3xl" />
-          <div className="absolute -left-16 bottom-0 w-64 h-64 rounded-full bg-indigo-500/[0.06] blur-3xl" />
+          <div className="absolute -right-20 -top-16 w-72 h-72 rounded-full blur-3xl" style={{ background: 'radial-gradient(ellipse, rgba(201,151,58,0.07) 0%, transparent 70%)' }} />
+          <div className="absolute -left-16 bottom-0 w-64 h-64 rounded-full blur-3xl" style={{ background: 'radial-gradient(ellipse, rgba(26,43,107,0.5) 0%, transparent 70%)' }} />
         </div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 relative z-10">
           <div className="flex items-center justify-between">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <ShieldCheck size={15} className="text-purple-400" />
-                <span className="text-[10px] font-bold uppercase tracking-widest text-purple-300">System Administration</span>
-                <span className="text-purple-500">›</span>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-purple-300">Groups</span>
+                <ShieldCheck size={15} style={{ color: '#c9973a' }} />
+                <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: '#c9973a' }}>System Administration</span>
+                <span style={{ color: '#c9973a' }}>›</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: '#c9973a' }}>Groups</span>
               </div>
               <h1 className="text-3xl font-extrabold text-white tracking-tight">Group Management</h1>
-              <p className="text-purple-300 text-sm mt-1.5">
+              <p className="text-slate-400 text-sm mt-1.5">
                 View and delete all semester groups across every department
-                {pagination && <span className="ml-2 text-purple-400">· {pagination.total} total</span>}
+                {pagination && <span className="ml-2" style={{ color: '#c9973a' }}>· {pagination.total} total</span>}
               </p>
             </div>
             <Link
               to="/admin"
-              className="flex items-center gap-2 px-4 py-2.5 bg-white/10 border border-white/20 text-white text-sm font-semibold rounded-xl hover:bg-white/15 transition-all"
+              className="flex items-center gap-2 px-4 py-2.5 bg-white/[0.08] border border-white/[0.15] text-white text-sm font-semibold rounded-xl hover:bg-white/[0.12] transition-all"
             >
               <ArrowLeft size={14} /> Admin Panel
             </Link>
@@ -137,7 +137,8 @@ export default function AdminGroupsPage() {
             </select>
             <button
               type="submit"
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-bold hover:bg-indigo-700 transition-colors cursor-pointer shadow-sm flex-shrink-0"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-white text-sm font-bold transition-colors cursor-pointer shadow-sm flex-shrink-0"
+              style={{ background: 'linear-gradient(135deg, #1a2b6b, #2251b8)' }}
             >
               <Filter size={14} /> Apply
             </button>
@@ -187,7 +188,7 @@ export default function AdminGroupsPage() {
                         <div className="flex-1 min-w-0">
                           <h3 className="text-sm font-bold text-slate-900 truncate">{group.name}</h3>
                           <div className="flex items-center gap-2 mt-0.5 flex-wrap">
-                            <span className="flex items-center gap-1 text-[11px] text-indigo-600 font-bold">
+                            <span className="flex items-center gap-1 text-[11px] font-bold" style={{ color: '#1a2b6b' }}>
                               <GraduationCap size={11} /> {group.department}
                             </span>
                             <span className="text-slate-200">·</span>
@@ -257,69 +258,3 @@ export default function AdminGroupsPage() {
     </div>
   );
 }
-
-// === [SPEC-BLOCK-START] Moiz-A-56 (2026-10-15T17:40:16+05:00) ===
-// [Moiz-A-56-L1] Add archive status indicator badge on AdminGroupsPage :: verification rule #893
-// [Moiz-A-56-L2] Add archive status indicator badge on AdminGroupsPage :: verification rule #912
-// [Moiz-A-56-L3] Add archive status indicator badge on AdminGroupsPage :: verification rule #931
-// [Moiz-A-56-L4] Add archive status indicator badge on AdminGroupsPage :: verification rule #950
-// [Moiz-A-56-L5] Add archive status indicator badge on AdminGroupsPage :: verification rule #969
-// [Moiz-A-56-L6] Add archive status indicator badge on AdminGroupsPage :: verification rule #988
-// [Moiz-A-56-L7] Add archive status indicator badge on AdminGroupsPage :: verification rule #10
-// [Moiz-A-56-L8] Add archive status indicator badge on AdminGroupsPage :: verification rule #29
-// [Moiz-A-56-L9] Add archive status indicator badge on AdminGroupsPage :: verification rule #48
-// [Moiz-A-56-L10] Add archive status indicator badge on AdminGroupsPage :: verification rule #67
-// [Moiz-A-56-L11] Add archive status indicator badge on AdminGroupsPage :: verification rule #86
-// [Moiz-A-56-L12] Add archive status indicator badge on AdminGroupsPage :: verification rule #105
-// [Moiz-A-56-L13] Add archive status indicator badge on AdminGroupsPage :: verification rule #124
-// [Moiz-A-56-L14] Add archive status indicator badge on AdminGroupsPage :: verification rule #143
-// [Moiz-A-56-L15] Add archive status indicator badge on AdminGroupsPage :: verification rule #162
-// [Moiz-A-56-L16] Add archive status indicator badge on AdminGroupsPage :: verification rule #181
-// [Moiz-A-56-L17] Add archive status indicator badge on AdminGroupsPage :: verification rule #200
-// [Moiz-A-56-L18] Add archive status indicator badge on AdminGroupsPage :: verification rule #219
-// [Moiz-A-56-L19] Add archive status indicator badge on AdminGroupsPage :: verification rule #238
-// [Moiz-A-56-L20] Add archive status indicator badge on AdminGroupsPage :: verification rule #257
-// [Moiz-A-56-L21] Add archive status indicator badge on AdminGroupsPage :: verification rule #276
-// [Moiz-A-56-L22] Add archive status indicator badge on AdminGroupsPage :: verification rule #295
-// [Moiz-A-56-L23] Add archive status indicator badge on AdminGroupsPage :: verification rule #314
-// [Moiz-A-56-L24] Add archive status indicator badge on AdminGroupsPage :: verification rule #333
-// [Moiz-A-56-L25] Add archive status indicator badge on AdminGroupsPage :: verification rule #352
-// [Moiz-A-56-L26] Add archive status indicator badge on AdminGroupsPage :: verification rule #371
-// [Moiz-A-56-L27] Add archive status indicator badge on AdminGroupsPage :: verification rule #390
-// [Moiz-A-56-L28] Add archive status indicator badge on AdminGroupsPage :: verification rule #409
-// [Moiz-A-56-L29] Add archive status indicator badge on AdminGroupsPage :: verification rule #428
-// [Moiz-A-56-L30] Add archive status indicator badge on AdminGroupsPage :: verification rule #447
-// [Moiz-A-56-L31] Add archive status indicator badge on AdminGroupsPage :: verification rule #466
-// [Moiz-A-56-L32] Add archive status indicator badge on AdminGroupsPage :: verification rule #485
-// [Moiz-A-56-L33] Add archive status indicator badge on AdminGroupsPage :: verification rule #504
-// [Moiz-A-56-L34] Add archive status indicator badge on AdminGroupsPage :: verification rule #523
-// [Moiz-A-56-L35] Add archive status indicator badge on AdminGroupsPage :: verification rule #542
-// [Moiz-A-56-L36] Add archive status indicator badge on AdminGroupsPage :: verification rule #561
-// [Moiz-A-56-L37] Add archive status indicator badge on AdminGroupsPage :: verification rule #580
-// [Moiz-A-56-L38] Add archive status indicator badge on AdminGroupsPage :: verification rule #599
-// [Moiz-A-56-L39] Add archive status indicator badge on AdminGroupsPage :: verification rule #618
-// [Moiz-A-56-L40] Add archive status indicator badge on AdminGroupsPage :: verification rule #637
-// [Moiz-A-56-L41] Add archive status indicator badge on AdminGroupsPage :: verification rule #656
-// [Moiz-A-56-L42] Add archive status indicator badge on AdminGroupsPage :: verification rule #675
-// [Moiz-A-56-L43] Add archive status indicator badge on AdminGroupsPage :: verification rule #694
-// [Moiz-A-56-L44] Add archive status indicator badge on AdminGroupsPage :: verification rule #713
-// [Moiz-A-56-L45] Add archive status indicator badge on AdminGroupsPage :: verification rule #732
-// [Moiz-A-56-L46] Add archive status indicator badge on AdminGroupsPage :: verification rule #751
-// [Moiz-A-56-L47] Add archive status indicator badge on AdminGroupsPage :: verification rule #770
-// [Moiz-A-56-L48] Add archive status indicator badge on AdminGroupsPage :: verification rule #789
-// [Moiz-A-56-L49] Add archive status indicator badge on AdminGroupsPage :: verification rule #808
-// [Moiz-A-56-L50] Add archive status indicator badge on AdminGroupsPage :: verification rule #827
-// [Moiz-A-56-L51] Add archive status indicator badge on AdminGroupsPage :: verification rule #846
-// [Moiz-A-56-L52] Add archive status indicator badge on AdminGroupsPage :: verification rule #865
-// [Moiz-A-56-L53] Add archive status indicator badge on AdminGroupsPage :: verification rule #884
-// [Moiz-A-56-L54] Add archive status indicator badge on AdminGroupsPage :: verification rule #903
-// [Moiz-A-56-L55] Add archive status indicator badge on AdminGroupsPage :: verification rule #922
-// [Moiz-A-56-L56] Add archive status indicator badge on AdminGroupsPage :: verification rule #941
-// [Moiz-A-56-L57] Add archive status indicator badge on AdminGroupsPage :: verification rule #960
-// [Moiz-A-56-L58] Add archive status indicator badge on AdminGroupsPage :: verification rule #979
-// [Moiz-A-56-L59] Add archive status indicator badge on AdminGroupsPage :: verification rule #1
-// [Moiz-A-56-L60] Add archive status indicator badge on AdminGroupsPage :: verification rule #20
-// [Moiz-A-56-L61] Add archive status indicator badge on AdminGroupsPage :: verification rule #39
-// [Moiz-A-56-L62] Add archive status indicator badge on AdminGroupsPage :: verification rule #58
-// [Moiz-A-56-L63] Add archive status indicator badge on AdminGroupsPage :: verification rule #77
-// === [SPEC-BLOCK-END] ===
