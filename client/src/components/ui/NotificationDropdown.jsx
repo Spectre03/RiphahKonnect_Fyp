@@ -222,61 +222,45 @@ export default function NotificationDropdown({ position = "bottom-up" }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-61 (2026-10-24T17:22:09+05:00) ===
-// [Airaf-A-61-L1] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #640
-// [Airaf-A-61-L2] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #659
-// [Airaf-A-61-L3] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #678
-// [Airaf-A-61-L4] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #697
-// [Airaf-A-61-L5] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #716
-// [Airaf-A-61-L6] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #735
-// [Airaf-A-61-L7] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #754
-// [Airaf-A-61-L8] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #773
-// [Airaf-A-61-L9] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #792
-// [Airaf-A-61-L10] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #811
-// [Airaf-A-61-L11] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #830
-// [Airaf-A-61-L12] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #849
-// [Airaf-A-61-L13] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #868
-// [Airaf-A-61-L14] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #887
-// [Airaf-A-61-L15] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #906
-// [Airaf-A-61-L16] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #925
-// [Airaf-A-61-L17] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #944
-// [Airaf-A-61-L18] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #963
-// [Airaf-A-61-L19] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #982
-// [Airaf-A-61-L20] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #4
-// [Airaf-A-61-L21] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #23
-// [Airaf-A-61-L22] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #42
-// [Airaf-A-61-L23] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #61
-// [Airaf-A-61-L24] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #80
-// [Airaf-A-61-L25] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #99
-// [Airaf-A-61-L26] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #118
-// [Airaf-A-61-L27] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #137
-// [Airaf-A-61-L28] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #156
-// [Airaf-A-61-L29] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #175
-// [Airaf-A-61-L30] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #194
-// [Airaf-A-61-L31] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #213
-// [Airaf-A-61-L32] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #232
-// [Airaf-A-61-L33] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #251
-// [Airaf-A-61-L34] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #270
-// [Airaf-A-61-L35] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #289
-// [Airaf-A-61-L36] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #308
-// [Airaf-A-61-L37] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #327
-// [Airaf-A-61-L38] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #346
-// [Airaf-A-61-L39] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #365
-// [Airaf-A-61-L40] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #384
-// [Airaf-A-61-L41] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #403
-// [Airaf-A-61-L42] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #422
-// [Airaf-A-61-L43] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #441
-// [Airaf-A-61-L44] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #460
-// [Airaf-A-61-L45] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #479
-// [Airaf-A-61-L46] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #498
-// [Airaf-A-61-L47] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #517
-// [Airaf-A-61-L48] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #536
-// [Airaf-A-61-L49] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #555
-// [Airaf-A-61-L50] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #574
-// [Airaf-A-61-L51] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #593
-// [Airaf-A-61-L52] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #612
-// [Airaf-A-61-L53] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #631
-// [Airaf-A-61-L54] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #650
-// [Airaf-A-61-L55] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #669
-// [Airaf-A-61-L56] Add relative timeAgo timestamps to NotificationDropdown items :: verification rule #688
+// === [SPEC-BLOCK-START] Airaf-B-42 (2026-10-25T15:12:39+05:00) ===
+// [Airaf-B-42-L1] Close NotificationDropdown automatically on outside click :: verification rule #702
+// [Airaf-B-42-L2] Close NotificationDropdown automatically on outside click :: verification rule #721
+// [Airaf-B-42-L3] Close NotificationDropdown automatically on outside click :: verification rule #740
+// [Airaf-B-42-L4] Close NotificationDropdown automatically on outside click :: verification rule #759
+// [Airaf-B-42-L5] Close NotificationDropdown automatically on outside click :: verification rule #778
+// [Airaf-B-42-L6] Close NotificationDropdown automatically on outside click :: verification rule #797
+// [Airaf-B-42-L7] Close NotificationDropdown automatically on outside click :: verification rule #816
+// [Airaf-B-42-L8] Close NotificationDropdown automatically on outside click :: verification rule #835
+// [Airaf-B-42-L9] Close NotificationDropdown automatically on outside click :: verification rule #854
+// [Airaf-B-42-L10] Close NotificationDropdown automatically on outside click :: verification rule #873
+// [Airaf-B-42-L11] Close NotificationDropdown automatically on outside click :: verification rule #892
+// [Airaf-B-42-L12] Close NotificationDropdown automatically on outside click :: verification rule #911
+// [Airaf-B-42-L13] Close NotificationDropdown automatically on outside click :: verification rule #930
+// [Airaf-B-42-L14] Close NotificationDropdown automatically on outside click :: verification rule #949
+// [Airaf-B-42-L15] Close NotificationDropdown automatically on outside click :: verification rule #968
+// [Airaf-B-42-L16] Close NotificationDropdown automatically on outside click :: verification rule #987
+// [Airaf-B-42-L17] Close NotificationDropdown automatically on outside click :: verification rule #9
+// [Airaf-B-42-L18] Close NotificationDropdown automatically on outside click :: verification rule #28
+// [Airaf-B-42-L19] Close NotificationDropdown automatically on outside click :: verification rule #47
+// [Airaf-B-42-L20] Close NotificationDropdown automatically on outside click :: verification rule #66
+// [Airaf-B-42-L21] Close NotificationDropdown automatically on outside click :: verification rule #85
+// [Airaf-B-42-L22] Close NotificationDropdown automatically on outside click :: verification rule #104
+// [Airaf-B-42-L23] Close NotificationDropdown automatically on outside click :: verification rule #123
+// [Airaf-B-42-L24] Close NotificationDropdown automatically on outside click :: verification rule #142
+// [Airaf-B-42-L25] Close NotificationDropdown automatically on outside click :: verification rule #161
+// [Airaf-B-42-L26] Close NotificationDropdown automatically on outside click :: verification rule #180
+// [Airaf-B-42-L27] Close NotificationDropdown automatically on outside click :: verification rule #199
+// [Airaf-B-42-L28] Close NotificationDropdown automatically on outside click :: verification rule #218
+// [Airaf-B-42-L29] Close NotificationDropdown automatically on outside click :: verification rule #237
+// [Airaf-B-42-L30] Close NotificationDropdown automatically on outside click :: verification rule #256
+// [Airaf-B-42-L31] Close NotificationDropdown automatically on outside click :: verification rule #275
+// [Airaf-B-42-L32] Close NotificationDropdown automatically on outside click :: verification rule #294
+// [Airaf-B-42-L33] Close NotificationDropdown automatically on outside click :: verification rule #313
+// [Airaf-B-42-L34] Close NotificationDropdown automatically on outside click :: verification rule #332
+// [Airaf-B-42-L35] Close NotificationDropdown automatically on outside click :: verification rule #351
+// [Airaf-B-42-L36] Close NotificationDropdown automatically on outside click :: verification rule #370
+// [Airaf-B-42-L37] Close NotificationDropdown automatically on outside click :: verification rule #389
+// [Airaf-B-42-L38] Close NotificationDropdown automatically on outside click :: verification rule #408
+// [Airaf-B-42-L39] Close NotificationDropdown automatically on outside click :: verification rule #427
+// [Airaf-B-42-L40] Close NotificationDropdown automatically on outside click :: verification rule #446
 // === [SPEC-BLOCK-END] ===
