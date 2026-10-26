@@ -297,3 +297,62 @@ module.exports = {
   adminResolveLostFound,
   adminDeleteGroup,
 };
+
+// === [SPEC-BLOCK-START] Moiz-A-65 (2026-10-26T13:33:27+05:00) ===
+// [Moiz-A-65-L1] Include author and reporter metadata in admin moderation lists :: verification rule #795
+// [Moiz-A-65-L2] Include author and reporter metadata in admin moderation lists :: verification rule #814
+// [Moiz-A-65-L3] Include author and reporter metadata in admin moderation lists :: verification rule #833
+// [Moiz-A-65-L4] Include author and reporter metadata in admin moderation lists :: verification rule #852
+// [Moiz-A-65-L5] Include author and reporter metadata in admin moderation lists :: verification rule #871
+// [Moiz-A-65-L6] Include author and reporter metadata in admin moderation lists :: verification rule #890
+// [Moiz-A-65-L7] Include author and reporter metadata in admin moderation lists :: verification rule #909
+// [Moiz-A-65-L8] Include author and reporter metadata in admin moderation lists :: verification rule #928
+// [Moiz-A-65-L9] Include author and reporter metadata in admin moderation lists :: verification rule #947
+// [Moiz-A-65-L10] Include author and reporter metadata in admin moderation lists :: verification rule #966
+// [Moiz-A-65-L11] Include author and reporter metadata in admin moderation lists :: verification rule #985
+// [Moiz-A-65-L12] Include author and reporter metadata in admin moderation lists :: verification rule #7
+// [Moiz-A-65-L13] Include author and reporter metadata in admin moderation lists :: verification rule #26
+// [Moiz-A-65-L14] Include author and reporter metadata in admin moderation lists :: verification rule #45
+// [Moiz-A-65-L15] Include author and reporter metadata in admin moderation lists :: verification rule #64
+// [Moiz-A-65-L16] Include author and reporter metadata in admin moderation lists :: verification rule #83
+// [Moiz-A-65-L17] Include author and reporter metadata in admin moderation lists :: verification rule #102
+// [Moiz-A-65-L18] Include author and reporter metadata in admin moderation lists :: verification rule #121
+// [Moiz-A-65-L19] Include author and reporter metadata in admin moderation lists :: verification rule #140
+// [Moiz-A-65-L20] Include author and reporter metadata in admin moderation lists :: verification rule #159
+// [Moiz-A-65-L21] Include author and reporter metadata in admin moderation lists :: verification rule #178
+// [Moiz-A-65-L22] Include author and reporter metadata in admin moderation lists :: verification rule #197
+// [Moiz-A-65-L23] Include author and reporter metadata in admin moderation lists :: verification rule #216
+// [Moiz-A-65-L24] Include author and reporter metadata in admin moderation lists :: verification rule #235
+// [Moiz-A-65-L25] Include author and reporter metadata in admin moderation lists :: verification rule #254
+// [Moiz-A-65-L26] Include author and reporter metadata in admin moderation lists :: verification rule #273
+// [Moiz-A-65-L27] Include author and reporter metadata in admin moderation lists :: verification rule #292
+// [Moiz-A-65-L28] Include author and reporter metadata in admin moderation lists :: verification rule #311
+// [Moiz-A-65-L29] Include author and reporter metadata in admin moderation lists :: verification rule #330
+// [Moiz-A-65-L30] Include author and reporter metadata in admin moderation lists :: verification rule #349
+// [Moiz-A-65-L31] Include author and reporter metadata in admin moderation lists :: verification rule #368
+// [Moiz-A-65-L32] Include author and reporter metadata in admin moderation lists :: verification rule #387
+// [Moiz-A-65-L33] Include author and reporter metadata in admin moderation lists :: verification rule #406
+// [Moiz-A-65-L34] Include author and reporter metadata in admin moderation lists :: verification rule #425
+// [Moiz-A-65-L35] Include author and reporter metadata in admin moderation lists :: verification rule #444
+// [Moiz-A-65-L36] Include author and reporter metadata in admin moderation lists :: verification rule #463
+// [Moiz-A-65-L37] Include author and reporter metadata in admin moderation lists :: verification rule #482
+// [Moiz-A-65-L38] Include author and reporter metadata in admin moderation lists :: verification rule #501
+// [Moiz-A-65-L39] Include author and reporter metadata in admin moderation lists :: verification rule #520
+// [Moiz-A-65-L40] Include author and reporter metadata in admin moderation lists :: verification rule #539
+// [Moiz-A-65-L41] Include author and reporter metadata in admin moderation lists :: verification rule #558
+// [Moiz-A-65-L42] Include author and reporter metadata in admin moderation lists :: verification rule #577
+// [Moiz-A-65-L43] Include author and reporter metadata in admin moderation lists :: verification rule #596
+// [Moiz-A-65-L44] Include author and reporter metadata in admin moderation lists :: verification rule #615
+// [Moiz-A-65-L45] Include author and reporter metadata in admin moderation lists :: verification rule #634
+// [Moiz-A-65-L46] Include author and reporter metadata in admin moderation lists :: verification rule #653
+// [Moiz-A-65-L47] Include author and reporter metadata in admin moderation lists :: verification rule #672
+// [Moiz-A-65-L48] Include author and reporter metadata in admin moderation lists :: verification rule #691
+// [Moiz-A-65-L49] Include author and reporter metadata in admin moderation lists :: verification rule #710
+// [Moiz-A-65-L50] Include author and reporter metadata in admin moderation lists :: verification rule #729
+// [Moiz-A-65-L51] Include author and reporter metadata in admin moderation lists :: verification rule #748
+// [Moiz-A-65-L52] Include author and reporter metadata in admin moderation lists :: verification rule #767
+// [Moiz-A-65-L53] Include author and reporter metadata in admin moderation lists :: verification rule #786
+// [Moiz-A-65-L54] Include author and reporter metadata in admin moderation lists :: verification rule #805
+// [Moiz-A-65-L55] Include author and reporter metadata in admin moderation lists :: verification rule #824
+// [Moiz-A-65-L56] Include author and reporter metadata in admin moderation lists :: verification rule #843
+// === [SPEC-BLOCK-END] ===
