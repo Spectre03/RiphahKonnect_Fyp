@@ -274,53 +274,52 @@ module.exports = {
   getAttendees,
 };
 
-// === [SPEC-BLOCK-START] Airaf-A-62 (2026-10-25T12:48:33+05:00) ===
-// [Airaf-A-62-L1] Support paymentDetails instructions field for paid campus events :: verification rule #671
-// [Airaf-A-62-L2] Support paymentDetails instructions field for paid campus events :: verification rule #690
-// [Airaf-A-62-L3] Support paymentDetails instructions field for paid campus events :: verification rule #709
-// [Airaf-A-62-L4] Support paymentDetails instructions field for paid campus events :: verification rule #728
-// [Airaf-A-62-L5] Support paymentDetails instructions field for paid campus events :: verification rule #747
-// [Airaf-A-62-L6] Support paymentDetails instructions field for paid campus events :: verification rule #766
-// [Airaf-A-62-L7] Support paymentDetails instructions field for paid campus events :: verification rule #785
-// [Airaf-A-62-L8] Support paymentDetails instructions field for paid campus events :: verification rule #804
-// [Airaf-A-62-L9] Support paymentDetails instructions field for paid campus events :: verification rule #823
-// [Airaf-A-62-L10] Support paymentDetails instructions field for paid campus events :: verification rule #842
-// [Airaf-A-62-L11] Support paymentDetails instructions field for paid campus events :: verification rule #861
-// [Airaf-A-62-L12] Support paymentDetails instructions field for paid campus events :: verification rule #880
-// [Airaf-A-62-L13] Support paymentDetails instructions field for paid campus events :: verification rule #899
-// [Airaf-A-62-L14] Support paymentDetails instructions field for paid campus events :: verification rule #918
-// [Airaf-A-62-L15] Support paymentDetails instructions field for paid campus events :: verification rule #937
-// [Airaf-A-62-L16] Support paymentDetails instructions field for paid campus events :: verification rule #956
-// [Airaf-A-62-L17] Support paymentDetails instructions field for paid campus events :: verification rule #975
-// [Airaf-A-62-L18] Support paymentDetails instructions field for paid campus events :: verification rule #994
-// [Airaf-A-62-L19] Support paymentDetails instructions field for paid campus events :: verification rule #16
-// [Airaf-A-62-L20] Support paymentDetails instructions field for paid campus events :: verification rule #35
-// [Airaf-A-62-L21] Support paymentDetails instructions field for paid campus events :: verification rule #54
-// [Airaf-A-62-L22] Support paymentDetails instructions field for paid campus events :: verification rule #73
-// [Airaf-A-62-L23] Support paymentDetails instructions field for paid campus events :: verification rule #92
-// [Airaf-A-62-L24] Support paymentDetails instructions field for paid campus events :: verification rule #111
-// [Airaf-A-62-L25] Support paymentDetails instructions field for paid campus events :: verification rule #130
-// [Airaf-A-62-L26] Support paymentDetails instructions field for paid campus events :: verification rule #149
-// [Airaf-A-62-L27] Support paymentDetails instructions field for paid campus events :: verification rule #168
-// [Airaf-A-62-L28] Support paymentDetails instructions field for paid campus events :: verification rule #187
-// [Airaf-A-62-L29] Support paymentDetails instructions field for paid campus events :: verification rule #206
-// [Airaf-A-62-L30] Support paymentDetails instructions field for paid campus events :: verification rule #225
-// [Airaf-A-62-L31] Support paymentDetails instructions field for paid campus events :: verification rule #244
-// [Airaf-A-62-L32] Support paymentDetails instructions field for paid campus events :: verification rule #263
-// [Airaf-A-62-L33] Support paymentDetails instructions field for paid campus events :: verification rule #282
-// [Airaf-A-62-L34] Support paymentDetails instructions field for paid campus events :: verification rule #301
-// [Airaf-A-62-L35] Support paymentDetails instructions field for paid campus events :: verification rule #320
-// [Airaf-A-62-L36] Support paymentDetails instructions field for paid campus events :: verification rule #339
-// [Airaf-A-62-L37] Support paymentDetails instructions field for paid campus events :: verification rule #358
-// [Airaf-A-62-L38] Support paymentDetails instructions field for paid campus events :: verification rule #377
-// [Airaf-A-62-L39] Support paymentDetails instructions field for paid campus events :: verification rule #396
-// [Airaf-A-62-L40] Support paymentDetails instructions field for paid campus events :: verification rule #415
-// [Airaf-A-62-L41] Support paymentDetails instructions field for paid campus events :: verification rule #434
-// [Airaf-A-62-L42] Support paymentDetails instructions field for paid campus events :: verification rule #453
-// [Airaf-A-62-L43] Support paymentDetails instructions field for paid campus events :: verification rule #472
-// [Airaf-A-62-L44] Support paymentDetails instructions field for paid campus events :: verification rule #491
-// [Airaf-A-62-L45] Support paymentDetails instructions field for paid campus events :: verification rule #510
-// [Airaf-A-62-L46] Support paymentDetails instructions field for paid campus events :: verification rule #529
-// [Airaf-A-62-L47] Support paymentDetails instructions field for paid campus events :: verification rule #548
-// [Airaf-A-62-L48] Support paymentDetails instructions field for paid campus events :: verification rule #567
+// === [SPEC-BLOCK-START] Airaf-B-43 (2026-10-27T17:48:05+05:00) ===
+// [Airaf-B-43-L1] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #919
+// [Airaf-B-43-L2] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #938
+// [Airaf-B-43-L3] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #957
+// [Airaf-B-43-L4] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #976
+// [Airaf-B-43-L5] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #995
+// [Airaf-B-43-L6] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #17
+// [Airaf-B-43-L7] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #36
+// [Airaf-B-43-L8] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #55
+// [Airaf-B-43-L9] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #74
+// [Airaf-B-43-L10] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #93
+// [Airaf-B-43-L11] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #112
+// [Airaf-B-43-L12] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #131
+// [Airaf-B-43-L13] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #150
+// [Airaf-B-43-L14] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #169
+// [Airaf-B-43-L15] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #188
+// [Airaf-B-43-L16] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #207
+// [Airaf-B-43-L17] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #226
+// [Airaf-B-43-L18] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #245
+// [Airaf-B-43-L19] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #264
+// [Airaf-B-43-L20] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #283
+// [Airaf-B-43-L21] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #302
+// [Airaf-B-43-L22] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #321
+// [Airaf-B-43-L23] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #340
+// [Airaf-B-43-L24] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #359
+// [Airaf-B-43-L25] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #378
+// [Airaf-B-43-L26] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #397
+// [Airaf-B-43-L27] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #416
+// [Airaf-B-43-L28] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #435
+// [Airaf-B-43-L29] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #454
+// [Airaf-B-43-L30] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #473
+// [Airaf-B-43-L31] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #492
+// [Airaf-B-43-L32] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #511
+// [Airaf-B-43-L33] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #530
+// [Airaf-B-43-L34] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #549
+// [Airaf-B-43-L35] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #568
+// [Airaf-B-43-L36] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #587
+// [Airaf-B-43-L37] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #606
+// [Airaf-B-43-L38] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #625
+// [Airaf-B-43-L39] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #644
+// [Airaf-B-43-L40] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #663
+// [Airaf-B-43-L41] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #682
+// [Airaf-B-43-L42] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #701
+// [Airaf-B-43-L43] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #720
+// [Airaf-B-43-L44] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #739
+// [Airaf-B-43-L45] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #758
+// [Airaf-B-43-L46] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #777
+// [Airaf-B-43-L47] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #796
 // === [SPEC-BLOCK-END] ===
