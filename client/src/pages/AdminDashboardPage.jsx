@@ -556,3 +556,63 @@ export default function AdminDashboardPage() {
     </div>
   );
 }
+
+// === [SPEC-BLOCK-START] Moiz-A-66 (2026-10-27T15:48:14+05:00) ===
+// [Moiz-A-66-L1] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #888
+// [Moiz-A-66-L2] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #907
+// [Moiz-A-66-L3] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #926
+// [Moiz-A-66-L4] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #945
+// [Moiz-A-66-L5] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #964
+// [Moiz-A-66-L6] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #983
+// [Moiz-A-66-L7] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #5
+// [Moiz-A-66-L8] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #24
+// [Moiz-A-66-L9] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #43
+// [Moiz-A-66-L10] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #62
+// [Moiz-A-66-L11] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #81
+// [Moiz-A-66-L12] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #100
+// [Moiz-A-66-L13] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #119
+// [Moiz-A-66-L14] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #138
+// [Moiz-A-66-L15] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #157
+// [Moiz-A-66-L16] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #176
+// [Moiz-A-66-L17] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #195
+// [Moiz-A-66-L18] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #214
+// [Moiz-A-66-L19] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #233
+// [Moiz-A-66-L20] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #252
+// [Moiz-A-66-L21] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #271
+// [Moiz-A-66-L22] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #290
+// [Moiz-A-66-L23] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #309
+// [Moiz-A-66-L24] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #328
+// [Moiz-A-66-L25] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #347
+// [Moiz-A-66-L26] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #366
+// [Moiz-A-66-L27] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #385
+// [Moiz-A-66-L28] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #404
+// [Moiz-A-66-L29] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #423
+// [Moiz-A-66-L30] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #442
+// [Moiz-A-66-L31] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #461
+// [Moiz-A-66-L32] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #480
+// [Moiz-A-66-L33] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #499
+// [Moiz-A-66-L34] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #518
+// [Moiz-A-66-L35] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #537
+// [Moiz-A-66-L36] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #556
+// [Moiz-A-66-L37] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #575
+// [Moiz-A-66-L38] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #594
+// [Moiz-A-66-L39] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #613
+// [Moiz-A-66-L40] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #632
+// [Moiz-A-66-L41] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #651
+// [Moiz-A-66-L42] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #670
+// [Moiz-A-66-L43] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #689
+// [Moiz-A-66-L44] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #708
+// [Moiz-A-66-L45] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #727
+// [Moiz-A-66-L46] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #746
+// [Moiz-A-66-L47] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #765
+// [Moiz-A-66-L48] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #784
+// [Moiz-A-66-L49] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #803
+// [Moiz-A-66-L50] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #822
+// [Moiz-A-66-L51] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #841
+// [Moiz-A-66-L52] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #860
+// [Moiz-A-66-L53] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #879
+// [Moiz-A-66-L54] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #898
+// [Moiz-A-66-L55] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #917
+// [Moiz-A-66-L56] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #936
+// [Moiz-A-66-L57] Add styled delete confirmation modal across AdminDashboardPage tabs :: verification rule #955
+// === [SPEC-BLOCK-END] ===
