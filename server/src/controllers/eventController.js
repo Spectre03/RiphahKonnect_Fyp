@@ -274,52 +274,57 @@ module.exports = {
   getAttendees,
 };
 
-// === [SPEC-BLOCK-START] Airaf-B-43 (2026-10-27T17:48:05+05:00) ===
-// [Airaf-B-43-L1] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #919
-// [Airaf-B-43-L2] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #938
-// [Airaf-B-43-L3] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #957
-// [Airaf-B-43-L4] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #976
-// [Airaf-B-43-L5] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #995
-// [Airaf-B-43-L6] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #17
-// [Airaf-B-43-L7] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #36
-// [Airaf-B-43-L8] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #55
-// [Airaf-B-43-L9] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #74
-// [Airaf-B-43-L10] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #93
-// [Airaf-B-43-L11] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #112
-// [Airaf-B-43-L12] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #131
-// [Airaf-B-43-L13] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #150
-// [Airaf-B-43-L14] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #169
-// [Airaf-B-43-L15] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #188
-// [Airaf-B-43-L16] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #207
-// [Airaf-B-43-L17] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #226
-// [Airaf-B-43-L18] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #245
-// [Airaf-B-43-L19] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #264
-// [Airaf-B-43-L20] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #283
-// [Airaf-B-43-L21] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #302
-// [Airaf-B-43-L22] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #321
-// [Airaf-B-43-L23] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #340
-// [Airaf-B-43-L24] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #359
-// [Airaf-B-43-L25] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #378
-// [Airaf-B-43-L26] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #397
-// [Airaf-B-43-L27] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #416
-// [Airaf-B-43-L28] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #435
-// [Airaf-B-43-L29] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #454
-// [Airaf-B-43-L30] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #473
-// [Airaf-B-43-L31] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #492
-// [Airaf-B-43-L32] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #511
-// [Airaf-B-43-L33] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #530
-// [Airaf-B-43-L34] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #549
-// [Airaf-B-43-L35] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #568
-// [Airaf-B-43-L36] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #587
-// [Airaf-B-43-L37] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #606
-// [Airaf-B-43-L38] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #625
-// [Airaf-B-43-L39] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #644
-// [Airaf-B-43-L40] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #663
-// [Airaf-B-43-L41] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #682
-// [Airaf-B-43-L42] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #701
-// [Airaf-B-43-L43] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #720
-// [Airaf-B-43-L44] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #739
-// [Airaf-B-43-L45] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #758
-// [Airaf-B-43-L46] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #777
-// [Airaf-B-43-L47] Return myTicketStatus and myTicketCode fields in getEvents :: verification rule #796
+// === [SPEC-BLOCK-START] Airaf-A-64 (2026-10-27T18:10:44+05:00) ===
+// [Airaf-A-64-L1] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #981
+// [Airaf-A-64-L2] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #3
+// [Airaf-A-64-L3] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #22
+// [Airaf-A-64-L4] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #41
+// [Airaf-A-64-L5] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #60
+// [Airaf-A-64-L6] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #79
+// [Airaf-A-64-L7] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #98
+// [Airaf-A-64-L8] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #117
+// [Airaf-A-64-L9] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #136
+// [Airaf-A-64-L10] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #155
+// [Airaf-A-64-L11] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #174
+// [Airaf-A-64-L12] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #193
+// [Airaf-A-64-L13] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #212
+// [Airaf-A-64-L14] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #231
+// [Airaf-A-64-L15] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #250
+// [Airaf-A-64-L16] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #269
+// [Airaf-A-64-L17] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #288
+// [Airaf-A-64-L18] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #307
+// [Airaf-A-64-L19] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #326
+// [Airaf-A-64-L20] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #345
+// [Airaf-A-64-L21] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #364
+// [Airaf-A-64-L22] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #383
+// [Airaf-A-64-L23] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #402
+// [Airaf-A-64-L24] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #421
+// [Airaf-A-64-L25] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #440
+// [Airaf-A-64-L26] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #459
+// [Airaf-A-64-L27] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #478
+// [Airaf-A-64-L28] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #497
+// [Airaf-A-64-L29] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #516
+// [Airaf-A-64-L30] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #535
+// [Airaf-A-64-L31] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #554
+// [Airaf-A-64-L32] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #573
+// [Airaf-A-64-L33] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #592
+// [Airaf-A-64-L34] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #611
+// [Airaf-A-64-L35] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #630
+// [Airaf-A-64-L36] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #649
+// [Airaf-A-64-L37] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #668
+// [Airaf-A-64-L38] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #687
+// [Airaf-A-64-L39] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #706
+// [Airaf-A-64-L40] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #725
+// [Airaf-A-64-L41] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #744
+// [Airaf-A-64-L42] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #763
+// [Airaf-A-64-L43] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #782
+// [Airaf-A-64-L44] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #801
+// [Airaf-A-64-L45] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #820
+// [Airaf-A-64-L46] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #839
+// [Airaf-A-64-L47] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #858
+// [Airaf-A-64-L48] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #877
+// [Airaf-A-64-L49] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #896
+// [Airaf-A-64-L50] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #915
+// [Airaf-A-64-L51] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #934
+// [Airaf-A-64-L52] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #953
 // === [SPEC-BLOCK-END] ===
