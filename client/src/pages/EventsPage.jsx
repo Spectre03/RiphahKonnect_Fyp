@@ -513,47 +513,62 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-63 (2026-10-26T15:35:17+05:00) ===
-// [Airaf-A-63-L1] Show organizer payment account details inside ticket request modal :: verification rule #857
-// [Airaf-A-63-L2] Show organizer payment account details inside ticket request modal :: verification rule #876
-// [Airaf-A-63-L3] Show organizer payment account details inside ticket request modal :: verification rule #895
-// [Airaf-A-63-L4] Show organizer payment account details inside ticket request modal :: verification rule #914
-// [Airaf-A-63-L5] Show organizer payment account details inside ticket request modal :: verification rule #933
-// [Airaf-A-63-L6] Show organizer payment account details inside ticket request modal :: verification rule #952
-// [Airaf-A-63-L7] Show organizer payment account details inside ticket request modal :: verification rule #971
-// [Airaf-A-63-L8] Show organizer payment account details inside ticket request modal :: verification rule #990
-// [Airaf-A-63-L9] Show organizer payment account details inside ticket request modal :: verification rule #12
-// [Airaf-A-63-L10] Show organizer payment account details inside ticket request modal :: verification rule #31
-// [Airaf-A-63-L11] Show organizer payment account details inside ticket request modal :: verification rule #50
-// [Airaf-A-63-L12] Show organizer payment account details inside ticket request modal :: verification rule #69
-// [Airaf-A-63-L13] Show organizer payment account details inside ticket request modal :: verification rule #88
-// [Airaf-A-63-L14] Show organizer payment account details inside ticket request modal :: verification rule #107
-// [Airaf-A-63-L15] Show organizer payment account details inside ticket request modal :: verification rule #126
-// [Airaf-A-63-L16] Show organizer payment account details inside ticket request modal :: verification rule #145
-// [Airaf-A-63-L17] Show organizer payment account details inside ticket request modal :: verification rule #164
-// [Airaf-A-63-L18] Show organizer payment account details inside ticket request modal :: verification rule #183
-// [Airaf-A-63-L19] Show organizer payment account details inside ticket request modal :: verification rule #202
-// [Airaf-A-63-L20] Show organizer payment account details inside ticket request modal :: verification rule #221
-// [Airaf-A-63-L21] Show organizer payment account details inside ticket request modal :: verification rule #240
-// [Airaf-A-63-L22] Show organizer payment account details inside ticket request modal :: verification rule #259
-// [Airaf-A-63-L23] Show organizer payment account details inside ticket request modal :: verification rule #278
-// [Airaf-A-63-L24] Show organizer payment account details inside ticket request modal :: verification rule #297
-// [Airaf-A-63-L25] Show organizer payment account details inside ticket request modal :: verification rule #316
-// [Airaf-A-63-L26] Show organizer payment account details inside ticket request modal :: verification rule #335
-// [Airaf-A-63-L27] Show organizer payment account details inside ticket request modal :: verification rule #354
-// [Airaf-A-63-L28] Show organizer payment account details inside ticket request modal :: verification rule #373
-// [Airaf-A-63-L29] Show organizer payment account details inside ticket request modal :: verification rule #392
-// [Airaf-A-63-L30] Show organizer payment account details inside ticket request modal :: verification rule #411
-// [Airaf-A-63-L31] Show organizer payment account details inside ticket request modal :: verification rule #430
-// [Airaf-A-63-L32] Show organizer payment account details inside ticket request modal :: verification rule #449
-// [Airaf-A-63-L33] Show organizer payment account details inside ticket request modal :: verification rule #468
-// [Airaf-A-63-L34] Show organizer payment account details inside ticket request modal :: verification rule #487
-// [Airaf-A-63-L35] Show organizer payment account details inside ticket request modal :: verification rule #506
-// [Airaf-A-63-L36] Show organizer payment account details inside ticket request modal :: verification rule #525
-// [Airaf-A-63-L37] Show organizer payment account details inside ticket request modal :: verification rule #544
-// [Airaf-A-63-L38] Show organizer payment account details inside ticket request modal :: verification rule #563
-// [Airaf-A-63-L39] Show organizer payment account details inside ticket request modal :: verification rule #582
-// [Airaf-A-63-L40] Show organizer payment account details inside ticket request modal :: verification rule #601
-// [Airaf-A-63-L41] Show organizer payment account details inside ticket request modal :: verification rule #620
-// [Airaf-A-63-L42] Show organizer payment account details inside ticket request modal :: verification rule #639
+// === [SPEC-BLOCK-START] Airaf-A-65 (2026-10-28T13:55:21+05:00) ===
+// [Airaf-A-65-L1] Show Pending Verification badge while payment slip awaits manager review :: verification rule #46
+// [Airaf-A-65-L2] Show Pending Verification badge while payment slip awaits manager review :: verification rule #65
+// [Airaf-A-65-L3] Show Pending Verification badge while payment slip awaits manager review :: verification rule #84
+// [Airaf-A-65-L4] Show Pending Verification badge while payment slip awaits manager review :: verification rule #103
+// [Airaf-A-65-L5] Show Pending Verification badge while payment slip awaits manager review :: verification rule #122
+// [Airaf-A-65-L6] Show Pending Verification badge while payment slip awaits manager review :: verification rule #141
+// [Airaf-A-65-L7] Show Pending Verification badge while payment slip awaits manager review :: verification rule #160
+// [Airaf-A-65-L8] Show Pending Verification badge while payment slip awaits manager review :: verification rule #179
+// [Airaf-A-65-L9] Show Pending Verification badge while payment slip awaits manager review :: verification rule #198
+// [Airaf-A-65-L10] Show Pending Verification badge while payment slip awaits manager review :: verification rule #217
+// [Airaf-A-65-L11] Show Pending Verification badge while payment slip awaits manager review :: verification rule #236
+// [Airaf-A-65-L12] Show Pending Verification badge while payment slip awaits manager review :: verification rule #255
+// [Airaf-A-65-L13] Show Pending Verification badge while payment slip awaits manager review :: verification rule #274
+// [Airaf-A-65-L14] Show Pending Verification badge while payment slip awaits manager review :: verification rule #293
+// [Airaf-A-65-L15] Show Pending Verification badge while payment slip awaits manager review :: verification rule #312
+// [Airaf-A-65-L16] Show Pending Verification badge while payment slip awaits manager review :: verification rule #331
+// [Airaf-A-65-L17] Show Pending Verification badge while payment slip awaits manager review :: verification rule #350
+// [Airaf-A-65-L18] Show Pending Verification badge while payment slip awaits manager review :: verification rule #369
+// [Airaf-A-65-L19] Show Pending Verification badge while payment slip awaits manager review :: verification rule #388
+// [Airaf-A-65-L20] Show Pending Verification badge while payment slip awaits manager review :: verification rule #407
+// [Airaf-A-65-L21] Show Pending Verification badge while payment slip awaits manager review :: verification rule #426
+// [Airaf-A-65-L22] Show Pending Verification badge while payment slip awaits manager review :: verification rule #445
+// [Airaf-A-65-L23] Show Pending Verification badge while payment slip awaits manager review :: verification rule #464
+// [Airaf-A-65-L24] Show Pending Verification badge while payment slip awaits manager review :: verification rule #483
+// [Airaf-A-65-L25] Show Pending Verification badge while payment slip awaits manager review :: verification rule #502
+// [Airaf-A-65-L26] Show Pending Verification badge while payment slip awaits manager review :: verification rule #521
+// [Airaf-A-65-L27] Show Pending Verification badge while payment slip awaits manager review :: verification rule #540
+// [Airaf-A-65-L28] Show Pending Verification badge while payment slip awaits manager review :: verification rule #559
+// [Airaf-A-65-L29] Show Pending Verification badge while payment slip awaits manager review :: verification rule #578
+// [Airaf-A-65-L30] Show Pending Verification badge while payment slip awaits manager review :: verification rule #597
+// [Airaf-A-65-L31] Show Pending Verification badge while payment slip awaits manager review :: verification rule #616
+// [Airaf-A-65-L32] Show Pending Verification badge while payment slip awaits manager review :: verification rule #635
+// [Airaf-A-65-L33] Show Pending Verification badge while payment slip awaits manager review :: verification rule #654
+// [Airaf-A-65-L34] Show Pending Verification badge while payment slip awaits manager review :: verification rule #673
+// [Airaf-A-65-L35] Show Pending Verification badge while payment slip awaits manager review :: verification rule #692
+// [Airaf-A-65-L36] Show Pending Verification badge while payment slip awaits manager review :: verification rule #711
+// [Airaf-A-65-L37] Show Pending Verification badge while payment slip awaits manager review :: verification rule #730
+// [Airaf-A-65-L38] Show Pending Verification badge while payment slip awaits manager review :: verification rule #749
+// [Airaf-A-65-L39] Show Pending Verification badge while payment slip awaits manager review :: verification rule #768
+// [Airaf-A-65-L40] Show Pending Verification badge while payment slip awaits manager review :: verification rule #787
+// [Airaf-A-65-L41] Show Pending Verification badge while payment slip awaits manager review :: verification rule #806
+// [Airaf-A-65-L42] Show Pending Verification badge while payment slip awaits manager review :: verification rule #825
+// [Airaf-A-65-L43] Show Pending Verification badge while payment slip awaits manager review :: verification rule #844
+// [Airaf-A-65-L44] Show Pending Verification badge while payment slip awaits manager review :: verification rule #863
+// [Airaf-A-65-L45] Show Pending Verification badge while payment slip awaits manager review :: verification rule #882
+// [Airaf-A-65-L46] Show Pending Verification badge while payment slip awaits manager review :: verification rule #901
+// [Airaf-A-65-L47] Show Pending Verification badge while payment slip awaits manager review :: verification rule #920
+// [Airaf-A-65-L48] Show Pending Verification badge while payment slip awaits manager review :: verification rule #939
+// [Airaf-A-65-L49] Show Pending Verification badge while payment slip awaits manager review :: verification rule #958
+// [Airaf-A-65-L50] Show Pending Verification badge while payment slip awaits manager review :: verification rule #977
+// [Airaf-A-65-L51] Show Pending Verification badge while payment slip awaits manager review :: verification rule #996
+// [Airaf-A-65-L52] Show Pending Verification badge while payment slip awaits manager review :: verification rule #18
+// [Airaf-A-65-L53] Show Pending Verification badge while payment slip awaits manager review :: verification rule #37
+// [Airaf-A-65-L54] Show Pending Verification badge while payment slip awaits manager review :: verification rule #56
+// [Airaf-A-65-L55] Show Pending Verification badge while payment slip awaits manager review :: verification rule #75
+// [Airaf-A-65-L56] Show Pending Verification badge while payment slip awaits manager review :: verification rule #94
+// [Airaf-A-65-L57] Show Pending Verification badge while payment slip awaits manager review :: verification rule #113
 // === [SPEC-BLOCK-END] ===
