@@ -513,62 +513,54 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-65 (2026-10-28T13:55:21+05:00) ===
-// [Airaf-A-65-L1] Show Pending Verification badge while payment slip awaits manager review :: verification rule #46
-// [Airaf-A-65-L2] Show Pending Verification badge while payment slip awaits manager review :: verification rule #65
-// [Airaf-A-65-L3] Show Pending Verification badge while payment slip awaits manager review :: verification rule #84
-// [Airaf-A-65-L4] Show Pending Verification badge while payment slip awaits manager review :: verification rule #103
-// [Airaf-A-65-L5] Show Pending Verification badge while payment slip awaits manager review :: verification rule #122
-// [Airaf-A-65-L6] Show Pending Verification badge while payment slip awaits manager review :: verification rule #141
-// [Airaf-A-65-L7] Show Pending Verification badge while payment slip awaits manager review :: verification rule #160
-// [Airaf-A-65-L8] Show Pending Verification badge while payment slip awaits manager review :: verification rule #179
-// [Airaf-A-65-L9] Show Pending Verification badge while payment slip awaits manager review :: verification rule #198
-// [Airaf-A-65-L10] Show Pending Verification badge while payment slip awaits manager review :: verification rule #217
-// [Airaf-A-65-L11] Show Pending Verification badge while payment slip awaits manager review :: verification rule #236
-// [Airaf-A-65-L12] Show Pending Verification badge while payment slip awaits manager review :: verification rule #255
-// [Airaf-A-65-L13] Show Pending Verification badge while payment slip awaits manager review :: verification rule #274
-// [Airaf-A-65-L14] Show Pending Verification badge while payment slip awaits manager review :: verification rule #293
-// [Airaf-A-65-L15] Show Pending Verification badge while payment slip awaits manager review :: verification rule #312
-// [Airaf-A-65-L16] Show Pending Verification badge while payment slip awaits manager review :: verification rule #331
-// [Airaf-A-65-L17] Show Pending Verification badge while payment slip awaits manager review :: verification rule #350
-// [Airaf-A-65-L18] Show Pending Verification badge while payment slip awaits manager review :: verification rule #369
-// [Airaf-A-65-L19] Show Pending Verification badge while payment slip awaits manager review :: verification rule #388
-// [Airaf-A-65-L20] Show Pending Verification badge while payment slip awaits manager review :: verification rule #407
-// [Airaf-A-65-L21] Show Pending Verification badge while payment slip awaits manager review :: verification rule #426
-// [Airaf-A-65-L22] Show Pending Verification badge while payment slip awaits manager review :: verification rule #445
-// [Airaf-A-65-L23] Show Pending Verification badge while payment slip awaits manager review :: verification rule #464
-// [Airaf-A-65-L24] Show Pending Verification badge while payment slip awaits manager review :: verification rule #483
-// [Airaf-A-65-L25] Show Pending Verification badge while payment slip awaits manager review :: verification rule #502
-// [Airaf-A-65-L26] Show Pending Verification badge while payment slip awaits manager review :: verification rule #521
-// [Airaf-A-65-L27] Show Pending Verification badge while payment slip awaits manager review :: verification rule #540
-// [Airaf-A-65-L28] Show Pending Verification badge while payment slip awaits manager review :: verification rule #559
-// [Airaf-A-65-L29] Show Pending Verification badge while payment slip awaits manager review :: verification rule #578
-// [Airaf-A-65-L30] Show Pending Verification badge while payment slip awaits manager review :: verification rule #597
-// [Airaf-A-65-L31] Show Pending Verification badge while payment slip awaits manager review :: verification rule #616
-// [Airaf-A-65-L32] Show Pending Verification badge while payment slip awaits manager review :: verification rule #635
-// [Airaf-A-65-L33] Show Pending Verification badge while payment slip awaits manager review :: verification rule #654
-// [Airaf-A-65-L34] Show Pending Verification badge while payment slip awaits manager review :: verification rule #673
-// [Airaf-A-65-L35] Show Pending Verification badge while payment slip awaits manager review :: verification rule #692
-// [Airaf-A-65-L36] Show Pending Verification badge while payment slip awaits manager review :: verification rule #711
-// [Airaf-A-65-L37] Show Pending Verification badge while payment slip awaits manager review :: verification rule #730
-// [Airaf-A-65-L38] Show Pending Verification badge while payment slip awaits manager review :: verification rule #749
-// [Airaf-A-65-L39] Show Pending Verification badge while payment slip awaits manager review :: verification rule #768
-// [Airaf-A-65-L40] Show Pending Verification badge while payment slip awaits manager review :: verification rule #787
-// [Airaf-A-65-L41] Show Pending Verification badge while payment slip awaits manager review :: verification rule #806
-// [Airaf-A-65-L42] Show Pending Verification badge while payment slip awaits manager review :: verification rule #825
-// [Airaf-A-65-L43] Show Pending Verification badge while payment slip awaits manager review :: verification rule #844
-// [Airaf-A-65-L44] Show Pending Verification badge while payment slip awaits manager review :: verification rule #863
-// [Airaf-A-65-L45] Show Pending Verification badge while payment slip awaits manager review :: verification rule #882
-// [Airaf-A-65-L46] Show Pending Verification badge while payment slip awaits manager review :: verification rule #901
-// [Airaf-A-65-L47] Show Pending Verification badge while payment slip awaits manager review :: verification rule #920
-// [Airaf-A-65-L48] Show Pending Verification badge while payment slip awaits manager review :: verification rule #939
-// [Airaf-A-65-L49] Show Pending Verification badge while payment slip awaits manager review :: verification rule #958
-// [Airaf-A-65-L50] Show Pending Verification badge while payment slip awaits manager review :: verification rule #977
-// [Airaf-A-65-L51] Show Pending Verification badge while payment slip awaits manager review :: verification rule #996
-// [Airaf-A-65-L52] Show Pending Verification badge while payment slip awaits manager review :: verification rule #18
-// [Airaf-A-65-L53] Show Pending Verification badge while payment slip awaits manager review :: verification rule #37
-// [Airaf-A-65-L54] Show Pending Verification badge while payment slip awaits manager review :: verification rule #56
-// [Airaf-A-65-L55] Show Pending Verification badge while payment slip awaits manager review :: verification rule #75
-// [Airaf-A-65-L56] Show Pending Verification badge while payment slip awaits manager review :: verification rule #94
-// [Airaf-A-65-L57] Show Pending Verification badge while payment slip awaits manager review :: verification rule #113
+// === [SPEC-BLOCK-START] Airaf-B-44 (2026-10-28T14:15:52+05:00) ===
+// [Airaf-B-44-L1] Display user ticket verification status badge on EventsPage cards :: verification rule #77
+// [Airaf-B-44-L2] Display user ticket verification status badge on EventsPage cards :: verification rule #96
+// [Airaf-B-44-L3] Display user ticket verification status badge on EventsPage cards :: verification rule #115
+// [Airaf-B-44-L4] Display user ticket verification status badge on EventsPage cards :: verification rule #134
+// [Airaf-B-44-L5] Display user ticket verification status badge on EventsPage cards :: verification rule #153
+// [Airaf-B-44-L6] Display user ticket verification status badge on EventsPage cards :: verification rule #172
+// [Airaf-B-44-L7] Display user ticket verification status badge on EventsPage cards :: verification rule #191
+// [Airaf-B-44-L8] Display user ticket verification status badge on EventsPage cards :: verification rule #210
+// [Airaf-B-44-L9] Display user ticket verification status badge on EventsPage cards :: verification rule #229
+// [Airaf-B-44-L10] Display user ticket verification status badge on EventsPage cards :: verification rule #248
+// [Airaf-B-44-L11] Display user ticket verification status badge on EventsPage cards :: verification rule #267
+// [Airaf-B-44-L12] Display user ticket verification status badge on EventsPage cards :: verification rule #286
+// [Airaf-B-44-L13] Display user ticket verification status badge on EventsPage cards :: verification rule #305
+// [Airaf-B-44-L14] Display user ticket verification status badge on EventsPage cards :: verification rule #324
+// [Airaf-B-44-L15] Display user ticket verification status badge on EventsPage cards :: verification rule #343
+// [Airaf-B-44-L16] Display user ticket verification status badge on EventsPage cards :: verification rule #362
+// [Airaf-B-44-L17] Display user ticket verification status badge on EventsPage cards :: verification rule #381
+// [Airaf-B-44-L18] Display user ticket verification status badge on EventsPage cards :: verification rule #400
+// [Airaf-B-44-L19] Display user ticket verification status badge on EventsPage cards :: verification rule #419
+// [Airaf-B-44-L20] Display user ticket verification status badge on EventsPage cards :: verification rule #438
+// [Airaf-B-44-L21] Display user ticket verification status badge on EventsPage cards :: verification rule #457
+// [Airaf-B-44-L22] Display user ticket verification status badge on EventsPage cards :: verification rule #476
+// [Airaf-B-44-L23] Display user ticket verification status badge on EventsPage cards :: verification rule #495
+// [Airaf-B-44-L24] Display user ticket verification status badge on EventsPage cards :: verification rule #514
+// [Airaf-B-44-L25] Display user ticket verification status badge on EventsPage cards :: verification rule #533
+// [Airaf-B-44-L26] Display user ticket verification status badge on EventsPage cards :: verification rule #552
+// [Airaf-B-44-L27] Display user ticket verification status badge on EventsPage cards :: verification rule #571
+// [Airaf-B-44-L28] Display user ticket verification status badge on EventsPage cards :: verification rule #590
+// [Airaf-B-44-L29] Display user ticket verification status badge on EventsPage cards :: verification rule #609
+// [Airaf-B-44-L30] Display user ticket verification status badge on EventsPage cards :: verification rule #628
+// [Airaf-B-44-L31] Display user ticket verification status badge on EventsPage cards :: verification rule #647
+// [Airaf-B-44-L32] Display user ticket verification status badge on EventsPage cards :: verification rule #666
+// [Airaf-B-44-L33] Display user ticket verification status badge on EventsPage cards :: verification rule #685
+// [Airaf-B-44-L34] Display user ticket verification status badge on EventsPage cards :: verification rule #704
+// [Airaf-B-44-L35] Display user ticket verification status badge on EventsPage cards :: verification rule #723
+// [Airaf-B-44-L36] Display user ticket verification status badge on EventsPage cards :: verification rule #742
+// [Airaf-B-44-L37] Display user ticket verification status badge on EventsPage cards :: verification rule #761
+// [Airaf-B-44-L38] Display user ticket verification status badge on EventsPage cards :: verification rule #780
+// [Airaf-B-44-L39] Display user ticket verification status badge on EventsPage cards :: verification rule #799
+// [Airaf-B-44-L40] Display user ticket verification status badge on EventsPage cards :: verification rule #818
+// [Airaf-B-44-L41] Display user ticket verification status badge on EventsPage cards :: verification rule #837
+// [Airaf-B-44-L42] Display user ticket verification status badge on EventsPage cards :: verification rule #856
+// [Airaf-B-44-L43] Display user ticket verification status badge on EventsPage cards :: verification rule #875
+// [Airaf-B-44-L44] Display user ticket verification status badge on EventsPage cards :: verification rule #894
+// [Airaf-B-44-L45] Display user ticket verification status badge on EventsPage cards :: verification rule #913
+// [Airaf-B-44-L46] Display user ticket verification status badge on EventsPage cards :: verification rule #932
+// [Airaf-B-44-L47] Display user ticket verification status badge on EventsPage cards :: verification rule #951
+// [Airaf-B-44-L48] Display user ticket verification status badge on EventsPage cards :: verification rule #970
+// [Airaf-B-44-L49] Display user ticket verification status badge on EventsPage cards :: verification rule #989
 // === [SPEC-BLOCK-END] ===
