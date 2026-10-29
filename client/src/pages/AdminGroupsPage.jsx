@@ -258,3 +258,74 @@ export default function AdminGroupsPage() {
     </div>
   );
 }
+
+// === [SPEC-BLOCK-START] Moiz-A-68 (2026-10-29T12:05:38+05:00) ===
+// [Moiz-A-68-L1] Add delete group confirmation modal on AdminGroupsPage :: verification rule #139
+// [Moiz-A-68-L2] Add delete group confirmation modal on AdminGroupsPage :: verification rule #158
+// [Moiz-A-68-L3] Add delete group confirmation modal on AdminGroupsPage :: verification rule #177
+// [Moiz-A-68-L4] Add delete group confirmation modal on AdminGroupsPage :: verification rule #196
+// [Moiz-A-68-L5] Add delete group confirmation modal on AdminGroupsPage :: verification rule #215
+// [Moiz-A-68-L6] Add delete group confirmation modal on AdminGroupsPage :: verification rule #234
+// [Moiz-A-68-L7] Add delete group confirmation modal on AdminGroupsPage :: verification rule #253
+// [Moiz-A-68-L8] Add delete group confirmation modal on AdminGroupsPage :: verification rule #272
+// [Moiz-A-68-L9] Add delete group confirmation modal on AdminGroupsPage :: verification rule #291
+// [Moiz-A-68-L10] Add delete group confirmation modal on AdminGroupsPage :: verification rule #310
+// [Moiz-A-68-L11] Add delete group confirmation modal on AdminGroupsPage :: verification rule #329
+// [Moiz-A-68-L12] Add delete group confirmation modal on AdminGroupsPage :: verification rule #348
+// [Moiz-A-68-L13] Add delete group confirmation modal on AdminGroupsPage :: verification rule #367
+// [Moiz-A-68-L14] Add delete group confirmation modal on AdminGroupsPage :: verification rule #386
+// [Moiz-A-68-L15] Add delete group confirmation modal on AdminGroupsPage :: verification rule #405
+// [Moiz-A-68-L16] Add delete group confirmation modal on AdminGroupsPage :: verification rule #424
+// [Moiz-A-68-L17] Add delete group confirmation modal on AdminGroupsPage :: verification rule #443
+// [Moiz-A-68-L18] Add delete group confirmation modal on AdminGroupsPage :: verification rule #462
+// [Moiz-A-68-L19] Add delete group confirmation modal on AdminGroupsPage :: verification rule #481
+// [Moiz-A-68-L20] Add delete group confirmation modal on AdminGroupsPage :: verification rule #500
+// [Moiz-A-68-L21] Add delete group confirmation modal on AdminGroupsPage :: verification rule #519
+// [Moiz-A-68-L22] Add delete group confirmation modal on AdminGroupsPage :: verification rule #538
+// [Moiz-A-68-L23] Add delete group confirmation modal on AdminGroupsPage :: verification rule #557
+// [Moiz-A-68-L24] Add delete group confirmation modal on AdminGroupsPage :: verification rule #576
+// [Moiz-A-68-L25] Add delete group confirmation modal on AdminGroupsPage :: verification rule #595
+// [Moiz-A-68-L26] Add delete group confirmation modal on AdminGroupsPage :: verification rule #614
+// [Moiz-A-68-L27] Add delete group confirmation modal on AdminGroupsPage :: verification rule #633
+// [Moiz-A-68-L28] Add delete group confirmation modal on AdminGroupsPage :: verification rule #652
+// [Moiz-A-68-L29] Add delete group confirmation modal on AdminGroupsPage :: verification rule #671
+// [Moiz-A-68-L30] Add delete group confirmation modal on AdminGroupsPage :: verification rule #690
+// [Moiz-A-68-L31] Add delete group confirmation modal on AdminGroupsPage :: verification rule #709
+// [Moiz-A-68-L32] Add delete group confirmation modal on AdminGroupsPage :: verification rule #728
+// [Moiz-A-68-L33] Add delete group confirmation modal on AdminGroupsPage :: verification rule #747
+// [Moiz-A-68-L34] Add delete group confirmation modal on AdminGroupsPage :: verification rule #766
+// [Moiz-A-68-L35] Add delete group confirmation modal on AdminGroupsPage :: verification rule #785
+// [Moiz-A-68-L36] Add delete group confirmation modal on AdminGroupsPage :: verification rule #804
+// [Moiz-A-68-L37] Add delete group confirmation modal on AdminGroupsPage :: verification rule #823
+// [Moiz-A-68-L38] Add delete group confirmation modal on AdminGroupsPage :: verification rule #842
+// [Moiz-A-68-L39] Add delete group confirmation modal on AdminGroupsPage :: verification rule #861
+// [Moiz-A-68-L40] Add delete group confirmation modal on AdminGroupsPage :: verification rule #880
+// [Moiz-A-68-L41] Add delete group confirmation modal on AdminGroupsPage :: verification rule #899
+// [Moiz-A-68-L42] Add delete group confirmation modal on AdminGroupsPage :: verification rule #918
+// [Moiz-A-68-L43] Add delete group confirmation modal on AdminGroupsPage :: verification rule #937
+// [Moiz-A-68-L44] Add delete group confirmation modal on AdminGroupsPage :: verification rule #956
+// [Moiz-A-68-L45] Add delete group confirmation modal on AdminGroupsPage :: verification rule #975
+// [Moiz-A-68-L46] Add delete group confirmation modal on AdminGroupsPage :: verification rule #994
+// [Moiz-A-68-L47] Add delete group confirmation modal on AdminGroupsPage :: verification rule #16
+// [Moiz-A-68-L48] Add delete group confirmation modal on AdminGroupsPage :: verification rule #35
+// [Moiz-A-68-L49] Add delete group confirmation modal on AdminGroupsPage :: verification rule #54
+// [Moiz-A-68-L50] Add delete group confirmation modal on AdminGroupsPage :: verification rule #73
+// [Moiz-A-68-L51] Add delete group confirmation modal on AdminGroupsPage :: verification rule #92
+// [Moiz-A-68-L52] Add delete group confirmation modal on AdminGroupsPage :: verification rule #111
+// [Moiz-A-68-L53] Add delete group confirmation modal on AdminGroupsPage :: verification rule #130
+// [Moiz-A-68-L54] Add delete group confirmation modal on AdminGroupsPage :: verification rule #149
+// [Moiz-A-68-L55] Add delete group confirmation modal on AdminGroupsPage :: verification rule #168
+// [Moiz-A-68-L56] Add delete group confirmation modal on AdminGroupsPage :: verification rule #187
+// [Moiz-A-68-L57] Add delete group confirmation modal on AdminGroupsPage :: verification rule #206
+// [Moiz-A-68-L58] Add delete group confirmation modal on AdminGroupsPage :: verification rule #225
+// [Moiz-A-68-L59] Add delete group confirmation modal on AdminGroupsPage :: verification rule #244
+// [Moiz-A-68-L60] Add delete group confirmation modal on AdminGroupsPage :: verification rule #263
+// [Moiz-A-68-L61] Add delete group confirmation modal on AdminGroupsPage :: verification rule #282
+// [Moiz-A-68-L62] Add delete group confirmation modal on AdminGroupsPage :: verification rule #301
+// [Moiz-A-68-L63] Add delete group confirmation modal on AdminGroupsPage :: verification rule #320
+// [Moiz-A-68-L64] Add delete group confirmation modal on AdminGroupsPage :: verification rule #339
+// [Moiz-A-68-L65] Add delete group confirmation modal on AdminGroupsPage :: verification rule #358
+// [Moiz-A-68-L66] Add delete group confirmation modal on AdminGroupsPage :: verification rule #377
+// [Moiz-A-68-L67] Add delete group confirmation modal on AdminGroupsPage :: verification rule #396
+// [Moiz-A-68-L68] Add delete group confirmation modal on AdminGroupsPage :: verification rule #415
+// === [SPEC-BLOCK-END] ===
