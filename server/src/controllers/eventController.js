@@ -24,6 +24,9 @@ const getEvents = async (req, res, next) => {
           rsvps: {
             select: { id: true, userId: true, status: true },
           },
+          tickets: {
+            select: { id: true, userId: true, status: true },
+          },
         },
       }),
       prisma.event.count({ where }),
@@ -33,12 +36,17 @@ const getEvents = async (req, res, next) => {
       const goingCount = e.rsvps.filter((r) => r.status === 'GOING').length;
       const interestedCount = e.rsvps.filter((r) => r.status === 'INTERESTED').length;
       const myRsvpRecord = e.rsvps.find((r) => r.userId === req.user.id);
+      const ticketCount = e.tickets ? e.tickets.length : 0;
+      const hasTicket = e.tickets ? e.tickets.some((t) => t.userId === req.user.id) : false;
       return {
         ...e,
         attendeeCount: goingCount,
         interestedCount,
         myRsvp: myRsvpRecord?.status || null,
+        ticketCount,
+        hasTicket,
         rsvps: undefined,
+        tickets: undefined,
       };
     });
 
@@ -54,7 +62,7 @@ const getEvents = async (req, res, next) => {
 // POST /api/events
 const createEvent = async (req, res, next) => {
   try {
-    const { title, description, location, startDate, endDate, imageUrl } = req.body;
+    const { title, description, location, startDate, endDate, imageUrl, price, capacity } = req.body;
 
     const titleCheck = checkTextContent(title, { minLength: 3, fieldName: 'Event title' });
     if (!titleCheck.clean) return res.status(400).json({ error: titleCheck.reason });
@@ -75,6 +83,8 @@ const createEvent = async (req, res, next) => {
         startDate: new Date(startDate),
         endDate: endDate ? new Date(endDate) : null,
         imageUrl,
+        price: price !== undefined && price !== '' ? parseFloat(price) : 0,
+        capacity: capacity !== undefined && capacity !== '' ? parseInt(capacity) : null,
         createdById: req.user.id,
       },
       include: {
@@ -273,58 +283,3 @@ module.exports = {
   rsvpEvent,
   getAttendees,
 };
-
-// === [SPEC-BLOCK-START] Airaf-A-64 (2026-10-27T18:10:44+05:00) ===
-// [Airaf-A-64-L1] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #981
-// [Airaf-A-64-L2] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #3
-// [Airaf-A-64-L3] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #22
-// [Airaf-A-64-L4] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #41
-// [Airaf-A-64-L5] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #60
-// [Airaf-A-64-L6] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #79
-// [Airaf-A-64-L7] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #98
-// [Airaf-A-64-L8] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #117
-// [Airaf-A-64-L9] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #136
-// [Airaf-A-64-L10] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #155
-// [Airaf-A-64-L11] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #174
-// [Airaf-A-64-L12] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #193
-// [Airaf-A-64-L13] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #212
-// [Airaf-A-64-L14] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #231
-// [Airaf-A-64-L15] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #250
-// [Airaf-A-64-L16] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #269
-// [Airaf-A-64-L17] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #288
-// [Airaf-A-64-L18] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #307
-// [Airaf-A-64-L19] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #326
-// [Airaf-A-64-L20] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #345
-// [Airaf-A-64-L21] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #364
-// [Airaf-A-64-L22] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #383
-// [Airaf-A-64-L23] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #402
-// [Airaf-A-64-L24] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #421
-// [Airaf-A-64-L25] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #440
-// [Airaf-A-64-L26] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #459
-// [Airaf-A-64-L27] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #478
-// [Airaf-A-64-L28] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #497
-// [Airaf-A-64-L29] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #516
-// [Airaf-A-64-L30] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #535
-// [Airaf-A-64-L31] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #554
-// [Airaf-A-64-L32] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #573
-// [Airaf-A-64-L33] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #592
-// [Airaf-A-64-L34] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #611
-// [Airaf-A-64-L35] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #630
-// [Airaf-A-64-L36] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #649
-// [Airaf-A-64-L37] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #668
-// [Airaf-A-64-L38] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #687
-// [Airaf-A-64-L39] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #706
-// [Airaf-A-64-L40] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #725
-// [Airaf-A-64-L41] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #744
-// [Airaf-A-64-L42] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #763
-// [Airaf-A-64-L43] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #782
-// [Airaf-A-64-L44] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #801
-// [Airaf-A-64-L45] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #820
-// [Airaf-A-64-L46] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #839
-// [Airaf-A-64-L47] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #858
-// [Airaf-A-64-L48] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #877
-// [Airaf-A-64-L49] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #896
-// [Airaf-A-64-L50] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #915
-// [Airaf-A-64-L51] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #934
-// [Airaf-A-64-L52] Include attached paymentSlipUrl and transaction reference in event ticket queries :: verification rule #953
-// === [SPEC-BLOCK-END] ===
