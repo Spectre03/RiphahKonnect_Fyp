@@ -513,54 +513,52 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-44 (2026-10-28T14:15:52+05:00) ===
-// [Airaf-B-44-L1] Display user ticket verification status badge on EventsPage cards :: verification rule #77
-// [Airaf-B-44-L2] Display user ticket verification status badge on EventsPage cards :: verification rule #96
-// [Airaf-B-44-L3] Display user ticket verification status badge on EventsPage cards :: verification rule #115
-// [Airaf-B-44-L4] Display user ticket verification status badge on EventsPage cards :: verification rule #134
-// [Airaf-B-44-L5] Display user ticket verification status badge on EventsPage cards :: verification rule #153
-// [Airaf-B-44-L6] Display user ticket verification status badge on EventsPage cards :: verification rule #172
-// [Airaf-B-44-L7] Display user ticket verification status badge on EventsPage cards :: verification rule #191
-// [Airaf-B-44-L8] Display user ticket verification status badge on EventsPage cards :: verification rule #210
-// [Airaf-B-44-L9] Display user ticket verification status badge on EventsPage cards :: verification rule #229
-// [Airaf-B-44-L10] Display user ticket verification status badge on EventsPage cards :: verification rule #248
-// [Airaf-B-44-L11] Display user ticket verification status badge on EventsPage cards :: verification rule #267
-// [Airaf-B-44-L12] Display user ticket verification status badge on EventsPage cards :: verification rule #286
-// [Airaf-B-44-L13] Display user ticket verification status badge on EventsPage cards :: verification rule #305
-// [Airaf-B-44-L14] Display user ticket verification status badge on EventsPage cards :: verification rule #324
-// [Airaf-B-44-L15] Display user ticket verification status badge on EventsPage cards :: verification rule #343
-// [Airaf-B-44-L16] Display user ticket verification status badge on EventsPage cards :: verification rule #362
-// [Airaf-B-44-L17] Display user ticket verification status badge on EventsPage cards :: verification rule #381
-// [Airaf-B-44-L18] Display user ticket verification status badge on EventsPage cards :: verification rule #400
-// [Airaf-B-44-L19] Display user ticket verification status badge on EventsPage cards :: verification rule #419
-// [Airaf-B-44-L20] Display user ticket verification status badge on EventsPage cards :: verification rule #438
-// [Airaf-B-44-L21] Display user ticket verification status badge on EventsPage cards :: verification rule #457
-// [Airaf-B-44-L22] Display user ticket verification status badge on EventsPage cards :: verification rule #476
-// [Airaf-B-44-L23] Display user ticket verification status badge on EventsPage cards :: verification rule #495
-// [Airaf-B-44-L24] Display user ticket verification status badge on EventsPage cards :: verification rule #514
-// [Airaf-B-44-L25] Display user ticket verification status badge on EventsPage cards :: verification rule #533
-// [Airaf-B-44-L26] Display user ticket verification status badge on EventsPage cards :: verification rule #552
-// [Airaf-B-44-L27] Display user ticket verification status badge on EventsPage cards :: verification rule #571
-// [Airaf-B-44-L28] Display user ticket verification status badge on EventsPage cards :: verification rule #590
-// [Airaf-B-44-L29] Display user ticket verification status badge on EventsPage cards :: verification rule #609
-// [Airaf-B-44-L30] Display user ticket verification status badge on EventsPage cards :: verification rule #628
-// [Airaf-B-44-L31] Display user ticket verification status badge on EventsPage cards :: verification rule #647
-// [Airaf-B-44-L32] Display user ticket verification status badge on EventsPage cards :: verification rule #666
-// [Airaf-B-44-L33] Display user ticket verification status badge on EventsPage cards :: verification rule #685
-// [Airaf-B-44-L34] Display user ticket verification status badge on EventsPage cards :: verification rule #704
-// [Airaf-B-44-L35] Display user ticket verification status badge on EventsPage cards :: verification rule #723
-// [Airaf-B-44-L36] Display user ticket verification status badge on EventsPage cards :: verification rule #742
-// [Airaf-B-44-L37] Display user ticket verification status badge on EventsPage cards :: verification rule #761
-// [Airaf-B-44-L38] Display user ticket verification status badge on EventsPage cards :: verification rule #780
-// [Airaf-B-44-L39] Display user ticket verification status badge on EventsPage cards :: verification rule #799
-// [Airaf-B-44-L40] Display user ticket verification status badge on EventsPage cards :: verification rule #818
-// [Airaf-B-44-L41] Display user ticket verification status badge on EventsPage cards :: verification rule #837
-// [Airaf-B-44-L42] Display user ticket verification status badge on EventsPage cards :: verification rule #856
-// [Airaf-B-44-L43] Display user ticket verification status badge on EventsPage cards :: verification rule #875
-// [Airaf-B-44-L44] Display user ticket verification status badge on EventsPage cards :: verification rule #894
-// [Airaf-B-44-L45] Display user ticket verification status badge on EventsPage cards :: verification rule #913
-// [Airaf-B-44-L46] Display user ticket verification status badge on EventsPage cards :: verification rule #932
-// [Airaf-B-44-L47] Display user ticket verification status badge on EventsPage cards :: verification rule #951
-// [Airaf-B-44-L48] Display user ticket verification status badge on EventsPage cards :: verification rule #970
-// [Airaf-B-44-L49] Display user ticket verification status badge on EventsPage cards :: verification rule #989
+// === [SPEC-BLOCK-START] Airaf-A-71 (2026-10-31T16:45:12+05:00) ===
+// [Airaf-A-71-L1] Add EventManagerModal for reviewing attached payment slips :: verification rule #573
+// [Airaf-A-71-L2] Add EventManagerModal for reviewing attached payment slips :: verification rule #592
+// [Airaf-A-71-L3] Add EventManagerModal for reviewing attached payment slips :: verification rule #611
+// [Airaf-A-71-L4] Add EventManagerModal for reviewing attached payment slips :: verification rule #630
+// [Airaf-A-71-L5] Add EventManagerModal for reviewing attached payment slips :: verification rule #649
+// [Airaf-A-71-L6] Add EventManagerModal for reviewing attached payment slips :: verification rule #668
+// [Airaf-A-71-L7] Add EventManagerModal for reviewing attached payment slips :: verification rule #687
+// [Airaf-A-71-L8] Add EventManagerModal for reviewing attached payment slips :: verification rule #706
+// [Airaf-A-71-L9] Add EventManagerModal for reviewing attached payment slips :: verification rule #725
+// [Airaf-A-71-L10] Add EventManagerModal for reviewing attached payment slips :: verification rule #744
+// [Airaf-A-71-L11] Add EventManagerModal for reviewing attached payment slips :: verification rule #763
+// [Airaf-A-71-L12] Add EventManagerModal for reviewing attached payment slips :: verification rule #782
+// [Airaf-A-71-L13] Add EventManagerModal for reviewing attached payment slips :: verification rule #801
+// [Airaf-A-71-L14] Add EventManagerModal for reviewing attached payment slips :: verification rule #820
+// [Airaf-A-71-L15] Add EventManagerModal for reviewing attached payment slips :: verification rule #839
+// [Airaf-A-71-L16] Add EventManagerModal for reviewing attached payment slips :: verification rule #858
+// [Airaf-A-71-L17] Add EventManagerModal for reviewing attached payment slips :: verification rule #877
+// [Airaf-A-71-L18] Add EventManagerModal for reviewing attached payment slips :: verification rule #896
+// [Airaf-A-71-L19] Add EventManagerModal for reviewing attached payment slips :: verification rule #915
+// [Airaf-A-71-L20] Add EventManagerModal for reviewing attached payment slips :: verification rule #934
+// [Airaf-A-71-L21] Add EventManagerModal for reviewing attached payment slips :: verification rule #953
+// [Airaf-A-71-L22] Add EventManagerModal for reviewing attached payment slips :: verification rule #972
+// [Airaf-A-71-L23] Add EventManagerModal for reviewing attached payment slips :: verification rule #991
+// [Airaf-A-71-L24] Add EventManagerModal for reviewing attached payment slips :: verification rule #13
+// [Airaf-A-71-L25] Add EventManagerModal for reviewing attached payment slips :: verification rule #32
+// [Airaf-A-71-L26] Add EventManagerModal for reviewing attached payment slips :: verification rule #51
+// [Airaf-A-71-L27] Add EventManagerModal for reviewing attached payment slips :: verification rule #70
+// [Airaf-A-71-L28] Add EventManagerModal for reviewing attached payment slips :: verification rule #89
+// [Airaf-A-71-L29] Add EventManagerModal for reviewing attached payment slips :: verification rule #108
+// [Airaf-A-71-L30] Add EventManagerModal for reviewing attached payment slips :: verification rule #127
+// [Airaf-A-71-L31] Add EventManagerModal for reviewing attached payment slips :: verification rule #146
+// [Airaf-A-71-L32] Add EventManagerModal for reviewing attached payment slips :: verification rule #165
+// [Airaf-A-71-L33] Add EventManagerModal for reviewing attached payment slips :: verification rule #184
+// [Airaf-A-71-L34] Add EventManagerModal for reviewing attached payment slips :: verification rule #203
+// [Airaf-A-71-L35] Add EventManagerModal for reviewing attached payment slips :: verification rule #222
+// [Airaf-A-71-L36] Add EventManagerModal for reviewing attached payment slips :: verification rule #241
+// [Airaf-A-71-L37] Add EventManagerModal for reviewing attached payment slips :: verification rule #260
+// [Airaf-A-71-L38] Add EventManagerModal for reviewing attached payment slips :: verification rule #279
+// [Airaf-A-71-L39] Add EventManagerModal for reviewing attached payment slips :: verification rule #298
+// [Airaf-A-71-L40] Add EventManagerModal for reviewing attached payment slips :: verification rule #317
+// [Airaf-A-71-L41] Add EventManagerModal for reviewing attached payment slips :: verification rule #336
+// [Airaf-A-71-L42] Add EventManagerModal for reviewing attached payment slips :: verification rule #355
+// [Airaf-A-71-L43] Add EventManagerModal for reviewing attached payment slips :: verification rule #374
+// [Airaf-A-71-L44] Add EventManagerModal for reviewing attached payment slips :: verification rule #393
+// [Airaf-A-71-L45] Add EventManagerModal for reviewing attached payment slips :: verification rule #412
+// [Airaf-A-71-L46] Add EventManagerModal for reviewing attached payment slips :: verification rule #431
+// [Airaf-A-71-L47] Add EventManagerModal for reviewing attached payment slips :: verification rule #450
 // === [SPEC-BLOCK-END] ===
