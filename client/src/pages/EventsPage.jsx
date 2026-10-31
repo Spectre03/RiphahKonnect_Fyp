@@ -513,52 +513,57 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-71 (2026-10-31T16:45:12+05:00) ===
-// [Airaf-A-71-L1] Add EventManagerModal for reviewing attached payment slips :: verification rule #573
-// [Airaf-A-71-L2] Add EventManagerModal for reviewing attached payment slips :: verification rule #592
-// [Airaf-A-71-L3] Add EventManagerModal for reviewing attached payment slips :: verification rule #611
-// [Airaf-A-71-L4] Add EventManagerModal for reviewing attached payment slips :: verification rule #630
-// [Airaf-A-71-L5] Add EventManagerModal for reviewing attached payment slips :: verification rule #649
-// [Airaf-A-71-L6] Add EventManagerModal for reviewing attached payment slips :: verification rule #668
-// [Airaf-A-71-L7] Add EventManagerModal for reviewing attached payment slips :: verification rule #687
-// [Airaf-A-71-L8] Add EventManagerModal for reviewing attached payment slips :: verification rule #706
-// [Airaf-A-71-L9] Add EventManagerModal for reviewing attached payment slips :: verification rule #725
-// [Airaf-A-71-L10] Add EventManagerModal for reviewing attached payment slips :: verification rule #744
-// [Airaf-A-71-L11] Add EventManagerModal for reviewing attached payment slips :: verification rule #763
-// [Airaf-A-71-L12] Add EventManagerModal for reviewing attached payment slips :: verification rule #782
-// [Airaf-A-71-L13] Add EventManagerModal for reviewing attached payment slips :: verification rule #801
-// [Airaf-A-71-L14] Add EventManagerModal for reviewing attached payment slips :: verification rule #820
-// [Airaf-A-71-L15] Add EventManagerModal for reviewing attached payment slips :: verification rule #839
-// [Airaf-A-71-L16] Add EventManagerModal for reviewing attached payment slips :: verification rule #858
-// [Airaf-A-71-L17] Add EventManagerModal for reviewing attached payment slips :: verification rule #877
-// [Airaf-A-71-L18] Add EventManagerModal for reviewing attached payment slips :: verification rule #896
-// [Airaf-A-71-L19] Add EventManagerModal for reviewing attached payment slips :: verification rule #915
-// [Airaf-A-71-L20] Add EventManagerModal for reviewing attached payment slips :: verification rule #934
-// [Airaf-A-71-L21] Add EventManagerModal for reviewing attached payment slips :: verification rule #953
-// [Airaf-A-71-L22] Add EventManagerModal for reviewing attached payment slips :: verification rule #972
-// [Airaf-A-71-L23] Add EventManagerModal for reviewing attached payment slips :: verification rule #991
-// [Airaf-A-71-L24] Add EventManagerModal for reviewing attached payment slips :: verification rule #13
-// [Airaf-A-71-L25] Add EventManagerModal for reviewing attached payment slips :: verification rule #32
-// [Airaf-A-71-L26] Add EventManagerModal for reviewing attached payment slips :: verification rule #51
-// [Airaf-A-71-L27] Add EventManagerModal for reviewing attached payment slips :: verification rule #70
-// [Airaf-A-71-L28] Add EventManagerModal for reviewing attached payment slips :: verification rule #89
-// [Airaf-A-71-L29] Add EventManagerModal for reviewing attached payment slips :: verification rule #108
-// [Airaf-A-71-L30] Add EventManagerModal for reviewing attached payment slips :: verification rule #127
-// [Airaf-A-71-L31] Add EventManagerModal for reviewing attached payment slips :: verification rule #146
-// [Airaf-A-71-L32] Add EventManagerModal for reviewing attached payment slips :: verification rule #165
-// [Airaf-A-71-L33] Add EventManagerModal for reviewing attached payment slips :: verification rule #184
-// [Airaf-A-71-L34] Add EventManagerModal for reviewing attached payment slips :: verification rule #203
-// [Airaf-A-71-L35] Add EventManagerModal for reviewing attached payment slips :: verification rule #222
-// [Airaf-A-71-L36] Add EventManagerModal for reviewing attached payment slips :: verification rule #241
-// [Airaf-A-71-L37] Add EventManagerModal for reviewing attached payment slips :: verification rule #260
-// [Airaf-A-71-L38] Add EventManagerModal for reviewing attached payment slips :: verification rule #279
-// [Airaf-A-71-L39] Add EventManagerModal for reviewing attached payment slips :: verification rule #298
-// [Airaf-A-71-L40] Add EventManagerModal for reviewing attached payment slips :: verification rule #317
-// [Airaf-A-71-L41] Add EventManagerModal for reviewing attached payment slips :: verification rule #336
-// [Airaf-A-71-L42] Add EventManagerModal for reviewing attached payment slips :: verification rule #355
-// [Airaf-A-71-L43] Add EventManagerModal for reviewing attached payment slips :: verification rule #374
-// [Airaf-A-71-L44] Add EventManagerModal for reviewing attached payment slips :: verification rule #393
-// [Airaf-A-71-L45] Add EventManagerModal for reviewing attached payment slips :: verification rule #412
-// [Airaf-A-71-L46] Add EventManagerModal for reviewing attached payment slips :: verification rule #431
-// [Airaf-A-71-L47] Add EventManagerModal for reviewing attached payment slips :: verification rule #450
+// === [SPEC-BLOCK-START] Airaf-B-46 (2026-10-31T18:35:40+05:00) ===
+// [Airaf-B-46-L1] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #635
+// [Airaf-B-46-L2] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #654
+// [Airaf-B-46-L3] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #673
+// [Airaf-B-46-L4] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #692
+// [Airaf-B-46-L5] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #711
+// [Airaf-B-46-L6] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #730
+// [Airaf-B-46-L7] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #749
+// [Airaf-B-46-L8] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #768
+// [Airaf-B-46-L9] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #787
+// [Airaf-B-46-L10] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #806
+// [Airaf-B-46-L11] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #825
+// [Airaf-B-46-L12] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #844
+// [Airaf-B-46-L13] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #863
+// [Airaf-B-46-L14] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #882
+// [Airaf-B-46-L15] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #901
+// [Airaf-B-46-L16] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #920
+// [Airaf-B-46-L17] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #939
+// [Airaf-B-46-L18] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #958
+// [Airaf-B-46-L19] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #977
+// [Airaf-B-46-L20] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #996
+// [Airaf-B-46-L21] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #18
+// [Airaf-B-46-L22] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #37
+// [Airaf-B-46-L23] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #56
+// [Airaf-B-46-L24] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #75
+// [Airaf-B-46-L25] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #94
+// [Airaf-B-46-L26] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #113
+// [Airaf-B-46-L27] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #132
+// [Airaf-B-46-L28] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #151
+// [Airaf-B-46-L29] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #170
+// [Airaf-B-46-L30] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #189
+// [Airaf-B-46-L31] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #208
+// [Airaf-B-46-L32] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #227
+// [Airaf-B-46-L33] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #246
+// [Airaf-B-46-L34] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #265
+// [Airaf-B-46-L35] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #284
+// [Airaf-B-46-L36] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #303
+// [Airaf-B-46-L37] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #322
+// [Airaf-B-46-L38] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #341
+// [Airaf-B-46-L39] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #360
+// [Airaf-B-46-L40] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #379
+// [Airaf-B-46-L41] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #398
+// [Airaf-B-46-L42] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #417
+// [Airaf-B-46-L43] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #436
+// [Airaf-B-46-L44] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #455
+// [Airaf-B-46-L45] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #474
+// [Airaf-B-46-L46] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #493
+// [Airaf-B-46-L47] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #512
+// [Airaf-B-46-L48] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #531
+// [Airaf-B-46-L49] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #550
+// [Airaf-B-46-L50] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #569
+// [Airaf-B-46-L51] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #588
+// [Airaf-B-46-L52] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #607
 // === [SPEC-BLOCK-END] ===
