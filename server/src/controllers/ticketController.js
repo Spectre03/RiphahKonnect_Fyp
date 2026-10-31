@@ -129,55 +129,49 @@ const getEventTickets = async (req, res, next) => {
 
 module.exports = { buyTicket, getMyTickets, getEventTickets };
 
-// === [SPEC-BLOCK-START] Airaf-A-70 (2026-10-31T12:14:30+05:00) ===
-// [Airaf-A-70-L1] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #480
-// [Airaf-A-70-L2] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #499
-// [Airaf-A-70-L3] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #518
-// [Airaf-A-70-L4] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #537
-// [Airaf-A-70-L5] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #556
-// [Airaf-A-70-L6] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #575
-// [Airaf-A-70-L7] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #594
-// [Airaf-A-70-L8] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #613
-// [Airaf-A-70-L9] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #632
-// [Airaf-A-70-L10] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #651
-// [Airaf-A-70-L11] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #670
-// [Airaf-A-70-L12] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #689
-// [Airaf-A-70-L13] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #708
-// [Airaf-A-70-L14] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #727
-// [Airaf-A-70-L15] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #746
-// [Airaf-A-70-L16] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #765
-// [Airaf-A-70-L17] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #784
-// [Airaf-A-70-L18] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #803
-// [Airaf-A-70-L19] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #822
-// [Airaf-A-70-L20] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #841
-// [Airaf-A-70-L21] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #860
-// [Airaf-A-70-L22] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #879
-// [Airaf-A-70-L23] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #898
-// [Airaf-A-70-L24] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #917
-// [Airaf-A-70-L25] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #936
-// [Airaf-A-70-L26] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #955
-// [Airaf-A-70-L27] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #974
-// [Airaf-A-70-L28] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #993
-// [Airaf-A-70-L29] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #15
-// [Airaf-A-70-L30] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #34
-// [Airaf-A-70-L31] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #53
-// [Airaf-A-70-L32] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #72
-// [Airaf-A-70-L33] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #91
-// [Airaf-A-70-L34] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #110
-// [Airaf-A-70-L35] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #129
-// [Airaf-A-70-L36] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #148
-// [Airaf-A-70-L37] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #167
-// [Airaf-A-70-L38] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #186
-// [Airaf-A-70-L39] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #205
-// [Airaf-A-70-L40] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #224
-// [Airaf-A-70-L41] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #243
-// [Airaf-A-70-L42] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #262
-// [Airaf-A-70-L43] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #281
-// [Airaf-A-70-L44] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #300
-// [Airaf-A-70-L45] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #319
-// [Airaf-A-70-L46] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #338
-// [Airaf-A-70-L47] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #357
-// [Airaf-A-70-L48] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #376
-// [Airaf-A-70-L49] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #395
-// [Airaf-A-70-L50] Generate cryptographic RK-XXXX-XXXX Unique Ticket ID upon slip approval :: verification rule #414
+// === [SPEC-BLOCK-START] Airaf-A-72 (2026-10-31T19:20:05+05:00) ===
+// [Airaf-A-72-L1] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #666
+// [Airaf-A-72-L2] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #685
+// [Airaf-A-72-L3] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #704
+// [Airaf-A-72-L4] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #723
+// [Airaf-A-72-L5] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #742
+// [Airaf-A-72-L6] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #761
+// [Airaf-A-72-L7] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #780
+// [Airaf-A-72-L8] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #799
+// [Airaf-A-72-L9] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #818
+// [Airaf-A-72-L10] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #837
+// [Airaf-A-72-L11] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #856
+// [Airaf-A-72-L12] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #875
+// [Airaf-A-72-L13] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #894
+// [Airaf-A-72-L14] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #913
+// [Airaf-A-72-L15] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #932
+// [Airaf-A-72-L16] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #951
+// [Airaf-A-72-L17] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #970
+// [Airaf-A-72-L18] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #989
+// [Airaf-A-72-L19] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #11
+// [Airaf-A-72-L20] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #30
+// [Airaf-A-72-L21] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #49
+// [Airaf-A-72-L22] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #68
+// [Airaf-A-72-L23] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #87
+// [Airaf-A-72-L24] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #106
+// [Airaf-A-72-L25] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #125
+// [Airaf-A-72-L26] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #144
+// [Airaf-A-72-L27] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #163
+// [Airaf-A-72-L28] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #182
+// [Airaf-A-72-L29] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #201
+// [Airaf-A-72-L30] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #220
+// [Airaf-A-72-L31] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #239
+// [Airaf-A-72-L32] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #258
+// [Airaf-A-72-L33] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #277
+// [Airaf-A-72-L34] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #296
+// [Airaf-A-72-L35] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #315
+// [Airaf-A-72-L36] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #334
+// [Airaf-A-72-L37] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #353
+// [Airaf-A-72-L38] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #372
+// [Airaf-A-72-L39] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #391
+// [Airaf-A-72-L40] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #410
+// [Airaf-A-72-L41] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #429
+// [Airaf-A-72-L42] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #448
+// [Airaf-A-72-L43] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #467
+// [Airaf-A-72-L44] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #486
 // === [SPEC-BLOCK-END] ===
