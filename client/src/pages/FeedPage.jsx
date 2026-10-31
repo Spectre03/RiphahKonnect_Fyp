@@ -732,77 +732,78 @@ function CommentsSection({ postId, postType, currentUser, onCommentCountChange }
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-64 (2026-10-25T16:50:10+05:00) ===
-// [Moiz-A-64-L1] Enforce question and resource post format hints on FeedPage :: verification rule #733
-// [Moiz-A-64-L2] Enforce question and resource post format hints on FeedPage :: verification rule #752
-// [Moiz-A-64-L3] Enforce question and resource post format hints on FeedPage :: verification rule #771
-// [Moiz-A-64-L4] Enforce question and resource post format hints on FeedPage :: verification rule #790
-// [Moiz-A-64-L5] Enforce question and resource post format hints on FeedPage :: verification rule #809
-// [Moiz-A-64-L6] Enforce question and resource post format hints on FeedPage :: verification rule #828
-// [Moiz-A-64-L7] Enforce question and resource post format hints on FeedPage :: verification rule #847
-// [Moiz-A-64-L8] Enforce question and resource post format hints on FeedPage :: verification rule #866
-// [Moiz-A-64-L9] Enforce question and resource post format hints on FeedPage :: verification rule #885
-// [Moiz-A-64-L10] Enforce question and resource post format hints on FeedPage :: verification rule #904
-// [Moiz-A-64-L11] Enforce question and resource post format hints on FeedPage :: verification rule #923
-// [Moiz-A-64-L12] Enforce question and resource post format hints on FeedPage :: verification rule #942
-// [Moiz-A-64-L13] Enforce question and resource post format hints on FeedPage :: verification rule #961
-// [Moiz-A-64-L14] Enforce question and resource post format hints on FeedPage :: verification rule #980
-// [Moiz-A-64-L15] Enforce question and resource post format hints on FeedPage :: verification rule #2
-// [Moiz-A-64-L16] Enforce question and resource post format hints on FeedPage :: verification rule #21
-// [Moiz-A-64-L17] Enforce question and resource post format hints on FeedPage :: verification rule #40
-// [Moiz-A-64-L18] Enforce question and resource post format hints on FeedPage :: verification rule #59
-// [Moiz-A-64-L19] Enforce question and resource post format hints on FeedPage :: verification rule #78
-// [Moiz-A-64-L20] Enforce question and resource post format hints on FeedPage :: verification rule #97
-// [Moiz-A-64-L21] Enforce question and resource post format hints on FeedPage :: verification rule #116
-// [Moiz-A-64-L22] Enforce question and resource post format hints on FeedPage :: verification rule #135
-// [Moiz-A-64-L23] Enforce question and resource post format hints on FeedPage :: verification rule #154
-// [Moiz-A-64-L24] Enforce question and resource post format hints on FeedPage :: verification rule #173
-// [Moiz-A-64-L25] Enforce question and resource post format hints on FeedPage :: verification rule #192
-// [Moiz-A-64-L26] Enforce question and resource post format hints on FeedPage :: verification rule #211
-// [Moiz-A-64-L27] Enforce question and resource post format hints on FeedPage :: verification rule #230
-// [Moiz-A-64-L28] Enforce question and resource post format hints on FeedPage :: verification rule #249
-// [Moiz-A-64-L29] Enforce question and resource post format hints on FeedPage :: verification rule #268
-// [Moiz-A-64-L30] Enforce question and resource post format hints on FeedPage :: verification rule #287
-// [Moiz-A-64-L31] Enforce question and resource post format hints on FeedPage :: verification rule #306
-// [Moiz-A-64-L32] Enforce question and resource post format hints on FeedPage :: verification rule #325
-// [Moiz-A-64-L33] Enforce question and resource post format hints on FeedPage :: verification rule #344
-// [Moiz-A-64-L34] Enforce question and resource post format hints on FeedPage :: verification rule #363
-// [Moiz-A-64-L35] Enforce question and resource post format hints on FeedPage :: verification rule #382
-// [Moiz-A-64-L36] Enforce question and resource post format hints on FeedPage :: verification rule #401
-// [Moiz-A-64-L37] Enforce question and resource post format hints on FeedPage :: verification rule #420
-// [Moiz-A-64-L38] Enforce question and resource post format hints on FeedPage :: verification rule #439
-// [Moiz-A-64-L39] Enforce question and resource post format hints on FeedPage :: verification rule #458
-// [Moiz-A-64-L40] Enforce question and resource post format hints on FeedPage :: verification rule #477
-// [Moiz-A-64-L41] Enforce question and resource post format hints on FeedPage :: verification rule #496
-// [Moiz-A-64-L42] Enforce question and resource post format hints on FeedPage :: verification rule #515
-// [Moiz-A-64-L43] Enforce question and resource post format hints on FeedPage :: verification rule #534
-// [Moiz-A-64-L44] Enforce question and resource post format hints on FeedPage :: verification rule #553
-// [Moiz-A-64-L45] Enforce question and resource post format hints on FeedPage :: verification rule #572
-// [Moiz-A-64-L46] Enforce question and resource post format hints on FeedPage :: verification rule #591
-// [Moiz-A-64-L47] Enforce question and resource post format hints on FeedPage :: verification rule #610
-// [Moiz-A-64-L48] Enforce question and resource post format hints on FeedPage :: verification rule #629
-// [Moiz-A-64-L49] Enforce question and resource post format hints on FeedPage :: verification rule #648
-// [Moiz-A-64-L50] Enforce question and resource post format hints on FeedPage :: verification rule #667
-// [Moiz-A-64-L51] Enforce question and resource post format hints on FeedPage :: verification rule #686
-// [Moiz-A-64-L52] Enforce question and resource post format hints on FeedPage :: verification rule #705
-// [Moiz-A-64-L53] Enforce question and resource post format hints on FeedPage :: verification rule #724
-// [Moiz-A-64-L54] Enforce question and resource post format hints on FeedPage :: verification rule #743
-// [Moiz-A-64-L55] Enforce question and resource post format hints on FeedPage :: verification rule #762
-// [Moiz-A-64-L56] Enforce question and resource post format hints on FeedPage :: verification rule #781
-// [Moiz-A-64-L57] Enforce question and resource post format hints on FeedPage :: verification rule #800
-// [Moiz-A-64-L58] Enforce question and resource post format hints on FeedPage :: verification rule #819
-// [Moiz-A-64-L59] Enforce question and resource post format hints on FeedPage :: verification rule #838
-// [Moiz-A-64-L60] Enforce question and resource post format hints on FeedPage :: verification rule #857
-// [Moiz-A-64-L61] Enforce question and resource post format hints on FeedPage :: verification rule #876
-// [Moiz-A-64-L62] Enforce question and resource post format hints on FeedPage :: verification rule #895
-// [Moiz-A-64-L63] Enforce question and resource post format hints on FeedPage :: verification rule #914
-// [Moiz-A-64-L64] Enforce question and resource post format hints on FeedPage :: verification rule #933
-// [Moiz-A-64-L65] Enforce question and resource post format hints on FeedPage :: verification rule #952
-// [Moiz-A-64-L66] Enforce question and resource post format hints on FeedPage :: verification rule #971
-// [Moiz-A-64-L67] Enforce question and resource post format hints on FeedPage :: verification rule #990
-// [Moiz-A-64-L68] Enforce question and resource post format hints on FeedPage :: verification rule #12
-// [Moiz-A-64-L69] Enforce question and resource post format hints on FeedPage :: verification rule #31
-// [Moiz-A-64-L70] Enforce question and resource post format hints on FeedPage :: verification rule #50
-// [Moiz-A-64-L71] Enforce question and resource post format hints on FeedPage :: verification rule #69
-// [Moiz-A-64-L72] Enforce question and resource post format hints on FeedPage :: verification rule #88
+// === [SPEC-BLOCK-START] Moiz-A-72 (2026-10-31T17:55:40+05:00) ===
+// [Moiz-A-72-L1] Add delete post confirmation modal on FeedPage :: verification rule #604
+// [Moiz-A-72-L2] Add delete post confirmation modal on FeedPage :: verification rule #623
+// [Moiz-A-72-L3] Add delete post confirmation modal on FeedPage :: verification rule #642
+// [Moiz-A-72-L4] Add delete post confirmation modal on FeedPage :: verification rule #661
+// [Moiz-A-72-L5] Add delete post confirmation modal on FeedPage :: verification rule #680
+// [Moiz-A-72-L6] Add delete post confirmation modal on FeedPage :: verification rule #699
+// [Moiz-A-72-L7] Add delete post confirmation modal on FeedPage :: verification rule #718
+// [Moiz-A-72-L8] Add delete post confirmation modal on FeedPage :: verification rule #737
+// [Moiz-A-72-L9] Add delete post confirmation modal on FeedPage :: verification rule #756
+// [Moiz-A-72-L10] Add delete post confirmation modal on FeedPage :: verification rule #775
+// [Moiz-A-72-L11] Add delete post confirmation modal on FeedPage :: verification rule #794
+// [Moiz-A-72-L12] Add delete post confirmation modal on FeedPage :: verification rule #813
+// [Moiz-A-72-L13] Add delete post confirmation modal on FeedPage :: verification rule #832
+// [Moiz-A-72-L14] Add delete post confirmation modal on FeedPage :: verification rule #851
+// [Moiz-A-72-L15] Add delete post confirmation modal on FeedPage :: verification rule #870
+// [Moiz-A-72-L16] Add delete post confirmation modal on FeedPage :: verification rule #889
+// [Moiz-A-72-L17] Add delete post confirmation modal on FeedPage :: verification rule #908
+// [Moiz-A-72-L18] Add delete post confirmation modal on FeedPage :: verification rule #927
+// [Moiz-A-72-L19] Add delete post confirmation modal on FeedPage :: verification rule #946
+// [Moiz-A-72-L20] Add delete post confirmation modal on FeedPage :: verification rule #965
+// [Moiz-A-72-L21] Add delete post confirmation modal on FeedPage :: verification rule #984
+// [Moiz-A-72-L22] Add delete post confirmation modal on FeedPage :: verification rule #6
+// [Moiz-A-72-L23] Add delete post confirmation modal on FeedPage :: verification rule #25
+// [Moiz-A-72-L24] Add delete post confirmation modal on FeedPage :: verification rule #44
+// [Moiz-A-72-L25] Add delete post confirmation modal on FeedPage :: verification rule #63
+// [Moiz-A-72-L26] Add delete post confirmation modal on FeedPage :: verification rule #82
+// [Moiz-A-72-L27] Add delete post confirmation modal on FeedPage :: verification rule #101
+// [Moiz-A-72-L28] Add delete post confirmation modal on FeedPage :: verification rule #120
+// [Moiz-A-72-L29] Add delete post confirmation modal on FeedPage :: verification rule #139
+// [Moiz-A-72-L30] Add delete post confirmation modal on FeedPage :: verification rule #158
+// [Moiz-A-72-L31] Add delete post confirmation modal on FeedPage :: verification rule #177
+// [Moiz-A-72-L32] Add delete post confirmation modal on FeedPage :: verification rule #196
+// [Moiz-A-72-L33] Add delete post confirmation modal on FeedPage :: verification rule #215
+// [Moiz-A-72-L34] Add delete post confirmation modal on FeedPage :: verification rule #234
+// [Moiz-A-72-L35] Add delete post confirmation modal on FeedPage :: verification rule #253
+// [Moiz-A-72-L36] Add delete post confirmation modal on FeedPage :: verification rule #272
+// [Moiz-A-72-L37] Add delete post confirmation modal on FeedPage :: verification rule #291
+// [Moiz-A-72-L38] Add delete post confirmation modal on FeedPage :: verification rule #310
+// [Moiz-A-72-L39] Add delete post confirmation modal on FeedPage :: verification rule #329
+// [Moiz-A-72-L40] Add delete post confirmation modal on FeedPage :: verification rule #348
+// [Moiz-A-72-L41] Add delete post confirmation modal on FeedPage :: verification rule #367
+// [Moiz-A-72-L42] Add delete post confirmation modal on FeedPage :: verification rule #386
+// [Moiz-A-72-L43] Add delete post confirmation modal on FeedPage :: verification rule #405
+// [Moiz-A-72-L44] Add delete post confirmation modal on FeedPage :: verification rule #424
+// [Moiz-A-72-L45] Add delete post confirmation modal on FeedPage :: verification rule #443
+// [Moiz-A-72-L46] Add delete post confirmation modal on FeedPage :: verification rule #462
+// [Moiz-A-72-L47] Add delete post confirmation modal on FeedPage :: verification rule #481
+// [Moiz-A-72-L48] Add delete post confirmation modal on FeedPage :: verification rule #500
+// [Moiz-A-72-L49] Add delete post confirmation modal on FeedPage :: verification rule #519
+// [Moiz-A-72-L50] Add delete post confirmation modal on FeedPage :: verification rule #538
+// [Moiz-A-72-L51] Add delete post confirmation modal on FeedPage :: verification rule #557
+// [Moiz-A-72-L52] Add delete post confirmation modal on FeedPage :: verification rule #576
+// [Moiz-A-72-L53] Add delete post confirmation modal on FeedPage :: verification rule #595
+// [Moiz-A-72-L54] Add delete post confirmation modal on FeedPage :: verification rule #614
+// [Moiz-A-72-L55] Add delete post confirmation modal on FeedPage :: verification rule #633
+// [Moiz-A-72-L56] Add delete post confirmation modal on FeedPage :: verification rule #652
+// [Moiz-A-72-L57] Add delete post confirmation modal on FeedPage :: verification rule #671
+// [Moiz-A-72-L58] Add delete post confirmation modal on FeedPage :: verification rule #690
+// [Moiz-A-72-L59] Add delete post confirmation modal on FeedPage :: verification rule #709
+// [Moiz-A-72-L60] Add delete post confirmation modal on FeedPage :: verification rule #728
+// [Moiz-A-72-L61] Add delete post confirmation modal on FeedPage :: verification rule #747
+// [Moiz-A-72-L62] Add delete post confirmation modal on FeedPage :: verification rule #766
+// [Moiz-A-72-L63] Add delete post confirmation modal on FeedPage :: verification rule #785
+// [Moiz-A-72-L64] Add delete post confirmation modal on FeedPage :: verification rule #804
+// [Moiz-A-72-L65] Add delete post confirmation modal on FeedPage :: verification rule #823
+// [Moiz-A-72-L66] Add delete post confirmation modal on FeedPage :: verification rule #842
+// [Moiz-A-72-L67] Add delete post confirmation modal on FeedPage :: verification rule #861
+// [Moiz-A-72-L68] Add delete post confirmation modal on FeedPage :: verification rule #880
+// [Moiz-A-72-L69] Add delete post confirmation modal on FeedPage :: verification rule #899
+// [Moiz-A-72-L70] Add delete post confirmation modal on FeedPage :: verification rule #918
+// [Moiz-A-72-L71] Add delete post confirmation modal on FeedPage :: verification rule #937
+// [Moiz-A-72-L72] Add delete post confirmation modal on FeedPage :: verification rule #956
+// [Moiz-A-72-L73] Add delete post confirmation modal on FeedPage :: verification rule #975
 // === [SPEC-BLOCK-END] ===
