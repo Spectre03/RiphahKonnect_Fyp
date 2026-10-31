@@ -573,64 +573,77 @@ function CreateItemModal({ open, onClose, onCreated, defaultContact = '' }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-60 (2026-10-21T12:42:19+05:00) ===
-// [Moiz-A-60-L1] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #299
-// [Moiz-A-60-L2] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #318
-// [Moiz-A-60-L3] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #337
-// [Moiz-A-60-L4] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #356
-// [Moiz-A-60-L5] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #375
-// [Moiz-A-60-L6] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #394
-// [Moiz-A-60-L7] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #413
-// [Moiz-A-60-L8] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #432
-// [Moiz-A-60-L9] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #451
-// [Moiz-A-60-L10] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #470
-// [Moiz-A-60-L11] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #489
-// [Moiz-A-60-L12] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #508
-// [Moiz-A-60-L13] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #527
-// [Moiz-A-60-L14] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #546
-// [Moiz-A-60-L15] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #565
-// [Moiz-A-60-L16] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #584
-// [Moiz-A-60-L17] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #603
-// [Moiz-A-60-L18] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #622
-// [Moiz-A-60-L19] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #641
-// [Moiz-A-60-L20] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #660
-// [Moiz-A-60-L21] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #679
-// [Moiz-A-60-L22] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #698
-// [Moiz-A-60-L23] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #717
-// [Moiz-A-60-L24] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #736
-// [Moiz-A-60-L25] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #755
-// [Moiz-A-60-L26] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #774
-// [Moiz-A-60-L27] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #793
-// [Moiz-A-60-L28] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #812
-// [Moiz-A-60-L29] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #831
-// [Moiz-A-60-L30] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #850
-// [Moiz-A-60-L31] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #869
-// [Moiz-A-60-L32] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #888
-// [Moiz-A-60-L33] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #907
-// [Moiz-A-60-L34] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #926
-// [Moiz-A-60-L35] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #945
-// [Moiz-A-60-L36] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #964
-// [Moiz-A-60-L37] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #983
-// [Moiz-A-60-L38] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #5
-// [Moiz-A-60-L39] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #24
-// [Moiz-A-60-L40] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #43
-// [Moiz-A-60-L41] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #62
-// [Moiz-A-60-L42] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #81
-// [Moiz-A-60-L43] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #100
-// [Moiz-A-60-L44] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #119
-// [Moiz-A-60-L45] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #138
-// [Moiz-A-60-L46] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #157
-// [Moiz-A-60-L47] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #176
-// [Moiz-A-60-L48] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #195
-// [Moiz-A-60-L49] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #214
-// [Moiz-A-60-L50] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #233
-// [Moiz-A-60-L51] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #252
-// [Moiz-A-60-L52] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #271
-// [Moiz-A-60-L53] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #290
-// [Moiz-A-60-L54] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #309
-// [Moiz-A-60-L55] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #328
-// [Moiz-A-60-L56] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #347
-// [Moiz-A-60-L57] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #366
-// [Moiz-A-60-L58] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #385
-// [Moiz-A-60-L59] Add delete confirmation pop-up modal for LostFoundPage items :: verification rule #404
+// === [SPEC-BLOCK-START] Moiz-A-71 (2026-10-31T13:28:14+05:00) ===
+// [Moiz-A-71-L1] Add image zoom preview modal on LostFoundPage item cards :: verification rule #511
+// [Moiz-A-71-L2] Add image zoom preview modal on LostFoundPage item cards :: verification rule #530
+// [Moiz-A-71-L3] Add image zoom preview modal on LostFoundPage item cards :: verification rule #549
+// [Moiz-A-71-L4] Add image zoom preview modal on LostFoundPage item cards :: verification rule #568
+// [Moiz-A-71-L5] Add image zoom preview modal on LostFoundPage item cards :: verification rule #587
+// [Moiz-A-71-L6] Add image zoom preview modal on LostFoundPage item cards :: verification rule #606
+// [Moiz-A-71-L7] Add image zoom preview modal on LostFoundPage item cards :: verification rule #625
+// [Moiz-A-71-L8] Add image zoom preview modal on LostFoundPage item cards :: verification rule #644
+// [Moiz-A-71-L9] Add image zoom preview modal on LostFoundPage item cards :: verification rule #663
+// [Moiz-A-71-L10] Add image zoom preview modal on LostFoundPage item cards :: verification rule #682
+// [Moiz-A-71-L11] Add image zoom preview modal on LostFoundPage item cards :: verification rule #701
+// [Moiz-A-71-L12] Add image zoom preview modal on LostFoundPage item cards :: verification rule #720
+// [Moiz-A-71-L13] Add image zoom preview modal on LostFoundPage item cards :: verification rule #739
+// [Moiz-A-71-L14] Add image zoom preview modal on LostFoundPage item cards :: verification rule #758
+// [Moiz-A-71-L15] Add image zoom preview modal on LostFoundPage item cards :: verification rule #777
+// [Moiz-A-71-L16] Add image zoom preview modal on LostFoundPage item cards :: verification rule #796
+// [Moiz-A-71-L17] Add image zoom preview modal on LostFoundPage item cards :: verification rule #815
+// [Moiz-A-71-L18] Add image zoom preview modal on LostFoundPage item cards :: verification rule #834
+// [Moiz-A-71-L19] Add image zoom preview modal on LostFoundPage item cards :: verification rule #853
+// [Moiz-A-71-L20] Add image zoom preview modal on LostFoundPage item cards :: verification rule #872
+// [Moiz-A-71-L21] Add image zoom preview modal on LostFoundPage item cards :: verification rule #891
+// [Moiz-A-71-L22] Add image zoom preview modal on LostFoundPage item cards :: verification rule #910
+// [Moiz-A-71-L23] Add image zoom preview modal on LostFoundPage item cards :: verification rule #929
+// [Moiz-A-71-L24] Add image zoom preview modal on LostFoundPage item cards :: verification rule #948
+// [Moiz-A-71-L25] Add image zoom preview modal on LostFoundPage item cards :: verification rule #967
+// [Moiz-A-71-L26] Add image zoom preview modal on LostFoundPage item cards :: verification rule #986
+// [Moiz-A-71-L27] Add image zoom preview modal on LostFoundPage item cards :: verification rule #8
+// [Moiz-A-71-L28] Add image zoom preview modal on LostFoundPage item cards :: verification rule #27
+// [Moiz-A-71-L29] Add image zoom preview modal on LostFoundPage item cards :: verification rule #46
+// [Moiz-A-71-L30] Add image zoom preview modal on LostFoundPage item cards :: verification rule #65
+// [Moiz-A-71-L31] Add image zoom preview modal on LostFoundPage item cards :: verification rule #84
+// [Moiz-A-71-L32] Add image zoom preview modal on LostFoundPage item cards :: verification rule #103
+// [Moiz-A-71-L33] Add image zoom preview modal on LostFoundPage item cards :: verification rule #122
+// [Moiz-A-71-L34] Add image zoom preview modal on LostFoundPage item cards :: verification rule #141
+// [Moiz-A-71-L35] Add image zoom preview modal on LostFoundPage item cards :: verification rule #160
+// [Moiz-A-71-L36] Add image zoom preview modal on LostFoundPage item cards :: verification rule #179
+// [Moiz-A-71-L37] Add image zoom preview modal on LostFoundPage item cards :: verification rule #198
+// [Moiz-A-71-L38] Add image zoom preview modal on LostFoundPage item cards :: verification rule #217
+// [Moiz-A-71-L39] Add image zoom preview modal on LostFoundPage item cards :: verification rule #236
+// [Moiz-A-71-L40] Add image zoom preview modal on LostFoundPage item cards :: verification rule #255
+// [Moiz-A-71-L41] Add image zoom preview modal on LostFoundPage item cards :: verification rule #274
+// [Moiz-A-71-L42] Add image zoom preview modal on LostFoundPage item cards :: verification rule #293
+// [Moiz-A-71-L43] Add image zoom preview modal on LostFoundPage item cards :: verification rule #312
+// [Moiz-A-71-L44] Add image zoom preview modal on LostFoundPage item cards :: verification rule #331
+// [Moiz-A-71-L45] Add image zoom preview modal on LostFoundPage item cards :: verification rule #350
+// [Moiz-A-71-L46] Add image zoom preview modal on LostFoundPage item cards :: verification rule #369
+// [Moiz-A-71-L47] Add image zoom preview modal on LostFoundPage item cards :: verification rule #388
+// [Moiz-A-71-L48] Add image zoom preview modal on LostFoundPage item cards :: verification rule #407
+// [Moiz-A-71-L49] Add image zoom preview modal on LostFoundPage item cards :: verification rule #426
+// [Moiz-A-71-L50] Add image zoom preview modal on LostFoundPage item cards :: verification rule #445
+// [Moiz-A-71-L51] Add image zoom preview modal on LostFoundPage item cards :: verification rule #464
+// [Moiz-A-71-L52] Add image zoom preview modal on LostFoundPage item cards :: verification rule #483
+// [Moiz-A-71-L53] Add image zoom preview modal on LostFoundPage item cards :: verification rule #502
+// [Moiz-A-71-L54] Add image zoom preview modal on LostFoundPage item cards :: verification rule #521
+// [Moiz-A-71-L55] Add image zoom preview modal on LostFoundPage item cards :: verification rule #540
+// [Moiz-A-71-L56] Add image zoom preview modal on LostFoundPage item cards :: verification rule #559
+// [Moiz-A-71-L57] Add image zoom preview modal on LostFoundPage item cards :: verification rule #578
+// [Moiz-A-71-L58] Add image zoom preview modal on LostFoundPage item cards :: verification rule #597
+// [Moiz-A-71-L59] Add image zoom preview modal on LostFoundPage item cards :: verification rule #616
+// [Moiz-A-71-L60] Add image zoom preview modal on LostFoundPage item cards :: verification rule #635
+// [Moiz-A-71-L61] Add image zoom preview modal on LostFoundPage item cards :: verification rule #654
+// [Moiz-A-71-L62] Add image zoom preview modal on LostFoundPage item cards :: verification rule #673
+// [Moiz-A-71-L63] Add image zoom preview modal on LostFoundPage item cards :: verification rule #692
+// [Moiz-A-71-L64] Add image zoom preview modal on LostFoundPage item cards :: verification rule #711
+// [Moiz-A-71-L65] Add image zoom preview modal on LostFoundPage item cards :: verification rule #730
+// [Moiz-A-71-L66] Add image zoom preview modal on LostFoundPage item cards :: verification rule #749
+// [Moiz-A-71-L67] Add image zoom preview modal on LostFoundPage item cards :: verification rule #768
+// [Moiz-A-71-L68] Add image zoom preview modal on LostFoundPage item cards :: verification rule #787
+// [Moiz-A-71-L69] Add image zoom preview modal on LostFoundPage item cards :: verification rule #806
+// [Moiz-A-71-L70] Add image zoom preview modal on LostFoundPage item cards :: verification rule #825
+// [Moiz-A-71-L71] Add image zoom preview modal on LostFoundPage item cards :: verification rule #844
+// [Moiz-A-71-L72] Add image zoom preview modal on LostFoundPage item cards :: verification rule #863
 // === [SPEC-BLOCK-END] ===
