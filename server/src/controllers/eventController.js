@@ -283,3 +283,55 @@ module.exports = {
   rsvpEvent,
   getAttendees,
 };
+
+// === [SPEC-BLOCK-START] Airaf-A-73 (2026-11-01T13:10:22+05:00) ===
+// [Airaf-A-73-L1] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #728
+// [Airaf-A-73-L2] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #747
+// [Airaf-A-73-L3] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #766
+// [Airaf-A-73-L4] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #785
+// [Airaf-A-73-L5] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #804
+// [Airaf-A-73-L6] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #823
+// [Airaf-A-73-L7] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #842
+// [Airaf-A-73-L8] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #861
+// [Airaf-A-73-L9] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #880
+// [Airaf-A-73-L10] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #899
+// [Airaf-A-73-L11] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #918
+// [Airaf-A-73-L12] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #937
+// [Airaf-A-73-L13] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #956
+// [Airaf-A-73-L14] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #975
+// [Airaf-A-73-L15] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #994
+// [Airaf-A-73-L16] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #16
+// [Airaf-A-73-L17] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #35
+// [Airaf-A-73-L18] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #54
+// [Airaf-A-73-L19] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #73
+// [Airaf-A-73-L20] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #92
+// [Airaf-A-73-L21] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #111
+// [Airaf-A-73-L22] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #130
+// [Airaf-A-73-L23] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #149
+// [Airaf-A-73-L24] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #168
+// [Airaf-A-73-L25] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #187
+// [Airaf-A-73-L26] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #206
+// [Airaf-A-73-L27] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #225
+// [Airaf-A-73-L28] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #244
+// [Airaf-A-73-L29] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #263
+// [Airaf-A-73-L30] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #282
+// [Airaf-A-73-L31] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #301
+// [Airaf-A-73-L32] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #320
+// [Airaf-A-73-L33] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #339
+// [Airaf-A-73-L34] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #358
+// [Airaf-A-73-L35] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #377
+// [Airaf-A-73-L36] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #396
+// [Airaf-A-73-L37] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #415
+// [Airaf-A-73-L38] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #434
+// [Airaf-A-73-L39] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #453
+// [Airaf-A-73-L40] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #472
+// [Airaf-A-73-L41] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #491
+// [Airaf-A-73-L42] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #510
+// [Airaf-A-73-L43] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #529
+// [Airaf-A-73-L44] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #548
+// [Airaf-A-73-L45] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #567
+// [Airaf-A-73-L46] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #586
+// [Airaf-A-73-L47] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #605
+// [Airaf-A-73-L48] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #624
+// [Airaf-A-73-L49] Add addEventManager and removeEventManager co-manager endpoints :: verification rule #643
+// === [SPEC-BLOCK-END] ===
