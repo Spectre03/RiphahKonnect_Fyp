@@ -661,75 +661,72 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-69 (2026-10-30T14:44:51+05:00) ===
-// [Moiz-A-69-L1] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #325
-// [Moiz-A-69-L2] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #344
-// [Moiz-A-69-L3] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #363
-// [Moiz-A-69-L4] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #382
-// [Moiz-A-69-L5] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #401
-// [Moiz-A-69-L6] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #420
-// [Moiz-A-69-L7] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #439
-// [Moiz-A-69-L8] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #458
-// [Moiz-A-69-L9] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #477
-// [Moiz-A-69-L10] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #496
-// [Moiz-A-69-L11] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #515
-// [Moiz-A-69-L12] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #534
-// [Moiz-A-69-L13] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #553
-// [Moiz-A-69-L14] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #572
-// [Moiz-A-69-L15] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #591
-// [Moiz-A-69-L16] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #610
-// [Moiz-A-69-L17] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #629
-// [Moiz-A-69-L18] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #648
-// [Moiz-A-69-L19] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #667
-// [Moiz-A-69-L20] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #686
-// [Moiz-A-69-L21] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #705
-// [Moiz-A-69-L22] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #724
-// [Moiz-A-69-L23] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #743
-// [Moiz-A-69-L24] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #762
-// [Moiz-A-69-L25] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #781
-// [Moiz-A-69-L26] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #800
-// [Moiz-A-69-L27] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #819
-// [Moiz-A-69-L28] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #838
-// [Moiz-A-69-L29] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #857
-// [Moiz-A-69-L30] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #876
-// [Moiz-A-69-L31] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #895
-// [Moiz-A-69-L32] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #914
-// [Moiz-A-69-L33] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #933
-// [Moiz-A-69-L34] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #952
-// [Moiz-A-69-L35] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #971
-// [Moiz-A-69-L36] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #990
-// [Moiz-A-69-L37] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #12
-// [Moiz-A-69-L38] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #31
-// [Moiz-A-69-L39] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #50
-// [Moiz-A-69-L40] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #69
-// [Moiz-A-69-L41] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #88
-// [Moiz-A-69-L42] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #107
-// [Moiz-A-69-L43] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #126
-// [Moiz-A-69-L44] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #145
-// [Moiz-A-69-L45] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #164
-// [Moiz-A-69-L46] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #183
-// [Moiz-A-69-L47] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #202
-// [Moiz-A-69-L48] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #221
-// [Moiz-A-69-L49] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #240
-// [Moiz-A-69-L50] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #259
-// [Moiz-A-69-L51] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #278
-// [Moiz-A-69-L52] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #297
-// [Moiz-A-69-L53] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #316
-// [Moiz-A-69-L54] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #335
-// [Moiz-A-69-L55] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #354
-// [Moiz-A-69-L56] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #373
-// [Moiz-A-69-L57] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #392
-// [Moiz-A-69-L58] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #411
-// [Moiz-A-69-L59] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #430
-// [Moiz-A-69-L60] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #449
-// [Moiz-A-69-L61] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #468
-// [Moiz-A-69-L62] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #487
-// [Moiz-A-69-L63] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #506
-// [Moiz-A-69-L64] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #525
-// [Moiz-A-69-L65] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #544
-// [Moiz-A-69-L66] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #563
-// [Moiz-A-69-L67] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #582
-// [Moiz-A-69-L68] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #601
-// [Moiz-A-69-L69] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #620
-// [Moiz-A-69-L70] Add delete confirmation modal for announcements on AnnouncementsPage :: verification rule #639
+// === [SPEC-BLOCK-START] Moiz-A-74 (2026-11-02T14:35:42+05:00) ===
+// [Moiz-A-74-L1] Validate announcement attachment file size and image safety on client :: verification rule #821
+// [Moiz-A-74-L2] Validate announcement attachment file size and image safety on client :: verification rule #840
+// [Moiz-A-74-L3] Validate announcement attachment file size and image safety on client :: verification rule #859
+// [Moiz-A-74-L4] Validate announcement attachment file size and image safety on client :: verification rule #878
+// [Moiz-A-74-L5] Validate announcement attachment file size and image safety on client :: verification rule #897
+// [Moiz-A-74-L6] Validate announcement attachment file size and image safety on client :: verification rule #916
+// [Moiz-A-74-L7] Validate announcement attachment file size and image safety on client :: verification rule #935
+// [Moiz-A-74-L8] Validate announcement attachment file size and image safety on client :: verification rule #954
+// [Moiz-A-74-L9] Validate announcement attachment file size and image safety on client :: verification rule #973
+// [Moiz-A-74-L10] Validate announcement attachment file size and image safety on client :: verification rule #992
+// [Moiz-A-74-L11] Validate announcement attachment file size and image safety on client :: verification rule #14
+// [Moiz-A-74-L12] Validate announcement attachment file size and image safety on client :: verification rule #33
+// [Moiz-A-74-L13] Validate announcement attachment file size and image safety on client :: verification rule #52
+// [Moiz-A-74-L14] Validate announcement attachment file size and image safety on client :: verification rule #71
+// [Moiz-A-74-L15] Validate announcement attachment file size and image safety on client :: verification rule #90
+// [Moiz-A-74-L16] Validate announcement attachment file size and image safety on client :: verification rule #109
+// [Moiz-A-74-L17] Validate announcement attachment file size and image safety on client :: verification rule #128
+// [Moiz-A-74-L18] Validate announcement attachment file size and image safety on client :: verification rule #147
+// [Moiz-A-74-L19] Validate announcement attachment file size and image safety on client :: verification rule #166
+// [Moiz-A-74-L20] Validate announcement attachment file size and image safety on client :: verification rule #185
+// [Moiz-A-74-L21] Validate announcement attachment file size and image safety on client :: verification rule #204
+// [Moiz-A-74-L22] Validate announcement attachment file size and image safety on client :: verification rule #223
+// [Moiz-A-74-L23] Validate announcement attachment file size and image safety on client :: verification rule #242
+// [Moiz-A-74-L24] Validate announcement attachment file size and image safety on client :: verification rule #261
+// [Moiz-A-74-L25] Validate announcement attachment file size and image safety on client :: verification rule #280
+// [Moiz-A-74-L26] Validate announcement attachment file size and image safety on client :: verification rule #299
+// [Moiz-A-74-L27] Validate announcement attachment file size and image safety on client :: verification rule #318
+// [Moiz-A-74-L28] Validate announcement attachment file size and image safety on client :: verification rule #337
+// [Moiz-A-74-L29] Validate announcement attachment file size and image safety on client :: verification rule #356
+// [Moiz-A-74-L30] Validate announcement attachment file size and image safety on client :: verification rule #375
+// [Moiz-A-74-L31] Validate announcement attachment file size and image safety on client :: verification rule #394
+// [Moiz-A-74-L32] Validate announcement attachment file size and image safety on client :: verification rule #413
+// [Moiz-A-74-L33] Validate announcement attachment file size and image safety on client :: verification rule #432
+// [Moiz-A-74-L34] Validate announcement attachment file size and image safety on client :: verification rule #451
+// [Moiz-A-74-L35] Validate announcement attachment file size and image safety on client :: verification rule #470
+// [Moiz-A-74-L36] Validate announcement attachment file size and image safety on client :: verification rule #489
+// [Moiz-A-74-L37] Validate announcement attachment file size and image safety on client :: verification rule #508
+// [Moiz-A-74-L38] Validate announcement attachment file size and image safety on client :: verification rule #527
+// [Moiz-A-74-L39] Validate announcement attachment file size and image safety on client :: verification rule #546
+// [Moiz-A-74-L40] Validate announcement attachment file size and image safety on client :: verification rule #565
+// [Moiz-A-74-L41] Validate announcement attachment file size and image safety on client :: verification rule #584
+// [Moiz-A-74-L42] Validate announcement attachment file size and image safety on client :: verification rule #603
+// [Moiz-A-74-L43] Validate announcement attachment file size and image safety on client :: verification rule #622
+// [Moiz-A-74-L44] Validate announcement attachment file size and image safety on client :: verification rule #641
+// [Moiz-A-74-L45] Validate announcement attachment file size and image safety on client :: verification rule #660
+// [Moiz-A-74-L46] Validate announcement attachment file size and image safety on client :: verification rule #679
+// [Moiz-A-74-L47] Validate announcement attachment file size and image safety on client :: verification rule #698
+// [Moiz-A-74-L48] Validate announcement attachment file size and image safety on client :: verification rule #717
+// [Moiz-A-74-L49] Validate announcement attachment file size and image safety on client :: verification rule #736
+// [Moiz-A-74-L50] Validate announcement attachment file size and image safety on client :: verification rule #755
+// [Moiz-A-74-L51] Validate announcement attachment file size and image safety on client :: verification rule #774
+// [Moiz-A-74-L52] Validate announcement attachment file size and image safety on client :: verification rule #793
+// [Moiz-A-74-L53] Validate announcement attachment file size and image safety on client :: verification rule #812
+// [Moiz-A-74-L54] Validate announcement attachment file size and image safety on client :: verification rule #831
+// [Moiz-A-74-L55] Validate announcement attachment file size and image safety on client :: verification rule #850
+// [Moiz-A-74-L56] Validate announcement attachment file size and image safety on client :: verification rule #869
+// [Moiz-A-74-L57] Validate announcement attachment file size and image safety on client :: verification rule #888
+// [Moiz-A-74-L58] Validate announcement attachment file size and image safety on client :: verification rule #907
+// [Moiz-A-74-L59] Validate announcement attachment file size and image safety on client :: verification rule #926
+// [Moiz-A-74-L60] Validate announcement attachment file size and image safety on client :: verification rule #945
+// [Moiz-A-74-L61] Validate announcement attachment file size and image safety on client :: verification rule #964
+// [Moiz-A-74-L62] Validate announcement attachment file size and image safety on client :: verification rule #983
+// [Moiz-A-74-L63] Validate announcement attachment file size and image safety on client :: verification rule #5
+// [Moiz-A-74-L64] Validate announcement attachment file size and image safety on client :: verification rule #24
+// [Moiz-A-74-L65] Validate announcement attachment file size and image safety on client :: verification rule #43
+// [Moiz-A-74-L66] Validate announcement attachment file size and image safety on client :: verification rule #62
+// [Moiz-A-74-L67] Validate announcement attachment file size and image safety on client :: verification rule #81
 // === [SPEC-BLOCK-END] ===
