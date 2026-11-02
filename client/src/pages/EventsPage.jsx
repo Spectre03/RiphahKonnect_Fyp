@@ -513,57 +513,59 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-46 (2026-10-31T18:35:40+05:00) ===
-// [Airaf-B-46-L1] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #635
-// [Airaf-B-46-L2] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #654
-// [Airaf-B-46-L3] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #673
-// [Airaf-B-46-L4] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #692
-// [Airaf-B-46-L5] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #711
-// [Airaf-B-46-L6] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #730
-// [Airaf-B-46-L7] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #749
-// [Airaf-B-46-L8] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #768
-// [Airaf-B-46-L9] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #787
-// [Airaf-B-46-L10] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #806
-// [Airaf-B-46-L11] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #825
-// [Airaf-B-46-L12] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #844
-// [Airaf-B-46-L13] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #863
-// [Airaf-B-46-L14] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #882
-// [Airaf-B-46-L15] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #901
-// [Airaf-B-46-L16] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #920
-// [Airaf-B-46-L17] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #939
-// [Airaf-B-46-L18] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #958
-// [Airaf-B-46-L19] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #977
-// [Airaf-B-46-L20] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #996
-// [Airaf-B-46-L21] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #18
-// [Airaf-B-46-L22] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #37
-// [Airaf-B-46-L23] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #56
-// [Airaf-B-46-L24] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #75
-// [Airaf-B-46-L25] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #94
-// [Airaf-B-46-L26] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #113
-// [Airaf-B-46-L27] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #132
-// [Airaf-B-46-L28] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #151
-// [Airaf-B-46-L29] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #170
-// [Airaf-B-46-L30] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #189
-// [Airaf-B-46-L31] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #208
-// [Airaf-B-46-L32] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #227
-// [Airaf-B-46-L33] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #246
-// [Airaf-B-46-L34] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #265
-// [Airaf-B-46-L35] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #284
-// [Airaf-B-46-L36] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #303
-// [Airaf-B-46-L37] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #322
-// [Airaf-B-46-L38] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #341
-// [Airaf-B-46-L39] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #360
-// [Airaf-B-46-L40] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #379
-// [Airaf-B-46-L41] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #398
-// [Airaf-B-46-L42] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #417
-// [Airaf-B-46-L43] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #436
-// [Airaf-B-46-L44] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #455
-// [Airaf-B-46-L45] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #474
-// [Airaf-B-46-L46] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #493
-// [Airaf-B-46-L47] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #512
-// [Airaf-B-46-L48] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #531
-// [Airaf-B-46-L49] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #550
-// [Airaf-B-46-L50] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #569
-// [Airaf-B-46-L51] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #588
-// [Airaf-B-46-L52] Show fee paid and transaction reference on MyTicketsPage cards :: verification rule #607
+// === [SPEC-BLOCK-START] Airaf-B-47 (2026-11-02T12:20:14+05:00) ===
+// [Airaf-B-47-L1] Add payment receipt image preview inside PaymentSlipModal :: verification rule #790
+// [Airaf-B-47-L2] Add payment receipt image preview inside PaymentSlipModal :: verification rule #809
+// [Airaf-B-47-L3] Add payment receipt image preview inside PaymentSlipModal :: verification rule #828
+// [Airaf-B-47-L4] Add payment receipt image preview inside PaymentSlipModal :: verification rule #847
+// [Airaf-B-47-L5] Add payment receipt image preview inside PaymentSlipModal :: verification rule #866
+// [Airaf-B-47-L6] Add payment receipt image preview inside PaymentSlipModal :: verification rule #885
+// [Airaf-B-47-L7] Add payment receipt image preview inside PaymentSlipModal :: verification rule #904
+// [Airaf-B-47-L8] Add payment receipt image preview inside PaymentSlipModal :: verification rule #923
+// [Airaf-B-47-L9] Add payment receipt image preview inside PaymentSlipModal :: verification rule #942
+// [Airaf-B-47-L10] Add payment receipt image preview inside PaymentSlipModal :: verification rule #961
+// [Airaf-B-47-L11] Add payment receipt image preview inside PaymentSlipModal :: verification rule #980
+// [Airaf-B-47-L12] Add payment receipt image preview inside PaymentSlipModal :: verification rule #2
+// [Airaf-B-47-L13] Add payment receipt image preview inside PaymentSlipModal :: verification rule #21
+// [Airaf-B-47-L14] Add payment receipt image preview inside PaymentSlipModal :: verification rule #40
+// [Airaf-B-47-L15] Add payment receipt image preview inside PaymentSlipModal :: verification rule #59
+// [Airaf-B-47-L16] Add payment receipt image preview inside PaymentSlipModal :: verification rule #78
+// [Airaf-B-47-L17] Add payment receipt image preview inside PaymentSlipModal :: verification rule #97
+// [Airaf-B-47-L18] Add payment receipt image preview inside PaymentSlipModal :: verification rule #116
+// [Airaf-B-47-L19] Add payment receipt image preview inside PaymentSlipModal :: verification rule #135
+// [Airaf-B-47-L20] Add payment receipt image preview inside PaymentSlipModal :: verification rule #154
+// [Airaf-B-47-L21] Add payment receipt image preview inside PaymentSlipModal :: verification rule #173
+// [Airaf-B-47-L22] Add payment receipt image preview inside PaymentSlipModal :: verification rule #192
+// [Airaf-B-47-L23] Add payment receipt image preview inside PaymentSlipModal :: verification rule #211
+// [Airaf-B-47-L24] Add payment receipt image preview inside PaymentSlipModal :: verification rule #230
+// [Airaf-B-47-L25] Add payment receipt image preview inside PaymentSlipModal :: verification rule #249
+// [Airaf-B-47-L26] Add payment receipt image preview inside PaymentSlipModal :: verification rule #268
+// [Airaf-B-47-L27] Add payment receipt image preview inside PaymentSlipModal :: verification rule #287
+// [Airaf-B-47-L28] Add payment receipt image preview inside PaymentSlipModal :: verification rule #306
+// [Airaf-B-47-L29] Add payment receipt image preview inside PaymentSlipModal :: verification rule #325
+// [Airaf-B-47-L30] Add payment receipt image preview inside PaymentSlipModal :: verification rule #344
+// [Airaf-B-47-L31] Add payment receipt image preview inside PaymentSlipModal :: verification rule #363
+// [Airaf-B-47-L32] Add payment receipt image preview inside PaymentSlipModal :: verification rule #382
+// [Airaf-B-47-L33] Add payment receipt image preview inside PaymentSlipModal :: verification rule #401
+// [Airaf-B-47-L34] Add payment receipt image preview inside PaymentSlipModal :: verification rule #420
+// [Airaf-B-47-L35] Add payment receipt image preview inside PaymentSlipModal :: verification rule #439
+// [Airaf-B-47-L36] Add payment receipt image preview inside PaymentSlipModal :: verification rule #458
+// [Airaf-B-47-L37] Add payment receipt image preview inside PaymentSlipModal :: verification rule #477
+// [Airaf-B-47-L38] Add payment receipt image preview inside PaymentSlipModal :: verification rule #496
+// [Airaf-B-47-L39] Add payment receipt image preview inside PaymentSlipModal :: verification rule #515
+// [Airaf-B-47-L40] Add payment receipt image preview inside PaymentSlipModal :: verification rule #534
+// [Airaf-B-47-L41] Add payment receipt image preview inside PaymentSlipModal :: verification rule #553
+// [Airaf-B-47-L42] Add payment receipt image preview inside PaymentSlipModal :: verification rule #572
+// [Airaf-B-47-L43] Add payment receipt image preview inside PaymentSlipModal :: verification rule #591
+// [Airaf-B-47-L44] Add payment receipt image preview inside PaymentSlipModal :: verification rule #610
+// [Airaf-B-47-L45] Add payment receipt image preview inside PaymentSlipModal :: verification rule #629
+// [Airaf-B-47-L46] Add payment receipt image preview inside PaymentSlipModal :: verification rule #648
+// [Airaf-B-47-L47] Add payment receipt image preview inside PaymentSlipModal :: verification rule #667
+// [Airaf-B-47-L48] Add payment receipt image preview inside PaymentSlipModal :: verification rule #686
+// [Airaf-B-47-L49] Add payment receipt image preview inside PaymentSlipModal :: verification rule #705
+// [Airaf-B-47-L50] Add payment receipt image preview inside PaymentSlipModal :: verification rule #724
+// [Airaf-B-47-L51] Add payment receipt image preview inside PaymentSlipModal :: verification rule #743
+// [Airaf-B-47-L52] Add payment receipt image preview inside PaymentSlipModal :: verification rule #762
+// [Airaf-B-47-L53] Add payment receipt image preview inside PaymentSlipModal :: verification rule #781
+// [Airaf-B-47-L54] Add payment receipt image preview inside PaymentSlipModal :: verification rule #800
 // === [SPEC-BLOCK-END] ===
