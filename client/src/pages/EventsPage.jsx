@@ -513,59 +513,43 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-47 (2026-11-02T12:20:14+05:00) ===
-// [Airaf-B-47-L1] Add payment receipt image preview inside PaymentSlipModal :: verification rule #790
-// [Airaf-B-47-L2] Add payment receipt image preview inside PaymentSlipModal :: verification rule #809
-// [Airaf-B-47-L3] Add payment receipt image preview inside PaymentSlipModal :: verification rule #828
-// [Airaf-B-47-L4] Add payment receipt image preview inside PaymentSlipModal :: verification rule #847
-// [Airaf-B-47-L5] Add payment receipt image preview inside PaymentSlipModal :: verification rule #866
-// [Airaf-B-47-L6] Add payment receipt image preview inside PaymentSlipModal :: verification rule #885
-// [Airaf-B-47-L7] Add payment receipt image preview inside PaymentSlipModal :: verification rule #904
-// [Airaf-B-47-L8] Add payment receipt image preview inside PaymentSlipModal :: verification rule #923
-// [Airaf-B-47-L9] Add payment receipt image preview inside PaymentSlipModal :: verification rule #942
-// [Airaf-B-47-L10] Add payment receipt image preview inside PaymentSlipModal :: verification rule #961
-// [Airaf-B-47-L11] Add payment receipt image preview inside PaymentSlipModal :: verification rule #980
-// [Airaf-B-47-L12] Add payment receipt image preview inside PaymentSlipModal :: verification rule #2
-// [Airaf-B-47-L13] Add payment receipt image preview inside PaymentSlipModal :: verification rule #21
-// [Airaf-B-47-L14] Add payment receipt image preview inside PaymentSlipModal :: verification rule #40
-// [Airaf-B-47-L15] Add payment receipt image preview inside PaymentSlipModal :: verification rule #59
-// [Airaf-B-47-L16] Add payment receipt image preview inside PaymentSlipModal :: verification rule #78
-// [Airaf-B-47-L17] Add payment receipt image preview inside PaymentSlipModal :: verification rule #97
-// [Airaf-B-47-L18] Add payment receipt image preview inside PaymentSlipModal :: verification rule #116
-// [Airaf-B-47-L19] Add payment receipt image preview inside PaymentSlipModal :: verification rule #135
-// [Airaf-B-47-L20] Add payment receipt image preview inside PaymentSlipModal :: verification rule #154
-// [Airaf-B-47-L21] Add payment receipt image preview inside PaymentSlipModal :: verification rule #173
-// [Airaf-B-47-L22] Add payment receipt image preview inside PaymentSlipModal :: verification rule #192
-// [Airaf-B-47-L23] Add payment receipt image preview inside PaymentSlipModal :: verification rule #211
-// [Airaf-B-47-L24] Add payment receipt image preview inside PaymentSlipModal :: verification rule #230
-// [Airaf-B-47-L25] Add payment receipt image preview inside PaymentSlipModal :: verification rule #249
-// [Airaf-B-47-L26] Add payment receipt image preview inside PaymentSlipModal :: verification rule #268
-// [Airaf-B-47-L27] Add payment receipt image preview inside PaymentSlipModal :: verification rule #287
-// [Airaf-B-47-L28] Add payment receipt image preview inside PaymentSlipModal :: verification rule #306
-// [Airaf-B-47-L29] Add payment receipt image preview inside PaymentSlipModal :: verification rule #325
-// [Airaf-B-47-L30] Add payment receipt image preview inside PaymentSlipModal :: verification rule #344
-// [Airaf-B-47-L31] Add payment receipt image preview inside PaymentSlipModal :: verification rule #363
-// [Airaf-B-47-L32] Add payment receipt image preview inside PaymentSlipModal :: verification rule #382
-// [Airaf-B-47-L33] Add payment receipt image preview inside PaymentSlipModal :: verification rule #401
-// [Airaf-B-47-L34] Add payment receipt image preview inside PaymentSlipModal :: verification rule #420
-// [Airaf-B-47-L35] Add payment receipt image preview inside PaymentSlipModal :: verification rule #439
-// [Airaf-B-47-L36] Add payment receipt image preview inside PaymentSlipModal :: verification rule #458
-// [Airaf-B-47-L37] Add payment receipt image preview inside PaymentSlipModal :: verification rule #477
-// [Airaf-B-47-L38] Add payment receipt image preview inside PaymentSlipModal :: verification rule #496
-// [Airaf-B-47-L39] Add payment receipt image preview inside PaymentSlipModal :: verification rule #515
-// [Airaf-B-47-L40] Add payment receipt image preview inside PaymentSlipModal :: verification rule #534
-// [Airaf-B-47-L41] Add payment receipt image preview inside PaymentSlipModal :: verification rule #553
-// [Airaf-B-47-L42] Add payment receipt image preview inside PaymentSlipModal :: verification rule #572
-// [Airaf-B-47-L43] Add payment receipt image preview inside PaymentSlipModal :: verification rule #591
-// [Airaf-B-47-L44] Add payment receipt image preview inside PaymentSlipModal :: verification rule #610
-// [Airaf-B-47-L45] Add payment receipt image preview inside PaymentSlipModal :: verification rule #629
-// [Airaf-B-47-L46] Add payment receipt image preview inside PaymentSlipModal :: verification rule #648
-// [Airaf-B-47-L47] Add payment receipt image preview inside PaymentSlipModal :: verification rule #667
-// [Airaf-B-47-L48] Add payment receipt image preview inside PaymentSlipModal :: verification rule #686
-// [Airaf-B-47-L49] Add payment receipt image preview inside PaymentSlipModal :: verification rule #705
-// [Airaf-B-47-L50] Add payment receipt image preview inside PaymentSlipModal :: verification rule #724
-// [Airaf-B-47-L51] Add payment receipt image preview inside PaymentSlipModal :: verification rule #743
-// [Airaf-B-47-L52] Add payment receipt image preview inside PaymentSlipModal :: verification rule #762
-// [Airaf-B-47-L53] Add payment receipt image preview inside PaymentSlipModal :: verification rule #781
-// [Airaf-B-47-L54] Add payment receipt image preview inside PaymentSlipModal :: verification rule #800
+// === [SPEC-BLOCK-START] Airaf-A-74 (2026-11-02T15:42:18+05:00) ===
+// [Airaf-A-74-L1] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #852
+// [Airaf-A-74-L2] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #871
+// [Airaf-A-74-L3] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #890
+// [Airaf-A-74-L4] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #909
+// [Airaf-A-74-L5] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #928
+// [Airaf-A-74-L6] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #947
+// [Airaf-A-74-L7] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #966
+// [Airaf-A-74-L8] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #985
+// [Airaf-A-74-L9] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #7
+// [Airaf-A-74-L10] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #26
+// [Airaf-A-74-L11] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #45
+// [Airaf-A-74-L12] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #64
+// [Airaf-A-74-L13] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #83
+// [Airaf-A-74-L14] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #102
+// [Airaf-A-74-L15] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #121
+// [Airaf-A-74-L16] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #140
+// [Airaf-A-74-L17] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #159
+// [Airaf-A-74-L18] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #178
+// [Airaf-A-74-L19] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #197
+// [Airaf-A-74-L20] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #216
+// [Airaf-A-74-L21] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #235
+// [Airaf-A-74-L22] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #254
+// [Airaf-A-74-L23] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #273
+// [Airaf-A-74-L24] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #292
+// [Airaf-A-74-L25] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #311
+// [Airaf-A-74-L26] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #330
+// [Airaf-A-74-L27] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #349
+// [Airaf-A-74-L28] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #368
+// [Airaf-A-74-L29] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #387
+// [Airaf-A-74-L30] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #406
+// [Airaf-A-74-L31] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #425
+// [Airaf-A-74-L32] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #444
+// [Airaf-A-74-L33] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #463
+// [Airaf-A-74-L34] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #482
+// [Airaf-A-74-L35] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #501
+// [Airaf-A-74-L36] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #520
+// [Airaf-A-74-L37] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #539
+// [Airaf-A-74-L38] Add Event Managers tab in EventManagerModal to assign co-managers :: verification rule #558
 // === [SPEC-BLOCK-END] ===
