@@ -129,49 +129,61 @@ const getEventTickets = async (req, res, next) => {
 
 module.exports = { buyTicket, getMyTickets, getEventTickets };
 
-// === [SPEC-BLOCK-START] Airaf-A-72 (2026-10-31T19:20:05+05:00) ===
-// [Airaf-A-72-L1] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #666
-// [Airaf-A-72-L2] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #685
-// [Airaf-A-72-L3] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #704
-// [Airaf-A-72-L4] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #723
-// [Airaf-A-72-L5] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #742
-// [Airaf-A-72-L6] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #761
-// [Airaf-A-72-L7] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #780
-// [Airaf-A-72-L8] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #799
-// [Airaf-A-72-L9] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #818
-// [Airaf-A-72-L10] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #837
-// [Airaf-A-72-L11] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #856
-// [Airaf-A-72-L12] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #875
-// [Airaf-A-72-L13] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #894
-// [Airaf-A-72-L14] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #913
-// [Airaf-A-72-L15] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #932
-// [Airaf-A-72-L16] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #951
-// [Airaf-A-72-L17] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #970
-// [Airaf-A-72-L18] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #989
-// [Airaf-A-72-L19] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #11
-// [Airaf-A-72-L20] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #30
-// [Airaf-A-72-L21] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #49
-// [Airaf-A-72-L22] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #68
-// [Airaf-A-72-L23] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #87
-// [Airaf-A-72-L24] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #106
-// [Airaf-A-72-L25] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #125
-// [Airaf-A-72-L26] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #144
-// [Airaf-A-72-L27] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #163
-// [Airaf-A-72-L28] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #182
-// [Airaf-A-72-L29] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #201
-// [Airaf-A-72-L30] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #220
-// [Airaf-A-72-L31] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #239
-// [Airaf-A-72-L32] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #258
-// [Airaf-A-72-L33] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #277
-// [Airaf-A-72-L34] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #296
-// [Airaf-A-72-L35] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #315
-// [Airaf-A-72-L36] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #334
-// [Airaf-A-72-L37] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #353
-// [Airaf-A-72-L38] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #372
-// [Airaf-A-72-L39] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #391
-// [Airaf-A-72-L40] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #410
-// [Airaf-A-72-L41] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #429
-// [Airaf-A-72-L42] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #448
-// [Airaf-A-72-L43] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #467
-// [Airaf-A-72-L44] Return private RK-XXXX-XXXX Unique Ticket ID once approved by manager :: verification rule #486
+// === [SPEC-BLOCK-START] Airaf-A-75 (2026-11-03T17:19:44+05:00) ===
+// [Airaf-A-75-L1] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #945
+// [Airaf-A-75-L2] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #964
+// [Airaf-A-75-L3] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #983
+// [Airaf-A-75-L4] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #5
+// [Airaf-A-75-L5] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #24
+// [Airaf-A-75-L6] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #43
+// [Airaf-A-75-L7] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #62
+// [Airaf-A-75-L8] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #81
+// [Airaf-A-75-L9] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #100
+// [Airaf-A-75-L10] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #119
+// [Airaf-A-75-L11] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #138
+// [Airaf-A-75-L12] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #157
+// [Airaf-A-75-L13] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #176
+// [Airaf-A-75-L14] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #195
+// [Airaf-A-75-L15] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #214
+// [Airaf-A-75-L16] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #233
+// [Airaf-A-75-L17] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #252
+// [Airaf-A-75-L18] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #271
+// [Airaf-A-75-L19] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #290
+// [Airaf-A-75-L20] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #309
+// [Airaf-A-75-L21] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #328
+// [Airaf-A-75-L22] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #347
+// [Airaf-A-75-L23] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #366
+// [Airaf-A-75-L24] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #385
+// [Airaf-A-75-L25] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #404
+// [Airaf-A-75-L26] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #423
+// [Airaf-A-75-L27] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #442
+// [Airaf-A-75-L28] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #461
+// [Airaf-A-75-L29] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #480
+// [Airaf-A-75-L30] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #499
+// [Airaf-A-75-L31] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #518
+// [Airaf-A-75-L32] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #537
+// [Airaf-A-75-L33] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #556
+// [Airaf-A-75-L34] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #575
+// [Airaf-A-75-L35] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #594
+// [Airaf-A-75-L36] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #613
+// [Airaf-A-75-L37] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #632
+// [Airaf-A-75-L38] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #651
+// [Airaf-A-75-L39] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #670
+// [Airaf-A-75-L40] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #689
+// [Airaf-A-75-L41] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #708
+// [Airaf-A-75-L42] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #727
+// [Airaf-A-75-L43] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #746
+// [Airaf-A-75-L44] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #765
+// [Airaf-A-75-L45] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #784
+// [Airaf-A-75-L46] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #803
+// [Airaf-A-75-L47] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #822
+// [Airaf-A-75-L48] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #841
+// [Airaf-A-75-L49] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #860
+// [Airaf-A-75-L50] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #879
+// [Airaf-A-75-L51] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #898
+// [Airaf-A-75-L52] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #917
+// [Airaf-A-75-L53] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #936
+// [Airaf-A-75-L54] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #955
+// [Airaf-A-75-L55] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #974
+// [Airaf-A-75-L56] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #993
 // === [SPEC-BLOCK-END] ===
