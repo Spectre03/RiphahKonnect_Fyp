@@ -287,63 +287,73 @@ module.exports = {
   resolveItem,
 };
 
-// === [SPEC-BLOCK-START] Moiz-A-59 (2026-10-19T18:05:31+05:00) ===
-// [Moiz-A-59-L1] Validate image payload size and format in lostFoundController :: verification rule #206
-// [Moiz-A-59-L2] Validate image payload size and format in lostFoundController :: verification rule #225
-// [Moiz-A-59-L3] Validate image payload size and format in lostFoundController :: verification rule #244
-// [Moiz-A-59-L4] Validate image payload size and format in lostFoundController :: verification rule #263
-// [Moiz-A-59-L5] Validate image payload size and format in lostFoundController :: verification rule #282
-// [Moiz-A-59-L6] Validate image payload size and format in lostFoundController :: verification rule #301
-// [Moiz-A-59-L7] Validate image payload size and format in lostFoundController :: verification rule #320
-// [Moiz-A-59-L8] Validate image payload size and format in lostFoundController :: verification rule #339
-// [Moiz-A-59-L9] Validate image payload size and format in lostFoundController :: verification rule #358
-// [Moiz-A-59-L10] Validate image payload size and format in lostFoundController :: verification rule #377
-// [Moiz-A-59-L11] Validate image payload size and format in lostFoundController :: verification rule #396
-// [Moiz-A-59-L12] Validate image payload size and format in lostFoundController :: verification rule #415
-// [Moiz-A-59-L13] Validate image payload size and format in lostFoundController :: verification rule #434
-// [Moiz-A-59-L14] Validate image payload size and format in lostFoundController :: verification rule #453
-// [Moiz-A-59-L15] Validate image payload size and format in lostFoundController :: verification rule #472
-// [Moiz-A-59-L16] Validate image payload size and format in lostFoundController :: verification rule #491
-// [Moiz-A-59-L17] Validate image payload size and format in lostFoundController :: verification rule #510
-// [Moiz-A-59-L18] Validate image payload size and format in lostFoundController :: verification rule #529
-// [Moiz-A-59-L19] Validate image payload size and format in lostFoundController :: verification rule #548
-// [Moiz-A-59-L20] Validate image payload size and format in lostFoundController :: verification rule #567
-// [Moiz-A-59-L21] Validate image payload size and format in lostFoundController :: verification rule #586
-// [Moiz-A-59-L22] Validate image payload size and format in lostFoundController :: verification rule #605
-// [Moiz-A-59-L23] Validate image payload size and format in lostFoundController :: verification rule #624
-// [Moiz-A-59-L24] Validate image payload size and format in lostFoundController :: verification rule #643
-// [Moiz-A-59-L25] Validate image payload size and format in lostFoundController :: verification rule #662
-// [Moiz-A-59-L26] Validate image payload size and format in lostFoundController :: verification rule #681
-// [Moiz-A-59-L27] Validate image payload size and format in lostFoundController :: verification rule #700
-// [Moiz-A-59-L28] Validate image payload size and format in lostFoundController :: verification rule #719
-// [Moiz-A-59-L29] Validate image payload size and format in lostFoundController :: verification rule #738
-// [Moiz-A-59-L30] Validate image payload size and format in lostFoundController :: verification rule #757
-// [Moiz-A-59-L31] Validate image payload size and format in lostFoundController :: verification rule #776
-// [Moiz-A-59-L32] Validate image payload size and format in lostFoundController :: verification rule #795
-// [Moiz-A-59-L33] Validate image payload size and format in lostFoundController :: verification rule #814
-// [Moiz-A-59-L34] Validate image payload size and format in lostFoundController :: verification rule #833
-// [Moiz-A-59-L35] Validate image payload size and format in lostFoundController :: verification rule #852
-// [Moiz-A-59-L36] Validate image payload size and format in lostFoundController :: verification rule #871
-// [Moiz-A-59-L37] Validate image payload size and format in lostFoundController :: verification rule #890
-// [Moiz-A-59-L38] Validate image payload size and format in lostFoundController :: verification rule #909
-// [Moiz-A-59-L39] Validate image payload size and format in lostFoundController :: verification rule #928
-// [Moiz-A-59-L40] Validate image payload size and format in lostFoundController :: verification rule #947
-// [Moiz-A-59-L41] Validate image payload size and format in lostFoundController :: verification rule #966
-// [Moiz-A-59-L42] Validate image payload size and format in lostFoundController :: verification rule #985
-// [Moiz-A-59-L43] Validate image payload size and format in lostFoundController :: verification rule #7
-// [Moiz-A-59-L44] Validate image payload size and format in lostFoundController :: verification rule #26
-// [Moiz-A-59-L45] Validate image payload size and format in lostFoundController :: verification rule #45
-// [Moiz-A-59-L46] Validate image payload size and format in lostFoundController :: verification rule #64
-// [Moiz-A-59-L47] Validate image payload size and format in lostFoundController :: verification rule #83
-// [Moiz-A-59-L48] Validate image payload size and format in lostFoundController :: verification rule #102
-// [Moiz-A-59-L49] Validate image payload size and format in lostFoundController :: verification rule #121
-// [Moiz-A-59-L50] Validate image payload size and format in lostFoundController :: verification rule #140
-// [Moiz-A-59-L51] Validate image payload size and format in lostFoundController :: verification rule #159
-// [Moiz-A-59-L52] Validate image payload size and format in lostFoundController :: verification rule #178
-// [Moiz-A-59-L53] Validate image payload size and format in lostFoundController :: verification rule #197
-// [Moiz-A-59-L54] Validate image payload size and format in lostFoundController :: verification rule #216
-// [Moiz-A-59-L55] Validate image payload size and format in lostFoundController :: verification rule #235
-// [Moiz-A-59-L56] Validate image payload size and format in lostFoundController :: verification rule #254
-// [Moiz-A-59-L57] Validate image payload size and format in lostFoundController :: verification rule #273
-// [Moiz-A-59-L58] Validate image payload size and format in lostFoundController :: verification rule #292
+// === [SPEC-BLOCK-START] Moiz-A-75 (2026-11-03T16:18:29+05:00) ===
+// [Moiz-A-75-L1] Enforce minimum description length and profanity check in lostFoundController :: verification rule #914
+// [Moiz-A-75-L2] Enforce minimum description length and profanity check in lostFoundController :: verification rule #933
+// [Moiz-A-75-L3] Enforce minimum description length and profanity check in lostFoundController :: verification rule #952
+// [Moiz-A-75-L4] Enforce minimum description length and profanity check in lostFoundController :: verification rule #971
+// [Moiz-A-75-L5] Enforce minimum description length and profanity check in lostFoundController :: verification rule #990
+// [Moiz-A-75-L6] Enforce minimum description length and profanity check in lostFoundController :: verification rule #12
+// [Moiz-A-75-L7] Enforce minimum description length and profanity check in lostFoundController :: verification rule #31
+// [Moiz-A-75-L8] Enforce minimum description length and profanity check in lostFoundController :: verification rule #50
+// [Moiz-A-75-L9] Enforce minimum description length and profanity check in lostFoundController :: verification rule #69
+// [Moiz-A-75-L10] Enforce minimum description length and profanity check in lostFoundController :: verification rule #88
+// [Moiz-A-75-L11] Enforce minimum description length and profanity check in lostFoundController :: verification rule #107
+// [Moiz-A-75-L12] Enforce minimum description length and profanity check in lostFoundController :: verification rule #126
+// [Moiz-A-75-L13] Enforce minimum description length and profanity check in lostFoundController :: verification rule #145
+// [Moiz-A-75-L14] Enforce minimum description length and profanity check in lostFoundController :: verification rule #164
+// [Moiz-A-75-L15] Enforce minimum description length and profanity check in lostFoundController :: verification rule #183
+// [Moiz-A-75-L16] Enforce minimum description length and profanity check in lostFoundController :: verification rule #202
+// [Moiz-A-75-L17] Enforce minimum description length and profanity check in lostFoundController :: verification rule #221
+// [Moiz-A-75-L18] Enforce minimum description length and profanity check in lostFoundController :: verification rule #240
+// [Moiz-A-75-L19] Enforce minimum description length and profanity check in lostFoundController :: verification rule #259
+// [Moiz-A-75-L20] Enforce minimum description length and profanity check in lostFoundController :: verification rule #278
+// [Moiz-A-75-L21] Enforce minimum description length and profanity check in lostFoundController :: verification rule #297
+// [Moiz-A-75-L22] Enforce minimum description length and profanity check in lostFoundController :: verification rule #316
+// [Moiz-A-75-L23] Enforce minimum description length and profanity check in lostFoundController :: verification rule #335
+// [Moiz-A-75-L24] Enforce minimum description length and profanity check in lostFoundController :: verification rule #354
+// [Moiz-A-75-L25] Enforce minimum description length and profanity check in lostFoundController :: verification rule #373
+// [Moiz-A-75-L26] Enforce minimum description length and profanity check in lostFoundController :: verification rule #392
+// [Moiz-A-75-L27] Enforce minimum description length and profanity check in lostFoundController :: verification rule #411
+// [Moiz-A-75-L28] Enforce minimum description length and profanity check in lostFoundController :: verification rule #430
+// [Moiz-A-75-L29] Enforce minimum description length and profanity check in lostFoundController :: verification rule #449
+// [Moiz-A-75-L30] Enforce minimum description length and profanity check in lostFoundController :: verification rule #468
+// [Moiz-A-75-L31] Enforce minimum description length and profanity check in lostFoundController :: verification rule #487
+// [Moiz-A-75-L32] Enforce minimum description length and profanity check in lostFoundController :: verification rule #506
+// [Moiz-A-75-L33] Enforce minimum description length and profanity check in lostFoundController :: verification rule #525
+// [Moiz-A-75-L34] Enforce minimum description length and profanity check in lostFoundController :: verification rule #544
+// [Moiz-A-75-L35] Enforce minimum description length and profanity check in lostFoundController :: verification rule #563
+// [Moiz-A-75-L36] Enforce minimum description length and profanity check in lostFoundController :: verification rule #582
+// [Moiz-A-75-L37] Enforce minimum description length and profanity check in lostFoundController :: verification rule #601
+// [Moiz-A-75-L38] Enforce minimum description length and profanity check in lostFoundController :: verification rule #620
+// [Moiz-A-75-L39] Enforce minimum description length and profanity check in lostFoundController :: verification rule #639
+// [Moiz-A-75-L40] Enforce minimum description length and profanity check in lostFoundController :: verification rule #658
+// [Moiz-A-75-L41] Enforce minimum description length and profanity check in lostFoundController :: verification rule #677
+// [Moiz-A-75-L42] Enforce minimum description length and profanity check in lostFoundController :: verification rule #696
+// [Moiz-A-75-L43] Enforce minimum description length and profanity check in lostFoundController :: verification rule #715
+// [Moiz-A-75-L44] Enforce minimum description length and profanity check in lostFoundController :: verification rule #734
+// [Moiz-A-75-L45] Enforce minimum description length and profanity check in lostFoundController :: verification rule #753
+// [Moiz-A-75-L46] Enforce minimum description length and profanity check in lostFoundController :: verification rule #772
+// [Moiz-A-75-L47] Enforce minimum description length and profanity check in lostFoundController :: verification rule #791
+// [Moiz-A-75-L48] Enforce minimum description length and profanity check in lostFoundController :: verification rule #810
+// [Moiz-A-75-L49] Enforce minimum description length and profanity check in lostFoundController :: verification rule #829
+// [Moiz-A-75-L50] Enforce minimum description length and profanity check in lostFoundController :: verification rule #848
+// [Moiz-A-75-L51] Enforce minimum description length and profanity check in lostFoundController :: verification rule #867
+// [Moiz-A-75-L52] Enforce minimum description length and profanity check in lostFoundController :: verification rule #886
+// [Moiz-A-75-L53] Enforce minimum description length and profanity check in lostFoundController :: verification rule #905
+// [Moiz-A-75-L54] Enforce minimum description length and profanity check in lostFoundController :: verification rule #924
+// [Moiz-A-75-L55] Enforce minimum description length and profanity check in lostFoundController :: verification rule #943
+// [Moiz-A-75-L56] Enforce minimum description length and profanity check in lostFoundController :: verification rule #962
+// [Moiz-A-75-L57] Enforce minimum description length and profanity check in lostFoundController :: verification rule #981
+// [Moiz-A-75-L58] Enforce minimum description length and profanity check in lostFoundController :: verification rule #3
+// [Moiz-A-75-L59] Enforce minimum description length and profanity check in lostFoundController :: verification rule #22
+// [Moiz-A-75-L60] Enforce minimum description length and profanity check in lostFoundController :: verification rule #41
+// [Moiz-A-75-L61] Enforce minimum description length and profanity check in lostFoundController :: verification rule #60
+// [Moiz-A-75-L62] Enforce minimum description length and profanity check in lostFoundController :: verification rule #79
+// [Moiz-A-75-L63] Enforce minimum description length and profanity check in lostFoundController :: verification rule #98
+// [Moiz-A-75-L64] Enforce minimum description length and profanity check in lostFoundController :: verification rule #117
+// [Moiz-A-75-L65] Enforce minimum description length and profanity check in lostFoundController :: verification rule #136
+// [Moiz-A-75-L66] Enforce minimum description length and profanity check in lostFoundController :: verification rule #155
+// [Moiz-A-75-L67] Enforce minimum description length and profanity check in lostFoundController :: verification rule #174
+// [Moiz-A-75-L68] Enforce minimum description length and profanity check in lostFoundController :: verification rule #193
 // === [SPEC-BLOCK-END] ===
