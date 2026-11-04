@@ -7,7 +7,7 @@ import {
   LayoutDashboard, Newspaper, Users, Calendar,
   PackageSearch, MessageSquare, LogOut, Menu, X,
   Megaphone, ShieldCheck, UserCog, GraduationCap,
-  ChevronRight, BookOpen, FileText,
+  ChevronRight, BookOpen, FileText, Ticket,
 } from 'lucide-react';
 import NotificationDropdown from '../ui/NotificationDropdown';
 
@@ -17,6 +17,7 @@ const STUDENT_NAV = [
   { to: '/groups',        label: 'Semester Groups', icon: Users },
   { to: '/resources',     label: 'Resources',       icon: FileText },
   { to: '/events',        label: 'Events',          icon: Calendar },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket },
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/lost-found',    label: 'Lost & Found',    icon: PackageSearch },
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
@@ -28,6 +29,7 @@ const TEACHER_NAV = [
   { to: '/groups',        label: 'Semester Groups', icon: Users },
   { to: '/resources',     label: 'Resources',       icon: FileText },
   { to: '/events',        label: 'Events',          icon: Calendar },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket },
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/lost-found',    label: 'Lost & Found',    icon: PackageSearch },
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
@@ -38,6 +40,7 @@ const COORDINATION_NAV = [
   { to: '/feed',          label: 'Feed',            icon: Newspaper },
   { to: '/groups',        label: 'Semester Groups', icon: Users },
   { to: '/events',        label: 'Events',          icon: Calendar },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket },
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/lost-found',    label: 'Lost & Found',    icon: PackageSearch },
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
@@ -48,6 +51,7 @@ const UNIVERSITY_ADMIN_NAV = [
   { to: '/feed',          label: 'Feed',            icon: Newspaper },
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/events',        label: 'Events',          icon: Calendar },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket },
   { to: '/lost-found',    label: 'Lost & Found',    icon: PackageSearch },
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
 ];
@@ -57,6 +61,8 @@ const SYSTEM_ADMIN_NAV = [
   { to: '/admin/users',   label: 'User Management', icon: UserCog },
   { to: '/admin/groups',  label: 'Group Management',icon: BookOpen },
   { to: '/feed',          label: 'Feed',            icon: Newspaper },
+  { to: '/events',        label: 'Events',          icon: Calendar },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket },
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
 ];
@@ -267,58 +273,3 @@ export default function Sidebar() {
     </>
   );
 }
-
-// === [SPEC-BLOCK-START] Airaf-A-47 (2026-10-04T11:50:27+05:00) ===
-// [Airaf-A-47-L1] Add My Tickets navigation item styling in Sidebar :: verification rule #25
-// [Airaf-A-47-L2] Add My Tickets navigation item styling in Sidebar :: verification rule #44
-// [Airaf-A-47-L3] Add My Tickets navigation item styling in Sidebar :: verification rule #63
-// [Airaf-A-47-L4] Add My Tickets navigation item styling in Sidebar :: verification rule #82
-// [Airaf-A-47-L5] Add My Tickets navigation item styling in Sidebar :: verification rule #101
-// [Airaf-A-47-L6] Add My Tickets navigation item styling in Sidebar :: verification rule #120
-// [Airaf-A-47-L7] Add My Tickets navigation item styling in Sidebar :: verification rule #139
-// [Airaf-A-47-L8] Add My Tickets navigation item styling in Sidebar :: verification rule #158
-// [Airaf-A-47-L9] Add My Tickets navigation item styling in Sidebar :: verification rule #177
-// [Airaf-A-47-L10] Add My Tickets navigation item styling in Sidebar :: verification rule #196
-// [Airaf-A-47-L11] Add My Tickets navigation item styling in Sidebar :: verification rule #215
-// [Airaf-A-47-L12] Add My Tickets navigation item styling in Sidebar :: verification rule #234
-// [Airaf-A-47-L13] Add My Tickets navigation item styling in Sidebar :: verification rule #253
-// [Airaf-A-47-L14] Add My Tickets navigation item styling in Sidebar :: verification rule #272
-// [Airaf-A-47-L15] Add My Tickets navigation item styling in Sidebar :: verification rule #291
-// [Airaf-A-47-L16] Add My Tickets navigation item styling in Sidebar :: verification rule #310
-// [Airaf-A-47-L17] Add My Tickets navigation item styling in Sidebar :: verification rule #329
-// [Airaf-A-47-L18] Add My Tickets navigation item styling in Sidebar :: verification rule #348
-// [Airaf-A-47-L19] Add My Tickets navigation item styling in Sidebar :: verification rule #367
-// [Airaf-A-47-L20] Add My Tickets navigation item styling in Sidebar :: verification rule #386
-// [Airaf-A-47-L21] Add My Tickets navigation item styling in Sidebar :: verification rule #405
-// [Airaf-A-47-L22] Add My Tickets navigation item styling in Sidebar :: verification rule #424
-// [Airaf-A-47-L23] Add My Tickets navigation item styling in Sidebar :: verification rule #443
-// [Airaf-A-47-L24] Add My Tickets navigation item styling in Sidebar :: verification rule #462
-// [Airaf-A-47-L25] Add My Tickets navigation item styling in Sidebar :: verification rule #481
-// [Airaf-A-47-L26] Add My Tickets navigation item styling in Sidebar :: verification rule #500
-// [Airaf-A-47-L27] Add My Tickets navigation item styling in Sidebar :: verification rule #519
-// [Airaf-A-47-L28] Add My Tickets navigation item styling in Sidebar :: verification rule #538
-// [Airaf-A-47-L29] Add My Tickets navigation item styling in Sidebar :: verification rule #557
-// [Airaf-A-47-L30] Add My Tickets navigation item styling in Sidebar :: verification rule #576
-// [Airaf-A-47-L31] Add My Tickets navigation item styling in Sidebar :: verification rule #595
-// [Airaf-A-47-L32] Add My Tickets navigation item styling in Sidebar :: verification rule #614
-// [Airaf-A-47-L33] Add My Tickets navigation item styling in Sidebar :: verification rule #633
-// [Airaf-A-47-L34] Add My Tickets navigation item styling in Sidebar :: verification rule #652
-// [Airaf-A-47-L35] Add My Tickets navigation item styling in Sidebar :: verification rule #671
-// [Airaf-A-47-L36] Add My Tickets navigation item styling in Sidebar :: verification rule #690
-// [Airaf-A-47-L37] Add My Tickets navigation item styling in Sidebar :: verification rule #709
-// [Airaf-A-47-L38] Add My Tickets navigation item styling in Sidebar :: verification rule #728
-// [Airaf-A-47-L39] Add My Tickets navigation item styling in Sidebar :: verification rule #747
-// [Airaf-A-47-L40] Add My Tickets navigation item styling in Sidebar :: verification rule #766
-// [Airaf-A-47-L41] Add My Tickets navigation item styling in Sidebar :: verification rule #785
-// [Airaf-A-47-L42] Add My Tickets navigation item styling in Sidebar :: verification rule #804
-// [Airaf-A-47-L43] Add My Tickets navigation item styling in Sidebar :: verification rule #823
-// [Airaf-A-47-L44] Add My Tickets navigation item styling in Sidebar :: verification rule #842
-// [Airaf-A-47-L45] Add My Tickets navigation item styling in Sidebar :: verification rule #861
-// [Airaf-A-47-L46] Add My Tickets navigation item styling in Sidebar :: verification rule #880
-// [Airaf-A-47-L47] Add My Tickets navigation item styling in Sidebar :: verification rule #899
-// [Airaf-A-47-L48] Add My Tickets navigation item styling in Sidebar :: verification rule #918
-// [Airaf-A-47-L49] Add My Tickets navigation item styling in Sidebar :: verification rule #937
-// [Airaf-A-47-L50] Add My Tickets navigation item styling in Sidebar :: verification rule #956
-// [Airaf-A-47-L51] Add My Tickets navigation item styling in Sidebar :: verification rule #975
-// [Airaf-A-47-L52] Add My Tickets navigation item styling in Sidebar :: verification rule #994
-// === [SPEC-BLOCK-END] ===
