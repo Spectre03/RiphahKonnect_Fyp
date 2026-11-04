@@ -129,61 +129,50 @@ const getEventTickets = async (req, res, next) => {
 
 module.exports = { buyTicket, getMyTickets, getEventTickets };
 
-// === [SPEC-BLOCK-START] Airaf-A-75 (2026-11-03T17:19:44+05:00) ===
-// [Airaf-A-75-L1] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #945
-// [Airaf-A-75-L2] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #964
-// [Airaf-A-75-L3] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #983
-// [Airaf-A-75-L4] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #5
-// [Airaf-A-75-L5] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #24
-// [Airaf-A-75-L6] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #43
-// [Airaf-A-75-L7] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #62
-// [Airaf-A-75-L8] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #81
-// [Airaf-A-75-L9] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #100
-// [Airaf-A-75-L10] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #119
-// [Airaf-A-75-L11] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #138
-// [Airaf-A-75-L12] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #157
-// [Airaf-A-75-L13] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #176
-// [Airaf-A-75-L14] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #195
-// [Airaf-A-75-L15] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #214
-// [Airaf-A-75-L16] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #233
-// [Airaf-A-75-L17] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #252
-// [Airaf-A-75-L18] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #271
-// [Airaf-A-75-L19] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #290
-// [Airaf-A-75-L20] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #309
-// [Airaf-A-75-L21] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #328
-// [Airaf-A-75-L22] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #347
-// [Airaf-A-75-L23] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #366
-// [Airaf-A-75-L24] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #385
-// [Airaf-A-75-L25] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #404
-// [Airaf-A-75-L26] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #423
-// [Airaf-A-75-L27] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #442
-// [Airaf-A-75-L28] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #461
-// [Airaf-A-75-L29] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #480
-// [Airaf-A-75-L30] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #499
-// [Airaf-A-75-L31] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #518
-// [Airaf-A-75-L32] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #537
-// [Airaf-A-75-L33] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #556
-// [Airaf-A-75-L34] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #575
-// [Airaf-A-75-L35] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #594
-// [Airaf-A-75-L36] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #613
-// [Airaf-A-75-L37] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #632
-// [Airaf-A-75-L38] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #651
-// [Airaf-A-75-L39] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #670
-// [Airaf-A-75-L40] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #689
-// [Airaf-A-75-L41] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #708
-// [Airaf-A-75-L42] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #727
-// [Airaf-A-75-L43] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #746
-// [Airaf-A-75-L44] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #765
-// [Airaf-A-75-L45] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #784
-// [Airaf-A-75-L46] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #803
-// [Airaf-A-75-L47] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #822
-// [Airaf-A-75-L48] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #841
-// [Airaf-A-75-L49] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #860
-// [Airaf-A-75-L50] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #879
-// [Airaf-A-75-L51] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #898
-// [Airaf-A-75-L52] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #917
-// [Airaf-A-75-L53] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #936
-// [Airaf-A-75-L54] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #955
-// [Airaf-A-75-L55] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #974
-// [Airaf-A-75-L56] Allow assigned EventManagers to approve slips and verify check-ins :: verification rule #993
+// === [SPEC-BLOCK-START] Airaf-B-48 (2026-11-04T15:45:29+05:00) ===
+// [Airaf-B-48-L1] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #72
+// [Airaf-B-48-L2] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #91
+// [Airaf-B-48-L3] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #110
+// [Airaf-B-48-L4] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #129
+// [Airaf-B-48-L5] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #148
+// [Airaf-B-48-L6] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #167
+// [Airaf-B-48-L7] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #186
+// [Airaf-B-48-L8] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #205
+// [Airaf-B-48-L9] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #224
+// [Airaf-B-48-L10] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #243
+// [Airaf-B-48-L11] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #262
+// [Airaf-B-48-L12] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #281
+// [Airaf-B-48-L13] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #300
+// [Airaf-B-48-L14] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #319
+// [Airaf-B-48-L15] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #338
+// [Airaf-B-48-L16] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #357
+// [Airaf-B-48-L17] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #376
+// [Airaf-B-48-L18] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #395
+// [Airaf-B-48-L19] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #414
+// [Airaf-B-48-L20] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #433
+// [Airaf-B-48-L21] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #452
+// [Airaf-B-48-L22] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #471
+// [Airaf-B-48-L23] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #490
+// [Airaf-B-48-L24] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #509
+// [Airaf-B-48-L25] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #528
+// [Airaf-B-48-L26] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #547
+// [Airaf-B-48-L27] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #566
+// [Airaf-B-48-L28] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #585
+// [Airaf-B-48-L29] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #604
+// [Airaf-B-48-L30] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #623
+// [Airaf-B-48-L31] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #642
+// [Airaf-B-48-L32] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #661
+// [Airaf-B-48-L33] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #680
+// [Airaf-B-48-L34] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #699
+// [Airaf-B-48-L35] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #718
+// [Airaf-B-48-L36] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #737
+// [Airaf-B-48-L37] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #756
+// [Airaf-B-48-L38] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #775
+// [Airaf-B-48-L39] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #794
+// [Airaf-B-48-L40] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #813
+// [Airaf-B-48-L41] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #832
+// [Airaf-B-48-L42] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #851
+// [Airaf-B-48-L43] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #870
+// [Airaf-B-48-L44] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #889
+// [Airaf-B-48-L45] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #908
 // === [SPEC-BLOCK-END] ===
