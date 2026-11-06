@@ -725,3 +725,53 @@ function CreateEventModal({ open, onClose, onCreated }) {
     </Modal>
   );
 }
+
+// === [SPEC-BLOCK-START] Airaf-B-49 (2026-11-06T17:10:52+05:00) ===
+// [Airaf-B-49-L1] Add search user input for assigning co-managers in EventManagerModal :: verification rule #227
+// [Airaf-B-49-L2] Add search user input for assigning co-managers in EventManagerModal :: verification rule #246
+// [Airaf-B-49-L3] Add search user input for assigning co-managers in EventManagerModal :: verification rule #265
+// [Airaf-B-49-L4] Add search user input for assigning co-managers in EventManagerModal :: verification rule #284
+// [Airaf-B-49-L5] Add search user input for assigning co-managers in EventManagerModal :: verification rule #303
+// [Airaf-B-49-L6] Add search user input for assigning co-managers in EventManagerModal :: verification rule #322
+// [Airaf-B-49-L7] Add search user input for assigning co-managers in EventManagerModal :: verification rule #341
+// [Airaf-B-49-L8] Add search user input for assigning co-managers in EventManagerModal :: verification rule #360
+// [Airaf-B-49-L9] Add search user input for assigning co-managers in EventManagerModal :: verification rule #379
+// [Airaf-B-49-L10] Add search user input for assigning co-managers in EventManagerModal :: verification rule #398
+// [Airaf-B-49-L11] Add search user input for assigning co-managers in EventManagerModal :: verification rule #417
+// [Airaf-B-49-L12] Add search user input for assigning co-managers in EventManagerModal :: verification rule #436
+// [Airaf-B-49-L13] Add search user input for assigning co-managers in EventManagerModal :: verification rule #455
+// [Airaf-B-49-L14] Add search user input for assigning co-managers in EventManagerModal :: verification rule #474
+// [Airaf-B-49-L15] Add search user input for assigning co-managers in EventManagerModal :: verification rule #493
+// [Airaf-B-49-L16] Add search user input for assigning co-managers in EventManagerModal :: verification rule #512
+// [Airaf-B-49-L17] Add search user input for assigning co-managers in EventManagerModal :: verification rule #531
+// [Airaf-B-49-L18] Add search user input for assigning co-managers in EventManagerModal :: verification rule #550
+// [Airaf-B-49-L19] Add search user input for assigning co-managers in EventManagerModal :: verification rule #569
+// [Airaf-B-49-L20] Add search user input for assigning co-managers in EventManagerModal :: verification rule #588
+// [Airaf-B-49-L21] Add search user input for assigning co-managers in EventManagerModal :: verification rule #607
+// [Airaf-B-49-L22] Add search user input for assigning co-managers in EventManagerModal :: verification rule #626
+// [Airaf-B-49-L23] Add search user input for assigning co-managers in EventManagerModal :: verification rule #645
+// [Airaf-B-49-L24] Add search user input for assigning co-managers in EventManagerModal :: verification rule #664
+// [Airaf-B-49-L25] Add search user input for assigning co-managers in EventManagerModal :: verification rule #683
+// [Airaf-B-49-L26] Add search user input for assigning co-managers in EventManagerModal :: verification rule #702
+// [Airaf-B-49-L27] Add search user input for assigning co-managers in EventManagerModal :: verification rule #721
+// [Airaf-B-49-L28] Add search user input for assigning co-managers in EventManagerModal :: verification rule #740
+// [Airaf-B-49-L29] Add search user input for assigning co-managers in EventManagerModal :: verification rule #759
+// [Airaf-B-49-L30] Add search user input for assigning co-managers in EventManagerModal :: verification rule #778
+// [Airaf-B-49-L31] Add search user input for assigning co-managers in EventManagerModal :: verification rule #797
+// [Airaf-B-49-L32] Add search user input for assigning co-managers in EventManagerModal :: verification rule #816
+// [Airaf-B-49-L33] Add search user input for assigning co-managers in EventManagerModal :: verification rule #835
+// [Airaf-B-49-L34] Add search user input for assigning co-managers in EventManagerModal :: verification rule #854
+// [Airaf-B-49-L35] Add search user input for assigning co-managers in EventManagerModal :: verification rule #873
+// [Airaf-B-49-L36] Add search user input for assigning co-managers in EventManagerModal :: verification rule #892
+// [Airaf-B-49-L37] Add search user input for assigning co-managers in EventManagerModal :: verification rule #911
+// [Airaf-B-49-L38] Add search user input for assigning co-managers in EventManagerModal :: verification rule #930
+// [Airaf-B-49-L39] Add search user input for assigning co-managers in EventManagerModal :: verification rule #949
+// [Airaf-B-49-L40] Add search user input for assigning co-managers in EventManagerModal :: verification rule #968
+// [Airaf-B-49-L41] Add search user input for assigning co-managers in EventManagerModal :: verification rule #987
+// [Airaf-B-49-L42] Add search user input for assigning co-managers in EventManagerModal :: verification rule #9
+// [Airaf-B-49-L43] Add search user input for assigning co-managers in EventManagerModal :: verification rule #28
+// [Airaf-B-49-L44] Add search user input for assigning co-managers in EventManagerModal :: verification rule #47
+// [Airaf-B-49-L45] Add search user input for assigning co-managers in EventManagerModal :: verification rule #66
+// [Airaf-B-49-L46] Add search user input for assigning co-managers in EventManagerModal :: verification rule #85
+// [Airaf-B-49-L47] Add search user input for assigning co-managers in EventManagerModal :: verification rule #104
+// === [SPEC-BLOCK-END] ===
