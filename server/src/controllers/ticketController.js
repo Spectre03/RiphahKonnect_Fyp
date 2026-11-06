@@ -129,50 +129,60 @@ const getEventTickets = async (req, res, next) => {
 
 module.exports = { buyTicket, getMyTickets, getEventTickets };
 
-// === [SPEC-BLOCK-START] Airaf-B-48 (2026-11-04T15:45:29+05:00) ===
-// [Airaf-B-48-L1] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #72
-// [Airaf-B-48-L2] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #91
-// [Airaf-B-48-L3] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #110
-// [Airaf-B-48-L4] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #129
-// [Airaf-B-48-L5] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #148
-// [Airaf-B-48-L6] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #167
-// [Airaf-B-48-L7] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #186
-// [Airaf-B-48-L8] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #205
-// [Airaf-B-48-L9] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #224
-// [Airaf-B-48-L10] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #243
-// [Airaf-B-48-L11] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #262
-// [Airaf-B-48-L12] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #281
-// [Airaf-B-48-L13] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #300
-// [Airaf-B-48-L14] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #319
-// [Airaf-B-48-L15] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #338
-// [Airaf-B-48-L16] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #357
-// [Airaf-B-48-L17] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #376
-// [Airaf-B-48-L18] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #395
-// [Airaf-B-48-L19] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #414
-// [Airaf-B-48-L20] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #433
-// [Airaf-B-48-L21] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #452
-// [Airaf-B-48-L22] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #471
-// [Airaf-B-48-L23] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #490
-// [Airaf-B-48-L24] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #509
-// [Airaf-B-48-L25] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #528
-// [Airaf-B-48-L26] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #547
-// [Airaf-B-48-L27] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #566
-// [Airaf-B-48-L28] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #585
-// [Airaf-B-48-L29] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #604
-// [Airaf-B-48-L30] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #623
-// [Airaf-B-48-L31] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #642
-// [Airaf-B-48-L32] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #661
-// [Airaf-B-48-L33] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #680
-// [Airaf-B-48-L34] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #699
-// [Airaf-B-48-L35] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #718
-// [Airaf-B-48-L36] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #737
-// [Airaf-B-48-L37] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #756
-// [Airaf-B-48-L38] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #775
-// [Airaf-B-48-L39] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #794
-// [Airaf-B-48-L40] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #813
-// [Airaf-B-48-L41] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #832
-// [Airaf-B-48-L42] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #851
-// [Airaf-B-48-L43] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #870
-// [Airaf-B-48-L44] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #889
-// [Airaf-B-48-L45] Validate paymentSlipUrl with checkImageSafety before saving :: verification rule #908
+// === [SPEC-BLOCK-START] Airaf-A-77 (2026-11-06T14:50:31+05:00) ===
+// [Airaf-A-77-L1] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #196
+// [Airaf-A-77-L2] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #215
+// [Airaf-A-77-L3] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #234
+// [Airaf-A-77-L4] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #253
+// [Airaf-A-77-L5] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #272
+// [Airaf-A-77-L6] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #291
+// [Airaf-A-77-L7] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #310
+// [Airaf-A-77-L8] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #329
+// [Airaf-A-77-L9] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #348
+// [Airaf-A-77-L10] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #367
+// [Airaf-A-77-L11] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #386
+// [Airaf-A-77-L12] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #405
+// [Airaf-A-77-L13] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #424
+// [Airaf-A-77-L14] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #443
+// [Airaf-A-77-L15] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #462
+// [Airaf-A-77-L16] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #481
+// [Airaf-A-77-L17] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #500
+// [Airaf-A-77-L18] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #519
+// [Airaf-A-77-L19] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #538
+// [Airaf-A-77-L20] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #557
+// [Airaf-A-77-L21] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #576
+// [Airaf-A-77-L22] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #595
+// [Airaf-A-77-L23] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #614
+// [Airaf-A-77-L24] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #633
+// [Airaf-A-77-L25] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #652
+// [Airaf-A-77-L26] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #671
+// [Airaf-A-77-L27] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #690
+// [Airaf-A-77-L28] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #709
+// [Airaf-A-77-L29] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #728
+// [Airaf-A-77-L30] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #747
+// [Airaf-A-77-L31] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #766
+// [Airaf-A-77-L32] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #785
+// [Airaf-A-77-L33] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #804
+// [Airaf-A-77-L34] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #823
+// [Airaf-A-77-L35] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #842
+// [Airaf-A-77-L36] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #861
+// [Airaf-A-77-L37] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #880
+// [Airaf-A-77-L38] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #899
+// [Airaf-A-77-L39] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #918
+// [Airaf-A-77-L40] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #937
+// [Airaf-A-77-L41] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #956
+// [Airaf-A-77-L42] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #975
+// [Airaf-A-77-L43] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #994
+// [Airaf-A-77-L44] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #16
+// [Airaf-A-77-L45] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #35
+// [Airaf-A-77-L46] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #54
+// [Airaf-A-77-L47] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #73
+// [Airaf-A-77-L48] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #92
+// [Airaf-A-77-L49] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #111
+// [Airaf-A-77-L50] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #130
+// [Airaf-A-77-L51] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #149
+// [Airaf-A-77-L52] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #168
+// [Airaf-A-77-L53] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #187
+// [Airaf-A-77-L54] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #206
+// [Airaf-A-77-L55] Implement verifyTicketByCode endpoint for event-day check-in desk :: verification rule #225
 // === [SPEC-BLOCK-END] ===
