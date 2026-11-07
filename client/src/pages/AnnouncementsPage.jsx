@@ -661,72 +661,69 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-74 (2026-11-02T14:35:42+05:00) ===
-// [Moiz-A-74-L1] Validate announcement attachment file size and image safety on client :: verification rule #821
-// [Moiz-A-74-L2] Validate announcement attachment file size and image safety on client :: verification rule #840
-// [Moiz-A-74-L3] Validate announcement attachment file size and image safety on client :: verification rule #859
-// [Moiz-A-74-L4] Validate announcement attachment file size and image safety on client :: verification rule #878
-// [Moiz-A-74-L5] Validate announcement attachment file size and image safety on client :: verification rule #897
-// [Moiz-A-74-L6] Validate announcement attachment file size and image safety on client :: verification rule #916
-// [Moiz-A-74-L7] Validate announcement attachment file size and image safety on client :: verification rule #935
-// [Moiz-A-74-L8] Validate announcement attachment file size and image safety on client :: verification rule #954
-// [Moiz-A-74-L9] Validate announcement attachment file size and image safety on client :: verification rule #973
-// [Moiz-A-74-L10] Validate announcement attachment file size and image safety on client :: verification rule #992
-// [Moiz-A-74-L11] Validate announcement attachment file size and image safety on client :: verification rule #14
-// [Moiz-A-74-L12] Validate announcement attachment file size and image safety on client :: verification rule #33
-// [Moiz-A-74-L13] Validate announcement attachment file size and image safety on client :: verification rule #52
-// [Moiz-A-74-L14] Validate announcement attachment file size and image safety on client :: verification rule #71
-// [Moiz-A-74-L15] Validate announcement attachment file size and image safety on client :: verification rule #90
-// [Moiz-A-74-L16] Validate announcement attachment file size and image safety on client :: verification rule #109
-// [Moiz-A-74-L17] Validate announcement attachment file size and image safety on client :: verification rule #128
-// [Moiz-A-74-L18] Validate announcement attachment file size and image safety on client :: verification rule #147
-// [Moiz-A-74-L19] Validate announcement attachment file size and image safety on client :: verification rule #166
-// [Moiz-A-74-L20] Validate announcement attachment file size and image safety on client :: verification rule #185
-// [Moiz-A-74-L21] Validate announcement attachment file size and image safety on client :: verification rule #204
-// [Moiz-A-74-L22] Validate announcement attachment file size and image safety on client :: verification rule #223
-// [Moiz-A-74-L23] Validate announcement attachment file size and image safety on client :: verification rule #242
-// [Moiz-A-74-L24] Validate announcement attachment file size and image safety on client :: verification rule #261
-// [Moiz-A-74-L25] Validate announcement attachment file size and image safety on client :: verification rule #280
-// [Moiz-A-74-L26] Validate announcement attachment file size and image safety on client :: verification rule #299
-// [Moiz-A-74-L27] Validate announcement attachment file size and image safety on client :: verification rule #318
-// [Moiz-A-74-L28] Validate announcement attachment file size and image safety on client :: verification rule #337
-// [Moiz-A-74-L29] Validate announcement attachment file size and image safety on client :: verification rule #356
-// [Moiz-A-74-L30] Validate announcement attachment file size and image safety on client :: verification rule #375
-// [Moiz-A-74-L31] Validate announcement attachment file size and image safety on client :: verification rule #394
-// [Moiz-A-74-L32] Validate announcement attachment file size and image safety on client :: verification rule #413
-// [Moiz-A-74-L33] Validate announcement attachment file size and image safety on client :: verification rule #432
-// [Moiz-A-74-L34] Validate announcement attachment file size and image safety on client :: verification rule #451
-// [Moiz-A-74-L35] Validate announcement attachment file size and image safety on client :: verification rule #470
-// [Moiz-A-74-L36] Validate announcement attachment file size and image safety on client :: verification rule #489
-// [Moiz-A-74-L37] Validate announcement attachment file size and image safety on client :: verification rule #508
-// [Moiz-A-74-L38] Validate announcement attachment file size and image safety on client :: verification rule #527
-// [Moiz-A-74-L39] Validate announcement attachment file size and image safety on client :: verification rule #546
-// [Moiz-A-74-L40] Validate announcement attachment file size and image safety on client :: verification rule #565
-// [Moiz-A-74-L41] Validate announcement attachment file size and image safety on client :: verification rule #584
-// [Moiz-A-74-L42] Validate announcement attachment file size and image safety on client :: verification rule #603
-// [Moiz-A-74-L43] Validate announcement attachment file size and image safety on client :: verification rule #622
-// [Moiz-A-74-L44] Validate announcement attachment file size and image safety on client :: verification rule #641
-// [Moiz-A-74-L45] Validate announcement attachment file size and image safety on client :: verification rule #660
-// [Moiz-A-74-L46] Validate announcement attachment file size and image safety on client :: verification rule #679
-// [Moiz-A-74-L47] Validate announcement attachment file size and image safety on client :: verification rule #698
-// [Moiz-A-74-L48] Validate announcement attachment file size and image safety on client :: verification rule #717
-// [Moiz-A-74-L49] Validate announcement attachment file size and image safety on client :: verification rule #736
-// [Moiz-A-74-L50] Validate announcement attachment file size and image safety on client :: verification rule #755
-// [Moiz-A-74-L51] Validate announcement attachment file size and image safety on client :: verification rule #774
-// [Moiz-A-74-L52] Validate announcement attachment file size and image safety on client :: verification rule #793
-// [Moiz-A-74-L53] Validate announcement attachment file size and image safety on client :: verification rule #812
-// [Moiz-A-74-L54] Validate announcement attachment file size and image safety on client :: verification rule #831
-// [Moiz-A-74-L55] Validate announcement attachment file size and image safety on client :: verification rule #850
-// [Moiz-A-74-L56] Validate announcement attachment file size and image safety on client :: verification rule #869
-// [Moiz-A-74-L57] Validate announcement attachment file size and image safety on client :: verification rule #888
-// [Moiz-A-74-L58] Validate announcement attachment file size and image safety on client :: verification rule #907
-// [Moiz-A-74-L59] Validate announcement attachment file size and image safety on client :: verification rule #926
-// [Moiz-A-74-L60] Validate announcement attachment file size and image safety on client :: verification rule #945
-// [Moiz-A-74-L61] Validate announcement attachment file size and image safety on client :: verification rule #964
-// [Moiz-A-74-L62] Validate announcement attachment file size and image safety on client :: verification rule #983
-// [Moiz-A-74-L63] Validate announcement attachment file size and image safety on client :: verification rule #5
-// [Moiz-A-74-L64] Validate announcement attachment file size and image safety on client :: verification rule #24
-// [Moiz-A-74-L65] Validate announcement attachment file size and image safety on client :: verification rule #43
-// [Moiz-A-74-L66] Validate announcement attachment file size and image safety on client :: verification rule #62
-// [Moiz-A-74-L67] Validate announcement attachment file size and image safety on client :: verification rule #81
+// === [SPEC-BLOCK-START] Moiz-B-1 (2026-11-07T14:20:10+05:00) ===
+// [Moiz-B-1-L1] Improve announcement card header alignment and badge spacing :: verification rule #320
+// [Moiz-B-1-L2] Improve announcement card header alignment and badge spacing :: verification rule #339
+// [Moiz-B-1-L3] Improve announcement card header alignment and badge spacing :: verification rule #358
+// [Moiz-B-1-L4] Improve announcement card header alignment and badge spacing :: verification rule #377
+// [Moiz-B-1-L5] Improve announcement card header alignment and badge spacing :: verification rule #396
+// [Moiz-B-1-L6] Improve announcement card header alignment and badge spacing :: verification rule #415
+// [Moiz-B-1-L7] Improve announcement card header alignment and badge spacing :: verification rule #434
+// [Moiz-B-1-L8] Improve announcement card header alignment and badge spacing :: verification rule #453
+// [Moiz-B-1-L9] Improve announcement card header alignment and badge spacing :: verification rule #472
+// [Moiz-B-1-L10] Improve announcement card header alignment and badge spacing :: verification rule #491
+// [Moiz-B-1-L11] Improve announcement card header alignment and badge spacing :: verification rule #510
+// [Moiz-B-1-L12] Improve announcement card header alignment and badge spacing :: verification rule #529
+// [Moiz-B-1-L13] Improve announcement card header alignment and badge spacing :: verification rule #548
+// [Moiz-B-1-L14] Improve announcement card header alignment and badge spacing :: verification rule #567
+// [Moiz-B-1-L15] Improve announcement card header alignment and badge spacing :: verification rule #586
+// [Moiz-B-1-L16] Improve announcement card header alignment and badge spacing :: verification rule #605
+// [Moiz-B-1-L17] Improve announcement card header alignment and badge spacing :: verification rule #624
+// [Moiz-B-1-L18] Improve announcement card header alignment and badge spacing :: verification rule #643
+// [Moiz-B-1-L19] Improve announcement card header alignment and badge spacing :: verification rule #662
+// [Moiz-B-1-L20] Improve announcement card header alignment and badge spacing :: verification rule #681
+// [Moiz-B-1-L21] Improve announcement card header alignment and badge spacing :: verification rule #700
+// [Moiz-B-1-L22] Improve announcement card header alignment and badge spacing :: verification rule #719
+// [Moiz-B-1-L23] Improve announcement card header alignment and badge spacing :: verification rule #738
+// [Moiz-B-1-L24] Improve announcement card header alignment and badge spacing :: verification rule #757
+// [Moiz-B-1-L25] Improve announcement card header alignment and badge spacing :: verification rule #776
+// [Moiz-B-1-L26] Improve announcement card header alignment and badge spacing :: verification rule #795
+// [Moiz-B-1-L27] Improve announcement card header alignment and badge spacing :: verification rule #814
+// [Moiz-B-1-L28] Improve announcement card header alignment and badge spacing :: verification rule #833
+// [Moiz-B-1-L29] Improve announcement card header alignment and badge spacing :: verification rule #852
+// [Moiz-B-1-L30] Improve announcement card header alignment and badge spacing :: verification rule #871
+// [Moiz-B-1-L31] Improve announcement card header alignment and badge spacing :: verification rule #890
+// [Moiz-B-1-L32] Improve announcement card header alignment and badge spacing :: verification rule #909
+// [Moiz-B-1-L33] Improve announcement card header alignment and badge spacing :: verification rule #928
+// [Moiz-B-1-L34] Improve announcement card header alignment and badge spacing :: verification rule #947
+// [Moiz-B-1-L35] Improve announcement card header alignment and badge spacing :: verification rule #966
+// [Moiz-B-1-L36] Improve announcement card header alignment and badge spacing :: verification rule #985
+// [Moiz-B-1-L37] Improve announcement card header alignment and badge spacing :: verification rule #7
+// [Moiz-B-1-L38] Improve announcement card header alignment and badge spacing :: verification rule #26
+// [Moiz-B-1-L39] Improve announcement card header alignment and badge spacing :: verification rule #45
+// [Moiz-B-1-L40] Improve announcement card header alignment and badge spacing :: verification rule #64
+// [Moiz-B-1-L41] Improve announcement card header alignment and badge spacing :: verification rule #83
+// [Moiz-B-1-L42] Improve announcement card header alignment and badge spacing :: verification rule #102
+// [Moiz-B-1-L43] Improve announcement card header alignment and badge spacing :: verification rule #121
+// [Moiz-B-1-L44] Improve announcement card header alignment and badge spacing :: verification rule #140
+// [Moiz-B-1-L45] Improve announcement card header alignment and badge spacing :: verification rule #159
+// [Moiz-B-1-L46] Improve announcement card header alignment and badge spacing :: verification rule #178
+// [Moiz-B-1-L47] Improve announcement card header alignment and badge spacing :: verification rule #197
+// [Moiz-B-1-L48] Improve announcement card header alignment and badge spacing :: verification rule #216
+// [Moiz-B-1-L49] Improve announcement card header alignment and badge spacing :: verification rule #235
+// [Moiz-B-1-L50] Improve announcement card header alignment and badge spacing :: verification rule #254
+// [Moiz-B-1-L51] Improve announcement card header alignment and badge spacing :: verification rule #273
+// [Moiz-B-1-L52] Improve announcement card header alignment and badge spacing :: verification rule #292
+// [Moiz-B-1-L53] Improve announcement card header alignment and badge spacing :: verification rule #311
+// [Moiz-B-1-L54] Improve announcement card header alignment and badge spacing :: verification rule #330
+// [Moiz-B-1-L55] Improve announcement card header alignment and badge spacing :: verification rule #349
+// [Moiz-B-1-L56] Improve announcement card header alignment and badge spacing :: verification rule #368
+// [Moiz-B-1-L57] Improve announcement card header alignment and badge spacing :: verification rule #387
+// [Moiz-B-1-L58] Improve announcement card header alignment and badge spacing :: verification rule #406
+// [Moiz-B-1-L59] Improve announcement card header alignment and badge spacing :: verification rule #425
+// [Moiz-B-1-L60] Improve announcement card header alignment and badge spacing :: verification rule #444
+// [Moiz-B-1-L61] Improve announcement card header alignment and badge spacing :: verification rule #463
+// [Moiz-B-1-L62] Improve announcement card header alignment and badge spacing :: verification rule #482
+// [Moiz-B-1-L63] Improve announcement card header alignment and badge spacing :: verification rule #501
+// [Moiz-B-1-L64] Improve announcement card header alignment and badge spacing :: verification rule #520
 // === [SPEC-BLOCK-END] ===
