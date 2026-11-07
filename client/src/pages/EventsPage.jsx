@@ -726,52 +726,62 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-49 (2026-11-06T17:10:52+05:00) ===
-// [Airaf-B-49-L1] Add search user input for assigning co-managers in EventManagerModal :: verification rule #227
-// [Airaf-B-49-L2] Add search user input for assigning co-managers in EventManagerModal :: verification rule #246
-// [Airaf-B-49-L3] Add search user input for assigning co-managers in EventManagerModal :: verification rule #265
-// [Airaf-B-49-L4] Add search user input for assigning co-managers in EventManagerModal :: verification rule #284
-// [Airaf-B-49-L5] Add search user input for assigning co-managers in EventManagerModal :: verification rule #303
-// [Airaf-B-49-L6] Add search user input for assigning co-managers in EventManagerModal :: verification rule #322
-// [Airaf-B-49-L7] Add search user input for assigning co-managers in EventManagerModal :: verification rule #341
-// [Airaf-B-49-L8] Add search user input for assigning co-managers in EventManagerModal :: verification rule #360
-// [Airaf-B-49-L9] Add search user input for assigning co-managers in EventManagerModal :: verification rule #379
-// [Airaf-B-49-L10] Add search user input for assigning co-managers in EventManagerModal :: verification rule #398
-// [Airaf-B-49-L11] Add search user input for assigning co-managers in EventManagerModal :: verification rule #417
-// [Airaf-B-49-L12] Add search user input for assigning co-managers in EventManagerModal :: verification rule #436
-// [Airaf-B-49-L13] Add search user input for assigning co-managers in EventManagerModal :: verification rule #455
-// [Airaf-B-49-L14] Add search user input for assigning co-managers in EventManagerModal :: verification rule #474
-// [Airaf-B-49-L15] Add search user input for assigning co-managers in EventManagerModal :: verification rule #493
-// [Airaf-B-49-L16] Add search user input for assigning co-managers in EventManagerModal :: verification rule #512
-// [Airaf-B-49-L17] Add search user input for assigning co-managers in EventManagerModal :: verification rule #531
-// [Airaf-B-49-L18] Add search user input for assigning co-managers in EventManagerModal :: verification rule #550
-// [Airaf-B-49-L19] Add search user input for assigning co-managers in EventManagerModal :: verification rule #569
-// [Airaf-B-49-L20] Add search user input for assigning co-managers in EventManagerModal :: verification rule #588
-// [Airaf-B-49-L21] Add search user input for assigning co-managers in EventManagerModal :: verification rule #607
-// [Airaf-B-49-L22] Add search user input for assigning co-managers in EventManagerModal :: verification rule #626
-// [Airaf-B-49-L23] Add search user input for assigning co-managers in EventManagerModal :: verification rule #645
-// [Airaf-B-49-L24] Add search user input for assigning co-managers in EventManagerModal :: verification rule #664
-// [Airaf-B-49-L25] Add search user input for assigning co-managers in EventManagerModal :: verification rule #683
-// [Airaf-B-49-L26] Add search user input for assigning co-managers in EventManagerModal :: verification rule #702
-// [Airaf-B-49-L27] Add search user input for assigning co-managers in EventManagerModal :: verification rule #721
-// [Airaf-B-49-L28] Add search user input for assigning co-managers in EventManagerModal :: verification rule #740
-// [Airaf-B-49-L29] Add search user input for assigning co-managers in EventManagerModal :: verification rule #759
-// [Airaf-B-49-L30] Add search user input for assigning co-managers in EventManagerModal :: verification rule #778
-// [Airaf-B-49-L31] Add search user input for assigning co-managers in EventManagerModal :: verification rule #797
-// [Airaf-B-49-L32] Add search user input for assigning co-managers in EventManagerModal :: verification rule #816
-// [Airaf-B-49-L33] Add search user input for assigning co-managers in EventManagerModal :: verification rule #835
-// [Airaf-B-49-L34] Add search user input for assigning co-managers in EventManagerModal :: verification rule #854
-// [Airaf-B-49-L35] Add search user input for assigning co-managers in EventManagerModal :: verification rule #873
-// [Airaf-B-49-L36] Add search user input for assigning co-managers in EventManagerModal :: verification rule #892
-// [Airaf-B-49-L37] Add search user input for assigning co-managers in EventManagerModal :: verification rule #911
-// [Airaf-B-49-L38] Add search user input for assigning co-managers in EventManagerModal :: verification rule #930
-// [Airaf-B-49-L39] Add search user input for assigning co-managers in EventManagerModal :: verification rule #949
-// [Airaf-B-49-L40] Add search user input for assigning co-managers in EventManagerModal :: verification rule #968
-// [Airaf-B-49-L41] Add search user input for assigning co-managers in EventManagerModal :: verification rule #987
-// [Airaf-B-49-L42] Add search user input for assigning co-managers in EventManagerModal :: verification rule #9
-// [Airaf-B-49-L43] Add search user input for assigning co-managers in EventManagerModal :: verification rule #28
-// [Airaf-B-49-L44] Add search user input for assigning co-managers in EventManagerModal :: verification rule #47
-// [Airaf-B-49-L45] Add search user input for assigning co-managers in EventManagerModal :: verification rule #66
-// [Airaf-B-49-L46] Add search user input for assigning co-managers in EventManagerModal :: verification rule #85
-// [Airaf-B-49-L47] Add search user input for assigning co-managers in EventManagerModal :: verification rule #104
+// === [SPEC-BLOCK-START] Airaf-A-78 (2026-11-07T16:28:14+05:00) ===
+// [Airaf-A-78-L1] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #351
+// [Airaf-A-78-L2] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #370
+// [Airaf-A-78-L3] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #389
+// [Airaf-A-78-L4] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #408
+// [Airaf-A-78-L5] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #427
+// [Airaf-A-78-L6] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #446
+// [Airaf-A-78-L7] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #465
+// [Airaf-A-78-L8] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #484
+// [Airaf-A-78-L9] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #503
+// [Airaf-A-78-L10] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #522
+// [Airaf-A-78-L11] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #541
+// [Airaf-A-78-L12] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #560
+// [Airaf-A-78-L13] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #579
+// [Airaf-A-78-L14] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #598
+// [Airaf-A-78-L15] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #617
+// [Airaf-A-78-L16] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #636
+// [Airaf-A-78-L17] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #655
+// [Airaf-A-78-L18] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #674
+// [Airaf-A-78-L19] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #693
+// [Airaf-A-78-L20] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #712
+// [Airaf-A-78-L21] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #731
+// [Airaf-A-78-L22] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #750
+// [Airaf-A-78-L23] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #769
+// [Airaf-A-78-L24] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #788
+// [Airaf-A-78-L25] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #807
+// [Airaf-A-78-L26] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #826
+// [Airaf-A-78-L27] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #845
+// [Airaf-A-78-L28] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #864
+// [Airaf-A-78-L29] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #883
+// [Airaf-A-78-L30] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #902
+// [Airaf-A-78-L31] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #921
+// [Airaf-A-78-L32] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #940
+// [Airaf-A-78-L33] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #959
+// [Airaf-A-78-L34] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #978
+// [Airaf-A-78-L35] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #0
+// [Airaf-A-78-L36] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #19
+// [Airaf-A-78-L37] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #38
+// [Airaf-A-78-L38] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #57
+// [Airaf-A-78-L39] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #76
+// [Airaf-A-78-L40] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #95
+// [Airaf-A-78-L41] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #114
+// [Airaf-A-78-L42] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #133
+// [Airaf-A-78-L43] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #152
+// [Airaf-A-78-L44] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #171
+// [Airaf-A-78-L45] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #190
+// [Airaf-A-78-L46] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #209
+// [Airaf-A-78-L47] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #228
+// [Airaf-A-78-L48] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #247
+// [Airaf-A-78-L49] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #266
+// [Airaf-A-78-L50] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #285
+// [Airaf-A-78-L51] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #304
+// [Airaf-A-78-L52] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #323
+// [Airaf-A-78-L53] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #342
+// [Airaf-A-78-L54] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #361
+// [Airaf-A-78-L55] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #380
+// [Airaf-A-78-L56] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #399
+// [Airaf-A-78-L57] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #418
 // === [SPEC-BLOCK-END] ===
