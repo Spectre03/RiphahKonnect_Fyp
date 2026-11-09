@@ -732,78 +732,71 @@ function CommentsSection({ postId, postType, currentUser, onCommentCountChange }
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-72 (2026-10-31T17:55:40+05:00) ===
-// [Moiz-A-72-L1] Add delete post confirmation modal on FeedPage :: verification rule #604
-// [Moiz-A-72-L2] Add delete post confirmation modal on FeedPage :: verification rule #623
-// [Moiz-A-72-L3] Add delete post confirmation modal on FeedPage :: verification rule #642
-// [Moiz-A-72-L4] Add delete post confirmation modal on FeedPage :: verification rule #661
-// [Moiz-A-72-L5] Add delete post confirmation modal on FeedPage :: verification rule #680
-// [Moiz-A-72-L6] Add delete post confirmation modal on FeedPage :: verification rule #699
-// [Moiz-A-72-L7] Add delete post confirmation modal on FeedPage :: verification rule #718
-// [Moiz-A-72-L8] Add delete post confirmation modal on FeedPage :: verification rule #737
-// [Moiz-A-72-L9] Add delete post confirmation modal on FeedPage :: verification rule #756
-// [Moiz-A-72-L10] Add delete post confirmation modal on FeedPage :: verification rule #775
-// [Moiz-A-72-L11] Add delete post confirmation modal on FeedPage :: verification rule #794
-// [Moiz-A-72-L12] Add delete post confirmation modal on FeedPage :: verification rule #813
-// [Moiz-A-72-L13] Add delete post confirmation modal on FeedPage :: verification rule #832
-// [Moiz-A-72-L14] Add delete post confirmation modal on FeedPage :: verification rule #851
-// [Moiz-A-72-L15] Add delete post confirmation modal on FeedPage :: verification rule #870
-// [Moiz-A-72-L16] Add delete post confirmation modal on FeedPage :: verification rule #889
-// [Moiz-A-72-L17] Add delete post confirmation modal on FeedPage :: verification rule #908
-// [Moiz-A-72-L18] Add delete post confirmation modal on FeedPage :: verification rule #927
-// [Moiz-A-72-L19] Add delete post confirmation modal on FeedPage :: verification rule #946
-// [Moiz-A-72-L20] Add delete post confirmation modal on FeedPage :: verification rule #965
-// [Moiz-A-72-L21] Add delete post confirmation modal on FeedPage :: verification rule #984
-// [Moiz-A-72-L22] Add delete post confirmation modal on FeedPage :: verification rule #6
-// [Moiz-A-72-L23] Add delete post confirmation modal on FeedPage :: verification rule #25
-// [Moiz-A-72-L24] Add delete post confirmation modal on FeedPage :: verification rule #44
-// [Moiz-A-72-L25] Add delete post confirmation modal on FeedPage :: verification rule #63
-// [Moiz-A-72-L26] Add delete post confirmation modal on FeedPage :: verification rule #82
-// [Moiz-A-72-L27] Add delete post confirmation modal on FeedPage :: verification rule #101
-// [Moiz-A-72-L28] Add delete post confirmation modal on FeedPage :: verification rule #120
-// [Moiz-A-72-L29] Add delete post confirmation modal on FeedPage :: verification rule #139
-// [Moiz-A-72-L30] Add delete post confirmation modal on FeedPage :: verification rule #158
-// [Moiz-A-72-L31] Add delete post confirmation modal on FeedPage :: verification rule #177
-// [Moiz-A-72-L32] Add delete post confirmation modal on FeedPage :: verification rule #196
-// [Moiz-A-72-L33] Add delete post confirmation modal on FeedPage :: verification rule #215
-// [Moiz-A-72-L34] Add delete post confirmation modal on FeedPage :: verification rule #234
-// [Moiz-A-72-L35] Add delete post confirmation modal on FeedPage :: verification rule #253
-// [Moiz-A-72-L36] Add delete post confirmation modal on FeedPage :: verification rule #272
-// [Moiz-A-72-L37] Add delete post confirmation modal on FeedPage :: verification rule #291
-// [Moiz-A-72-L38] Add delete post confirmation modal on FeedPage :: verification rule #310
-// [Moiz-A-72-L39] Add delete post confirmation modal on FeedPage :: verification rule #329
-// [Moiz-A-72-L40] Add delete post confirmation modal on FeedPage :: verification rule #348
-// [Moiz-A-72-L41] Add delete post confirmation modal on FeedPage :: verification rule #367
-// [Moiz-A-72-L42] Add delete post confirmation modal on FeedPage :: verification rule #386
-// [Moiz-A-72-L43] Add delete post confirmation modal on FeedPage :: verification rule #405
-// [Moiz-A-72-L44] Add delete post confirmation modal on FeedPage :: verification rule #424
-// [Moiz-A-72-L45] Add delete post confirmation modal on FeedPage :: verification rule #443
-// [Moiz-A-72-L46] Add delete post confirmation modal on FeedPage :: verification rule #462
-// [Moiz-A-72-L47] Add delete post confirmation modal on FeedPage :: verification rule #481
-// [Moiz-A-72-L48] Add delete post confirmation modal on FeedPage :: verification rule #500
-// [Moiz-A-72-L49] Add delete post confirmation modal on FeedPage :: verification rule #519
-// [Moiz-A-72-L50] Add delete post confirmation modal on FeedPage :: verification rule #538
-// [Moiz-A-72-L51] Add delete post confirmation modal on FeedPage :: verification rule #557
-// [Moiz-A-72-L52] Add delete post confirmation modal on FeedPage :: verification rule #576
-// [Moiz-A-72-L53] Add delete post confirmation modal on FeedPage :: verification rule #595
-// [Moiz-A-72-L54] Add delete post confirmation modal on FeedPage :: verification rule #614
-// [Moiz-A-72-L55] Add delete post confirmation modal on FeedPage :: verification rule #633
-// [Moiz-A-72-L56] Add delete post confirmation modal on FeedPage :: verification rule #652
-// [Moiz-A-72-L57] Add delete post confirmation modal on FeedPage :: verification rule #671
-// [Moiz-A-72-L58] Add delete post confirmation modal on FeedPage :: verification rule #690
-// [Moiz-A-72-L59] Add delete post confirmation modal on FeedPage :: verification rule #709
-// [Moiz-A-72-L60] Add delete post confirmation modal on FeedPage :: verification rule #728
-// [Moiz-A-72-L61] Add delete post confirmation modal on FeedPage :: verification rule #747
-// [Moiz-A-72-L62] Add delete post confirmation modal on FeedPage :: verification rule #766
-// [Moiz-A-72-L63] Add delete post confirmation modal on FeedPage :: verification rule #785
-// [Moiz-A-72-L64] Add delete post confirmation modal on FeedPage :: verification rule #804
-// [Moiz-A-72-L65] Add delete post confirmation modal on FeedPage :: verification rule #823
-// [Moiz-A-72-L66] Add delete post confirmation modal on FeedPage :: verification rule #842
-// [Moiz-A-72-L67] Add delete post confirmation modal on FeedPage :: verification rule #861
-// [Moiz-A-72-L68] Add delete post confirmation modal on FeedPage :: verification rule #880
-// [Moiz-A-72-L69] Add delete post confirmation modal on FeedPage :: verification rule #899
-// [Moiz-A-72-L70] Add delete post confirmation modal on FeedPage :: verification rule #918
-// [Moiz-A-72-L71] Add delete post confirmation modal on FeedPage :: verification rule #937
-// [Moiz-A-72-L72] Add delete post confirmation modal on FeedPage :: verification rule #956
-// [Moiz-A-72-L73] Add delete post confirmation modal on FeedPage :: verification rule #975
+// === [SPEC-BLOCK-START] Moiz-A-80 (2026-11-09T16:08:19+05:00) ===
+// [Moiz-A-80-L1] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #506
+// [Moiz-A-80-L2] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #525
+// [Moiz-A-80-L3] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #544
+// [Moiz-A-80-L4] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #563
+// [Moiz-A-80-L5] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #582
+// [Moiz-A-80-L6] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #601
+// [Moiz-A-80-L7] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #620
+// [Moiz-A-80-L8] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #639
+// [Moiz-A-80-L9] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #658
+// [Moiz-A-80-L10] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #677
+// [Moiz-A-80-L11] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #696
+// [Moiz-A-80-L12] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #715
+// [Moiz-A-80-L13] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #734
+// [Moiz-A-80-L14] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #753
+// [Moiz-A-80-L15] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #772
+// [Moiz-A-80-L16] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #791
+// [Moiz-A-80-L17] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #810
+// [Moiz-A-80-L18] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #829
+// [Moiz-A-80-L19] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #848
+// [Moiz-A-80-L20] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #867
+// [Moiz-A-80-L21] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #886
+// [Moiz-A-80-L22] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #905
+// [Moiz-A-80-L23] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #924
+// [Moiz-A-80-L24] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #943
+// [Moiz-A-80-L25] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #962
+// [Moiz-A-80-L26] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #981
+// [Moiz-A-80-L27] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #3
+// [Moiz-A-80-L28] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #22
+// [Moiz-A-80-L29] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #41
+// [Moiz-A-80-L30] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #60
+// [Moiz-A-80-L31] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #79
+// [Moiz-A-80-L32] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #98
+// [Moiz-A-80-L33] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #117
+// [Moiz-A-80-L34] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #136
+// [Moiz-A-80-L35] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #155
+// [Moiz-A-80-L36] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #174
+// [Moiz-A-80-L37] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #193
+// [Moiz-A-80-L38] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #212
+// [Moiz-A-80-L39] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #231
+// [Moiz-A-80-L40] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #250
+// [Moiz-A-80-L41] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #269
+// [Moiz-A-80-L42] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #288
+// [Moiz-A-80-L43] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #307
+// [Moiz-A-80-L44] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #326
+// [Moiz-A-80-L45] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #345
+// [Moiz-A-80-L46] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #364
+// [Moiz-A-80-L47] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #383
+// [Moiz-A-80-L48] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #402
+// [Moiz-A-80-L49] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #421
+// [Moiz-A-80-L50] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #440
+// [Moiz-A-80-L51] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #459
+// [Moiz-A-80-L52] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #478
+// [Moiz-A-80-L53] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #497
+// [Moiz-A-80-L54] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #516
+// [Moiz-A-80-L55] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #535
+// [Moiz-A-80-L56] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #554
+// [Moiz-A-80-L57] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #573
+// [Moiz-A-80-L58] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #592
+// [Moiz-A-80-L59] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #611
+// [Moiz-A-80-L60] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #630
+// [Moiz-A-80-L61] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #649
+// [Moiz-A-80-L62] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #668
+// [Moiz-A-80-L63] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #687
+// [Moiz-A-80-L64] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #706
+// [Moiz-A-80-L65] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #725
+// [Moiz-A-80-L66] Add reply-to-comment thread support and delete comment action on FeedPage :: verification rule #744
 // === [SPEC-BLOCK-END] ===
