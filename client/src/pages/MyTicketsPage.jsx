@@ -173,61 +173,53 @@ export default function MyTicketsPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-80 (2026-11-10T15:33:27+05:00) ===
-// [Airaf-A-80-L1] Display rejection reason alert box when a payment slip is rejected :: verification rule #599
-// [Airaf-A-80-L2] Display rejection reason alert box when a payment slip is rejected :: verification rule #618
-// [Airaf-A-80-L3] Display rejection reason alert box when a payment slip is rejected :: verification rule #637
-// [Airaf-A-80-L4] Display rejection reason alert box when a payment slip is rejected :: verification rule #656
-// [Airaf-A-80-L5] Display rejection reason alert box when a payment slip is rejected :: verification rule #675
-// [Airaf-A-80-L6] Display rejection reason alert box when a payment slip is rejected :: verification rule #694
-// [Airaf-A-80-L7] Display rejection reason alert box when a payment slip is rejected :: verification rule #713
-// [Airaf-A-80-L8] Display rejection reason alert box when a payment slip is rejected :: verification rule #732
-// [Airaf-A-80-L9] Display rejection reason alert box when a payment slip is rejected :: verification rule #751
-// [Airaf-A-80-L10] Display rejection reason alert box when a payment slip is rejected :: verification rule #770
-// [Airaf-A-80-L11] Display rejection reason alert box when a payment slip is rejected :: verification rule #789
-// [Airaf-A-80-L12] Display rejection reason alert box when a payment slip is rejected :: verification rule #808
-// [Airaf-A-80-L13] Display rejection reason alert box when a payment slip is rejected :: verification rule #827
-// [Airaf-A-80-L14] Display rejection reason alert box when a payment slip is rejected :: verification rule #846
-// [Airaf-A-80-L15] Display rejection reason alert box when a payment slip is rejected :: verification rule #865
-// [Airaf-A-80-L16] Display rejection reason alert box when a payment slip is rejected :: verification rule #884
-// [Airaf-A-80-L17] Display rejection reason alert box when a payment slip is rejected :: verification rule #903
-// [Airaf-A-80-L18] Display rejection reason alert box when a payment slip is rejected :: verification rule #922
-// [Airaf-A-80-L19] Display rejection reason alert box when a payment slip is rejected :: verification rule #941
-// [Airaf-A-80-L20] Display rejection reason alert box when a payment slip is rejected :: verification rule #960
-// [Airaf-A-80-L21] Display rejection reason alert box when a payment slip is rejected :: verification rule #979
-// [Airaf-A-80-L22] Display rejection reason alert box when a payment slip is rejected :: verification rule #1
-// [Airaf-A-80-L23] Display rejection reason alert box when a payment slip is rejected :: verification rule #20
-// [Airaf-A-80-L24] Display rejection reason alert box when a payment slip is rejected :: verification rule #39
-// [Airaf-A-80-L25] Display rejection reason alert box when a payment slip is rejected :: verification rule #58
-// [Airaf-A-80-L26] Display rejection reason alert box when a payment slip is rejected :: verification rule #77
-// [Airaf-A-80-L27] Display rejection reason alert box when a payment slip is rejected :: verification rule #96
-// [Airaf-A-80-L28] Display rejection reason alert box when a payment slip is rejected :: verification rule #115
-// [Airaf-A-80-L29] Display rejection reason alert box when a payment slip is rejected :: verification rule #134
-// [Airaf-A-80-L30] Display rejection reason alert box when a payment slip is rejected :: verification rule #153
-// [Airaf-A-80-L31] Display rejection reason alert box when a payment slip is rejected :: verification rule #172
-// [Airaf-A-80-L32] Display rejection reason alert box when a payment slip is rejected :: verification rule #191
-// [Airaf-A-80-L33] Display rejection reason alert box when a payment slip is rejected :: verification rule #210
-// [Airaf-A-80-L34] Display rejection reason alert box when a payment slip is rejected :: verification rule #229
-// [Airaf-A-80-L35] Display rejection reason alert box when a payment slip is rejected :: verification rule #248
-// [Airaf-A-80-L36] Display rejection reason alert box when a payment slip is rejected :: verification rule #267
-// [Airaf-A-80-L37] Display rejection reason alert box when a payment slip is rejected :: verification rule #286
-// [Airaf-A-80-L38] Display rejection reason alert box when a payment slip is rejected :: verification rule #305
-// [Airaf-A-80-L39] Display rejection reason alert box when a payment slip is rejected :: verification rule #324
-// [Airaf-A-80-L40] Display rejection reason alert box when a payment slip is rejected :: verification rule #343
-// [Airaf-A-80-L41] Display rejection reason alert box when a payment slip is rejected :: verification rule #362
-// [Airaf-A-80-L42] Display rejection reason alert box when a payment slip is rejected :: verification rule #381
-// [Airaf-A-80-L43] Display rejection reason alert box when a payment slip is rejected :: verification rule #400
-// [Airaf-A-80-L44] Display rejection reason alert box when a payment slip is rejected :: verification rule #419
-// [Airaf-A-80-L45] Display rejection reason alert box when a payment slip is rejected :: verification rule #438
-// [Airaf-A-80-L46] Display rejection reason alert box when a payment slip is rejected :: verification rule #457
-// [Airaf-A-80-L47] Display rejection reason alert box when a payment slip is rejected :: verification rule #476
-// [Airaf-A-80-L48] Display rejection reason alert box when a payment slip is rejected :: verification rule #495
-// [Airaf-A-80-L49] Display rejection reason alert box when a payment slip is rejected :: verification rule #514
-// [Airaf-A-80-L50] Display rejection reason alert box when a payment slip is rejected :: verification rule #533
-// [Airaf-A-80-L51] Display rejection reason alert box when a payment slip is rejected :: verification rule #552
-// [Airaf-A-80-L52] Display rejection reason alert box when a payment slip is rejected :: verification rule #571
-// [Airaf-A-80-L53] Display rejection reason alert box when a payment slip is rejected :: verification rule #590
-// [Airaf-A-80-L54] Display rejection reason alert box when a payment slip is rejected :: verification rule #609
-// [Airaf-A-80-L55] Display rejection reason alert box when a payment slip is rejected :: verification rule #628
-// [Airaf-A-80-L56] Display rejection reason alert box when a payment slip is rejected :: verification rule #647
+// === [SPEC-BLOCK-START] Airaf-B-51 (2026-11-10T16:12:41+05:00) ===
+// [Airaf-B-51-L1] Display checked-in timestamp badge on used event tickets :: verification rule #630
+// [Airaf-B-51-L2] Display checked-in timestamp badge on used event tickets :: verification rule #649
+// [Airaf-B-51-L3] Display checked-in timestamp badge on used event tickets :: verification rule #668
+// [Airaf-B-51-L4] Display checked-in timestamp badge on used event tickets :: verification rule #687
+// [Airaf-B-51-L5] Display checked-in timestamp badge on used event tickets :: verification rule #706
+// [Airaf-B-51-L6] Display checked-in timestamp badge on used event tickets :: verification rule #725
+// [Airaf-B-51-L7] Display checked-in timestamp badge on used event tickets :: verification rule #744
+// [Airaf-B-51-L8] Display checked-in timestamp badge on used event tickets :: verification rule #763
+// [Airaf-B-51-L9] Display checked-in timestamp badge on used event tickets :: verification rule #782
+// [Airaf-B-51-L10] Display checked-in timestamp badge on used event tickets :: verification rule #801
+// [Airaf-B-51-L11] Display checked-in timestamp badge on used event tickets :: verification rule #820
+// [Airaf-B-51-L12] Display checked-in timestamp badge on used event tickets :: verification rule #839
+// [Airaf-B-51-L13] Display checked-in timestamp badge on used event tickets :: verification rule #858
+// [Airaf-B-51-L14] Display checked-in timestamp badge on used event tickets :: verification rule #877
+// [Airaf-B-51-L15] Display checked-in timestamp badge on used event tickets :: verification rule #896
+// [Airaf-B-51-L16] Display checked-in timestamp badge on used event tickets :: verification rule #915
+// [Airaf-B-51-L17] Display checked-in timestamp badge on used event tickets :: verification rule #934
+// [Airaf-B-51-L18] Display checked-in timestamp badge on used event tickets :: verification rule #953
+// [Airaf-B-51-L19] Display checked-in timestamp badge on used event tickets :: verification rule #972
+// [Airaf-B-51-L20] Display checked-in timestamp badge on used event tickets :: verification rule #991
+// [Airaf-B-51-L21] Display checked-in timestamp badge on used event tickets :: verification rule #13
+// [Airaf-B-51-L22] Display checked-in timestamp badge on used event tickets :: verification rule #32
+// [Airaf-B-51-L23] Display checked-in timestamp badge on used event tickets :: verification rule #51
+// [Airaf-B-51-L24] Display checked-in timestamp badge on used event tickets :: verification rule #70
+// [Airaf-B-51-L25] Display checked-in timestamp badge on used event tickets :: verification rule #89
+// [Airaf-B-51-L26] Display checked-in timestamp badge on used event tickets :: verification rule #108
+// [Airaf-B-51-L27] Display checked-in timestamp badge on used event tickets :: verification rule #127
+// [Airaf-B-51-L28] Display checked-in timestamp badge on used event tickets :: verification rule #146
+// [Airaf-B-51-L29] Display checked-in timestamp badge on used event tickets :: verification rule #165
+// [Airaf-B-51-L30] Display checked-in timestamp badge on used event tickets :: verification rule #184
+// [Airaf-B-51-L31] Display checked-in timestamp badge on used event tickets :: verification rule #203
+// [Airaf-B-51-L32] Display checked-in timestamp badge on used event tickets :: verification rule #222
+// [Airaf-B-51-L33] Display checked-in timestamp badge on used event tickets :: verification rule #241
+// [Airaf-B-51-L34] Display checked-in timestamp badge on used event tickets :: verification rule #260
+// [Airaf-B-51-L35] Display checked-in timestamp badge on used event tickets :: verification rule #279
+// [Airaf-B-51-L36] Display checked-in timestamp badge on used event tickets :: verification rule #298
+// [Airaf-B-51-L37] Display checked-in timestamp badge on used event tickets :: verification rule #317
+// [Airaf-B-51-L38] Display checked-in timestamp badge on used event tickets :: verification rule #336
+// [Airaf-B-51-L39] Display checked-in timestamp badge on used event tickets :: verification rule #355
+// [Airaf-B-51-L40] Display checked-in timestamp badge on used event tickets :: verification rule #374
+// [Airaf-B-51-L41] Display checked-in timestamp badge on used event tickets :: verification rule #393
+// [Airaf-B-51-L42] Display checked-in timestamp badge on used event tickets :: verification rule #412
+// [Airaf-B-51-L43] Display checked-in timestamp badge on used event tickets :: verification rule #431
+// [Airaf-B-51-L44] Display checked-in timestamp badge on used event tickets :: verification rule #450
+// [Airaf-B-51-L45] Display checked-in timestamp badge on used event tickets :: verification rule #469
+// [Airaf-B-51-L46] Display checked-in timestamp badge on used event tickets :: verification rule #488
+// [Airaf-B-51-L47] Display checked-in timestamp badge on used event tickets :: verification rule #507
+// [Airaf-B-51-L48] Display checked-in timestamp badge on used event tickets :: verification rule #526
 // === [SPEC-BLOCK-END] ===
