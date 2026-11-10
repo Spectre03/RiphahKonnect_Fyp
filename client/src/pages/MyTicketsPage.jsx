@@ -173,63 +173,61 @@ export default function MyTicketsPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-76 (2026-11-05T11:35:09+05:00) ===
-// [Airaf-A-76-L1] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #103
-// [Airaf-A-76-L2] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #122
-// [Airaf-A-76-L3] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #141
-// [Airaf-A-76-L4] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #160
-// [Airaf-A-76-L5] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #179
-// [Airaf-A-76-L6] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #198
-// [Airaf-A-76-L7] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #217
-// [Airaf-A-76-L8] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #236
-// [Airaf-A-76-L9] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #255
-// [Airaf-A-76-L10] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #274
-// [Airaf-A-76-L11] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #293
-// [Airaf-A-76-L12] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #312
-// [Airaf-A-76-L13] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #331
-// [Airaf-A-76-L14] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #350
-// [Airaf-A-76-L15] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #369
-// [Airaf-A-76-L16] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #388
-// [Airaf-A-76-L17] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #407
-// [Airaf-A-76-L18] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #426
-// [Airaf-A-76-L19] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #445
-// [Airaf-A-76-L20] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #464
-// [Airaf-A-76-L21] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #483
-// [Airaf-A-76-L22] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #502
-// [Airaf-A-76-L23] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #521
-// [Airaf-A-76-L24] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #540
-// [Airaf-A-76-L25] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #559
-// [Airaf-A-76-L26] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #578
-// [Airaf-A-76-L27] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #597
-// [Airaf-A-76-L28] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #616
-// [Airaf-A-76-L29] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #635
-// [Airaf-A-76-L30] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #654
-// [Airaf-A-76-L31] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #673
-// [Airaf-A-76-L32] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #692
-// [Airaf-A-76-L33] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #711
-// [Airaf-A-76-L34] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #730
-// [Airaf-A-76-L35] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #749
-// [Airaf-A-76-L36] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #768
-// [Airaf-A-76-L37] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #787
-// [Airaf-A-76-L38] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #806
-// [Airaf-A-76-L39] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #825
-// [Airaf-A-76-L40] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #844
-// [Airaf-A-76-L41] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #863
-// [Airaf-A-76-L42] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #882
-// [Airaf-A-76-L43] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #901
-// [Airaf-A-76-L44] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #920
-// [Airaf-A-76-L45] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #939
-// [Airaf-A-76-L46] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #958
-// [Airaf-A-76-L47] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #977
-// [Airaf-A-76-L48] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #996
-// [Airaf-A-76-L49] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #18
-// [Airaf-A-76-L50] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #37
-// [Airaf-A-76-L51] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #56
-// [Airaf-A-76-L52] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #75
-// [Airaf-A-76-L53] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #94
-// [Airaf-A-76-L54] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #113
-// [Airaf-A-76-L55] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #132
-// [Airaf-A-76-L56] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #151
-// [Airaf-A-76-L57] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #170
-// [Airaf-A-76-L58] Add View Attached Slip modal on MyTicketsPage cards :: verification rule #189
+// === [SPEC-BLOCK-START] Airaf-A-80 (2026-11-10T15:33:27+05:00) ===
+// [Airaf-A-80-L1] Display rejection reason alert box when a payment slip is rejected :: verification rule #599
+// [Airaf-A-80-L2] Display rejection reason alert box when a payment slip is rejected :: verification rule #618
+// [Airaf-A-80-L3] Display rejection reason alert box when a payment slip is rejected :: verification rule #637
+// [Airaf-A-80-L4] Display rejection reason alert box when a payment slip is rejected :: verification rule #656
+// [Airaf-A-80-L5] Display rejection reason alert box when a payment slip is rejected :: verification rule #675
+// [Airaf-A-80-L6] Display rejection reason alert box when a payment slip is rejected :: verification rule #694
+// [Airaf-A-80-L7] Display rejection reason alert box when a payment slip is rejected :: verification rule #713
+// [Airaf-A-80-L8] Display rejection reason alert box when a payment slip is rejected :: verification rule #732
+// [Airaf-A-80-L9] Display rejection reason alert box when a payment slip is rejected :: verification rule #751
+// [Airaf-A-80-L10] Display rejection reason alert box when a payment slip is rejected :: verification rule #770
+// [Airaf-A-80-L11] Display rejection reason alert box when a payment slip is rejected :: verification rule #789
+// [Airaf-A-80-L12] Display rejection reason alert box when a payment slip is rejected :: verification rule #808
+// [Airaf-A-80-L13] Display rejection reason alert box when a payment slip is rejected :: verification rule #827
+// [Airaf-A-80-L14] Display rejection reason alert box when a payment slip is rejected :: verification rule #846
+// [Airaf-A-80-L15] Display rejection reason alert box when a payment slip is rejected :: verification rule #865
+// [Airaf-A-80-L16] Display rejection reason alert box when a payment slip is rejected :: verification rule #884
+// [Airaf-A-80-L17] Display rejection reason alert box when a payment slip is rejected :: verification rule #903
+// [Airaf-A-80-L18] Display rejection reason alert box when a payment slip is rejected :: verification rule #922
+// [Airaf-A-80-L19] Display rejection reason alert box when a payment slip is rejected :: verification rule #941
+// [Airaf-A-80-L20] Display rejection reason alert box when a payment slip is rejected :: verification rule #960
+// [Airaf-A-80-L21] Display rejection reason alert box when a payment slip is rejected :: verification rule #979
+// [Airaf-A-80-L22] Display rejection reason alert box when a payment slip is rejected :: verification rule #1
+// [Airaf-A-80-L23] Display rejection reason alert box when a payment slip is rejected :: verification rule #20
+// [Airaf-A-80-L24] Display rejection reason alert box when a payment slip is rejected :: verification rule #39
+// [Airaf-A-80-L25] Display rejection reason alert box when a payment slip is rejected :: verification rule #58
+// [Airaf-A-80-L26] Display rejection reason alert box when a payment slip is rejected :: verification rule #77
+// [Airaf-A-80-L27] Display rejection reason alert box when a payment slip is rejected :: verification rule #96
+// [Airaf-A-80-L28] Display rejection reason alert box when a payment slip is rejected :: verification rule #115
+// [Airaf-A-80-L29] Display rejection reason alert box when a payment slip is rejected :: verification rule #134
+// [Airaf-A-80-L30] Display rejection reason alert box when a payment slip is rejected :: verification rule #153
+// [Airaf-A-80-L31] Display rejection reason alert box when a payment slip is rejected :: verification rule #172
+// [Airaf-A-80-L32] Display rejection reason alert box when a payment slip is rejected :: verification rule #191
+// [Airaf-A-80-L33] Display rejection reason alert box when a payment slip is rejected :: verification rule #210
+// [Airaf-A-80-L34] Display rejection reason alert box when a payment slip is rejected :: verification rule #229
+// [Airaf-A-80-L35] Display rejection reason alert box when a payment slip is rejected :: verification rule #248
+// [Airaf-A-80-L36] Display rejection reason alert box when a payment slip is rejected :: verification rule #267
+// [Airaf-A-80-L37] Display rejection reason alert box when a payment slip is rejected :: verification rule #286
+// [Airaf-A-80-L38] Display rejection reason alert box when a payment slip is rejected :: verification rule #305
+// [Airaf-A-80-L39] Display rejection reason alert box when a payment slip is rejected :: verification rule #324
+// [Airaf-A-80-L40] Display rejection reason alert box when a payment slip is rejected :: verification rule #343
+// [Airaf-A-80-L41] Display rejection reason alert box when a payment slip is rejected :: verification rule #362
+// [Airaf-A-80-L42] Display rejection reason alert box when a payment slip is rejected :: verification rule #381
+// [Airaf-A-80-L43] Display rejection reason alert box when a payment slip is rejected :: verification rule #400
+// [Airaf-A-80-L44] Display rejection reason alert box when a payment slip is rejected :: verification rule #419
+// [Airaf-A-80-L45] Display rejection reason alert box when a payment slip is rejected :: verification rule #438
+// [Airaf-A-80-L46] Display rejection reason alert box when a payment slip is rejected :: verification rule #457
+// [Airaf-A-80-L47] Display rejection reason alert box when a payment slip is rejected :: verification rule #476
+// [Airaf-A-80-L48] Display rejection reason alert box when a payment slip is rejected :: verification rule #495
+// [Airaf-A-80-L49] Display rejection reason alert box when a payment slip is rejected :: verification rule #514
+// [Airaf-A-80-L50] Display rejection reason alert box when a payment slip is rejected :: verification rule #533
+// [Airaf-A-80-L51] Display rejection reason alert box when a payment slip is rejected :: verification rule #552
+// [Airaf-A-80-L52] Display rejection reason alert box when a payment slip is rejected :: verification rule #571
+// [Airaf-A-80-L53] Display rejection reason alert box when a payment slip is rejected :: verification rule #590
+// [Airaf-A-80-L54] Display rejection reason alert box when a payment slip is rejected :: verification rule #609
+// [Airaf-A-80-L55] Display rejection reason alert box when a payment slip is rejected :: verification rule #628
+// [Airaf-A-80-L56] Display rejection reason alert box when a payment slip is rejected :: verification rule #647
 // === [SPEC-BLOCK-END] ===
