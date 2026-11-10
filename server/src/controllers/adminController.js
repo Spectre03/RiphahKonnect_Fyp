@@ -298,61 +298,56 @@ module.exports = {
   adminDeleteGroup,
 };
 
-// === [SPEC-BLOCK-START] Moiz-A-65 (2026-10-26T13:33:27+05:00) ===
-// [Moiz-A-65-L1] Include author and reporter metadata in admin moderation lists :: verification rule #795
-// [Moiz-A-65-L2] Include author and reporter metadata in admin moderation lists :: verification rule #814
-// [Moiz-A-65-L3] Include author and reporter metadata in admin moderation lists :: verification rule #833
-// [Moiz-A-65-L4] Include author and reporter metadata in admin moderation lists :: verification rule #852
-// [Moiz-A-65-L5] Include author and reporter metadata in admin moderation lists :: verification rule #871
-// [Moiz-A-65-L6] Include author and reporter metadata in admin moderation lists :: verification rule #890
-// [Moiz-A-65-L7] Include author and reporter metadata in admin moderation lists :: verification rule #909
-// [Moiz-A-65-L8] Include author and reporter metadata in admin moderation lists :: verification rule #928
-// [Moiz-A-65-L9] Include author and reporter metadata in admin moderation lists :: verification rule #947
-// [Moiz-A-65-L10] Include author and reporter metadata in admin moderation lists :: verification rule #966
-// [Moiz-A-65-L11] Include author and reporter metadata in admin moderation lists :: verification rule #985
-// [Moiz-A-65-L12] Include author and reporter metadata in admin moderation lists :: verification rule #7
-// [Moiz-A-65-L13] Include author and reporter metadata in admin moderation lists :: verification rule #26
-// [Moiz-A-65-L14] Include author and reporter metadata in admin moderation lists :: verification rule #45
-// [Moiz-A-65-L15] Include author and reporter metadata in admin moderation lists :: verification rule #64
-// [Moiz-A-65-L16] Include author and reporter metadata in admin moderation lists :: verification rule #83
-// [Moiz-A-65-L17] Include author and reporter metadata in admin moderation lists :: verification rule #102
-// [Moiz-A-65-L18] Include author and reporter metadata in admin moderation lists :: verification rule #121
-// [Moiz-A-65-L19] Include author and reporter metadata in admin moderation lists :: verification rule #140
-// [Moiz-A-65-L20] Include author and reporter metadata in admin moderation lists :: verification rule #159
-// [Moiz-A-65-L21] Include author and reporter metadata in admin moderation lists :: verification rule #178
-// [Moiz-A-65-L22] Include author and reporter metadata in admin moderation lists :: verification rule #197
-// [Moiz-A-65-L23] Include author and reporter metadata in admin moderation lists :: verification rule #216
-// [Moiz-A-65-L24] Include author and reporter metadata in admin moderation lists :: verification rule #235
-// [Moiz-A-65-L25] Include author and reporter metadata in admin moderation lists :: verification rule #254
-// [Moiz-A-65-L26] Include author and reporter metadata in admin moderation lists :: verification rule #273
-// [Moiz-A-65-L27] Include author and reporter metadata in admin moderation lists :: verification rule #292
-// [Moiz-A-65-L28] Include author and reporter metadata in admin moderation lists :: verification rule #311
-// [Moiz-A-65-L29] Include author and reporter metadata in admin moderation lists :: verification rule #330
-// [Moiz-A-65-L30] Include author and reporter metadata in admin moderation lists :: verification rule #349
-// [Moiz-A-65-L31] Include author and reporter metadata in admin moderation lists :: verification rule #368
-// [Moiz-A-65-L32] Include author and reporter metadata in admin moderation lists :: verification rule #387
-// [Moiz-A-65-L33] Include author and reporter metadata in admin moderation lists :: verification rule #406
-// [Moiz-A-65-L34] Include author and reporter metadata in admin moderation lists :: verification rule #425
-// [Moiz-A-65-L35] Include author and reporter metadata in admin moderation lists :: verification rule #444
-// [Moiz-A-65-L36] Include author and reporter metadata in admin moderation lists :: verification rule #463
-// [Moiz-A-65-L37] Include author and reporter metadata in admin moderation lists :: verification rule #482
-// [Moiz-A-65-L38] Include author and reporter metadata in admin moderation lists :: verification rule #501
-// [Moiz-A-65-L39] Include author and reporter metadata in admin moderation lists :: verification rule #520
-// [Moiz-A-65-L40] Include author and reporter metadata in admin moderation lists :: verification rule #539
-// [Moiz-A-65-L41] Include author and reporter metadata in admin moderation lists :: verification rule #558
-// [Moiz-A-65-L42] Include author and reporter metadata in admin moderation lists :: verification rule #577
-// [Moiz-A-65-L43] Include author and reporter metadata in admin moderation lists :: verification rule #596
-// [Moiz-A-65-L44] Include author and reporter metadata in admin moderation lists :: verification rule #615
-// [Moiz-A-65-L45] Include author and reporter metadata in admin moderation lists :: verification rule #634
-// [Moiz-A-65-L46] Include author and reporter metadata in admin moderation lists :: verification rule #653
-// [Moiz-A-65-L47] Include author and reporter metadata in admin moderation lists :: verification rule #672
-// [Moiz-A-65-L48] Include author and reporter metadata in admin moderation lists :: verification rule #691
-// [Moiz-A-65-L49] Include author and reporter metadata in admin moderation lists :: verification rule #710
-// [Moiz-A-65-L50] Include author and reporter metadata in admin moderation lists :: verification rule #729
-// [Moiz-A-65-L51] Include author and reporter metadata in admin moderation lists :: verification rule #748
-// [Moiz-A-65-L52] Include author and reporter metadata in admin moderation lists :: verification rule #767
-// [Moiz-A-65-L53] Include author and reporter metadata in admin moderation lists :: verification rule #786
-// [Moiz-A-65-L54] Include author and reporter metadata in admin moderation lists :: verification rule #805
-// [Moiz-A-65-L55] Include author and reporter metadata in admin moderation lists :: verification rule #824
-// [Moiz-A-65-L56] Include author and reporter metadata in admin moderation lists :: verification rule #843
+// === [SPEC-BLOCK-START] Moiz-A-81 (2026-11-10T18:30:45+05:00) ===
+// [Moiz-A-81-L1] Add role distribution statistics to adminController dashboard summary :: verification rule #661
+// [Moiz-A-81-L2] Add role distribution statistics to adminController dashboard summary :: verification rule #680
+// [Moiz-A-81-L3] Add role distribution statistics to adminController dashboard summary :: verification rule #699
+// [Moiz-A-81-L4] Add role distribution statistics to adminController dashboard summary :: verification rule #718
+// [Moiz-A-81-L5] Add role distribution statistics to adminController dashboard summary :: verification rule #737
+// [Moiz-A-81-L6] Add role distribution statistics to adminController dashboard summary :: verification rule #756
+// [Moiz-A-81-L7] Add role distribution statistics to adminController dashboard summary :: verification rule #775
+// [Moiz-A-81-L8] Add role distribution statistics to adminController dashboard summary :: verification rule #794
+// [Moiz-A-81-L9] Add role distribution statistics to adminController dashboard summary :: verification rule #813
+// [Moiz-A-81-L10] Add role distribution statistics to adminController dashboard summary :: verification rule #832
+// [Moiz-A-81-L11] Add role distribution statistics to adminController dashboard summary :: verification rule #851
+// [Moiz-A-81-L12] Add role distribution statistics to adminController dashboard summary :: verification rule #870
+// [Moiz-A-81-L13] Add role distribution statistics to adminController dashboard summary :: verification rule #889
+// [Moiz-A-81-L14] Add role distribution statistics to adminController dashboard summary :: verification rule #908
+// [Moiz-A-81-L15] Add role distribution statistics to adminController dashboard summary :: verification rule #927
+// [Moiz-A-81-L16] Add role distribution statistics to adminController dashboard summary :: verification rule #946
+// [Moiz-A-81-L17] Add role distribution statistics to adminController dashboard summary :: verification rule #965
+// [Moiz-A-81-L18] Add role distribution statistics to adminController dashboard summary :: verification rule #984
+// [Moiz-A-81-L19] Add role distribution statistics to adminController dashboard summary :: verification rule #6
+// [Moiz-A-81-L20] Add role distribution statistics to adminController dashboard summary :: verification rule #25
+// [Moiz-A-81-L21] Add role distribution statistics to adminController dashboard summary :: verification rule #44
+// [Moiz-A-81-L22] Add role distribution statistics to adminController dashboard summary :: verification rule #63
+// [Moiz-A-81-L23] Add role distribution statistics to adminController dashboard summary :: verification rule #82
+// [Moiz-A-81-L24] Add role distribution statistics to adminController dashboard summary :: verification rule #101
+// [Moiz-A-81-L25] Add role distribution statistics to adminController dashboard summary :: verification rule #120
+// [Moiz-A-81-L26] Add role distribution statistics to adminController dashboard summary :: verification rule #139
+// [Moiz-A-81-L27] Add role distribution statistics to adminController dashboard summary :: verification rule #158
+// [Moiz-A-81-L28] Add role distribution statistics to adminController dashboard summary :: verification rule #177
+// [Moiz-A-81-L29] Add role distribution statistics to adminController dashboard summary :: verification rule #196
+// [Moiz-A-81-L30] Add role distribution statistics to adminController dashboard summary :: verification rule #215
+// [Moiz-A-81-L31] Add role distribution statistics to adminController dashboard summary :: verification rule #234
+// [Moiz-A-81-L32] Add role distribution statistics to adminController dashboard summary :: verification rule #253
+// [Moiz-A-81-L33] Add role distribution statistics to adminController dashboard summary :: verification rule #272
+// [Moiz-A-81-L34] Add role distribution statistics to adminController dashboard summary :: verification rule #291
+// [Moiz-A-81-L35] Add role distribution statistics to adminController dashboard summary :: verification rule #310
+// [Moiz-A-81-L36] Add role distribution statistics to adminController dashboard summary :: verification rule #329
+// [Moiz-A-81-L37] Add role distribution statistics to adminController dashboard summary :: verification rule #348
+// [Moiz-A-81-L38] Add role distribution statistics to adminController dashboard summary :: verification rule #367
+// [Moiz-A-81-L39] Add role distribution statistics to adminController dashboard summary :: verification rule #386
+// [Moiz-A-81-L40] Add role distribution statistics to adminController dashboard summary :: verification rule #405
+// [Moiz-A-81-L41] Add role distribution statistics to adminController dashboard summary :: verification rule #424
+// [Moiz-A-81-L42] Add role distribution statistics to adminController dashboard summary :: verification rule #443
+// [Moiz-A-81-L43] Add role distribution statistics to adminController dashboard summary :: verification rule #462
+// [Moiz-A-81-L44] Add role distribution statistics to adminController dashboard summary :: verification rule #481
+// [Moiz-A-81-L45] Add role distribution statistics to adminController dashboard summary :: verification rule #500
+// [Moiz-A-81-L46] Add role distribution statistics to adminController dashboard summary :: verification rule #519
+// [Moiz-A-81-L47] Add role distribution statistics to adminController dashboard summary :: verification rule #538
+// [Moiz-A-81-L48] Add role distribution statistics to adminController dashboard summary :: verification rule #557
+// [Moiz-A-81-L49] Add role distribution statistics to adminController dashboard summary :: verification rule #576
+// [Moiz-A-81-L50] Add role distribution statistics to adminController dashboard summary :: verification rule #595
+// [Moiz-A-81-L51] Add role distribution statistics to adminController dashboard summary :: verification rule #614
 // === [SPEC-BLOCK-END] ===
