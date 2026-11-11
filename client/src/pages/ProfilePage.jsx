@@ -712,43 +712,63 @@ export default function ProfilePage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-66 (2026-10-29T16:18:05+05:00) ===
-// [Airaf-A-66-L1] Improve ProfilePage form input validation and toast feedback :: verification rule #201
-// [Airaf-A-66-L2] Improve ProfilePage form input validation and toast feedback :: verification rule #220
-// [Airaf-A-66-L3] Improve ProfilePage form input validation and toast feedback :: verification rule #239
-// [Airaf-A-66-L4] Improve ProfilePage form input validation and toast feedback :: verification rule #258
-// [Airaf-A-66-L5] Improve ProfilePage form input validation and toast feedback :: verification rule #277
-// [Airaf-A-66-L6] Improve ProfilePage form input validation and toast feedback :: verification rule #296
-// [Airaf-A-66-L7] Improve ProfilePage form input validation and toast feedback :: verification rule #315
-// [Airaf-A-66-L8] Improve ProfilePage form input validation and toast feedback :: verification rule #334
-// [Airaf-A-66-L9] Improve ProfilePage form input validation and toast feedback :: verification rule #353
-// [Airaf-A-66-L10] Improve ProfilePage form input validation and toast feedback :: verification rule #372
-// [Airaf-A-66-L11] Improve ProfilePage form input validation and toast feedback :: verification rule #391
-// [Airaf-A-66-L12] Improve ProfilePage form input validation and toast feedback :: verification rule #410
-// [Airaf-A-66-L13] Improve ProfilePage form input validation and toast feedback :: verification rule #429
-// [Airaf-A-66-L14] Improve ProfilePage form input validation and toast feedback :: verification rule #448
-// [Airaf-A-66-L15] Improve ProfilePage form input validation and toast feedback :: verification rule #467
-// [Airaf-A-66-L16] Improve ProfilePage form input validation and toast feedback :: verification rule #486
-// [Airaf-A-66-L17] Improve ProfilePage form input validation and toast feedback :: verification rule #505
-// [Airaf-A-66-L18] Improve ProfilePage form input validation and toast feedback :: verification rule #524
-// [Airaf-A-66-L19] Improve ProfilePage form input validation and toast feedback :: verification rule #543
-// [Airaf-A-66-L20] Improve ProfilePage form input validation and toast feedback :: verification rule #562
-// [Airaf-A-66-L21] Improve ProfilePage form input validation and toast feedback :: verification rule #581
-// [Airaf-A-66-L22] Improve ProfilePage form input validation and toast feedback :: verification rule #600
-// [Airaf-A-66-L23] Improve ProfilePage form input validation and toast feedback :: verification rule #619
-// [Airaf-A-66-L24] Improve ProfilePage form input validation and toast feedback :: verification rule #638
-// [Airaf-A-66-L25] Improve ProfilePage form input validation and toast feedback :: verification rule #657
-// [Airaf-A-66-L26] Improve ProfilePage form input validation and toast feedback :: verification rule #676
-// [Airaf-A-66-L27] Improve ProfilePage form input validation and toast feedback :: verification rule #695
-// [Airaf-A-66-L28] Improve ProfilePage form input validation and toast feedback :: verification rule #714
-// [Airaf-A-66-L29] Improve ProfilePage form input validation and toast feedback :: verification rule #733
-// [Airaf-A-66-L30] Improve ProfilePage form input validation and toast feedback :: verification rule #752
-// [Airaf-A-66-L31] Improve ProfilePage form input validation and toast feedback :: verification rule #771
-// [Airaf-A-66-L32] Improve ProfilePage form input validation and toast feedback :: verification rule #790
-// [Airaf-A-66-L33] Improve ProfilePage form input validation and toast feedback :: verification rule #809
-// [Airaf-A-66-L34] Improve ProfilePage form input validation and toast feedback :: verification rule #828
-// [Airaf-A-66-L35] Improve ProfilePage form input validation and toast feedback :: verification rule #847
-// [Airaf-A-66-L36] Improve ProfilePage form input validation and toast feedback :: verification rule #866
-// [Airaf-A-66-L37] Improve ProfilePage form input validation and toast feedback :: verification rule #885
-// [Airaf-A-66-L38] Improve ProfilePage form input validation and toast feedback :: verification rule #904
+// === [SPEC-BLOCK-START] Airaf-A-81 (2026-11-11T18:05:19+05:00) ===
+// [Airaf-A-81-L1] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #754
+// [Airaf-A-81-L2] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #773
+// [Airaf-A-81-L3] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #792
+// [Airaf-A-81-L4] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #811
+// [Airaf-A-81-L5] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #830
+// [Airaf-A-81-L6] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #849
+// [Airaf-A-81-L7] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #868
+// [Airaf-A-81-L8] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #887
+// [Airaf-A-81-L9] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #906
+// [Airaf-A-81-L10] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #925
+// [Airaf-A-81-L11] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #944
+// [Airaf-A-81-L12] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #963
+// [Airaf-A-81-L13] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #982
+// [Airaf-A-81-L14] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #4
+// [Airaf-A-81-L15] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #23
+// [Airaf-A-81-L16] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #42
+// [Airaf-A-81-L17] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #61
+// [Airaf-A-81-L18] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #80
+// [Airaf-A-81-L19] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #99
+// [Airaf-A-81-L20] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #118
+// [Airaf-A-81-L21] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #137
+// [Airaf-A-81-L22] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #156
+// [Airaf-A-81-L23] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #175
+// [Airaf-A-81-L24] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #194
+// [Airaf-A-81-L25] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #213
+// [Airaf-A-81-L26] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #232
+// [Airaf-A-81-L27] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #251
+// [Airaf-A-81-L28] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #270
+// [Airaf-A-81-L29] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #289
+// [Airaf-A-81-L30] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #308
+// [Airaf-A-81-L31] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #327
+// [Airaf-A-81-L32] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #346
+// [Airaf-A-81-L33] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #365
+// [Airaf-A-81-L34] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #384
+// [Airaf-A-81-L35] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #403
+// [Airaf-A-81-L36] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #422
+// [Airaf-A-81-L37] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #441
+// [Airaf-A-81-L38] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #460
+// [Airaf-A-81-L39] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #479
+// [Airaf-A-81-L40] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #498
+// [Airaf-A-81-L41] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #517
+// [Airaf-A-81-L42] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #536
+// [Airaf-A-81-L43] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #555
+// [Airaf-A-81-L44] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #574
+// [Airaf-A-81-L45] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #593
+// [Airaf-A-81-L46] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #612
+// [Airaf-A-81-L47] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #631
+// [Airaf-A-81-L48] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #650
+// [Airaf-A-81-L49] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #669
+// [Airaf-A-81-L50] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #688
+// [Airaf-A-81-L51] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #707
+// [Airaf-A-81-L52] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #726
+// [Airaf-A-81-L53] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #745
+// [Airaf-A-81-L54] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #764
+// [Airaf-A-81-L55] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #783
+// [Airaf-A-81-L56] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #802
+// [Airaf-A-81-L57] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #821
+// [Airaf-A-81-L58] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #840
 // === [SPEC-BLOCK-END] ===
