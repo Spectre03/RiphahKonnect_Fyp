@@ -87,6 +87,14 @@ export const groupsAPI = {
   getPosts: (id, page = 1) => api.get(`/semester-groups/${id}/posts?page=${page}`),
 };
 
+// ─── Tickets ──────────────────────────────────────────────────────────────────
+export const ticketsAPI = {
+  buy: (eventId) => api.post(`/tickets/${eventId}/buy`),
+  getMyTickets: () => api.get('/tickets/my-tickets'),
+  getEventTickets: (eventId) => api.get(`/tickets/event/${eventId}`),
+};
+
+
 // ─── Announcements ────────────────────────────────────────────────────────────
 export const announcementsAPI = {
   getAll: (params = {}) => {
