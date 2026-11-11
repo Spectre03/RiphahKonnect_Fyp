@@ -37,6 +37,7 @@ model User {
   messages           Message[]
   posts              Post[]
   courses            UserCourse[]
+  tickets            Ticket[]                  // NEW: Relation to tickets
   verificationTokens VerificationToken[]
 
   @@index([email])
@@ -66,7 +67,6 @@ model Post {
   fileName  String?
   fileType  String?
   authorId  String
-
   groupId   String?
   createdAt DateTime       @default(now())
   updatedAt DateTime       @updatedAt
@@ -143,11 +143,14 @@ model Event {
   startDate   DateTime
   endDate     DateTime?
   imageUrl    String?
+  price       Float       @default(0)
+  capacity    Int?
   createdById String
   createdAt   DateTime    @default(now())
   updatedAt   DateTime    @updatedAt
   createdBy   User        @relation(fields: [createdById], references: [id], onDelete: Cascade)
   rsvps       EventRsvp[]
+  tickets     Ticket[]
 
   @@index([startDate])
   @@index([createdById])
@@ -194,7 +197,6 @@ model Announcement {
   fileName         String?
   fileType         String?
   authorId         String
-  
   createdAt        DateTime         @default(now())
   updatedAt        DateTime         @updatedAt
   author           User             @relation(fields: [authorId], references: [id], onDelete: Cascade)
@@ -249,6 +251,24 @@ model UserCourse {
   @@index([userId])
 }
 
+model Ticket {
+  id         String       @id @default(cuid())
+  code       String       @unique
+  pricePaid  Float        @default(0)
+  status     TicketStatus @default(VALID)
+  userId     String
+  eventId    String
+  issuedAt   DateTime     @default(now())
+  usedAt     DateTime?
+  user       User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  event      Event        @relation(fields: [eventId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, eventId])
+  @@index([userId])
+  @@index([eventId])
+  @@index([code])
+}
+
 enum Role {
   STUDENT
   TEACHER
@@ -292,4 +312,10 @@ enum ItemCategory {
 enum AnnouncementType {
   OFFICIAL
   CLASS
+}
+
+enum TicketStatus {
+  VALID
+  USED
+  CANCELLED
 }
