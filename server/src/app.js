@@ -16,6 +16,7 @@ const userRoutes = require('./routes/userRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const authenticate = require('./middleware/authenticate');
 const upload = require('./middleware/upload');
+const ticketRoutes = require('./routes/ticketRoutes');
 
 const app = express();
 const httpServer = createServer(app);
@@ -55,6 +56,7 @@ app.use('/api/lost-found', lostFoundRoutes);
 app.use('/api/conversations', messageRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/tickets', ticketRoutes);
 
 // File upload — any authenticated user
 app.post('/api/upload', authenticate, upload.single('file'), (req, res) => {
