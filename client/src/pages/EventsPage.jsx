@@ -27,6 +27,11 @@ export default function EventsPage() {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isPaying, setIsPaying] = useState(false);
 
+  // Attendees Modal State
+  const [viewingAttendees, setViewingAttendees] = useState(null);
+  const [attendees, setAttendees] = useState([]);
+  const [loadingAttendees, setLoadingAttendees] = useState(false);
+
   const fetchEvents = async (p = 1) => {
     try {
       setLoading(true);
@@ -82,12 +87,12 @@ export default function EventsPage() {
       // Fake delay to simulate payment processing
       await new Promise(resolve => setTimeout(resolve, 1500)); 
       
-      const res = await ticketsAPI.buy(selectedEvent.id);
+      await ticketsAPI.buy(selectedEvent.id);
       
       // Update event in list
       setEvents(events.map(ev => 
         ev.id === selectedEvent.id 
-          ? { ...ev, ticketCount: ev.ticketCount + 1, hasTicket: true } 
+          ? { ...ev, ticketCount: (ev.ticketCount || 0) + 1, hasTicket: true } 
           : ev
       ));
       
@@ -97,6 +102,19 @@ export default function EventsPage() {
       toast.error(err.response?.data?.error || 'Failed to buy ticket.');
     } finally {
       setIsPaying(false);
+    }
+  };
+
+  const handleViewAttendees = async (event) => {
+    setViewingAttendees(event);
+    setLoadingAttendees(true);
+    try {
+      const res = await ticketsAPI.getEventTickets(event.id);
+      setAttendees(res.data.tickets);
+    } catch {
+      toast.error('Failed to load attendees.');
+    } finally {
+      setLoadingAttendees(false);
     }
   };
 
@@ -137,7 +155,7 @@ export default function EventsPage() {
               )}
             </div>
           </div>
-        </div>
+        </div>  
       </div>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6">
@@ -257,14 +275,26 @@ export default function EventsPage() {
                             )}
                           </div>
                         </div>
-                        {showDelete && (
-                          <button
-                            onClick={() => handleDelete(event.id)}
-                            className="p-1.5 text-slate-300 hover:text-red-500 hover:bg-red-50 rounded-lg cursor-pointer transition-all flex-shrink-0"
-                          >
-                            <Trash2 size={14} />
-                          </button>
-                        )}
+                        <div className="flex items-center gap-1">
+                          {(isCreator || canDelAny) && (
+                            <Button 
+                              variant="secondary" 
+                              size="sm" 
+                              onClick={() => handleViewAttendees(event)}
+                              className="text-[11px] h-7 px-2"
+                            >
+                              Attendees
+                            </Button>
+                          )}
+                          {showDelete && (
+                            <button
+                              onClick={() => handleDelete(event.id)}
+                              className="p-1.5 text-slate-300 hover:text-red-500 hover:bg-red-50 rounded-lg cursor-pointer transition-all flex-shrink-0"
+                            >
+                              <Trash2 size={14} />
+                            </button>
+                          )}
+                        </div>
                       </div>
 
                       {/* RSVP & Buy Ticket */}
@@ -278,7 +308,7 @@ export default function EventsPage() {
                               { status: 'GOING',      icon: Check,   label: 'Going',   active: 'bg-emerald-600 text-white border-emerald-600 shadow-sm shadow-emerald-500/30' },
                               { status: 'INTERESTED', icon: Star,    label: 'Maybe',   active: 'bg-amber-500 text-white border-amber-500 shadow-sm shadow-amber-500/30' },
                               { status: 'NOT_GOING',  icon: XCircle, label: "Can't go", active: 'bg-slate-600 text-white border-slate-600' },
-                            ].map(({ status, icon: Icon, label, active }) => {
+                            ].map(({ status, icon: RsvpIcon, label, active }) => {
                               const isActive = event.myRsvp === status;
                               return (
                                 <button
@@ -289,7 +319,7 @@ export default function EventsPage() {
                                     isActive ? active : 'border-slate-200 text-slate-400 hover:bg-slate-50 hover:text-slate-700 hover:border-slate-300'
                                   )}
                                 >
-                                  <Icon size={11} /> {label}
+                                  <RsvpIcon size={11} /> {label}
                                 </button>
                               );
                             })}
@@ -338,6 +368,45 @@ export default function EventsPage() {
             onClose={() => setShowCreate(false)}
             onCreated={handleCreated}
           />
+        )}
+
+        {/* Attendees Modal */}
+        {viewingAttendees && (
+          <Modal 
+            open={!!viewingAttendees} 
+            onClose={() => setViewingAttendees(null)} 
+            title="Event Attendees" 
+            subtitle={`${attendees.length} tickets sold for ${viewingAttendees.title}`}
+            icon={Users}
+            iconColor="bg-gradient-to-br from-emerald-500 to-teal-600"
+          >
+            <div className="max-h-96 overflow-y-auto pr-1">
+              {loadingAttendees ? (
+                <div className="flex justify-center py-8">
+                  <Loader2 className="h-6 w-6 animate-spin text-emerald-600" />
+                </div>
+              ) : attendees.length === 0 ? (
+                <div className="text-center py-8 text-slate-500 text-sm">
+                  No tickets sold yet.
+                </div>
+              ) : (
+                <div className="space-y-2">
+                  {attendees.map((t) => (
+                    <div key={t.id} className="flex items-center justify-between p-3 rounded-xl border border-slate-100 bg-slate-50">
+                      <div>
+                        <p className="text-sm font-bold text-slate-900">{t.user.name}</p>
+                        <p className="text-xs text-slate-500">{t.user.department} · Sem {t.user.semester || 'N/A'}</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-xs font-mono font-bold text-emerald-700 bg-emerald-100 px-2 py-1 rounded">{t.code}</p>
+                        <p className="text-[10px] text-slate-400 mt-1">{new Date(t.issuedAt).toLocaleDateString()}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </Modal>
         )}
 
         {/* Simulated Payment Modal */}

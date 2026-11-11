@@ -8,6 +8,7 @@ import {
   PackageSearch, MessageSquare, LogOut, Menu, X,
   Megaphone, ShieldCheck, UserCog, GraduationCap,
   ChevronRight, Sparkles, BookOpen, FileText,
+  Ticket // <--- Make sure this is here!
 } from 'lucide-react';
 
 const STUDENT_NAV = [
@@ -16,6 +17,7 @@ const STUDENT_NAV = [
   { to: '/groups',        label: 'Semester Groups', icon: Users },
   { to: '/resources',     label: 'Resources',       icon: FileText },
   { to: '/events',        label: 'Events',          icon: Calendar },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket }, // <--- ADDED THIS
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/lost-found',    label: 'Lost & Found',    icon: PackageSearch },
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
@@ -27,6 +29,7 @@ const TEACHER_NAV = [
   { to: '/groups',        label: 'Semester Groups', icon: Users },
   { to: '/resources',     label: 'Resources',       icon: FileText },
   { to: '/events',        label: 'Events',          icon: Calendar },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket }, // <--- ADDED THIS
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/lost-found',    label: 'Lost & Found',    icon: PackageSearch },
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
@@ -37,6 +40,7 @@ const COORDINATION_NAV = [
   { to: '/feed',          label: 'Feed',            icon: Newspaper },
   { to: '/groups',        label: 'Semester Groups', icon: Users },
   { to: '/events',        label: 'Events',          icon: Calendar },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket }, // <--- ADDED THIS
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/lost-found',    label: 'Lost & Found',    icon: PackageSearch },
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
@@ -47,6 +51,7 @@ const UNIVERSITY_ADMIN_NAV = [
   { to: '/feed',          label: 'Feed',            icon: Newspaper },
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/events',        label: 'Events',          icon: Calendar },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket }, // <--- ADDED THIS
   { to: '/lost-found',    label: 'Lost & Found',    icon: PackageSearch },
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
 ];
@@ -57,6 +62,7 @@ const SYSTEM_ADMIN_NAV = [
   { to: '/admin/groups',  label: 'Group Management', icon: BookOpen },
   { to: '/feed',          label: 'Feed',            icon: Newspaper },
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket }, // <--- ADDED THIS
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
 ];
 
@@ -137,7 +143,7 @@ export default function Sidebar() {
 
       {/* ── Nav ── */}
       <nav className="flex-1 px-3 space-y-0.5 overflow-y-auto dark-scroll">
-        {navItems.map(({ to, label, icon: Icon }) => {
+       {navItems.map(({ to, label, icon: NavIcon }) => {
           const active = isActive(to);
           return (
             <Link
@@ -151,13 +157,13 @@ export default function Sidebar() {
                   : 'text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent'
               )}
             >
-              <Icon
-                size={16}
-                className={cn(
-                  'flex-shrink-0 transition-colors',
-                  active ? 'text-indigo-400' : 'text-slate-500 group-hover:text-slate-300'
-                )}
-              />
+                  <NavIcon
+        size={16}
+        className={cn(
+          'flex-shrink-0 transition-colors',
+          active ? 'text-indigo-400' : 'text-slate-500 group-hover:text-slate-300'
+        )}
+      />
               <span className="flex-1 truncate">{label}</span>
               {active && (
                 <ChevronRight size={12} className="text-indigo-500 flex-shrink-0" />
