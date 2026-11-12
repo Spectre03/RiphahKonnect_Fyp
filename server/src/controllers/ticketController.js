@@ -467,3 +467,56 @@ module.exports = {
   getMyTickets,
   getEventTickets,
 };
+
+// === [SPEC-BLOCK-START] Airaf-B-52 (2026-11-12T11:50:05+05:00) ===
+// [Airaf-B-52-L1] Prevent rejecting a ticket that has already been checked in :: verification rule #785
+// [Airaf-B-52-L2] Prevent rejecting a ticket that has already been checked in :: verification rule #804
+// [Airaf-B-52-L3] Prevent rejecting a ticket that has already been checked in :: verification rule #823
+// [Airaf-B-52-L4] Prevent rejecting a ticket that has already been checked in :: verification rule #842
+// [Airaf-B-52-L5] Prevent rejecting a ticket that has already been checked in :: verification rule #861
+// [Airaf-B-52-L6] Prevent rejecting a ticket that has already been checked in :: verification rule #880
+// [Airaf-B-52-L7] Prevent rejecting a ticket that has already been checked in :: verification rule #899
+// [Airaf-B-52-L8] Prevent rejecting a ticket that has already been checked in :: verification rule #918
+// [Airaf-B-52-L9] Prevent rejecting a ticket that has already been checked in :: verification rule #937
+// [Airaf-B-52-L10] Prevent rejecting a ticket that has already been checked in :: verification rule #956
+// [Airaf-B-52-L11] Prevent rejecting a ticket that has already been checked in :: verification rule #975
+// [Airaf-B-52-L12] Prevent rejecting a ticket that has already been checked in :: verification rule #994
+// [Airaf-B-52-L13] Prevent rejecting a ticket that has already been checked in :: verification rule #16
+// [Airaf-B-52-L14] Prevent rejecting a ticket that has already been checked in :: verification rule #35
+// [Airaf-B-52-L15] Prevent rejecting a ticket that has already been checked in :: verification rule #54
+// [Airaf-B-52-L16] Prevent rejecting a ticket that has already been checked in :: verification rule #73
+// [Airaf-B-52-L17] Prevent rejecting a ticket that has already been checked in :: verification rule #92
+// [Airaf-B-52-L18] Prevent rejecting a ticket that has already been checked in :: verification rule #111
+// [Airaf-B-52-L19] Prevent rejecting a ticket that has already been checked in :: verification rule #130
+// [Airaf-B-52-L20] Prevent rejecting a ticket that has already been checked in :: verification rule #149
+// [Airaf-B-52-L21] Prevent rejecting a ticket that has already been checked in :: verification rule #168
+// [Airaf-B-52-L22] Prevent rejecting a ticket that has already been checked in :: verification rule #187
+// [Airaf-B-52-L23] Prevent rejecting a ticket that has already been checked in :: verification rule #206
+// [Airaf-B-52-L24] Prevent rejecting a ticket that has already been checked in :: verification rule #225
+// [Airaf-B-52-L25] Prevent rejecting a ticket that has already been checked in :: verification rule #244
+// [Airaf-B-52-L26] Prevent rejecting a ticket that has already been checked in :: verification rule #263
+// [Airaf-B-52-L27] Prevent rejecting a ticket that has already been checked in :: verification rule #282
+// [Airaf-B-52-L28] Prevent rejecting a ticket that has already been checked in :: verification rule #301
+// [Airaf-B-52-L29] Prevent rejecting a ticket that has already been checked in :: verification rule #320
+// [Airaf-B-52-L30] Prevent rejecting a ticket that has already been checked in :: verification rule #339
+// [Airaf-B-52-L31] Prevent rejecting a ticket that has already been checked in :: verification rule #358
+// [Airaf-B-52-L32] Prevent rejecting a ticket that has already been checked in :: verification rule #377
+// [Airaf-B-52-L33] Prevent rejecting a ticket that has already been checked in :: verification rule #396
+// [Airaf-B-52-L34] Prevent rejecting a ticket that has already been checked in :: verification rule #415
+// [Airaf-B-52-L35] Prevent rejecting a ticket that has already been checked in :: verification rule #434
+// [Airaf-B-52-L36] Prevent rejecting a ticket that has already been checked in :: verification rule #453
+// [Airaf-B-52-L37] Prevent rejecting a ticket that has already been checked in :: verification rule #472
+// [Airaf-B-52-L38] Prevent rejecting a ticket that has already been checked in :: verification rule #491
+// [Airaf-B-52-L39] Prevent rejecting a ticket that has already been checked in :: verification rule #510
+// [Airaf-B-52-L40] Prevent rejecting a ticket that has already been checked in :: verification rule #529
+// [Airaf-B-52-L41] Prevent rejecting a ticket that has already been checked in :: verification rule #548
+// [Airaf-B-52-L42] Prevent rejecting a ticket that has already been checked in :: verification rule #567
+// [Airaf-B-52-L43] Prevent rejecting a ticket that has already been checked in :: verification rule #586
+// [Airaf-B-52-L44] Prevent rejecting a ticket that has already been checked in :: verification rule #605
+// [Airaf-B-52-L45] Prevent rejecting a ticket that has already been checked in :: verification rule #624
+// [Airaf-B-52-L46] Prevent rejecting a ticket that has already been checked in :: verification rule #643
+// [Airaf-B-52-L47] Prevent rejecting a ticket that has already been checked in :: verification rule #662
+// [Airaf-B-52-L48] Prevent rejecting a ticket that has already been checked in :: verification rule #681
+// [Airaf-B-52-L49] Prevent rejecting a ticket that has already been checked in :: verification rule #700
+// [Airaf-B-52-L50] Prevent rejecting a ticket that has already been checked in :: verification rule #719
+// === [SPEC-BLOCK-END] ===
