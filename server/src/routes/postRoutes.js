@@ -27,7 +27,7 @@ router.post(
   '/',
   validate([
     body('content')
-      .trim().notEmpty().withMessage('Post content is required.')
+      .optional()
       .isLength({ max: 5000 }).withMessage('Post content cannot exceed 5000 characters.'),
     body('type')
       .optional()

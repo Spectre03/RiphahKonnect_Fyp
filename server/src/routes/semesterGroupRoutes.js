@@ -6,6 +6,7 @@ const authorize = require('../middleware/authorize');
 const {
   getGroups, createGroup, getGroup, updateGroup,
   deleteGroup, joinGroup, leaveGroup, getGroupPosts,
+  archiveGroup, removeMember
 } = require('../controllers/semesterGroupController');
 
 const router = express.Router();
@@ -17,10 +18,10 @@ router.get('/', getGroups);
 router.get('/:id', getGroup);
 router.get('/:id/posts', getGroupPosts);
 
-// Create — Teachers, Coordination, University Admin
+// Create — Teachers, Coordination, University Admin, System Admin
 router.post(
   '/',
-  authorize('TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN'),
+  authorize('TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'),
   validate([
     body('name').trim().notEmpty().withMessage('Group name is required.'),
     body('department').trim().notEmpty().withMessage('Department is required.'),
@@ -28,12 +29,14 @@ router.post(
   ]),
   createGroup
 );
-// Update / Delete — Coordination and University Admin (admins manage all groups)
-router.put('/:id', authorize('TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN'), updateGroup);
-router.delete('/:id', authorize('COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'), deleteGroup);
+// Update / Archive / Delete
+router.put('/:id', authorize('TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'), updateGroup);
+router.put('/:id/archive', authorize('TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'), archiveGroup);
+router.delete('/:id', authorize('TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'), deleteGroup);
 
-// Join / Leave — Students, Teachers, University Admin
-router.post('/:id/join', authorize('STUDENT', 'TEACHER', 'UNIVERSITY_ADMIN'), joinGroup);
-router.delete('/:id/leave', authorize('STUDENT', 'TEACHER', 'UNIVERSITY_ADMIN'), leaveGroup);
+// Join / Leave / Remove
+router.post('/:id/join', authorize('STUDENT', 'TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'), joinGroup);
+router.delete('/:id/leave', authorize('STUDENT', 'TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'), leaveGroup);
+router.delete('/:id/members/:userId', authorize('TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'), removeMember);
 
 module.exports = router;

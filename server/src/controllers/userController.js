@@ -52,7 +52,7 @@ const updateProfile = async (req, res, next) => {
         semester: semester ? parseInt(semester, 10) : undefined,
         batchYear: batchYear ? parseInt(batchYear, 10) : undefined,
         bio: bio ?? undefined,
-        avatarUrl: avatarUrl ?? undefined,
+        avatarUrl: avatarUrl !== undefined ? (avatarUrl || null) : undefined,
         phoneNumber: phoneNumber ?? undefined,
         skills: skills ?? undefined,
         interests: interests ?? undefined,
@@ -127,27 +127,36 @@ const getUserPosts = async (req, res, next) => {
 // GET /api/users/search?q=name
 const searchUsers = async (req, res, next) => {
   try {
-    const q = req.query.q || '';
-    if (!q) return res.json({ users: [] });
+    const q = (req.query.q || '').trim();
+
+    const where = {
+      isBlocked: false,
+      ...(req.user?.id ? { id: { not: req.user.id } } : {}),
+    };
+
+    if (q && q.toLowerCase() !== 'all') {
+      where.OR = [
+        { name: { contains: q, mode: 'insensitive' } },
+        { email: { contains: q, mode: 'insensitive' } },
+        { department: { contains: q, mode: 'insensitive' } },
+      ];
+    }
 
     const users = await prisma.user.findMany({
-      where: {
-        isVerified: true,
-        OR: [
-          { name: { contains: q, mode: 'insensitive' } },
-          { email: { contains: q, mode: 'insensitive' } },
-        ],
-      },
+      where,
       select: {
         id: true,
         name: true,
+        email: true,
+        role: true,
         avatarUrl: true,
         department: true,
         semester: true,
         skills: true,
         interests: true,
       },
-      take: 20,
+      orderBy: { name: 'asc' },
+      take: 30,
     });
 
     res.json({ users });
@@ -185,6 +194,7 @@ const listUsers = async (req, res, next) => {
           name: true,
           email: true,
           role: true,
+          avatarUrl: true,
           department: true,
           semester: true,
           isBlocked: true,

@@ -1,15 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { usersAPI, postsAPI } from '../services/api';
+import { useOnlineUsers } from '../services/socket';
 import { timeAgo, getAvatarGradient, formatDate } from '../utils/brand';
 import { cn } from '../utils/cn';
+import { validateImageFile, fileToDataUrl } from '../utils/moderation';
 import { Card, Button, Badge, Avatar } from '../components/ui';
 import toast from 'react-hot-toast';
 import {
   Mail, BookOpen, GraduationCap, Edit3, Save, X, Loader2,
   Heart, MessageCircle, Trash2, Phone, Sparkles, Target,
-  CalendarDays, Plus, AlertCircle, FileText, Users,
+  CalendarDays, Plus, AlertCircle, FileText, Users, Camera,
 } from 'lucide-react';
 import { DEPARTMENTS, SEMESTERS } from '../utils/constants';
 
@@ -38,28 +40,32 @@ function getProfileCompleteness(profile) {
     profile.department,
     profile.semester,
     profile.bio,
+    profile.avatarUrl,
     profile.skills?.length > 0,
     profile.interests?.length > 0,
-    profile.courses?.length > 0,
   ];
   return Math.round((fields.filter(Boolean).length / fields.length) * 100);
 }
 
 export default function ProfilePage() {
   const { id } = useParams();
-  const { user: currentUser } = useAuth();
+  const { user: currentUser, updateUser } = useAuth();
+  const onlineUsers = useOnlineUsers();
   const [profile, setProfile] = useState(null);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [editing, setEditing] = useState(false);
   const [editData, setEditData] = useState({});
   const [saving, setSaving] = useState(false);
+  const [uploadingAvatar, setUploadingAvatar] = useState(false);
   const [newSkill, setNewSkill] = useState('');
   const [newInterest, setNewInterest] = useState('');
   const [tab, setTab] = useState('about');
+  const avatarInputRef = useRef(null);
 
   const isOwnProfile = !id || id === currentUser?.id;
   const profileId = id || currentUser?.id;
+  const isOnline = isOwnProfile ? true : onlineUsers.includes(profileId);
 
   useEffect(() => {
     const load = async () => {
@@ -79,6 +85,55 @@ export default function ProfilePage() {
     if (profileId) load();
   }, [profileId]);
 
+  const handleAvatarChange = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const validation = validateImageFile(file);
+    if (!validation.valid) {
+      toast.error(validation.reason);
+      e.target.value = '';
+      return;
+    }
+    try {
+      setUploadingAvatar(true);
+      const dataUrl = await fileToDataUrl(file);
+      const res = await usersAPI.updateProfile({ avatarUrl: dataUrl });
+      const updatedAvatar = res.data.user?.avatarUrl ?? dataUrl;
+      setProfile((prev) => ({ ...prev, avatarUrl: updatedAvatar }));
+      if (editing) {
+        setEditData((prev) => ({ ...prev, avatarUrl: updatedAvatar }));
+      }
+      if (isOwnProfile && updateUser) {
+        updateUser({ avatarUrl: updatedAvatar });
+      }
+      toast.success('Profile picture updated!');
+    } catch {
+      toast.error('Failed to upload profile picture.');
+    } finally {
+      setUploadingAvatar(false);
+      if (avatarInputRef.current) avatarInputRef.current.value = '';
+    }
+  };
+
+  const handleRemoveAvatar = async () => {
+    try {
+      setUploadingAvatar(true);
+      await usersAPI.updateProfile({ avatarUrl: '' });
+      setProfile((prev) => ({ ...prev, avatarUrl: null }));
+      if (editing) {
+        setEditData((prev) => ({ ...prev, avatarUrl: '' }));
+      }
+      if (isOwnProfile && updateUser) {
+        updateUser({ avatarUrl: null });
+      }
+      toast.success('Profile picture removed.');
+    } catch {
+      toast.error('Failed to remove profile picture.');
+    } finally {
+      setUploadingAvatar(false);
+    }
+  };
+
   const handleEdit = () => {
     setEditData({
       name: profile.name || '',
@@ -87,6 +142,7 @@ export default function ProfilePage() {
       batchYear: profile.batchYear || '',
       bio: profile.bio || '',
       phoneNumber: profile.phoneNumber || '',
+      avatarUrl: profile.avatarUrl || '',
       skills: [...(profile.skills || [])],
       interests: [...(profile.interests || [])],
     });
@@ -98,6 +154,9 @@ export default function ProfilePage() {
       setSaving(true);
       const res = await usersAPI.updateProfile(editData);
       setProfile({ ...profile, ...res.data.user });
+      if (isOwnProfile && updateUser) {
+        updateUser(res.data.user);
+      }
       setEditing(false);
       toast.success('Profile updated!');
     } catch {
@@ -147,13 +206,12 @@ export default function ProfilePage() {
       {/* ── Full-width cover ── */}
       <div
         className="relative overflow-hidden"
-        style={{ height: '200px', background: 'linear-gradient(135deg, #0d9488 0%, #0284c7 50%, #4f46e5 100%)' }}
+        style={{ height: '200px', background: 'linear-gradient(135deg, #0c1a4a 0%, #1a2b6b 100%)' }}
       >
         <div className="absolute inset-0 banner-grid pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-white/[0.08] blur-2xl" />
-          <div className="absolute -left-10 bottom-0 w-48 h-48 rounded-full bg-white/[0.06] blur-2xl" />
-          <div className="absolute top-1/2 left-1/3 w-96 h-24 bg-white/[0.04] blur-3xl rotate-12" />
+          <div className="absolute -right-16 -top-16 w-64 h-64 rounded-full blur-2xl" style={{ background: 'radial-gradient(ellipse, rgba(201,151,58,0.10) 0%, transparent 70%)' }} />
+          <div className="absolute -left-10 bottom-0 w-48 h-48 rounded-full blur-2xl" style={{ background: 'radial-gradient(ellipse, rgba(26,43,107,0.6) 0%, transparent 70%)' }} />
         </div>
       </div>
 
@@ -164,17 +222,57 @@ export default function ProfilePage() {
 
           {/* Avatar + name row */}
           <div className="px-6 pt-4 pb-5">
-            <div className="flex items-start justify-between gap-4">
+            <div className="flex items-start justify-between gap-4 flex-wrap">
               {/* Avatar block */}
               <div className="flex items-start gap-4">
-                <div className="-mt-16 flex-shrink-0">
-                  <div
-                    className="h-24 w-24 rounded-2xl flex items-center justify-center text-white text-3xl font-extrabold border-4 border-white shadow-xl"
-                    style={{ background: getAvatarGradient(profile.name || '') }}
-                  >
-                    {profile.name?.charAt(0)?.toUpperCase()}
-                  </div>
+                <div className="-mt-16 flex-shrink-0 relative group">
+                  {profile.avatarUrl ? (
+                    <img
+                      src={profile.avatarUrl}
+                      alt={profile.name}
+                      className="h-24 w-24 rounded-2xl object-cover border-4 border-white shadow-xl bg-white"
+                    />
+                  ) : (
+                    <div
+                      className="h-24 w-24 rounded-2xl flex items-center justify-center text-white text-3xl font-extrabold border-4 border-white shadow-xl"
+                      style={{ background: getAvatarGradient(profile.name || '') }}
+                    >
+                      {profile.name?.charAt(0)?.toUpperCase()}
+                    </div>
+                  )}
+
+                  {/* Online indicator dot on avatar */}
+                  <span
+                    title={isOnline ? 'Online' : 'Offline'}
+                    className={cn(
+                      'absolute bottom-1 right-1 h-4 w-4 rounded-full ring-2 ring-white',
+                      isOnline ? 'bg-emerald-500' : 'bg-slate-300'
+                    )}
+                  />
+
+                  {/* Camera Upload Overlay for Own Profile */}
+                  {isOwnProfile && (
+                    <>
+                      <input
+                        ref={avatarInputRef}
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp,image/gif"
+                        onChange={handleAvatarChange}
+                        className="hidden"
+                      />
+                      <button
+                        type="button"
+                        disabled={uploadingAvatar}
+                        onClick={() => avatarInputRef.current?.click()}
+                        title="Change profile picture"
+                        className="absolute -bottom-2 -right-2 h-8 w-8 rounded-xl bg-[#1a2b6b] text-white flex items-center justify-center shadow-lg border-2 border-white hover:bg-indigo-700 transition-all cursor-pointer"
+                      >
+                        {uploadingAvatar ? <Loader2 size={14} className="animate-spin" /> : <Camera size={14} />}
+                      </button>
+                    </>
+                  )}
                 </div>
+
                 <div className="pt-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap">
                     <h1 className="text-xl font-extrabold text-slate-900 tracking-tight">{profile.name}</h1>
@@ -185,16 +283,51 @@ export default function ProfilePage() {
                       <Sparkles className="h-2.5 w-2.5" />
                       {roleMeta.label}
                     </span>
+                    <span className={cn(
+                      'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold border',
+                      isOnline
+                        ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                        : 'bg-slate-100 text-slate-500 border-slate-200'
+                    )}>
+                      <span className={cn('h-1.5 w-1.5 rounded-full', isOnline ? 'bg-emerald-500 animate-pulse' : 'bg-slate-400')} />
+                      {isOnline ? 'Online' : 'Offline'}
+                    </span>
                   </div>
                   <p className="text-sm text-slate-400 flex items-center gap-1.5 mt-0.5">
                     <Mail className="h-3.5 w-3.5 shrink-0 text-slate-300" />
                     <span className="truncate">{profile.email}</span>
                   </p>
                   {profile.department && (
-                    <p className="text-sm text-indigo-600 font-semibold flex items-center gap-1.5 mt-1">
+                    <p className="text-sm font-semibold flex items-center gap-1.5 mt-1" style={{ color: '#1a2b6b' }}>
                       <GraduationCap className="h-3.5 w-3.5" />
                       {profile.department}{profile.semester ? ` · Semester ${profile.semester}` : ''}
                     </p>
+                  )}
+                  {isOwnProfile && (
+                    <div className="flex items-center gap-2 mt-2">
+                      <button
+                        type="button"
+                        disabled={uploadingAvatar}
+                        onClick={() => avatarInputRef.current?.click()}
+                        className="text-xs font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1 cursor-pointer"
+                      >
+                        <Camera size={12} />
+                        {profile.avatarUrl ? 'Change Photo' : 'Add Profile Picture'}
+                      </button>
+                      {profile.avatarUrl && (
+                        <>
+                          <span className="text-slate-300">·</span>
+                          <button
+                            type="button"
+                            disabled={uploadingAvatar}
+                            onClick={handleRemoveAvatar}
+                            className="text-xs font-semibold text-red-500 hover:text-red-700 cursor-pointer"
+                          >
+                            Remove Photo
+                          </button>
+                        </>
+                      )}
+                    </div>
                   )}
                 </div>
               </div>
@@ -211,7 +344,7 @@ export default function ProfilePage() {
                   </>
                 )}
                 {!isOwnProfile && (
-                  <Link to="/messages">
+                  <Link to={`/messages?userId=${profile.id}`}>
                     <Button icon={MessageCircle} size="sm">Message</Button>
                   </Link>
                 )}
@@ -288,9 +421,10 @@ export default function ProfilePage() {
               className={cn(
                 'flex-1 py-2.5 text-sm font-semibold rounded-lg cursor-pointer transition-all',
                 tab === t.key
-                  ? 'bg-gradient-to-r from-teal-600 to-teal-500 text-white shadow-sm'
+                  ? 'text-white shadow-sm'
                   : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
               )}
+              style={tab === t.key ? { background: 'linear-gradient(135deg, #1a2b6b, #2251b8)' } : {}}
             >
               {t.label}
             </button>

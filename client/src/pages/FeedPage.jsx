@@ -1,15 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { postsAPI } from '../services/api';
 import { timeAgo } from '../utils/brand';
 import { cn } from '../utils/cn';
-import { Card, Button, Badge, Avatar } from '../components/ui';
+import { checkTextContent, validateImageFile, fileToDataUrl } from '../utils/moderation';
+import { Card, Button, Avatar } from '../components/ui';
 import toast from 'react-hot-toast';
 import {
   Heart, MessageCircle, Send, Trash2, Loader2,
   ChevronDown, ChevronUp, Newspaper, HelpCircle, BookOpen,
-  MoreHorizontal, Globe,
+  Globe, Image as ImageIcon, Link2, ExternalLink, X, ShieldCheck,
 } from 'lucide-react';
 
 const POST_TYPES = [
@@ -20,12 +21,64 @@ const POST_TYPES = [
 ];
 
 const TYPE_CONFIG = {
-  GENERAL:  { variant: 'slate',   label: 'General',  bg: 'bg-slate-100',  icon: Newspaper,  iconColor: 'text-slate-500',  accent: 'bg-slate-300' },
-  QUESTION: { variant: 'blue',    label: 'Question', bg: 'bg-blue-50',   icon: HelpCircle, iconColor: 'text-blue-600',   accent: 'bg-blue-400' },
-  RESOURCE: { variant: 'violet',  label: 'Resource', bg: 'bg-violet-50', icon: BookOpen,   iconColor: 'text-violet-600', accent: 'bg-violet-500' },
+  GENERAL:  {
+    variant: 'slate',
+    label: 'General Update',
+    bg: 'bg-slate-100',
+    icon: Newspaper,
+    iconColor: 'text-slate-600',
+    accent: 'bg-slate-400',
+    hint: 'Share a campus update, discussion, or photo with students & faculty.',
+    placeholder: 'Share a campus update, experience, or announcement with your peers...',
+  },
+  QUESTION: {
+    variant: 'blue',
+    label: 'Academic Question',
+    bg: 'bg-blue-50',
+    icon: HelpCircle,
+    iconColor: 'text-blue-600',
+    accent: 'bg-blue-500',
+    hint: 'Ask an academic or campus question. Peers & teachers can post answers below.',
+    placeholder: 'Ask a question (e.g., "How should we prepare for the CS301 Data Structures Viva?")...',
+  },
+  RESOURCE: {
+    variant: 'violet',
+    label: 'Study Resource',
+    bg: 'bg-violet-50',
+    icon: BookOpen,
+    iconColor: 'text-violet-600',
+    accent: 'bg-violet-500',
+    hint: 'Include a Resource Link (Drive, GitHub, PDF, Docs) or attach a Resource Picture.',
+    placeholder: 'Describe this study resource, lecture notes, or reference material...',
+  },
 };
 
 const CAN_MOD_DELETE = ['UNIVERSITY_ADMIN', 'SYSTEM_ADMIN', 'COORDINATION'];
+const URL_REGEX = /(https?:\/\/[^\s]+)/gi;
+
+function extractUrls(text = '') {
+  return text.match(URL_REGEX) || [];
+}
+
+function renderTextWithLinks(text = '') {
+  const parts = text.split(URL_REGEX);
+  return parts.map((part, idx) => {
+    if (/^https?:\/\//i.test(part)) {
+      return (
+        <a
+          key={idx}
+          href={part}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-indigo-600 hover:text-indigo-800 underline break-all font-semibold"
+        >
+          {part}
+        </a>
+      );
+    }
+    return <span key={idx}>{part}</span>;
+  });
+}
 
 export default function FeedPage() {
   const { user } = useAuth();
@@ -35,9 +88,12 @@ export default function FeedPage() {
   const [pagination, setPagination] = useState(null);
   const [newPost, setNewPost] = useState('');
   const [postType, setPostType] = useState('GENERAL');
+  const [resourceLink, setResourceLink] = useState('');
+  const [imagePreview, setImagePreview] = useState('');
   const [posting, setPosting] = useState(false);
   const [expandedComments, setExpandedComments] = useState({});
   const [filterType, setFilterType] = useState('ALL');
+  const fileInputRef = useRef(null);
 
   const fetchPosts = async (p = 1, type = filterType) => {
     try {
@@ -59,18 +115,94 @@ export default function FeedPage() {
 
   useEffect(() => { fetchPosts(1, filterType); }, [filterType]);
 
+  const handleImageSelect = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const validation = validateImageFile(file);
+    if (!validation.valid) {
+      toast.error(validation.reason);
+      e.target.value = '';
+      return;
+    }
+    try {
+      const dataUrl = await fileToDataUrl(file);
+      setImagePreview(dataUrl);
+    } catch {
+      toast.error('Failed to read image file.');
+    }
+  };
+
   const handleCreatePost = async (e) => {
     e.preventDefault();
-    if (!newPost.trim()) return;
+    const trimmed = newPost.trim();
+    const trimmedLink = resourceLink.trim();
+    const hasImage = Boolean(imagePreview);
+
+    if (!trimmed && !hasImage && !trimmedLink) {
+      toast.error('Please write something or attach a picture before posting.');
+      return;
+    }
+
+    // 1. Check profanity & gibberish/spam if text is provided
+    if (trimmed) {
+      const modCheck = checkTextContent(trimmed, { minLength: 1, fieldName: 'Post content' });
+      if (!modCheck.clean) {
+        toast.error(modCheck.reason);
+        return;
+      }
+    }
+
+    // 2. Type-specific validation
+    let finalContent = trimmed;
+
+    if (postType === 'QUESTION') {
+      if (trimmed.length < 3) {
+        toast.error('Please write a clear question (at least 3 characters).');
+        return;
+      }
+      if (!finalContent.endsWith('?')) {
+        finalContent = `${finalContent}?`;
+      }
+    } else if (postType === 'RESOURCE') {
+      const normalizedLink = trimmedLink && !/^https?:\/\//i.test(trimmedLink)
+        ? `https://${trimmedLink}`
+        : trimmedLink;
+      const hasUrlInText = /https?:\/\/[^\s]+/i.test(finalContent);
+      const hasValidLinkField = /^https?:\/\/[^\s]+/i.test(normalizedLink);
+
+      if (!hasValidLinkField && !hasUrlInText && !hasImage) {
+        toast.error('A Resource post must include a resource link (https://...) or an attached picture/study material.');
+        return;
+      }
+      if (hasValidLinkField && !finalContent.includes(normalizedLink)) {
+        finalContent = finalContent
+          ? `${finalContent}\n\n📎 Resource Link: ${normalizedLink}`
+          : `📎 Resource Link: ${normalizedLink}`;
+      }
+    }
+
     try {
       setPosting(true);
-      const res = await postsAPI.create({ content: newPost, type: postType });
+      const payload = {
+        content: finalContent,
+        type: postType,
+        ...(imagePreview ? { imageUrl: imagePreview } : {}),
+      };
+      const res = await postsAPI.create(payload);
       setPosts([{ ...res.data.post, likesCount: 0, commentsCount: 0, isLiked: false }, ...posts]);
       setNewPost('');
-      setPostType('GENERAL');
-      toast.success('Post shared!');
-    } catch {
-      toast.error('Failed to create post.');
+      setResourceLink('');
+      setImagePreview('');
+      if (fileInputRef.current) fileInputRef.current.value = '';
+      toast.success(
+        postType === 'QUESTION'
+          ? 'Question posted!'
+          : postType === 'RESOURCE'
+          ? 'Study resource shared!'
+          : 'Post shared!'
+      );
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to create post.');
     } finally {
       setPosting(false);
     }
@@ -96,32 +228,39 @@ export default function FeedPage() {
     } catch { toast.error('Failed to delete post.'); }
   };
 
-  // Posts are already filtered server-side; no client-side filter needed
+  const handleCommentCountChange = (postId, delta) => {
+    setPosts((prev) =>
+      prev.map((p) =>
+        p.id === postId ? { ...p, commentsCount: Math.max(0, (p.commentsCount || 0) + delta) } : p
+      )
+    );
+  };
+
   const filteredPosts = posts;
+  const activeTypeConfig = TYPE_CONFIG[postType] || TYPE_CONFIG.GENERAL;
 
   return (
     <div className="page-wrapper">
       {/* ── Gradient Banner ── */}
-      <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #4f46e5 0%, #6d28d9 100%)' }}>
+      <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0c1a4a 0%, #1a2b6b 100%)' }}>
         <div className="absolute inset-0 banner-grid pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -right-24 -top-24 w-80 h-80 rounded-full bg-white/[0.07] blur-3xl" />
-          <div className="absolute -left-16 bottom-0 w-64 h-64 rounded-full bg-white/[0.05] blur-3xl" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-40 rounded-full bg-violet-400/[0.12] blur-3xl" />
+          <div className="absolute -right-24 -top-24 w-80 h-80 rounded-full blur-3xl" style={{ background: 'radial-gradient(ellipse, rgba(201,151,58,0.08) 0%, transparent 70%)' }} />
+          <div className="absolute -left-16 bottom-0 w-64 h-64 rounded-full blur-3xl" style={{ background: 'radial-gradient(ellipse, rgba(26,43,107,0.5) 0%, transparent 70%)' }} />
         </div>
         <div className="max-w-2xl mx-auto px-4 sm:px-6 py-12 relative z-10">
           <div className="flex items-center justify-between">
             <div>
-              <span className="text-[11px] font-bold uppercase tracking-widest text-indigo-300 block mb-2">Academic Platform</span>
+              <span className="text-[11px] font-bold uppercase tracking-widest block mb-2" style={{ color: '#c9973a' }}>Academic Platform</span>
               <h1 className="text-3xl font-extrabold text-white tracking-tight">Community Feed</h1>
-              <p className="text-indigo-200 text-sm mt-2">Share knowledge, ask questions, and connect with your peers</p>
+              <p className="text-slate-400 text-sm mt-2">Share updates, ask academic questions, and post verified study resources</p>
             </div>
             {pagination && (
-              <div className="hidden sm:flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-4 py-3 flex-shrink-0 animate-popIn">
-                <Newspaper className="h-5 w-5 text-indigo-200" />
+              <div className="hidden sm:flex items-center gap-2 backdrop-blur-sm border rounded-2xl px-4 py-3 flex-shrink-0 animate-popIn" style={{ background: 'rgba(255,255,255,0.06)', borderColor: 'rgba(255,255,255,0.1)' }}>
+                <Newspaper className="h-5 w-5" style={{ color: '#c9973a' }} />
                 <div>
                   <span className="text-2xl font-extrabold text-white leading-none">{pagination.total}</span>
-                  <p className="text-[11px] text-indigo-300 font-medium">Total Posts</p>
+                  <p className="text-[11px] font-medium" style={{ color: '#c9973a' }}>Total Posts</p>
                 </div>
               </div>
             )}
@@ -130,30 +269,76 @@ export default function FeedPage() {
       </div>
 
       <div className="max-w-2xl mx-auto px-4 sm:px-6 py-6">
-
         {/* ── Composer ── */}
         {user && (
           <Card padding="p-0" className="mb-5 overflow-hidden">
             <form onSubmit={handleCreatePost}>
-              <div className="p-4">
+              {/* Mode indicator bar */}
+              <div className="px-4 py-2 bg-slate-50 border-b border-slate-100 flex items-center justify-between gap-2 flex-wrap">
+                <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-600">
+                  <activeTypeConfig.icon size={13} className={activeTypeConfig.iconColor} />
+                  <span>Posting as: <span className={activeTypeConfig.iconColor}>{activeTypeConfig.label}</span></span>
+                </div>
+                <span className="text-[11px] text-slate-400 flex items-center gap-1">
+                  <ShieldCheck size={12} className="text-emerald-600" /> Content &amp; image safety active
+                </span>
+              </div>
+
+              <div className="p-4 space-y-3">
                 <div className="flex gap-3">
-                  <Avatar name={user?.name || ''} size="md" className="flex-shrink-0 mt-0.5" />
-                  <div className="flex-1 min-w-0">
+                  <Avatar name={user?.name || ''} src={user?.avatarUrl} size="md" className="flex-shrink-0 mt-0.5" />
+                  <div className="flex-1 min-w-0 space-y-2.5">
                     <textarea
                       value={newPost}
                       onChange={(e) => setNewPost(e.target.value)}
-                      placeholder="Share something with the community..."
+                      placeholder={activeTypeConfig.placeholder}
                       rows={newPost ? 3 : 2}
-                      className="w-full rounded-xl border-0 bg-slate-50 px-4 py-3 text-sm font-medium placeholder-slate-400 focus:bg-slate-100/80 focus:outline-none resize-none transition-all leading-relaxed"
+                      className="w-full rounded-xl border border-slate-200/80 bg-slate-50 px-4 py-3 text-sm font-medium placeholder-slate-400 focus:bg-white focus:border-[#1a2b6b] focus:outline-none resize-none transition-all leading-relaxed"
                       style={{ fontFamily: 'var(--font-sans)' }}
                     />
+
+                    <p className="text-[11px] text-slate-400 font-medium px-1">
+                      {activeTypeConfig.hint}
+                    </p>
+
+                    {/* Resource Link input when RESOURCE mode is active */}
+                    {postType === 'RESOURCE' && (
+                      <div className="relative">
+                        <Link2 className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-violet-500 pointer-events-none" />
+                        <input
+                          type="text"
+                          value={resourceLink}
+                          onChange={(e) => setResourceLink(e.target.value)}
+                          placeholder="Resource URL (e.g. https://drive.google.com/... or https://github.com/...)"
+                          className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-violet-200 bg-violet-50/40 text-sm font-medium placeholder-slate-400 focus:border-violet-500 focus:bg-white focus:outline-none transition-all"
+                        />
+                      </div>
+                    )}
+
+                    {/* Attached Image Preview */}
+                    {imagePreview && (
+                      <div className="relative rounded-xl overflow-hidden border border-slate-200 bg-slate-50 max-h-60">
+                        <img src={imagePreview} alt="Upload preview" className="w-full max-h-60 object-cover" />
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setImagePreview('');
+                            if (fileInputRef.current) fileInputRef.current.value = '';
+                          }}
+                          className="absolute top-2 right-2 p-1.5 rounded-lg bg-slate-900/75 text-white hover:bg-red-600 transition-colors cursor-pointer"
+                          title="Remove picture"
+                        >
+                          <X size={14} />
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
 
               {/* Post controls */}
-              <div className="flex items-center justify-between px-4 py-3 bg-slate-50/50 border-t border-slate-100">
-                <div className="flex items-center gap-1">
+              <div className="flex items-center justify-between px-4 py-3 bg-slate-50/60 border-t border-slate-100 flex-wrap gap-2">
+                <div className="flex items-center gap-1 flex-wrap">
                   {POST_TYPES.filter((t) => t.value !== 'ALL').map((t) => {
                     const Icon = t.icon;
                     const active = postType === t.value;
@@ -164,23 +349,50 @@ export default function FeedPage() {
                         onClick={() => setPostType(t.value)}
                         className={cn(
                           'flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer',
-                          active ? 'bg-indigo-600 text-white shadow-sm shadow-indigo-500/30' : 'text-slate-400 hover:text-slate-700 hover:bg-slate-100'
+                          active
+                            ? 'text-white shadow-sm'
+                            : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100'
                         )}
+                        style={active ? { background: 'linear-gradient(135deg, #1a2b6b, #2251b8)' } : {}}
                       >
                         <Icon size={12} />
                         {t.label}
                       </button>
                     );
                   })}
+
+                  {/* Picture Upload Button */}
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept="image/jpeg,image/png,image/webp,image/gif"
+                    onChange={handleImageSelect}
+                    className="hidden"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => fileInputRef.current?.click()}
+                    className={cn(
+                      'flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ml-1 border',
+                      imagePreview
+                        ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                        : 'text-slate-600 border-slate-200 bg-white hover:bg-slate-100'
+                    )}
+                    title="Attach a picture (JPEG, PNG, WEBP up to 5MB)"
+                  >
+                    <ImageIcon size={13} />
+                    <span>{imagePreview ? 'Picture Attached' : 'Add Picture'}</span>
+                  </button>
                 </div>
+
                 <Button
                   type="submit"
                   size="sm"
-                  disabled={posting || !newPost.trim()}
+                  disabled={posting || (!newPost.trim() && !imagePreview && !resourceLink.trim())}
                   loading={posting}
                   icon={Send}
                 >
-                  Post
+                  {postType === 'QUESTION' ? 'Ask Question' : postType === 'RESOURCE' ? 'Share Resource' : 'Post'}
                 </Button>
               </div>
             </form>
@@ -198,8 +410,9 @@ export default function FeedPage() {
                 onClick={() => setFilterType(t.value)}
                 className={cn(
                   'flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex-shrink-0',
-                  active ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-50'
+                  active ? 'text-white shadow-sm' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-50'
                 )}
+                style={active ? { background: 'linear-gradient(135deg, #1a2b6b, #2251b8)' } : {}}
               >
                 <Icon size={12} />
                 {t.label}
@@ -244,6 +457,7 @@ export default function FeedPage() {
                 canModDelete={CAN_MOD_DELETE.includes(user?.role)}
                 onLike={handleLike}
                 onDelete={handleDelete}
+                onCommentCountChange={handleCommentCountChange}
                 isCommentsExpanded={expandedComments[post.id]}
                 onToggleComments={(id) => setExpandedComments((p) => ({ ...p, [id]: !p[id] }))}
               />
@@ -261,19 +475,19 @@ export default function FeedPage() {
       </div>
     </div>
   );
-
 }
 
-function PostCard({ post, currentUser, canModDelete, onLike, onDelete, isCommentsExpanded, onToggleComments }) {
+function PostCard({ post, currentUser, canModDelete, onLike, onDelete, onCommentCountChange, isCommentsExpanded, onToggleComments }) {
   const cfg = TYPE_CONFIG[post.type] || TYPE_CONFIG.GENERAL;
   const TypeIcon = cfg.icon;
   const isOwner = post.author?.id === currentUser?.id;
   const showDelete = isOwner || canModDelete;
+  const urls = extractUrls(post.content);
 
   return (
     <Card hover padding="p-0" className="relative overflow-hidden">
       {/* Type accent strip */}
-      <div className={cn('absolute left-0 top-0 bottom-0 w-[3px]', cfg.accent)} />
+      <div className={cn('absolute left-0 top-0 bottom-0 w-[4px]', cfg.accent)} />
       <div className="p-5 pl-6">
         {/* Author row */}
         <div className="flex items-start justify-between mb-3">
@@ -285,18 +499,18 @@ function PostCard({ post, currentUser, canModDelete, onLike, onDelete, isComment
               <div className="flex items-center gap-2 flex-wrap">
                 <Link
                   to={`/profile/${post.author?.id}`}
-                  className="text-sm font-bold text-slate-900 hover:text-indigo-600 transition-colors"
+                  className="text-sm font-bold text-slate-900 hover:text-[#1a2b6b] transition-colors"
                 >
                   {post.author?.name}
                 </Link>
-                <div className={cn('flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold', cfg.bg, cfg.iconColor)}>
+                <div className={cn('flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold', cfg.bg, cfg.iconColor)}>
                   <TypeIcon size={10} />
                   {cfg.label}
                 </div>
               </div>
               <div className="flex items-center gap-1.5 text-xs text-slate-400 mt-0.5">
                 {post.author?.department && (
-                  <span className="text-indigo-500 font-semibold truncate max-w-[140px]">{post.author.department}</span>
+                  <span className="text-[#1a2b6b] font-semibold truncate max-w-[160px]">{post.author.department}</span>
                 )}
                 {post.author?.department && <span className="text-slate-200">·</span>}
                 <span>{timeAgo(post.createdAt)}</span>
@@ -313,11 +527,51 @@ function PostCard({ post, currentUser, canModDelete, onLike, onDelete, isComment
           )}
         </div>
 
-        {/* Content */}
-        <p className="text-[15px] text-slate-800 whitespace-pre-wrap leading-relaxed break-words">{post.content}</p>
+        {/* Distinct Question Callout or Standard Content */}
+        {post.type === 'QUESTION' ? (
+          <div className="rounded-xl bg-blue-50/60 border border-blue-100 p-3.5 mb-2">
+            <div className="flex items-center gap-1.5 text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1">
+              <HelpCircle size={13} /> Question for the Community
+            </div>
+            <p className="text-[15px] font-semibold text-slate-900 whitespace-pre-wrap leading-relaxed break-words">
+              {renderTextWithLinks(post.content)}
+            </p>
+          </div>
+        ) : (
+          <p className="text-[15px] text-slate-800 whitespace-pre-wrap leading-relaxed break-words">
+            {renderTextWithLinks(post.content)}
+          </p>
+        )}
 
+        {/* Resource Link Attachment Card */}
+        {post.type === 'RESOURCE' && urls.length > 0 && (
+          <div className="mt-3 p-3 rounded-xl bg-violet-50/70 border border-violet-200/80 flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2.5 min-w-0">
+              <div className="h-9 w-9 rounded-lg bg-violet-600 text-white flex items-center justify-center flex-shrink-0">
+                <BookOpen size={16} />
+              </div>
+              <div className="min-w-0">
+                <p className="text-xs font-bold text-violet-950">Attached Academic Resource</p>
+                <p className="text-[11px] text-violet-700 truncate">{urls[0]}</p>
+              </div>
+            </div>
+            <a
+              href={urls[0]}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-violet-600 hover:bg-violet-700 text-white text-xs font-bold flex-shrink-0 transition-colors"
+            >
+              <span>Open</span>
+              <ExternalLink size={12} />
+            </a>
+          </div>
+        )}
+
+        {/* Attached Post Image */}
         {post.imageUrl && (
-          <img src={post.imageUrl} alt="" className="mt-3 rounded-xl w-full object-cover max-h-80 border border-slate-100" />
+          <div className="mt-3 rounded-xl overflow-hidden border border-slate-100 bg-slate-50">
+            <img src={post.imageUrl} alt="Post attachment" className="w-full object-cover max-h-96" />
+          </div>
         )}
       </div>
 
@@ -346,25 +600,35 @@ function PostCard({ post, currentUser, canModDelete, onLike, onDelete, isComment
           onClick={() => onToggleComments(post.id)}
           className={cn(
             'flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold cursor-pointer transition-all',
-            isCommentsExpanded ? 'text-indigo-600 bg-indigo-50' : 'text-slate-400 hover:text-indigo-600 hover:bg-indigo-50'
+            isCommentsExpanded ? 'text-[#1a2b6b] bg-indigo-50' : 'text-slate-500 hover:text-[#1a2b6b] hover:bg-indigo-50'
           )}
         >
           <MessageCircle size={14} />
-          <span>{post.commentsCount || 0}</span>
+          <span>
+            {post.commentsCount || 0}{' '}
+            {post.type === 'QUESTION'
+              ? post.commentsCount === 1 ? 'Answer' : 'Answers'
+              : post.commentsCount === 1 ? 'Comment' : 'Comments'}
+          </span>
           {isCommentsExpanded ? <ChevronUp size={11} /> : <ChevronDown size={11} />}
         </button>
       </div>
 
       {isCommentsExpanded && (
         <div className="border-t border-slate-50">
-          <CommentsSection postId={post.id} currentUser={currentUser} />
+          <CommentsSection
+            postId={post.id}
+            postType={post.type}
+            currentUser={currentUser}
+            onCommentCountChange={onCommentCountChange}
+          />
         </div>
       )}
     </Card>
   );
 }
 
-function CommentsSection({ postId, currentUser }) {
+function CommentsSection({ postId, postType, currentUser, onCommentCountChange }) {
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [newComment, setNewComment] = useState('');
@@ -380,13 +644,21 @@ function CommentsSection({ postId, currentUser }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!newComment.trim()) return;
+
+    const modCheck = checkTextContent(newComment, { minLength: 2, fieldName: postType === 'QUESTION' ? 'Answer' : 'Comment' });
+    if (!modCheck.clean) {
+      toast.error(modCheck.reason);
+      return;
+    }
+
     try {
       setSubmitting(true);
-      const res = await postsAPI.addComment(postId, { content: newComment });
+      const res = await postsAPI.addComment(postId, { content: newComment.trim() });
       setComments([...comments, res.data.comment]);
       setNewComment('');
-    } catch {
-      toast.error('Failed to add comment.');
+      onCommentCountChange?.(postId, 1);
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to add comment.');
     } finally {
       setSubmitting(false);
     }
@@ -396,6 +668,7 @@ function CommentsSection({ postId, currentUser }) {
     try {
       await postsAPI.deleteComment(commentId);
       setComments(comments.filter((c) => c.id !== commentId));
+      onCommentCountChange?.(postId, -1);
     } catch { toast.error('Failed to delete comment.'); }
   };
 
@@ -428,7 +701,9 @@ function CommentsSection({ postId, currentUser }) {
           ))}
         </div>
       ) : (
-        <p className="text-xs text-slate-400 text-center py-2 mb-3">No comments yet. Be the first!</p>
+        <p className="text-xs text-slate-400 text-center py-2 mb-3">
+          {postType === 'QUESTION' ? 'No answers yet. Be the first to help!' : 'No comments yet. Be the first!'}
+        </p>
       )}
 
       {currentUser && (
@@ -438,14 +713,15 @@ function CommentsSection({ postId, currentUser }) {
             <input
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
-              placeholder="Write a comment..."
-              className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm font-medium placeholder-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/15 transition-all pr-10"
+              placeholder={postType === 'QUESTION' ? 'Write a helpful answer...' : 'Write a comment...'}
+              className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm font-medium placeholder-slate-400 focus:border-[#1a2b6b] focus:outline-none focus:ring-2 focus:ring-indigo-500/15 transition-all pr-10"
               style={{ fontFamily: 'var(--font-sans)' }}
             />
             <button
               type="submit"
               disabled={submitting || !newComment.trim()}
-              className="absolute right-2 top-1/2 -translate-y-1/2 h-7 w-7 rounded-lg bg-indigo-600 text-white flex items-center justify-center hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors"
+              className="absolute right-2 top-1/2 -translate-y-1/2 h-7 w-7 rounded-lg text-white flex items-center justify-center hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors"
+              style={{ background: '#1a2b6b' }}
             >
               {submitting ? <Loader2 size={12} className="animate-spin" /> : <Send size={12} />}
             </button>

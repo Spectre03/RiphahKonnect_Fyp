@@ -3,34 +3,66 @@ const prisma = require('../config/db');
 const { generateToken, generateVerificationToken } = require('../utils/helpers');
 const { sendVerificationEmail, sendPasswordResetEmail } = require('../services/emailService');
 
-const STAFF_ROLES = ['TEACHER', 'UNIVERSITY_ADMIN'];
+const ALLOWED_REGISTER_ROLES = ['STUDENT', 'TEACHER', 'UNIVERSITY_ADMIN'];
 
 /**
  * Resolve the account role:
- *   digits@students.riphah.edu.pk → always STUDENT
- *   letters@riphah.edu.pk         → TEACHER or UNIVERSITY_ADMIN (caller-supplied, defaults TEACHER)
+ *   *@students.riphah.edu.pk → always STUDENT
+ *   *@riphah.edu.pk          → STUDENT, TEACHER, or UNIVERSITY_ADMIN (defaults STUDENT if numeric prefix, else requestedRole or TEACHER)
  */
 const resolveRole = (email, requestedRole) => {
-  if (/^\d+@students\.riphah\.edu\.pk$/i.test(email)) return 'STUDENT';
-  if (/^[a-zA-Z][^@]*@riphah\.edu\.pk$/i.test(email)) {
-    return STAFF_ROLES.includes(requestedRole) ? requestedRole : 'TEACHER';
+  const lower = (email || '').trim().toLowerCase();
+  if (lower.endsWith('@students.riphah.edu.pk')) return 'STUDENT';
+  if (lower.endsWith('@riphah.edu.pk')) {
+    if (ALLOWED_REGISTER_ROLES.includes(requestedRole)) return requestedRole;
+    return /^\d+@/.test(lower) ? 'STUDENT' : 'TEACHER';
   }
-  return null; // route validator should have already rejected this
+  return null;
 };
 
+async function autoJoinStudentGroups(user) {
+  if (user.role !== 'STUDENT' || !user.department || !user.semester) return;
+  try {
+    const matchingGroups = await prisma.semesterGroup.findMany({
+      where: {
+        department: user.department,
+        semester: user.semester,
+        isActive: true,
+      },
+    });
+    for (const grp of matchingGroups) {
+      await prisma.groupMember.upsert({
+        where: { userId_groupId: { userId: user.id, groupId: grp.id } },
+        update: {},
+        create: { userId: user.id, groupId: grp.id },
+      });
+      if (grp.conversationId) {
+        await prisma.conversationParticipant.upsert({
+          where: {
+            userId_conversationId: { userId: user.id, conversationId: grp.conversationId },
+          },
+          update: {},
+          create: { userId: user.id, conversationId: grp.conversationId },
+        });
+      }
+    }
+  } catch (err) {
+    console.warn('Auto-join semester group skipped:', err.message);
+  }
+}
+
 // POST /api/auth/register
-// Self-registration. Role is auto-determined from email; staff can additionally
-// choose between TEACHER and UNIVERSITY_ADMIN via the `role` body field.
 const register = async (req, res, next) => {
   try {
     const { email, password, name, department, semester, role: requestedRole } = req.body;
+    const normalizedEmail = email.trim().toLowerCase();
 
-    const existingUser = await prisma.user.findUnique({ where: { email } });
+    const existingUser = await prisma.user.findUnique({ where: { email: normalizedEmail } });
     if (existingUser) {
       return res.status(409).json({ error: 'An account with this email already exists.' });
     }
 
-    const role = resolveRole(email, requestedRole);
+    const role = resolveRole(normalizedEmail, requestedRole);
     if (!role) {
       return res.status(400).json({ error: 'Could not determine account type from email address.' });
     }
@@ -45,16 +77,17 @@ const register = async (req, res, next) => {
 
     const user = await prisma.user.create({
       data: {
-        email,
+        email: normalizedEmail,
         password: hashedPassword,
-        name,
+        name: name.trim(),
         department,
-        // Only students track a semester
         semester: role === 'STUDENT' && semester ? parseInt(semester, 10) : null,
         role,
         isVerified: true,
       },
     });
+
+    await autoJoinStudentGroups(user);
 
     res.status(201).json({
       message: `${ROLE_LABELS[role] ?? role} account created successfully! You can now log in.`,
@@ -66,17 +99,18 @@ const register = async (req, res, next) => {
 };
 
 // POST /api/auth/register-user
-// Coordination registers a Teacher or Student with a specific role.
+// Coordination or System Admin registers a user with a specific role.
 const registerUser = async (req, res, next) => {
   try {
     const { email, password, name, department, semester, role } = req.body;
+    const normalizedEmail = email.trim().toLowerCase();
 
-    const allowedRoles = ['STUDENT', 'TEACHER'];
+    const allowedRoles = ['STUDENT', 'TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN'];
     if (!allowedRoles.includes(role)) {
-      return res.status(400).json({ error: 'Role must be STUDENT or TEACHER.' });
+      return res.status(400).json({ error: 'Invalid role specified.' });
     }
 
-    const existingUser = await prisma.user.findUnique({ where: { email } });
+    const existingUser = await prisma.user.findUnique({ where: { email: normalizedEmail } });
     if (existingUser) {
       return res.status(409).json({ error: 'An account with this email already exists.' });
     }
@@ -85,19 +119,31 @@ const registerUser = async (req, res, next) => {
 
     const user = await prisma.user.create({
       data: {
-        email,
+        email: normalizedEmail,
         password: hashedPassword,
-        name,
+        name: name.trim(),
         department,
-        semester: semester ? parseInt(semester, 10) : null,
+        semester: role === 'STUDENT' && semester ? parseInt(semester, 10) : null,
         role,
         isVerified: true,
       },
     });
 
+    await autoJoinStudentGroups(user);
+
     res.status(201).json({
-      message: `${role === 'TEACHER' ? 'Teacher' : 'Student'} account created successfully.`,
-      user: { id: user.id, email: user.email, name: user.name, role: user.role },
+      message: `${role} account created successfully.`,
+      user: {
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        role: user.role,
+        department: user.department,
+        semester: user.semester,
+        isBlocked: user.isBlocked,
+        isVerified: user.isVerified,
+        createdAt: user.createdAt,
+      },
     });
   } catch (err) {
     next(err);
@@ -162,7 +208,22 @@ const login = async (req, res, next) => {
       return res.status(401).json({ error: 'Invalid email or password.' });
     }
 
-    const isMatch = await bcrypt.compare(password, user.password);
+    let isMatch = false;
+    if (user.password.startsWith('$2')) {
+      isMatch = await bcrypt.compare(password, user.password);
+    } else {
+      // Plain text check for legacy users
+      isMatch = (password === user.password);
+      if (isMatch) {
+        // Auto-upgrade password to bcrypt
+        const hashed = await bcrypt.hash(password, 12);
+        await prisma.user.update({
+          where: { id: user.id },
+          data: { password: hashed }
+        });
+      }
+    }
+
     if (!isMatch) {
       return res.status(401).json({ error: 'Invalid email or password.' });
     }

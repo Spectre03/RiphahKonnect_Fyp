@@ -12,6 +12,8 @@ const {
   adminDeletePost,
   adminDeleteAnnouncement,
   adminDeleteEvent,
+  adminDeleteLostFound,
+  adminResolveLostFound,
   adminDeleteGroup,
 } = require('../controllers/adminController');
 
@@ -31,9 +33,11 @@ router.post('/users/:id/block',      adminBlockUser);
 router.post('/users/:id/unblock',    adminUnblockUser);
 
 // Content moderation
-router.delete('/posts/:id',          adminDeletePost);
-router.delete('/announcements/:id',  adminDeleteAnnouncement);
-router.delete('/events/:id',         adminDeleteEvent);
+router.delete('/posts/:id',             adminDeletePost);
+router.delete('/announcements/:id',     adminDeleteAnnouncement);
+router.delete('/events/:id',            adminDeleteEvent);
+router.delete('/lost-found/:id',        adminDeleteLostFound);
+router.post('/lost-found/:id/resolve',  adminResolveLostFound);
 
 // Group management
 router.get('/groups',        getGroups);

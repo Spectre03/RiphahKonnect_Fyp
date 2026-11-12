@@ -141,26 +141,26 @@ export default function ResourcesPage() {
     <div className="page-wrapper">
 
       {/* Banner */}
-      <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%)' }}>
+      <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0c1a4a 0%, #1a2b6b 100%)' }}>
         <div className="absolute inset-0 banner-grid pointer-events-none opacity-30" />
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -right-16 -top-16 w-72 h-72 rounded-full bg-white/[0.07] blur-3xl" />
-          <div className="absolute -left-12 bottom-0 w-60 h-60 rounded-full bg-indigo-300/[0.08] blur-3xl" />
+          <div className="absolute -right-16 -top-16 w-72 h-72 rounded-full blur-3xl" style={{ background: 'radial-gradient(ellipse, rgba(201,151,58,0.08) 0%, transparent 70%)' }} />
+          <div className="absolute -left-12 bottom-0 w-60 h-60 rounded-full blur-3xl" style={{ background: 'radial-gradient(ellipse, rgba(26,43,107,0.5) 0%, transparent 70%)' }} />
         </div>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 relative z-10">
           <div className="flex items-center justify-between">
             <div>
-              <span className="text-[11px] font-bold uppercase tracking-widest text-sky-200 block mb-2">Academic</span>
+              <span className="text-[11px] font-bold uppercase tracking-widest block mb-2" style={{ color: '#c9973a' }}>Academic</span>
               <h1 className="text-3xl font-extrabold text-white tracking-tight">Study Resources</h1>
-              <p className="text-sky-100 text-sm mt-2">
+              <p className="text-slate-400 text-sm mt-2">
                 {canUpload ? 'Upload and share notes, past papers, and slides' : 'Browse shared academic resources'}
-                {pagination && <span className="ml-2 text-sky-300">· {pagination.total} resources</span>}
+                {pagination && <span className="ml-2" style={{ color: '#c9973a' }}>· {pagination.total} resources</span>}
               </p>
             </div>
             {canUpload && (
-              <Button icon={Upload} onClick={() => setShowUpload(true)} className="bg-white text-sky-700 hover:bg-sky-50 border-0 shadow-lg flex-shrink-0">
-                Upload
-              </Button>
+              <button onClick={() => setShowUpload(true)} className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-bold text-white border border-white/20 hover:bg-white/10 transition-all cursor-pointer flex-shrink-0" style={{ background: 'rgba(201,151,58,0.15)' }}>
+                <Upload size={14} /> Upload
+              </button>
             )}
           </div>
         </div>
@@ -177,9 +177,10 @@ export default function ResourcesPage() {
               className={cn(
                 'flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border',
                 typeFilter === key
-                  ? 'bg-indigo-600 text-white border-indigo-600 shadow-sm'
-                  : 'bg-white text-slate-500 border-slate-200 hover:border-indigo-300 hover:text-indigo-600'
+                  ? 'text-white border-transparent shadow-sm'
+                  : 'bg-white text-slate-500 border-slate-200 hover:text-slate-700'
               )}
+              style={typeFilter === key ? { background: 'linear-gradient(135deg, #1a2b6b, #2251b8)', borderColor: '#1a2b6b' } : {}}
             >
               <Icon size={13} />
               {label}
@@ -217,7 +218,8 @@ export default function ResourcesPage() {
             </select>
             <button
               type="submit"
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-bold hover:bg-indigo-700 transition-colors cursor-pointer shadow-sm flex-shrink-0"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-white text-sm font-bold transition-colors cursor-pointer shadow-sm flex-shrink-0"
+              style={{ background: 'linear-gradient(135deg, #1a2b6b, #2251b8)' }}
             >
               <Filter size={14} /> Filter
             </button>
@@ -290,7 +292,7 @@ export default function ResourcesPage() {
                         <span className={cn('inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold border', meta.color, meta.border)}>
                           {meta.label}
                         </span>
-                        <span className="flex items-center gap-1 text-[10px] text-indigo-600 font-bold">
+                        <span className="flex items-center gap-1 text-[10px] font-bold" style={{ color: '#1a2b6b' }}>
                           <GraduationCap size={10} /> {res.department}
                         </span>
                         <span className="flex items-center gap-1 text-[10px] text-slate-400 font-semibold">

@@ -38,6 +38,7 @@ model User {
   posts              Post[]
   courses            UserCourse[]
   verificationTokens VerificationToken[]
+  notifications      Notification[]
 
   @@index([email])
   @@index([role])
@@ -109,10 +110,13 @@ model SemesterGroup {
   description String?
   department  String
   semester    Int
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @updatedAt
-  members     GroupMember[]
-  posts       Post[]
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  isArchived     Boolean       @default(false)
+  conversationId String?       @unique
+  conversation   Conversation? @relation(fields: [conversationId], references: [id])
+  members        GroupMember[]
+  posts          Post[]
 
   @@index([department])
   @@index([semester])
@@ -180,30 +184,30 @@ model LostFoundItem {
 }
 
 model Announcement {
-  id               String           @id @default(cuid())
-  title            String
-  content          String
-  type             AnnouncementType @default(OFFICIAL)
-  targetDepartment String?
-  targetSemester   Int?
-  authorId         String
-  createdAt        DateTime         @default(now())
-  updatedAt        DateTime         @updatedAt
-  author           User             @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  id                String           @id @default(cuid())
+  title             String
+  content           String
+  type              AnnouncementType @default(GENERAL)
+  targetDepartments String[]         @default([])
+  targetSemesters   Int[]            @default([])
+  authorId          String
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+  author            User             @relation(fields: [authorId], references: [id], onDelete: Cascade)
 
   @@index([authorId])
   @@index([type])
-  @@index([targetDepartment])
 }
 
 model Conversation {
   id           String                    @id @default(cuid())
   isGroup      Boolean                   @default(false)
-  name         String?
-  createdAt    DateTime                  @default(now())
-  updatedAt    DateTime                  @updatedAt
-  participants ConversationParticipant[]
-  messages     Message[]
+  name           String?
+  createdAt      DateTime                  @default(now())
+  updatedAt      DateTime                  @updatedAt
+  semesterGroup  SemesterGroup?
+  participants   ConversationParticipant[]
+  messages       Message[]
 }
 
 model ConversationParticipant {
@@ -222,6 +226,7 @@ model Message {
   content        String
   senderId       String
   conversationId String
+  isPinned       Boolean      @default(false)
   createdAt      DateTime     @default(now())
   conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
   sender         User         @relation(fields: [senderId], references: [id], onDelete: Cascade)
@@ -282,6 +287,21 @@ enum ItemCategory {
 }
 
 enum AnnouncementType {
-  OFFICIAL
+  GENERAL
   CLASS
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String
+  content   String
+  type      String   @default("GENERAL")
+  link      String?
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([isRead])
 }

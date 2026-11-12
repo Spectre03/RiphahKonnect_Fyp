@@ -7,6 +7,7 @@ const {
   createConversation,
   getMessages,
   sendMessage,
+  togglePinMessage,
 } = require('../controllers/messageController');
 
 const router = express.Router();
@@ -36,5 +37,7 @@ router.post(
   ]),
   sendMessage
 );
+
+router.patch('/messages/:id/pin', togglePinMessage);
 
 module.exports = router;

@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import {
   Eye, EyeOff, GraduationCap, Loader2, ArrowRight,
-  User, Mail, Lock, BookOpen, Hash, Sparkles, Briefcase,
+  User, Mail, Lock, BookOpen, Hash, Sparkles, Briefcase, ArrowLeft,
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { DEPARTMENTS, SEMESTERS } from '../utils/constants';
@@ -17,12 +17,20 @@ import { DEPARTMENTS, SEMESTERS } from '../utils/constants';
  */
 function detectCategory(email) {
   if (!email) return null;
-  if (/^\d+@students\.riphah\.edu\.pk$/i.test(email)) return 'STUDENT';
-  if (/^[a-zA-Z][^@]*@riphah\.edu\.pk$/i.test(email)) return 'STAFF';
+  const lower = email.trim().toLowerCase();
+  if (/^[^\s@]+@students\.riphah\.edu\.pk$/i.test(lower)) return 'STUDENT';
+  if (/^[^\s@]+@riphah\.edu\.pk$/i.test(lower)) return 'RIPHAH';
   return null;
 }
 
-const STAFF_ROLES = [
+const ACCOUNT_ROLES = [
+  {
+    value: 'STUDENT',
+    label: 'Student',
+    desc: 'Join semester groups & campus feed',
+    icon: GraduationCap,
+    color: 'indigo',
+  },
   {
     value: 'TEACHER',
     label: 'Teaching Faculty',
@@ -51,12 +59,11 @@ const STEPS_INFO = [
 ];
 
 export default function RegisterPage() {
-  const { register: registerUser } = useAuth();
+  const { register: registerUser, user, logout } = useAuth();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [step, setStep] = useState(1);
-  // Staff-only: which sub-role they pick (TEACHER | UNIVERSITY_ADMIN)
-  const [staffRole, setStaffRole] = useState('TEACHER');
+  const [selectedRole, setSelectedRole] = useState('STUDENT');
 
   const {
     register,
@@ -68,23 +75,22 @@ export default function RegisterPage() {
 
   const emailValue = watch('email', '');
   const category = detectCategory(emailValue);
-  const isStaff = category === 'STAFF';
-  const isStudent = category === 'STUDENT';
+  const isStrictStudentDomain = category === 'STUDENT';
+  const isRiphahDomain = category === 'RIPHAH';
 
   // Final role that will be sent to the backend
-  const resolvedRole = isStudent ? 'STUDENT' : isStaff ? staffRole : null;
+  const resolvedRole = isStrictStudentDomain ? 'STUDENT' : isRiphahDomain ? selectedRole : 'STUDENT';
+  const isStudent = resolvedRole === 'STUDENT';
   const roleMeta = resolvedRole ? ROLE_META[resolvedRole] : null;
 
   const onSubmit = async (data) => {
     try {
-      const payload = { ...data };
-      // Inject role for staff accounts; backend ignores it for students (email determines STUDENT)
-      if (isStaff) payload.role = staffRole;
+      const payload = { ...data, role: resolvedRole };
       await registerUser(payload);
       toast.success(`${roleMeta?.label ?? 'Account'} created! Welcome to RiphahKonnect.`);
       navigate('/login');
     } catch (err) {
-      toast.error(err.response?.data?.error || 'Registration failed.');
+      toast.error(err.response?.data?.error || err.response?.data?.errors?.[0]?.message || 'Registration failed.');
     }
   };
 
@@ -104,19 +110,16 @@ export default function RegisterPage() {
         </div>
 
         <div className="relative flex flex-col h-full p-10">
-          <div className="flex items-center gap-3">
-            <div className="h-10 w-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/30">
-              <GraduationCap className="h-5 w-5 text-white" />
+          <div className="flex items-center">
+            <div className="h-12 flex items-center py-0.5">
+              <img src="/logo-dark.png" alt="RiphahKonnect" className="h-full w-auto object-contain" />
             </div>
-            <span className="text-xl font-bold text-white tracking-tight">
-              Riphah<span className="text-indigo-400">Konnect</span>
-            </span>
           </div>
 
           <div className="mt-auto mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-violet-500/10 border border-violet-500/20 rounded-full mb-5">
-              <Sparkles className="h-3 w-3 text-violet-400" />
-              <span className="text-xs font-semibold text-violet-300 tracking-wide">JOIN THE COMMUNITY</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5" style={{ background: 'rgba(201,151,58,0.10)', border: '1px solid rgba(201,151,58,0.20)' }}>
+              <Sparkles className="h-3 w-3" style={{ color: '#c9973a' }} />
+              <span className="text-xs font-semibold tracking-wide" style={{ color: '#c9973a' }}>JOIN THE COMMUNITY</span>
             </div>
             <h1 className="text-4xl font-extrabold text-white leading-tight tracking-tight mb-3">
               Start your<br />
@@ -162,19 +165,55 @@ export default function RegisterPage() {
         </div>
 
         <div className="w-full max-w-[460px] animate-fadeUp relative z-10">
+          {/* Back to home */}
+          <div className="flex items-center justify-between mb-5">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-slate-700 transition-colors group"
+            >
+              <ArrowLeft size={13} className="group-hover:-translate-x-0.5 transition-transform" />
+              Back to Home
+            </Link>
+          </div>
+
           {/* Mobile logo */}
-          <div className="lg:hidden flex items-center gap-2.5 mb-6">
-            <div className="h-9 w-9 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl flex items-center justify-center">
-              <GraduationCap size={18} className="text-white" />
+          <div className="lg:hidden flex items-center mb-5">
+            <div className="h-10 flex items-center py-0.5">
+              <img src="/logo.png" alt="RiphahKonnect" className="h-full w-auto object-contain" />
             </div>
-            <span className="text-lg font-bold text-slate-900">
-              Riphah<span className="text-indigo-600">Konnect</span>
-            </span>
           </div>
 
           {/* Card */}
           <div className="bg-white rounded-3xl shadow-xl shadow-slate-900/[0.08] border border-slate-200/70 px-8 py-9">
-            {/* Header */}
+            {user ? (
+              <div className="text-center">
+                <div className="h-16 w-16 bg-indigo-50 rounded-full flex items-center justify-center mx-auto mb-4 ring-4 ring-indigo-50/50">
+                  <span className="text-2xl font-bold text-indigo-600">
+                    {user.name.charAt(0).toUpperCase()}
+                  </span>
+                </div>
+                <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">You are logged in</h2>
+                <p className="text-slate-500 text-sm mt-1 mb-8">
+                  You are currently authenticated as <span className="font-semibold text-slate-700">{user.email}</span>
+                </p>
+                <div className="space-y-3">
+                  <Link
+                    to="/home"
+                    className="w-full h-12 gradient-brand text-white font-bold rounded-xl flex items-center justify-center hover:opacity-95 shadow-lg shadow-indigo-500/30 transition-all cursor-pointer"
+                  >
+                    Go to Dashboard
+                  </Link>
+                  <button
+                    onClick={() => logout()}
+                    className="w-full h-12 bg-white text-slate-700 border border-slate-200 font-bold rounded-xl flex items-center justify-center hover:bg-slate-50 transition-colors cursor-pointer"
+                  >
+                    Log out
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <>
+                {/* Header */}
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">Create account</h2>
@@ -244,8 +283,8 @@ export default function RegisterPage() {
                         {...register('email', {
                           required: 'Email is required',
                           pattern: {
-                            value: /^(\d+@students\.riphah\.edu\.pk|[a-zA-Z][^@]*@riphah\.edu\.pk)$/i,
-                            message: 'Use your SAP ID (44316@students.riphah.edu.pk) or staff email (name@riphah.edu.pk)',
+                            value: /^[^\s@]+@(students\.)?riphah\.edu\.pk$/i,
+                            message: 'Use your Riphah email (@students.riphah.edu.pk or @riphah.edu.pk)',
                           },
                         })}
                         type="email"
@@ -261,29 +300,29 @@ export default function RegisterPage() {
                       </p>
                     )}
 
-                    {/* Student: simple badge */}
-                    {isStudent && !errors.email && (
+                    {/* Student domain: simple badge */}
+                    {isStrictStudentDomain && !errors.email && (
                       <div className="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-50 border border-indigo-200 text-indigo-700">
                         <GraduationCap className="h-3 w-3" />
-                        Student account
+                        Student account (Auto-joins your Semester Group)
                       </div>
                     )}
 
-                    {/* Staff: role picker cards */}
-                    {isStaff && !errors.email && (
+                    {/* Riphah domain: role picker cards */}
+                    {isRiphahDomain && !errors.email && (
                       <div className="mt-3">
                         <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-2">
                           Select your role
                         </p>
-                        <div className="grid grid-cols-2 gap-2">
-                          {STAFF_ROLES.map(({ value, label, desc, icon: Icon, color }) => {
-                            const selected = staffRole === value;
+                        <div className="grid grid-cols-3 gap-2">
+                          {ACCOUNT_ROLES.map(({ value, label, desc, icon: Icon, color }) => {
+                            const selected = selectedRole === value;
                             return (
                               <button
                                 key={value}
                                 type="button"
-                                onClick={() => setStaffRole(value)}
-                                className={`flex flex-col items-start gap-1.5 p-3 rounded-xl border text-left transition-all duration-150 ${
+                                onClick={() => setSelectedRole(value)}
+                                className={`flex flex-col items-start gap-1.5 p-3 rounded-xl border text-left transition-all duration-150 cursor-pointer ${
                                   selected
                                     ? color === 'indigo'
                                       ? 'bg-indigo-50 border-indigo-400 shadow-sm shadow-indigo-100'
@@ -440,12 +479,16 @@ export default function RegisterPage() {
               )}
             </form>
 
-            <p className="text-center text-sm text-slate-500 mt-6">
-              Already have an account?{' '}
-              <Link to="/login" className="font-bold text-indigo-600 hover:text-indigo-800 transition-colors">
-                Sign in
-              </Link>
-            </p>
+            {!user && (
+              <p className="text-center text-sm text-slate-500 mt-6">
+                Already have an account?{' '}
+                <Link to="/login" className="font-bold text-indigo-600 hover:text-indigo-800 transition-colors">
+                  Sign in instead
+                </Link>
+              </p>
+            )}
+            </>
+            )}
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 const prisma = require('../config/db');
 const { coordinatorCanManage, getDepartmentsForFaculty } = require('../utils/faculties');
+const { checkTextContent } = require('../utils/moderation');
 
 // GET /api/announcements
 // Returns announcements relevant to the logged-in user
@@ -17,14 +18,15 @@ const getAnnouncements = async (req, res, next) => {
         type ? { type } : {},
         {
           OR: [
-            { targetDepartment: null },                                          // broadcast to all
-            { targetDepartment: user.department },                               // their department
+            { targetDepartments: { isEmpty: true } },
+            { targetDepartments: { has: 'All' } },
+            { targetDepartments: { has: user.department } },
           ],
         },
         {
           OR: [
-            { targetSemester: null },                                            // all semesters
-            { targetSemester: user.semester },                                   // their semester
+            { targetSemesters: { isEmpty: true } },
+            { targetSemesters: { has: user.semester } },
           ],
         },
       ],
@@ -70,38 +72,124 @@ const getAnnouncement = async (req, res, next) => {
 };
 
 // POST /api/announcements
-// UNIVERSITY_ADMIN, COORDINATION → type OFFICIAL
-// TEACHER → type CLASS
 const createAnnouncement = async (req, res, next) => {
   try {
-    const { title, content, targetDepartment, targetSemester } = req.body;
+    const {
+      title,
+      content,
+      type: requestedType,
+      targetDepartments,
+      targetSemesters,
+      publishDate,
+      attachmentUrl,
+      attachmentName,
+    } = req.body;
     const user = req.user;
 
+    const titleCheck = checkTextContent(title, { minLength: 3, fieldName: 'Announcement title' });
+    if (!titleCheck.clean) return res.status(400).json({ error: titleCheck.reason });
+
+    const contentCheck = checkTextContent(content, { minLength: 5, fieldName: 'Announcement content' });
+    if (!contentCheck.clean) return res.status(400).json({ error: contentCheck.reason });
+
     // COORDINATION is faculty-scoped — they can only target their own faculty's departments
-    if (user.role === 'COORDINATION' && targetDepartment) {
-      if (!coordinatorCanManage(user.department, targetDepartment)) {
-        return res.status(403).json({
-          error: `Your coordination office (${user.department}) does not manage the ${targetDepartment} department.`,
-        });
+    if (user.role === 'COORDINATION' && targetDepartments && targetDepartments.length > 0) {
+      for (const dept of targetDepartments) {
+        if (dept !== 'All' && !coordinatorCanManage(user.department, dept)) {
+          return res.status(403).json({
+            error: `Your coordination office (${user.department}) does not manage the ${dept} department.`,
+          });
+        }
       }
     }
 
-    // Determine type from role
-    const type = user.role === 'TEACHER' ? 'CLASS' : 'OFFICIAL';
+    // Determine type from role or requestedType
+    const type = user.role === 'TEACHER'
+      ? 'CLASS'
+      : requestedType === 'CLASS'
+      ? 'CLASS'
+      : 'GENERAL';
+
+    // Encode optional attachment metadata & publishDate cleanly if provided
+    let storedContent = content.trim();
+    if (attachmentUrl && !storedContent.includes('<!--RK_META:')) {
+      const metaObj = {
+        attachmentUrl,
+        attachmentName: attachmentName || 'Attachment',
+        publishDate: publishDate || new Date().toISOString(),
+      };
+      storedContent = `${storedContent}\n<!--RK_META:${JSON.stringify(metaObj)}-->`;
+    } else if (publishDate && !storedContent.includes('<!--RK_META:')) {
+      const metaObj = {
+        publishDate,
+      };
+      storedContent = `${storedContent}\n<!--RK_META:${JSON.stringify(metaObj)}-->`;
+    }
+
+    const createdAtDate = publishDate && !Number.isNaN(new Date(publishDate).getTime())
+      ? new Date(publishDate)
+      : undefined;
 
     const announcement = await prisma.announcement.create({
       data: {
-        title,
-        content,
+        title: title.trim(),
+        content: storedContent,
         type,
-        targetDepartment: targetDepartment || null,
-        targetSemester:   targetSemester ? parseInt(targetSemester) : null,
+        targetDepartments: targetDepartments || [],
+        targetSemesters:   targetSemesters ? targetSemesters.map(s => parseInt(s)) : [],
         authorId: user.id,
+        ...(createdAtDate ? { createdAt: createdAtDate } : {}),
       },
       include: {
-        author: { select: { id: true, name: true, avatarUrl: true, role: true } },
+        author: { select: { id: true, name: true, avatarUrl: true, role: true, department: true } },
       },
     });
+
+    // Spawn Notifications for targeted users
+    // Build user filter based on targetDepartments and targetSemesters
+    const userWhere = {};
+    const dArray = targetDepartments || [];
+    const sArray = targetSemesters ? targetSemesters.map(s => parseInt(s)) : [];
+
+    if (dArray.length > 0 && !dArray.includes('All')) {
+      userWhere.department = { in: dArray };
+    }
+    if (sArray.length > 0) {
+      userWhere.semester = { in: sArray };
+    }
+    
+    // exclude the author from being notified
+    userWhere.id = { not: user.id };
+
+    const targetUsers = await prisma.user.findMany({
+      where: userWhere,
+      select: { id: true },
+    });
+
+    if (targetUsers.length > 0) {
+      const notifications = targetUsers.map(u => ({
+        userId: u.id,
+        title: `New ${type === 'CLASS' ? 'Class' : 'General'} Announcement`,
+        content: title,
+        type: 'ANNOUNCEMENT',
+        link: `/announcements?id=${announcement.id}`,
+      }));
+      
+      await prisma.notification.createMany({ data: notifications });
+
+      // Emit socket event to online users
+      const io = req.app.get('io');
+      if (io) {
+        targetUsers.forEach(u => {
+          io.to(`user:${u.id}`).emit('notification', {
+            title: `New ${type === 'CLASS' ? 'Class' : 'General'} Announcement`,
+            content: title,
+            type: 'ANNOUNCEMENT',
+            link: `/announcements?id=${announcement.id}`
+          });
+        });
+      }
+    }
 
     res.status(201).json({ announcement });
   } catch (err) {
@@ -123,8 +211,8 @@ const updateAnnouncement = async (req, res, next) => {
       data: {
         title:           req.body.title           ?? announcement.title,
         content:         req.body.content         ?? announcement.content,
-        targetDepartment: req.body.targetDepartment !== undefined ? req.body.targetDepartment : announcement.targetDepartment,
-        targetSemester:  req.body.targetSemester  !== undefined ? parseInt(req.body.targetSemester) : announcement.targetSemester,
+        targetDepartments: req.body.targetDepartments !== undefined ? req.body.targetDepartments : announcement.targetDepartments,
+        targetSemesters:  req.body.targetSemesters  !== undefined ? req.body.targetSemesters.map(s => parseInt(s)) : announcement.targetSemesters,
       },
     });
 

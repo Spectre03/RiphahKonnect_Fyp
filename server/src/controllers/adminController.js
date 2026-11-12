@@ -13,6 +13,7 @@ const getStats = async (req, res, next) => {
       totalEvents,
       totalAnnouncements,
       totalGroups,
+      totalLostFound,
       blockedUsers,
       newUsersToday,
       newUsersWeek,
@@ -25,6 +26,7 @@ const getStats = async (req, res, next) => {
       prisma.event.count(),
       prisma.announcement.count(),
       prisma.semesterGroup.count(),
+      prisma.lostFoundItem.count(),
       prisma.user.count({ where: { isBlocked: true } }),
       prisma.user.count({ where: { createdAt: { gte: todayStart } } }),
       prisma.user.count({ where: { createdAt: { gte: weekStart } } }),
@@ -32,7 +34,7 @@ const getStats = async (req, res, next) => {
       prisma.user.findMany({
         take: 8,
         orderBy: { createdAt: 'desc' },
-        select: { id: true, name: true, email: true, role: true, department: true, createdAt: true, isBlocked: true },
+        select: { id: true, name: true, email: true, role: true, department: true, avatarUrl: true, createdAt: true, isBlocked: true },
       }),
     ]);
 
@@ -42,7 +44,7 @@ const getStats = async (req, res, next) => {
     res.json({
       stats: {
         totalUsers, totalPosts, totalEvents,
-        totalAnnouncements, totalGroups,
+        totalAnnouncements, totalGroups, totalLostFound,
         blockedUsers, newUsersToday, newUsersWeek, newPostsToday,
         roleBreakdown,
       },
@@ -56,12 +58,12 @@ const getStats = async (req, res, next) => {
 // GET /api/admin/content
 const getRecentContent = async (req, res, next) => {
   try {
-    const [posts, announcements, events] = await Promise.all([
+    const [posts, announcements, events, lostFound] = await Promise.all([
       prisma.post.findMany({
         take: 20,
         orderBy: { createdAt: 'desc' },
         include: {
-          author: { select: { id: true, name: true, role: true, department: true } },
+          author: { select: { id: true, name: true, role: true, department: true, avatarUrl: true } },
           _count: { select: { comments: true, likes: true } },
         },
       }),
@@ -69,19 +71,26 @@ const getRecentContent = async (req, res, next) => {
         take: 20,
         orderBy: { createdAt: 'desc' },
         include: {
-          author: { select: { id: true, name: true, role: true, department: true } },
+          author: { select: { id: true, name: true, role: true, department: true, avatarUrl: true } },
         },
       }),
       prisma.event.findMany({
         take: 20,
         orderBy: { createdAt: 'desc' },
         include: {
-          createdBy: { select: { id: true, name: true, role: true, department: true } },
+          createdBy: { select: { id: true, name: true, role: true, department: true, avatarUrl: true } },
           _count: { select: { rsvps: true } },
         },
       }),
+      prisma.lostFoundItem.findMany({
+        take: 20,
+        orderBy: { createdAt: 'desc' },
+        include: {
+          reportedBy: { select: { id: true, name: true, role: true, department: true, avatarUrl: true } },
+        },
+      }),
     ]);
-    res.json({ posts, announcements, events });
+    res.json({ posts, announcements, events, lostFound });
   } catch (err) {
     next(err);
   }
@@ -243,6 +252,36 @@ const adminDeleteEvent = async (req, res, next) => {
   }
 };
 
+// DELETE /api/admin/lost-found/:id
+const adminDeleteLostFound = async (req, res, next) => {
+  try {
+    const item = await prisma.lostFoundItem.findUnique({ where: { id: req.params.id } });
+    if (!item) return res.status(404).json({ error: 'Lost & Found item not found.' });
+    await prisma.lostFoundItem.delete({ where: { id: req.params.id } });
+    res.json({ message: 'Lost & Found item deleted.' });
+  } catch (err) {
+    next(err);
+  }
+};
+
+// POST /api/admin/lost-found/:id/resolve
+const adminResolveLostFound = async (req, res, next) => {
+  try {
+    const item = await prisma.lostFoundItem.findUnique({ where: { id: req.params.id } });
+    if (!item) return res.status(404).json({ error: 'Lost & Found item not found.' });
+    const updated = await prisma.lostFoundItem.update({
+      where: { id: req.params.id },
+      data: { status: 'RESOLVED' },
+      include: {
+        reportedBy: { select: { id: true, name: true, role: true, department: true, avatarUrl: true } },
+      },
+    });
+    res.json({ item: updated, message: 'Lost & Found item resolved.' });
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   getStats,
   getRecentContent,
@@ -254,5 +293,7 @@ module.exports = {
   adminDeletePost,
   adminDeleteAnnouncement,
   adminDeleteEvent,
+  adminDeleteLostFound,
+  adminResolveLostFound,
   adminDeleteGroup,
 };

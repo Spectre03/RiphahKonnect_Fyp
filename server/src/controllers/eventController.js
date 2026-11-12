@@ -1,4 +1,5 @@
 const prisma = require('../config/db');
+const { checkTextContent } = require('../utils/moderation');
 
 // GET /api/events
 const getEvents = async (req, res, next) => {
@@ -20,23 +21,26 @@ const getEvents = async (req, res, next) => {
           createdBy: {
             select: { id: true, name: true, avatarUrl: true },
           },
-          _count: { select: { rsvps: true } },
           rsvps: {
-            where: { userId: req.user.id },
-            select: { id: true, status: true },
+            select: { id: true, userId: true, status: true },
           },
         },
       }),
       prisma.event.count({ where }),
     ]);
 
-    const formatted = events.map((e) => ({
-      ...e,
-      attendeeCount: e._count.rsvps,
-      myRsvp: e.rsvps[0]?.status || null,
-      _count: undefined,
-      rsvps: undefined,
-    }));
+    const formatted = events.map((e) => {
+      const goingCount = e.rsvps.filter((r) => r.status === 'GOING').length;
+      const interestedCount = e.rsvps.filter((r) => r.status === 'INTERESTED').length;
+      const myRsvpRecord = e.rsvps.find((r) => r.userId === req.user.id);
+      return {
+        ...e,
+        attendeeCount: goingCount,
+        interestedCount,
+        myRsvp: myRsvpRecord?.status || null,
+        rsvps: undefined,
+      };
+    });
 
     res.json({
       events: formatted,
@@ -52,11 +56,22 @@ const createEvent = async (req, res, next) => {
   try {
     const { title, description, location, startDate, endDate, imageUrl } = req.body;
 
+    const titleCheck = checkTextContent(title, { minLength: 3, fieldName: 'Event title' });
+    if (!titleCheck.clean) return res.status(400).json({ error: titleCheck.reason });
+
+    const descCheck = checkTextContent(description, { minLength: 10, fieldName: 'Event description' });
+    if (!descCheck.clean) return res.status(400).json({ error: descCheck.reason });
+
+    if (location) {
+      const locCheck = checkTextContent(location, { minLength: 2, fieldName: 'Event location' });
+      if (!locCheck.clean) return res.status(400).json({ error: locCheck.reason });
+    }
+
     const event = await prisma.event.create({
       data: {
-        title,
-        description,
-        location,
+        title: title.trim(),
+        description: description.trim(),
+        location: location ? location.trim() : null,
         startDate: new Date(startDate),
         endDate: endDate ? new Date(endDate) : null,
         imageUrl,
@@ -69,7 +84,37 @@ const createEvent = async (req, res, next) => {
       },
     });
 
-    res.status(201).json({ event });
+    // Spawn Notifications for all users
+    const targetUsers = await prisma.user.findMany({
+      where: { id: { not: req.user.id } },
+      select: { id: true },
+    });
+
+    if (targetUsers.length > 0) {
+      const notifications = targetUsers.map(u => ({
+        userId: u.id,
+        title: `New Campus Event: ${title}`,
+        content: `A new event has been scheduled for ${new Date(startDate).toLocaleDateString()}`,
+        type: 'EVENT',
+        link: `/events`,
+      }));
+      
+      await prisma.notification.createMany({ data: notifications });
+
+      const io = req.app.get('io');
+      if (io) {
+        targetUsers.forEach(u => {
+          io.to(`user:${u.id}`).emit('notification', {
+            title: `New Campus Event: ${title}`,
+            content: `A new event has been scheduled for ${new Date(startDate).toLocaleDateString()}`,
+            type: 'EVENT',
+            link: `/events`
+          });
+        });
+      }
+    }
+
+    res.status(201).json({ event: { ...event, attendeeCount: 0, interestedCount: 0, myRsvp: null } });
   } catch (err) {
     next(err);
   }
@@ -84,22 +129,24 @@ const getEvent = async (req, res, next) => {
         createdBy: {
           select: { id: true, name: true, avatarUrl: true },
         },
-        _count: { select: { rsvps: true } },
         rsvps: {
-          where: { userId: req.user.id },
-          select: { id: true, status: true },
+          select: { id: true, userId: true, status: true },
         },
       },
     });
 
     if (!event) return res.status(404).json({ error: 'Event not found.' });
 
+    const goingCount = event.rsvps.filter((r) => r.status === 'GOING').length;
+    const interestedCount = event.rsvps.filter((r) => r.status === 'INTERESTED').length;
+    const myRsvpRecord = event.rsvps.find((r) => r.userId === req.user.id);
+
     res.json({
       event: {
         ...event,
-        attendeeCount: event._count.rsvps,
-        myRsvp: event.rsvps[0]?.status || null,
-        _count: undefined,
+        attendeeCount: goingCount,
+        interestedCount,
+        myRsvp: myRsvpRecord?.status || null,
         rsvps: undefined,
       },
     });
@@ -156,7 +203,7 @@ const rsvpEvent = async (req, res, next) => {
   try {
     const eventId = req.params.id;
     const userId = req.user.id;
-    const { status } = req.body; // GOING, INTERESTED, NOT_GOING
+    const { status } = req.body; // GOING, INTERESTED, NOT_GOING, REMOVE
 
     const event = await prisma.event.findUnique({ where: { id: eventId } });
     if (!event) return res.status(404).json({ error: 'Event not found.' });
@@ -165,23 +212,34 @@ const rsvpEvent = async (req, res, next) => {
       where: { userId_eventId: { userId, eventId } },
     });
 
+    let currentRsvp = null;
     if (existing) {
-      if (status === 'REMOVE') {
+      if (status === 'REMOVE' || existing.status === status) {
         await prisma.eventRsvp.delete({ where: { id: existing.id } });
-        return res.json({ message: 'RSVP removed.', rsvp: null });
+        currentRsvp = null;
+      } else {
+        currentRsvp = await prisma.eventRsvp.update({
+          where: { id: existing.id },
+          data: { status },
+        });
       }
-      const updated = await prisma.eventRsvp.update({
-        where: { id: existing.id },
-        data: { status },
+    } else if (status !== 'REMOVE') {
+      currentRsvp = await prisma.eventRsvp.create({
+        data: { userId, eventId, status: status || 'GOING' },
       });
-      return res.json({ rsvp: updated });
     }
 
-    const rsvp = await prisma.eventRsvp.create({
-      data: { userId, eventId, status: status || 'GOING' },
-    });
+    const [attendeeCount, interestedCount] = await Promise.all([
+      prisma.eventRsvp.count({ where: { eventId, status: 'GOING' } }),
+      prisma.eventRsvp.count({ where: { eventId, status: 'INTERESTED' } }),
+    ]);
 
-    res.status(201).json({ rsvp });
+    res.json({
+      rsvp: currentRsvp,
+      myRsvp: currentRsvp ? currentRsvp.status : null,
+      attendeeCount,
+      interestedCount,
+    });
   } catch (err) {
     next(err);
   }

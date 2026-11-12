@@ -11,8 +11,8 @@ import {
   GraduationCap, Filter, Hash,
 } from 'lucide-react';
 
-const CAN_JOIN   = ['STUDENT', 'TEACHER', 'UNIVERSITY_ADMIN', 'COORDINATION'];
-const CAN_CREATE = ['COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'];
+const CAN_JOIN   = ['STUDENT', 'TEACHER', 'UNIVERSITY_ADMIN', 'COORDINATION', 'SYSTEM_ADMIN'];
+const CAN_CREATE = ['COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN', 'TEACHER'];
 
 const DEPT_COLORS = [
   'from-blue-500 to-indigo-600',
@@ -34,12 +34,12 @@ export default function GroupsPage() {
   const [groups, setGroups] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
-  // Students default to their own department and semester so they see relevant groups immediately
-  const [deptFilter, setDeptFilter] = useState(user?.role === 'STUDENT' && user?.department ? user.department : '');
-  const [semFilter,  setSemFilter]  = useState(user?.role === 'STUDENT' && user?.semester  ? String(user.semester)  : '');
+  const [deptFilter, setDeptFilter] = useState('');
+  const [semFilter,  setSemFilter]  = useState('');
   const [showCreate, setShowCreate] = useState(false);
   const [pagination, setPagination] = useState(null);
   const [page, setPage] = useState(1);
+  const [activeTab, setActiveTab] = useState('all');
 
   const fetchGroups = async (p = 1) => {
     try {
@@ -85,34 +85,35 @@ export default function GroupsPage() {
   return (
     <div className="page-wrapper">
       {/* ── Gradient Banner ── */}
-      <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #2563eb 0%, #4f46e5 100%)' }}>
+      <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0c1a4a 0%, #1a2b6b 100%)' }}>
         <div className="absolute inset-0 banner-grid pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -right-20 -top-16 w-72 h-72 rounded-full bg-white/[0.07] blur-3xl" />
-          <div className="absolute -left-16 bottom-0 w-64 h-64 rounded-full bg-white/[0.05] blur-3xl" />
-          <div className="absolute top-0 right-1/3 w-80 h-40 rounded-full bg-indigo-300/[0.1] blur-3xl" />
+          <div className="absolute -right-20 -top-16 w-72 h-72 rounded-full blur-3xl" style={{ background: 'radial-gradient(ellipse, rgba(201,151,58,0.08) 0%, transparent 70%)' }} />
+          <div className="absolute -left-16 bottom-0 w-64 h-64 rounded-full blur-3xl" style={{ background: 'radial-gradient(ellipse, rgba(26,43,107,0.5) 0%, transparent 70%)' }} />
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 relative z-10">
           <div className="flex items-center justify-between">
             <div>
-              <span className="text-[11px] font-bold uppercase tracking-widest text-blue-200 block mb-2">Academic</span>
+              <span className="text-[11px] font-bold uppercase tracking-widest block mb-2" style={{ color: '#c9973a' }}>Academic</span>
               <h1 className="text-3xl font-extrabold text-white tracking-tight">Semester Groups</h1>
-              <p className="text-blue-100 text-sm mt-2">
+              <p className="text-slate-400 text-sm mt-2">
                 {canCreate ? 'Create and manage academic semester groups' : 'Find and join groups for your courses'}
               </p>
             </div>
             <div className="flex items-center gap-3 flex-shrink-0">
               {pagination && (
-                <div className="hidden sm:flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-4 py-3 animate-popIn">
-                  <Users className="h-5 w-5 text-blue-200" />
+                <div className="hidden sm:flex items-center gap-2 backdrop-blur-sm border rounded-2xl px-4 py-3 animate-popIn" style={{ background: 'rgba(255,255,255,0.06)', borderColor: 'rgba(255,255,255,0.1)' }}>
+                  <Users className="h-5 w-5" style={{ color: '#c9973a' }} />
                   <div>
                     <span className="text-2xl font-extrabold text-white leading-none">{pagination.total}</span>
-                    <p className="text-[11px] text-blue-300 font-medium">Groups</p>
+                    <p className="text-[11px] font-medium" style={{ color: '#c9973a' }}>Groups</p>
                   </div>
                 </div>
               )}
               {canCreate && (
-                <Button icon={Plus} onClick={() => setShowCreate(true)} className="bg-white text-blue-700 hover:bg-blue-50 border-0 shadow-lg">New Group</Button>
+                <button onClick={() => setShowCreate(true)} className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-bold text-white border border-white/20 hover:bg-white/10 transition-all cursor-pointer" style={{ background: 'rgba(201,151,58,0.15)' }}>
+                  <Plus size={14} /> New Group
+                </button>
               )}
             </div>
           </div>
@@ -120,6 +121,30 @@ export default function GroupsPage() {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
+
+        {/* Tabs */}
+        {canJoin && (
+          <div className="flex gap-1 bg-white rounded-xl border border-slate-200/60 p-1 mb-6 shadow-sm w-fit">
+            <button
+              onClick={() => setActiveTab('all')}
+              className={cn(
+                'px-5 py-2 text-sm font-semibold rounded-lg cursor-pointer transition-all',
+                activeTab === 'all' ? 'bg-teal-600 text-white shadow-sm' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
+              )}
+            >
+              All Groups
+            </button>
+            <button
+              onClick={() => setActiveTab('mine')}
+              className={cn(
+                'px-5 py-2 text-sm font-semibold rounded-lg cursor-pointer transition-all',
+                activeTab === 'mine' ? 'bg-teal-600 text-white shadow-sm' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
+              )}
+            >
+              My Groups
+            </button>
+          </div>
+        )}
 
         {/* ── Search & Filters ── */}
         <Card padding="p-3" className="mb-6">
@@ -130,7 +155,7 @@ export default function GroupsPage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search groups..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm font-medium placeholder-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/15 focus:bg-white transition-all"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm font-medium placeholder-slate-400 focus:outline-none focus:ring-2 focus:bg-white transition-all" style={{ '--tw-ring-color': 'rgba(26,43,107,0.10)' }} onFocus={(e) => { e.target.style.borderColor='#1a2b6b'; }} onBlur={(e) => { e.target.style.borderColor=''; }}
               />
             </div>
             <select
@@ -151,7 +176,8 @@ export default function GroupsPage() {
             </select>
             <button
               type="submit"
-              className="flex-shrink-0 h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center hover:bg-indigo-700 active:scale-95 transition-all cursor-pointer shadow-sm"
+              className="flex-shrink-0 h-10 w-10 rounded-xl text-white flex items-center justify-center active:scale-95 transition-all cursor-pointer shadow-sm"
+              style={{ background: 'linear-gradient(135deg, #1a2b6b, #2251b8)' }}
             >
               <Filter size={15} />
             </button>
@@ -186,7 +212,7 @@ export default function GroupsPage() {
           </Card>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 stagger">
-            {groups.map((group) => {
+            {groups.filter(g => activeTab === 'all' || g.isMember).map((group) => {
               const grad = deptColor(group.department || '');
               return (
                 <Card key={group.id} hover padding="p-0">
@@ -196,7 +222,10 @@ export default function GroupsPage() {
                         <BookOpen size={20} className="text-white" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-sm font-bold text-slate-900 truncate group-hover:text-indigo-600">{group.name}</h3>
+                        <h3 className="text-sm font-bold text-slate-900 truncate group-hover:text-indigo-600 flex items-center gap-2">
+                          {group.name}
+                          {group.isArchived && <Badge variant="slate" size="sm">Archived</Badge>}
+                        </h3>
                         <div className="flex items-center gap-2 mt-0.5 flex-wrap">
                           <span className="flex items-center gap-1 text-[11px] text-indigo-600 font-bold">
                             <GraduationCap size={11} /> {group.department}
@@ -233,7 +262,7 @@ export default function GroupsPage() {
                     ) : canJoin ? (
                       <button
                         onClick={(e) => { e.preventDefault(); handleJoin(group.id); }}
-                        className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-indigo-600 text-white text-[11px] font-bold hover:bg-indigo-700 active:scale-95 transition-all cursor-pointer shadow-sm"
+                        className="flex items-center gap-1 px-3 py-1.5 rounded-full text-white text-[11px] font-bold active:scale-95 transition-all cursor-pointer shadow-sm" style={{ background: 'linear-gradient(135deg, #1a2b6b, #2251b8)' }}
                       >
                         Join
                       </button>
