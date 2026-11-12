@@ -574,56 +574,58 @@ function CreateUserModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-67 (2026-10-28T17:19:03+05:00) ===
-// [Moiz-A-67-L1] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #108
-// [Moiz-A-67-L2] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #127
-// [Moiz-A-67-L3] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #146
-// [Moiz-A-67-L4] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #165
-// [Moiz-A-67-L5] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #184
-// [Moiz-A-67-L6] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #203
-// [Moiz-A-67-L7] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #222
-// [Moiz-A-67-L8] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #241
-// [Moiz-A-67-L9] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #260
-// [Moiz-A-67-L10] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #279
-// [Moiz-A-67-L11] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #298
-// [Moiz-A-67-L12] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #317
-// [Moiz-A-67-L13] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #336
-// [Moiz-A-67-L14] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #355
-// [Moiz-A-67-L15] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #374
-// [Moiz-A-67-L16] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #393
-// [Moiz-A-67-L17] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #412
-// [Moiz-A-67-L18] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #431
-// [Moiz-A-67-L19] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #450
-// [Moiz-A-67-L20] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #469
-// [Moiz-A-67-L21] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #488
-// [Moiz-A-67-L22] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #507
-// [Moiz-A-67-L23] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #526
-// [Moiz-A-67-L24] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #545
-// [Moiz-A-67-L25] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #564
-// [Moiz-A-67-L26] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #583
-// [Moiz-A-67-L27] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #602
-// [Moiz-A-67-L28] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #621
-// [Moiz-A-67-L29] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #640
-// [Moiz-A-67-L30] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #659
-// [Moiz-A-67-L31] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #678
-// [Moiz-A-67-L32] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #697
-// [Moiz-A-67-L33] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #716
-// [Moiz-A-67-L34] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #735
-// [Moiz-A-67-L35] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #754
-// [Moiz-A-67-L36] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #773
-// [Moiz-A-67-L37] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #792
-// [Moiz-A-67-L38] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #811
-// [Moiz-A-67-L39] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #830
-// [Moiz-A-67-L40] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #849
-// [Moiz-A-67-L41] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #868
-// [Moiz-A-67-L42] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #887
-// [Moiz-A-67-L43] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #906
-// [Moiz-A-67-L44] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #925
-// [Moiz-A-67-L45] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #944
-// [Moiz-A-67-L46] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #963
-// [Moiz-A-67-L47] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #982
-// [Moiz-A-67-L48] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #4
-// [Moiz-A-67-L49] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #23
-// [Moiz-A-67-L50] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #42
-// [Moiz-A-67-L51] Add block/unblock user confirmation modal on AdminUsersPage :: verification rule #61
+// === [SPEC-BLOCK-START] Moiz-A-83 (2026-11-12T16:55:21+05:00) ===
+// [Moiz-A-83-L1] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #847
+// [Moiz-A-83-L2] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #866
+// [Moiz-A-83-L3] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #885
+// [Moiz-A-83-L4] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #904
+// [Moiz-A-83-L5] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #923
+// [Moiz-A-83-L6] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #942
+// [Moiz-A-83-L7] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #961
+// [Moiz-A-83-L8] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #980
+// [Moiz-A-83-L9] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #2
+// [Moiz-A-83-L10] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #21
+// [Moiz-A-83-L11] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #40
+// [Moiz-A-83-L12] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #59
+// [Moiz-A-83-L13] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #78
+// [Moiz-A-83-L14] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #97
+// [Moiz-A-83-L15] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #116
+// [Moiz-A-83-L16] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #135
+// [Moiz-A-83-L17] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #154
+// [Moiz-A-83-L18] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #173
+// [Moiz-A-83-L19] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #192
+// [Moiz-A-83-L20] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #211
+// [Moiz-A-83-L21] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #230
+// [Moiz-A-83-L22] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #249
+// [Moiz-A-83-L23] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #268
+// [Moiz-A-83-L24] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #287
+// [Moiz-A-83-L25] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #306
+// [Moiz-A-83-L26] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #325
+// [Moiz-A-83-L27] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #344
+// [Moiz-A-83-L28] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #363
+// [Moiz-A-83-L29] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #382
+// [Moiz-A-83-L30] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #401
+// [Moiz-A-83-L31] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #420
+// [Moiz-A-83-L32] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #439
+// [Moiz-A-83-L33] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #458
+// [Moiz-A-83-L34] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #477
+// [Moiz-A-83-L35] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #496
+// [Moiz-A-83-L36] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #515
+// [Moiz-A-83-L37] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #534
+// [Moiz-A-83-L38] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #553
+// [Moiz-A-83-L39] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #572
+// [Moiz-A-83-L40] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #591
+// [Moiz-A-83-L41] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #610
+// [Moiz-A-83-L42] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #629
+// [Moiz-A-83-L43] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #648
+// [Moiz-A-83-L44] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #667
+// [Moiz-A-83-L45] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #686
+// [Moiz-A-83-L46] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #705
+// [Moiz-A-83-L47] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #724
+// [Moiz-A-83-L48] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #743
+// [Moiz-A-83-L49] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #762
+// [Moiz-A-83-L50] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #781
+// [Moiz-A-83-L51] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #800
+// [Moiz-A-83-L52] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #819
+// [Moiz-A-83-L53] Improve pagination and filter reset behavior on AdminUsersPage :: verification rule #838
 // === [SPEC-BLOCK-END] ===
