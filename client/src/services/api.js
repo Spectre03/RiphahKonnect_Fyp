@@ -102,6 +102,13 @@ export const eventsAPI = {
   getAttendees: (id) => api.get(`/events/${id}/attendees`),
 };
 
+// ─── Tickets ──────────────────────────────────────────────────────────────────
+export const ticketsAPI = {
+  buy: (eventId) => api.post(`/tickets/${eventId}/buy`),
+  getMyTickets: () => api.get('/tickets/my-tickets'),
+  getEventTickets: (eventId) => api.get(`/tickets/event/${eventId}`),
+};
+
 // ─── Lost & Found ─────────────────────────────────────────────────────────────
 export const lostFoundAPI = {
   getAll: (page = 1, filters = {}) => {

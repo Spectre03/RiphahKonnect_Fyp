@@ -24,6 +24,9 @@ const getEvents = async (req, res, next) => {
           rsvps: {
             select: { id: true, userId: true, status: true },
           },
+          tickets: {
+            select: { id: true, userId: true, status: true },
+          },
         },
       }),
       prisma.event.count({ where }),
@@ -33,12 +36,17 @@ const getEvents = async (req, res, next) => {
       const goingCount = e.rsvps.filter((r) => r.status === 'GOING').length;
       const interestedCount = e.rsvps.filter((r) => r.status === 'INTERESTED').length;
       const myRsvpRecord = e.rsvps.find((r) => r.userId === req.user.id);
+      const ticketCount = e.tickets ? e.tickets.length : 0;
+      const hasTicket = e.tickets ? e.tickets.some((t) => t.userId === req.user.id) : false;
       return {
         ...e,
         attendeeCount: goingCount,
         interestedCount,
         myRsvp: myRsvpRecord?.status || null,
+        ticketCount,
+        hasTicket,
         rsvps: undefined,
+        tickets: undefined,
       };
     });
 
@@ -54,7 +62,7 @@ const getEvents = async (req, res, next) => {
 // POST /api/events
 const createEvent = async (req, res, next) => {
   try {
-    const { title, description, location, startDate, endDate, imageUrl } = req.body;
+    const { title, description, location, startDate, endDate, imageUrl, price, capacity } = req.body;
 
     const titleCheck = checkTextContent(title, { minLength: 3, fieldName: 'Event title' });
     if (!titleCheck.clean) return res.status(400).json({ error: titleCheck.reason });
@@ -75,6 +83,8 @@ const createEvent = async (req, res, next) => {
         startDate: new Date(startDate),
         endDate: endDate ? new Date(endDate) : null,
         imageUrl,
+        price: price !== undefined && price !== '' ? parseFloat(price) : 0,
+        capacity: capacity !== undefined && capacity !== '' ? parseInt(capacity) : null,
         createdById: req.user.id,
       },
       include: {

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { eventsAPI } from '../services/api';
+import { eventsAPI, ticketsAPI } from '../services/api';
 import { formatDate } from '../utils/brand';
 import { cn } from '../utils/cn';
 import { checkTextContent, validateImageFile, fileToDataUrl } from '../utils/moderation';
@@ -9,7 +9,7 @@ import toast from 'react-hot-toast';
 import {
   Calendar, MapPin, Clock, Users, Plus, Loader2,
   Check, Star, XCircle, CalendarDays, Trash2, Sparkles,
-  Image as ImageIcon, X, AlertTriangle,
+  Image as ImageIcon, X, AlertTriangle, Ticket as TicketIcon, CreditCard, Lock,
 } from 'lucide-react';
 
 const CAN_CREATE  = ['TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'];
@@ -26,6 +26,15 @@ export default function EventsPage() {
   const [rsvpLoadingId, setRsvpLoadingId] = useState(null);
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [deleting, setDeleting] = useState(false);
+
+  // Payment Modal State (from Airaf's ticketing branch)
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [isPaying, setIsPaying] = useState(false);
+
+  // Attendees Modal State (from Airaf's ticketing branch)
+  const [viewingAttendees, setViewingAttendees] = useState(null);
+  const [attendees, setAttendees] = useState([]);
+  const [loadingAttendees, setLoadingAttendees] = useState(false);
 
   const fetchEvents = async (p = 1) => {
     try {
@@ -110,9 +119,55 @@ export default function EventsPage() {
   };
 
   const handleCreated = (event) => {
-    setEvents([{ ...event, attendeeCount: 0, interestedCount: 0, myRsvp: null }, ...events]);
+    setEvents([{ ...event, attendeeCount: 0, interestedCount: 0, myRsvp: null, ticketCount: 0, hasTicket: false }, ...events]);
     setShowCreate(false);
     toast.success('Event created!');
+  };
+
+  // Simulate Payment & Buy Ticket
+  const confirmPurchase = async (e) => {
+    e.preventDefault();
+    if (!selectedEvent) return;
+
+    try {
+      setIsPaying(true);
+      await new Promise((resolve) => setTimeout(resolve, 1200));
+      await ticketsAPI.buy(selectedEvent.id);
+
+      setEvents((prev) =>
+        prev.map((ev) =>
+          ev.id === selectedEvent.id
+            ? {
+                ...ev,
+                ticketCount: (ev.ticketCount || 0) + 1,
+                hasTicket: true,
+                attendeeCount: ev.myRsvp === 'GOING' ? ev.attendeeCount : (ev.attendeeCount || 0) + 1,
+                myRsvp: 'GOING',
+              }
+            : ev
+        )
+      );
+
+      toast.success('Ticket generated! View your QR pass in My Tickets.');
+      setSelectedEvent(null);
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to buy ticket.');
+    } finally {
+      setIsPaying(false);
+    }
+  };
+
+  const handleViewAttendees = async (event) => {
+    setViewingAttendees(event);
+    setLoadingAttendees(true);
+    try {
+      const res = await ticketsAPI.getEventTickets(event.id);
+      setAttendees(res.data.tickets || []);
+    } catch {
+      toast.error('Failed to load attendees.');
+    } finally {
+      setLoadingAttendees(false);
+    }
   };
 
   const canCreate  = CAN_CREATE.includes(user?.role);
@@ -209,6 +264,8 @@ export default function EventsPage() {
               const upcoming = d > new Date();
               const isCreator = event.createdBy?.id === user?.id;
               const showDelete = isCreator || canDelAny;
+              const isSoldOut = event.capacity && (event.ticketCount || 0) >= event.capacity;
+              const hasTicket = event.hasTicket;
 
               return (
                 <Card key={event.id} hover padding="p-0" className="overflow-hidden">
@@ -246,6 +303,11 @@ export default function EventsPage() {
                           <div className="flex items-center gap-2 flex-wrap mb-1">
                             <h3 className="text-sm font-bold text-slate-900 truncate">{event.title}</h3>
                             {!upcoming && <Badge variant="slate" size="xs">Past</Badge>}
+                            {event.price > 0 ? (
+                              <Badge variant="amber" size="xs">Rs. {event.price}</Badge>
+                            ) : (
+                              <Badge variant="teal" size="xs">Free</Badge>
+                            )}
                           </div>
                           {event.description && (
                             <p className="text-xs text-slate-500 leading-relaxed mb-2 whitespace-pre-wrap">{event.description}</p>
@@ -266,44 +328,84 @@ export default function EventsPage() {
                               {event.attendeeCount || 0} going
                               {event.interestedCount > 0 ? ` • ${event.interestedCount} maybe` : ''}
                             </span>
+                            {event.capacity && (
+                              <span className="flex items-center gap-1 font-bold text-violet-600">
+                                <TicketIcon size={11} className="flex-shrink-0" />
+                                {event.ticketCount || 0} / {event.capacity} seats
+                              </span>
+                            )}
                           </div>
                         </div>
-                        {showDelete && (
-                          <button
-                            onClick={() => setDeleteTarget(event)}
-                            className="p-1.5 text-slate-300 hover:text-red-500 hover:bg-red-50 rounded-lg cursor-pointer transition-all flex-shrink-0"
-                            title="Delete event"
-                          >
-                            <Trash2 size={14} />
-                          </button>
-                        )}
+                        <div className="flex items-center gap-1.5 flex-shrink-0">
+                          {(isCreator || canDelAny) && (
+                            <Button
+                              variant="secondary"
+                              size="sm"
+                              onClick={() => handleViewAttendees(event)}
+                              className="text-[11px] h-7 px-2.5"
+                            >
+                              Attendees
+                            </Button>
+                          )}
+                          {showDelete && (
+                            <button
+                              onClick={() => setDeleteTarget(event)}
+                              className="p-1.5 text-slate-300 hover:text-red-500 hover:bg-red-50 rounded-lg cursor-pointer transition-all flex-shrink-0"
+                              title="Delete event"
+                            >
+                              <Trash2 size={14} />
+                            </button>
+                          )}
+                        </div>
                       </div>
 
-                      {/* RSVP */}
+                      {/* RSVP & Ticket Action */}
                       {user && (
-                        <div className="flex items-center gap-2 mt-3 pt-3 border-t border-slate-50 flex-wrap">
-                          <span className="text-[11px] text-slate-400 font-bold">RSVP:</span>
-                          {[
-                            { status: 'GOING',      icon: Check,   label: `Going (${event.attendeeCount || 0})`,   active: 'bg-emerald-600 text-white border-emerald-600 shadow-sm shadow-emerald-500/30' },
-                            { status: 'INTERESTED', icon: Star,    label: 'Maybe',   active: 'bg-amber-500 text-white border-amber-500 shadow-sm shadow-amber-500/30' },
-                            { status: 'NOT_GOING',  icon: XCircle, label: "Can't go", active: 'bg-slate-600 text-white border-slate-600' },
-                          ].map(({ status, icon: Icon, label, active }) => {
-                            const isActive = event.myRsvp === status;
-                            return (
-                              <button
-                                key={status}
-                                type="button"
-                                disabled={rsvpLoadingId === event.id}
-                                onClick={() => handleRsvp(event.id, isActive ? 'REMOVE' : status)}
-                                className={cn(
-                                  'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold cursor-pointer transition-all border disabled:opacity-50',
-                                  isActive ? active : 'border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-slate-800 hover:border-slate-300'
-                                )}
-                              >
-                                <Icon size={11} /> {label}
-                              </button>
-                            );
-                          })}
+                        <div className="flex items-center justify-between gap-2 mt-3 pt-3 border-t border-slate-50 flex-wrap">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className="text-[11px] text-slate-400 font-bold">RSVP:</span>
+                            {[
+                              { status: 'GOING',      icon: Check,   label: `Going (${event.attendeeCount || 0})`,   active: 'bg-emerald-600 text-white border-emerald-600 shadow-sm shadow-emerald-500/30' },
+                              { status: 'INTERESTED', icon: Star,    label: 'Maybe',   active: 'bg-amber-500 text-white border-amber-500 shadow-sm shadow-amber-500/30' },
+                              { status: 'NOT_GOING',  icon: XCircle, label: "Can't go", active: 'bg-slate-600 text-white border-slate-600' },
+                            ].map(({ status, icon: Icon, label, active }) => {
+                              const isActive = event.myRsvp === status;
+                              return (
+                                <button
+                                  key={status}
+                                  type="button"
+                                  disabled={rsvpLoadingId === event.id}
+                                  onClick={() => handleRsvp(event.id, isActive ? 'REMOVE' : status)}
+                                  className={cn(
+                                    'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold cursor-pointer transition-all border disabled:opacity-50',
+                                    isActive ? active : 'border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-slate-800 hover:border-slate-300'
+                                  )}
+                                >
+                                  <Icon size={11} /> {label}
+                                </button>
+                              );
+                            })}
+                          </div>
+
+                          {upcoming && (
+                            <div>
+                              {hasTicket ? (
+                                <Badge variant="green" size="sm" className="py-1.5 px-3">
+                                  <Check size={12} className="mr-1 inline" /> Ticket Acquired
+                                </Badge>
+                              ) : isSoldOut ? (
+                                <Button variant="secondary" size="sm" disabled>Sold Out</Button>
+                              ) : (
+                                <Button
+                                  onClick={() => setSelectedEvent(event)}
+                                  size="sm"
+                                  icon={TicketIcon}
+                                >
+                                  {event.price > 0 ? `Buy Ticket (Rs. ${event.price})` : 'Get Free Ticket'}
+                                </Button>
+                              )}
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>
@@ -341,7 +443,7 @@ export default function EventsPage() {
         >
           <div className="space-y-4">
             <p className="text-sm text-slate-600">
-              Are you sure you want to delete <span className="font-bold text-slate-900">"{deleteTarget?.title}"</span>?
+              Are you sure you want to delete <span className="font-bold text-slate-900">&ldquo;{deleteTarget?.title}&rdquo;</span>?
             </p>
             <div className="flex justify-end gap-2 pt-2">
               <Button variant="secondary" onClick={() => setDeleteTarget(null)} disabled={deleting}>
@@ -353,13 +455,112 @@ export default function EventsPage() {
             </div>
           </div>
         </Modal>
+
+        {/* Event Attendees Modal */}
+        {viewingAttendees && (
+          <Modal
+            open={!!viewingAttendees}
+            onClose={() => setViewingAttendees(null)}
+            title="Event Ticket Holders"
+            subtitle={`${attendees.length} ticket(s) issued for ${viewingAttendees.title}`}
+            icon={Users}
+            iconColor="bg-gradient-to-br from-emerald-500 to-teal-600"
+          >
+            <div className="max-h-96 overflow-y-auto pr-1">
+              {loadingAttendees ? (
+                <div className="flex justify-center py-8">
+                  <Loader2 className="h-6 w-6 animate-spin text-emerald-600" />
+                </div>
+              ) : attendees.length === 0 ? (
+                <div className="text-center py-8 text-slate-500 text-sm">
+                  No tickets issued yet.
+                </div>
+              ) : (
+                <div className="space-y-2">
+                  {attendees.map((t) => (
+                    <div key={t.id} className="flex items-center justify-between p-3 rounded-xl border border-slate-100 bg-slate-50">
+                      <div>
+                        <p className="text-sm font-bold text-slate-900">{t.user?.name}</p>
+                        <p className="text-xs text-slate-500">
+                          {t.user?.department || 'Campus'} {t.user?.semester ? `· Sem ${t.user.semester}` : ''}
+                        </p>
+                      </div>
+                      <div className="text-right">
+                        <span className="text-xs font-mono font-bold text-indigo-700 bg-indigo-50 px-2 py-1 rounded-lg">
+                          {t.code}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </Modal>
+        )}
+
+        {/* Simulated Payment / Ticket Checkout Modal */}
+        {selectedEvent && (
+          <Modal
+            open={!!selectedEvent}
+            onClose={() => !isPaying && setSelectedEvent(null)}
+            title="Event Ticket Checkout"
+            subtitle="Confirm details to generate your QR pass"
+            icon={CreditCard}
+            iconColor="bg-gradient-to-br from-violet-500 to-indigo-600"
+          >
+            <form onSubmit={confirmPurchase} className="space-y-4">
+              <div className="bg-slate-50 rounded-xl p-4 border border-slate-100 flex items-center justify-between">
+                <div>
+                  <p className="text-xs text-slate-500 font-medium">Event</p>
+                  <p className="text-sm font-bold text-slate-900">{selectedEvent.title}</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-xs text-slate-500 font-medium">Total</p>
+                  <p className="text-lg font-extrabold text-indigo-600">
+                    {selectedEvent.price > 0 ? `Rs. ${selectedEvent.price}` : 'Free'}
+                  </p>
+                </div>
+              </div>
+
+              {selectedEvent.price > 0 && (
+                <div className="space-y-3">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Card Number (Demo)</label>
+                    <div className="relative">
+                      <CreditCard className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+                      <input type="text" placeholder="4242 4242 4242 4242" required defaultValue="4242 4242 4242 4242" className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm font-medium focus:border-indigo-500 focus:outline-none" />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Expiry</label>
+                      <input type="text" placeholder="MM/YY" required defaultValue="12/28" className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm font-medium focus:border-indigo-500 focus:outline-none" />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">CVC</label>
+                      <div className="relative">
+                        <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+                        <input type="text" placeholder="123" required defaultValue="123" className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm font-medium focus:border-indigo-500 focus:outline-none" />
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-[10px] text-center text-slate-400 mt-2">Simulated payment gateway for FYP demonstration.</p>
+                </div>
+              )}
+
+              <Button type="submit" loading={isPaying} icon={Lock} className="w-full">
+                {isPaying ? 'Generating Ticket...' : `${selectedEvent.price > 0 ? `Pay Rs. ${selectedEvent.price} & ` : ''}Get QR Ticket`}
+              </Button>
+            </form>
+          </Modal>
+        )}
       </div>
     </div>
   );
 }
 
 function CreateEventModal({ open, onClose, onCreated }) {
-  const [form, setForm] = useState({ title: '', description: '', location: '', startDate: '', endDate: '' });
+  const [form, setForm] = useState({ title: '', description: '', location: '', startDate: '', endDate: '', price: '', capacity: '' });
   const [imagePreview, setImagePreview] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const fileInputRef = useRef(null);
@@ -403,10 +604,12 @@ function CreateEventModal({ open, onClose, onCreated }) {
         location: form.location.trim(),
         startDate: form.startDate,
         endDate: form.endDate || undefined,
+        price: form.price ? parseFloat(form.price) : 0,
+        capacity: form.capacity ? parseInt(form.capacity) : undefined,
         ...(imagePreview ? { imageUrl: imagePreview } : {}),
       });
       onCreated(res.data.event);
-      setForm({ title: '', description: '', location: '', startDate: '', endDate: '' });
+      setForm({ title: '', description: '', location: '', startDate: '', endDate: '', price: '', capacity: '' });
       setImagePreview('');
       if (fileInputRef.current) fileInputRef.current.value = '';
     } catch (err) {
@@ -460,6 +663,16 @@ function CreateEventModal({ open, onClose, onCreated }) {
           <div>
             <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">End Date</label>
             <input type="datetime-local" value={form.endDate} onChange={(e) => set('endDate', e.target.value)} className={inputCls} />
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Ticket Price (Rs.)</label>
+            <input type="number" min="0" value={form.price} onChange={(e) => set('price', e.target.value)} placeholder="0 for Free" className={inputCls} />
+          </div>
+          <div>
+            <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Seat Capacity</label>
+            <input type="number" min="1" value={form.capacity} onChange={(e) => set('capacity', e.target.value)} placeholder="Unlimited" className={inputCls} />
           </div>
         </div>
 

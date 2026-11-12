@@ -30,6 +30,7 @@ import AdminDashboardPage from './pages/AdminDashboardPage';
 import AdminGroupsPage from './pages/AdminGroupsPage';
 import ResourcesPage from './pages/ResourcesPage';
 import LandingPage from './pages/LandingPage';
+import MyTicketsPage from './pages/MyTicketsPage';
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { retry: 1, refetchOnWindowFocus: false } },
@@ -80,6 +81,7 @@ function App() {
               <Route path="/groups" element={<GroupsPage />} />
               <Route path="/groups/:id" element={<GroupDetailPage />} />
               <Route path="/events" element={<EventsPage />} />
+              <Route path="/my-tickets" element={<MyTicketsPage />} />
               <Route path="/lost-found" element={<LostFoundPage />} />
               <Route path="/messages" element={<MessagingPage />} />
               <Route path="/profile" element={<ProfilePage />} />

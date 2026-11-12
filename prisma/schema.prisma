@@ -37,6 +37,7 @@ model User {
   messages           Message[]
   posts              Post[]
   courses            UserCourse[]
+  tickets            Ticket[]
   verificationTokens VerificationToken[]
   notifications      Notification[]
 
@@ -143,11 +144,14 @@ model Event {
   startDate   DateTime
   endDate     DateTime?
   imageUrl    String?
+  price       Float       @default(0)
+  capacity    Int?
   createdById String
   createdAt   DateTime    @default(now())
   updatedAt   DateTime    @updatedAt
   createdBy   User        @relation(fields: [createdById], references: [id], onDelete: Cascade)
   rsvps       EventRsvp[]
+  tickets     Ticket[]
 
   @@index([startDate])
   @@index([createdById])
@@ -289,6 +293,30 @@ enum ItemCategory {
 enum AnnouncementType {
   GENERAL
   CLASS
+}
+
+enum TicketStatus {
+  VALID
+  USED
+  CANCELLED
+}
+
+model Ticket {
+  id        String       @id @default(cuid())
+  code      String       @unique
+  pricePaid Float        @default(0)
+  status    TicketStatus @default(VALID)
+  userId    String
+  eventId   String
+  issuedAt  DateTime     @default(now())
+  usedAt    DateTime?
+  user      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  event     Event        @relation(fields: [eventId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, eventId])
+  @@index([userId])
+  @@index([eventId])
+  @@index([code])
 }
 
 model Notification {

@@ -7,7 +7,7 @@ import {
   LayoutDashboard, Newspaper, Users, Calendar,
   PackageSearch, MessageSquare, LogOut, Menu, X,
   Megaphone, ShieldCheck, UserCog, GraduationCap,
-  ChevronRight, BookOpen, FileText,
+  ChevronRight, BookOpen, FileText, Ticket,
 } from 'lucide-react';
 import NotificationDropdown from '../ui/NotificationDropdown';
 
@@ -17,6 +17,7 @@ const STUDENT_NAV = [
   { to: '/groups',        label: 'Semester Groups', icon: Users },
   { to: '/resources',     label: 'Resources',       icon: FileText },
   { to: '/events',        label: 'Events',          icon: Calendar },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket },
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/lost-found',    label: 'Lost & Found',    icon: PackageSearch },
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
@@ -28,6 +29,7 @@ const TEACHER_NAV = [
   { to: '/groups',        label: 'Semester Groups', icon: Users },
   { to: '/resources',     label: 'Resources',       icon: FileText },
   { to: '/events',        label: 'Events',          icon: Calendar },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket },
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/lost-found',    label: 'Lost & Found',    icon: PackageSearch },
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
@@ -38,6 +40,7 @@ const COORDINATION_NAV = [
   { to: '/feed',          label: 'Feed',            icon: Newspaper },
   { to: '/groups',        label: 'Semester Groups', icon: Users },
   { to: '/events',        label: 'Events',          icon: Calendar },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket },
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/lost-found',    label: 'Lost & Found',    icon: PackageSearch },
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
@@ -48,6 +51,7 @@ const UNIVERSITY_ADMIN_NAV = [
   { to: '/feed',          label: 'Feed',            icon: Newspaper },
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/events',        label: 'Events',          icon: Calendar },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket },
   { to: '/lost-found',    label: 'Lost & Found',    icon: PackageSearch },
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
 ];
@@ -57,6 +61,8 @@ const SYSTEM_ADMIN_NAV = [
   { to: '/admin/users',   label: 'User Management', icon: UserCog },
   { to: '/admin/groups',  label: 'Group Management',icon: BookOpen },
   { to: '/feed',          label: 'Feed',            icon: Newspaper },
+  { to: '/events',        label: 'Events',          icon: Calendar },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket },
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
 ];
