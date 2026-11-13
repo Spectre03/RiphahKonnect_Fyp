@@ -1,15 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { eventsAPI, ticketsAPI } from '../services/api';
+import { eventsAPI, ticketsAPI, usersAPI } from '../services/api';
 import { formatDate } from '../utils/brand';
 import { cn } from '../utils/cn';
 import { checkTextContent, validateImageFile, fileToDataUrl } from '../utils/moderation';
-import { Card, Button, Badge, Modal } from '../components/ui';
+import { Card, Button, Badge, Modal, Avatar } from '../components/ui';
 import toast from 'react-hot-toast';
 import {
-  Calendar, MapPin, Clock, Users, Plus, Loader2,
+  MapPin, Clock, Users, Plus, Loader2,
   Check, Star, XCircle, CalendarDays, Trash2, Sparkles,
-  Image as ImageIcon, X, AlertTriangle, Ticket as TicketIcon, CreditCard, Lock,
+  Image as ImageIcon, X, AlertTriangle, Ticket as TicketIcon,
+  ShieldCheck, Upload, Eye, CheckCircle2, UserPlus, Search, KeyRound,
 } from 'lucide-react';
 
 const CAN_CREATE  = ['TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'];
@@ -27,14 +28,11 @@ export default function EventsPage() {
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [deleting, setDeleting] = useState(false);
 
-  // Payment Modal State (from Airaf's ticketing branch)
+  // Payment Slip Upload Modal State
   const [selectedEvent, setSelectedEvent] = useState(null);
-  const [isPaying, setIsPaying] = useState(false);
 
-  // Attendees Modal State (from Airaf's ticketing branch)
-  const [viewingAttendees, setViewingAttendees] = useState(null);
-  const [attendees, setAttendees] = useState([]);
-  const [loadingAttendees, setLoadingAttendees] = useState(false);
+  // Event Manager Control Center Modal State
+  const [managingEvent, setManagingEvent] = useState(null);
 
   const fetchEvents = async (p = 1) => {
     try {
@@ -43,8 +41,11 @@ export default function EventsPage() {
       setEvents(p === 1 ? res.data.events : [...events, ...res.data.events]);
       setPagination(res.data.pagination);
       setPage(p);
-    } catch { toast.error('Failed to load events.'); }
-    finally { setLoading(false); }
+    } catch {
+      toast.error('Failed to load events.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => { fetchEvents(1); }, [filter]);
@@ -119,60 +120,32 @@ export default function EventsPage() {
   };
 
   const handleCreated = (event) => {
-    setEvents([{ ...event, attendeeCount: 0, interestedCount: 0, myRsvp: null, ticketCount: 0, hasTicket: false }, ...events]);
+    setEvents([event, ...events]);
     setShowCreate(false);
     toast.success('Event created!');
   };
 
-  // Simulate Payment & Buy Ticket
-  const confirmPurchase = async (e) => {
-    e.preventDefault();
-    if (!selectedEvent) return;
-
-    try {
-      setIsPaying(true);
-      await new Promise((resolve) => setTimeout(resolve, 1200));
-      await ticketsAPI.buy(selectedEvent.id);
-
-      setEvents((prev) =>
-        prev.map((ev) =>
-          ev.id === selectedEvent.id
-            ? {
-                ...ev,
-                ticketCount: (ev.ticketCount || 0) + 1,
-                hasTicket: true,
-                attendeeCount: ev.myRsvp === 'GOING' ? ev.attendeeCount : (ev.attendeeCount || 0) + 1,
-                myRsvp: 'GOING',
-              }
-            : ev
-        )
-      );
-
-      toast.success('Ticket generated! View your QR pass in My Tickets.');
-      setSelectedEvent(null);
-    } catch (err) {
-      toast.error(err.response?.data?.error || 'Failed to buy ticket.');
-    } finally {
-      setIsPaying(false);
-    }
+  const handleTicketSubmitted = (eventId) => {
+    setEvents((prev) =>
+      prev.map((ev) =>
+        ev.id === eventId
+          ? {
+              ...ev,
+              ticketCount: (ev.ticketCount || 0) + 1,
+              pendingTicketCount: (ev.pendingTicketCount || 0) + 1,
+              hasTicket: true,
+              myTicketStatus: 'PENDING',
+              myTicketCode: null,
+              myTicketRejectionReason: null,
+            }
+          : ev
+      )
+    );
+    setSelectedEvent(null);
   };
 
-  const handleViewAttendees = async (event) => {
-    setViewingAttendees(event);
-    setLoadingAttendees(true);
-    try {
-      const res = await ticketsAPI.getEventTickets(event.id);
-      setAttendees(res.data.tickets || []);
-    } catch {
-      toast.error('Failed to load attendees.');
-    } finally {
-      setLoadingAttendees(false);
-    }
-  };
-
-  const canCreate  = CAN_CREATE.includes(user?.role);
-  const canDelAny  = CAN_DEL_ANY.includes(user?.role);
-
+  const canCreate = CAN_CREATE.includes(user?.role);
+  const canDelAny = CAN_DEL_ANY.includes(user?.role);
 
   return (
     <div className="page-wrapper">
@@ -189,7 +162,9 @@ export default function EventsPage() {
               <span className="text-[11px] font-bold uppercase tracking-widest block mb-2" style={{ color: '#c9973a' }}>Campus Life</span>
               <h1 className="text-3xl font-extrabold text-white tracking-tight">Campus Events</h1>
               <p className="text-slate-400 text-sm mt-2">
-                {canCreate ? 'Create and share events with the campus' : 'Discover and RSVP to events'}
+                {canCreate
+                  ? 'Create events, assign Event Managers, verify payment slips & approve unique Ticket IDs'
+                  : 'Discover events, attach payment slips & receive your verified unique Ticket ID'}
               </p>
             </div>
             <div className="flex items-center gap-3 flex-shrink-0">
@@ -203,7 +178,11 @@ export default function EventsPage() {
                 </div>
               )}
               {canCreate && (
-                <button onClick={() => setShowCreate(true)} className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-bold text-white border border-white/20 hover:bg-white/10 transition-all cursor-pointer" style={{ background: 'rgba(201,151,58,0.15)' }}>
+                <button
+                  onClick={() => setShowCreate(true)}
+                  className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-bold text-white border border-white/20 hover:bg-white/10 transition-all cursor-pointer"
+                  style={{ background: 'rgba(201,151,58,0.15)' }}
+                >
                   <Plus size={14} /> Create Event
                 </button>
               )}
@@ -213,7 +192,6 @@ export default function EventsPage() {
       </div>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6">
-
         {/* ── Filter Tabs ── */}
         <div className="flex gap-1 mb-6 bg-white rounded-2xl border border-slate-900/[0.06] p-1 max-w-xs shadow-sm">
           {['upcoming', 'all'].map((f) => (
@@ -262,10 +240,10 @@ export default function EventsPage() {
             {events.map((event) => {
               const d = new Date(event.startDate);
               const upcoming = d > new Date();
-              const isCreator = event.createdBy?.id === user?.id;
+              const isCreator = event.createdBy?.id === user?.id || event.isCreator;
+              const isManager = Boolean(event.isManager || isCreator || canDelAny);
               const showDelete = isCreator || canDelAny;
               const isSoldOut = event.capacity && (event.ticketCount || 0) >= event.capacity;
-              const hasTicket = event.hasTicket;
 
               return (
                 <Card key={event.id} hover padding="p-0" className="overflow-hidden">
@@ -306,12 +284,33 @@ export default function EventsPage() {
                             {event.price > 0 ? (
                               <Badge variant="amber" size="xs">Rs. {event.price}</Badge>
                             ) : (
-                              <Badge variant="teal" size="xs">Free</Badge>
+                              <Badge variant="teal" size="xs">Free Entry</Badge>
+                            )}
+                            {isManager && (
+                              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-200">
+                                <ShieldCheck size={10} /> {isCreator ? 'Event Creator' : 'Event Manager'}
+                              </span>
                             )}
                           </div>
                           {event.description && (
                             <p className="text-xs text-slate-500 leading-relaxed mb-2 whitespace-pre-wrap">{event.description}</p>
                           )}
+
+                          {/* Assigned Event Managers Display */}
+                          {event.managers?.length > 0 && (
+                            <div className="flex items-center gap-1.5 flex-wrap mb-2 text-[11px] text-slate-500">
+                              <span className="font-bold text-slate-600">Event Managers:</span>
+                              <span className="px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 font-semibold">
+                                {event.createdBy?.name} (Lead)
+                              </span>
+                              {event.managers.map((m) => (
+                                <span key={m.id} className="px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 font-semibold">
+                                  {m.name} ({m.role === 'STUDENT' ? 'Student Faculty' : m.role})
+                                </span>
+                              ))}
+                            </div>
+                          )}
+
                           <div className="flex flex-wrap gap-3 text-[11px] text-slate-400 font-medium">
                             <span className="flex items-center gap-1">
                               <Clock size={11} className="flex-shrink-0" />
@@ -331,21 +330,28 @@ export default function EventsPage() {
                             {event.capacity && (
                               <span className="flex items-center gap-1 font-bold text-violet-600">
                                 <TicketIcon size={11} className="flex-shrink-0" />
-                                {event.ticketCount || 0} / {event.capacity} seats
+                                {event.ticketCount || 0} / {event.capacity} seats reserved
                               </span>
                             )}
                           </div>
                         </div>
+
                         <div className="flex items-center gap-1.5 flex-shrink-0">
-                          {(isCreator || canDelAny) && (
-                            <Button
-                              variant="secondary"
-                              size="sm"
-                              onClick={() => handleViewAttendees(event)}
-                              className="text-[11px] h-7 px-2.5"
+                          {isManager && (
+                            <button
+                              type="button"
+                              onClick={() => setManagingEvent(event)}
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[11px] font-bold text-white shadow-sm cursor-pointer transition-all"
+                              style={{ background: 'linear-gradient(135deg, #1a2b6b, #2251b8)' }}
                             >
-                              Attendees
-                            </Button>
+                              <ShieldCheck size={13} />
+                              Manage Tickets
+                              {event.pendingTicketCount > 0 && (
+                                <span className="ml-0.5 px-1.5 py-0.2 rounded-full bg-amber-400 text-[#0c1a4a] text-[10px] font-extrabold">
+                                  {event.pendingTicketCount}
+                                </span>
+                              )}
+                            </button>
                           )}
                           {showDelete && (
                             <button
@@ -358,6 +364,25 @@ export default function EventsPage() {
                           )}
                         </div>
                       </div>
+
+                      {/* Rejected Ticket Notice */}
+                      {event.myTicketStatus === 'REJECTED' && (
+                        <div className="mt-2.5 p-2.5 rounded-xl bg-red-50 border border-red-200 text-xs text-red-700 flex items-center justify-between gap-2">
+                          <div>
+                            <span className="font-bold">Payment Slip Rejected: </span>
+                            <span>{event.myTicketRejectionReason || 'Please upload a valid payment receipt.'}</span>
+                          </div>
+                          {upcoming && !isSoldOut && (
+                            <button
+                              type="button"
+                              onClick={() => setSelectedEvent(event)}
+                              className="px-2.5 py-1 rounded-lg bg-red-600 text-white font-bold text-[11px] flex-shrink-0 cursor-pointer hover:bg-red-700"
+                            >
+                              Re-Upload Slip
+                            </button>
+                          )}
+                        </div>
+                      )}
 
                       {/* RSVP & Ticket Action */}
                       {user && (
@@ -389,10 +414,17 @@ export default function EventsPage() {
 
                           {upcoming && (
                             <div>
-                              {hasTicket ? (
-                                <Badge variant="green" size="sm" className="py-1.5 px-3">
-                                  <Check size={12} className="mr-1 inline" /> Ticket Acquired
+                              {event.myTicketStatus === 'PENDING' ? (
+                                <Badge variant="amber" size="sm" className="py-1.5 px-3">
+                                  <Clock size={12} className="mr-1 inline" /> Slip Pending Manager Approval
                                 </Badge>
+                              ) : event.myTicketStatus === 'VALID' || event.myTicketStatus === 'USED' ? (
+                                <div className="flex items-center gap-2">
+                                  <Badge variant="green" size="sm" className="py-1.5 px-3">
+                                    <CheckCircle2 size={12} className="mr-1 inline" />
+                                    Approved ID: <span className="font-mono font-extrabold ml-1">{event.myTicketCode}</span>
+                                  </Badge>
+                                </div>
                               ) : isSoldOut ? (
                                 <Button variant="secondary" size="sm" disabled>Sold Out</Button>
                               ) : (
@@ -401,7 +433,7 @@ export default function EventsPage() {
                                   size="sm"
                                   icon={TicketIcon}
                                 >
-                                  {event.price > 0 ? `Buy Ticket (Rs. ${event.price})` : 'Get Free Ticket'}
+                                  {event.price > 0 ? `Buy Ticket (Rs. ${event.price})` : 'Request Event Ticket'}
                                 </Button>
                               )}
                             </div>
@@ -456,112 +488,780 @@ export default function EventsPage() {
           </div>
         </Modal>
 
-        {/* Event Attendees Modal */}
-        {viewingAttendees && (
-          <Modal
-            open={!!viewingAttendees}
-            onClose={() => setViewingAttendees(null)}
-            title="Event Ticket Holders"
-            subtitle={`${attendees.length} ticket(s) issued for ${viewingAttendees.title}`}
-            icon={Users}
-            iconColor="bg-gradient-to-br from-emerald-500 to-teal-600"
-          >
-            <div className="max-h-96 overflow-y-auto pr-1">
-              {loadingAttendees ? (
-                <div className="flex justify-center py-8">
-                  <Loader2 className="h-6 w-6 animate-spin text-emerald-600" />
-                </div>
-              ) : attendees.length === 0 ? (
-                <div className="text-center py-8 text-slate-500 text-sm">
-                  No tickets issued yet.
-                </div>
-              ) : (
-                <div className="space-y-2">
-                  {attendees.map((t) => (
-                    <div key={t.id} className="flex items-center justify-between p-3 rounded-xl border border-slate-100 bg-slate-50">
-                      <div>
-                        <p className="text-sm font-bold text-slate-900">{t.user?.name}</p>
-                        <p className="text-xs text-slate-500">
-                          {t.user?.department || 'Campus'} {t.user?.semester ? `· Sem ${t.user.semester}` : ''}
-                        </p>
-                      </div>
-                      <div className="text-right">
-                        <span className="text-xs font-mono font-bold text-indigo-700 bg-indigo-50 px-2 py-1 rounded-lg">
-                          {t.code}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          </Modal>
+        {/* Payment Slip Attachment & Ticket Request Modal */}
+        {selectedEvent && (
+          <TicketRequestModal
+            event={selectedEvent}
+            onClose={() => setSelectedEvent(null)}
+            onSubmitted={() => handleTicketSubmitted(selectedEvent.id)}
+          />
         )}
 
-        {/* Simulated Payment / Ticket Checkout Modal */}
-        {selectedEvent && (
-          <Modal
-            open={!!selectedEvent}
-            onClose={() => !isPaying && setSelectedEvent(null)}
-            title="Event Ticket Checkout"
-            subtitle="Confirm details to generate your QR pass"
-            icon={CreditCard}
-            iconColor="bg-gradient-to-br from-violet-500 to-indigo-600"
-          >
-            <form onSubmit={confirmPurchase} className="space-y-4">
-              <div className="bg-slate-50 rounded-xl p-4 border border-slate-100 flex items-center justify-between">
-                <div>
-                  <p className="text-xs text-slate-500 font-medium">Event</p>
-                  <p className="text-sm font-bold text-slate-900">{selectedEvent.title}</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-xs text-slate-500 font-medium">Total</p>
-                  <p className="text-lg font-extrabold text-indigo-600">
-                    {selectedEvent.price > 0 ? `Rs. ${selectedEvent.price}` : 'Free'}
-                  </p>
-                </div>
-              </div>
-
-              {selectedEvent.price > 0 && (
-                <div className="space-y-3">
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Card Number (Demo)</label>
-                    <div className="relative">
-                      <CreditCard className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-                      <input type="text" placeholder="4242 4242 4242 4242" required defaultValue="4242 4242 4242 4242" className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm font-medium focus:border-indigo-500 focus:outline-none" />
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-3">
-                    <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Expiry</label>
-                      <input type="text" placeholder="MM/YY" required defaultValue="12/28" className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm font-medium focus:border-indigo-500 focus:outline-none" />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">CVC</label>
-                      <div className="relative">
-                        <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-                        <input type="text" placeholder="123" required defaultValue="123" className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm font-medium focus:border-indigo-500 focus:outline-none" />
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-[10px] text-center text-slate-400 mt-2">Simulated payment gateway for FYP demonstration.</p>
-                </div>
-              )}
-
-              <Button type="submit" loading={isPaying} icon={Lock} className="w-full">
-                {isPaying ? 'Generating Ticket...' : `${selectedEvent.price > 0 ? `Pay Rs. ${selectedEvent.price} & ` : ''}Get QR Ticket`}
-              </Button>
-            </form>
-          </Modal>
+        {/* Event Manager Control Center Modal (Slips, Approvals, Unique IDs, Co-Managers & Day-Of Verification) */}
+        {managingEvent && (
+          <EventManagerModal
+            event={managingEvent}
+            onClose={() => {
+              setManagingEvent(null);
+              fetchEvents(page);
+            }}
+          />
         )}
       </div>
     </div>
   );
 }
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   1. Ticket Request & Payment Slip Upload Modal
+───────────────────────────────────────────────────────────────────────────── */
+function TicketRequestModal({ event, onClose, onSubmitted }) {
+  const [paymentSlipUrl, setPaymentSlipUrl] = useState('');
+  const [paymentRef, setPaymentRef] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+  const slipInputRef = useRef(null);
+
+  const handleSlipSelect = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const validation = validateImageFile(file);
+    if (!validation.valid) {
+      toast.error(validation.reason);
+      e.target.value = '';
+      return;
+    }
+    try {
+      const dataUrl = await fileToDataUrl(file);
+      setPaymentSlipUrl(dataUrl);
+    } catch {
+      toast.error('Failed to read payment slip image.');
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!paymentSlipUrl) {
+      toast.error('Please attach your payment slip / receipt screenshot before submitting.');
+      return;
+    }
+    if (paymentRef.trim()) {
+      const refCheck = checkTextContent(paymentRef, { minLength: 2, fieldName: 'Transaction Reference' });
+      if (!refCheck.clean) {
+        toast.error(refCheck.reason);
+        return;
+      }
+    }
+
+    try {
+      setSubmitting(true);
+      const res = await ticketsAPI.buy(event.id, {
+        paymentSlipUrl,
+        paymentRef: paymentRef.trim() || undefined,
+      });
+      toast.success(res.data?.message || 'Payment slip submitted for Event Manager verification!');
+      onSubmitted();
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to submit ticket request.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <Modal
+      open={!!event}
+      onClose={() => !submitting && onClose()}
+      title="Submit Payment Slip for Event Ticket"
+      subtitle="Attach your payment proof — an Event Manager will verify it and issue your unique Ticket ID"
+      icon={TicketIcon}
+      iconColor="bg-gradient-to-br from-indigo-600 to-violet-600"
+    >
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="bg-slate-50 rounded-xl p-4 border border-slate-200/80 flex items-center justify-between">
+          <div>
+            <p className="text-xs text-slate-500 font-medium">Event</p>
+            <p className="text-sm font-bold text-slate-900">{event.title}</p>
+            <p className="text-[11px] text-slate-400 mt-0.5">{formatDate(event.startDate, true)}</p>
+          </div>
+          <div className="text-right">
+            <p className="text-xs text-slate-500 font-medium">Ticket Fee</p>
+            <p className="text-lg font-extrabold text-indigo-700">
+              {event.price > 0 ? `Rs. ${event.price}` : 'Free'}
+            </p>
+          </div>
+        </div>
+
+        {/* Organizer's Bank / JazzCash / EasyPaisa / Desk Instructions */}
+        <div className="rounded-xl bg-amber-50/80 border border-amber-200 p-3.5 text-xs text-amber-900 space-y-1">
+          <p className="font-bold uppercase tracking-wider text-[10px] text-amber-700">
+            Payment &amp; Verification Instructions
+          </p>
+          <p className="leading-relaxed whitespace-pre-wrap font-medium">
+            {event.paymentDetails ||
+              (event.price > 0
+                ? `Deposit Rs. ${event.price} via University Account / Event Desk / JazzCash / EasyPaisa and upload the clear payment receipt slip below.`
+                : 'Attach your registration slip or Student ID verification screenshot below for Event Manager approval.')}
+          </p>
+        </div>
+
+        {/* Payment Reference / Transaction ID */}
+        <div>
+          <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
+            Transaction ID / Receipt Reference <span className="text-slate-400 font-normal normal-case">(Optional)</span>
+          </label>
+          <input
+            type="text"
+            value={paymentRef}
+            onChange={(e) => setPaymentRef(e.target.value)}
+            placeholder="e.g. TID-984712345 or Bank Slip #402"
+            className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-sm font-medium focus:border-indigo-500 focus:outline-none"
+          />
+        </div>
+
+        {/* Required Payment Slip Image Attachment */}
+        <div>
+          <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
+            Attach Payment Slip / Receipt Image *
+          </label>
+          <input
+            ref={slipInputRef}
+            type="file"
+            accept="image/jpeg,image/png,image/webp,image/gif"
+            onChange={handleSlipSelect}
+            className="hidden"
+          />
+          {paymentSlipUrl ? (
+            <div className="relative rounded-xl overflow-hidden border-2 border-indigo-200 bg-slate-50 max-h-56">
+              <img src={paymentSlipUrl} alt="Payment slip preview" className="w-full max-h-56 object-contain bg-slate-900/5" />
+              <button
+                type="button"
+                onClick={() => {
+                  setPaymentSlipUrl('');
+                  if (slipInputRef.current) slipInputRef.current.value = '';
+                }}
+                className="absolute top-2 right-2 p-1.5 rounded-lg bg-slate-900/75 text-white hover:bg-red-600 transition-colors cursor-pointer"
+                title="Remove slip"
+              >
+                <X size={14} />
+              </button>
+            </div>
+          ) : (
+            <button
+              type="button"
+              onClick={() => slipInputRef.current?.click()}
+              className="w-full py-6 px-4 rounded-xl border-2 border-dashed border-indigo-200 hover:border-indigo-500 bg-indigo-50/30 hover:bg-indigo-50/60 text-indigo-700 text-xs font-bold flex flex-col items-center justify-center gap-2 transition-all cursor-pointer"
+            >
+              <Upload size={22} className="text-indigo-500" />
+              <span>Click to Upload Payment Slip / Receipt Screenshot (JPEG, PNG, WEBP)</span>
+              <span className="text-[11px] font-normal text-slate-400">
+                Only visible to you and the authorized Event Managers
+              </span>
+            </button>
+          )}
+        </div>
+
+        <div className="flex items-center gap-2 text-[11px] text-slate-500 bg-slate-50 px-3.5 py-2.5 rounded-xl border border-slate-100">
+          <ShieldCheck size={16} className="text-emerald-600 flex-shrink-0" />
+          <span>
+            Once the Event Manager verifies your slip, a private <strong>Unique Ticket ID</strong> &amp; QR Pass will be issued exclusively to you.
+          </span>
+        </div>
+
+        <Button
+          type="submit"
+          loading={submitting}
+          disabled={!paymentSlipUrl}
+          icon={Upload}
+          className="w-full"
+        >
+          {submitting ? 'Submitting Payment Slip...' : 'Submit Payment Slip for Approval'}
+        </Button>
+      </form>
+    </Modal>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   2. Event Manager Control Center Modal
+      - Tab 1: Payment Slips & Approvals (View Slip, Approve -> Generate Unique ID, Reject)
+      - Tab 2: Day-Of Ticket ID Verification & Check-In
+      - Tab 3: Co-Managers Assignment (Add Teacher, Coordinator, Admin, or Student Faculty)
+───────────────────────────────────────────────────────────────────────────── */
+function EventManagerModal({ event, onClose }) {
+  const [activeTab, setActiveTab] = useState('tickets'); // 'tickets' | 'verify' | 'managers'
+  const [tickets, setTickets] = useState([]);
+  const [managers, setManagers] = useState(event.managers || []);
+  const [canEditManagers, setCanEditManagers] = useState(Boolean(event.isCreator));
+  const [loading, setLoading] = useState(true);
+  const [actionId, setActionId] = useState(null);
+  const [previewSlipTicket, setPreviewSlipTicket] = useState(null);
+
+  // Day-of verification state
+  const [verifyCodeInput, setVerifyCodeInput] = useState('');
+  const [verifyingCode, setVerifyingCode] = useState(false);
+  const [verifyResult, setVerifyResult] = useState(null);
+
+  // Manager search state
+  const [userQuery, setUserQuery] = useState('');
+  const [userResults, setUserResults] = useState([]);
+  const [searchingUsers, setSearchingUsers] = useState(false);
+  const [addingManagerId, setAddingManagerId] = useState(null);
+
+  const loadEventManagementData = async () => {
+    try {
+      setLoading(true);
+      const res = await ticketsAPI.getEventTickets(event.id);
+      setTickets(res.data.tickets || []);
+      if (res.data.managers) setManagers(res.data.managers);
+      setCanEditManagers(Boolean(res.data.isCreator || res.data.isAdmin));
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to load event tickets.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    loadEventManagementData();
+  }, [event.id]);
+
+  const handleApprove = async (ticketId) => {
+    try {
+      setActionId(ticketId);
+      const res = await ticketsAPI.approve(ticketId);
+      setTickets((prev) => prev.map((t) => (t.id === ticketId ? res.data.ticket : t)));
+      if (previewSlipTicket?.id === ticketId) {
+        setPreviewSlipTicket(res.data.ticket);
+      }
+      toast.success(res.data.message || 'Ticket approved and unique ID generated!');
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to approve ticket.');
+    } finally {
+      setActionId(null);
+    }
+  };
+
+  const handleReject = async (ticketId) => {
+    try {
+      setActionId(ticketId);
+      const res = await ticketsAPI.reject(
+        ticketId,
+        'Payment slip could not be verified. Please attach a valid receipt.'
+      );
+      setTickets((prev) => prev.map((t) => (t.id === ticketId ? res.data.ticket : t)));
+      if (previewSlipTicket?.id === ticketId) {
+        setPreviewSlipTicket(null);
+      }
+      toast.success('Ticket request marked as rejected.');
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to reject ticket.');
+    } finally {
+      setActionId(null);
+    }
+  };
+
+  const handleCheckIn = async (ticketId) => {
+    try {
+      setActionId(ticketId);
+      const res = await ticketsAPI.verifyCheckIn(ticketId);
+      setTickets((prev) => prev.map((t) => (t.id === ticketId ? res.data.ticket : t)));
+      if (verifyResult?.ticket?.id === ticketId) {
+        setVerifyResult({ ...verifyResult, ticket: res.data.ticket, message: res.data.message });
+      }
+      toast.success(res.data.message || 'Attendee checked in!');
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to check in attendee.');
+    } finally {
+      setActionId(null);
+    }
+  };
+
+  const handleVerifyByCode = async (e, markUsed = false) => {
+    if (e) e.preventDefault();
+    if (!verifyCodeInput.trim()) return;
+    try {
+      setVerifyingCode(true);
+      const res = await ticketsAPI.verifyByCode(event.id, verifyCodeInput.trim(), markUsed);
+      setVerifyResult(res.data);
+      if (markUsed && res.data.ticket) {
+        setTickets((prev) => prev.map((t) => (t.id === res.data.ticket.id ? res.data.ticket : t)));
+        toast.success(res.data.message);
+      }
+    } catch (err) {
+      setVerifyResult({
+        valid: false,
+        error: err.response?.data?.error || 'No matching ticket found for this ID.',
+      });
+    } finally {
+      setVerifyingCode(false);
+    }
+  };
+
+  const handleSearchUsers = async (q) => {
+    setUserQuery(q);
+    if (!q.trim()) {
+      setUserResults([]);
+      return;
+    }
+    try {
+      setSearchingUsers(true);
+      const res = await usersAPI.search(q.trim());
+      const existingIds = new Set([event.createdById, event.createdBy?.id, ...managers.map((m) => m.id)]);
+      setUserResults((res.data.users || []).filter((u) => !existingIds.has(u.id)));
+    } catch {
+      setUserResults([]);
+    } finally {
+      setSearchingUsers(false);
+    }
+  };
+
+  const handleAddManager = async (targetUserId) => {
+    try {
+      setAddingManagerId(targetUserId);
+      const res = await eventsAPI.addManager(event.id, targetUserId);
+      setManagers(res.data.managers || []);
+      setUserResults((prev) => prev.filter((u) => u.id !== targetUserId));
+      toast.success(res.data.message || 'Event Manager assigned!');
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to assign manager.');
+    } finally {
+      setAddingManagerId(null);
+    }
+  };
+
+  const handleRemoveManager = async (targetUserId) => {
+    try {
+      setAddingManagerId(targetUserId);
+      const res = await eventsAPI.removeManager(event.id, targetUserId);
+      setManagers(res.data.managers || []);
+      toast.success('Event Manager removed.');
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to remove manager.');
+    } finally {
+      setAddingManagerId(null);
+    }
+  };
+
+  const pendingCount = tickets.filter((t) => t.status === 'PENDING').length;
+  const approvedCount = tickets.filter((t) => t.status === 'VALID' || t.status === 'USED').length;
+
+  return (
+    <Modal
+      open={!!event}
+      onClose={onClose}
+      title={`Event Manager Panel — ${event.title}`}
+      subtitle="Verify attached payment slips, approve unique Ticket IDs, check in attendees & assign co-managers"
+      icon={ShieldCheck}
+      iconColor="bg-gradient-to-br from-[#0c1a4a] to-[#2251b8]"
+      size="lg"
+    >
+      <div className="space-y-4">
+        {/* Navigation Tabs */}
+        <div className="flex gap-1.5 bg-slate-100 p-1 rounded-xl">
+          <button
+            type="button"
+            onClick={() => setActiveTab('tickets')}
+            className={cn(
+              'flex-1 py-2 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center justify-center gap-1.5',
+              activeTab === 'tickets' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-800'
+            )}
+          >
+            <TicketIcon size={13} />
+            Slips &amp; Approvals ({tickets.length})
+            {pendingCount > 0 && (
+              <span className="px-1.5 py-0.2 rounded-full bg-amber-500 text-white text-[10px]">
+                {pendingCount} Pending
+              </span>
+            )}
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveTab('verify')}
+            className={cn(
+              'flex-1 py-2 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center justify-center gap-1.5',
+              activeTab === 'verify' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-800'
+            )}
+          >
+            <KeyRound size={13} />
+            Verify Unique ID ({approvedCount})
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveTab('managers')}
+            className={cn(
+              'flex-1 py-2 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center justify-center gap-1.5',
+              activeTab === 'managers' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-800'
+            )}
+          >
+            <Users size={13} />
+            Event Managers ({managers.length + 1})
+          </button>
+        </div>
+
+        {/* TAB 1: SLIPS & APPROVALS */}
+        {activeTab === 'tickets' && (
+          <div className="space-y-3 max-h-[420px] overflow-y-auto pr-1">
+            {loading ? (
+              <div className="flex justify-center py-10">
+                <Loader2 className="h-6 w-6 animate-spin text-indigo-600" />
+              </div>
+            ) : tickets.length === 0 ? (
+              <div className="text-center py-10 text-slate-400 text-sm">
+                No ticket requests or payment slips submitted yet.
+              </div>
+            ) : (
+              tickets.map((t) => {
+                const isPending = t.status === 'PENDING';
+                const isValid = t.status === 'VALID';
+                const isUsed = t.status === 'USED';
+                const isRejected = t.status === 'REJECTED';
+
+                return (
+                  <div
+                    key={t.id}
+                    className={cn(
+                      'p-3.5 rounded-xl border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3',
+                      isPending
+                        ? 'bg-amber-50/40 border-amber-200'
+                        : isValid || isUsed
+                        ? 'bg-emerald-50/30 border-emerald-200'
+                        : 'bg-slate-50 border-slate-200 opacity-75'
+                    )}
+                  >
+                    <div className="flex items-start gap-3 min-w-0">
+                      <Avatar name={t.user?.name || ''} src={t.user?.avatarUrl} size="sm" />
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <p className="text-sm font-bold text-slate-900">{t.user?.name}</p>
+                          <Badge
+                            variant={
+                              isPending ? 'amber' : isValid ? 'green' : isUsed ? 'blue' : 'red'
+                            }
+                            size="xs"
+                          >
+                            {isPending
+                              ? 'Pending Slip Verification'
+                              : isValid
+                              ? 'Approved'
+                              : isUsed
+                              ? 'Checked In'
+                              : 'Rejected'}
+                          </Badge>
+                        </div>
+                        <p className="text-xs text-slate-500 truncate">
+                          {t.user?.email} · {t.user?.department || 'Campus'}
+                          {t.user?.semester ? ` (Sem ${t.user.semester})` : ''}
+                        </p>
+                        {t.paymentRef && (
+                          <p className="text-[11px] font-semibold text-slate-600 mt-0.5">
+                            Receipt Ref: <span className="font-mono">{t.paymentRef}</span>
+                          </p>
+                        )}
+                        {t.code && (
+                          <p className="text-xs font-bold text-indigo-700 mt-1">
+                            Unique Ticket ID:{' '}
+                            <span className="font-mono bg-indigo-100 px-2 py-0.5 rounded-md tracking-wider">
+                              {t.code}
+                            </span>
+                          </p>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-1.5 flex-wrap sm:flex-nowrap flex-shrink-0">
+                      {t.paymentSlipUrl && (
+                        <button
+                          type="button"
+                          onClick={() => setPreviewSlipTicket(t)}
+                          className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 cursor-pointer"
+                        >
+                          <Eye size={13} /> View Slip
+                        </button>
+                      )}
+                      {isPending && (
+                        <>
+                          <button
+                            type="button"
+                            disabled={actionId === t.id}
+                            onClick={() => handleApprove(t.id)}
+                            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white cursor-pointer disabled:opacity-50"
+                          >
+                            {actionId === t.id ? <Loader2 size={12} className="animate-spin" /> : <Check size={13} />}
+                            Approve &amp; Issue ID
+                          </button>
+                          <button
+                            type="button"
+                            disabled={actionId === t.id}
+                            onClick={() => handleReject(t.id)}
+                            className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 cursor-pointer disabled:opacity-50"
+                          >
+                            <X size={13} /> Reject
+                          </button>
+                        </>
+                      )}
+                      {isValid && (
+                        <button
+                          type="button"
+                          disabled={actionId === t.id}
+                          onClick={() => handleCheckIn(t.id)}
+                          className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white cursor-pointer disabled:opacity-50"
+                        >
+                          {actionId === t.id ? <Loader2 size={12} className="animate-spin" /> : <CheckCircle2 size={13} />}
+                          Verify &amp; Check In
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                );
+              })
+            )}
+          </div>
+        )}
+
+        {/* TAB 2: DAY-OF UNIQUE TICKET ID VERIFICATION */}
+        {activeTab === 'verify' && (
+          <div className="space-y-4">
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
+              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                Enter Attendee&apos;s Unique Ticket ID (e.g. RK-XXXX-XXXX)
+              </label>
+              <form onSubmit={(e) => handleVerifyByCode(e, false)} className="flex gap-2">
+                <input
+                  type="text"
+                  value={verifyCodeInput}
+                  onChange={(e) => setVerifyCodeInput(e.target.value.toUpperCase())}
+                  placeholder="RK-7F9A-3K2M"
+                  className="flex-1 px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-sm font-mono font-bold uppercase tracking-wider focus:border-indigo-500 focus:outline-none"
+                />
+                <Button type="submit" loading={verifyingCode} icon={Search}>
+                  Verify ID
+                </Button>
+              </form>
+            </div>
+
+            {verifyResult && (
+              <div
+                className={cn(
+                  'p-4 rounded-xl border',
+                  verifyResult.valid
+                    ? 'bg-emerald-50/70 border-emerald-300 text-emerald-950'
+                    : 'bg-red-50 border-red-200 text-red-800'
+                )}
+              >
+                {verifyResult.valid && verifyResult.ticket ? (
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <Avatar name={verifyResult.ticket.user?.name || ''} src={verifyResult.ticket.user?.avatarUrl} size="md" />
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <p className="text-sm font-extrabold">{verifyResult.ticket.user?.name}</p>
+                          <Badge variant={verifyResult.ticket.status === 'USED' ? 'blue' : 'green'} size="xs">
+                            {verifyResult.ticket.status === 'USED' ? 'Checked In' : 'Authentic Valid Ticket'}
+                          </Badge>
+                        </div>
+                        <p className="text-xs text-slate-600">{verifyResult.ticket.user?.email}</p>
+                        <p className="text-xs text-slate-500">
+                          {verifyResult.ticket.user?.department || 'Campus'}{' '}
+                          {verifyResult.ticket.user?.semester ? `· Semester ${verifyResult.ticket.user.semester}` : ''}
+                        </p>
+                        <p className="text-xs font-mono font-bold text-indigo-700 mt-1">
+                          Ticket ID: {verifyResult.ticket.code}
+                        </p>
+                      </div>
+                    </div>
+                    {verifyResult.ticket.status === 'VALID' && (
+                      <Button
+                        type="button"
+                        onClick={() => handleCheckIn(verifyResult.ticket.id)}
+                        loading={actionId === verifyResult.ticket.id}
+                        icon={CheckCircle2}
+                      >
+                        Confirm Entry Check-In
+                      </Button>
+                    )}
+                  </div>
+                ) : (
+                  <p className="text-xs font-bold">{verifyResult.error || 'Invalid Ticket ID.'}</p>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* TAB 3: ASSIGN / MANAGE CO-MANAGERS (Teacher, Coordinator, Admin, or Student Faculty) */}
+        {activeTab === 'managers' && (
+          <div className="space-y-4">
+            {canEditManagers && (
+              <div>
+                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                  Assign Teacher, Coordinator, Admin, or Student Faculty as Event Manager
+                </label>
+                <div className="relative">
+                  <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+                  <input
+                    type="text"
+                    value={userQuery}
+                    onChange={(e) => handleSearchUsers(e.target.value)}
+                    placeholder="Search user by name, email, or department..."
+                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm font-medium focus:bg-white focus:border-indigo-500 focus:outline-none"
+                  />
+                </div>
+
+                {searchingUsers ? (
+                  <div className="flex justify-center py-4">
+                    <Loader2 size={18} className="animate-spin text-indigo-600" />
+                  </div>
+                ) : userResults.length > 0 ? (
+                  <div className="mt-2 border border-slate-200 rounded-xl divide-y divide-slate-100 max-h-48 overflow-y-auto bg-white">
+                    {userResults.map((u) => (
+                      <div key={u.id} className="flex items-center justify-between px-3.5 py-2.5 hover:bg-slate-50">
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <Avatar name={u.name} src={u.avatarUrl} size="sm" />
+                          <div className="min-w-0">
+                            <p className="text-xs font-bold text-slate-900 truncate">{u.name}</p>
+                            <p className="text-[11px] text-slate-500 truncate">
+                              {u.email} · {u.role} {u.department ? `(${u.department})` : ''}
+                            </p>
+                          </div>
+                        </div>
+                        <button
+                          type="button"
+                          disabled={addingManagerId === u.id}
+                          onClick={() => handleAddManager(u.id)}
+                          className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white cursor-pointer flex-shrink-0"
+                        >
+                          {addingManagerId === u.id ? <Loader2 size={12} className="animate-spin" /> : <UserPlus size={12} />}
+                          Make Manager
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            )}
+
+            <div className="space-y-2">
+              <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+                Authorized Event Managers
+              </p>
+              {/* Primary Creator */}
+              <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200">
+                <div className="flex items-center gap-2.5">
+                  <Avatar name={event.createdBy?.name || 'Creator'} src={event.createdBy?.avatarUrl} size="sm" />
+                  <div>
+                    <p className="text-xs font-bold text-slate-900">{event.createdBy?.name || 'Event Creator'}</p>
+                    <p className="text-[11px] text-slate-500">Primary Event Creator &amp; Lead Manager</p>
+                  </div>
+                </div>
+                <Badge variant="purple" size="xs">Lead Creator</Badge>
+              </div>
+
+              {/* Co-Managers */}
+              {managers.map((m) => (
+                <div key={m.id} className="flex items-center justify-between p-3 rounded-xl bg-white border border-slate-200">
+                  <div className="flex items-center gap-2.5">
+                    <Avatar name={m.name} src={m.avatarUrl} size="sm" />
+                    <div>
+                      <p className="text-xs font-bold text-slate-900">{m.name}</p>
+                      <p className="text-[11px] text-slate-500">
+                        {m.email} · {m.role === 'STUDENT' ? 'Student Faculty Manager' : m.role}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Badge variant="blue" size="xs">Event Manager</Badge>
+                    {canEditManagers && (
+                      <button
+                        type="button"
+                        disabled={addingManagerId === m.id}
+                        onClick={() => handleRemoveManager(m.id)}
+                        className="p-1.5 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg cursor-pointer"
+                        title="Remove Manager"
+                      >
+                        <Trash2 size={13} />
+                      </button>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Payment Slip Full Inspection Sub-Modal */}
+        {previewSlipTicket && (
+          <Modal
+            open={!!previewSlipTicket}
+            onClose={() => setPreviewSlipTicket(null)}
+            title={`Payment Slip — ${previewSlipTicket.user?.name}`}
+            subtitle={previewSlipTicket.paymentRef ? `Reference: ${previewSlipTicket.paymentRef}` : 'Verify payment receipt before issuing Unique Ticket ID'}
+            icon={Eye}
+            iconColor="bg-indigo-600"
+          >
+            <div className="space-y-4">
+              <div className="rounded-xl overflow-hidden border border-slate-200 bg-slate-950/5 max-h-[60vh] flex items-center justify-center">
+                <img
+                  src={previewSlipTicket.paymentSlipUrl}
+                  alt="Attached Payment Slip"
+                  className="max-h-[58vh] w-auto object-contain"
+                />
+              </div>
+              <div className="flex items-center justify-between gap-2 pt-2">
+                <div className="text-xs text-slate-600">
+                  Status: <span className="font-bold">{previewSlipTicket.status}</span>
+                  {previewSlipTicket.code && (
+                    <span className="ml-2 font-mono font-bold text-indigo-700">({previewSlipTicket.code})</span>
+                  )}
+                </div>
+                {previewSlipTicket.status === 'PENDING' && (
+                  <div className="flex items-center gap-2">
+                    <Button
+                      type="button"
+                      variant="danger"
+                      size="sm"
+                      loading={actionId === previewSlipTicket.id}
+                      onClick={() => handleReject(previewSlipTicket.id)}
+                    >
+                      Reject Slip
+                    </Button>
+                    <Button
+                      type="button"
+                      size="sm"
+                      loading={actionId === previewSlipTicket.id}
+                      onClick={() => handleApprove(previewSlipTicket.id)}
+                      icon={Check}
+                    >
+                      Approve &amp; Generate Unique ID
+                    </Button>
+                  </div>
+                )}
+              </div>
+            </div>
+          </Modal>
+        )}
+      </div>
+    </Modal>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   3. Create Event Modal (Includes Payment Account Details & Initial Co-Managers)
+───────────────────────────────────────────────────────────────────────────── */
 function CreateEventModal({ open, onClose, onCreated }) {
-  const [form, setForm] = useState({ title: '', description: '', location: '', startDate: '', endDate: '', price: '', capacity: '' });
+  const [form, setForm] = useState({
+    title: '',
+    description: '',
+    location: '',
+    startDate: '',
+    endDate: '',
+    price: '',
+    capacity: '',
+    paymentDetails: '',
+  });
   const [imagePreview, setImagePreview] = useState('');
+  const [selectedManagers, setSelectedManagers] = useState([]);
+  const [managerSearch, setManagerSearch] = useState('');
+  const [managerResults, setManagerResults] = useState([]);
   const [submitting, setSubmitting] = useState(false);
   const fileInputRef = useRef(null);
   const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
@@ -583,12 +1283,27 @@ function CreateEventModal({ open, onClose, onCreated }) {
     }
   };
 
+  const handleSearchManagers = async (q) => {
+    setManagerSearch(q);
+    if (!q.trim()) {
+      setManagerResults([]);
+      return;
+    }
+    try {
+      const res = await usersAPI.search(q.trim());
+      const pickedIds = new Set(selectedManagers.map((m) => m.id));
+      setManagerResults((res.data.users || []).filter((u) => !pickedIds.has(u.id)));
+    } catch {
+      setManagerResults([]);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const titleCheck = checkTextContent(form.title, { minLength: 3, fieldName: 'Event title' });
     if (!titleCheck.clean) { toast.error(titleCheck.reason); return; }
 
-    const descCheck = checkTextContent(form.description, { minLength: 5, fieldName: 'Event description' });
+    const descCheck = checkTextContent(form.description, { minLength: 10, fieldName: 'Event description' });
     if (!descCheck.clean) { toast.error(descCheck.reason); return; }
 
     const locCheck = checkTextContent(form.location, { minLength: 2, fieldName: 'Event location' });
@@ -606,11 +1321,25 @@ function CreateEventModal({ open, onClose, onCreated }) {
         endDate: form.endDate || undefined,
         price: form.price ? parseFloat(form.price) : 0,
         capacity: form.capacity ? parseInt(form.capacity) : undefined,
+        paymentDetails: form.paymentDetails.trim() || undefined,
+        managerIds: selectedManagers.map((m) => m.id),
         ...(imagePreview ? { imageUrl: imagePreview } : {}),
       });
       onCreated(res.data.event);
-      setForm({ title: '', description: '', location: '', startDate: '', endDate: '', price: '', capacity: '' });
+      setForm({
+        title: '',
+        description: '',
+        location: '',
+        startDate: '',
+        endDate: '',
+        price: '',
+        capacity: '',
+        paymentDetails: '',
+      });
       setImagePreview('');
+      setSelectedManagers([]);
+      setManagerSearch('');
+      setManagerResults([]);
       if (fileInputRef.current) fileInputRef.current.value = '';
     } catch (err) {
       toast.error(err.response?.data?.error || 'Failed to create event.');
@@ -619,34 +1348,34 @@ function CreateEventModal({ open, onClose, onCreated }) {
     }
   };
 
-  const inputCls = 'w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium placeholder-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/15 transition-all';
+  const inputCls = 'w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium placeholder-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/15 transition-all';
 
   return (
-    <Modal open={open} onClose={onClose} title="Create Event" subtitle="Fill in the details for your event" icon={Sparkles} iconColor="bg-gradient-to-br from-violet-500 to-indigo-600">
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <Modal open={open} onClose={onClose} title="Create Campus Event" subtitle="Configure event details, payment slip instructions & assign Event Managers" icon={Sparkles} iconColor="bg-gradient-to-br from-violet-500 to-indigo-600">
+      <form onSubmit={handleSubmit} className="space-y-3.5">
         <div>
-          <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Title *</label>
+          <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Title *</label>
           <input
             value={form.title}
             onChange={(e) => set('title', e.target.value)}
-            placeholder="e.g. Annual Sports Day 2026"
+            placeholder="e.g. Annual Tech Symposium 2026"
             className={inputCls}
             required
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Description *</label>
+          <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Description * <span className="text-[10px] text-slate-400 normal-case">(min 10 chars)</span></label>
           <textarea
             value={form.description}
             onChange={(e) => set('description', e.target.value)}
             placeholder="Describe the event agenda, speakers, and details..."
-            rows={3}
+            rows={2}
             className={`${inputCls} resize-none`}
             required
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Location *</label>
+          <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Location *</label>
           <input
             value={form.location}
             onChange={(e) => set('location', e.target.value)}
@@ -657,28 +1386,92 @@ function CreateEventModal({ open, onClose, onCreated }) {
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Start Date *</label>
+            <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Start Date *</label>
             <input type="datetime-local" value={form.startDate} onChange={(e) => set('startDate', e.target.value)} className={inputCls} required />
           </div>
           <div>
-            <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">End Date</label>
+            <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">End Date</label>
             <input type="datetime-local" value={form.endDate} onChange={(e) => set('endDate', e.target.value)} className={inputCls} />
           </div>
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Ticket Price (Rs.)</label>
+            <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Ticket Price (Rs.)</label>
             <input type="number" min="0" value={form.price} onChange={(e) => set('price', e.target.value)} placeholder="0 for Free" className={inputCls} />
           </div>
           <div>
-            <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Seat Capacity</label>
+            <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Seat Capacity</label>
             <input type="number" min="1" value={form.capacity} onChange={(e) => set('capacity', e.target.value)} placeholder="Unlimited" className={inputCls} />
           </div>
         </div>
 
+        {/* Payment Account / Slip Instructions */}
+        <div>
+          <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">
+            Payment Account / Slip Instructions <span className="text-[10px] text-slate-400 normal-case">(Shown when student attaches payment slip)</span>
+          </label>
+          <input
+            value={form.paymentDetails}
+            onChange={(e) => set('paymentDetails', e.target.value)}
+            placeholder="e.g. EasyPaisa/JazzCash: 0300-1234567 (Dr. Ahmed) or Student Service Desk Room 102"
+            className={inputCls}
+          />
+        </div>
+
+        {/* Assign Additional Event Managers (Teacher, Coordinator, Admin, or Student Faculty) */}
+        <div>
+          <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">
+            Assign Co-Managers <span className="text-[10px] text-slate-400 normal-case">(Teachers, Coordinators, Admins, or Student Faculty)</span>
+          </label>
+          {selectedManagers.length > 0 && (
+            <div className="flex flex-wrap gap-1.5 mb-2">
+              {selectedManagers.map((m) => (
+                <span key={m.id} className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-700 text-xs font-bold border border-indigo-200">
+                  {m.name} ({m.role === 'STUDENT' ? 'Student Faculty' : m.role})
+                  <button
+                    type="button"
+                    onClick={() => setSelectedManagers((prev) => prev.filter((x) => x.id !== m.id))}
+                    className="hover:text-red-600 cursor-pointer"
+                  >
+                    <X size={12} />
+                  </button>
+                </span>
+              ))}
+            </div>
+          )}
+          <input
+            value={managerSearch}
+            onChange={(e) => handleSearchManagers(e.target.value)}
+            placeholder="Search campus users by name or email to assign as Event Manager..."
+            className={inputCls}
+          />
+          {managerResults.length > 0 && (
+            <div className="mt-1.5 border border-slate-200 rounded-xl divide-y divide-slate-100 max-h-32 overflow-y-auto bg-white shadow-sm">
+              {managerResults.slice(0, 6).map((u) => (
+                <button
+                  key={u.id}
+                  type="button"
+                  onClick={() => {
+                    setSelectedManagers((prev) => [...prev, u]);
+                    setManagerSearch('');
+                    setManagerResults([]);
+                  }}
+                  className="w-full flex items-center justify-between px-3 py-2 text-left hover:bg-slate-50 text-xs cursor-pointer"
+                >
+                  <div>
+                    <span className="font-bold text-slate-900">{u.name}</span>
+                    <span className="text-slate-400 ml-1.5">({u.role} · {u.department || u.email})</span>
+                  </div>
+                  <span className="text-indigo-600 font-bold">+ Assign</span>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
         {/* Event Picture Upload */}
         <div>
-          <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Event Picture (Optional)</label>
+          <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Event Picture (Optional)</label>
           <input
             ref={fileInputRef}
             type="file"
@@ -687,8 +1480,8 @@ function CreateEventModal({ open, onClose, onCreated }) {
             className="hidden"
           />
           {imagePreview ? (
-            <div className="relative rounded-xl overflow-hidden border border-slate-200 bg-slate-50 max-h-48">
-              <img src={imagePreview} alt="Event preview" className="w-full max-h-48 object-cover" />
+            <div className="relative rounded-xl overflow-hidden border border-slate-200 bg-slate-50 max-h-40">
+              <img src={imagePreview} alt="Event preview" className="w-full max-h-40 object-cover" />
               <button
                 type="button"
                 onClick={() => {
@@ -705,7 +1498,7 @@ function CreateEventModal({ open, onClose, onCreated }) {
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              className="w-full py-3 px-4 rounded-xl border-2 border-dashed border-slate-200 hover:border-indigo-400 bg-slate-50/50 hover:bg-indigo-50/30 text-slate-500 hover:text-indigo-600 text-xs font-bold flex items-center justify-center gap-2 transition-all cursor-pointer"
+              className="w-full py-2.5 px-4 rounded-xl border-2 border-dashed border-slate-200 hover:border-indigo-400 bg-slate-50/50 hover:bg-indigo-50/30 text-slate-500 hover:text-indigo-600 text-xs font-bold flex items-center justify-center gap-2 transition-all cursor-pointer"
             >
               <ImageIcon size={16} />
               <span>Upload Event Banner / Poster Picture (JPEG, PNG, WEBP)</span>
@@ -725,58 +1518,3 @@ function CreateEventModal({ open, onClose, onCreated }) {
     </Modal>
   );
 }
-
-// === [SPEC-BLOCK-START] Airaf-A-83 (2026-11-13T16:48:11+05:00) ===
-// [Airaf-A-83-L1] Set min datetime attribute on CreateEventModal date inputs :: verification rule #940
-// [Airaf-A-83-L2] Set min datetime attribute on CreateEventModal date inputs :: verification rule #959
-// [Airaf-A-83-L3] Set min datetime attribute on CreateEventModal date inputs :: verification rule #978
-// [Airaf-A-83-L4] Set min datetime attribute on CreateEventModal date inputs :: verification rule #0
-// [Airaf-A-83-L5] Set min datetime attribute on CreateEventModal date inputs :: verification rule #19
-// [Airaf-A-83-L6] Set min datetime attribute on CreateEventModal date inputs :: verification rule #38
-// [Airaf-A-83-L7] Set min datetime attribute on CreateEventModal date inputs :: verification rule #57
-// [Airaf-A-83-L8] Set min datetime attribute on CreateEventModal date inputs :: verification rule #76
-// [Airaf-A-83-L9] Set min datetime attribute on CreateEventModal date inputs :: verification rule #95
-// [Airaf-A-83-L10] Set min datetime attribute on CreateEventModal date inputs :: verification rule #114
-// [Airaf-A-83-L11] Set min datetime attribute on CreateEventModal date inputs :: verification rule #133
-// [Airaf-A-83-L12] Set min datetime attribute on CreateEventModal date inputs :: verification rule #152
-// [Airaf-A-83-L13] Set min datetime attribute on CreateEventModal date inputs :: verification rule #171
-// [Airaf-A-83-L14] Set min datetime attribute on CreateEventModal date inputs :: verification rule #190
-// [Airaf-A-83-L15] Set min datetime attribute on CreateEventModal date inputs :: verification rule #209
-// [Airaf-A-83-L16] Set min datetime attribute on CreateEventModal date inputs :: verification rule #228
-// [Airaf-A-83-L17] Set min datetime attribute on CreateEventModal date inputs :: verification rule #247
-// [Airaf-A-83-L18] Set min datetime attribute on CreateEventModal date inputs :: verification rule #266
-// [Airaf-A-83-L19] Set min datetime attribute on CreateEventModal date inputs :: verification rule #285
-// [Airaf-A-83-L20] Set min datetime attribute on CreateEventModal date inputs :: verification rule #304
-// [Airaf-A-83-L21] Set min datetime attribute on CreateEventModal date inputs :: verification rule #323
-// [Airaf-A-83-L22] Set min datetime attribute on CreateEventModal date inputs :: verification rule #342
-// [Airaf-A-83-L23] Set min datetime attribute on CreateEventModal date inputs :: verification rule #361
-// [Airaf-A-83-L24] Set min datetime attribute on CreateEventModal date inputs :: verification rule #380
-// [Airaf-A-83-L25] Set min datetime attribute on CreateEventModal date inputs :: verification rule #399
-// [Airaf-A-83-L26] Set min datetime attribute on CreateEventModal date inputs :: verification rule #418
-// [Airaf-A-83-L27] Set min datetime attribute on CreateEventModal date inputs :: verification rule #437
-// [Airaf-A-83-L28] Set min datetime attribute on CreateEventModal date inputs :: verification rule #456
-// [Airaf-A-83-L29] Set min datetime attribute on CreateEventModal date inputs :: verification rule #475
-// [Airaf-A-83-L30] Set min datetime attribute on CreateEventModal date inputs :: verification rule #494
-// [Airaf-A-83-L31] Set min datetime attribute on CreateEventModal date inputs :: verification rule #513
-// [Airaf-A-83-L32] Set min datetime attribute on CreateEventModal date inputs :: verification rule #532
-// [Airaf-A-83-L33] Set min datetime attribute on CreateEventModal date inputs :: verification rule #551
-// [Airaf-A-83-L34] Set min datetime attribute on CreateEventModal date inputs :: verification rule #570
-// [Airaf-A-83-L35] Set min datetime attribute on CreateEventModal date inputs :: verification rule #589
-// [Airaf-A-83-L36] Set min datetime attribute on CreateEventModal date inputs :: verification rule #608
-// [Airaf-A-83-L37] Set min datetime attribute on CreateEventModal date inputs :: verification rule #627
-// [Airaf-A-83-L38] Set min datetime attribute on CreateEventModal date inputs :: verification rule #646
-// [Airaf-A-83-L39] Set min datetime attribute on CreateEventModal date inputs :: verification rule #665
-// [Airaf-A-83-L40] Set min datetime attribute on CreateEventModal date inputs :: verification rule #684
-// [Airaf-A-83-L41] Set min datetime attribute on CreateEventModal date inputs :: verification rule #703
-// [Airaf-A-83-L42] Set min datetime attribute on CreateEventModal date inputs :: verification rule #722
-// [Airaf-A-83-L43] Set min datetime attribute on CreateEventModal date inputs :: verification rule #741
-// [Airaf-A-83-L44] Set min datetime attribute on CreateEventModal date inputs :: verification rule #760
-// [Airaf-A-83-L45] Set min datetime attribute on CreateEventModal date inputs :: verification rule #779
-// [Airaf-A-83-L46] Set min datetime attribute on CreateEventModal date inputs :: verification rule #798
-// [Airaf-A-83-L47] Set min datetime attribute on CreateEventModal date inputs :: verification rule #817
-// [Airaf-A-83-L48] Set min datetime attribute on CreateEventModal date inputs :: verification rule #836
-// [Airaf-A-83-L49] Set min datetime attribute on CreateEventModal date inputs :: verification rule #855
-// [Airaf-A-83-L50] Set min datetime attribute on CreateEventModal date inputs :: verification rule #874
-// [Airaf-A-83-L51] Set min datetime attribute on CreateEventModal date inputs :: verification rule #893
-// [Airaf-A-83-L52] Set min datetime attribute on CreateEventModal date inputs :: verification rule #912
-// === [SPEC-BLOCK-END] ===
