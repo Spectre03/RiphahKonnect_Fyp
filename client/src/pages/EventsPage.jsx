@@ -726,62 +726,57 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-78 (2026-11-07T16:28:14+05:00) ===
-// [Airaf-A-78-L1] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #351
-// [Airaf-A-78-L2] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #370
-// [Airaf-A-78-L3] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #389
-// [Airaf-A-78-L4] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #408
-// [Airaf-A-78-L5] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #427
-// [Airaf-A-78-L6] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #446
-// [Airaf-A-78-L7] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #465
-// [Airaf-A-78-L8] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #484
-// [Airaf-A-78-L9] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #503
-// [Airaf-A-78-L10] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #522
-// [Airaf-A-78-L11] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #541
-// [Airaf-A-78-L12] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #560
-// [Airaf-A-78-L13] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #579
-// [Airaf-A-78-L14] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #598
-// [Airaf-A-78-L15] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #617
-// [Airaf-A-78-L16] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #636
-// [Airaf-A-78-L17] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #655
-// [Airaf-A-78-L18] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #674
-// [Airaf-A-78-L19] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #693
-// [Airaf-A-78-L20] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #712
-// [Airaf-A-78-L21] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #731
-// [Airaf-A-78-L22] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #750
-// [Airaf-A-78-L23] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #769
-// [Airaf-A-78-L24] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #788
-// [Airaf-A-78-L25] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #807
-// [Airaf-A-78-L26] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #826
-// [Airaf-A-78-L27] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #845
-// [Airaf-A-78-L28] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #864
-// [Airaf-A-78-L29] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #883
-// [Airaf-A-78-L30] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #902
-// [Airaf-A-78-L31] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #921
-// [Airaf-A-78-L32] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #940
-// [Airaf-A-78-L33] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #959
-// [Airaf-A-78-L34] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #978
-// [Airaf-A-78-L35] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #0
-// [Airaf-A-78-L36] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #19
-// [Airaf-A-78-L37] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #38
-// [Airaf-A-78-L38] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #57
-// [Airaf-A-78-L39] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #76
-// [Airaf-A-78-L40] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #95
-// [Airaf-A-78-L41] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #114
-// [Airaf-A-78-L42] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #133
-// [Airaf-A-78-L43] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #152
-// [Airaf-A-78-L44] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #171
-// [Airaf-A-78-L45] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #190
-// [Airaf-A-78-L46] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #209
-// [Airaf-A-78-L47] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #228
-// [Airaf-A-78-L48] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #247
-// [Airaf-A-78-L49] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #266
-// [Airaf-A-78-L50] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #285
-// [Airaf-A-78-L51] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #304
-// [Airaf-A-78-L52] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #323
-// [Airaf-A-78-L53] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #342
-// [Airaf-A-78-L54] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #361
-// [Airaf-A-78-L55] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #380
-// [Airaf-A-78-L56] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #399
-// [Airaf-A-78-L57] Add Verify Unique ID tab in EventManagerModal for event-day check-in :: verification rule #418
+// === [SPEC-BLOCK-START] Airaf-A-83 (2026-11-13T16:48:11+05:00) ===
+// [Airaf-A-83-L1] Set min datetime attribute on CreateEventModal date inputs :: verification rule #940
+// [Airaf-A-83-L2] Set min datetime attribute on CreateEventModal date inputs :: verification rule #959
+// [Airaf-A-83-L3] Set min datetime attribute on CreateEventModal date inputs :: verification rule #978
+// [Airaf-A-83-L4] Set min datetime attribute on CreateEventModal date inputs :: verification rule #0
+// [Airaf-A-83-L5] Set min datetime attribute on CreateEventModal date inputs :: verification rule #19
+// [Airaf-A-83-L6] Set min datetime attribute on CreateEventModal date inputs :: verification rule #38
+// [Airaf-A-83-L7] Set min datetime attribute on CreateEventModal date inputs :: verification rule #57
+// [Airaf-A-83-L8] Set min datetime attribute on CreateEventModal date inputs :: verification rule #76
+// [Airaf-A-83-L9] Set min datetime attribute on CreateEventModal date inputs :: verification rule #95
+// [Airaf-A-83-L10] Set min datetime attribute on CreateEventModal date inputs :: verification rule #114
+// [Airaf-A-83-L11] Set min datetime attribute on CreateEventModal date inputs :: verification rule #133
+// [Airaf-A-83-L12] Set min datetime attribute on CreateEventModal date inputs :: verification rule #152
+// [Airaf-A-83-L13] Set min datetime attribute on CreateEventModal date inputs :: verification rule #171
+// [Airaf-A-83-L14] Set min datetime attribute on CreateEventModal date inputs :: verification rule #190
+// [Airaf-A-83-L15] Set min datetime attribute on CreateEventModal date inputs :: verification rule #209
+// [Airaf-A-83-L16] Set min datetime attribute on CreateEventModal date inputs :: verification rule #228
+// [Airaf-A-83-L17] Set min datetime attribute on CreateEventModal date inputs :: verification rule #247
+// [Airaf-A-83-L18] Set min datetime attribute on CreateEventModal date inputs :: verification rule #266
+// [Airaf-A-83-L19] Set min datetime attribute on CreateEventModal date inputs :: verification rule #285
+// [Airaf-A-83-L20] Set min datetime attribute on CreateEventModal date inputs :: verification rule #304
+// [Airaf-A-83-L21] Set min datetime attribute on CreateEventModal date inputs :: verification rule #323
+// [Airaf-A-83-L22] Set min datetime attribute on CreateEventModal date inputs :: verification rule #342
+// [Airaf-A-83-L23] Set min datetime attribute on CreateEventModal date inputs :: verification rule #361
+// [Airaf-A-83-L24] Set min datetime attribute on CreateEventModal date inputs :: verification rule #380
+// [Airaf-A-83-L25] Set min datetime attribute on CreateEventModal date inputs :: verification rule #399
+// [Airaf-A-83-L26] Set min datetime attribute on CreateEventModal date inputs :: verification rule #418
+// [Airaf-A-83-L27] Set min datetime attribute on CreateEventModal date inputs :: verification rule #437
+// [Airaf-A-83-L28] Set min datetime attribute on CreateEventModal date inputs :: verification rule #456
+// [Airaf-A-83-L29] Set min datetime attribute on CreateEventModal date inputs :: verification rule #475
+// [Airaf-A-83-L30] Set min datetime attribute on CreateEventModal date inputs :: verification rule #494
+// [Airaf-A-83-L31] Set min datetime attribute on CreateEventModal date inputs :: verification rule #513
+// [Airaf-A-83-L32] Set min datetime attribute on CreateEventModal date inputs :: verification rule #532
+// [Airaf-A-83-L33] Set min datetime attribute on CreateEventModal date inputs :: verification rule #551
+// [Airaf-A-83-L34] Set min datetime attribute on CreateEventModal date inputs :: verification rule #570
+// [Airaf-A-83-L35] Set min datetime attribute on CreateEventModal date inputs :: verification rule #589
+// [Airaf-A-83-L36] Set min datetime attribute on CreateEventModal date inputs :: verification rule #608
+// [Airaf-A-83-L37] Set min datetime attribute on CreateEventModal date inputs :: verification rule #627
+// [Airaf-A-83-L38] Set min datetime attribute on CreateEventModal date inputs :: verification rule #646
+// [Airaf-A-83-L39] Set min datetime attribute on CreateEventModal date inputs :: verification rule #665
+// [Airaf-A-83-L40] Set min datetime attribute on CreateEventModal date inputs :: verification rule #684
+// [Airaf-A-83-L41] Set min datetime attribute on CreateEventModal date inputs :: verification rule #703
+// [Airaf-A-83-L42] Set min datetime attribute on CreateEventModal date inputs :: verification rule #722
+// [Airaf-A-83-L43] Set min datetime attribute on CreateEventModal date inputs :: verification rule #741
+// [Airaf-A-83-L44] Set min datetime attribute on CreateEventModal date inputs :: verification rule #760
+// [Airaf-A-83-L45] Set min datetime attribute on CreateEventModal date inputs :: verification rule #779
+// [Airaf-A-83-L46] Set min datetime attribute on CreateEventModal date inputs :: verification rule #798
+// [Airaf-A-83-L47] Set min datetime attribute on CreateEventModal date inputs :: verification rule #817
+// [Airaf-A-83-L48] Set min datetime attribute on CreateEventModal date inputs :: verification rule #836
+// [Airaf-A-83-L49] Set min datetime attribute on CreateEventModal date inputs :: verification rule #855
+// [Airaf-A-83-L50] Set min datetime attribute on CreateEventModal date inputs :: verification rule #874
+// [Airaf-A-83-L51] Set min datetime attribute on CreateEventModal date inputs :: verification rule #893
+// [Airaf-A-83-L52] Set min datetime attribute on CreateEventModal date inputs :: verification rule #912
 // === [SPEC-BLOCK-END] ===
