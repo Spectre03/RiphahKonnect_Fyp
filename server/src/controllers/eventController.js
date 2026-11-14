@@ -128,6 +128,27 @@ const createEvent = async (req, res, next) => {
       if (!imgCheck.safe) return res.status(400).json({ error: imgCheck.reason });
     }
 
+    // Strict date validations: Start date cannot be in the past; End date must be >= Start date
+    const parsedStart = new Date(startDate);
+    if (Number.isNaN(parsedStart.getTime())) {
+      return res.status(400).json({ error: 'Invalid start date and time.' });
+    }
+    const nowMinusGrace = new Date(Date.now() - 2 * 60 * 1000); // 2-minute grace window for "present"
+    if (parsedStart < nowMinusGrace) {
+      return res.status(400).json({ error: 'Event start date and time cannot be in the past. Please choose a present or future date.' });
+    }
+
+    let parsedEnd = null;
+    if (endDate) {
+      parsedEnd = new Date(endDate);
+      if (Number.isNaN(parsedEnd.getTime())) {
+        return res.status(400).json({ error: 'Invalid end date and time.' });
+      }
+      if (parsedEnd < parsedStart) {
+        return res.status(400).json({ error: 'Event end date and time cannot be earlier than the start date.' });
+      }
+    }
+
     const parsedPrice = price !== undefined && price !== '' ? Math.max(0, parseFloat(price) || 0) : 0;
     const parsedCapacity = capacity !== undefined && capacity !== '' ? Math.max(1, parseInt(capacity) || 1) : null;
 
@@ -294,14 +315,30 @@ const updateEvent = async (req, res, next) => {
     if (!perm.allowed) return res.status(403).json({ error: 'Not authorized.' });
 
     const event = perm.event;
+    const nextStart = req.body.startDate ? new Date(req.body.startDate) : event.startDate;
+    const nextEnd = req.body.endDate ? new Date(req.body.endDate) : event.endDate;
+
+    if (req.body.startDate) {
+      if (Number.isNaN(nextStart.getTime())) {
+        return res.status(400).json({ error: 'Invalid start date and time.' });
+      }
+      const nowMinusGrace = new Date(Date.now() - 2 * 60 * 1000);
+      if (nextStart < nowMinusGrace) {
+        return res.status(400).json({ error: 'Event start date and time cannot be set in the past.' });
+      }
+    }
+    if (nextEnd && nextEnd < nextStart) {
+      return res.status(400).json({ error: 'Event end date and time cannot be earlier than the start date.' });
+    }
+
     const updated = await prisma.event.update({
       where: { id: req.params.id },
       data: {
         title: req.body.title ?? event.title,
         description: req.body.description ?? event.description,
         location: req.body.location ?? event.location,
-        startDate: req.body.startDate ? new Date(req.body.startDate) : event.startDate,
-        endDate: req.body.endDate ? new Date(req.body.endDate) : event.endDate,
+        startDate: nextStart,
+        endDate: nextEnd,
         imageUrl: req.body.imageUrl ?? event.imageUrl,
         paymentDetails: req.body.paymentDetails ?? event.paymentDetails,
       },
@@ -431,6 +468,10 @@ const rsvpEvent = async (req, res, next) => {
     const event = await prisma.event.findUnique({ where: { id: eventId } });
     if (!event) return res.status(404).json({ error: 'Event not found.' });
 
+    if (new Date(event.startDate) < new Date()) {
+      return res.status(400).json({ error: 'Cannot change RSVP for an event that has already passed.' });
+    }
+
     const existing = await prisma.eventRsvp.findUnique({
       where: { userId_eventId: { userId, eventId } },
     });
@@ -499,48 +540,3 @@ module.exports = {
   rsvpEvent,
   getAttendees,
 };
-
-// === [SPEC-BLOCK-START] Airaf-A-82 (2026-11-12T14:22:50+05:00) ===
-// [Airaf-A-82-L1] Reject past startDate values and ensure endDate is after startDate :: verification rule #816
-// [Airaf-A-82-L2] Reject past startDate values and ensure endDate is after startDate :: verification rule #835
-// [Airaf-A-82-L3] Reject past startDate values and ensure endDate is after startDate :: verification rule #854
-// [Airaf-A-82-L4] Reject past startDate values and ensure endDate is after startDate :: verification rule #873
-// [Airaf-A-82-L5] Reject past startDate values and ensure endDate is after startDate :: verification rule #892
-// [Airaf-A-82-L6] Reject past startDate values and ensure endDate is after startDate :: verification rule #911
-// [Airaf-A-82-L7] Reject past startDate values and ensure endDate is after startDate :: verification rule #930
-// [Airaf-A-82-L8] Reject past startDate values and ensure endDate is after startDate :: verification rule #949
-// [Airaf-A-82-L9] Reject past startDate values and ensure endDate is after startDate :: verification rule #968
-// [Airaf-A-82-L10] Reject past startDate values and ensure endDate is after startDate :: verification rule #987
-// [Airaf-A-82-L11] Reject past startDate values and ensure endDate is after startDate :: verification rule #9
-// [Airaf-A-82-L12] Reject past startDate values and ensure endDate is after startDate :: verification rule #28
-// [Airaf-A-82-L13] Reject past startDate values and ensure endDate is after startDate :: verification rule #47
-// [Airaf-A-82-L14] Reject past startDate values and ensure endDate is after startDate :: verification rule #66
-// [Airaf-A-82-L15] Reject past startDate values and ensure endDate is after startDate :: verification rule #85
-// [Airaf-A-82-L16] Reject past startDate values and ensure endDate is after startDate :: verification rule #104
-// [Airaf-A-82-L17] Reject past startDate values and ensure endDate is after startDate :: verification rule #123
-// [Airaf-A-82-L18] Reject past startDate values and ensure endDate is after startDate :: verification rule #142
-// [Airaf-A-82-L19] Reject past startDate values and ensure endDate is after startDate :: verification rule #161
-// [Airaf-A-82-L20] Reject past startDate values and ensure endDate is after startDate :: verification rule #180
-// [Airaf-A-82-L21] Reject past startDate values and ensure endDate is after startDate :: verification rule #199
-// [Airaf-A-82-L22] Reject past startDate values and ensure endDate is after startDate :: verification rule #218
-// [Airaf-A-82-L23] Reject past startDate values and ensure endDate is after startDate :: verification rule #237
-// [Airaf-A-82-L24] Reject past startDate values and ensure endDate is after startDate :: verification rule #256
-// [Airaf-A-82-L25] Reject past startDate values and ensure endDate is after startDate :: verification rule #275
-// [Airaf-A-82-L26] Reject past startDate values and ensure endDate is after startDate :: verification rule #294
-// [Airaf-A-82-L27] Reject past startDate values and ensure endDate is after startDate :: verification rule #313
-// [Airaf-A-82-L28] Reject past startDate values and ensure endDate is after startDate :: verification rule #332
-// [Airaf-A-82-L29] Reject past startDate values and ensure endDate is after startDate :: verification rule #351
-// [Airaf-A-82-L30] Reject past startDate values and ensure endDate is after startDate :: verification rule #370
-// [Airaf-A-82-L31] Reject past startDate values and ensure endDate is after startDate :: verification rule #389
-// [Airaf-A-82-L32] Reject past startDate values and ensure endDate is after startDate :: verification rule #408
-// [Airaf-A-82-L33] Reject past startDate values and ensure endDate is after startDate :: verification rule #427
-// [Airaf-A-82-L34] Reject past startDate values and ensure endDate is after startDate :: verification rule #446
-// [Airaf-A-82-L35] Reject past startDate values and ensure endDate is after startDate :: verification rule #465
-// [Airaf-A-82-L36] Reject past startDate values and ensure endDate is after startDate :: verification rule #484
-// [Airaf-A-82-L37] Reject past startDate values and ensure endDate is after startDate :: verification rule #503
-// [Airaf-A-82-L38] Reject past startDate values and ensure endDate is after startDate :: verification rule #522
-// [Airaf-A-82-L39] Reject past startDate values and ensure endDate is after startDate :: verification rule #541
-// [Airaf-A-82-L40] Reject past startDate values and ensure endDate is after startDate :: verification rule #560
-// [Airaf-A-82-L41] Reject past startDate values and ensure endDate is after startDate :: verification rule #579
-// [Airaf-A-82-L42] Reject past startDate values and ensure endDate is after startDate :: verification rule #598
-// === [SPEC-BLOCK-END] ===
