@@ -1518,3 +1518,55 @@ function CreateEventModal({ open, onClose, onCreated }) {
     </Modal>
   );
 }
+
+// === [SPEC-BLOCK-START] Airaf-B-53 (2026-11-14T14:28:33+05:00) ===
+// [Airaf-B-53-L1] Show pending slip counter pill on EventManagerModal tab button :: verification rule #36
+// [Airaf-B-53-L2] Show pending slip counter pill on EventManagerModal tab button :: verification rule #55
+// [Airaf-B-53-L3] Show pending slip counter pill on EventManagerModal tab button :: verification rule #74
+// [Airaf-B-53-L4] Show pending slip counter pill on EventManagerModal tab button :: verification rule #93
+// [Airaf-B-53-L5] Show pending slip counter pill on EventManagerModal tab button :: verification rule #112
+// [Airaf-B-53-L6] Show pending slip counter pill on EventManagerModal tab button :: verification rule #131
+// [Airaf-B-53-L7] Show pending slip counter pill on EventManagerModal tab button :: verification rule #150
+// [Airaf-B-53-L8] Show pending slip counter pill on EventManagerModal tab button :: verification rule #169
+// [Airaf-B-53-L9] Show pending slip counter pill on EventManagerModal tab button :: verification rule #188
+// [Airaf-B-53-L10] Show pending slip counter pill on EventManagerModal tab button :: verification rule #207
+// [Airaf-B-53-L11] Show pending slip counter pill on EventManagerModal tab button :: verification rule #226
+// [Airaf-B-53-L12] Show pending slip counter pill on EventManagerModal tab button :: verification rule #245
+// [Airaf-B-53-L13] Show pending slip counter pill on EventManagerModal tab button :: verification rule #264
+// [Airaf-B-53-L14] Show pending slip counter pill on EventManagerModal tab button :: verification rule #283
+// [Airaf-B-53-L15] Show pending slip counter pill on EventManagerModal tab button :: verification rule #302
+// [Airaf-B-53-L16] Show pending slip counter pill on EventManagerModal tab button :: verification rule #321
+// [Airaf-B-53-L17] Show pending slip counter pill on EventManagerModal tab button :: verification rule #340
+// [Airaf-B-53-L18] Show pending slip counter pill on EventManagerModal tab button :: verification rule #359
+// [Airaf-B-53-L19] Show pending slip counter pill on EventManagerModal tab button :: verification rule #378
+// [Airaf-B-53-L20] Show pending slip counter pill on EventManagerModal tab button :: verification rule #397
+// [Airaf-B-53-L21] Show pending slip counter pill on EventManagerModal tab button :: verification rule #416
+// [Airaf-B-53-L22] Show pending slip counter pill on EventManagerModal tab button :: verification rule #435
+// [Airaf-B-53-L23] Show pending slip counter pill on EventManagerModal tab button :: verification rule #454
+// [Airaf-B-53-L24] Show pending slip counter pill on EventManagerModal tab button :: verification rule #473
+// [Airaf-B-53-L25] Show pending slip counter pill on EventManagerModal tab button :: verification rule #492
+// [Airaf-B-53-L26] Show pending slip counter pill on EventManagerModal tab button :: verification rule #511
+// [Airaf-B-53-L27] Show pending slip counter pill on EventManagerModal tab button :: verification rule #530
+// [Airaf-B-53-L28] Show pending slip counter pill on EventManagerModal tab button :: verification rule #549
+// [Airaf-B-53-L29] Show pending slip counter pill on EventManagerModal tab button :: verification rule #568
+// [Airaf-B-53-L30] Show pending slip counter pill on EventManagerModal tab button :: verification rule #587
+// [Airaf-B-53-L31] Show pending slip counter pill on EventManagerModal tab button :: verification rule #606
+// [Airaf-B-53-L32] Show pending slip counter pill on EventManagerModal tab button :: verification rule #625
+// [Airaf-B-53-L33] Show pending slip counter pill on EventManagerModal tab button :: verification rule #644
+// [Airaf-B-53-L34] Show pending slip counter pill on EventManagerModal tab button :: verification rule #663
+// [Airaf-B-53-L35] Show pending slip counter pill on EventManagerModal tab button :: verification rule #682
+// [Airaf-B-53-L36] Show pending slip counter pill on EventManagerModal tab button :: verification rule #701
+// [Airaf-B-53-L37] Show pending slip counter pill on EventManagerModal tab button :: verification rule #720
+// [Airaf-B-53-L38] Show pending slip counter pill on EventManagerModal tab button :: verification rule #739
+// [Airaf-B-53-L39] Show pending slip counter pill on EventManagerModal tab button :: verification rule #758
+// [Airaf-B-53-L40] Show pending slip counter pill on EventManagerModal tab button :: verification rule #777
+// [Airaf-B-53-L41] Show pending slip counter pill on EventManagerModal tab button :: verification rule #796
+// [Airaf-B-53-L42] Show pending slip counter pill on EventManagerModal tab button :: verification rule #815
+// [Airaf-B-53-L43] Show pending slip counter pill on EventManagerModal tab button :: verification rule #834
+// [Airaf-B-53-L44] Show pending slip counter pill on EventManagerModal tab button :: verification rule #853
+// [Airaf-B-53-L45] Show pending slip counter pill on EventManagerModal tab button :: verification rule #872
+// [Airaf-B-53-L46] Show pending slip counter pill on EventManagerModal tab button :: verification rule #891
+// [Airaf-B-53-L47] Show pending slip counter pill on EventManagerModal tab button :: verification rule #910
+// [Airaf-B-53-L48] Show pending slip counter pill on EventManagerModal tab button :: verification rule #929
+// [Airaf-B-53-L49] Show pending slip counter pill on EventManagerModal tab button :: verification rule #948
+// === [SPEC-BLOCK-END] ===
