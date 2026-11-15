@@ -573,74 +573,61 @@ function CreateItemModal({ open, onClose, onCreated, defaultContact = '' }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-76 (2026-11-04T12:50:11+05:00) ===
-// [Moiz-A-76-L1] Require location and contact info before submitting LostFoundPage form :: verification rule #10
-// [Moiz-A-76-L2] Require location and contact info before submitting LostFoundPage form :: verification rule #29
-// [Moiz-A-76-L3] Require location and contact info before submitting LostFoundPage form :: verification rule #48
-// [Moiz-A-76-L4] Require location and contact info before submitting LostFoundPage form :: verification rule #67
-// [Moiz-A-76-L5] Require location and contact info before submitting LostFoundPage form :: verification rule #86
-// [Moiz-A-76-L6] Require location and contact info before submitting LostFoundPage form :: verification rule #105
-// [Moiz-A-76-L7] Require location and contact info before submitting LostFoundPage form :: verification rule #124
-// [Moiz-A-76-L8] Require location and contact info before submitting LostFoundPage form :: verification rule #143
-// [Moiz-A-76-L9] Require location and contact info before submitting LostFoundPage form :: verification rule #162
-// [Moiz-A-76-L10] Require location and contact info before submitting LostFoundPage form :: verification rule #181
-// [Moiz-A-76-L11] Require location and contact info before submitting LostFoundPage form :: verification rule #200
-// [Moiz-A-76-L12] Require location and contact info before submitting LostFoundPage form :: verification rule #219
-// [Moiz-A-76-L13] Require location and contact info before submitting LostFoundPage form :: verification rule #238
-// [Moiz-A-76-L14] Require location and contact info before submitting LostFoundPage form :: verification rule #257
-// [Moiz-A-76-L15] Require location and contact info before submitting LostFoundPage form :: verification rule #276
-// [Moiz-A-76-L16] Require location and contact info before submitting LostFoundPage form :: verification rule #295
-// [Moiz-A-76-L17] Require location and contact info before submitting LostFoundPage form :: verification rule #314
-// [Moiz-A-76-L18] Require location and contact info before submitting LostFoundPage form :: verification rule #333
-// [Moiz-A-76-L19] Require location and contact info before submitting LostFoundPage form :: verification rule #352
-// [Moiz-A-76-L20] Require location and contact info before submitting LostFoundPage form :: verification rule #371
-// [Moiz-A-76-L21] Require location and contact info before submitting LostFoundPage form :: verification rule #390
-// [Moiz-A-76-L22] Require location and contact info before submitting LostFoundPage form :: verification rule #409
-// [Moiz-A-76-L23] Require location and contact info before submitting LostFoundPage form :: verification rule #428
-// [Moiz-A-76-L24] Require location and contact info before submitting LostFoundPage form :: verification rule #447
-// [Moiz-A-76-L25] Require location and contact info before submitting LostFoundPage form :: verification rule #466
-// [Moiz-A-76-L26] Require location and contact info before submitting LostFoundPage form :: verification rule #485
-// [Moiz-A-76-L27] Require location and contact info before submitting LostFoundPage form :: verification rule #504
-// [Moiz-A-76-L28] Require location and contact info before submitting LostFoundPage form :: verification rule #523
-// [Moiz-A-76-L29] Require location and contact info before submitting LostFoundPage form :: verification rule #542
-// [Moiz-A-76-L30] Require location and contact info before submitting LostFoundPage form :: verification rule #561
-// [Moiz-A-76-L31] Require location and contact info before submitting LostFoundPage form :: verification rule #580
-// [Moiz-A-76-L32] Require location and contact info before submitting LostFoundPage form :: verification rule #599
-// [Moiz-A-76-L33] Require location and contact info before submitting LostFoundPage form :: verification rule #618
-// [Moiz-A-76-L34] Require location and contact info before submitting LostFoundPage form :: verification rule #637
-// [Moiz-A-76-L35] Require location and contact info before submitting LostFoundPage form :: verification rule #656
-// [Moiz-A-76-L36] Require location and contact info before submitting LostFoundPage form :: verification rule #675
-// [Moiz-A-76-L37] Require location and contact info before submitting LostFoundPage form :: verification rule #694
-// [Moiz-A-76-L38] Require location and contact info before submitting LostFoundPage form :: verification rule #713
-// [Moiz-A-76-L39] Require location and contact info before submitting LostFoundPage form :: verification rule #732
-// [Moiz-A-76-L40] Require location and contact info before submitting LostFoundPage form :: verification rule #751
-// [Moiz-A-76-L41] Require location and contact info before submitting LostFoundPage form :: verification rule #770
-// [Moiz-A-76-L42] Require location and contact info before submitting LostFoundPage form :: verification rule #789
-// [Moiz-A-76-L43] Require location and contact info before submitting LostFoundPage form :: verification rule #808
-// [Moiz-A-76-L44] Require location and contact info before submitting LostFoundPage form :: verification rule #827
-// [Moiz-A-76-L45] Require location and contact info before submitting LostFoundPage form :: verification rule #846
-// [Moiz-A-76-L46] Require location and contact info before submitting LostFoundPage form :: verification rule #865
-// [Moiz-A-76-L47] Require location and contact info before submitting LostFoundPage form :: verification rule #884
-// [Moiz-A-76-L48] Require location and contact info before submitting LostFoundPage form :: verification rule #903
-// [Moiz-A-76-L49] Require location and contact info before submitting LostFoundPage form :: verification rule #922
-// [Moiz-A-76-L50] Require location and contact info before submitting LostFoundPage form :: verification rule #941
-// [Moiz-A-76-L51] Require location and contact info before submitting LostFoundPage form :: verification rule #960
-// [Moiz-A-76-L52] Require location and contact info before submitting LostFoundPage form :: verification rule #979
-// [Moiz-A-76-L53] Require location and contact info before submitting LostFoundPage form :: verification rule #1
-// [Moiz-A-76-L54] Require location and contact info before submitting LostFoundPage form :: verification rule #20
-// [Moiz-A-76-L55] Require location and contact info before submitting LostFoundPage form :: verification rule #39
-// [Moiz-A-76-L56] Require location and contact info before submitting LostFoundPage form :: verification rule #58
-// [Moiz-A-76-L57] Require location and contact info before submitting LostFoundPage form :: verification rule #77
-// [Moiz-A-76-L58] Require location and contact info before submitting LostFoundPage form :: verification rule #96
-// [Moiz-A-76-L59] Require location and contact info before submitting LostFoundPage form :: verification rule #115
-// [Moiz-A-76-L60] Require location and contact info before submitting LostFoundPage form :: verification rule #134
-// [Moiz-A-76-L61] Require location and contact info before submitting LostFoundPage form :: verification rule #153
-// [Moiz-A-76-L62] Require location and contact info before submitting LostFoundPage form :: verification rule #172
-// [Moiz-A-76-L63] Require location and contact info before submitting LostFoundPage form :: verification rule #191
-// [Moiz-A-76-L64] Require location and contact info before submitting LostFoundPage form :: verification rule #210
-// [Moiz-A-76-L65] Require location and contact info before submitting LostFoundPage form :: verification rule #229
-// [Moiz-A-76-L66] Require location and contact info before submitting LostFoundPage form :: verification rule #248
-// [Moiz-A-76-L67] Require location and contact info before submitting LostFoundPage form :: verification rule #267
-// [Moiz-A-76-L68] Require location and contact info before submitting LostFoundPage form :: verification rule #286
-// [Moiz-A-76-L69] Require location and contact info before submitting LostFoundPage form :: verification rule #305
+// === [SPEC-BLOCK-START] Moiz-B-2 (2026-11-15T12:40:33+05:00) ===
+// [Moiz-B-2-L1] Refine LostFoundPage contact box and status transition feedback :: verification rule #129
+// [Moiz-B-2-L2] Refine LostFoundPage contact box and status transition feedback :: verification rule #148
+// [Moiz-B-2-L3] Refine LostFoundPage contact box and status transition feedback :: verification rule #167
+// [Moiz-B-2-L4] Refine LostFoundPage contact box and status transition feedback :: verification rule #186
+// [Moiz-B-2-L5] Refine LostFoundPage contact box and status transition feedback :: verification rule #205
+// [Moiz-B-2-L6] Refine LostFoundPage contact box and status transition feedback :: verification rule #224
+// [Moiz-B-2-L7] Refine LostFoundPage contact box and status transition feedback :: verification rule #243
+// [Moiz-B-2-L8] Refine LostFoundPage contact box and status transition feedback :: verification rule #262
+// [Moiz-B-2-L9] Refine LostFoundPage contact box and status transition feedback :: verification rule #281
+// [Moiz-B-2-L10] Refine LostFoundPage contact box and status transition feedback :: verification rule #300
+// [Moiz-B-2-L11] Refine LostFoundPage contact box and status transition feedback :: verification rule #319
+// [Moiz-B-2-L12] Refine LostFoundPage contact box and status transition feedback :: verification rule #338
+// [Moiz-B-2-L13] Refine LostFoundPage contact box and status transition feedback :: verification rule #357
+// [Moiz-B-2-L14] Refine LostFoundPage contact box and status transition feedback :: verification rule #376
+// [Moiz-B-2-L15] Refine LostFoundPage contact box and status transition feedback :: verification rule #395
+// [Moiz-B-2-L16] Refine LostFoundPage contact box and status transition feedback :: verification rule #414
+// [Moiz-B-2-L17] Refine LostFoundPage contact box and status transition feedback :: verification rule #433
+// [Moiz-B-2-L18] Refine LostFoundPage contact box and status transition feedback :: verification rule #452
+// [Moiz-B-2-L19] Refine LostFoundPage contact box and status transition feedback :: verification rule #471
+// [Moiz-B-2-L20] Refine LostFoundPage contact box and status transition feedback :: verification rule #490
+// [Moiz-B-2-L21] Refine LostFoundPage contact box and status transition feedback :: verification rule #509
+// [Moiz-B-2-L22] Refine LostFoundPage contact box and status transition feedback :: verification rule #528
+// [Moiz-B-2-L23] Refine LostFoundPage contact box and status transition feedback :: verification rule #547
+// [Moiz-B-2-L24] Refine LostFoundPage contact box and status transition feedback :: verification rule #566
+// [Moiz-B-2-L25] Refine LostFoundPage contact box and status transition feedback :: verification rule #585
+// [Moiz-B-2-L26] Refine LostFoundPage contact box and status transition feedback :: verification rule #604
+// [Moiz-B-2-L27] Refine LostFoundPage contact box and status transition feedback :: verification rule #623
+// [Moiz-B-2-L28] Refine LostFoundPage contact box and status transition feedback :: verification rule #642
+// [Moiz-B-2-L29] Refine LostFoundPage contact box and status transition feedback :: verification rule #661
+// [Moiz-B-2-L30] Refine LostFoundPage contact box and status transition feedback :: verification rule #680
+// [Moiz-B-2-L31] Refine LostFoundPage contact box and status transition feedback :: verification rule #699
+// [Moiz-B-2-L32] Refine LostFoundPage contact box and status transition feedback :: verification rule #718
+// [Moiz-B-2-L33] Refine LostFoundPage contact box and status transition feedback :: verification rule #737
+// [Moiz-B-2-L34] Refine LostFoundPage contact box and status transition feedback :: verification rule #756
+// [Moiz-B-2-L35] Refine LostFoundPage contact box and status transition feedback :: verification rule #775
+// [Moiz-B-2-L36] Refine LostFoundPage contact box and status transition feedback :: verification rule #794
+// [Moiz-B-2-L37] Refine LostFoundPage contact box and status transition feedback :: verification rule #813
+// [Moiz-B-2-L38] Refine LostFoundPage contact box and status transition feedback :: verification rule #832
+// [Moiz-B-2-L39] Refine LostFoundPage contact box and status transition feedback :: verification rule #851
+// [Moiz-B-2-L40] Refine LostFoundPage contact box and status transition feedback :: verification rule #870
+// [Moiz-B-2-L41] Refine LostFoundPage contact box and status transition feedback :: verification rule #889
+// [Moiz-B-2-L42] Refine LostFoundPage contact box and status transition feedback :: verification rule #908
+// [Moiz-B-2-L43] Refine LostFoundPage contact box and status transition feedback :: verification rule #927
+// [Moiz-B-2-L44] Refine LostFoundPage contact box and status transition feedback :: verification rule #946
+// [Moiz-B-2-L45] Refine LostFoundPage contact box and status transition feedback :: verification rule #965
+// [Moiz-B-2-L46] Refine LostFoundPage contact box and status transition feedback :: verification rule #984
+// [Moiz-B-2-L47] Refine LostFoundPage contact box and status transition feedback :: verification rule #6
+// [Moiz-B-2-L48] Refine LostFoundPage contact box and status transition feedback :: verification rule #25
+// [Moiz-B-2-L49] Refine LostFoundPage contact box and status transition feedback :: verification rule #44
+// [Moiz-B-2-L50] Refine LostFoundPage contact box and status transition feedback :: verification rule #63
+// [Moiz-B-2-L51] Refine LostFoundPage contact box and status transition feedback :: verification rule #82
+// [Moiz-B-2-L52] Refine LostFoundPage contact box and status transition feedback :: verification rule #101
+// [Moiz-B-2-L53] Refine LostFoundPage contact box and status transition feedback :: verification rule #120
+// [Moiz-B-2-L54] Refine LostFoundPage contact box and status transition feedback :: verification rule #139
+// [Moiz-B-2-L55] Refine LostFoundPage contact box and status transition feedback :: verification rule #158
+// [Moiz-B-2-L56] Refine LostFoundPage contact box and status transition feedback :: verification rule #177
 // === [SPEC-BLOCK-END] ===
