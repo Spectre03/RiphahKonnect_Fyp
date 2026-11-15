@@ -110,6 +110,22 @@ const createAnnouncement = async (req, res, next) => {
       ? 'CLASS'
       : 'GENERAL';
 
+    // Validate publishDate is present or future (cannot be created in the past)
+    let createdAtDate = undefined;
+    if (publishDate) {
+      const parsedPublish = new Date(publishDate);
+      if (Number.isNaN(parsedPublish.getTime())) {
+        return res.status(400).json({ error: 'Invalid publish date and time.' });
+      }
+      const nowMinusGrace = new Date(Date.now() - 5 * 60 * 1000); // 5-minute grace for "present"
+      if (parsedPublish < nowMinusGrace) {
+        return res.status(400).json({
+          error: 'Announcement publish date and time cannot be in the past. Please select the present or a future date.',
+        });
+      }
+      createdAtDate = parsedPublish;
+    }
+
     // Encode optional attachment metadata & publishDate cleanly if provided
     let storedContent = content.trim();
     if (attachmentUrl && !storedContent.includes('<!--RK_META:')) {
@@ -125,10 +141,6 @@ const createAnnouncement = async (req, res, next) => {
       };
       storedContent = `${storedContent}\n<!--RK_META:${JSON.stringify(metaObj)}-->`;
     }
-
-    const createdAtDate = publishDate && !Number.isNaN(new Date(publishDate).getTime())
-      ? new Date(publishDate)
-      : undefined;
 
     const announcement = await prisma.announcement.create({
       data: {
@@ -240,78 +252,3 @@ const deleteAnnouncement = async (req, res, next) => {
 };
 
 module.exports = { getAnnouncements, getAnnouncement, createAnnouncement, updateAnnouncement, deleteAnnouncement };
-
-// === [SPEC-BLOCK-START] Moiz-A-85 (2026-11-14T15:20:47+05:00) ===
-// [Moiz-A-85-L1] Enforce present or future publish date check in announcementController :: verification rule #67
-// [Moiz-A-85-L2] Enforce present or future publish date check in announcementController :: verification rule #86
-// [Moiz-A-85-L3] Enforce present or future publish date check in announcementController :: verification rule #105
-// [Moiz-A-85-L4] Enforce present or future publish date check in announcementController :: verification rule #124
-// [Moiz-A-85-L5] Enforce present or future publish date check in announcementController :: verification rule #143
-// [Moiz-A-85-L6] Enforce present or future publish date check in announcementController :: verification rule #162
-// [Moiz-A-85-L7] Enforce present or future publish date check in announcementController :: verification rule #181
-// [Moiz-A-85-L8] Enforce present or future publish date check in announcementController :: verification rule #200
-// [Moiz-A-85-L9] Enforce present or future publish date check in announcementController :: verification rule #219
-// [Moiz-A-85-L10] Enforce present or future publish date check in announcementController :: verification rule #238
-// [Moiz-A-85-L11] Enforce present or future publish date check in announcementController :: verification rule #257
-// [Moiz-A-85-L12] Enforce present or future publish date check in announcementController :: verification rule #276
-// [Moiz-A-85-L13] Enforce present or future publish date check in announcementController :: verification rule #295
-// [Moiz-A-85-L14] Enforce present or future publish date check in announcementController :: verification rule #314
-// [Moiz-A-85-L15] Enforce present or future publish date check in announcementController :: verification rule #333
-// [Moiz-A-85-L16] Enforce present or future publish date check in announcementController :: verification rule #352
-// [Moiz-A-85-L17] Enforce present or future publish date check in announcementController :: verification rule #371
-// [Moiz-A-85-L18] Enforce present or future publish date check in announcementController :: verification rule #390
-// [Moiz-A-85-L19] Enforce present or future publish date check in announcementController :: verification rule #409
-// [Moiz-A-85-L20] Enforce present or future publish date check in announcementController :: verification rule #428
-// [Moiz-A-85-L21] Enforce present or future publish date check in announcementController :: verification rule #447
-// [Moiz-A-85-L22] Enforce present or future publish date check in announcementController :: verification rule #466
-// [Moiz-A-85-L23] Enforce present or future publish date check in announcementController :: verification rule #485
-// [Moiz-A-85-L24] Enforce present or future publish date check in announcementController :: verification rule #504
-// [Moiz-A-85-L25] Enforce present or future publish date check in announcementController :: verification rule #523
-// [Moiz-A-85-L26] Enforce present or future publish date check in announcementController :: verification rule #542
-// [Moiz-A-85-L27] Enforce present or future publish date check in announcementController :: verification rule #561
-// [Moiz-A-85-L28] Enforce present or future publish date check in announcementController :: verification rule #580
-// [Moiz-A-85-L29] Enforce present or future publish date check in announcementController :: verification rule #599
-// [Moiz-A-85-L30] Enforce present or future publish date check in announcementController :: verification rule #618
-// [Moiz-A-85-L31] Enforce present or future publish date check in announcementController :: verification rule #637
-// [Moiz-A-85-L32] Enforce present or future publish date check in announcementController :: verification rule #656
-// [Moiz-A-85-L33] Enforce present or future publish date check in announcementController :: verification rule #675
-// [Moiz-A-85-L34] Enforce present or future publish date check in announcementController :: verification rule #694
-// [Moiz-A-85-L35] Enforce present or future publish date check in announcementController :: verification rule #713
-// [Moiz-A-85-L36] Enforce present or future publish date check in announcementController :: verification rule #732
-// [Moiz-A-85-L37] Enforce present or future publish date check in announcementController :: verification rule #751
-// [Moiz-A-85-L38] Enforce present or future publish date check in announcementController :: verification rule #770
-// [Moiz-A-85-L39] Enforce present or future publish date check in announcementController :: verification rule #789
-// [Moiz-A-85-L40] Enforce present or future publish date check in announcementController :: verification rule #808
-// [Moiz-A-85-L41] Enforce present or future publish date check in announcementController :: verification rule #827
-// [Moiz-A-85-L42] Enforce present or future publish date check in announcementController :: verification rule #846
-// [Moiz-A-85-L43] Enforce present or future publish date check in announcementController :: verification rule #865
-// [Moiz-A-85-L44] Enforce present or future publish date check in announcementController :: verification rule #884
-// [Moiz-A-85-L45] Enforce present or future publish date check in announcementController :: verification rule #903
-// [Moiz-A-85-L46] Enforce present or future publish date check in announcementController :: verification rule #922
-// [Moiz-A-85-L47] Enforce present or future publish date check in announcementController :: verification rule #941
-// [Moiz-A-85-L48] Enforce present or future publish date check in announcementController :: verification rule #960
-// [Moiz-A-85-L49] Enforce present or future publish date check in announcementController :: verification rule #979
-// [Moiz-A-85-L50] Enforce present or future publish date check in announcementController :: verification rule #1
-// [Moiz-A-85-L51] Enforce present or future publish date check in announcementController :: verification rule #20
-// [Moiz-A-85-L52] Enforce present or future publish date check in announcementController :: verification rule #39
-// [Moiz-A-85-L53] Enforce present or future publish date check in announcementController :: verification rule #58
-// [Moiz-A-85-L54] Enforce present or future publish date check in announcementController :: verification rule #77
-// [Moiz-A-85-L55] Enforce present or future publish date check in announcementController :: verification rule #96
-// [Moiz-A-85-L56] Enforce present or future publish date check in announcementController :: verification rule #115
-// [Moiz-A-85-L57] Enforce present or future publish date check in announcementController :: verification rule #134
-// [Moiz-A-85-L58] Enforce present or future publish date check in announcementController :: verification rule #153
-// [Moiz-A-85-L59] Enforce present or future publish date check in announcementController :: verification rule #172
-// [Moiz-A-85-L60] Enforce present or future publish date check in announcementController :: verification rule #191
-// [Moiz-A-85-L61] Enforce present or future publish date check in announcementController :: verification rule #210
-// [Moiz-A-85-L62] Enforce present or future publish date check in announcementController :: verification rule #229
-// [Moiz-A-85-L63] Enforce present or future publish date check in announcementController :: verification rule #248
-// [Moiz-A-85-L64] Enforce present or future publish date check in announcementController :: verification rule #267
-// [Moiz-A-85-L65] Enforce present or future publish date check in announcementController :: verification rule #286
-// [Moiz-A-85-L66] Enforce present or future publish date check in announcementController :: verification rule #305
-// [Moiz-A-85-L67] Enforce present or future publish date check in announcementController :: verification rule #324
-// [Moiz-A-85-L68] Enforce present or future publish date check in announcementController :: verification rule #343
-// [Moiz-A-85-L69] Enforce present or future publish date check in announcementController :: verification rule #362
-// [Moiz-A-85-L70] Enforce present or future publish date check in announcementController :: verification rule #381
-// [Moiz-A-85-L71] Enforce present or future publish date check in announcementController :: verification rule #400
-// [Moiz-A-85-L72] Enforce present or future publish date check in announcementController :: verification rule #419
-// === [SPEC-BLOCK-END] ===
