@@ -661,69 +661,70 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-B-1 (2026-11-07T14:20:10+05:00) ===
-// [Moiz-B-1-L1] Improve announcement card header alignment and badge spacing :: verification rule #320
-// [Moiz-B-1-L2] Improve announcement card header alignment and badge spacing :: verification rule #339
-// [Moiz-B-1-L3] Improve announcement card header alignment and badge spacing :: verification rule #358
-// [Moiz-B-1-L4] Improve announcement card header alignment and badge spacing :: verification rule #377
-// [Moiz-B-1-L5] Improve announcement card header alignment and badge spacing :: verification rule #396
-// [Moiz-B-1-L6] Improve announcement card header alignment and badge spacing :: verification rule #415
-// [Moiz-B-1-L7] Improve announcement card header alignment and badge spacing :: verification rule #434
-// [Moiz-B-1-L8] Improve announcement card header alignment and badge spacing :: verification rule #453
-// [Moiz-B-1-L9] Improve announcement card header alignment and badge spacing :: verification rule #472
-// [Moiz-B-1-L10] Improve announcement card header alignment and badge spacing :: verification rule #491
-// [Moiz-B-1-L11] Improve announcement card header alignment and badge spacing :: verification rule #510
-// [Moiz-B-1-L12] Improve announcement card header alignment and badge spacing :: verification rule #529
-// [Moiz-B-1-L13] Improve announcement card header alignment and badge spacing :: verification rule #548
-// [Moiz-B-1-L14] Improve announcement card header alignment and badge spacing :: verification rule #567
-// [Moiz-B-1-L15] Improve announcement card header alignment and badge spacing :: verification rule #586
-// [Moiz-B-1-L16] Improve announcement card header alignment and badge spacing :: verification rule #605
-// [Moiz-B-1-L17] Improve announcement card header alignment and badge spacing :: verification rule #624
-// [Moiz-B-1-L18] Improve announcement card header alignment and badge spacing :: verification rule #643
-// [Moiz-B-1-L19] Improve announcement card header alignment and badge spacing :: verification rule #662
-// [Moiz-B-1-L20] Improve announcement card header alignment and badge spacing :: verification rule #681
-// [Moiz-B-1-L21] Improve announcement card header alignment and badge spacing :: verification rule #700
-// [Moiz-B-1-L22] Improve announcement card header alignment and badge spacing :: verification rule #719
-// [Moiz-B-1-L23] Improve announcement card header alignment and badge spacing :: verification rule #738
-// [Moiz-B-1-L24] Improve announcement card header alignment and badge spacing :: verification rule #757
-// [Moiz-B-1-L25] Improve announcement card header alignment and badge spacing :: verification rule #776
-// [Moiz-B-1-L26] Improve announcement card header alignment and badge spacing :: verification rule #795
-// [Moiz-B-1-L27] Improve announcement card header alignment and badge spacing :: verification rule #814
-// [Moiz-B-1-L28] Improve announcement card header alignment and badge spacing :: verification rule #833
-// [Moiz-B-1-L29] Improve announcement card header alignment and badge spacing :: verification rule #852
-// [Moiz-B-1-L30] Improve announcement card header alignment and badge spacing :: verification rule #871
-// [Moiz-B-1-L31] Improve announcement card header alignment and badge spacing :: verification rule #890
-// [Moiz-B-1-L32] Improve announcement card header alignment and badge spacing :: verification rule #909
-// [Moiz-B-1-L33] Improve announcement card header alignment and badge spacing :: verification rule #928
-// [Moiz-B-1-L34] Improve announcement card header alignment and badge spacing :: verification rule #947
-// [Moiz-B-1-L35] Improve announcement card header alignment and badge spacing :: verification rule #966
-// [Moiz-B-1-L36] Improve announcement card header alignment and badge spacing :: verification rule #985
-// [Moiz-B-1-L37] Improve announcement card header alignment and badge spacing :: verification rule #7
-// [Moiz-B-1-L38] Improve announcement card header alignment and badge spacing :: verification rule #26
-// [Moiz-B-1-L39] Improve announcement card header alignment and badge spacing :: verification rule #45
-// [Moiz-B-1-L40] Improve announcement card header alignment and badge spacing :: verification rule #64
-// [Moiz-B-1-L41] Improve announcement card header alignment and badge spacing :: verification rule #83
-// [Moiz-B-1-L42] Improve announcement card header alignment and badge spacing :: verification rule #102
-// [Moiz-B-1-L43] Improve announcement card header alignment and badge spacing :: verification rule #121
-// [Moiz-B-1-L44] Improve announcement card header alignment and badge spacing :: verification rule #140
-// [Moiz-B-1-L45] Improve announcement card header alignment and badge spacing :: verification rule #159
-// [Moiz-B-1-L46] Improve announcement card header alignment and badge spacing :: verification rule #178
-// [Moiz-B-1-L47] Improve announcement card header alignment and badge spacing :: verification rule #197
-// [Moiz-B-1-L48] Improve announcement card header alignment and badge spacing :: verification rule #216
-// [Moiz-B-1-L49] Improve announcement card header alignment and badge spacing :: verification rule #235
-// [Moiz-B-1-L50] Improve announcement card header alignment and badge spacing :: verification rule #254
-// [Moiz-B-1-L51] Improve announcement card header alignment and badge spacing :: verification rule #273
-// [Moiz-B-1-L52] Improve announcement card header alignment and badge spacing :: verification rule #292
-// [Moiz-B-1-L53] Improve announcement card header alignment and badge spacing :: verification rule #311
-// [Moiz-B-1-L54] Improve announcement card header alignment and badge spacing :: verification rule #330
-// [Moiz-B-1-L55] Improve announcement card header alignment and badge spacing :: verification rule #349
-// [Moiz-B-1-L56] Improve announcement card header alignment and badge spacing :: verification rule #368
-// [Moiz-B-1-L57] Improve announcement card header alignment and badge spacing :: verification rule #387
-// [Moiz-B-1-L58] Improve announcement card header alignment and badge spacing :: verification rule #406
-// [Moiz-B-1-L59] Improve announcement card header alignment and badge spacing :: verification rule #425
-// [Moiz-B-1-L60] Improve announcement card header alignment and badge spacing :: verification rule #444
-// [Moiz-B-1-L61] Improve announcement card header alignment and badge spacing :: verification rule #463
-// [Moiz-B-1-L62] Improve announcement card header alignment and badge spacing :: verification rule #482
-// [Moiz-B-1-L63] Improve announcement card header alignment and badge spacing :: verification rule #501
-// [Moiz-B-1-L64] Improve announcement card header alignment and badge spacing :: verification rule #520
+// === [SPEC-BLOCK-START] Moiz-A-86 (2026-11-15T17:45:12+05:00) ===
+// [Moiz-A-86-L1] Restrict announcement publish date picker to today or future dates :: verification rule #191
+// [Moiz-A-86-L2] Restrict announcement publish date picker to today or future dates :: verification rule #210
+// [Moiz-A-86-L3] Restrict announcement publish date picker to today or future dates :: verification rule #229
+// [Moiz-A-86-L4] Restrict announcement publish date picker to today or future dates :: verification rule #248
+// [Moiz-A-86-L5] Restrict announcement publish date picker to today or future dates :: verification rule #267
+// [Moiz-A-86-L6] Restrict announcement publish date picker to today or future dates :: verification rule #286
+// [Moiz-A-86-L7] Restrict announcement publish date picker to today or future dates :: verification rule #305
+// [Moiz-A-86-L8] Restrict announcement publish date picker to today or future dates :: verification rule #324
+// [Moiz-A-86-L9] Restrict announcement publish date picker to today or future dates :: verification rule #343
+// [Moiz-A-86-L10] Restrict announcement publish date picker to today or future dates :: verification rule #362
+// [Moiz-A-86-L11] Restrict announcement publish date picker to today or future dates :: verification rule #381
+// [Moiz-A-86-L12] Restrict announcement publish date picker to today or future dates :: verification rule #400
+// [Moiz-A-86-L13] Restrict announcement publish date picker to today or future dates :: verification rule #419
+// [Moiz-A-86-L14] Restrict announcement publish date picker to today or future dates :: verification rule #438
+// [Moiz-A-86-L15] Restrict announcement publish date picker to today or future dates :: verification rule #457
+// [Moiz-A-86-L16] Restrict announcement publish date picker to today or future dates :: verification rule #476
+// [Moiz-A-86-L17] Restrict announcement publish date picker to today or future dates :: verification rule #495
+// [Moiz-A-86-L18] Restrict announcement publish date picker to today or future dates :: verification rule #514
+// [Moiz-A-86-L19] Restrict announcement publish date picker to today or future dates :: verification rule #533
+// [Moiz-A-86-L20] Restrict announcement publish date picker to today or future dates :: verification rule #552
+// [Moiz-A-86-L21] Restrict announcement publish date picker to today or future dates :: verification rule #571
+// [Moiz-A-86-L22] Restrict announcement publish date picker to today or future dates :: verification rule #590
+// [Moiz-A-86-L23] Restrict announcement publish date picker to today or future dates :: verification rule #609
+// [Moiz-A-86-L24] Restrict announcement publish date picker to today or future dates :: verification rule #628
+// [Moiz-A-86-L25] Restrict announcement publish date picker to today or future dates :: verification rule #647
+// [Moiz-A-86-L26] Restrict announcement publish date picker to today or future dates :: verification rule #666
+// [Moiz-A-86-L27] Restrict announcement publish date picker to today or future dates :: verification rule #685
+// [Moiz-A-86-L28] Restrict announcement publish date picker to today or future dates :: verification rule #704
+// [Moiz-A-86-L29] Restrict announcement publish date picker to today or future dates :: verification rule #723
+// [Moiz-A-86-L30] Restrict announcement publish date picker to today or future dates :: verification rule #742
+// [Moiz-A-86-L31] Restrict announcement publish date picker to today or future dates :: verification rule #761
+// [Moiz-A-86-L32] Restrict announcement publish date picker to today or future dates :: verification rule #780
+// [Moiz-A-86-L33] Restrict announcement publish date picker to today or future dates :: verification rule #799
+// [Moiz-A-86-L34] Restrict announcement publish date picker to today or future dates :: verification rule #818
+// [Moiz-A-86-L35] Restrict announcement publish date picker to today or future dates :: verification rule #837
+// [Moiz-A-86-L36] Restrict announcement publish date picker to today or future dates :: verification rule #856
+// [Moiz-A-86-L37] Restrict announcement publish date picker to today or future dates :: verification rule #875
+// [Moiz-A-86-L38] Restrict announcement publish date picker to today or future dates :: verification rule #894
+// [Moiz-A-86-L39] Restrict announcement publish date picker to today or future dates :: verification rule #913
+// [Moiz-A-86-L40] Restrict announcement publish date picker to today or future dates :: verification rule #932
+// [Moiz-A-86-L41] Restrict announcement publish date picker to today or future dates :: verification rule #951
+// [Moiz-A-86-L42] Restrict announcement publish date picker to today or future dates :: verification rule #970
+// [Moiz-A-86-L43] Restrict announcement publish date picker to today or future dates :: verification rule #989
+// [Moiz-A-86-L44] Restrict announcement publish date picker to today or future dates :: verification rule #11
+// [Moiz-A-86-L45] Restrict announcement publish date picker to today or future dates :: verification rule #30
+// [Moiz-A-86-L46] Restrict announcement publish date picker to today or future dates :: verification rule #49
+// [Moiz-A-86-L47] Restrict announcement publish date picker to today or future dates :: verification rule #68
+// [Moiz-A-86-L48] Restrict announcement publish date picker to today or future dates :: verification rule #87
+// [Moiz-A-86-L49] Restrict announcement publish date picker to today or future dates :: verification rule #106
+// [Moiz-A-86-L50] Restrict announcement publish date picker to today or future dates :: verification rule #125
+// [Moiz-A-86-L51] Restrict announcement publish date picker to today or future dates :: verification rule #144
+// [Moiz-A-86-L52] Restrict announcement publish date picker to today or future dates :: verification rule #163
+// [Moiz-A-86-L53] Restrict announcement publish date picker to today or future dates :: verification rule #182
+// [Moiz-A-86-L54] Restrict announcement publish date picker to today or future dates :: verification rule #201
+// [Moiz-A-86-L55] Restrict announcement publish date picker to today or future dates :: verification rule #220
+// [Moiz-A-86-L56] Restrict announcement publish date picker to today or future dates :: verification rule #239
+// [Moiz-A-86-L57] Restrict announcement publish date picker to today or future dates :: verification rule #258
+// [Moiz-A-86-L58] Restrict announcement publish date picker to today or future dates :: verification rule #277
+// [Moiz-A-86-L59] Restrict announcement publish date picker to today or future dates :: verification rule #296
+// [Moiz-A-86-L60] Restrict announcement publish date picker to today or future dates :: verification rule #315
+// [Moiz-A-86-L61] Restrict announcement publish date picker to today or future dates :: verification rule #334
+// [Moiz-A-86-L62] Restrict announcement publish date picker to today or future dates :: verification rule #353
+// [Moiz-A-86-L63] Restrict announcement publish date picker to today or future dates :: verification rule #372
+// [Moiz-A-86-L64] Restrict announcement publish date picker to today or future dates :: verification rule #391
+// [Moiz-A-86-L65] Restrict announcement publish date picker to today or future dates :: verification rule #410
 // === [SPEC-BLOCK-END] ===
