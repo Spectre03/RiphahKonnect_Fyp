@@ -56,6 +56,9 @@ const getPosts = async (req, res, next) => {
 // POST /api/posts
 const createPost = async (req, res, next) => {
   try {
+<<<<<<< HEAD
+    const { content, type, imageUrl, fileUrl, fileName, fileType, groupId } = req.body;
+=======
     const { content, type, imageUrl, groupId } = req.body;
     const postType = type || 'GENERAL';
 
@@ -68,6 +71,7 @@ const createPost = async (req, res, next) => {
     if (!validation.valid) {
       return res.status(400).json({ error: validation.reason });
     }
+>>>>>>> d0512afd1fe3eb2f17b712d3fc2a98d2f1b5ff76
 
     // If posting to a group, verify the user is a member
     if (groupId) {
@@ -85,6 +89,18 @@ const createPost = async (req, res, next) => {
     }
 
     const post = await prisma.post.create({
+<<<<<<< HEAD
+  data: {
+    content,
+    type: type || 'GENERAL',
+    imageUrl,
+    fileUrl,
+    fileName,
+    fileType,
+    authorId: req.user.id,
+    groupId: groupId || null,
+  },
+=======
       data: {
         content: finalContent,
         type: postType,
@@ -92,6 +108,7 @@ const createPost = async (req, res, next) => {
         authorId: req.user.id,
         groupId: groupId || null,
       },
+>>>>>>> d0512afd1fe3eb2f17b712d3fc2a98d2f1b5ff76
       include: {
         author: {
           select: { id: true, name: true, role: true, avatarUrl: true, department: true },
@@ -155,6 +172,19 @@ const updatePost = async (req, res, next) => {
     if (!post) return res.status(404).json({ error: 'Post not found.' });
     if (post.authorId !== req.user.id) return res.status(403).json({ error: 'Not authorized.' });
 
+<<<<<<< HEAD
+   const updated = await prisma.post.update({
+  where: { id: req.params.id },
+  data: {
+    content: req.body.content ?? post.content,
+    type: req.body.type ?? post.type,
+    imageUrl: req.body.imageUrl ?? post.imageUrl,
+    fileUrl: req.body.fileUrl ?? post.fileUrl,
+    fileName: req.body.fileName ?? post.fileName,
+    fileType: req.body.fileType ?? post.fileType,
+  },
+});
+=======
     const nextContent = req.body.content ?? post.content;
     const nextType = req.body.type ?? post.type;
     const nextImageUrl = req.body.imageUrl !== undefined ? req.body.imageUrl : post.imageUrl;
@@ -176,6 +206,7 @@ const updatePost = async (req, res, next) => {
         imageUrl: nextImageUrl,
       },
     });
+>>>>>>> d0512afd1fe3eb2f17b712d3fc2a98d2f1b5ff76
 
     res.json({ post: updated });
   } catch (err) {

@@ -37,7 +37,7 @@ model User {
   messages           Message[]
   posts              Post[]
   courses            UserCourse[]
-  tickets            Ticket[]
+  tickets            Ticket[] // NEW: Relation to tickets
   verificationTokens VerificationToken[]
   notifications      Notification[]
 
@@ -64,6 +64,9 @@ model Post {
   content   String
   type      PostType       @default(GENERAL)
   imageUrl  String?
+  fileUrl   String?
+  fileName  String?
+  fileType  String?
   authorId  String
   groupId   String?
   createdAt DateTime       @default(now())
@@ -106,11 +109,11 @@ model Like {
 }
 
 model SemesterGroup {
-  id          String        @id @default(cuid())
-  name        String
-  description String?
-  department  String
-  semester    Int
+  id             String        @id @default(cuid())
+  name           String
+  description    String?
+  department     String
+  semester       Int
   createdAt      DateTime      @default(now())
   updatedAt      DateTime      @updatedAt
   isArchived     Boolean       @default(false)
@@ -188,30 +191,33 @@ model LostFoundItem {
 }
 
 model Announcement {
-  id                String           @id @default(cuid())
-  title             String
-  content           String
-  type              AnnouncementType @default(GENERAL)
-  targetDepartments String[]         @default([])
-  targetSemesters   Int[]            @default([])
-  authorId          String
-  createdAt         DateTime         @default(now())
-  updatedAt         DateTime         @updatedAt
-  author            User             @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  id               String           @id @default(cuid())
+  title            String
+  content          String
+  type             AnnouncementType @default(OFFICIAL)
+  targetDepartment String?
+  targetSemester   Int?
+  fileUrl          String?
+  fileName         String?
+  fileType         String?
+  authorId         String
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+  author           User             @relation(fields: [authorId], references: [id], onDelete: Cascade)
 
   @@index([authorId])
   @@index([type])
 }
 
 model Conversation {
-  id           String                    @id @default(cuid())
-  isGroup      Boolean                   @default(false)
-  name           String?
-  createdAt      DateTime                  @default(now())
-  updatedAt      DateTime                  @updatedAt
-  semesterGroup  SemesterGroup?
-  participants   ConversationParticipant[]
-  messages       Message[]
+  id            String                    @id @default(cuid())
+  isGroup       Boolean                   @default(false)
+  name          String?
+  createdAt     DateTime                  @default(now())
+  updatedAt     DateTime                  @updatedAt
+  semesterGroup SemesterGroup?
+  participants  ConversationParticipant[]
+  messages      Message[]
 }
 
 model ConversationParticipant {
@@ -247,6 +253,37 @@ model UserCourse {
   user       User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, courseName])
+  @@index([userId])
+}
+
+model Ticket {
+  id        String       @id @default(cuid())
+  code      String       @unique
+  pricePaid Float        @default(0)
+  status    TicketStatus @default(VALID)
+  userId    String
+  eventId   String
+  issuedAt  DateTime     @default(now())
+  usedAt    DateTime?
+  user      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  event     Event        @relation(fields: [eventId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, eventId])
+  @@index([userId])
+  @@index([eventId])
+  @@index([code])
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String
+  message   String
+  isRead    Boolean  @default(false)
+  link      String?
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   @@index([userId])
 }
 
@@ -291,45 +328,14 @@ enum ItemCategory {
 }
 
 enum AnnouncementType {
-  GENERAL
+  OFFICIAL
   CLASS
+  GENERAL
+  URGENT
 }
 
 enum TicketStatus {
   VALID
   USED
   CANCELLED
-}
-
-model Ticket {
-  id        String       @id @default(cuid())
-  code      String       @unique
-  pricePaid Float        @default(0)
-  status    TicketStatus @default(VALID)
-  userId    String
-  eventId   String
-  issuedAt  DateTime     @default(now())
-  usedAt    DateTime?
-  user      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
-  event     Event        @relation(fields: [eventId], references: [id], onDelete: Cascade)
-
-  @@unique([userId, eventId])
-  @@index([userId])
-  @@index([eventId])
-  @@index([code])
-}
-
-model Notification {
-  id        String   @id @default(cuid())
-  userId    String
-  title     String
-  content   String
-  type      String   @default("GENERAL")
-  link      String?
-  isRead    Boolean  @default(false)
-  createdAt DateTime @default(now())
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@index([userId])
-  @@index([isRead])
 }

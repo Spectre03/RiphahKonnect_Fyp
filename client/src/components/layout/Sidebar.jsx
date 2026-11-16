@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { createElement, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { getAvatarGradient } from '../../utils/brand';
@@ -7,7 +7,8 @@ import {
   LayoutDashboard, Newspaper, Users, Calendar,
   PackageSearch, MessageSquare, LogOut, Menu, X,
   Megaphone, ShieldCheck, UserCog, GraduationCap,
-  ChevronRight, BookOpen, FileText, Ticket,
+  ChevronRight, Sparkles, BookOpen, FileText,
+  Ticket // <--- Make sure this is here!
 } from 'lucide-react';
 import NotificationDropdown from '../ui/NotificationDropdown';
 
@@ -17,7 +18,7 @@ const STUDENT_NAV = [
   { to: '/groups',        label: 'Semester Groups', icon: Users },
   { to: '/resources',     label: 'Resources',       icon: FileText },
   { to: '/events',        label: 'Events',          icon: Calendar },
-  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket }, // <--- ADDED THIS
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/lost-found',    label: 'Lost & Found',    icon: PackageSearch },
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
@@ -29,7 +30,7 @@ const TEACHER_NAV = [
   { to: '/groups',        label: 'Semester Groups', icon: Users },
   { to: '/resources',     label: 'Resources',       icon: FileText },
   { to: '/events',        label: 'Events',          icon: Calendar },
-  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket }, // <--- ADDED THIS
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/lost-found',    label: 'Lost & Found',    icon: PackageSearch },
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
@@ -40,7 +41,7 @@ const COORDINATION_NAV = [
   { to: '/feed',          label: 'Feed',            icon: Newspaper },
   { to: '/groups',        label: 'Semester Groups', icon: Users },
   { to: '/events',        label: 'Events',          icon: Calendar },
-  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket }, // <--- ADDED THIS
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/lost-found',    label: 'Lost & Found',    icon: PackageSearch },
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
@@ -51,7 +52,7 @@ const UNIVERSITY_ADMIN_NAV = [
   { to: '/feed',          label: 'Feed',            icon: Newspaper },
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
   { to: '/events',        label: 'Events',          icon: Calendar },
-  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket }, // <--- ADDED THIS
   { to: '/lost-found',    label: 'Lost & Found',    icon: PackageSearch },
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
 ];
@@ -64,6 +65,7 @@ const SYSTEM_ADMIN_NAV = [
   { to: '/events',        label: 'Events',          icon: Calendar },
   { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket },
   { to: '/announcements', label: 'Announcements',   icon: Megaphone },
+  { to: '/my-tickets',    label: 'My Tickets',      icon: Ticket }, // <--- ADDED THIS
   { to: '/messages',      label: 'Messages',        icon: MessageSquare },
 ];
 
@@ -132,7 +134,7 @@ export default function Sidebar() {
       <div className="mx-4 mb-3 h-px" style={{ background: 'rgba(255,255,255,0.05)' }} />
 
       {/* ── Nav ── */}
-      <nav className="flex-1 px-2.5 space-y-0.5 overflow-y-auto dark-scroll">
+      <nav className="flex-1 px-3 space-y-0.5 overflow-y-auto dark-scroll">
         {navItems.map(({ to, label, icon: Icon }) => {
           const active = isActive(to);
           return (
@@ -151,13 +153,13 @@ export default function Sidebar() {
                 borderRight: '2px solid #c9973a',
               } : {}}
             >
-              <Icon
-                size={15}
-                className={cn(
+              {createElement(Icon, {
+                size: 16,
+                className: cn(
                   'flex-shrink-0 transition-colors',
-                  active ? 'text-amber-400' : 'text-slate-500 group-hover:text-slate-300'
-                )}
-              />
+                  active ? 'text-indigo-400' : 'text-slate-500 group-hover:text-slate-300'
+                ),
+              })}
               <span className="flex-1 truncate">{label}</span>
               {active && (
                 <ChevronRight size={12} className="text-amber-400/60 flex-shrink-0" />

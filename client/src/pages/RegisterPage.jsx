@@ -315,7 +315,8 @@ export default function RegisterPage() {
                           Select your role
                         </p>
                         <div className="grid grid-cols-3 gap-2">
-                          {ACCOUNT_ROLES.map(({ value, label, desc, icon: Icon, color }) => {
+                          {/* eslint-disable-next-line no-unused-vars */}
+                          {ACCOUNT_ROLES.map(({ value, label, desc, icon: RoleIcon, color }) => {
                             const selected = selectedRole === value;
                             return (
                               <button
@@ -337,7 +338,7 @@ export default function RegisterPage() {
                                       : 'bg-violet-500 text-white'
                                     : 'bg-slate-200 text-slate-500'
                                 }`}>
-                                  <Icon className="h-3.5 w-3.5" />
+                                  <RoleIcon className="h-3.5 w-3.5" />
                                 </div>
                                 <p className={`text-xs font-bold leading-tight ${selected ? (color === 'indigo' ? 'text-indigo-800' : 'text-violet-800') : 'text-slate-700'}`}>
                                   {label}
@@ -398,7 +399,7 @@ export default function RegisterPage() {
                 <div className="space-y-4">
                   {/* Role confirmation banner */}
                   {roleMeta && (() => {
-                    const Icon = roleMeta.icon;
+                    const RoleIcon = roleMeta.icon;
                     const isViolet = roleMeta.scheme === 'violet';
                     return (
                       <div className={`flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl border text-sm font-medium ${
@@ -406,7 +407,7 @@ export default function RegisterPage() {
                           ? 'bg-violet-50 border-violet-200 text-violet-800'
                           : 'bg-indigo-50 border-indigo-200 text-indigo-800'
                       }`}>
-                        <Icon className="h-4 w-4 flex-shrink-0" />
+                        <RoleIcon className="h-4 w-4 flex-shrink-0" />
                         <span>Registering as <strong>{roleMeta.label}</strong></span>
                       </div>
                     );

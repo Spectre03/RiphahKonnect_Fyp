@@ -30,7 +30,7 @@ export default function GroupChat({ conversationId }) {
         const res = await conversationsAPI.getMessages(conversationId);
         setMessages(res.data.messages);
         setTimeout(() => messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' }), 100);
-      } catch (err) {
+      } catch {
         toast.error('Failed to load chat messages.');
       } finally {
         setLoading(false);

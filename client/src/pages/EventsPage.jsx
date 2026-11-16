@@ -1,15 +1,15 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { eventsAPI, ticketsAPI } from '../services/api';
 import { formatDate } from '../utils/brand';
 import { cn } from '../utils/cn';
-import { checkTextContent, validateImageFile, fileToDataUrl } from '../utils/moderation';
+import { checkTextContent } from '../utils/moderation';
 import { Card, Button, Badge, Modal } from '../components/ui';
 import toast from 'react-hot-toast';
 import {
   Calendar, MapPin, Clock, Users, Plus, Loader2,
   Check, Star, XCircle, CalendarDays, Trash2, Sparkles,
-  Image as ImageIcon, X, AlertTriangle, Ticket as TicketIcon, CreditCard, Lock,
+  Ticket as TicketIcon, CreditCard, Lock, AlertTriangle
 } from 'lucide-react';
 
 const CAN_CREATE  = ['TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'];
@@ -23,15 +23,16 @@ export default function EventsPage() {
   const [filter, setFilter] = useState('upcoming');
   const [page, setPage] = useState(1);
   const [pagination, setPagination] = useState(null);
+  
   const [rsvpLoadingId, setRsvpLoadingId] = useState(null);
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [deleting, setDeleting] = useState(false);
 
-  // Payment Modal State (from Airaf's ticketing branch)
+  // Payment Modal State
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isPaying, setIsPaying] = useState(false);
 
-  // Attendees Modal State (from Airaf's ticketing branch)
+  // Attendees Modal State
   const [viewingAttendees, setViewingAttendees] = useState(null);
   const [attendees, setAttendees] = useState([]);
   const [loadingAttendees, setLoadingAttendees] = useState(false);
@@ -68,27 +69,20 @@ export default function EventsPage() {
               : status;
 
           let nextGoing = e.attendeeCount || 0;
-          if (typeof data.attendeeCount === 'number') {
-            nextGoing = data.attendeeCount;
-          } else {
+          if (typeof data.attendeeCount === 'number') nextGoing = data.attendeeCount;
+          else {
             if (prevStatus === 'GOING' && nextStatus !== 'GOING') nextGoing = Math.max(0, nextGoing - 1);
             if (prevStatus !== 'GOING' && nextStatus === 'GOING') nextGoing += 1;
           }
 
           let nextInterested = e.interestedCount || 0;
-          if (typeof data.interestedCount === 'number') {
-            nextInterested = data.interestedCount;
-          } else {
+          if (typeof data.interestedCount === 'number') nextInterested = data.interestedCount;
+          else {
             if (prevStatus === 'INTERESTED' && nextStatus !== 'INTERESTED') nextInterested = Math.max(0, nextInterested - 1);
             if (prevStatus !== 'INTERESTED' && nextStatus === 'INTERESTED') nextInterested += 1;
           }
 
-          return {
-            ...e,
-            myRsvp: nextStatus,
-            attendeeCount: nextGoing,
-            interestedCount: nextInterested,
-          };
+          return { ...e, myRsvp: nextStatus, attendeeCount: nextGoing, interestedCount: nextInterested };
         })
       );
 
@@ -96,11 +90,8 @@ export default function EventsPage() {
       else if (status === 'INTERESTED') toast.success('Marked as Interested (Maybe).');
       else if (status === 'NOT_GOING') toast.success("Marked as Can't Go.");
       else toast.success('RSVP removed.');
-    } catch {
-      toast.error('Failed to update RSVP.');
-    } finally {
-      setRsvpLoadingId(null);
-    }
+    } catch { toast.error('Failed to update RSVP.'); }
+    finally { setRsvpLoadingId(null); }
   };
 
   const confirmDelete = async () => {
@@ -111,50 +102,28 @@ export default function EventsPage() {
       setEvents(events.filter((e) => e.id !== deleteTarget.id));
       toast.success('Event deleted.');
       setDeleteTarget(null);
-    } catch {
-      toast.error('Failed to delete.');
-    } finally {
-      setDeleting(false);
-    }
+    } catch { toast.error('Failed to delete.'); }
+    finally { setDeleting(false); }
   };
 
   const handleCreated = (event) => {
-    setEvents([{ ...event, attendeeCount: 0, interestedCount: 0, myRsvp: null, ticketCount: 0, hasTicket: false }, ...events]);
+    setEvents([{ ...event, attendeeCount: 0, myRsvp: null, ticketCount: 0, hasTicket: false }, ...events]);
     setShowCreate(false);
     toast.success('Event created!');
   };
 
-  // Simulate Payment & Buy Ticket
   const confirmPurchase = async (e) => {
     e.preventDefault();
     if (!selectedEvent) return;
-
     try {
       setIsPaying(true);
-      await new Promise((resolve) => setTimeout(resolve, 1200));
+      await new Promise(resolve => setTimeout(resolve, 1500)); 
       await ticketsAPI.buy(selectedEvent.id);
-
-      setEvents((prev) =>
-        prev.map((ev) =>
-          ev.id === selectedEvent.id
-            ? {
-                ...ev,
-                ticketCount: (ev.ticketCount || 0) + 1,
-                hasTicket: true,
-                attendeeCount: ev.myRsvp === 'GOING' ? ev.attendeeCount : (ev.attendeeCount || 0) + 1,
-                myRsvp: 'GOING',
-              }
-            : ev
-        )
-      );
-
-      toast.success('Ticket generated! View your QR pass in My Tickets.');
+      setEvents(events.map(ev => ev.id === selectedEvent.id ? { ...ev, ticketCount: (ev.ticketCount || 0) + 1, hasTicket: true } : ev));
+      toast.success('Payment successful! Ticket generated 🎟️');
       setSelectedEvent(null);
-    } catch (err) {
-      toast.error(err.response?.data?.error || 'Failed to buy ticket.');
-    } finally {
-      setIsPaying(false);
-    }
+    } catch (err) { toast.error(err.response?.data?.error || 'Failed to buy ticket.'); }
+    finally { setIsPaying(false); }
   };
 
   const handleViewAttendees = async (event) => {
@@ -162,17 +131,13 @@ export default function EventsPage() {
     setLoadingAttendees(true);
     try {
       const res = await ticketsAPI.getEventTickets(event.id);
-      setAttendees(res.data.tickets || []);
-    } catch {
-      toast.error('Failed to load attendees.');
-    } finally {
-      setLoadingAttendees(false);
-    }
+      setAttendees(res.data.tickets);
+    } catch { toast.error('Failed to load attendees.'); }
+    finally { setLoadingAttendees(false); }
   };
 
   const canCreate  = CAN_CREATE.includes(user?.role);
   const canDelAny  = CAN_DEL_ANY.includes(user?.role);
-
 
   return (
     <div className="page-wrapper">
@@ -209,11 +174,10 @@ export default function EventsPage() {
               )}
             </div>
           </div>
-        </div>
+        </div>  
       </div>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6">
-
         {/* ── Filter Tabs ── */}
         <div className="flex gap-1 mb-6 bg-white rounded-2xl border border-slate-900/[0.06] p-1 max-w-xs shadow-sm">
           {['upcoming', 'all'].map((f) => (
@@ -264,29 +228,22 @@ export default function EventsPage() {
               const upcoming = d > new Date();
               const isCreator = event.createdBy?.id === user?.id;
               const showDelete = isCreator || canDelAny;
+              
               const isSoldOut = event.capacity && (event.ticketCount || 0) >= event.capacity;
               const hasTicket = event.hasTicket;
 
               return (
                 <Card key={event.id} hover padding="p-0" className="overflow-hidden">
-                  {/* Event Banner Picture if uploaded */}
                   {event.imageUrl && (
                     <div className="w-full max-h-64 overflow-hidden bg-slate-100 border-b border-slate-100">
-                      <img
-                        src={event.imageUrl}
-                        alt={event.title}
-                        className="w-full max-h-64 object-cover"
-                      />
+                      <img src={event.imageUrl} alt={event.title} className="w-full max-h-64 object-cover" />
                     </div>
                   )}
                   <div className="flex">
-                    {/* Date Column */}
                     <div className={cn(
                       'flex-shrink-0 w-20 flex flex-col items-center justify-center border-r border-slate-100',
                       !event.imageUrl && 'rounded-l-2xl',
-                      upcoming
-                        ? 'bg-gradient-to-b from-violet-500 to-indigo-600'
-                        : 'bg-gradient-to-b from-slate-100 to-slate-200'
+                      upcoming ? 'bg-gradient-to-b from-violet-500 to-indigo-600' : 'bg-gradient-to-b from-slate-100 to-slate-200'
                     )}>
                       <span className={cn('text-[9px] font-bold uppercase tracking-widest', upcoming ? 'text-violet-200' : 'text-slate-400')}>
                         {d.toLocaleDateString('en-US', { month: 'short' })}
@@ -296,7 +253,6 @@ export default function EventsPage() {
                       </span>
                     </div>
 
-                    {/* Content */}
                     <div className="flex-1 p-4 min-w-0">
                       <div className="flex items-start justify-between gap-2">
                         <div className="flex-1 min-w-0">
@@ -306,7 +262,7 @@ export default function EventsPage() {
                             {event.price > 0 ? (
                               <Badge variant="amber" size="xs">Rs. {event.price}</Badge>
                             ) : (
-                              <Badge variant="teal" size="xs">Free</Badge>
+                              <Badge variant="emerald" size="xs">Free</Badge>
                             )}
                           </div>
                           {event.description && (
@@ -336,76 +292,59 @@ export default function EventsPage() {
                             )}
                           </div>
                         </div>
-                        <div className="flex items-center gap-1.5 flex-shrink-0">
+                        <div className="flex items-center gap-1">
                           {(isCreator || canDelAny) && (
-                            <Button
-                              variant="secondary"
-                              size="sm"
-                              onClick={() => handleViewAttendees(event)}
-                              className="text-[11px] h-7 px-2.5"
-                            >
+                            <Button variant="secondary" size="sm" onClick={() => handleViewAttendees(event)} className="text-[11px] h-7 px-2">
                               Attendees
                             </Button>
                           )}
                           {showDelete && (
-                            <button
-                              onClick={() => setDeleteTarget(event)}
-                              className="p-1.5 text-slate-300 hover:text-red-500 hover:bg-red-50 rounded-lg cursor-pointer transition-all flex-shrink-0"
-                              title="Delete event"
-                            >
+                            <button onClick={() => setDeleteTarget(event)} className="p-1.5 text-slate-300 hover:text-red-500 hover:bg-red-50 rounded-lg cursor-pointer transition-all flex-shrink-0">
                               <Trash2 size={14} />
                             </button>
                           )}
                         </div>
                       </div>
 
-                      {/* RSVP & Ticket Action */}
-                      {user && (
-                        <div className="flex items-center justify-between gap-2 mt-3 pt-3 border-t border-slate-50 flex-wrap">
+                      {user && upcoming && (
+                        <div className="flex items-center justify-between mt-3 pt-3 border-t border-slate-50 flex-wrap gap-2">
                           <div className="flex items-center gap-2 flex-wrap">
                             <span className="text-[11px] text-slate-400 font-bold">RSVP:</span>
                             {[
-                              { status: 'GOING',      icon: Check,   label: `Going (${event.attendeeCount || 0})`,   active: 'bg-emerald-600 text-white border-emerald-600 shadow-sm shadow-emerald-500/30' },
+                              { status: 'GOING',      icon: Check,   label: 'Going',   active: 'bg-emerald-600 text-white border-emerald-600 shadow-sm shadow-emerald-500/30' },
                               { status: 'INTERESTED', icon: Star,    label: 'Maybe',   active: 'bg-amber-500 text-white border-amber-500 shadow-sm shadow-amber-500/30' },
                               { status: 'NOT_GOING',  icon: XCircle, label: "Can't go", active: 'bg-slate-600 text-white border-slate-600' },
-                            ].map(({ status, icon: Icon, label, active }) => {
+                            // eslint-disable-next-line no-unused-vars
+                            ].map(({ status, icon: StatusIcon, label, active }) => {
                               const isActive = event.myRsvp === status;
                               return (
                                 <button
                                   key={status}
-                                  type="button"
-                                  disabled={rsvpLoadingId === event.id}
                                   onClick={() => handleRsvp(event.id, isActive ? 'REMOVE' : status)}
                                   className={cn(
-                                    'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold cursor-pointer transition-all border disabled:opacity-50',
-                                    isActive ? active : 'border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-slate-800 hover:border-slate-300'
+                                    'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold cursor-pointer transition-all border',
+                                    isActive ? active : 'border-slate-200 text-slate-400 hover:bg-slate-50 hover:text-slate-700 hover:border-slate-300'
                                   )}
                                 >
-                                  <Icon size={11} /> {label}
+                                  <StatusIcon size={11} /> {label}
                                 </button>
                               );
                             })}
                           </div>
 
-                          {upcoming && (
-                            <div>
-                              {hasTicket ? (
-                                <Badge variant="green" size="sm" className="py-1.5 px-3">
-                                  <Check size={12} className="mr-1 inline" /> Ticket Acquired
-                                </Badge>
-                              ) : isSoldOut ? (
-                                <Button variant="secondary" size="sm" disabled>Sold Out</Button>
-                              ) : (
-                                <Button
-                                  onClick={() => setSelectedEvent(event)}
-                                  size="sm"
-                                  icon={TicketIcon}
-                                >
-                                  {event.price > 0 ? `Buy Ticket (Rs. ${event.price})` : 'Get Free Ticket'}
-                                </Button>
-                              )}
-                            </div>
-                          )}
+                          <div>
+                            {hasTicket ? (
+                              <Badge variant="emerald" size="sm" className="py-1.5 px-3">
+                                <Check size={12} className="mr-1" /> Ticket Acquired
+                              </Badge>
+                            ) : isSoldOut ? (
+                              <Button variant="secondary" size="sm" disabled>Sold Out</Button>
+                            ) : (
+                              <Button onClick={() => setSelectedEvent(event)} size="sm" icon={TicketIcon} className="bg-violet-600 hover:bg-violet-700 shadow-md shadow-violet-500/20">
+                                {event.price > 0 ? 'Buy Ticket' : 'Get Ticket'}
+                              </Button>
+                            )}
+                          </div>
                         </div>
                       )}
                     </div>
@@ -425,70 +364,27 @@ export default function EventsPage() {
         )}
 
         {canCreate && (
-          <CreateEventModal
-            open={showCreate}
-            onClose={() => setShowCreate(false)}
-            onCreated={handleCreated}
-          />
+          <CreateEventModal open={showCreate} onClose={() => setShowCreate(false)} onCreated={handleCreated} />
         )}
 
-        {/* Delete Event Confirmation Modal */}
-        <Modal
-          open={Boolean(deleteTarget)}
-          onClose={() => !deleting && setDeleteTarget(null)}
-          title="Delete Event"
-          subtitle="This action cannot be undone"
-          icon={AlertTriangle}
-          iconColor="bg-red-500"
-        >
-          <div className="space-y-4">
-            <p className="text-sm text-slate-600">
-              Are you sure you want to delete <span className="font-bold text-slate-900">&ldquo;{deleteTarget?.title}&rdquo;</span>?
-            </p>
-            <div className="flex justify-end gap-2 pt-2">
-              <Button variant="secondary" onClick={() => setDeleteTarget(null)} disabled={deleting}>
-                Cancel
-              </Button>
-              <Button variant="danger" onClick={confirmDelete} loading={deleting} icon={Trash2}>
-                Delete Event
-              </Button>
-            </div>
-          </div>
-        </Modal>
-
-        {/* Event Attendees Modal */}
         {viewingAttendees && (
-          <Modal
-            open={!!viewingAttendees}
-            onClose={() => setViewingAttendees(null)}
-            title="Event Ticket Holders"
-            subtitle={`${attendees.length} ticket(s) issued for ${viewingAttendees.title}`}
-            icon={Users}
-            iconColor="bg-gradient-to-br from-emerald-500 to-teal-600"
-          >
+          <Modal open={!!viewingAttendees} onClose={() => setViewingAttendees(null)} title="Event Attendees" subtitle={`${attendees.length} tickets sold for ${viewingAttendees.title}`} icon={Users} iconColor="bg-gradient-to-br from-emerald-500 to-teal-600">
             <div className="max-h-96 overflow-y-auto pr-1">
               {loadingAttendees ? (
-                <div className="flex justify-center py-8">
-                  <Loader2 className="h-6 w-6 animate-spin text-emerald-600" />
-                </div>
+                <div className="flex justify-center py-8"><Loader2 className="h-6 w-6 animate-spin text-emerald-600" /></div>
               ) : attendees.length === 0 ? (
-                <div className="text-center py-8 text-slate-500 text-sm">
-                  No tickets issued yet.
-                </div>
+                <div className="text-center py-8 text-slate-500 text-sm">No tickets sold yet.</div>
               ) : (
                 <div className="space-y-2">
                   {attendees.map((t) => (
                     <div key={t.id} className="flex items-center justify-between p-3 rounded-xl border border-slate-100 bg-slate-50">
                       <div>
-                        <p className="text-sm font-bold text-slate-900">{t.user?.name}</p>
-                        <p className="text-xs text-slate-500">
-                          {t.user?.department || 'Campus'} {t.user?.semester ? `· Sem ${t.user.semester}` : ''}
-                        </p>
+                        <p className="text-sm font-bold text-slate-900">{t.user.name}</p>
+                        <p className="text-xs text-slate-500">{t.user.department} · Sem {t.user.semester || 'N/A'}</p>
                       </div>
                       <div className="text-right">
-                        <span className="text-xs font-mono font-bold text-indigo-700 bg-indigo-50 px-2 py-1 rounded-lg">
-                          {t.code}
-                        </span>
+                        <p className="text-xs font-mono font-bold text-emerald-700 bg-emerald-100 px-2 py-1 rounded">{t.code}</p>
+                        <p className="text-[10px] text-slate-400 mt-1">{new Date(t.issuedAt).toLocaleDateString()}</p>
                       </div>
                     </div>
                   ))}
@@ -498,16 +394,8 @@ export default function EventsPage() {
           </Modal>
         )}
 
-        {/* Simulated Payment / Ticket Checkout Modal */}
         {selectedEvent && (
-          <Modal
-            open={!!selectedEvent}
-            onClose={() => !isPaying && setSelectedEvent(null)}
-            title="Event Ticket Checkout"
-            subtitle="Confirm details to generate your QR pass"
-            icon={CreditCard}
-            iconColor="bg-gradient-to-br from-violet-500 to-indigo-600"
-          >
+          <Modal open={!!selectedEvent} onClose={() => !isPaying && setSelectedEvent(null)} title="Checkout" subtitle="Complete payment to secure your ticket" icon={CreditCard} iconColor="bg-gradient-to-br from-violet-500 to-indigo-600">
             <form onSubmit={confirmPurchase} className="space-y-4">
               <div className="bg-slate-50 rounded-xl p-4 border border-slate-100 flex items-center justify-between">
                 <div>
@@ -516,9 +404,7 @@ export default function EventsPage() {
                 </div>
                 <div className="text-right">
                   <p className="text-xs text-slate-500 font-medium">Total</p>
-                  <p className="text-lg font-extrabold text-indigo-600">
-                    {selectedEvent.price > 0 ? `Rs. ${selectedEvent.price}` : 'Free'}
-                  </p>
+                  <p className="text-lg font-extrabold text-violet-600">{selectedEvent.price > 0 ? `Rs. ${selectedEvent.price}` : 'Free'}</p>
                 </div>
               </div>
 
@@ -528,30 +414,43 @@ export default function EventsPage() {
                     <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Card Number (Demo)</label>
                     <div className="relative">
                       <CreditCard className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-                      <input type="text" placeholder="4242 4242 4242 4242" required defaultValue="4242 4242 4242 4242" className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm font-medium focus:border-indigo-500 focus:outline-none" />
+                      <input type="text" placeholder="4242 4242 4242 4242" required defaultValue="4242 4242 4242 4242" className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm font-medium focus:border-violet-500 focus:outline-none" />
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-3">
                     <div>
                       <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Expiry</label>
-                      <input type="text" placeholder="MM/YY" required defaultValue="12/28" className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm font-medium focus:border-indigo-500 focus:outline-none" />
+                      <input type="text" placeholder="MM/YY" required defaultValue="12/28" className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm font-medium focus:border-violet-500 focus:outline-none" />
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">CVC</label>
                       <div className="relative">
                         <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-                        <input type="text" placeholder="123" required defaultValue="123" className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm font-medium focus:border-indigo-500 focus:outline-none" />
+                        <input type="text" placeholder="123" required defaultValue="123" className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm font-medium focus:border-violet-500 focus:outline-none" />
                       </div>
                     </div>
                   </div>
-                  <p className="text-[10px] text-center text-slate-400 mt-2">Simulated payment gateway for FYP demonstration.</p>
+                  <p className="text-[10px] text-center text-slate-400 mt-2">This is a simulated payment gateway for FYP demo purposes.</p>
                 </div>
               )}
 
-              <Button type="submit" loading={isPaying} icon={Lock} className="w-full">
-                {isPaying ? 'Generating Ticket...' : `${selectedEvent.price > 0 ? `Pay Rs. ${selectedEvent.price} & ` : ''}Get QR Ticket`}
+              <Button type="submit" loading={isPaying} icon={Lock} className="w-full bg-violet-600 hover:bg-violet-700">
+                {isPaying ? 'Processing Payment...' : `Pay ${selectedEvent.price > 0 ? `Rs. ${selectedEvent.price}` : ''} & Get Ticket`}
               </Button>
             </form>
+          </Modal>
+        )}
+        
+        {/* Delete Event Confirmation Modal */}
+        {deleteTarget && (
+          <Modal open={!!deleteTarget} onClose={() => !deleting && setDeleteTarget(null)} title="Delete Event" subtitle="This action cannot be undone" icon={AlertTriangle} iconColor="bg-red-500">
+            <div className="space-y-4">
+              <p className="text-sm text-slate-600">Are you sure you want to delete the event <span className="font-bold text-slate-900">"{deleteTarget.title}"</span>?</p>
+              <div className="flex justify-end gap-2 pt-2">
+                <Button variant="secondary" onClick={() => setDeleteTarget(null)} disabled={deleting}>Cancel</Button>
+                <Button variant="danger" onClick={confirmDelete} loading={deleting} icon={Trash2}>Delete</Button>
+              </div>
+            </div>
           </Modal>
         )}
       </div>
@@ -561,27 +460,8 @@ export default function EventsPage() {
 
 function CreateEventModal({ open, onClose, onCreated }) {
   const [form, setForm] = useState({ title: '', description: '', location: '', startDate: '', endDate: '', price: '', capacity: '' });
-  const [imagePreview, setImagePreview] = useState('');
   const [submitting, setSubmitting] = useState(false);
-  const fileInputRef = useRef(null);
   const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
-
-  const handleImageSelect = async (e) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    const validation = validateImageFile(file);
-    if (!validation.valid) {
-      toast.error(validation.reason);
-      e.target.value = '';
-      return;
-    }
-    try {
-      const dataUrl = await fileToDataUrl(file);
-      setImagePreview(dataUrl);
-    } catch {
-      toast.error('Failed to read image file.');
-    }
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -598,25 +478,13 @@ function CreateEventModal({ open, onClose, onCreated }) {
 
     try {
       setSubmitting(true);
-      const res = await eventsAPI.create({
-        title: form.title.trim(),
-        description: form.description.trim(),
-        location: form.location.trim(),
-        startDate: form.startDate,
-        endDate: form.endDate || undefined,
-        price: form.price ? parseFloat(form.price) : 0,
-        capacity: form.capacity ? parseInt(form.capacity) : undefined,
-        ...(imagePreview ? { imageUrl: imagePreview } : {}),
-      });
+      const payload = { ...form, endDate: form.endDate || undefined, price: form.price ? parseFloat(form.price) : 0, capacity: form.capacity ? parseInt(form.capacity) : undefined };
+      const res = await eventsAPI.create(payload);
       onCreated(res.data.event);
       setForm({ title: '', description: '', location: '', startDate: '', endDate: '', price: '', capacity: '' });
-      setImagePreview('');
-      if (fileInputRef.current) fileInputRef.current.value = '';
     } catch (err) {
       toast.error(err.response?.data?.error || 'Failed to create event.');
-    } finally {
-      setSubmitting(false);
-    }
+    } finally { setSubmitting(false); }
   };
 
   const inputCls = 'w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium placeholder-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/15 transition-all';
@@ -626,34 +494,15 @@ function CreateEventModal({ open, onClose, onCreated }) {
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Title *</label>
-          <input
-            value={form.title}
-            onChange={(e) => set('title', e.target.value)}
-            placeholder="e.g. Annual Sports Day 2026"
-            className={inputCls}
-            required
-          />
+          <input value={form.title} onChange={(e) => set('title', e.target.value)} placeholder="e.g. Annual Sports Day 2026" className={inputCls} required />
         </div>
         <div>
-          <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Description *</label>
-          <textarea
-            value={form.description}
-            onChange={(e) => set('description', e.target.value)}
-            placeholder="Describe the event agenda, speakers, and details..."
-            rows={3}
-            className={`${inputCls} resize-none`}
-            required
-          />
+          <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Description</label>
+          <textarea value={form.description} onChange={(e) => set('description', e.target.value)} placeholder="What's this event about?" rows={3} className={`${inputCls} resize-none`} />
         </div>
         <div>
-          <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Location *</label>
-          <input
-            value={form.location}
-            onChange={(e) => set('location', e.target.value)}
-            placeholder="e.g. Main Auditorium"
-            className={inputCls}
-            required
-          />
+          <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Location</label>
+          <input value={form.location} onChange={(e) => set('location', e.target.value)} placeholder="e.g. Main Auditorium" className={inputCls} />
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div>
@@ -667,58 +516,15 @@ function CreateEventModal({ open, onClose, onCreated }) {
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Ticket Price (Rs.)</label>
-            <input type="number" min="0" value={form.price} onChange={(e) => set('price', e.target.value)} placeholder="0 for Free" className={inputCls} />
+            <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Price (Rs.)</label>
+            <input type="number" min="0" value={form.price} onChange={(e) => set('price', e.target.value)} placeholder="0 for free" className={inputCls} />
           </div>
           <div>
-            <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Seat Capacity</label>
+            <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Capacity</label>
             <input type="number" min="1" value={form.capacity} onChange={(e) => set('capacity', e.target.value)} placeholder="Unlimited" className={inputCls} />
           </div>
         </div>
-
-        {/* Event Picture Upload */}
-        <div>
-          <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Event Picture (Optional)</label>
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept="image/jpeg,image/png,image/webp,image/gif"
-            onChange={handleImageSelect}
-            className="hidden"
-          />
-          {imagePreview ? (
-            <div className="relative rounded-xl overflow-hidden border border-slate-200 bg-slate-50 max-h-48">
-              <img src={imagePreview} alt="Event preview" className="w-full max-h-48 object-cover" />
-              <button
-                type="button"
-                onClick={() => {
-                  setImagePreview('');
-                  if (fileInputRef.current) fileInputRef.current.value = '';
-                }}
-                className="absolute top-2 right-2 p-1.5 rounded-lg bg-slate-900/75 text-white hover:bg-red-600 transition-colors cursor-pointer"
-                title="Remove picture"
-              >
-                <X size={14} />
-              </button>
-            </div>
-          ) : (
-            <button
-              type="button"
-              onClick={() => fileInputRef.current?.click()}
-              className="w-full py-3 px-4 rounded-xl border-2 border-dashed border-slate-200 hover:border-indigo-400 bg-slate-50/50 hover:bg-indigo-50/30 text-slate-500 hover:text-indigo-600 text-xs font-bold flex items-center justify-center gap-2 transition-all cursor-pointer"
-            >
-              <ImageIcon size={16} />
-              <span>Upload Event Banner / Poster Picture (JPEG, PNG, WEBP)</span>
-            </button>
-          )}
-        </div>
-
-        <Button
-          type="submit"
-          loading={submitting}
-          disabled={!form.title.trim() || !form.description.trim() || !form.location.trim() || !form.startDate}
-          className="w-full"
-        >
+        <Button type="submit" loading={submitting} disabled={!form.title.trim() || !form.startDate} className="w-full">
           Create Event
         </Button>
       </form>

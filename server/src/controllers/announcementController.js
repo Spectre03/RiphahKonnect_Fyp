@@ -74,6 +74,9 @@ const getAnnouncement = async (req, res, next) => {
 // POST /api/announcements
 const createAnnouncement = async (req, res, next) => {
   try {
+<<<<<<< HEAD
+    const { title, content, targetDepartment, targetSemester, fileUrl, fileName, fileType } = req.body;
+=======
     const {
       title,
       content,
@@ -84,6 +87,7 @@ const createAnnouncement = async (req, res, next) => {
       attachmentUrl,
       attachmentName,
     } = req.body;
+>>>>>>> d0512afd1fe3eb2f17b712d3fc2a98d2f1b5ff76
     const user = req.user;
 
     const titleCheck = checkTextContent(title, { minLength: 3, fieldName: 'Announcement title' });
@@ -130,6 +134,20 @@ const createAnnouncement = async (req, res, next) => {
       ? new Date(publishDate)
       : undefined;
 
+<<<<<<< HEAD
+   const announcement = await prisma.announcement.create({
+  data: {
+    title,
+    content,
+    type,
+    targetDepartment: targetDepartment || null,
+    targetSemester:   targetSemester ? parseInt(targetSemester) : null,
+    fileUrl,
+    fileName,
+    fileType,
+    authorId: user.id,
+  },
+=======
     const announcement = await prisma.announcement.create({
       data: {
         title: title.trim(),
@@ -140,6 +158,7 @@ const createAnnouncement = async (req, res, next) => {
         authorId: user.id,
         ...(createdAtDate ? { createdAt: createdAtDate } : {}),
       },
+>>>>>>> d0512afd1fe3eb2f17b712d3fc2a98d2f1b5ff76
       include: {
         author: { select: { id: true, name: true, avatarUrl: true, role: true, department: true } },
       },
@@ -206,6 +225,20 @@ const updateAnnouncement = async (req, res, next) => {
       return res.status(403).json({ error: 'Not authorized.' });
     }
 
+<<<<<<< HEAD
+   const updated = await prisma.announcement.update({
+  where: { id: req.params.id },
+  data: {
+    title:           req.body.title           ?? announcement.title,
+    content:         req.body.content         ?? announcement.content,
+    targetDepartment: req.body.targetDepartment !== undefined ? req.body.targetDepartment : announcement.targetDepartment,
+    targetSemester:  req.body.targetSemester  !== undefined ? parseInt(req.body.targetSemester) : announcement.targetSemester,
+    fileUrl:         req.body.fileUrl         ?? announcement.fileUrl,
+    fileName:        req.body.fileName        ?? announcement.fileName,
+    fileType:        req.body.fileType        ?? announcement.fileType,
+  },
+});
+=======
     const updated = await prisma.announcement.update({
       where: { id: req.params.id },
       data: {
@@ -215,6 +248,7 @@ const updateAnnouncement = async (req, res, next) => {
         targetSemesters:  req.body.targetSemesters  !== undefined ? req.body.targetSemesters.map(s => parseInt(s)) : announcement.targetSemesters,
       },
     });
+>>>>>>> d0512afd1fe3eb2f17b712d3fc2a98d2f1b5ff76
 
     res.json({ announcement: updated });
   } catch (err) {

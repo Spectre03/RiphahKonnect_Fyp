@@ -27,6 +27,16 @@ api.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+// ─── File Upload ──────────────────────────────────────────────────────────────
+export const uploadAPI = {
+  upload: (file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+    return api.post('/upload', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    });
+  },
+};
 
 // ─── Auth ────────────────────────────────────────────────────────────────────
 export const authAPI = {
@@ -38,6 +48,8 @@ export const authAPI = {
   resetPassword: (data) => api.post('/auth/reset-password', data),
   getMe: () => api.get('/auth/me'),
 };
+
+
 
 // ─── Posts ───────────────────────────────────────────────────────────────────
 export const postsAPI = {
@@ -73,6 +85,14 @@ export const groupsAPI = {
   removeMember: (groupId, userId) => api.delete(`/semester-groups/${groupId}/members/${userId}`),
 };
 
+// ─── Tickets ──────────────────────────────────────────────────────────────────
+export const ticketsAPI = {
+  buy: (eventId) => api.post(`/tickets/${eventId}/buy`),
+  getMyTickets: () => api.get('/tickets/my-tickets'),
+  getEventTickets: (eventId) => api.get(`/tickets/event/${eventId}`),
+};
+
+
 // ─── Announcements ────────────────────────────────────────────────────────────
 export const announcementsAPI = {
   getAll: (params = {}) => {
@@ -100,13 +120,6 @@ export const eventsAPI = {
   delete: (id) => api.delete(`/events/${id}`),
   rsvp: (id, status) => api.post(`/events/${id}/rsvp`, { status }),
   getAttendees: (id) => api.get(`/events/${id}/attendees`),
-};
-
-// ─── Tickets ──────────────────────────────────────────────────────────────────
-export const ticketsAPI = {
-  buy: (eventId) => api.post(`/tickets/${eventId}/buy`),
-  getMyTickets: () => api.get('/tickets/my-tickets'),
-  getEventTickets: (eventId) => api.get(`/tickets/event/${eventId}`),
 };
 
 // ─── Lost & Found ─────────────────────────────────────────────────────────────

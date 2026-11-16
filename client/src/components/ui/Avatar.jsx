@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { cn } from '../../utils/cn';
 import { getAvatarGradient } from '../../utils/brand';
 
@@ -23,10 +23,6 @@ const dotSizeMap = {
 export default function Avatar({ name = '', src, size = 'md', className, ring = false, online }) {
   const [imgError, setImgError] = useState(false);
 
-  useEffect(() => {
-    setImgError(false);
-  }, [src]);
-
   const sizeClass = sizeMap[size] || sizeMap.md;
   const dotClass = dotSizeMap[size] || dotSizeMap.md;
   const ringClass = ring ? 'avatar-ring' : '';
@@ -35,6 +31,7 @@ export default function Avatar({ name = '', src, size = 'md', className, ring = 
 
   const avatarEl = validSrc ? (
     <img
+      key={src}
       src={src}
       alt=""
       onError={() => setImgError(true)}

@@ -240,7 +240,8 @@ export default function HomePage() {
             Quick Access
           </p>
           <div className={`grid gap-2.5 ${colClass} stagger`}>
-            {quickLinks.map(({ icon: Icon, label, to, bg, desc }) => (
+            {/* eslint-disable-next-line no-unused-vars */}
+            {quickLinks.map(({ icon: QuickLinkIcon, label, to, bg, desc }) => (
               <Link
                 key={label}
                 to={to}
@@ -256,7 +257,7 @@ export default function HomePage() {
                 }}
               >
                 <div className={`h-9 w-9 flex-shrink-0 rounded-xl bg-gradient-to-br ${bg} flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-200`}>
-                  <Icon size={16} className="text-white" />
+                  <QuickLinkIcon size={16} className="text-white" />
                 </div>
                 <div className="min-w-0">
                   <p

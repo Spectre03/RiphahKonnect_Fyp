@@ -7,7 +7,7 @@ export default function Modal({
   open,
   onClose,
   title,
-  subtitle,
+  subtitle = '',
   children,
   maxWidth = 'max-w-lg',
   icon: Icon,
