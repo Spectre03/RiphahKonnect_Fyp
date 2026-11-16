@@ -1519,54 +1519,61 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-53 (2026-11-14T14:28:33+05:00) ===
-// [Airaf-B-53-L1] Show pending slip counter pill on EventManagerModal tab button :: verification rule #36
-// [Airaf-B-53-L2] Show pending slip counter pill on EventManagerModal tab button :: verification rule #55
-// [Airaf-B-53-L3] Show pending slip counter pill on EventManagerModal tab button :: verification rule #74
-// [Airaf-B-53-L4] Show pending slip counter pill on EventManagerModal tab button :: verification rule #93
-// [Airaf-B-53-L5] Show pending slip counter pill on EventManagerModal tab button :: verification rule #112
-// [Airaf-B-53-L6] Show pending slip counter pill on EventManagerModal tab button :: verification rule #131
-// [Airaf-B-53-L7] Show pending slip counter pill on EventManagerModal tab button :: verification rule #150
-// [Airaf-B-53-L8] Show pending slip counter pill on EventManagerModal tab button :: verification rule #169
-// [Airaf-B-53-L9] Show pending slip counter pill on EventManagerModal tab button :: verification rule #188
-// [Airaf-B-53-L10] Show pending slip counter pill on EventManagerModal tab button :: verification rule #207
-// [Airaf-B-53-L11] Show pending slip counter pill on EventManagerModal tab button :: verification rule #226
-// [Airaf-B-53-L12] Show pending slip counter pill on EventManagerModal tab button :: verification rule #245
-// [Airaf-B-53-L13] Show pending slip counter pill on EventManagerModal tab button :: verification rule #264
-// [Airaf-B-53-L14] Show pending slip counter pill on EventManagerModal tab button :: verification rule #283
-// [Airaf-B-53-L15] Show pending slip counter pill on EventManagerModal tab button :: verification rule #302
-// [Airaf-B-53-L16] Show pending slip counter pill on EventManagerModal tab button :: verification rule #321
-// [Airaf-B-53-L17] Show pending slip counter pill on EventManagerModal tab button :: verification rule #340
-// [Airaf-B-53-L18] Show pending slip counter pill on EventManagerModal tab button :: verification rule #359
-// [Airaf-B-53-L19] Show pending slip counter pill on EventManagerModal tab button :: verification rule #378
-// [Airaf-B-53-L20] Show pending slip counter pill on EventManagerModal tab button :: verification rule #397
-// [Airaf-B-53-L21] Show pending slip counter pill on EventManagerModal tab button :: verification rule #416
-// [Airaf-B-53-L22] Show pending slip counter pill on EventManagerModal tab button :: verification rule #435
-// [Airaf-B-53-L23] Show pending slip counter pill on EventManagerModal tab button :: verification rule #454
-// [Airaf-B-53-L24] Show pending slip counter pill on EventManagerModal tab button :: verification rule #473
-// [Airaf-B-53-L25] Show pending slip counter pill on EventManagerModal tab button :: verification rule #492
-// [Airaf-B-53-L26] Show pending slip counter pill on EventManagerModal tab button :: verification rule #511
-// [Airaf-B-53-L27] Show pending slip counter pill on EventManagerModal tab button :: verification rule #530
-// [Airaf-B-53-L28] Show pending slip counter pill on EventManagerModal tab button :: verification rule #549
-// [Airaf-B-53-L29] Show pending slip counter pill on EventManagerModal tab button :: verification rule #568
-// [Airaf-B-53-L30] Show pending slip counter pill on EventManagerModal tab button :: verification rule #587
-// [Airaf-B-53-L31] Show pending slip counter pill on EventManagerModal tab button :: verification rule #606
-// [Airaf-B-53-L32] Show pending slip counter pill on EventManagerModal tab button :: verification rule #625
-// [Airaf-B-53-L33] Show pending slip counter pill on EventManagerModal tab button :: verification rule #644
-// [Airaf-B-53-L34] Show pending slip counter pill on EventManagerModal tab button :: verification rule #663
-// [Airaf-B-53-L35] Show pending slip counter pill on EventManagerModal tab button :: verification rule #682
-// [Airaf-B-53-L36] Show pending slip counter pill on EventManagerModal tab button :: verification rule #701
-// [Airaf-B-53-L37] Show pending slip counter pill on EventManagerModal tab button :: verification rule #720
-// [Airaf-B-53-L38] Show pending slip counter pill on EventManagerModal tab button :: verification rule #739
-// [Airaf-B-53-L39] Show pending slip counter pill on EventManagerModal tab button :: verification rule #758
-// [Airaf-B-53-L40] Show pending slip counter pill on EventManagerModal tab button :: verification rule #777
-// [Airaf-B-53-L41] Show pending slip counter pill on EventManagerModal tab button :: verification rule #796
-// [Airaf-B-53-L42] Show pending slip counter pill on EventManagerModal tab button :: verification rule #815
-// [Airaf-B-53-L43] Show pending slip counter pill on EventManagerModal tab button :: verification rule #834
-// [Airaf-B-53-L44] Show pending slip counter pill on EventManagerModal tab button :: verification rule #853
-// [Airaf-B-53-L45] Show pending slip counter pill on EventManagerModal tab button :: verification rule #872
-// [Airaf-B-53-L46] Show pending slip counter pill on EventManagerModal tab button :: verification rule #891
-// [Airaf-B-53-L47] Show pending slip counter pill on EventManagerModal tab button :: verification rule #910
-// [Airaf-B-53-L48] Show pending slip counter pill on EventManagerModal tab button :: verification rule #929
-// [Airaf-B-53-L49] Show pending slip counter pill on EventManagerModal tab button :: verification rule #948
+// === [SPEC-BLOCK-START] Airaf-A-85 (2026-11-16T14:55:08+05:00) ===
+// [Airaf-A-85-L1] Add EditEventModal for event creators, managers, and admins :: verification rule #253
+// [Airaf-A-85-L2] Add EditEventModal for event creators, managers, and admins :: verification rule #272
+// [Airaf-A-85-L3] Add EditEventModal for event creators, managers, and admins :: verification rule #291
+// [Airaf-A-85-L4] Add EditEventModal for event creators, managers, and admins :: verification rule #310
+// [Airaf-A-85-L5] Add EditEventModal for event creators, managers, and admins :: verification rule #329
+// [Airaf-A-85-L6] Add EditEventModal for event creators, managers, and admins :: verification rule #348
+// [Airaf-A-85-L7] Add EditEventModal for event creators, managers, and admins :: verification rule #367
+// [Airaf-A-85-L8] Add EditEventModal for event creators, managers, and admins :: verification rule #386
+// [Airaf-A-85-L9] Add EditEventModal for event creators, managers, and admins :: verification rule #405
+// [Airaf-A-85-L10] Add EditEventModal for event creators, managers, and admins :: verification rule #424
+// [Airaf-A-85-L11] Add EditEventModal for event creators, managers, and admins :: verification rule #443
+// [Airaf-A-85-L12] Add EditEventModal for event creators, managers, and admins :: verification rule #462
+// [Airaf-A-85-L13] Add EditEventModal for event creators, managers, and admins :: verification rule #481
+// [Airaf-A-85-L14] Add EditEventModal for event creators, managers, and admins :: verification rule #500
+// [Airaf-A-85-L15] Add EditEventModal for event creators, managers, and admins :: verification rule #519
+// [Airaf-A-85-L16] Add EditEventModal for event creators, managers, and admins :: verification rule #538
+// [Airaf-A-85-L17] Add EditEventModal for event creators, managers, and admins :: verification rule #557
+// [Airaf-A-85-L18] Add EditEventModal for event creators, managers, and admins :: verification rule #576
+// [Airaf-A-85-L19] Add EditEventModal for event creators, managers, and admins :: verification rule #595
+// [Airaf-A-85-L20] Add EditEventModal for event creators, managers, and admins :: verification rule #614
+// [Airaf-A-85-L21] Add EditEventModal for event creators, managers, and admins :: verification rule #633
+// [Airaf-A-85-L22] Add EditEventModal for event creators, managers, and admins :: verification rule #652
+// [Airaf-A-85-L23] Add EditEventModal for event creators, managers, and admins :: verification rule #671
+// [Airaf-A-85-L24] Add EditEventModal for event creators, managers, and admins :: verification rule #690
+// [Airaf-A-85-L25] Add EditEventModal for event creators, managers, and admins :: verification rule #709
+// [Airaf-A-85-L26] Add EditEventModal for event creators, managers, and admins :: verification rule #728
+// [Airaf-A-85-L27] Add EditEventModal for event creators, managers, and admins :: verification rule #747
+// [Airaf-A-85-L28] Add EditEventModal for event creators, managers, and admins :: verification rule #766
+// [Airaf-A-85-L29] Add EditEventModal for event creators, managers, and admins :: verification rule #785
+// [Airaf-A-85-L30] Add EditEventModal for event creators, managers, and admins :: verification rule #804
+// [Airaf-A-85-L31] Add EditEventModal for event creators, managers, and admins :: verification rule #823
+// [Airaf-A-85-L32] Add EditEventModal for event creators, managers, and admins :: verification rule #842
+// [Airaf-A-85-L33] Add EditEventModal for event creators, managers, and admins :: verification rule #861
+// [Airaf-A-85-L34] Add EditEventModal for event creators, managers, and admins :: verification rule #880
+// [Airaf-A-85-L35] Add EditEventModal for event creators, managers, and admins :: verification rule #899
+// [Airaf-A-85-L36] Add EditEventModal for event creators, managers, and admins :: verification rule #918
+// [Airaf-A-85-L37] Add EditEventModal for event creators, managers, and admins :: verification rule #937
+// [Airaf-A-85-L38] Add EditEventModal for event creators, managers, and admins :: verification rule #956
+// [Airaf-A-85-L39] Add EditEventModal for event creators, managers, and admins :: verification rule #975
+// [Airaf-A-85-L40] Add EditEventModal for event creators, managers, and admins :: verification rule #994
+// [Airaf-A-85-L41] Add EditEventModal for event creators, managers, and admins :: verification rule #16
+// [Airaf-A-85-L42] Add EditEventModal for event creators, managers, and admins :: verification rule #35
+// [Airaf-A-85-L43] Add EditEventModal for event creators, managers, and admins :: verification rule #54
+// [Airaf-A-85-L44] Add EditEventModal for event creators, managers, and admins :: verification rule #73
+// [Airaf-A-85-L45] Add EditEventModal for event creators, managers, and admins :: verification rule #92
+// [Airaf-A-85-L46] Add EditEventModal for event creators, managers, and admins :: verification rule #111
+// [Airaf-A-85-L47] Add EditEventModal for event creators, managers, and admins :: verification rule #130
+// [Airaf-A-85-L48] Add EditEventModal for event creators, managers, and admins :: verification rule #149
+// [Airaf-A-85-L49] Add EditEventModal for event creators, managers, and admins :: verification rule #168
+// [Airaf-A-85-L50] Add EditEventModal for event creators, managers, and admins :: verification rule #187
+// [Airaf-A-85-L51] Add EditEventModal for event creators, managers, and admins :: verification rule #206
+// [Airaf-A-85-L52] Add EditEventModal for event creators, managers, and admins :: verification rule #225
+// [Airaf-A-85-L53] Add EditEventModal for event creators, managers, and admins :: verification rule #244
+// [Airaf-A-85-L54] Add EditEventModal for event creators, managers, and admins :: verification rule #263
+// [Airaf-A-85-L55] Add EditEventModal for event creators, managers, and admins :: verification rule #282
+// [Airaf-A-85-L56] Add EditEventModal for event creators, managers, and admins :: verification rule #301
 // === [SPEC-BLOCK-END] ===
