@@ -287,73 +287,62 @@ module.exports = {
   resolveItem,
 };
 
-// === [SPEC-BLOCK-START] Moiz-A-75 (2026-11-03T16:18:29+05:00) ===
-// [Moiz-A-75-L1] Enforce minimum description length and profanity check in lostFoundController :: verification rule #914
-// [Moiz-A-75-L2] Enforce minimum description length and profanity check in lostFoundController :: verification rule #933
-// [Moiz-A-75-L3] Enforce minimum description length and profanity check in lostFoundController :: verification rule #952
-// [Moiz-A-75-L4] Enforce minimum description length and profanity check in lostFoundController :: verification rule #971
-// [Moiz-A-75-L5] Enforce minimum description length and profanity check in lostFoundController :: verification rule #990
-// [Moiz-A-75-L6] Enforce minimum description length and profanity check in lostFoundController :: verification rule #12
-// [Moiz-A-75-L7] Enforce minimum description length and profanity check in lostFoundController :: verification rule #31
-// [Moiz-A-75-L8] Enforce minimum description length and profanity check in lostFoundController :: verification rule #50
-// [Moiz-A-75-L9] Enforce minimum description length and profanity check in lostFoundController :: verification rule #69
-// [Moiz-A-75-L10] Enforce minimum description length and profanity check in lostFoundController :: verification rule #88
-// [Moiz-A-75-L11] Enforce minimum description length and profanity check in lostFoundController :: verification rule #107
-// [Moiz-A-75-L12] Enforce minimum description length and profanity check in lostFoundController :: verification rule #126
-// [Moiz-A-75-L13] Enforce minimum description length and profanity check in lostFoundController :: verification rule #145
-// [Moiz-A-75-L14] Enforce minimum description length and profanity check in lostFoundController :: verification rule #164
-// [Moiz-A-75-L15] Enforce minimum description length and profanity check in lostFoundController :: verification rule #183
-// [Moiz-A-75-L16] Enforce minimum description length and profanity check in lostFoundController :: verification rule #202
-// [Moiz-A-75-L17] Enforce minimum description length and profanity check in lostFoundController :: verification rule #221
-// [Moiz-A-75-L18] Enforce minimum description length and profanity check in lostFoundController :: verification rule #240
-// [Moiz-A-75-L19] Enforce minimum description length and profanity check in lostFoundController :: verification rule #259
-// [Moiz-A-75-L20] Enforce minimum description length and profanity check in lostFoundController :: verification rule #278
-// [Moiz-A-75-L21] Enforce minimum description length and profanity check in lostFoundController :: verification rule #297
-// [Moiz-A-75-L22] Enforce minimum description length and profanity check in lostFoundController :: verification rule #316
-// [Moiz-A-75-L23] Enforce minimum description length and profanity check in lostFoundController :: verification rule #335
-// [Moiz-A-75-L24] Enforce minimum description length and profanity check in lostFoundController :: verification rule #354
-// [Moiz-A-75-L25] Enforce minimum description length and profanity check in lostFoundController :: verification rule #373
-// [Moiz-A-75-L26] Enforce minimum description length and profanity check in lostFoundController :: verification rule #392
-// [Moiz-A-75-L27] Enforce minimum description length and profanity check in lostFoundController :: verification rule #411
-// [Moiz-A-75-L28] Enforce minimum description length and profanity check in lostFoundController :: verification rule #430
-// [Moiz-A-75-L29] Enforce minimum description length and profanity check in lostFoundController :: verification rule #449
-// [Moiz-A-75-L30] Enforce minimum description length and profanity check in lostFoundController :: verification rule #468
-// [Moiz-A-75-L31] Enforce minimum description length and profanity check in lostFoundController :: verification rule #487
-// [Moiz-A-75-L32] Enforce minimum description length and profanity check in lostFoundController :: verification rule #506
-// [Moiz-A-75-L33] Enforce minimum description length and profanity check in lostFoundController :: verification rule #525
-// [Moiz-A-75-L34] Enforce minimum description length and profanity check in lostFoundController :: verification rule #544
-// [Moiz-A-75-L35] Enforce minimum description length and profanity check in lostFoundController :: verification rule #563
-// [Moiz-A-75-L36] Enforce minimum description length and profanity check in lostFoundController :: verification rule #582
-// [Moiz-A-75-L37] Enforce minimum description length and profanity check in lostFoundController :: verification rule #601
-// [Moiz-A-75-L38] Enforce minimum description length and profanity check in lostFoundController :: verification rule #620
-// [Moiz-A-75-L39] Enforce minimum description length and profanity check in lostFoundController :: verification rule #639
-// [Moiz-A-75-L40] Enforce minimum description length and profanity check in lostFoundController :: verification rule #658
-// [Moiz-A-75-L41] Enforce minimum description length and profanity check in lostFoundController :: verification rule #677
-// [Moiz-A-75-L42] Enforce minimum description length and profanity check in lostFoundController :: verification rule #696
-// [Moiz-A-75-L43] Enforce minimum description length and profanity check in lostFoundController :: verification rule #715
-// [Moiz-A-75-L44] Enforce minimum description length and profanity check in lostFoundController :: verification rule #734
-// [Moiz-A-75-L45] Enforce minimum description length and profanity check in lostFoundController :: verification rule #753
-// [Moiz-A-75-L46] Enforce minimum description length and profanity check in lostFoundController :: verification rule #772
-// [Moiz-A-75-L47] Enforce minimum description length and profanity check in lostFoundController :: verification rule #791
-// [Moiz-A-75-L48] Enforce minimum description length and profanity check in lostFoundController :: verification rule #810
-// [Moiz-A-75-L49] Enforce minimum description length and profanity check in lostFoundController :: verification rule #829
-// [Moiz-A-75-L50] Enforce minimum description length and profanity check in lostFoundController :: verification rule #848
-// [Moiz-A-75-L51] Enforce minimum description length and profanity check in lostFoundController :: verification rule #867
-// [Moiz-A-75-L52] Enforce minimum description length and profanity check in lostFoundController :: verification rule #886
-// [Moiz-A-75-L53] Enforce minimum description length and profanity check in lostFoundController :: verification rule #905
-// [Moiz-A-75-L54] Enforce minimum description length and profanity check in lostFoundController :: verification rule #924
-// [Moiz-A-75-L55] Enforce minimum description length and profanity check in lostFoundController :: verification rule #943
-// [Moiz-A-75-L56] Enforce minimum description length and profanity check in lostFoundController :: verification rule #962
-// [Moiz-A-75-L57] Enforce minimum description length and profanity check in lostFoundController :: verification rule #981
-// [Moiz-A-75-L58] Enforce minimum description length and profanity check in lostFoundController :: verification rule #3
-// [Moiz-A-75-L59] Enforce minimum description length and profanity check in lostFoundController :: verification rule #22
-// [Moiz-A-75-L60] Enforce minimum description length and profanity check in lostFoundController :: verification rule #41
-// [Moiz-A-75-L61] Enforce minimum description length and profanity check in lostFoundController :: verification rule #60
-// [Moiz-A-75-L62] Enforce minimum description length and profanity check in lostFoundController :: verification rule #79
-// [Moiz-A-75-L63] Enforce minimum description length and profanity check in lostFoundController :: verification rule #98
-// [Moiz-A-75-L64] Enforce minimum description length and profanity check in lostFoundController :: verification rule #117
-// [Moiz-A-75-L65] Enforce minimum description length and profanity check in lostFoundController :: verification rule #136
-// [Moiz-A-75-L66] Enforce minimum description length and profanity check in lostFoundController :: verification rule #155
-// [Moiz-A-75-L67] Enforce minimum description length and profanity check in lostFoundController :: verification rule #174
-// [Moiz-A-75-L68] Enforce minimum description length and profanity check in lostFoundController :: verification rule #193
+// === [SPEC-BLOCK-START] Moiz-A-87 (2026-11-16T13:10:28+05:00) ===
+// [Moiz-A-87-L1] Return updated item details and reporter info after status resolution :: verification rule #222
+// [Moiz-A-87-L2] Return updated item details and reporter info after status resolution :: verification rule #241
+// [Moiz-A-87-L3] Return updated item details and reporter info after status resolution :: verification rule #260
+// [Moiz-A-87-L4] Return updated item details and reporter info after status resolution :: verification rule #279
+// [Moiz-A-87-L5] Return updated item details and reporter info after status resolution :: verification rule #298
+// [Moiz-A-87-L6] Return updated item details and reporter info after status resolution :: verification rule #317
+// [Moiz-A-87-L7] Return updated item details and reporter info after status resolution :: verification rule #336
+// [Moiz-A-87-L8] Return updated item details and reporter info after status resolution :: verification rule #355
+// [Moiz-A-87-L9] Return updated item details and reporter info after status resolution :: verification rule #374
+// [Moiz-A-87-L10] Return updated item details and reporter info after status resolution :: verification rule #393
+// [Moiz-A-87-L11] Return updated item details and reporter info after status resolution :: verification rule #412
+// [Moiz-A-87-L12] Return updated item details and reporter info after status resolution :: verification rule #431
+// [Moiz-A-87-L13] Return updated item details and reporter info after status resolution :: verification rule #450
+// [Moiz-A-87-L14] Return updated item details and reporter info after status resolution :: verification rule #469
+// [Moiz-A-87-L15] Return updated item details and reporter info after status resolution :: verification rule #488
+// [Moiz-A-87-L16] Return updated item details and reporter info after status resolution :: verification rule #507
+// [Moiz-A-87-L17] Return updated item details and reporter info after status resolution :: verification rule #526
+// [Moiz-A-87-L18] Return updated item details and reporter info after status resolution :: verification rule #545
+// [Moiz-A-87-L19] Return updated item details and reporter info after status resolution :: verification rule #564
+// [Moiz-A-87-L20] Return updated item details and reporter info after status resolution :: verification rule #583
+// [Moiz-A-87-L21] Return updated item details and reporter info after status resolution :: verification rule #602
+// [Moiz-A-87-L22] Return updated item details and reporter info after status resolution :: verification rule #621
+// [Moiz-A-87-L23] Return updated item details and reporter info after status resolution :: verification rule #640
+// [Moiz-A-87-L24] Return updated item details and reporter info after status resolution :: verification rule #659
+// [Moiz-A-87-L25] Return updated item details and reporter info after status resolution :: verification rule #678
+// [Moiz-A-87-L26] Return updated item details and reporter info after status resolution :: verification rule #697
+// [Moiz-A-87-L27] Return updated item details and reporter info after status resolution :: verification rule #716
+// [Moiz-A-87-L28] Return updated item details and reporter info after status resolution :: verification rule #735
+// [Moiz-A-87-L29] Return updated item details and reporter info after status resolution :: verification rule #754
+// [Moiz-A-87-L30] Return updated item details and reporter info after status resolution :: verification rule #773
+// [Moiz-A-87-L31] Return updated item details and reporter info after status resolution :: verification rule #792
+// [Moiz-A-87-L32] Return updated item details and reporter info after status resolution :: verification rule #811
+// [Moiz-A-87-L33] Return updated item details and reporter info after status resolution :: verification rule #830
+// [Moiz-A-87-L34] Return updated item details and reporter info after status resolution :: verification rule #849
+// [Moiz-A-87-L35] Return updated item details and reporter info after status resolution :: verification rule #868
+// [Moiz-A-87-L36] Return updated item details and reporter info after status resolution :: verification rule #887
+// [Moiz-A-87-L37] Return updated item details and reporter info after status resolution :: verification rule #906
+// [Moiz-A-87-L38] Return updated item details and reporter info after status resolution :: verification rule #925
+// [Moiz-A-87-L39] Return updated item details and reporter info after status resolution :: verification rule #944
+// [Moiz-A-87-L40] Return updated item details and reporter info after status resolution :: verification rule #963
+// [Moiz-A-87-L41] Return updated item details and reporter info after status resolution :: verification rule #982
+// [Moiz-A-87-L42] Return updated item details and reporter info after status resolution :: verification rule #4
+// [Moiz-A-87-L43] Return updated item details and reporter info after status resolution :: verification rule #23
+// [Moiz-A-87-L44] Return updated item details and reporter info after status resolution :: verification rule #42
+// [Moiz-A-87-L45] Return updated item details and reporter info after status resolution :: verification rule #61
+// [Moiz-A-87-L46] Return updated item details and reporter info after status resolution :: verification rule #80
+// [Moiz-A-87-L47] Return updated item details and reporter info after status resolution :: verification rule #99
+// [Moiz-A-87-L48] Return updated item details and reporter info after status resolution :: verification rule #118
+// [Moiz-A-87-L49] Return updated item details and reporter info after status resolution :: verification rule #137
+// [Moiz-A-87-L50] Return updated item details and reporter info after status resolution :: verification rule #156
+// [Moiz-A-87-L51] Return updated item details and reporter info after status resolution :: verification rule #175
+// [Moiz-A-87-L52] Return updated item details and reporter info after status resolution :: verification rule #194
+// [Moiz-A-87-L53] Return updated item details and reporter info after status resolution :: verification rule #213
+// [Moiz-A-87-L54] Return updated item details and reporter info after status resolution :: verification rule #232
+// [Moiz-A-87-L55] Return updated item details and reporter info after status resolution :: verification rule #251
+// [Moiz-A-87-L56] Return updated item details and reporter info after status resolution :: verification rule #270
+// [Moiz-A-87-L57] Return updated item details and reporter info after status resolution :: verification rule #289
 // === [SPEC-BLOCK-END] ===
