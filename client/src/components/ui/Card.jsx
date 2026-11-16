@@ -2,11 +2,11 @@ import { cn } from '../../utils/cn';
 
 export default function Card({
   children,
-  className,
+  className = '',
   hover = false,
   padding = 'p-5',
-  accent,
-  gradient,
+  accent = null,
+  gradient = null,
 }) {
   return (
     <div

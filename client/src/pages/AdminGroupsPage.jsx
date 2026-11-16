@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { adminAPI } from '../services/api';
-import { cn } from '../utils/cn';
 import { Card, Badge } from '../components/ui';
 import { DEPARTMENTS, SEMESTERS } from '../utils/constants';
 import toast from 'react-hot-toast';

@@ -44,7 +44,9 @@ export default function NotificationDropdown({ position = "bottom-up" }) {
       socket.emit('identify', user.id);
     };
 
-    fetchNotifications();
+    const timer = window.setTimeout(() => {
+      void fetchNotifications();
+    }, 0);
 
     // Listen for incoming notifications
     const handleNewNotification = (notification) => {
@@ -72,6 +74,7 @@ export default function NotificationDropdown({ position = "bottom-up" }) {
     socket.on('notification', handleNewNotification);
 
     return () => {
+      window.clearTimeout(timer);
       socket.off('connect', handleConnect);
       socket.off('notification', handleNewNotification);
     };
@@ -79,10 +82,12 @@ export default function NotificationDropdown({ position = "bottom-up" }) {
 
   // Refresh notifications when dropdown opens
   useEffect(() => {
-    if (isOpen && user?.id) {
-      fetchNotifications();
-    }
-  }, [isOpen]);
+    if (!isOpen || !user?.id) return;
+    const timer = window.setTimeout(() => {
+      void fetchNotifications();
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, [isOpen, user?.id]);
 
   // Click outside handler
   useEffect(() => {

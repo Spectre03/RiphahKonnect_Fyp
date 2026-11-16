@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { postsAPI, uploadAPI } from '../services/api';
 import { timeAgo } from '../utils/brand';
 import { cn } from '../utils/cn';
-import { checkTextContent, validateImageFile, fileToDataUrl } from '../utils/moderation';
+import { checkTextContent } from '../utils/moderation';
 import { Card, Button, Avatar } from '../components/ui';
 import toast from 'react-hot-toast';
 import {
@@ -95,6 +95,7 @@ export default function FeedPage() {
   const [filterType, setFilterType] = useState('ALL');
   const [attachment, setAttachment] = useState(null);
   const [uploading, setUploading] = useState(false);
+  const fileInputRef = useRef(null);
 
   const fetchPosts = async (p = 1, type = filterType) => {
     try {
@@ -220,6 +221,10 @@ export default function FeedPage() {
       setPosts(posts.filter((p) => p.id !== postId));
       toast.success('Post deleted.');
     } catch { toast.error('Failed to delete post.'); }
+  };
+
+  const handleCommentCountChange = (postId, delta) => {
+    setPosts((prev) => prev.map((p) => p.id === postId ? { ...p, commentsCount: Math.max((p.commentsCount || 0) + delta, 0) } : p));
   };
 
   const filteredPosts = posts;
@@ -368,6 +373,7 @@ export default function FeedPage() {
                     <Paperclip size={12} />
                     {uploading ? 'Uploading...' : 'Attach'}
                     <input
+                      ref={fileInputRef}
                       type="file"
                       className="hidden"
                       onChange={handleFileUpload}

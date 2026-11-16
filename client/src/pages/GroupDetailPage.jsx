@@ -20,7 +20,6 @@ export default function GroupDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { user } = useAuth();
-  const onlineUsers = useOnlineUsers();
   const [group, setGroup] = useState(null);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -139,28 +138,6 @@ const handlePost = async (e) => {
     }
   };
 
-  const handleArchive = async () => {
-    if (!confirm(`Are you sure you want to ${group.isArchived ? 'unarchive' : 'archive'} this group?`)) return;
-    try {
-      const res = await groupsAPI.archive(id);
-      setGroup({ ...group, isArchived: res.data.group.isArchived });
-      toast.success(res.data.group.isArchived ? 'Group archived.' : 'Group unarchived.');
-    } catch {
-      toast.error('Failed to toggle archive status.');
-    }
-  };
-
-  const handleDeleteGroup = async () => {
-    if (!confirm('Are you ABSOLUTELY sure you want to delete this group? All posts and chats will be permanently lost.')) return;
-    try {
-      await groupsAPI.delete(id);
-      toast.success('Group deleted.');
-      navigate('/groups');
-    } catch {
-      toast.error('Failed to delete group.');
-    }
-  };
-
   const handleUpdate = async (e) => {
     e.preventDefault();
     if (!editName.trim()) return;
@@ -171,23 +148,6 @@ const handlePost = async (e) => {
       toast.success('Group updated.');
     } catch {
       toast.error('Failed to update group.');
-    }
-  };
-
-  const handleRemoveMember = async (e, userId) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (!confirm('Remove this user from the group?')) return;
-    try {
-      await groupsAPI.removeMember(id, userId);
-      setGroup({
-        ...group,
-        members: group.members.filter(m => m.userId !== userId),
-        memberCount: group.memberCount - 1
-      });
-      toast.success('User removed.');
-    } catch {
-      toast.error('Failed to remove user.');
     }
   };
 

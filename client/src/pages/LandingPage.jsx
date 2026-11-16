@@ -517,7 +517,7 @@ export default function LandingPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {FEATURES.map((f, i) => {
+            {FEATURES.map((f) => {
               const Icon = f.icon;
               return (
                 <div

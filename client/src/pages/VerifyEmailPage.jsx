@@ -7,14 +7,10 @@ export default function VerifyEmailPage() {
   const [searchParams] = useSearchParams();
   const [status, setStatus] = useState('loading');
   const [message, setMessage] = useState('');
+  const token = searchParams.get('token');
 
   useEffect(() => {
-    const token = searchParams.get('token');
-    if (!token) {
-      setStatus('error');
-      setMessage('No verification token provided.');
-      return;
-    }
+    if (!token) return;
 
     authAPI
       .verifyEmail(token)
@@ -26,7 +22,9 @@ export default function VerifyEmailPage() {
         setStatus('error');
         setMessage(err.response?.data?.error || 'Verification failed.');
       });
-  }, [searchParams]);
+  }, [token]);
+
+  const isMissingToken = !token;
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-950 px-4 relative overflow-hidden">
@@ -83,8 +81,8 @@ export default function VerifyEmailPage() {
               <div className="h-14 w-14 rounded-2xl bg-red-50 flex items-center justify-center mx-auto mb-4">
                 <XCircle className="h-7 w-7 text-red-500" />
               </div>
-              <h2 className="text-xl font-bold text-slate-900">Verification Failed</h2>
-              <p className="mt-2 text-sm text-slate-500">{message}</p>
+              <h2 className="text-xl font-bold text-slate-900">{isMissingToken ? 'Missing Token' : 'Verification Failed'}</h2>
+              <p className="mt-2 text-sm text-slate-500">{isMissingToken ? 'No verification token provided.' : message}</p>
               <Link
                 to="/login"
                 className="mt-6 inline-block text-sm text-teal-600 hover:text-teal-500 font-semibold"

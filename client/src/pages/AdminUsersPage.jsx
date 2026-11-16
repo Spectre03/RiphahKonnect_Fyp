@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { usersAPI, adminAPI, authAPI } from '../services/api';
 import { useOnlineUsers } from '../services/socket';
-import { getAvatarGradient } from '../utils/brand';
 import { cn } from '../utils/cn';
 import { Card, Badge, Button, Modal, Avatar } from '../components/ui';
 import { DEPARTMENTS, SEMESTERS } from '../utils/constants';

@@ -34,9 +34,9 @@ export default function Button({
   size = 'md',
   loading = false,
   disabled = false,
-  icon: Icon,
-  iconRight: IconRight,
-  className,
+  icon: Icon = null,
+  iconRight: IconRight = null,
+  className = '',
   ...rest
 }) {
   return (

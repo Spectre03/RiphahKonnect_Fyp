@@ -45,7 +45,7 @@ export default function Badge({
   variant = 'slate',
   size = 'sm',
   dot = false,
-  className,
+  className = '',
 }) {
   return (
     <span

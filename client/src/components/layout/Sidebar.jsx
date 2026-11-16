@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { createElement, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { getAvatarGradient } from '../../utils/brand';
@@ -135,7 +135,7 @@ export default function Sidebar() {
 
       {/* ── Nav ── */}
       <nav className="flex-1 px-3 space-y-0.5 overflow-y-auto dark-scroll">
-       {navItems.map(({ to, label, icon: NavIcon }) => {
+        {navItems.map(({ to, label, icon: Icon }) => {
           const active = isActive(to);
           return (
             <Link
@@ -153,13 +153,13 @@ export default function Sidebar() {
                 borderRight: '2px solid #c9973a',
               } : {}}
             >
-                  <NavIcon
-        size={16}
-        className={cn(
-          'flex-shrink-0 transition-colors',
-          active ? 'text-indigo-400' : 'text-slate-500 group-hover:text-slate-300'
-        )}
-      />
+              {createElement(Icon, {
+                size: 16,
+                className: cn(
+                  'flex-shrink-0 transition-colors',
+                  active ? 'text-indigo-400' : 'text-slate-500 group-hover:text-slate-300'
+                ),
+              })}
               <span className="flex-1 truncate">{label}</span>
               {active && (
                 <ChevronRight size={12} className="text-amber-400/60 flex-shrink-0" />

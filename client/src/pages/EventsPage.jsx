@@ -1,15 +1,15 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { eventsAPI, ticketsAPI } from '../services/api';
 import { formatDate } from '../utils/brand';
 import { cn } from '../utils/cn';
-import { checkTextContent, validateImageFile, fileToDataUrl } from '../utils/moderation';
+import { checkTextContent } from '../utils/moderation';
 import { Card, Button, Badge, Modal } from '../components/ui';
 import toast from 'react-hot-toast';
 import {
   Calendar, MapPin, Clock, Users, Plus, Loader2,
   Check, Star, XCircle, CalendarDays, Trash2, Sparkles,
-  Ticket as TicketIcon, CreditCard, Lock
+  Ticket as TicketIcon, CreditCard, Lock, AlertTriangle
 } from 'lucide-react';
 
 const CAN_CREATE  = ['TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'];
@@ -24,6 +24,10 @@ export default function EventsPage() {
   const [page, setPage] = useState(1);
   const [pagination, setPagination] = useState(null);
   
+  const [rsvpLoadingId, setRsvpLoadingId] = useState(null);
+  const [deleteTarget, setDeleteTarget] = useState(null);
+  const [deleting, setDeleting] = useState(false);
+
   // Payment Modal State
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isPaying, setIsPaying] = useState(false);
@@ -65,27 +69,20 @@ export default function EventsPage() {
               : status;
 
           let nextGoing = e.attendeeCount || 0;
-          if (typeof data.attendeeCount === 'number') {
-            nextGoing = data.attendeeCount;
-          } else {
+          if (typeof data.attendeeCount === 'number') nextGoing = data.attendeeCount;
+          else {
             if (prevStatus === 'GOING' && nextStatus !== 'GOING') nextGoing = Math.max(0, nextGoing - 1);
             if (prevStatus !== 'GOING' && nextStatus === 'GOING') nextGoing += 1;
           }
 
           let nextInterested = e.interestedCount || 0;
-          if (typeof data.interestedCount === 'number') {
-            nextInterested = data.interestedCount;
-          } else {
+          if (typeof data.interestedCount === 'number') nextInterested = data.interestedCount;
+          else {
             if (prevStatus === 'INTERESTED' && nextStatus !== 'INTERESTED') nextInterested = Math.max(0, nextInterested - 1);
             if (prevStatus !== 'INTERESTED' && nextStatus === 'INTERESTED') nextInterested += 1;
           }
 
-          return {
-            ...e,
-            myRsvp: nextStatus,
-            attendeeCount: nextGoing,
-            interestedCount: nextInterested,
-          };
+          return { ...e, myRsvp: nextStatus, attendeeCount: nextGoing, interestedCount: nextInterested };
         })
       );
 
@@ -93,11 +90,8 @@ export default function EventsPage() {
       else if (status === 'INTERESTED') toast.success('Marked as Interested (Maybe).');
       else if (status === 'NOT_GOING') toast.success("Marked as Can't Go.");
       else toast.success('RSVP removed.');
-    } catch {
-      toast.error('Failed to update RSVP.');
-    } finally {
-      setRsvpLoadingId(null);
-    }
+    } catch { toast.error('Failed to update RSVP.'); }
+    finally { setRsvpLoadingId(null); }
   };
 
   const confirmDelete = async () => {
@@ -108,11 +102,8 @@ export default function EventsPage() {
       setEvents(events.filter((e) => e.id !== deleteTarget.id));
       toast.success('Event deleted.');
       setDeleteTarget(null);
-    } catch {
-      toast.error('Failed to delete.');
-    } finally {
-      setDeleting(false);
-    }
+    } catch { toast.error('Failed to delete.'); }
+    finally { setDeleting(false); }
   };
 
   const handleCreated = (event) => {
@@ -121,32 +112,18 @@ export default function EventsPage() {
     toast.success('Event created!');
   };
 
-  // Simulate Payment & Buy Ticket
   const confirmPurchase = async (e) => {
     e.preventDefault();
     if (!selectedEvent) return;
-    
     try {
       setIsPaying(true);
-      // Fake delay to simulate payment processing
       await new Promise(resolve => setTimeout(resolve, 1500)); 
-      
       await ticketsAPI.buy(selectedEvent.id);
-      
-      // Update event in list
-      setEvents(events.map(ev => 
-        ev.id === selectedEvent.id 
-          ? { ...ev, ticketCount: (ev.ticketCount || 0) + 1, hasTicket: true } 
-          : ev
-      ));
-      
+      setEvents(events.map(ev => ev.id === selectedEvent.id ? { ...ev, ticketCount: (ev.ticketCount || 0) + 1, hasTicket: true } : ev));
       toast.success('Payment successful! Ticket generated 🎟️');
       setSelectedEvent(null);
-    } catch (err) {
-      toast.error(err.response?.data?.error || 'Failed to buy ticket.');
-    } finally {
-      setIsPaying(false);
-    }
+    } catch (err) { toast.error(err.response?.data?.error || 'Failed to buy ticket.'); }
+    finally { setIsPaying(false); }
   };
 
   const handleViewAttendees = async (event) => {
@@ -155,11 +132,8 @@ export default function EventsPage() {
     try {
       const res = await ticketsAPI.getEventTickets(event.id);
       setAttendees(res.data.tickets);
-    } catch {
-      toast.error('Failed to load attendees.');
-    } finally {
-      setLoadingAttendees(false);
-    }
+    } catch { toast.error('Failed to load attendees.'); }
+    finally { setLoadingAttendees(false); }
   };
 
   const canCreate  = CAN_CREATE.includes(user?.role);
@@ -204,7 +178,6 @@ export default function EventsPage() {
       </div>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6">
-
         {/* ── Filter Tabs ── */}
         <div className="flex gap-1 mb-6 bg-white rounded-2xl border border-slate-900/[0.06] p-1 max-w-xs shadow-sm">
           {['upcoming', 'all'].map((f) => (
@@ -256,30 +229,21 @@ export default function EventsPage() {
               const isCreator = event.createdBy?.id === user?.id;
               const showDelete = isCreator || canDelAny;
               
-              // Ticket Logic
               const isSoldOut = event.capacity && (event.ticketCount || 0) >= event.capacity;
               const hasTicket = event.hasTicket;
 
               return (
                 <Card key={event.id} hover padding="p-0" className="overflow-hidden">
-                  {/* Event Banner Picture if uploaded */}
                   {event.imageUrl && (
                     <div className="w-full max-h-64 overflow-hidden bg-slate-100 border-b border-slate-100">
-                      <img
-                        src={event.imageUrl}
-                        alt={event.title}
-                        className="w-full max-h-64 object-cover"
-                      />
+                      <img src={event.imageUrl} alt={event.title} className="w-full max-h-64 object-cover" />
                     </div>
                   )}
                   <div className="flex">
-                    {/* Date Column */}
                     <div className={cn(
                       'flex-shrink-0 w-20 flex flex-col items-center justify-center border-r border-slate-100',
                       !event.imageUrl && 'rounded-l-2xl',
-                      upcoming
-                        ? 'bg-gradient-to-b from-violet-500 to-indigo-600'
-                        : 'bg-gradient-to-b from-slate-100 to-slate-200'
+                      upcoming ? 'bg-gradient-to-b from-violet-500 to-indigo-600' : 'bg-gradient-to-b from-slate-100 to-slate-200'
                     )}>
                       <span className={cn('text-[9px] font-bold uppercase tracking-widest', upcoming ? 'text-violet-200' : 'text-slate-400')}>
                         {d.toLocaleDateString('en-US', { month: 'short' })}
@@ -289,15 +253,12 @@ export default function EventsPage() {
                       </span>
                     </div>
 
-                    {/* Content */}
                     <div className="flex-1 p-4 min-w-0">
                       <div className="flex items-start justify-between gap-2">
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 flex-wrap mb-1">
                             <h3 className="text-sm font-bold text-slate-900 truncate">{event.title}</h3>
                             {!upcoming && <Badge variant="slate" size="xs">Past</Badge>}
-                            
-                            {/* Price Badge */}
                             {event.price > 0 ? (
                               <Badge variant="amber" size="xs">Rs. {event.price}</Badge>
                             ) : (
@@ -323,8 +284,6 @@ export default function EventsPage() {
                               {event.attendeeCount || 0} going
                               {event.interestedCount > 0 ? ` • ${event.interestedCount} maybe` : ''}
                             </span>
-                            
-                            {/* Ticket Capacity */}
                             {event.capacity && (
                               <span className="flex items-center gap-1 font-bold text-violet-600">
                                 <TicketIcon size={11} className="flex-shrink-0" />
@@ -335,38 +294,28 @@ export default function EventsPage() {
                         </div>
                         <div className="flex items-center gap-1">
                           {(isCreator || canDelAny) && (
-                            <Button 
-                              variant="secondary" 
-                              size="sm" 
-                              onClick={() => handleViewAttendees(event)}
-                              className="text-[11px] h-7 px-2"
-                            >
+                            <Button variant="secondary" size="sm" onClick={() => handleViewAttendees(event)} className="text-[11px] h-7 px-2">
                               Attendees
                             </Button>
                           )}
                           {showDelete && (
-                            <button
-                              onClick={() => handleDelete(event.id)}
-                              className="p-1.5 text-slate-300 hover:text-red-500 hover:bg-red-50 rounded-lg cursor-pointer transition-all flex-shrink-0"
-                            >
+                            <button onClick={() => setDeleteTarget(event)} className="p-1.5 text-slate-300 hover:text-red-500 hover:bg-red-50 rounded-lg cursor-pointer transition-all flex-shrink-0">
                               <Trash2 size={14} />
                             </button>
                           )}
                         </div>
                       </div>
 
-                      {/* RSVP & Buy Ticket */}
                       {user && upcoming && (
                         <div className="flex items-center justify-between mt-3 pt-3 border-t border-slate-50 flex-wrap gap-2">
-                          
-                          {/* RSVP Buttons */}
                           <div className="flex items-center gap-2 flex-wrap">
                             <span className="text-[11px] text-slate-400 font-bold">RSVP:</span>
                             {[
                               { status: 'GOING',      icon: Check,   label: 'Going',   active: 'bg-emerald-600 text-white border-emerald-600 shadow-sm shadow-emerald-500/30' },
                               { status: 'INTERESTED', icon: Star,    label: 'Maybe',   active: 'bg-amber-500 text-white border-amber-500 shadow-sm shadow-amber-500/30' },
                               { status: 'NOT_GOING',  icon: XCircle, label: "Can't go", active: 'bg-slate-600 text-white border-slate-600' },
-                            ].map(({ status, icon: RsvpIcon, label, active }) => {
+                            // eslint-disable-next-line no-unused-vars
+                            ].map(({ status, icon: StatusIcon, label, active }) => {
                               const isActive = event.myRsvp === status;
                               return (
                                 <button
@@ -377,13 +326,12 @@ export default function EventsPage() {
                                     isActive ? active : 'border-slate-200 text-slate-400 hover:bg-slate-50 hover:text-slate-700 hover:border-slate-300'
                                   )}
                                 >
-                                  <RsvpIcon size={11} /> {label}
+                                  <StatusIcon size={11} /> {label}
                                 </button>
                               );
                             })}
                           </div>
 
-                          {/* Buy Ticket Button */}
                           <div>
                             {hasTicket ? (
                               <Badge variant="emerald" size="sm" className="py-1.5 px-3">
@@ -392,12 +340,7 @@ export default function EventsPage() {
                             ) : isSoldOut ? (
                               <Button variant="secondary" size="sm" disabled>Sold Out</Button>
                             ) : (
-                              <Button 
-                                onClick={() => setSelectedEvent(event)} 
-                                size="sm" 
-                                icon={TicketIcon}
-                                className="bg-violet-600 hover:bg-violet-700 shadow-md shadow-violet-500/20"
-                              >
+                              <Button onClick={() => setSelectedEvent(event)} size="sm" icon={TicketIcon} className="bg-violet-600 hover:bg-violet-700 shadow-md shadow-violet-500/20">
                                 {event.price > 0 ? 'Buy Ticket' : 'Get Ticket'}
                               </Button>
                             )}
@@ -421,32 +364,16 @@ export default function EventsPage() {
         )}
 
         {canCreate && (
-          <CreateEventModal
-            open={showCreate}
-            onClose={() => setShowCreate(false)}
-            onCreated={handleCreated}
-          />
+          <CreateEventModal open={showCreate} onClose={() => setShowCreate(false)} onCreated={handleCreated} />
         )}
 
-        {/* Attendees Modal */}
         {viewingAttendees && (
-          <Modal 
-            open={!!viewingAttendees} 
-            onClose={() => setViewingAttendees(null)} 
-            title="Event Attendees" 
-            subtitle={`${attendees.length} tickets sold for ${viewingAttendees.title}`}
-            icon={Users}
-            iconColor="bg-gradient-to-br from-emerald-500 to-teal-600"
-          >
+          <Modal open={!!viewingAttendees} onClose={() => setViewingAttendees(null)} title="Event Attendees" subtitle={`${attendees.length} tickets sold for ${viewingAttendees.title}`} icon={Users} iconColor="bg-gradient-to-br from-emerald-500 to-teal-600">
             <div className="max-h-96 overflow-y-auto pr-1">
               {loadingAttendees ? (
-                <div className="flex justify-center py-8">
-                  <Loader2 className="h-6 w-6 animate-spin text-emerald-600" />
-                </div>
+                <div className="flex justify-center py-8"><Loader2 className="h-6 w-6 animate-spin text-emerald-600" /></div>
               ) : attendees.length === 0 ? (
-                <div className="text-center py-8 text-slate-500 text-sm">
-                  No tickets sold yet.
-                </div>
+                <div className="text-center py-8 text-slate-500 text-sm">No tickets sold yet.</div>
               ) : (
                 <div className="space-y-2">
                   {attendees.map((t) => (
@@ -467,16 +394,8 @@ export default function EventsPage() {
           </Modal>
         )}
 
-        {/* Simulated Payment Modal */}
         {selectedEvent && (
-          <Modal 
-            open={!!selectedEvent} 
-            onClose={() => !isPaying && setSelectedEvent(null)} 
-            title="Checkout" 
-            subtitle="Complete payment to secure your ticket"
-            icon={CreditCard}
-            iconColor="bg-gradient-to-br from-violet-500 to-indigo-600"
-          >
+          <Modal open={!!selectedEvent} onClose={() => !isPaying && setSelectedEvent(null)} title="Checkout" subtitle="Complete payment to secure your ticket" icon={CreditCard} iconColor="bg-gradient-to-br from-violet-500 to-indigo-600">
             <form onSubmit={confirmPurchase} className="space-y-4">
               <div className="bg-slate-50 rounded-xl p-4 border border-slate-100 flex items-center justify-between">
                 <div>
@@ -485,9 +404,7 @@ export default function EventsPage() {
                 </div>
                 <div className="text-right">
                   <p className="text-xs text-slate-500 font-medium">Total</p>
-                  <p className="text-lg font-extrabold text-violet-600">
-                    {selectedEvent.price > 0 ? `Rs. ${selectedEvent.price}` : 'Free'}
-                  </p>
+                  <p className="text-lg font-extrabold text-violet-600">{selectedEvent.price > 0 ? `Rs. ${selectedEvent.price}` : 'Free'}</p>
                 </div>
               </div>
 
@@ -523,6 +440,19 @@ export default function EventsPage() {
             </form>
           </Modal>
         )}
+        
+        {/* Delete Event Confirmation Modal */}
+        {deleteTarget && (
+          <Modal open={!!deleteTarget} onClose={() => !deleting && setDeleteTarget(null)} title="Delete Event" subtitle="This action cannot be undone" icon={AlertTriangle} iconColor="bg-red-500">
+            <div className="space-y-4">
+              <p className="text-sm text-slate-600">Are you sure you want to delete the event <span className="font-bold text-slate-900">"{deleteTarget.title}"</span>?</p>
+              <div className="flex justify-end gap-2 pt-2">
+                <Button variant="secondary" onClick={() => setDeleteTarget(null)} disabled={deleting}>Cancel</Button>
+                <Button variant="danger" onClick={confirmDelete} loading={deleting} icon={Trash2}>Delete</Button>
+              </div>
+            </div>
+          </Modal>
+        )}
       </div>
     </div>
   );
@@ -531,25 +461,7 @@ export default function EventsPage() {
 function CreateEventModal({ open, onClose, onCreated }) {
   const [form, setForm] = useState({ title: '', description: '', location: '', startDate: '', endDate: '', price: '', capacity: '' });
   const [submitting, setSubmitting] = useState(false);
-  const fileInputRef = useRef(null);
   const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
-
-  const handleImageSelect = async (e) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    const validation = validateImageFile(file);
-    if (!validation.valid) {
-      toast.error(validation.reason);
-      e.target.value = '';
-      return;
-    }
-    try {
-      const dataUrl = await fileToDataUrl(file);
-      setImagePreview(dataUrl);
-    } catch {
-      toast.error('Failed to read image file.');
-    }
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -566,20 +478,13 @@ function CreateEventModal({ open, onClose, onCreated }) {
 
     try {
       setSubmitting(true);
-      const payload = {
-        ...form,
-        endDate: form.endDate || undefined,
-        price: form.price ? parseFloat(form.price) : 0,
-        capacity: form.capacity ? parseInt(form.capacity) : undefined,
-      };
+      const payload = { ...form, endDate: form.endDate || undefined, price: form.price ? parseFloat(form.price) : 0, capacity: form.capacity ? parseInt(form.capacity) : undefined };
       const res = await eventsAPI.create(payload);
       onCreated(res.data.event);
       setForm({ title: '', description: '', location: '', startDate: '', endDate: '', price: '', capacity: '' });
     } catch (err) {
       toast.error(err.response?.data?.error || 'Failed to create event.');
-    } finally {
-      setSubmitting(false);
-    }
+    } finally { setSubmitting(false); }
   };
 
   const inputCls = 'w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium placeholder-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/15 transition-all';

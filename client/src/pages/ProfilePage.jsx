@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { usersAPI, postsAPI } from '../services/api';
 import { useOnlineUsers } from '../services/socket';
-import { timeAgo, getAvatarGradient, formatDate } from '../utils/brand';
+import { timeAgo, getAvatarGradient } from '../utils/brand';
 import { cn } from '../utils/cn';
 import { validateImageFile, fileToDataUrl } from '../utils/moderation';
 import { Card, Button, Badge, Avatar } from '../components/ui';
@@ -371,10 +371,11 @@ export default function ProfilePage() {
               { icon: FileText,  value: profile.postCount  || 0, label: 'Posts',  color: 'text-indigo-600', bg: 'bg-indigo-50' },
               { icon: Users,     value: profile.groupCount || 0, label: 'Groups', color: 'text-blue-600',   bg: 'bg-blue-50'   },
               { icon: Sparkles,  value: profile.skills?.length || 0, label: 'Skills', color: 'text-teal-600', bg: 'bg-teal-50' },
-            ].map(({ icon: Icon, value, label, color, bg }) => (
+            // eslint-disable-next-line no-unused-vars
+            ].map(({ icon: StatMetricIcon, value, label, color, bg }) => (
               <div key={label} className="flex-1 flex items-center justify-center gap-2.5 py-3.5">
                 <div className={cn('h-8 w-8 rounded-lg flex items-center justify-center flex-shrink-0', bg)}>
-                  <Icon className={cn('h-4 w-4', color)} />
+                  <StatMetricIcon className={cn('h-4 w-4', color)} />
                 </div>
                 <div>
                   <p className={cn('text-lg font-extrabold leading-none', color)}>{value}</p>

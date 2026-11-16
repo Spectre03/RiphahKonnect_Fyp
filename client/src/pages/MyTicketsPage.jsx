@@ -3,15 +3,15 @@ import { useAuth } from '../context/AuthContext';
 import { ticketsAPI } from '../services/api';
 import { formatDate } from '../utils/brand';
 import { cn } from '../utils/cn';
-import { Card, Badge, Button, Loader2 } from '../components/ui';
+import { Card, Badge, Button } from '../components/ui';
 import toast from 'react-hot-toast';
 import { QRCodeSVG } from 'qrcode.react'; 
 // OR if that still fails, try:
 // import QRCode from 'qrcode.react';
 // and use <QRCode /> instead of <QRCodeSVG />
 import {
-  Ticket as TicketIcon, Calendar, MapPin, Download, 
-  CheckCircle2, XCircle, Clock, ArrowRight
+  Ticket as TicketIcon, Calendar, MapPin, Download,
+  CheckCircle2, XCircle, Clock, ArrowRight, Loader2
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 

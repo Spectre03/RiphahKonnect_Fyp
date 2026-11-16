@@ -14,15 +14,9 @@ const lostFoundRoutes = require('./routes/lostFoundRoutes');
 const messageRoutes = require('./routes/messageRoutes');
 const userRoutes = require('./routes/userRoutes');
 const adminRoutes = require('./routes/adminRoutes');
-<<<<<<< HEAD
 const authenticate = require('./middleware/authenticate');
 const upload = require('./middleware/upload');
 const ticketRoutes = require('./routes/ticketRoutes');
-=======
-const notificationRoutes = require('./routes/notificationRoutes');
-const ticketRoutes = require('./routes/ticketRoutes');
-const errorHandler = require('./middleware/errorHandler');
->>>>>>> d0512afd1fe3eb2f17b712d3fc2a98d2f1b5ff76
 
 const app = express();
 const httpServer = createServer(app);

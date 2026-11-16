@@ -46,28 +46,11 @@ function deptGrad(dept = '') {
 const CAN_UPLOAD = ['STUDENT', 'TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN'];
 
 // Simulated local resource store (replaces API until backend is wired)
-let _store = [];
 let _nextId = 1;
-
-function storeAdd(resource) {
-  const item = { ...resource, id: String(_nextId++), createdAt: new Date().toISOString(), downloads: 0 };
-  _store = [item, ..._store];
-  return item;
-}
-function storeDelete(id) { _store = _store.filter((r) => r.id !== id); }
-function storeQuery({ search, department, semester, type, page = 1, limit = 12 }) {
-  let list = [..._store];
-  if (search)     list = list.filter((r) => r.title.toLowerCase().includes(search.toLowerCase()) || r.subject.toLowerCase().includes(search.toLowerCase()));
-  if (department) list = list.filter((r) => r.department === department);
-  if (semester)   list = list.filter((r) => String(r.semester) === String(semester));
-  if (type)       list = list.filter((r) => r.type === type);
-  const total = list.length;
-  const totalPages = Math.ceil(total / limit) || 1;
-  return { items: list.slice((page - 1) * limit, page * limit), total, totalPages };
-}
 
 export default function ResourcesPage() {
   const { user } = useAuth();
+  const [resourceStore, setResourceStore] = useState([]);
   const [resources,   setResources]   = useState([]);
   const [loading,     setLoading]     = useState(true);
   const [pagination,  setPagination]  = useState(null);
@@ -84,6 +67,27 @@ export default function ResourcesPage() {
   const [showUpload,  setShowUpload]  = useState(false);
   const [deleting,    setDeleting]    = useState({});
 
+  const storeAdd = (resource) => {
+    const item = { ...resource, id: String(_nextId++), createdAt: new Date().toISOString(), downloads: 0 };
+    setResourceStore((prev) => [item, ...prev]);
+    return item;
+  };
+
+  const storeDelete = (id) => {
+    setResourceStore((prev) => prev.filter((r) => r.id !== id));
+  };
+
+  const storeQuery = ({ search, department, semester, type, page = 1, limit = 12 }) => {
+    let list = [...resourceStore];
+    if (search)     list = list.filter((r) => r.title.toLowerCase().includes(search.toLowerCase()) || r.subject.toLowerCase().includes(search.toLowerCase()));
+    if (department) list = list.filter((r) => r.department === department);
+    if (semester)   list = list.filter((r) => String(r.semester) === String(semester));
+    if (type)       list = list.filter((r) => r.type === type);
+    const total = list.length;
+    const totalPages = Math.ceil(total / limit) || 1;
+    return { items: list.slice((page - 1) * limit, page * limit), total, totalPages };
+  };
+
   const load = (p = 1, filters = applied) => {
     setLoading(true);
     setTimeout(() => {
@@ -95,7 +99,7 @@ export default function ResourcesPage() {
     }, 200);
   };
 
-  useEffect(() => { load(1, applied); }, [applied]);
+  useEffect(() => { load(1, applied); }, [applied, resourceStore]);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -131,7 +135,7 @@ export default function ResourcesPage() {
     } else {
       toast('No download link attached.', { icon: 'ℹ️' });
     }
-    _store = _store.map((r) => r.id === resource.id ? { ...r, downloads: r.downloads + 1 } : r);
+    setResourceStore((prev) => prev.map((r) => r.id === resource.id ? { ...r, downloads: (r.downloads || 0) + 1 } : r));
   };
 
   const canUpload   = CAN_UPLOAD.includes(user?.role);
@@ -170,7 +174,8 @@ export default function ResourcesPage() {
 
         {/* Type tabs */}
         <div className="flex gap-1.5 flex-wrap mb-4">
-          {RESOURCE_TYPES.map(({ key, label, icon: Icon }) => (
+          {/* eslint-disable-next-line no-unused-vars */}
+          {RESOURCE_TYPES.map(({ key, label, icon: ResourceTabIcon }) => (
             <button
               key={key}
               onClick={() => handleTypeTab(key)}
@@ -182,7 +187,7 @@ export default function ResourcesPage() {
               )}
               style={typeFilter === key ? { background: 'linear-gradient(135deg, #1a2b6b, #2251b8)', borderColor: '#1a2b6b' } : {}}
             >
-              <Icon size={13} />
+              <ResourceTabIcon size={13} />
               {label}
             </button>
           ))}
