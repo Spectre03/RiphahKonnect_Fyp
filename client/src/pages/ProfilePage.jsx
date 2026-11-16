@@ -6,7 +6,7 @@ import { useOnlineUsers } from '../services/socket';
 import { timeAgo, getAvatarGradient, formatDate } from '../utils/brand';
 import { cn } from '../utils/cn';
 import { validateImageFile, fileToDataUrl } from '../utils/moderation';
-import { Card, Button, Badge, Avatar } from '../components/ui';
+import { Card, Button, Badge, Avatar, Modal } from '../components/ui';
 import toast from 'react-hot-toast';
 import {
   Mail, BookOpen, GraduationCap, Edit3, Save, X, Loader2,
@@ -61,11 +61,13 @@ export default function ProfilePage() {
   const [newSkill, setNewSkill] = useState('');
   const [newInterest, setNewInterest] = useState('');
   const [tab, setTab] = useState('about');
+  const [deletePostId, setDeletePostId] = useState(null);
+  const [deletingPost, setDeletingPost] = useState(false);
   const avatarInputRef = useRef(null);
 
   const isOwnProfile = !id || id === currentUser?.id;
   const profileId = id || currentUser?.id;
-  const isOnline = isOwnProfile ? true : onlineUsers.includes(profileId);
+  const isOnline = isOwnProfile ? true : Boolean(onlineUsers?.has ? onlineUsers.has(profileId) : onlineUsers?.includes?.(profileId));
 
   useEffect(() => {
     const load = async () => {
@@ -178,13 +180,23 @@ export default function ProfilePage() {
     } catch { toast.error('Failed to like post.'); }
   };
 
-  const handleDeletePost = async (postId) => {
-    if (!confirm('Delete this post?')) return;
+  const handleDeletePost = (postId) => {
+    setDeletePostId(postId);
+  };
+
+  const confirmDeletePost = async () => {
+    if (!deletePostId) return;
     try {
-      await postsAPI.delete(postId);
-      setPosts(posts.filter((p) => p.id !== postId));
+      setDeletingPost(true);
+      await postsAPI.delete(deletePostId);
+      setPosts(posts.filter((p) => p.id !== deletePostId));
+      setDeletePostId(null);
       toast.success('Post deleted.');
-    } catch { toast.error('Failed to delete.'); }
+    } catch {
+      toast.error('Failed to delete.');
+    } finally {
+      setDeletingPost(false);
+    }
   };
 
   if (loading) {
@@ -472,6 +484,8 @@ export default function ProfilePage() {
                       <label className="block text-xs font-semibold text-slate-500 mb-1.5">Batch Year</label>
                       <input
                         type="number"
+                        min="2000"
+                        max={new Date().getFullYear() + 1}
                         value={editData.batchYear}
                         onChange={(e) => setEditData({ ...editData, batchYear: e.target.value })}
                         placeholder="e.g. 2024"
@@ -707,58 +721,32 @@ export default function ProfilePage() {
             )}
           </div>
         )}
+
+        {/* Delete Post Confirmation Modal */}
+        <Modal
+          open={Boolean(deletePostId)}
+          onClose={() => !deletingPost && setDeletePostId(null)}
+          title="Delete Post"
+          subtitle="This action cannot be undone"
+          icon={Trash2}
+          iconColor="bg-gradient-to-br from-red-500 to-rose-600"
+          size="sm"
+        >
+          <div className="space-y-4">
+            <p className="text-sm text-slate-600">
+              Are you sure you want to delete this post from your profile?
+            </p>
+            <div className="flex justify-end gap-2 pt-2">
+              <Button variant="secondary" onClick={() => setDeletePostId(null)} disabled={deletingPost}>
+                Cancel
+              </Button>
+              <Button variant="danger" onClick={confirmDeletePost} loading={deletingPost} icon={Trash2}>
+                Delete Post
+              </Button>
+            </div>
+          </div>
+        </Modal>
       </div>
     </div>
   );
 }
-
-// === [SPEC-BLOCK-START] Airaf-B-54 (2026-11-16T17:05:19+05:00) ===
-// [Airaf-B-54-L1] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #284
-// [Airaf-B-54-L2] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #303
-// [Airaf-B-54-L3] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #322
-// [Airaf-B-54-L4] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #341
-// [Airaf-B-54-L5] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #360
-// [Airaf-B-54-L6] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #379
-// [Airaf-B-54-L7] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #398
-// [Airaf-B-54-L8] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #417
-// [Airaf-B-54-L9] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #436
-// [Airaf-B-54-L10] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #455
-// [Airaf-B-54-L11] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #474
-// [Airaf-B-54-L12] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #493
-// [Airaf-B-54-L13] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #512
-// [Airaf-B-54-L14] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #531
-// [Airaf-B-54-L15] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #550
-// [Airaf-B-54-L16] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #569
-// [Airaf-B-54-L17] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #588
-// [Airaf-B-54-L18] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #607
-// [Airaf-B-54-L19] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #626
-// [Airaf-B-54-L20] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #645
-// [Airaf-B-54-L21] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #664
-// [Airaf-B-54-L22] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #683
-// [Airaf-B-54-L23] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #702
-// [Airaf-B-54-L24] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #721
-// [Airaf-B-54-L25] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #740
-// [Airaf-B-54-L26] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #759
-// [Airaf-B-54-L27] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #778
-// [Airaf-B-54-L28] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #797
-// [Airaf-B-54-L29] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #816
-// [Airaf-B-54-L30] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #835
-// [Airaf-B-54-L31] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #854
-// [Airaf-B-54-L32] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #873
-// [Airaf-B-54-L33] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #892
-// [Airaf-B-54-L34] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #911
-// [Airaf-B-54-L35] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #930
-// [Airaf-B-54-L36] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #949
-// [Airaf-B-54-L37] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #968
-// [Airaf-B-54-L38] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #987
-// [Airaf-B-54-L39] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #9
-// [Airaf-B-54-L40] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #28
-// [Airaf-B-54-L41] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #47
-// [Airaf-B-54-L42] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #66
-// [Airaf-B-54-L43] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #85
-// [Airaf-B-54-L44] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #104
-// [Airaf-B-54-L45] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #123
-// [Airaf-B-54-L46] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #142
-// [Airaf-B-54-L47] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #161
-// [Airaf-B-54-L48] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #180
-// === [SPEC-BLOCK-END] ===
