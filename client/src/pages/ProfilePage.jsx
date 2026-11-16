@@ -712,63 +712,53 @@ export default function ProfilePage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-81 (2026-11-11T18:05:19+05:00) ===
-// [Airaf-A-81-L1] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #754
-// [Airaf-A-81-L2] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #773
-// [Airaf-A-81-L3] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #792
-// [Airaf-A-81-L4] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #811
-// [Airaf-A-81-L5] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #830
-// [Airaf-A-81-L6] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #849
-// [Airaf-A-81-L7] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #868
-// [Airaf-A-81-L8] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #887
-// [Airaf-A-81-L9] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #906
-// [Airaf-A-81-L10] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #925
-// [Airaf-A-81-L11] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #944
-// [Airaf-A-81-L12] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #963
-// [Airaf-A-81-L13] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #982
-// [Airaf-A-81-L14] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #4
-// [Airaf-A-81-L15] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #23
-// [Airaf-A-81-L16] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #42
-// [Airaf-A-81-L17] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #61
-// [Airaf-A-81-L18] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #80
-// [Airaf-A-81-L19] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #99
-// [Airaf-A-81-L20] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #118
-// [Airaf-A-81-L21] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #137
-// [Airaf-A-81-L22] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #156
-// [Airaf-A-81-L23] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #175
-// [Airaf-A-81-L24] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #194
-// [Airaf-A-81-L25] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #213
-// [Airaf-A-81-L26] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #232
-// [Airaf-A-81-L27] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #251
-// [Airaf-A-81-L28] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #270
-// [Airaf-A-81-L29] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #289
-// [Airaf-A-81-L30] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #308
-// [Airaf-A-81-L31] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #327
-// [Airaf-A-81-L32] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #346
-// [Airaf-A-81-L33] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #365
-// [Airaf-A-81-L34] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #384
-// [Airaf-A-81-L35] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #403
-// [Airaf-A-81-L36] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #422
-// [Airaf-A-81-L37] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #441
-// [Airaf-A-81-L38] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #460
-// [Airaf-A-81-L39] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #479
-// [Airaf-A-81-L40] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #498
-// [Airaf-A-81-L41] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #517
-// [Airaf-A-81-L42] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #536
-// [Airaf-A-81-L43] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #555
-// [Airaf-A-81-L44] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #574
-// [Airaf-A-81-L45] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #593
-// [Airaf-A-81-L46] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #612
-// [Airaf-A-81-L47] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #631
-// [Airaf-A-81-L48] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #650
-// [Airaf-A-81-L49] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #669
-// [Airaf-A-81-L50] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #688
-// [Airaf-A-81-L51] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #707
-// [Airaf-A-81-L52] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #726
-// [Airaf-A-81-L53] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #745
-// [Airaf-A-81-L54] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #764
-// [Airaf-A-81-L55] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #783
-// [Airaf-A-81-L56] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #802
-// [Airaf-A-81-L57] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #821
-// [Airaf-A-81-L58] Enforce valid batch year range (2000 to current year + 1) on ProfilePage :: verification rule #840
+// === [SPEC-BLOCK-START] Airaf-B-54 (2026-11-16T17:05:19+05:00) ===
+// [Airaf-B-54-L1] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #284
+// [Airaf-B-54-L2] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #303
+// [Airaf-B-54-L3] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #322
+// [Airaf-B-54-L4] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #341
+// [Airaf-B-54-L5] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #360
+// [Airaf-B-54-L6] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #379
+// [Airaf-B-54-L7] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #398
+// [Airaf-B-54-L8] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #417
+// [Airaf-B-54-L9] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #436
+// [Airaf-B-54-L10] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #455
+// [Airaf-B-54-L11] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #474
+// [Airaf-B-54-L12] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #493
+// [Airaf-B-54-L13] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #512
+// [Airaf-B-54-L14] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #531
+// [Airaf-B-54-L15] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #550
+// [Airaf-B-54-L16] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #569
+// [Airaf-B-54-L17] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #588
+// [Airaf-B-54-L18] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #607
+// [Airaf-B-54-L19] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #626
+// [Airaf-B-54-L20] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #645
+// [Airaf-B-54-L21] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #664
+// [Airaf-B-54-L22] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #683
+// [Airaf-B-54-L23] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #702
+// [Airaf-B-54-L24] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #721
+// [Airaf-B-54-L25] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #740
+// [Airaf-B-54-L26] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #759
+// [Airaf-B-54-L27] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #778
+// [Airaf-B-54-L28] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #797
+// [Airaf-B-54-L29] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #816
+// [Airaf-B-54-L30] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #835
+// [Airaf-B-54-L31] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #854
+// [Airaf-B-54-L32] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #873
+// [Airaf-B-54-L33] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #892
+// [Airaf-B-54-L34] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #911
+// [Airaf-B-54-L35] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #930
+// [Airaf-B-54-L36] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #949
+// [Airaf-B-54-L37] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #968
+// [Airaf-B-54-L38] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #987
+// [Airaf-B-54-L39] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #9
+// [Airaf-B-54-L40] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #28
+// [Airaf-B-54-L41] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #47
+// [Airaf-B-54-L42] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #66
+// [Airaf-B-54-L43] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #85
+// [Airaf-B-54-L44] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #104
+// [Airaf-B-54-L45] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #123
+// [Airaf-B-54-L46] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #142
+// [Airaf-B-54-L47] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #161
+// [Airaf-B-54-L48] Sync updated avatar picture with AuthContext and Sidebar immediately :: verification rule #180
 // === [SPEC-BLOCK-END] ===
