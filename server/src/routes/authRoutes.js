@@ -15,47 +15,45 @@ const {
 
 const router = express.Router();
 
-// Self-registration — role auto-detected from email
+// Self-registration — supports any @students.riphah.edu.pk or @riphah.edu.pk email
 router.post(
   '/register',
   validate([
     body('email')
       .isEmail().withMessage('Please provide a valid email.')
-      .matches(/^(\d+@students\.riphah\.edu\.pk|[a-zA-Z][^@]*@riphah\.edu\.pk)$/i)
-      .withMessage('Use your SAP ID email (e.g. 44316@students.riphah.edu.pk) or staff email (e.g. name@riphah.edu.pk).'),
+      .matches(/^[^\s@]+@(students\.)?riphah\.edu\.pk$/i)
+      .withMessage('Use your Riphah email (e.g. 44316@students.riphah.edu.pk or name@riphah.edu.pk).'),
     body('password')
-      .isLength({ min: 8 }).withMessage('Password must be at least 8 characters.')
-      .matches(/\d/).withMessage('Password must contain at least one number.'),
+      .isLength({ min: 6 }).withMessage('Password must be at least 6 characters.'),
     body('name')
       .trim()
       .notEmpty().withMessage('Name is required.')
       .isLength({ max: 100 }).withMessage('Name must not exceed 100 characters.'),
     body('role')
       .optional()
-      .isIn(['TEACHER', 'UNIVERSITY_ADMIN'])
-      .withMessage('Role must be TEACHER or UNIVERSITY_ADMIN for staff accounts.'),
+      .isIn(['STUDENT', 'TEACHER', 'UNIVERSITY_ADMIN'])
+      .withMessage('Role must be STUDENT, TEACHER, or UNIVERSITY_ADMIN.'),
   ]),
   register
 );
 
-// Coordination registers a Student or Teacher
+// Coordination / Admin registers a Student or Teacher
 router.post(
   '/register-user',
   authenticate,
-  authorize('COORDINATION'),
+  authorize('COORDINATION', 'SYSTEM_ADMIN', 'UNIVERSITY_ADMIN'),
   validate([
     body('email')
       .isEmail().withMessage('Please provide a valid email.')
       .matches(/@(students\.)?riphah\.edu\.pk$/i).withMessage('Only @riphah.edu.pk or @students.riphah.edu.pk emails are allowed.'),
     body('password')
-      .isLength({ min: 8 }).withMessage('Password must be at least 8 characters.')
-      .matches(/\d/).withMessage('Password must contain at least one number.'),
+      .isLength({ min: 6 }).withMessage('Password must be at least 6 characters.'),
     body('name')
       .trim()
       .notEmpty().withMessage('Name is required.')
       .isLength({ max: 100 }).withMessage('Name must not exceed 100 characters.'),
     body('role')
-      .isIn(['STUDENT', 'TEACHER']).withMessage('Role must be STUDENT or TEACHER.'),
+      .isIn(['STUDENT', 'TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN']).withMessage('Invalid role.'),
   ]),
   registerUser
 );

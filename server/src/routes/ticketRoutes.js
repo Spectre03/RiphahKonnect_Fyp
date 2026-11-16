@@ -15,4 +15,8 @@ router.get('/event/:eventId', getEventTickets);
 // Buy a ticket for an event
 router.post('/:eventId/buy', buyTicket);
 
+<<<<<<< HEAD
 module.exports = router;
+=======
+module.exports = router;
+>>>>>>> d0512afd1fe3eb2f17b712d3fc2a98d2f1b5ff76

@@ -10,6 +10,9 @@ const getGroups = async (req, res, next) => {
     const { department, semester, search } = req.query;
 
     const where = {};
+    // Only show unarchived groups by default, unless requested
+    if (req.query.includeArchived !== 'true') where.isArchived = false;
+
     if (department) where.department = { contains: department, mode: 'insensitive' };
     if (semester)   where.semester = parseInt(semester);
     if (search)     where.name = { contains: search, mode: 'insensitive' };
@@ -77,6 +80,15 @@ const createGroup = async (req, res, next) => {
         members: {
           create: { userId: req.user.id, role: 'COORDINATOR' },
         },
+        conversation: {
+          create: {
+            isGroup: true,
+            name: name,
+            participants: {
+              create: { userId: req.user.id }
+            }
+          }
+        }
       },
       include: { _count: { select: { members: true } } },
     });
@@ -106,7 +118,30 @@ const getGroup = async (req, res, next) => {
 
     if (!group) return res.status(404).json({ error: 'Group not found.' });
 
-    res.json({ group });
+    // Auto-migrate: If group doesn't have a conversation (old group), create one
+    if (!group.conversationId) {
+      const conversation = await prisma.conversation.create({
+        data: {
+          isGroup: true,
+          name: group.name,
+          semesterGroup: { connect: { id: group.id } },
+          participants: {
+            create: group.members.map(m => ({ userId: m.userId }))
+          }
+        }
+      });
+      group.conversationId = conversation.id;
+    }
+
+    const myMembership = group.members.find(m => m.userId === req.user.id);
+    const formatted = {
+      ...group,
+      memberCount: group._count.members,
+      isMember: !!myMembership,
+      myRole: myMembership?.role || null,
+    };
+
+    res.json({ group: formatted });
   } catch (err) {
     next(err);
   }
@@ -143,11 +178,21 @@ const updateGroup = async (req, res, next) => {
   }
 };
 
-// DELETE /api/semester-groups/:id — Coordination only
+// DELETE /api/semester-groups/:id — Coordinator or Admin
 const deleteGroup = async (req, res, next) => {
   try {
     const group = await prisma.semesterGroup.findUnique({ where: { id: req.params.id } });
     if (!group) return res.status(404).json({ error: 'Group not found.' });
+
+    const isAdmin = ['COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'].includes(req.user.role);
+    if (!isAdmin) {
+      const membership = await prisma.groupMember.findUnique({
+        where: { userId_groupId: { userId: req.user.id, groupId: req.params.id } },
+      });
+      if (!membership || membership.role !== 'COORDINATOR') {
+        return res.status(403).json({ error: 'Only the group coordinator can delete this group.' });
+      }
+    }
 
     await prisma.semesterGroup.delete({ where: { id: req.params.id } });
     res.json({ message: 'Group deleted.' });
@@ -156,7 +201,7 @@ const deleteGroup = async (req, res, next) => {
   }
 };
 
-// POST /api/semester-groups/:id/join — Student or Teacher
+// POST /api/semester-groups/:id/join — Student, Teacher, Coordination, Admin
 const joinGroup = async (req, res, next) => {
   try {
     const group = await prisma.semesterGroup.findUnique({ where: { id: req.params.id } });
@@ -170,6 +215,16 @@ const joinGroup = async (req, res, next) => {
     await prisma.groupMember.create({
       data: { userId: req.user.id, groupId: req.params.id, role: 'MEMBER' },
     });
+
+    if (group.conversationId) {
+      await prisma.conversationParticipant.upsert({
+        where: {
+          userId_conversationId: { userId: req.user.id, conversationId: group.conversationId },
+        },
+        update: {},
+        create: { userId: req.user.id, conversationId: group.conversationId },
+      });
+    }
 
     res.json({ message: 'Joined group successfully.' });
   } catch (err) {
@@ -191,6 +246,13 @@ const leaveGroup = async (req, res, next) => {
     await prisma.groupMember.delete({
       where: { userId_groupId: { userId: req.user.id, groupId: req.params.id } },
     });
+
+    const group = await prisma.semesterGroup.findUnique({ where: { id: req.params.id } });
+    if (group?.conversationId) {
+      await prisma.conversationParticipant.deleteMany({
+        where: { userId: req.user.id, conversationId: group.conversationId },
+      });
+    }
 
     res.json({ message: 'Left group successfully.' });
   } catch (err) {
@@ -240,4 +302,68 @@ const getGroupPosts = async (req, res, next) => {
   }
 };
 
-module.exports = { getGroups, createGroup, getGroup, updateGroup, deleteGroup, joinGroup, leaveGroup, getGroupPosts };
+// PUT /api/semester-groups/:id/archive
+const archiveGroup = async (req, res, next) => {
+  try {
+    const group = await prisma.semesterGroup.findUnique({ where: { id: req.params.id } });
+    if (!group) return res.status(404).json({ error: 'Group not found.' });
+
+    const isAdmin = ['COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'].includes(req.user.role);
+    if (!isAdmin) {
+      const membership = await prisma.groupMember.findUnique({
+        where: { userId_groupId: { userId: req.user.id, groupId: req.params.id } },
+      });
+      if (!membership || membership.role !== 'COORDINATOR') {
+        return res.status(403).json({ error: 'Only the group coordinator can archive this group.' });
+      }
+    }
+
+    const updated = await prisma.semesterGroup.update({
+      where: { id: req.params.id },
+      data: { isArchived: !group.isArchived },
+    });
+
+    res.json({ group: updated });
+  } catch (err) {
+    next(err);
+  }
+};
+
+// DELETE /api/semester-groups/:id/members/:userId
+const removeMember = async (req, res, next) => {
+  try {
+    const group = await prisma.semesterGroup.findUnique({ where: { id: req.params.id } });
+    if (!group) return res.status(404).json({ error: 'Group not found.' });
+
+    const targetUserId = req.params.userId;
+    if (targetUserId === req.user.id) {
+      return res.status(400).json({ error: 'Use the leave route to leave the group.' });
+    }
+
+    const isAdmin = ['COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'].includes(req.user.role);
+    if (!isAdmin) {
+      const membership = await prisma.groupMember.findUnique({
+        where: { userId_groupId: { userId: req.user.id, groupId: req.params.id } },
+      });
+      if (!membership || membership.role !== 'COORDINATOR') {
+        return res.status(403).json({ error: 'Only the group coordinator can remove members.' });
+      }
+    }
+
+    await prisma.groupMember.delete({
+      where: { userId_groupId: { userId: targetUserId, groupId: req.params.id } },
+    });
+
+    if (group.conversationId) {
+      await prisma.conversationParticipant.deleteMany({
+        where: { userId: targetUserId, conversationId: group.conversationId },
+      });
+    }
+
+    res.json({ message: 'Member removed successfully.' });
+  } catch (err) {
+    next(err);
+  }
+};
+
+module.exports = { getGroups, createGroup, getGroup, updateGroup, deleteGroup, joinGroup, leaveGroup, getGroupPosts, archiveGroup, removeMember };

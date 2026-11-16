@@ -70,13 +70,9 @@ export const postsAPI = {
 
 // ─── Semester Groups ──────────────────────────────────────────────────────────
 export const groupsAPI = {
-  getAll: (params = {}) => {
-    const qs = new URLSearchParams();
-    if (params.page)       qs.set('page', params.page);
-    if (params.search)     qs.set('search', params.search);
-    if (params.department) qs.set('department', params.department);
-    if (params.semester)   qs.set('semester', params.semester);
-    return api.get(`/semester-groups?${qs}`);
+  getAll: (params) => {
+    const q = new URLSearchParams(params).toString();
+    return api.get(`/semester-groups?${q}`);
   },
   get: (id) => api.get(`/semester-groups/${id}`),
   create: (data) => api.post('/semester-groups', data),
@@ -85,6 +81,8 @@ export const groupsAPI = {
   join: (id) => api.post(`/semester-groups/${id}/join`),
   leave: (id) => api.delete(`/semester-groups/${id}/leave`),
   getPosts: (id, page = 1) => api.get(`/semester-groups/${id}/posts?page=${page}`),
+  archive: (id) => api.put(`/semester-groups/${id}/archive`),
+  removeMember: (groupId, userId) => api.delete(`/semester-groups/${groupId}/members/${userId}`),
 };
 
 // ─── Tickets ──────────────────────────────────────────────────────────────────
@@ -124,6 +122,13 @@ export const eventsAPI = {
   getAttendees: (id) => api.get(`/events/${id}/attendees`),
 };
 
+// ─── Tickets ──────────────────────────────────────────────────────────────────
+export const ticketsAPI = {
+  buy: (eventId) => api.post(`/tickets/${eventId}/buy`),
+  getMyTickets: () => api.get('/tickets/my-tickets'),
+  getEventTickets: (eventId) => api.get(`/tickets/event/${eventId}`),
+};
+
 // ─── Lost & Found ─────────────────────────────────────────────────────────────
 export const lostFoundAPI = {
   getAll: (page = 1, filters = {}) => {
@@ -147,6 +152,7 @@ export const conversationsAPI = {
   create: (data) => api.post('/conversations', data),
   getMessages: (id, page = 1) => api.get(`/conversations/${id}/messages?page=${page}`),
   sendMessage: (id, content) => api.post(`/conversations/${id}/messages`, { content }),
+  togglePin: (messageId) => api.patch(`/conversations/messages/${messageId}/pin`),
 };
 
 // ─── Users ────────────────────────────────────────────────────────────────────
@@ -187,6 +193,8 @@ export const adminAPI = {
   deletePost:         (id) => api.delete(`/admin/posts/${id}`),
   deleteAnnouncement: (id) => api.delete(`/admin/announcements/${id}`),
   deleteEvent:        (id) => api.delete(`/admin/events/${id}`),
+  deleteLostFound:    (id) => api.delete(`/admin/lost-found/${id}`),
+  resolveLostFound:   (id) => api.post(`/admin/lost-found/${id}/resolve`),
   // Group management
   getGroups: (params = {}) => {
     const qs = new URLSearchParams();
@@ -197,6 +205,13 @@ export const adminAPI = {
     return api.get(`/admin/groups?${qs}`);
   },
   deleteGroup: (id) => api.delete(`/admin/groups/${id}`),
+};
+
+// ─── Notifications ────────────────────────────────────────────────────────────
+export const notificationsAPI = {
+  getAll: (page = 1) => api.get(`/notifications?page=${page}`),
+  markAsRead: (id) => api.put(`/notifications/${id}/read`),
+  markAllAsRead: () => api.put(`/notifications/read-all`),
 };
 
 export default api;

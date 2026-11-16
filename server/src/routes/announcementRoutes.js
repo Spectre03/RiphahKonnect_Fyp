@@ -19,10 +19,10 @@ router.use(authenticate);
 router.get('/', getAnnouncements);
 router.get('/:id', getAnnouncement);
 
-// Create — University Admin, Coordination, Teacher
+// Create — University Admin, Coordination, Teacher, System Admin
 router.post(
   '/',
-  authorize('UNIVERSITY_ADMIN', 'COORDINATION', 'TEACHER'),
+  authorize('UNIVERSITY_ADMIN', 'COORDINATION', 'TEACHER', 'SYSTEM_ADMIN'),
   validate([
     body('title').trim().notEmpty().withMessage('Title is required.'),
     body('content').trim().notEmpty().withMessage('Content is required.'),
@@ -34,8 +34,8 @@ router.post(
   createAnnouncement
 );
 
-// Update / Delete — author only (checked in controller)
-router.put('/:id', authorize('UNIVERSITY_ADMIN', 'COORDINATION', 'TEACHER'), updateAnnouncement);
-router.delete('/:id', authorize('UNIVERSITY_ADMIN', 'COORDINATION', 'TEACHER'), deleteAnnouncement);
+// Update / Delete — author or admin (checked in controller)
+router.put('/:id', authorize('UNIVERSITY_ADMIN', 'COORDINATION', 'TEACHER', 'SYSTEM_ADMIN'), updateAnnouncement);
+router.delete('/:id', authorize('UNIVERSITY_ADMIN', 'COORDINATION', 'TEACHER', 'SYSTEM_ADMIN'), deleteAnnouncement);
 
 module.exports = router;
