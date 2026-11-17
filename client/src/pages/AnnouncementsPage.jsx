@@ -378,7 +378,8 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
   const { user } = useAuth();
   const availableDepts = getDepartmentsForUser(user);
   const defaultType = userRole === 'TEACHER' ? 'CLASS' : 'GENERAL';
-  const nowLocal = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+  const getNowLocal = () => new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+  const [minDateTime, setMinDateTime] = useState(getNowLocal);
   const fileInputRef = useRef(null);
   
   const [form, setForm] = useState({
@@ -387,13 +388,24 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
     type: defaultType,
     targetDepartments: [], 
     targetSemesters: [],
-    publishDate: nowLocal,
+    publishDate: getNowLocal(),
     attachmentUrl: '',
     attachmentName: '',
   });
   
   const [submitting, setSubmitting] = useState(false);
   const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
+
+  useEffect(() => {
+    if (open) {
+      const currentMin = getNowLocal();
+      setMinDateTime(currentMin);
+      setForm((prev) => ({
+        ...prev,
+        publishDate: prev.publishDate && prev.publishDate >= currentMin ? prev.publishDate : currentMin,
+      }));
+    }
+  }, [open]);
 
   const handleFileChange = async (e) => {
     const file = e.target.files?.[0];
@@ -459,6 +471,16 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
 
     const contentCheck = checkTextContent(form.content, { minLength: 5, fieldName: 'Announcement content' });
     if (!contentCheck.clean) return toast.error(contentCheck.reason);
+
+    if (form.publishDate) {
+      const pubObj = new Date(form.publishDate);
+      if (Number.isNaN(pubObj.getTime())) {
+        return toast.error('Please enter a valid publish date and time.');
+      }
+      if (pubObj < new Date(Date.now() - 5 * 60 * 1000)) {
+        return toast.error('Publish date and time cannot be in the past. Please choose the present or a future date.');
+      }
+    }
     
     const payload = { ...form };
     if (payload.type === 'CLASS') {
@@ -481,7 +503,7 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
         type: defaultType,
         targetDepartments: [],
         targetSemesters: [],
-        publishDate: nowLocal,
+        publishDate: getNowLocal(),
         attachmentUrl: '',
         attachmentName: '',
       });
@@ -533,6 +555,7 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
             <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Publish Date *</label>
             <input
               type="datetime-local"
+              min={minDateTime}
               value={form.publishDate}
               onChange={(e) => set('publishDate', e.target.value)}
               className={inputCls}
@@ -660,71 +683,3 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
     </Modal>
   );
 }
-
-// === [SPEC-BLOCK-START] Moiz-A-86 (2026-11-15T17:45:12+05:00) ===
-// [Moiz-A-86-L1] Restrict announcement publish date picker to today or future dates :: verification rule #191
-// [Moiz-A-86-L2] Restrict announcement publish date picker to today or future dates :: verification rule #210
-// [Moiz-A-86-L3] Restrict announcement publish date picker to today or future dates :: verification rule #229
-// [Moiz-A-86-L4] Restrict announcement publish date picker to today or future dates :: verification rule #248
-// [Moiz-A-86-L5] Restrict announcement publish date picker to today or future dates :: verification rule #267
-// [Moiz-A-86-L6] Restrict announcement publish date picker to today or future dates :: verification rule #286
-// [Moiz-A-86-L7] Restrict announcement publish date picker to today or future dates :: verification rule #305
-// [Moiz-A-86-L8] Restrict announcement publish date picker to today or future dates :: verification rule #324
-// [Moiz-A-86-L9] Restrict announcement publish date picker to today or future dates :: verification rule #343
-// [Moiz-A-86-L10] Restrict announcement publish date picker to today or future dates :: verification rule #362
-// [Moiz-A-86-L11] Restrict announcement publish date picker to today or future dates :: verification rule #381
-// [Moiz-A-86-L12] Restrict announcement publish date picker to today or future dates :: verification rule #400
-// [Moiz-A-86-L13] Restrict announcement publish date picker to today or future dates :: verification rule #419
-// [Moiz-A-86-L14] Restrict announcement publish date picker to today or future dates :: verification rule #438
-// [Moiz-A-86-L15] Restrict announcement publish date picker to today or future dates :: verification rule #457
-// [Moiz-A-86-L16] Restrict announcement publish date picker to today or future dates :: verification rule #476
-// [Moiz-A-86-L17] Restrict announcement publish date picker to today or future dates :: verification rule #495
-// [Moiz-A-86-L18] Restrict announcement publish date picker to today or future dates :: verification rule #514
-// [Moiz-A-86-L19] Restrict announcement publish date picker to today or future dates :: verification rule #533
-// [Moiz-A-86-L20] Restrict announcement publish date picker to today or future dates :: verification rule #552
-// [Moiz-A-86-L21] Restrict announcement publish date picker to today or future dates :: verification rule #571
-// [Moiz-A-86-L22] Restrict announcement publish date picker to today or future dates :: verification rule #590
-// [Moiz-A-86-L23] Restrict announcement publish date picker to today or future dates :: verification rule #609
-// [Moiz-A-86-L24] Restrict announcement publish date picker to today or future dates :: verification rule #628
-// [Moiz-A-86-L25] Restrict announcement publish date picker to today or future dates :: verification rule #647
-// [Moiz-A-86-L26] Restrict announcement publish date picker to today or future dates :: verification rule #666
-// [Moiz-A-86-L27] Restrict announcement publish date picker to today or future dates :: verification rule #685
-// [Moiz-A-86-L28] Restrict announcement publish date picker to today or future dates :: verification rule #704
-// [Moiz-A-86-L29] Restrict announcement publish date picker to today or future dates :: verification rule #723
-// [Moiz-A-86-L30] Restrict announcement publish date picker to today or future dates :: verification rule #742
-// [Moiz-A-86-L31] Restrict announcement publish date picker to today or future dates :: verification rule #761
-// [Moiz-A-86-L32] Restrict announcement publish date picker to today or future dates :: verification rule #780
-// [Moiz-A-86-L33] Restrict announcement publish date picker to today or future dates :: verification rule #799
-// [Moiz-A-86-L34] Restrict announcement publish date picker to today or future dates :: verification rule #818
-// [Moiz-A-86-L35] Restrict announcement publish date picker to today or future dates :: verification rule #837
-// [Moiz-A-86-L36] Restrict announcement publish date picker to today or future dates :: verification rule #856
-// [Moiz-A-86-L37] Restrict announcement publish date picker to today or future dates :: verification rule #875
-// [Moiz-A-86-L38] Restrict announcement publish date picker to today or future dates :: verification rule #894
-// [Moiz-A-86-L39] Restrict announcement publish date picker to today or future dates :: verification rule #913
-// [Moiz-A-86-L40] Restrict announcement publish date picker to today or future dates :: verification rule #932
-// [Moiz-A-86-L41] Restrict announcement publish date picker to today or future dates :: verification rule #951
-// [Moiz-A-86-L42] Restrict announcement publish date picker to today or future dates :: verification rule #970
-// [Moiz-A-86-L43] Restrict announcement publish date picker to today or future dates :: verification rule #989
-// [Moiz-A-86-L44] Restrict announcement publish date picker to today or future dates :: verification rule #11
-// [Moiz-A-86-L45] Restrict announcement publish date picker to today or future dates :: verification rule #30
-// [Moiz-A-86-L46] Restrict announcement publish date picker to today or future dates :: verification rule #49
-// [Moiz-A-86-L47] Restrict announcement publish date picker to today or future dates :: verification rule #68
-// [Moiz-A-86-L48] Restrict announcement publish date picker to today or future dates :: verification rule #87
-// [Moiz-A-86-L49] Restrict announcement publish date picker to today or future dates :: verification rule #106
-// [Moiz-A-86-L50] Restrict announcement publish date picker to today or future dates :: verification rule #125
-// [Moiz-A-86-L51] Restrict announcement publish date picker to today or future dates :: verification rule #144
-// [Moiz-A-86-L52] Restrict announcement publish date picker to today or future dates :: verification rule #163
-// [Moiz-A-86-L53] Restrict announcement publish date picker to today or future dates :: verification rule #182
-// [Moiz-A-86-L54] Restrict announcement publish date picker to today or future dates :: verification rule #201
-// [Moiz-A-86-L55] Restrict announcement publish date picker to today or future dates :: verification rule #220
-// [Moiz-A-86-L56] Restrict announcement publish date picker to today or future dates :: verification rule #239
-// [Moiz-A-86-L57] Restrict announcement publish date picker to today or future dates :: verification rule #258
-// [Moiz-A-86-L58] Restrict announcement publish date picker to today or future dates :: verification rule #277
-// [Moiz-A-86-L59] Restrict announcement publish date picker to today or future dates :: verification rule #296
-// [Moiz-A-86-L60] Restrict announcement publish date picker to today or future dates :: verification rule #315
-// [Moiz-A-86-L61] Restrict announcement publish date picker to today or future dates :: verification rule #334
-// [Moiz-A-86-L62] Restrict announcement publish date picker to today or future dates :: verification rule #353
-// [Moiz-A-86-L63] Restrict announcement publish date picker to today or future dates :: verification rule #372
-// [Moiz-A-86-L64] Restrict announcement publish date picker to today or future dates :: verification rule #391
-// [Moiz-A-86-L65] Restrict announcement publish date picker to today or future dates :: verification rule #410
-// === [SPEC-BLOCK-END] ===

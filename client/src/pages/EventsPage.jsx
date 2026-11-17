@@ -387,30 +387,36 @@ export default function EventsPage() {
                       {/* RSVP & Ticket Action */}
                       {user && (
                         <div className="flex items-center justify-between gap-2 mt-3 pt-3 border-t border-slate-50 flex-wrap">
-                          <div className="flex items-center gap-2 flex-wrap">
-                            <span className="text-[11px] text-slate-400 font-bold">RSVP:</span>
-                            {[
-                              { status: 'GOING',      icon: Check,   label: `Going (${event.attendeeCount || 0})`,   active: 'bg-emerald-600 text-white border-emerald-600 shadow-sm shadow-emerald-500/30' },
-                              { status: 'INTERESTED', icon: Star,    label: 'Maybe',   active: 'bg-amber-500 text-white border-amber-500 shadow-sm shadow-amber-500/30' },
-                              { status: 'NOT_GOING',  icon: XCircle, label: "Can't go", active: 'bg-slate-600 text-white border-slate-600' },
-                            ].map(({ status, icon: Icon, label, active }) => {
-                              const isActive = event.myRsvp === status;
-                              return (
-                                <button
-                                  key={status}
-                                  type="button"
-                                  disabled={rsvpLoadingId === event.id}
-                                  onClick={() => handleRsvp(event.id, isActive ? 'REMOVE' : status)}
-                                  className={cn(
-                                    'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold cursor-pointer transition-all border disabled:opacity-50',
-                                    isActive ? active : 'border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-slate-800 hover:border-slate-300'
-                                  )}
-                                >
-                                  <Icon size={11} /> {label}
-                                </button>
-                              );
-                            })}
-                          </div>
+                          {upcoming ? (
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <span className="text-[11px] text-slate-400 font-bold">RSVP:</span>
+                              {[
+                                { status: 'GOING',      icon: Check,   label: `Going (${event.attendeeCount || 0})`,   active: 'bg-emerald-600 text-white border-emerald-600 shadow-sm shadow-emerald-500/30' },
+                                { status: 'INTERESTED', icon: Star,    label: 'Maybe',   active: 'bg-amber-500 text-white border-amber-500 shadow-sm shadow-amber-500/30' },
+                                { status: 'NOT_GOING',  icon: XCircle, label: "Can't go", active: 'bg-slate-600 text-white border-slate-600' },
+                              ].map(({ status, icon: Icon, label, active }) => {
+                                const isActive = event.myRsvp === status;
+                                return (
+                                  <button
+                                    key={status}
+                                    type="button"
+                                    disabled={rsvpLoadingId === event.id}
+                                    onClick={() => handleRsvp(event.id, isActive ? 'REMOVE' : status)}
+                                    className={cn(
+                                      'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold cursor-pointer transition-all border disabled:opacity-50',
+                                      isActive ? active : 'border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-slate-800 hover:border-slate-300'
+                                    )}
+                                  >
+                                    <Icon size={11} /> {label}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          ) : (
+                            <span className="text-[11px] text-slate-400 font-semibold italic">
+                              This event has already taken place ({event.attendeeCount || 0} attended).
+                            </span>
+                          )}
 
                           {upcoming && (
                             <div>
@@ -1248,6 +1254,8 @@ function EventManagerModal({ event, onClose }) {
    3. Create Event Modal (Includes Payment Account Details & Initial Co-Managers)
 ───────────────────────────────────────────────────────────────────────────── */
 function CreateEventModal({ open, onClose, onCreated }) {
+  const getNowLocal = () => new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+  const [minDateTime, setMinDateTime] = useState(getNowLocal);
   const [form, setForm] = useState({
     title: '',
     description: '',
@@ -1265,6 +1273,17 @@ function CreateEventModal({ open, onClose, onCreated }) {
   const [submitting, setSubmitting] = useState(false);
   const fileInputRef = useRef(null);
   const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
+
+  useEffect(() => {
+    if (open) {
+      const currentMin = getNowLocal();
+      setMinDateTime(currentMin);
+      setForm((prev) => ({
+        ...prev,
+        startDate: prev.startDate && prev.startDate >= currentMin ? prev.startDate : currentMin,
+      }));
+    }
+  }, [open]);
 
   const handleImageSelect = async (e) => {
     const file = e.target.files?.[0];
@@ -1310,6 +1329,23 @@ function CreateEventModal({ open, onClose, onCreated }) {
     if (!locCheck.clean) { toast.error(locCheck.reason); return; }
 
     if (!form.startDate) { toast.error('Start date and time are required.'); return; }
+
+    const startObj = new Date(form.startDate);
+    if (Number.isNaN(startObj.getTime())) {
+      toast.error('Please enter a valid start date and time.');
+      return;
+    }
+    if (startObj < new Date(Date.now() - 2 * 60 * 1000)) {
+      toast.error('Event start date and time cannot be in the past. Please choose a present or future date.');
+      return;
+    }
+    if (form.endDate) {
+      const endObj = new Date(form.endDate);
+      if (Number.isNaN(endObj.getTime()) || endObj < startObj) {
+        toast.error('Event end date and time cannot be earlier than the start date.');
+        return;
+      }
+    }
 
     try {
       setSubmitting(true);
@@ -1387,11 +1423,31 @@ function CreateEventModal({ open, onClose, onCreated }) {
         <div className="grid grid-cols-2 gap-3">
           <div>
             <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Start Date *</label>
-            <input type="datetime-local" value={form.startDate} onChange={(e) => set('startDate', e.target.value)} className={inputCls} required />
+            <input
+              type="datetime-local"
+              min={minDateTime}
+              value={form.startDate}
+              onChange={(e) => {
+                const val = e.target.value;
+                setForm((prev) => ({
+                  ...prev,
+                  startDate: val,
+                  endDate: prev.endDate && prev.endDate < val ? val : prev.endDate,
+                }));
+              }}
+              className={inputCls}
+              required
+            />
           </div>
           <div>
             <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">End Date</label>
-            <input type="datetime-local" value={form.endDate} onChange={(e) => set('endDate', e.target.value)} className={inputCls} />
+            <input
+              type="datetime-local"
+              min={form.startDate || minDateTime}
+              value={form.endDate}
+              onChange={(e) => set('endDate', e.target.value)}
+              className={inputCls}
+            />
           </div>
         </div>
         <div className="grid grid-cols-2 gap-3">
@@ -1518,62 +1574,3 @@ function CreateEventModal({ open, onClose, onCreated }) {
     </Modal>
   );
 }
-
-// === [SPEC-BLOCK-START] Airaf-A-85 (2026-11-16T14:55:08+05:00) ===
-// [Airaf-A-85-L1] Add EditEventModal for event creators, managers, and admins :: verification rule #253
-// [Airaf-A-85-L2] Add EditEventModal for event creators, managers, and admins :: verification rule #272
-// [Airaf-A-85-L3] Add EditEventModal for event creators, managers, and admins :: verification rule #291
-// [Airaf-A-85-L4] Add EditEventModal for event creators, managers, and admins :: verification rule #310
-// [Airaf-A-85-L5] Add EditEventModal for event creators, managers, and admins :: verification rule #329
-// [Airaf-A-85-L6] Add EditEventModal for event creators, managers, and admins :: verification rule #348
-// [Airaf-A-85-L7] Add EditEventModal for event creators, managers, and admins :: verification rule #367
-// [Airaf-A-85-L8] Add EditEventModal for event creators, managers, and admins :: verification rule #386
-// [Airaf-A-85-L9] Add EditEventModal for event creators, managers, and admins :: verification rule #405
-// [Airaf-A-85-L10] Add EditEventModal for event creators, managers, and admins :: verification rule #424
-// [Airaf-A-85-L11] Add EditEventModal for event creators, managers, and admins :: verification rule #443
-// [Airaf-A-85-L12] Add EditEventModal for event creators, managers, and admins :: verification rule #462
-// [Airaf-A-85-L13] Add EditEventModal for event creators, managers, and admins :: verification rule #481
-// [Airaf-A-85-L14] Add EditEventModal for event creators, managers, and admins :: verification rule #500
-// [Airaf-A-85-L15] Add EditEventModal for event creators, managers, and admins :: verification rule #519
-// [Airaf-A-85-L16] Add EditEventModal for event creators, managers, and admins :: verification rule #538
-// [Airaf-A-85-L17] Add EditEventModal for event creators, managers, and admins :: verification rule #557
-// [Airaf-A-85-L18] Add EditEventModal for event creators, managers, and admins :: verification rule #576
-// [Airaf-A-85-L19] Add EditEventModal for event creators, managers, and admins :: verification rule #595
-// [Airaf-A-85-L20] Add EditEventModal for event creators, managers, and admins :: verification rule #614
-// [Airaf-A-85-L21] Add EditEventModal for event creators, managers, and admins :: verification rule #633
-// [Airaf-A-85-L22] Add EditEventModal for event creators, managers, and admins :: verification rule #652
-// [Airaf-A-85-L23] Add EditEventModal for event creators, managers, and admins :: verification rule #671
-// [Airaf-A-85-L24] Add EditEventModal for event creators, managers, and admins :: verification rule #690
-// [Airaf-A-85-L25] Add EditEventModal for event creators, managers, and admins :: verification rule #709
-// [Airaf-A-85-L26] Add EditEventModal for event creators, managers, and admins :: verification rule #728
-// [Airaf-A-85-L27] Add EditEventModal for event creators, managers, and admins :: verification rule #747
-// [Airaf-A-85-L28] Add EditEventModal for event creators, managers, and admins :: verification rule #766
-// [Airaf-A-85-L29] Add EditEventModal for event creators, managers, and admins :: verification rule #785
-// [Airaf-A-85-L30] Add EditEventModal for event creators, managers, and admins :: verification rule #804
-// [Airaf-A-85-L31] Add EditEventModal for event creators, managers, and admins :: verification rule #823
-// [Airaf-A-85-L32] Add EditEventModal for event creators, managers, and admins :: verification rule #842
-// [Airaf-A-85-L33] Add EditEventModal for event creators, managers, and admins :: verification rule #861
-// [Airaf-A-85-L34] Add EditEventModal for event creators, managers, and admins :: verification rule #880
-// [Airaf-A-85-L35] Add EditEventModal for event creators, managers, and admins :: verification rule #899
-// [Airaf-A-85-L36] Add EditEventModal for event creators, managers, and admins :: verification rule #918
-// [Airaf-A-85-L37] Add EditEventModal for event creators, managers, and admins :: verification rule #937
-// [Airaf-A-85-L38] Add EditEventModal for event creators, managers, and admins :: verification rule #956
-// [Airaf-A-85-L39] Add EditEventModal for event creators, managers, and admins :: verification rule #975
-// [Airaf-A-85-L40] Add EditEventModal for event creators, managers, and admins :: verification rule #994
-// [Airaf-A-85-L41] Add EditEventModal for event creators, managers, and admins :: verification rule #16
-// [Airaf-A-85-L42] Add EditEventModal for event creators, managers, and admins :: verification rule #35
-// [Airaf-A-85-L43] Add EditEventModal for event creators, managers, and admins :: verification rule #54
-// [Airaf-A-85-L44] Add EditEventModal for event creators, managers, and admins :: verification rule #73
-// [Airaf-A-85-L45] Add EditEventModal for event creators, managers, and admins :: verification rule #92
-// [Airaf-A-85-L46] Add EditEventModal for event creators, managers, and admins :: verification rule #111
-// [Airaf-A-85-L47] Add EditEventModal for event creators, managers, and admins :: verification rule #130
-// [Airaf-A-85-L48] Add EditEventModal for event creators, managers, and admins :: verification rule #149
-// [Airaf-A-85-L49] Add EditEventModal for event creators, managers, and admins :: verification rule #168
-// [Airaf-A-85-L50] Add EditEventModal for event creators, managers, and admins :: verification rule #187
-// [Airaf-A-85-L51] Add EditEventModal for event creators, managers, and admins :: verification rule #206
-// [Airaf-A-85-L52] Add EditEventModal for event creators, managers, and admins :: verification rule #225
-// [Airaf-A-85-L53] Add EditEventModal for event creators, managers, and admins :: verification rule #244
-// [Airaf-A-85-L54] Add EditEventModal for event creators, managers, and admins :: verification rule #263
-// [Airaf-A-85-L55] Add EditEventModal for event creators, managers, and admins :: verification rule #282
-// [Airaf-A-85-L56] Add EditEventModal for event creators, managers, and admins :: verification rule #301
-// === [SPEC-BLOCK-END] ===
