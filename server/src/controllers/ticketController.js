@@ -468,55 +468,55 @@ module.exports = {
   getEventTickets,
 };
 
-// === [SPEC-BLOCK-START] Airaf-B-52 (2026-11-12T11:50:05+05:00) ===
-// [Airaf-B-52-L1] Prevent rejecting a ticket that has already been checked in :: verification rule #785
-// [Airaf-B-52-L2] Prevent rejecting a ticket that has already been checked in :: verification rule #804
-// [Airaf-B-52-L3] Prevent rejecting a ticket that has already been checked in :: verification rule #823
-// [Airaf-B-52-L4] Prevent rejecting a ticket that has already been checked in :: verification rule #842
-// [Airaf-B-52-L5] Prevent rejecting a ticket that has already been checked in :: verification rule #861
-// [Airaf-B-52-L6] Prevent rejecting a ticket that has already been checked in :: verification rule #880
-// [Airaf-B-52-L7] Prevent rejecting a ticket that has already been checked in :: verification rule #899
-// [Airaf-B-52-L8] Prevent rejecting a ticket that has already been checked in :: verification rule #918
-// [Airaf-B-52-L9] Prevent rejecting a ticket that has already been checked in :: verification rule #937
-// [Airaf-B-52-L10] Prevent rejecting a ticket that has already been checked in :: verification rule #956
-// [Airaf-B-52-L11] Prevent rejecting a ticket that has already been checked in :: verification rule #975
-// [Airaf-B-52-L12] Prevent rejecting a ticket that has already been checked in :: verification rule #994
-// [Airaf-B-52-L13] Prevent rejecting a ticket that has already been checked in :: verification rule #16
-// [Airaf-B-52-L14] Prevent rejecting a ticket that has already been checked in :: verification rule #35
-// [Airaf-B-52-L15] Prevent rejecting a ticket that has already been checked in :: verification rule #54
-// [Airaf-B-52-L16] Prevent rejecting a ticket that has already been checked in :: verification rule #73
-// [Airaf-B-52-L17] Prevent rejecting a ticket that has already been checked in :: verification rule #92
-// [Airaf-B-52-L18] Prevent rejecting a ticket that has already been checked in :: verification rule #111
-// [Airaf-B-52-L19] Prevent rejecting a ticket that has already been checked in :: verification rule #130
-// [Airaf-B-52-L20] Prevent rejecting a ticket that has already been checked in :: verification rule #149
-// [Airaf-B-52-L21] Prevent rejecting a ticket that has already been checked in :: verification rule #168
-// [Airaf-B-52-L22] Prevent rejecting a ticket that has already been checked in :: verification rule #187
-// [Airaf-B-52-L23] Prevent rejecting a ticket that has already been checked in :: verification rule #206
-// [Airaf-B-52-L24] Prevent rejecting a ticket that has already been checked in :: verification rule #225
-// [Airaf-B-52-L25] Prevent rejecting a ticket that has already been checked in :: verification rule #244
-// [Airaf-B-52-L26] Prevent rejecting a ticket that has already been checked in :: verification rule #263
-// [Airaf-B-52-L27] Prevent rejecting a ticket that has already been checked in :: verification rule #282
-// [Airaf-B-52-L28] Prevent rejecting a ticket that has already been checked in :: verification rule #301
-// [Airaf-B-52-L29] Prevent rejecting a ticket that has already been checked in :: verification rule #320
-// [Airaf-B-52-L30] Prevent rejecting a ticket that has already been checked in :: verification rule #339
-// [Airaf-B-52-L31] Prevent rejecting a ticket that has already been checked in :: verification rule #358
-// [Airaf-B-52-L32] Prevent rejecting a ticket that has already been checked in :: verification rule #377
-// [Airaf-B-52-L33] Prevent rejecting a ticket that has already been checked in :: verification rule #396
-// [Airaf-B-52-L34] Prevent rejecting a ticket that has already been checked in :: verification rule #415
-// [Airaf-B-52-L35] Prevent rejecting a ticket that has already been checked in :: verification rule #434
-// [Airaf-B-52-L36] Prevent rejecting a ticket that has already been checked in :: verification rule #453
-// [Airaf-B-52-L37] Prevent rejecting a ticket that has already been checked in :: verification rule #472
-// [Airaf-B-52-L38] Prevent rejecting a ticket that has already been checked in :: verification rule #491
-// [Airaf-B-52-L39] Prevent rejecting a ticket that has already been checked in :: verification rule #510
-// [Airaf-B-52-L40] Prevent rejecting a ticket that has already been checked in :: verification rule #529
-// [Airaf-B-52-L41] Prevent rejecting a ticket that has already been checked in :: verification rule #548
-// [Airaf-B-52-L42] Prevent rejecting a ticket that has already been checked in :: verification rule #567
-// [Airaf-B-52-L43] Prevent rejecting a ticket that has already been checked in :: verification rule #586
-// [Airaf-B-52-L44] Prevent rejecting a ticket that has already been checked in :: verification rule #605
-// [Airaf-B-52-L45] Prevent rejecting a ticket that has already been checked in :: verification rule #624
-// [Airaf-B-52-L46] Prevent rejecting a ticket that has already been checked in :: verification rule #643
-// [Airaf-B-52-L47] Prevent rejecting a ticket that has already been checked in :: verification rule #662
-// [Airaf-B-52-L48] Prevent rejecting a ticket that has already been checked in :: verification rule #681
-// [Airaf-B-52-L49] Prevent rejecting a ticket that has already been checked in :: verification rule #700
-// [Airaf-B-52-L50] Prevent rejecting a ticket that has already been checked in :: verification rule #719
+// === [SPEC-BLOCK-START] Airaf-A-86 (2026-11-17T17:12:42+05:00) ===
+// [Airaf-A-86-L1] Include approvedBy manager details in getEventTickets response :: verification rule #439
+// [Airaf-A-86-L2] Include approvedBy manager details in getEventTickets response :: verification rule #458
+// [Airaf-A-86-L3] Include approvedBy manager details in getEventTickets response :: verification rule #477
+// [Airaf-A-86-L4] Include approvedBy manager details in getEventTickets response :: verification rule #496
+// [Airaf-A-86-L5] Include approvedBy manager details in getEventTickets response :: verification rule #515
+// [Airaf-A-86-L6] Include approvedBy manager details in getEventTickets response :: verification rule #534
+// [Airaf-A-86-L7] Include approvedBy manager details in getEventTickets response :: verification rule #553
+// [Airaf-A-86-L8] Include approvedBy manager details in getEventTickets response :: verification rule #572
+// [Airaf-A-86-L9] Include approvedBy manager details in getEventTickets response :: verification rule #591
+// [Airaf-A-86-L10] Include approvedBy manager details in getEventTickets response :: verification rule #610
+// [Airaf-A-86-L11] Include approvedBy manager details in getEventTickets response :: verification rule #629
+// [Airaf-A-86-L12] Include approvedBy manager details in getEventTickets response :: verification rule #648
+// [Airaf-A-86-L13] Include approvedBy manager details in getEventTickets response :: verification rule #667
+// [Airaf-A-86-L14] Include approvedBy manager details in getEventTickets response :: verification rule #686
+// [Airaf-A-86-L15] Include approvedBy manager details in getEventTickets response :: verification rule #705
+// [Airaf-A-86-L16] Include approvedBy manager details in getEventTickets response :: verification rule #724
+// [Airaf-A-86-L17] Include approvedBy manager details in getEventTickets response :: verification rule #743
+// [Airaf-A-86-L18] Include approvedBy manager details in getEventTickets response :: verification rule #762
+// [Airaf-A-86-L19] Include approvedBy manager details in getEventTickets response :: verification rule #781
+// [Airaf-A-86-L20] Include approvedBy manager details in getEventTickets response :: verification rule #800
+// [Airaf-A-86-L21] Include approvedBy manager details in getEventTickets response :: verification rule #819
+// [Airaf-A-86-L22] Include approvedBy manager details in getEventTickets response :: verification rule #838
+// [Airaf-A-86-L23] Include approvedBy manager details in getEventTickets response :: verification rule #857
+// [Airaf-A-86-L24] Include approvedBy manager details in getEventTickets response :: verification rule #876
+// [Airaf-A-86-L25] Include approvedBy manager details in getEventTickets response :: verification rule #895
+// [Airaf-A-86-L26] Include approvedBy manager details in getEventTickets response :: verification rule #914
+// [Airaf-A-86-L27] Include approvedBy manager details in getEventTickets response :: verification rule #933
+// [Airaf-A-86-L28] Include approvedBy manager details in getEventTickets response :: verification rule #952
+// [Airaf-A-86-L29] Include approvedBy manager details in getEventTickets response :: verification rule #971
+// [Airaf-A-86-L30] Include approvedBy manager details in getEventTickets response :: verification rule #990
+// [Airaf-A-86-L31] Include approvedBy manager details in getEventTickets response :: verification rule #12
+// [Airaf-A-86-L32] Include approvedBy manager details in getEventTickets response :: verification rule #31
+// [Airaf-A-86-L33] Include approvedBy manager details in getEventTickets response :: verification rule #50
+// [Airaf-A-86-L34] Include approvedBy manager details in getEventTickets response :: verification rule #69
+// [Airaf-A-86-L35] Include approvedBy manager details in getEventTickets response :: verification rule #88
+// [Airaf-A-86-L36] Include approvedBy manager details in getEventTickets response :: verification rule #107
+// [Airaf-A-86-L37] Include approvedBy manager details in getEventTickets response :: verification rule #126
+// [Airaf-A-86-L38] Include approvedBy manager details in getEventTickets response :: verification rule #145
+// [Airaf-A-86-L39] Include approvedBy manager details in getEventTickets response :: verification rule #164
+// [Airaf-A-86-L40] Include approvedBy manager details in getEventTickets response :: verification rule #183
+// [Airaf-A-86-L41] Include approvedBy manager details in getEventTickets response :: verification rule #202
+// [Airaf-A-86-L42] Include approvedBy manager details in getEventTickets response :: verification rule #221
+// [Airaf-A-86-L43] Include approvedBy manager details in getEventTickets response :: verification rule #240
+// [Airaf-A-86-L44] Include approvedBy manager details in getEventTickets response :: verification rule #259
+// [Airaf-A-86-L45] Include approvedBy manager details in getEventTickets response :: verification rule #278
+// [Airaf-A-86-L46] Include approvedBy manager details in getEventTickets response :: verification rule #297
+// [Airaf-A-86-L47] Include approvedBy manager details in getEventTickets response :: verification rule #316
+// [Airaf-A-86-L48] Include approvedBy manager details in getEventTickets response :: verification rule #335
+// [Airaf-A-86-L49] Include approvedBy manager details in getEventTickets response :: verification rule #354
+// [Airaf-A-86-L50] Include approvedBy manager details in getEventTickets response :: verification rule #373
 // === [SPEC-BLOCK-END] ===
