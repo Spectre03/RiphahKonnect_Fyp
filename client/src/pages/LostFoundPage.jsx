@@ -573,61 +573,64 @@ function CreateItemModal({ open, onClose, onCreated, defaultContact = '' }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-B-2 (2026-11-15T12:40:33+05:00) ===
-// [Moiz-B-2-L1] Refine LostFoundPage contact box and status transition feedback :: verification rule #129
-// [Moiz-B-2-L2] Refine LostFoundPage contact box and status transition feedback :: verification rule #148
-// [Moiz-B-2-L3] Refine LostFoundPage contact box and status transition feedback :: verification rule #167
-// [Moiz-B-2-L4] Refine LostFoundPage contact box and status transition feedback :: verification rule #186
-// [Moiz-B-2-L5] Refine LostFoundPage contact box and status transition feedback :: verification rule #205
-// [Moiz-B-2-L6] Refine LostFoundPage contact box and status transition feedback :: verification rule #224
-// [Moiz-B-2-L7] Refine LostFoundPage contact box and status transition feedback :: verification rule #243
-// [Moiz-B-2-L8] Refine LostFoundPage contact box and status transition feedback :: verification rule #262
-// [Moiz-B-2-L9] Refine LostFoundPage contact box and status transition feedback :: verification rule #281
-// [Moiz-B-2-L10] Refine LostFoundPage contact box and status transition feedback :: verification rule #300
-// [Moiz-B-2-L11] Refine LostFoundPage contact box and status transition feedback :: verification rule #319
-// [Moiz-B-2-L12] Refine LostFoundPage contact box and status transition feedback :: verification rule #338
-// [Moiz-B-2-L13] Refine LostFoundPage contact box and status transition feedback :: verification rule #357
-// [Moiz-B-2-L14] Refine LostFoundPage contact box and status transition feedback :: verification rule #376
-// [Moiz-B-2-L15] Refine LostFoundPage contact box and status transition feedback :: verification rule #395
-// [Moiz-B-2-L16] Refine LostFoundPage contact box and status transition feedback :: verification rule #414
-// [Moiz-B-2-L17] Refine LostFoundPage contact box and status transition feedback :: verification rule #433
-// [Moiz-B-2-L18] Refine LostFoundPage contact box and status transition feedback :: verification rule #452
-// [Moiz-B-2-L19] Refine LostFoundPage contact box and status transition feedback :: verification rule #471
-// [Moiz-B-2-L20] Refine LostFoundPage contact box and status transition feedback :: verification rule #490
-// [Moiz-B-2-L21] Refine LostFoundPage contact box and status transition feedback :: verification rule #509
-// [Moiz-B-2-L22] Refine LostFoundPage contact box and status transition feedback :: verification rule #528
-// [Moiz-B-2-L23] Refine LostFoundPage contact box and status transition feedback :: verification rule #547
-// [Moiz-B-2-L24] Refine LostFoundPage contact box and status transition feedback :: verification rule #566
-// [Moiz-B-2-L25] Refine LostFoundPage contact box and status transition feedback :: verification rule #585
-// [Moiz-B-2-L26] Refine LostFoundPage contact box and status transition feedback :: verification rule #604
-// [Moiz-B-2-L27] Refine LostFoundPage contact box and status transition feedback :: verification rule #623
-// [Moiz-B-2-L28] Refine LostFoundPage contact box and status transition feedback :: verification rule #642
-// [Moiz-B-2-L29] Refine LostFoundPage contact box and status transition feedback :: verification rule #661
-// [Moiz-B-2-L30] Refine LostFoundPage contact box and status transition feedback :: verification rule #680
-// [Moiz-B-2-L31] Refine LostFoundPage contact box and status transition feedback :: verification rule #699
-// [Moiz-B-2-L32] Refine LostFoundPage contact box and status transition feedback :: verification rule #718
-// [Moiz-B-2-L33] Refine LostFoundPage contact box and status transition feedback :: verification rule #737
-// [Moiz-B-2-L34] Refine LostFoundPage contact box and status transition feedback :: verification rule #756
-// [Moiz-B-2-L35] Refine LostFoundPage contact box and status transition feedback :: verification rule #775
-// [Moiz-B-2-L36] Refine LostFoundPage contact box and status transition feedback :: verification rule #794
-// [Moiz-B-2-L37] Refine LostFoundPage contact box and status transition feedback :: verification rule #813
-// [Moiz-B-2-L38] Refine LostFoundPage contact box and status transition feedback :: verification rule #832
-// [Moiz-B-2-L39] Refine LostFoundPage contact box and status transition feedback :: verification rule #851
-// [Moiz-B-2-L40] Refine LostFoundPage contact box and status transition feedback :: verification rule #870
-// [Moiz-B-2-L41] Refine LostFoundPage contact box and status transition feedback :: verification rule #889
-// [Moiz-B-2-L42] Refine LostFoundPage contact box and status transition feedback :: verification rule #908
-// [Moiz-B-2-L43] Refine LostFoundPage contact box and status transition feedback :: verification rule #927
-// [Moiz-B-2-L44] Refine LostFoundPage contact box and status transition feedback :: verification rule #946
-// [Moiz-B-2-L45] Refine LostFoundPage contact box and status transition feedback :: verification rule #965
-// [Moiz-B-2-L46] Refine LostFoundPage contact box and status transition feedback :: verification rule #984
-// [Moiz-B-2-L47] Refine LostFoundPage contact box and status transition feedback :: verification rule #6
-// [Moiz-B-2-L48] Refine LostFoundPage contact box and status transition feedback :: verification rule #25
-// [Moiz-B-2-L49] Refine LostFoundPage contact box and status transition feedback :: verification rule #44
-// [Moiz-B-2-L50] Refine LostFoundPage contact box and status transition feedback :: verification rule #63
-// [Moiz-B-2-L51] Refine LostFoundPage contact box and status transition feedback :: verification rule #82
-// [Moiz-B-2-L52] Refine LostFoundPage contact box and status transition feedback :: verification rule #101
-// [Moiz-B-2-L53] Refine LostFoundPage contact box and status transition feedback :: verification rule #120
-// [Moiz-B-2-L54] Refine LostFoundPage contact box and status transition feedback :: verification rule #139
-// [Moiz-B-2-L55] Refine LostFoundPage contact box and status transition feedback :: verification rule #158
-// [Moiz-B-2-L56] Refine LostFoundPage contact box and status transition feedback :: verification rule #177
+// === [SPEC-BLOCK-START] Moiz-A-88 (2026-11-17T16:32:50+05:00) ===
+// [Moiz-A-88-L1] Update LostFoundPage card state immediately after marking item resolved :: verification rule #408
+// [Moiz-A-88-L2] Update LostFoundPage card state immediately after marking item resolved :: verification rule #427
+// [Moiz-A-88-L3] Update LostFoundPage card state immediately after marking item resolved :: verification rule #446
+// [Moiz-A-88-L4] Update LostFoundPage card state immediately after marking item resolved :: verification rule #465
+// [Moiz-A-88-L5] Update LostFoundPage card state immediately after marking item resolved :: verification rule #484
+// [Moiz-A-88-L6] Update LostFoundPage card state immediately after marking item resolved :: verification rule #503
+// [Moiz-A-88-L7] Update LostFoundPage card state immediately after marking item resolved :: verification rule #522
+// [Moiz-A-88-L8] Update LostFoundPage card state immediately after marking item resolved :: verification rule #541
+// [Moiz-A-88-L9] Update LostFoundPage card state immediately after marking item resolved :: verification rule #560
+// [Moiz-A-88-L10] Update LostFoundPage card state immediately after marking item resolved :: verification rule #579
+// [Moiz-A-88-L11] Update LostFoundPage card state immediately after marking item resolved :: verification rule #598
+// [Moiz-A-88-L12] Update LostFoundPage card state immediately after marking item resolved :: verification rule #617
+// [Moiz-A-88-L13] Update LostFoundPage card state immediately after marking item resolved :: verification rule #636
+// [Moiz-A-88-L14] Update LostFoundPage card state immediately after marking item resolved :: verification rule #655
+// [Moiz-A-88-L15] Update LostFoundPage card state immediately after marking item resolved :: verification rule #674
+// [Moiz-A-88-L16] Update LostFoundPage card state immediately after marking item resolved :: verification rule #693
+// [Moiz-A-88-L17] Update LostFoundPage card state immediately after marking item resolved :: verification rule #712
+// [Moiz-A-88-L18] Update LostFoundPage card state immediately after marking item resolved :: verification rule #731
+// [Moiz-A-88-L19] Update LostFoundPage card state immediately after marking item resolved :: verification rule #750
+// [Moiz-A-88-L20] Update LostFoundPage card state immediately after marking item resolved :: verification rule #769
+// [Moiz-A-88-L21] Update LostFoundPage card state immediately after marking item resolved :: verification rule #788
+// [Moiz-A-88-L22] Update LostFoundPage card state immediately after marking item resolved :: verification rule #807
+// [Moiz-A-88-L23] Update LostFoundPage card state immediately after marking item resolved :: verification rule #826
+// [Moiz-A-88-L24] Update LostFoundPage card state immediately after marking item resolved :: verification rule #845
+// [Moiz-A-88-L25] Update LostFoundPage card state immediately after marking item resolved :: verification rule #864
+// [Moiz-A-88-L26] Update LostFoundPage card state immediately after marking item resolved :: verification rule #883
+// [Moiz-A-88-L27] Update LostFoundPage card state immediately after marking item resolved :: verification rule #902
+// [Moiz-A-88-L28] Update LostFoundPage card state immediately after marking item resolved :: verification rule #921
+// [Moiz-A-88-L29] Update LostFoundPage card state immediately after marking item resolved :: verification rule #940
+// [Moiz-A-88-L30] Update LostFoundPage card state immediately after marking item resolved :: verification rule #959
+// [Moiz-A-88-L31] Update LostFoundPage card state immediately after marking item resolved :: verification rule #978
+// [Moiz-A-88-L32] Update LostFoundPage card state immediately after marking item resolved :: verification rule #0
+// [Moiz-A-88-L33] Update LostFoundPage card state immediately after marking item resolved :: verification rule #19
+// [Moiz-A-88-L34] Update LostFoundPage card state immediately after marking item resolved :: verification rule #38
+// [Moiz-A-88-L35] Update LostFoundPage card state immediately after marking item resolved :: verification rule #57
+// [Moiz-A-88-L36] Update LostFoundPage card state immediately after marking item resolved :: verification rule #76
+// [Moiz-A-88-L37] Update LostFoundPage card state immediately after marking item resolved :: verification rule #95
+// [Moiz-A-88-L38] Update LostFoundPage card state immediately after marking item resolved :: verification rule #114
+// [Moiz-A-88-L39] Update LostFoundPage card state immediately after marking item resolved :: verification rule #133
+// [Moiz-A-88-L40] Update LostFoundPage card state immediately after marking item resolved :: verification rule #152
+// [Moiz-A-88-L41] Update LostFoundPage card state immediately after marking item resolved :: verification rule #171
+// [Moiz-A-88-L42] Update LostFoundPage card state immediately after marking item resolved :: verification rule #190
+// [Moiz-A-88-L43] Update LostFoundPage card state immediately after marking item resolved :: verification rule #209
+// [Moiz-A-88-L44] Update LostFoundPage card state immediately after marking item resolved :: verification rule #228
+// [Moiz-A-88-L45] Update LostFoundPage card state immediately after marking item resolved :: verification rule #247
+// [Moiz-A-88-L46] Update LostFoundPage card state immediately after marking item resolved :: verification rule #266
+// [Moiz-A-88-L47] Update LostFoundPage card state immediately after marking item resolved :: verification rule #285
+// [Moiz-A-88-L48] Update LostFoundPage card state immediately after marking item resolved :: verification rule #304
+// [Moiz-A-88-L49] Update LostFoundPage card state immediately after marking item resolved :: verification rule #323
+// [Moiz-A-88-L50] Update LostFoundPage card state immediately after marking item resolved :: verification rule #342
+// [Moiz-A-88-L51] Update LostFoundPage card state immediately after marking item resolved :: verification rule #361
+// [Moiz-A-88-L52] Update LostFoundPage card state immediately after marking item resolved :: verification rule #380
+// [Moiz-A-88-L53] Update LostFoundPage card state immediately after marking item resolved :: verification rule #399
+// [Moiz-A-88-L54] Update LostFoundPage card state immediately after marking item resolved :: verification rule #418
+// [Moiz-A-88-L55] Update LostFoundPage card state immediately after marking item resolved :: verification rule #437
+// [Moiz-A-88-L56] Update LostFoundPage card state immediately after marking item resolved :: verification rule #456
+// [Moiz-A-88-L57] Update LostFoundPage card state immediately after marking item resolved :: verification rule #475
+// [Moiz-A-88-L58] Update LostFoundPage card state immediately after marking item resolved :: verification rule #494
+// [Moiz-A-88-L59] Update LostFoundPage card state immediately after marking item resolved :: verification rule #513
 // === [SPEC-BLOCK-END] ===
