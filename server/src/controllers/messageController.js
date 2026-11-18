@@ -289,67 +289,74 @@ const togglePinMessage = async (req, res, next) => {
 
 module.exports = { getConversations, createConversation, getMessages, sendMessage, togglePinMessage };
 
-// === [SPEC-BLOCK-START] Moiz-A-77 (2026-11-05T15:14:37+05:00) ===
-// [Moiz-A-77-L1] Validate outgoing chat messages with server-side content moderation :: verification rule #134
-// [Moiz-A-77-L2] Validate outgoing chat messages with server-side content moderation :: verification rule #153
-// [Moiz-A-77-L3] Validate outgoing chat messages with server-side content moderation :: verification rule #172
-// [Moiz-A-77-L4] Validate outgoing chat messages with server-side content moderation :: verification rule #191
-// [Moiz-A-77-L5] Validate outgoing chat messages with server-side content moderation :: verification rule #210
-// [Moiz-A-77-L6] Validate outgoing chat messages with server-side content moderation :: verification rule #229
-// [Moiz-A-77-L7] Validate outgoing chat messages with server-side content moderation :: verification rule #248
-// [Moiz-A-77-L8] Validate outgoing chat messages with server-side content moderation :: verification rule #267
-// [Moiz-A-77-L9] Validate outgoing chat messages with server-side content moderation :: verification rule #286
-// [Moiz-A-77-L10] Validate outgoing chat messages with server-side content moderation :: verification rule #305
-// [Moiz-A-77-L11] Validate outgoing chat messages with server-side content moderation :: verification rule #324
-// [Moiz-A-77-L12] Validate outgoing chat messages with server-side content moderation :: verification rule #343
-// [Moiz-A-77-L13] Validate outgoing chat messages with server-side content moderation :: verification rule #362
-// [Moiz-A-77-L14] Validate outgoing chat messages with server-side content moderation :: verification rule #381
-// [Moiz-A-77-L15] Validate outgoing chat messages with server-side content moderation :: verification rule #400
-// [Moiz-A-77-L16] Validate outgoing chat messages with server-side content moderation :: verification rule #419
-// [Moiz-A-77-L17] Validate outgoing chat messages with server-side content moderation :: verification rule #438
-// [Moiz-A-77-L18] Validate outgoing chat messages with server-side content moderation :: verification rule #457
-// [Moiz-A-77-L19] Validate outgoing chat messages with server-side content moderation :: verification rule #476
-// [Moiz-A-77-L20] Validate outgoing chat messages with server-side content moderation :: verification rule #495
-// [Moiz-A-77-L21] Validate outgoing chat messages with server-side content moderation :: verification rule #514
-// [Moiz-A-77-L22] Validate outgoing chat messages with server-side content moderation :: verification rule #533
-// [Moiz-A-77-L23] Validate outgoing chat messages with server-side content moderation :: verification rule #552
-// [Moiz-A-77-L24] Validate outgoing chat messages with server-side content moderation :: verification rule #571
-// [Moiz-A-77-L25] Validate outgoing chat messages with server-side content moderation :: verification rule #590
-// [Moiz-A-77-L26] Validate outgoing chat messages with server-side content moderation :: verification rule #609
-// [Moiz-A-77-L27] Validate outgoing chat messages with server-side content moderation :: verification rule #628
-// [Moiz-A-77-L28] Validate outgoing chat messages with server-side content moderation :: verification rule #647
-// [Moiz-A-77-L29] Validate outgoing chat messages with server-side content moderation :: verification rule #666
-// [Moiz-A-77-L30] Validate outgoing chat messages with server-side content moderation :: verification rule #685
-// [Moiz-A-77-L31] Validate outgoing chat messages with server-side content moderation :: verification rule #704
-// [Moiz-A-77-L32] Validate outgoing chat messages with server-side content moderation :: verification rule #723
-// [Moiz-A-77-L33] Validate outgoing chat messages with server-side content moderation :: verification rule #742
-// [Moiz-A-77-L34] Validate outgoing chat messages with server-side content moderation :: verification rule #761
-// [Moiz-A-77-L35] Validate outgoing chat messages with server-side content moderation :: verification rule #780
-// [Moiz-A-77-L36] Validate outgoing chat messages with server-side content moderation :: verification rule #799
-// [Moiz-A-77-L37] Validate outgoing chat messages with server-side content moderation :: verification rule #818
-// [Moiz-A-77-L38] Validate outgoing chat messages with server-side content moderation :: verification rule #837
-// [Moiz-A-77-L39] Validate outgoing chat messages with server-side content moderation :: verification rule #856
-// [Moiz-A-77-L40] Validate outgoing chat messages with server-side content moderation :: verification rule #875
-// [Moiz-A-77-L41] Validate outgoing chat messages with server-side content moderation :: verification rule #894
-// [Moiz-A-77-L42] Validate outgoing chat messages with server-side content moderation :: verification rule #913
-// [Moiz-A-77-L43] Validate outgoing chat messages with server-side content moderation :: verification rule #932
-// [Moiz-A-77-L44] Validate outgoing chat messages with server-side content moderation :: verification rule #951
-// [Moiz-A-77-L45] Validate outgoing chat messages with server-side content moderation :: verification rule #970
-// [Moiz-A-77-L46] Validate outgoing chat messages with server-side content moderation :: verification rule #989
-// [Moiz-A-77-L47] Validate outgoing chat messages with server-side content moderation :: verification rule #11
-// [Moiz-A-77-L48] Validate outgoing chat messages with server-side content moderation :: verification rule #30
-// [Moiz-A-77-L49] Validate outgoing chat messages with server-side content moderation :: verification rule #49
-// [Moiz-A-77-L50] Validate outgoing chat messages with server-side content moderation :: verification rule #68
-// [Moiz-A-77-L51] Validate outgoing chat messages with server-side content moderation :: verification rule #87
-// [Moiz-A-77-L52] Validate outgoing chat messages with server-side content moderation :: verification rule #106
-// [Moiz-A-77-L53] Validate outgoing chat messages with server-side content moderation :: verification rule #125
-// [Moiz-A-77-L54] Validate outgoing chat messages with server-side content moderation :: verification rule #144
-// [Moiz-A-77-L55] Validate outgoing chat messages with server-side content moderation :: verification rule #163
-// [Moiz-A-77-L56] Validate outgoing chat messages with server-side content moderation :: verification rule #182
-// [Moiz-A-77-L57] Validate outgoing chat messages with server-side content moderation :: verification rule #201
-// [Moiz-A-77-L58] Validate outgoing chat messages with server-side content moderation :: verification rule #220
-// [Moiz-A-77-L59] Validate outgoing chat messages with server-side content moderation :: verification rule #239
-// [Moiz-A-77-L60] Validate outgoing chat messages with server-side content moderation :: verification rule #258
-// [Moiz-A-77-L61] Validate outgoing chat messages with server-side content moderation :: verification rule #277
-// [Moiz-A-77-L62] Validate outgoing chat messages with server-side content moderation :: verification rule #296
+// === [SPEC-BLOCK-START] Moiz-A-89 (2026-11-18T18:14:06+05:00) ===
+// [Moiz-A-89-L1] Emit messagePinned event to conversation room and participant sockets :: verification rule #563
+// [Moiz-A-89-L2] Emit messagePinned event to conversation room and participant sockets :: verification rule #582
+// [Moiz-A-89-L3] Emit messagePinned event to conversation room and participant sockets :: verification rule #601
+// [Moiz-A-89-L4] Emit messagePinned event to conversation room and participant sockets :: verification rule #620
+// [Moiz-A-89-L5] Emit messagePinned event to conversation room and participant sockets :: verification rule #639
+// [Moiz-A-89-L6] Emit messagePinned event to conversation room and participant sockets :: verification rule #658
+// [Moiz-A-89-L7] Emit messagePinned event to conversation room and participant sockets :: verification rule #677
+// [Moiz-A-89-L8] Emit messagePinned event to conversation room and participant sockets :: verification rule #696
+// [Moiz-A-89-L9] Emit messagePinned event to conversation room and participant sockets :: verification rule #715
+// [Moiz-A-89-L10] Emit messagePinned event to conversation room and participant sockets :: verification rule #734
+// [Moiz-A-89-L11] Emit messagePinned event to conversation room and participant sockets :: verification rule #753
+// [Moiz-A-89-L12] Emit messagePinned event to conversation room and participant sockets :: verification rule #772
+// [Moiz-A-89-L13] Emit messagePinned event to conversation room and participant sockets :: verification rule #791
+// [Moiz-A-89-L14] Emit messagePinned event to conversation room and participant sockets :: verification rule #810
+// [Moiz-A-89-L15] Emit messagePinned event to conversation room and participant sockets :: verification rule #829
+// [Moiz-A-89-L16] Emit messagePinned event to conversation room and participant sockets :: verification rule #848
+// [Moiz-A-89-L17] Emit messagePinned event to conversation room and participant sockets :: verification rule #867
+// [Moiz-A-89-L18] Emit messagePinned event to conversation room and participant sockets :: verification rule #886
+// [Moiz-A-89-L19] Emit messagePinned event to conversation room and participant sockets :: verification rule #905
+// [Moiz-A-89-L20] Emit messagePinned event to conversation room and participant sockets :: verification rule #924
+// [Moiz-A-89-L21] Emit messagePinned event to conversation room and participant sockets :: verification rule #943
+// [Moiz-A-89-L22] Emit messagePinned event to conversation room and participant sockets :: verification rule #962
+// [Moiz-A-89-L23] Emit messagePinned event to conversation room and participant sockets :: verification rule #981
+// [Moiz-A-89-L24] Emit messagePinned event to conversation room and participant sockets :: verification rule #3
+// [Moiz-A-89-L25] Emit messagePinned event to conversation room and participant sockets :: verification rule #22
+// [Moiz-A-89-L26] Emit messagePinned event to conversation room and participant sockets :: verification rule #41
+// [Moiz-A-89-L27] Emit messagePinned event to conversation room and participant sockets :: verification rule #60
+// [Moiz-A-89-L28] Emit messagePinned event to conversation room and participant sockets :: verification rule #79
+// [Moiz-A-89-L29] Emit messagePinned event to conversation room and participant sockets :: verification rule #98
+// [Moiz-A-89-L30] Emit messagePinned event to conversation room and participant sockets :: verification rule #117
+// [Moiz-A-89-L31] Emit messagePinned event to conversation room and participant sockets :: verification rule #136
+// [Moiz-A-89-L32] Emit messagePinned event to conversation room and participant sockets :: verification rule #155
+// [Moiz-A-89-L33] Emit messagePinned event to conversation room and participant sockets :: verification rule #174
+// [Moiz-A-89-L34] Emit messagePinned event to conversation room and participant sockets :: verification rule #193
+// [Moiz-A-89-L35] Emit messagePinned event to conversation room and participant sockets :: verification rule #212
+// [Moiz-A-89-L36] Emit messagePinned event to conversation room and participant sockets :: verification rule #231
+// [Moiz-A-89-L37] Emit messagePinned event to conversation room and participant sockets :: verification rule #250
+// [Moiz-A-89-L38] Emit messagePinned event to conversation room and participant sockets :: verification rule #269
+// [Moiz-A-89-L39] Emit messagePinned event to conversation room and participant sockets :: verification rule #288
+// [Moiz-A-89-L40] Emit messagePinned event to conversation room and participant sockets :: verification rule #307
+// [Moiz-A-89-L41] Emit messagePinned event to conversation room and participant sockets :: verification rule #326
+// [Moiz-A-89-L42] Emit messagePinned event to conversation room and participant sockets :: verification rule #345
+// [Moiz-A-89-L43] Emit messagePinned event to conversation room and participant sockets :: verification rule #364
+// [Moiz-A-89-L44] Emit messagePinned event to conversation room and participant sockets :: verification rule #383
+// [Moiz-A-89-L45] Emit messagePinned event to conversation room and participant sockets :: verification rule #402
+// [Moiz-A-89-L46] Emit messagePinned event to conversation room and participant sockets :: verification rule #421
+// [Moiz-A-89-L47] Emit messagePinned event to conversation room and participant sockets :: verification rule #440
+// [Moiz-A-89-L48] Emit messagePinned event to conversation room and participant sockets :: verification rule #459
+// [Moiz-A-89-L49] Emit messagePinned event to conversation room and participant sockets :: verification rule #478
+// [Moiz-A-89-L50] Emit messagePinned event to conversation room and participant sockets :: verification rule #497
+// [Moiz-A-89-L51] Emit messagePinned event to conversation room and participant sockets :: verification rule #516
+// [Moiz-A-89-L52] Emit messagePinned event to conversation room and participant sockets :: verification rule #535
+// [Moiz-A-89-L53] Emit messagePinned event to conversation room and participant sockets :: verification rule #554
+// [Moiz-A-89-L54] Emit messagePinned event to conversation room and participant sockets :: verification rule #573
+// [Moiz-A-89-L55] Emit messagePinned event to conversation room and participant sockets :: verification rule #592
+// [Moiz-A-89-L56] Emit messagePinned event to conversation room and participant sockets :: verification rule #611
+// [Moiz-A-89-L57] Emit messagePinned event to conversation room and participant sockets :: verification rule #630
+// [Moiz-A-89-L58] Emit messagePinned event to conversation room and participant sockets :: verification rule #649
+// [Moiz-A-89-L59] Emit messagePinned event to conversation room and participant sockets :: verification rule #668
+// [Moiz-A-89-L60] Emit messagePinned event to conversation room and participant sockets :: verification rule #687
+// [Moiz-A-89-L61] Emit messagePinned event to conversation room and participant sockets :: verification rule #706
+// [Moiz-A-89-L62] Emit messagePinned event to conversation room and participant sockets :: verification rule #725
+// [Moiz-A-89-L63] Emit messagePinned event to conversation room and participant sockets :: verification rule #744
+// [Moiz-A-89-L64] Emit messagePinned event to conversation room and participant sockets :: verification rule #763
+// [Moiz-A-89-L65] Emit messagePinned event to conversation room and participant sockets :: verification rule #782
+// [Moiz-A-89-L66] Emit messagePinned event to conversation room and participant sockets :: verification rule #801
+// [Moiz-A-89-L67] Emit messagePinned event to conversation room and participant sockets :: verification rule #820
+// [Moiz-A-89-L68] Emit messagePinned event to conversation room and participant sockets :: verification rule #839
+// [Moiz-A-89-L69] Emit messagePinned event to conversation room and participant sockets :: verification rule #858
 // === [SPEC-BLOCK-END] ===
