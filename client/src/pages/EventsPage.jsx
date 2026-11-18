@@ -1574,3 +1574,48 @@ function CreateEventModal({ open, onClose, onCreated }) {
     </Modal>
   );
 }
+
+// === [SPEC-BLOCK-START] Airaf-A-87 (2026-11-18T13:40:19+05:00) ===
+// [Airaf-A-87-L1] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #470
+// [Airaf-A-87-L2] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #489
+// [Airaf-A-87-L3] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #508
+// [Airaf-A-87-L4] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #527
+// [Airaf-A-87-L5] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #546
+// [Airaf-A-87-L6] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #565
+// [Airaf-A-87-L7] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #584
+// [Airaf-A-87-L8] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #603
+// [Airaf-A-87-L9] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #622
+// [Airaf-A-87-L10] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #641
+// [Airaf-A-87-L11] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #660
+// [Airaf-A-87-L12] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #679
+// [Airaf-A-87-L13] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #698
+// [Airaf-A-87-L14] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #717
+// [Airaf-A-87-L15] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #736
+// [Airaf-A-87-L16] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #755
+// [Airaf-A-87-L17] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #774
+// [Airaf-A-87-L18] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #793
+// [Airaf-A-87-L19] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #812
+// [Airaf-A-87-L20] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #831
+// [Airaf-A-87-L21] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #850
+// [Airaf-A-87-L22] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #869
+// [Airaf-A-87-L23] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #888
+// [Airaf-A-87-L24] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #907
+// [Airaf-A-87-L25] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #926
+// [Airaf-A-87-L26] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #945
+// [Airaf-A-87-L27] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #964
+// [Airaf-A-87-L28] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #983
+// [Airaf-A-87-L29] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #5
+// [Airaf-A-87-L30] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #24
+// [Airaf-A-87-L31] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #43
+// [Airaf-A-87-L32] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #62
+// [Airaf-A-87-L33] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #81
+// [Airaf-A-87-L34] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #100
+// [Airaf-A-87-L35] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #119
+// [Airaf-A-87-L36] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #138
+// [Airaf-A-87-L37] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #157
+// [Airaf-A-87-L38] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #176
+// [Airaf-A-87-L39] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #195
+// [Airaf-A-87-L40] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #214
+// [Airaf-A-87-L41] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #233
+// [Airaf-A-87-L42] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #252
+// === [SPEC-BLOCK-END] ===
