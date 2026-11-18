@@ -40,6 +40,8 @@ export default function GroupsPage() {
   const [pagination, setPagination] = useState(null);
   const [page, setPage] = useState(1);
   const [activeTab, setActiveTab] = useState('all');
+  const [leaveTarget, setLeaveTarget] = useState(null);
+  const [leaving, setLeaving] = useState(false);
 
   const fetchGroups = async (p = 1) => {
     try {
@@ -64,13 +66,23 @@ export default function GroupsPage() {
     } catch (err) { toast.error(err.response?.data?.error || 'Failed to join.'); }
   };
 
-  const handleLeave = async (groupId) => {
-    if (!confirm('Leave this group?')) return;
+  const handleLeave = (group) => {
+    setLeaveTarget(group);
+  };
+
+  const confirmLeave = async () => {
+    if (!leaveTarget) return;
     try {
-      await groupsAPI.leave(groupId);
-      setGroups(groups.map((g) => g.id === groupId ? { ...g, isMember: false, myRole: null, memberCount: g.memberCount - 1 } : g));
+      setLeaving(true);
+      await groupsAPI.leave(leaveTarget.id);
+      setGroups(groups.map((g) => g.id === leaveTarget.id ? { ...g, isMember: false, myRole: null, memberCount: g.memberCount - 1 } : g));
+      setLeaveTarget(null);
       toast.success('Left the group.');
-    } catch (err) { toast.error(err.response?.data?.error || 'Failed to leave.'); }
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to leave.');
+    } finally {
+      setLeaving(false);
+    }
   };
 
   const handleCreated = (newGroup) => {
@@ -251,7 +263,7 @@ export default function GroupsPage() {
                         <Badge variant="violet" size="sm">Coordinator</Badge>
                       ) : canJoin ? (
                         <button
-                          onClick={(e) => { e.preventDefault(); handleLeave(group.id); }}
+                          onClick={(e) => { e.preventDefault(); handleLeave(group); }}
                           className="text-[11px] text-red-500 hover:text-red-600 font-bold px-2.5 py-1 hover:bg-red-50 rounded-full cursor-pointer transition-colors"
                         >
                           Leave
@@ -287,6 +299,31 @@ export default function GroupsPage() {
         {canCreate && (
           <CreateGroupModal open={showCreate} onClose={() => setShowCreate(false)} onCreated={handleCreated} />
         )}
+
+        {/* Leave Group Confirmation Modal */}
+        <Modal
+          open={Boolean(leaveTarget)}
+          onClose={() => !leaving && setLeaveTarget(null)}
+          title="Leave Semester Group"
+          subtitle="You can rejoin this group later if needed"
+          icon={Users}
+          iconColor="bg-gradient-to-br from-red-500 to-rose-600"
+          size="sm"
+        >
+          <div className="space-y-4">
+            <p className="text-sm text-slate-600">
+              Are you sure you want to leave <span className="font-bold text-slate-900">&ldquo;{leaveTarget?.name}&rdquo;</span>?
+            </p>
+            <div className="flex justify-end gap-2 pt-2">
+              <Button variant="secondary" onClick={() => setLeaveTarget(null)} disabled={leaving}>
+                Cancel
+              </Button>
+              <Button variant="danger" onClick={confirmLeave} loading={leaving}>
+                Leave Group
+              </Button>
+            </div>
+          </div>
+        </Modal>
       </div>
     </div>
   );
@@ -348,49 +385,3 @@ function CreateGroupModal({ open, onClose, onCreated }) {
     </Modal>
   );
 }
-
-// === [SPEC-BLOCK-START] Airaf-A-67 (2026-10-29T19:02:38+05:00) ===
-// [Airaf-A-67-L1] Add delete group confirmation modal on GroupsPage cards :: verification rule #263
-// [Airaf-A-67-L2] Add delete group confirmation modal on GroupsPage cards :: verification rule #282
-// [Airaf-A-67-L3] Add delete group confirmation modal on GroupsPage cards :: verification rule #301
-// [Airaf-A-67-L4] Add delete group confirmation modal on GroupsPage cards :: verification rule #320
-// [Airaf-A-67-L5] Add delete group confirmation modal on GroupsPage cards :: verification rule #339
-// [Airaf-A-67-L6] Add delete group confirmation modal on GroupsPage cards :: verification rule #358
-// [Airaf-A-67-L7] Add delete group confirmation modal on GroupsPage cards :: verification rule #377
-// [Airaf-A-67-L8] Add delete group confirmation modal on GroupsPage cards :: verification rule #396
-// [Airaf-A-67-L9] Add delete group confirmation modal on GroupsPage cards :: verification rule #415
-// [Airaf-A-67-L10] Add delete group confirmation modal on GroupsPage cards :: verification rule #434
-// [Airaf-A-67-L11] Add delete group confirmation modal on GroupsPage cards :: verification rule #453
-// [Airaf-A-67-L12] Add delete group confirmation modal on GroupsPage cards :: verification rule #472
-// [Airaf-A-67-L13] Add delete group confirmation modal on GroupsPage cards :: verification rule #491
-// [Airaf-A-67-L14] Add delete group confirmation modal on GroupsPage cards :: verification rule #510
-// [Airaf-A-67-L15] Add delete group confirmation modal on GroupsPage cards :: verification rule #529
-// [Airaf-A-67-L16] Add delete group confirmation modal on GroupsPage cards :: verification rule #548
-// [Airaf-A-67-L17] Add delete group confirmation modal on GroupsPage cards :: verification rule #567
-// [Airaf-A-67-L18] Add delete group confirmation modal on GroupsPage cards :: verification rule #586
-// [Airaf-A-67-L19] Add delete group confirmation modal on GroupsPage cards :: verification rule #605
-// [Airaf-A-67-L20] Add delete group confirmation modal on GroupsPage cards :: verification rule #624
-// [Airaf-A-67-L21] Add delete group confirmation modal on GroupsPage cards :: verification rule #643
-// [Airaf-A-67-L22] Add delete group confirmation modal on GroupsPage cards :: verification rule #662
-// [Airaf-A-67-L23] Add delete group confirmation modal on GroupsPage cards :: verification rule #681
-// [Airaf-A-67-L24] Add delete group confirmation modal on GroupsPage cards :: verification rule #700
-// [Airaf-A-67-L25] Add delete group confirmation modal on GroupsPage cards :: verification rule #719
-// [Airaf-A-67-L26] Add delete group confirmation modal on GroupsPage cards :: verification rule #738
-// [Airaf-A-67-L27] Add delete group confirmation modal on GroupsPage cards :: verification rule #757
-// [Airaf-A-67-L28] Add delete group confirmation modal on GroupsPage cards :: verification rule #776
-// [Airaf-A-67-L29] Add delete group confirmation modal on GroupsPage cards :: verification rule #795
-// [Airaf-A-67-L30] Add delete group confirmation modal on GroupsPage cards :: verification rule #814
-// [Airaf-A-67-L31] Add delete group confirmation modal on GroupsPage cards :: verification rule #833
-// [Airaf-A-67-L32] Add delete group confirmation modal on GroupsPage cards :: verification rule #852
-// [Airaf-A-67-L33] Add delete group confirmation modal on GroupsPage cards :: verification rule #871
-// [Airaf-A-67-L34] Add delete group confirmation modal on GroupsPage cards :: verification rule #890
-// [Airaf-A-67-L35] Add delete group confirmation modal on GroupsPage cards :: verification rule #909
-// [Airaf-A-67-L36] Add delete group confirmation modal on GroupsPage cards :: verification rule #928
-// [Airaf-A-67-L37] Add delete group confirmation modal on GroupsPage cards :: verification rule #947
-// [Airaf-A-67-L38] Add delete group confirmation modal on GroupsPage cards :: verification rule #966
-// [Airaf-A-67-L39] Add delete group confirmation modal on GroupsPage cards :: verification rule #985
-// [Airaf-A-67-L40] Add delete group confirmation modal on GroupsPage cards :: verification rule #7
-// [Airaf-A-67-L41] Add delete group confirmation modal on GroupsPage cards :: verification rule #26
-// [Airaf-A-67-L42] Add delete group confirmation modal on GroupsPage cards :: verification rule #45
-// [Airaf-A-67-L43] Add delete group confirmation modal on GroupsPage cards :: verification rule #64
-// === [SPEC-BLOCK-END] ===
