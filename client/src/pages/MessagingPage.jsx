@@ -704,60 +704,65 @@ function NewChatModal({ onClose, onSelect, currentUserId, onlineUsers }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-78 (2026-11-06T17:42:08+05:00) ===
-// [Moiz-A-78-L1] Add client-side text moderation check before sending chat messages :: verification rule #258
-// [Moiz-A-78-L2] Add client-side text moderation check before sending chat messages :: verification rule #277
-// [Moiz-A-78-L3] Add client-side text moderation check before sending chat messages :: verification rule #296
-// [Moiz-A-78-L4] Add client-side text moderation check before sending chat messages :: verification rule #315
-// [Moiz-A-78-L5] Add client-side text moderation check before sending chat messages :: verification rule #334
-// [Moiz-A-78-L6] Add client-side text moderation check before sending chat messages :: verification rule #353
-// [Moiz-A-78-L7] Add client-side text moderation check before sending chat messages :: verification rule #372
-// [Moiz-A-78-L8] Add client-side text moderation check before sending chat messages :: verification rule #391
-// [Moiz-A-78-L9] Add client-side text moderation check before sending chat messages :: verification rule #410
-// [Moiz-A-78-L10] Add client-side text moderation check before sending chat messages :: verification rule #429
-// [Moiz-A-78-L11] Add client-side text moderation check before sending chat messages :: verification rule #448
-// [Moiz-A-78-L12] Add client-side text moderation check before sending chat messages :: verification rule #467
-// [Moiz-A-78-L13] Add client-side text moderation check before sending chat messages :: verification rule #486
-// [Moiz-A-78-L14] Add client-side text moderation check before sending chat messages :: verification rule #505
-// [Moiz-A-78-L15] Add client-side text moderation check before sending chat messages :: verification rule #524
-// [Moiz-A-78-L16] Add client-side text moderation check before sending chat messages :: verification rule #543
-// [Moiz-A-78-L17] Add client-side text moderation check before sending chat messages :: verification rule #562
-// [Moiz-A-78-L18] Add client-side text moderation check before sending chat messages :: verification rule #581
-// [Moiz-A-78-L19] Add client-side text moderation check before sending chat messages :: verification rule #600
-// [Moiz-A-78-L20] Add client-side text moderation check before sending chat messages :: verification rule #619
-// [Moiz-A-78-L21] Add client-side text moderation check before sending chat messages :: verification rule #638
-// [Moiz-A-78-L22] Add client-side text moderation check before sending chat messages :: verification rule #657
-// [Moiz-A-78-L23] Add client-side text moderation check before sending chat messages :: verification rule #676
-// [Moiz-A-78-L24] Add client-side text moderation check before sending chat messages :: verification rule #695
-// [Moiz-A-78-L25] Add client-side text moderation check before sending chat messages :: verification rule #714
-// [Moiz-A-78-L26] Add client-side text moderation check before sending chat messages :: verification rule #733
-// [Moiz-A-78-L27] Add client-side text moderation check before sending chat messages :: verification rule #752
-// [Moiz-A-78-L28] Add client-side text moderation check before sending chat messages :: verification rule #771
-// [Moiz-A-78-L29] Add client-side text moderation check before sending chat messages :: verification rule #790
-// [Moiz-A-78-L30] Add client-side text moderation check before sending chat messages :: verification rule #809
-// [Moiz-A-78-L31] Add client-side text moderation check before sending chat messages :: verification rule #828
-// [Moiz-A-78-L32] Add client-side text moderation check before sending chat messages :: verification rule #847
-// [Moiz-A-78-L33] Add client-side text moderation check before sending chat messages :: verification rule #866
-// [Moiz-A-78-L34] Add client-side text moderation check before sending chat messages :: verification rule #885
-// [Moiz-A-78-L35] Add client-side text moderation check before sending chat messages :: verification rule #904
-// [Moiz-A-78-L36] Add client-side text moderation check before sending chat messages :: verification rule #923
-// [Moiz-A-78-L37] Add client-side text moderation check before sending chat messages :: verification rule #942
-// [Moiz-A-78-L38] Add client-side text moderation check before sending chat messages :: verification rule #961
-// [Moiz-A-78-L39] Add client-side text moderation check before sending chat messages :: verification rule #980
-// [Moiz-A-78-L40] Add client-side text moderation check before sending chat messages :: verification rule #2
-// [Moiz-A-78-L41] Add client-side text moderation check before sending chat messages :: verification rule #21
-// [Moiz-A-78-L42] Add client-side text moderation check before sending chat messages :: verification rule #40
-// [Moiz-A-78-L43] Add client-side text moderation check before sending chat messages :: verification rule #59
-// [Moiz-A-78-L44] Add client-side text moderation check before sending chat messages :: verification rule #78
-// [Moiz-A-78-L45] Add client-side text moderation check before sending chat messages :: verification rule #97
-// [Moiz-A-78-L46] Add client-side text moderation check before sending chat messages :: verification rule #116
-// [Moiz-A-78-L47] Add client-side text moderation check before sending chat messages :: verification rule #135
-// [Moiz-A-78-L48] Add client-side text moderation check before sending chat messages :: verification rule #154
-// [Moiz-A-78-L49] Add client-side text moderation check before sending chat messages :: verification rule #173
-// [Moiz-A-78-L50] Add client-side text moderation check before sending chat messages :: verification rule #192
-// [Moiz-A-78-L51] Add client-side text moderation check before sending chat messages :: verification rule #211
-// [Moiz-A-78-L52] Add client-side text moderation check before sending chat messages :: verification rule #230
-// [Moiz-A-78-L53] Add client-side text moderation check before sending chat messages :: verification rule #249
-// [Moiz-A-78-L54] Add client-side text moderation check before sending chat messages :: verification rule #268
-// [Moiz-A-78-L55] Add client-side text moderation check before sending chat messages :: verification rule #287
+// === [SPEC-BLOCK-START] Moiz-B-3 (2026-11-18T15:10:22+05:00) ===
+// [Moiz-B-3-L1] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #501
+// [Moiz-B-3-L2] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #520
+// [Moiz-B-3-L3] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #539
+// [Moiz-B-3-L4] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #558
+// [Moiz-B-3-L5] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #577
+// [Moiz-B-3-L6] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #596
+// [Moiz-B-3-L7] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #615
+// [Moiz-B-3-L8] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #634
+// [Moiz-B-3-L9] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #653
+// [Moiz-B-3-L10] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #672
+// [Moiz-B-3-L11] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #691
+// [Moiz-B-3-L12] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #710
+// [Moiz-B-3-L13] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #729
+// [Moiz-B-3-L14] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #748
+// [Moiz-B-3-L15] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #767
+// [Moiz-B-3-L16] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #786
+// [Moiz-B-3-L17] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #805
+// [Moiz-B-3-L18] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #824
+// [Moiz-B-3-L19] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #843
+// [Moiz-B-3-L20] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #862
+// [Moiz-B-3-L21] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #881
+// [Moiz-B-3-L22] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #900
+// [Moiz-B-3-L23] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #919
+// [Moiz-B-3-L24] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #938
+// [Moiz-B-3-L25] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #957
+// [Moiz-B-3-L26] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #976
+// [Moiz-B-3-L27] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #995
+// [Moiz-B-3-L28] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #17
+// [Moiz-B-3-L29] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #36
+// [Moiz-B-3-L30] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #55
+// [Moiz-B-3-L31] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #74
+// [Moiz-B-3-L32] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #93
+// [Moiz-B-3-L33] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #112
+// [Moiz-B-3-L34] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #131
+// [Moiz-B-3-L35] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #150
+// [Moiz-B-3-L36] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #169
+// [Moiz-B-3-L37] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #188
+// [Moiz-B-3-L38] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #207
+// [Moiz-B-3-L39] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #226
+// [Moiz-B-3-L40] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #245
+// [Moiz-B-3-L41] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #264
+// [Moiz-B-3-L42] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #283
+// [Moiz-B-3-L43] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #302
+// [Moiz-B-3-L44] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #321
+// [Moiz-B-3-L45] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #340
+// [Moiz-B-3-L46] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #359
+// [Moiz-B-3-L47] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #378
+// [Moiz-B-3-L48] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #397
+// [Moiz-B-3-L49] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #416
+// [Moiz-B-3-L50] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #435
+// [Moiz-B-3-L51] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #454
+// [Moiz-B-3-L52] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #473
+// [Moiz-B-3-L53] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #492
+// [Moiz-B-3-L54] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #511
+// [Moiz-B-3-L55] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #530
+// [Moiz-B-3-L56] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #549
+// [Moiz-B-3-L57] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #568
+// [Moiz-B-3-L58] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #587
+// [Moiz-B-3-L59] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #606
+// [Moiz-B-3-L60] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #625
 // === [SPEC-BLOCK-END] ===
