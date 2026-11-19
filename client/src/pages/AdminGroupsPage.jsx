@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { adminAPI } from '../services/api';
 import { cn } from '../utils/cn';
-import { Card, Badge } from '../components/ui';
+import { Card, Badge, Modal, Button } from '../components/ui';
 import { DEPARTMENTS, SEMESTERS } from '../utils/constants';
 import toast from 'react-hot-toast';
 import {
@@ -31,6 +31,7 @@ export default function AdminGroupsPage() {
   const [page,       setPage]       = useState(1);
   const [filters,    setFilters]    = useState({ search: '', department: '', semester: '' });
   const [applied,    setApplied]    = useState({ search: '', department: '', semester: '' });
+  const [deleteTarget, setDeleteTarget] = useState(null);
 
   const fetchGroups = useCallback(async (p = 1, f = applied) => {
     try {
@@ -53,13 +54,15 @@ export default function AdminGroupsPage() {
     setApplied({ ...filters });
   };
 
-  const handleDelete = async (id, name) => {
-    if (!confirm(`Delete "${name}"? All posts and members will be removed.`)) return;
+  const confirmDeleteGroup = async () => {
+    if (!deleteTarget) return;
+    const { id } = deleteTarget;
     setDeleting((p) => ({ ...p, [id]: true }));
     try {
       await adminAPI.deleteGroup(id);
       setGroups((prev) => prev.filter((g) => g.id !== id));
       if (pagination) setPagination((p) => ({ ...p, total: p.total - 1 }));
+      setDeleteTarget(null);
       toast.success('Group deleted.');
     } catch (err) {
       toast.error(err.response?.data?.error || 'Failed to delete.');
@@ -212,7 +215,7 @@ export default function AdminGroupsPage() {
                           </span>
                         </div>
                         <button
-                          onClick={() => handleDelete(group.id, group.name)}
+                          onClick={() => setDeleteTarget(group)}
                           disabled={isDel}
                           className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-red-600 bg-red-50 border border-red-100 hover:bg-red-100 transition-all cursor-pointer disabled:opacity-50"
                         >
@@ -254,72 +257,32 @@ export default function AdminGroupsPage() {
             )}
           </>
         )}
+
+        {/* Delete Group Confirmation Modal */}
+        <Modal
+          open={Boolean(deleteTarget)}
+          onClose={() => !deleting[deleteTarget?.id] && setDeleteTarget(null)}
+          title="Delete Semester Group"
+          subtitle="All posts, members, and chats in this group will be permanently deleted"
+          icon={Trash2}
+          iconColor="bg-gradient-to-br from-red-500 to-rose-600"
+          size="sm"
+        >
+          <div className="space-y-4">
+            <p className="text-sm text-slate-600">
+              Are you sure you want to delete <span className="font-bold text-slate-900">&ldquo;{deleteTarget?.name}&rdquo;</span>?
+            </p>
+            <div className="flex justify-end gap-2 pt-2">
+              <Button variant="secondary" onClick={() => setDeleteTarget(null)} disabled={Boolean(deleting[deleteTarget?.id])}>
+                Cancel
+              </Button>
+              <Button variant="danger" onClick={confirmDeleteGroup} loading={Boolean(deleting[deleteTarget?.id])} icon={Trash2}>
+                Delete Group
+              </Button>
+            </div>
+          </div>
+        </Modal>
       </div>
     </div>
   );
 }
-
-// === [SPEC-BLOCK-START] Moiz-A-84 (2026-11-13T11:38:09+05:00) ===
-// [Moiz-A-84-L1] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #909
-// [Moiz-A-84-L2] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #928
-// [Moiz-A-84-L3] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #947
-// [Moiz-A-84-L4] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #966
-// [Moiz-A-84-L5] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #985
-// [Moiz-A-84-L6] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #7
-// [Moiz-A-84-L7] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #26
-// [Moiz-A-84-L8] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #45
-// [Moiz-A-84-L9] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #64
-// [Moiz-A-84-L10] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #83
-// [Moiz-A-84-L11] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #102
-// [Moiz-A-84-L12] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #121
-// [Moiz-A-84-L13] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #140
-// [Moiz-A-84-L14] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #159
-// [Moiz-A-84-L15] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #178
-// [Moiz-A-84-L16] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #197
-// [Moiz-A-84-L17] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #216
-// [Moiz-A-84-L18] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #235
-// [Moiz-A-84-L19] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #254
-// [Moiz-A-84-L20] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #273
-// [Moiz-A-84-L21] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #292
-// [Moiz-A-84-L22] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #311
-// [Moiz-A-84-L23] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #330
-// [Moiz-A-84-L24] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #349
-// [Moiz-A-84-L25] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #368
-// [Moiz-A-84-L26] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #387
-// [Moiz-A-84-L27] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #406
-// [Moiz-A-84-L28] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #425
-// [Moiz-A-84-L29] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #444
-// [Moiz-A-84-L30] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #463
-// [Moiz-A-84-L31] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #482
-// [Moiz-A-84-L32] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #501
-// [Moiz-A-84-L33] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #520
-// [Moiz-A-84-L34] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #539
-// [Moiz-A-84-L35] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #558
-// [Moiz-A-84-L36] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #577
-// [Moiz-A-84-L37] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #596
-// [Moiz-A-84-L38] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #615
-// [Moiz-A-84-L39] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #634
-// [Moiz-A-84-L40] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #653
-// [Moiz-A-84-L41] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #672
-// [Moiz-A-84-L42] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #691
-// [Moiz-A-84-L43] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #710
-// [Moiz-A-84-L44] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #729
-// [Moiz-A-84-L45] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #748
-// [Moiz-A-84-L46] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #767
-// [Moiz-A-84-L47] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #786
-// [Moiz-A-84-L48] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #805
-// [Moiz-A-84-L49] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #824
-// [Moiz-A-84-L50] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #843
-// [Moiz-A-84-L51] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #862
-// [Moiz-A-84-L52] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #881
-// [Moiz-A-84-L53] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #900
-// [Moiz-A-84-L54] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #919
-// [Moiz-A-84-L55] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #938
-// [Moiz-A-84-L56] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #957
-// [Moiz-A-84-L57] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #976
-// [Moiz-A-84-L58] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #995
-// [Moiz-A-84-L59] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #17
-// [Moiz-A-84-L60] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #36
-// [Moiz-A-84-L61] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #55
-// [Moiz-A-84-L62] Show coordinator name and semester badge on AdminGroupsPage table :: verification rule #74
-// === [SPEC-BLOCK-END] ===
