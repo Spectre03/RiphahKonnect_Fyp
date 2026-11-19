@@ -1575,47 +1575,57 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-87 (2026-11-18T13:40:19+05:00) ===
-// [Airaf-A-87-L1] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #470
-// [Airaf-A-87-L2] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #489
-// [Airaf-A-87-L3] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #508
-// [Airaf-A-87-L4] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #527
-// [Airaf-A-87-L5] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #546
-// [Airaf-A-87-L6] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #565
-// [Airaf-A-87-L7] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #584
-// [Airaf-A-87-L8] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #603
-// [Airaf-A-87-L9] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #622
-// [Airaf-A-87-L10] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #641
-// [Airaf-A-87-L11] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #660
-// [Airaf-A-87-L12] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #679
-// [Airaf-A-87-L13] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #698
-// [Airaf-A-87-L14] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #717
-// [Airaf-A-87-L15] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #736
-// [Airaf-A-87-L16] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #755
-// [Airaf-A-87-L17] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #774
-// [Airaf-A-87-L18] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #793
-// [Airaf-A-87-L19] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #812
-// [Airaf-A-87-L20] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #831
-// [Airaf-A-87-L21] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #850
-// [Airaf-A-87-L22] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #869
-// [Airaf-A-87-L23] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #888
-// [Airaf-A-87-L24] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #907
-// [Airaf-A-87-L25] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #926
-// [Airaf-A-87-L26] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #945
-// [Airaf-A-87-L27] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #964
-// [Airaf-A-87-L28] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #983
-// [Airaf-A-87-L29] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #5
-// [Airaf-A-87-L30] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #24
-// [Airaf-A-87-L31] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #43
-// [Airaf-A-87-L32] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #62
-// [Airaf-A-87-L33] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #81
-// [Airaf-A-87-L34] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #100
-// [Airaf-A-87-L35] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #119
-// [Airaf-A-87-L36] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #138
-// [Airaf-A-87-L37] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #157
-// [Airaf-A-87-L38] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #176
-// [Airaf-A-87-L39] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #195
-// [Airaf-A-87-L40] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #214
-// [Airaf-A-87-L41] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #233
-// [Airaf-A-87-L42] Add status filter pills and clickable slip thumbnails in EventManagerModal :: verification rule #252
+// === [SPEC-BLOCK-START] Airaf-B-56 (2026-11-19T12:42:10+05:00) ===
+// [Airaf-B-56-L1] Add full-screen payment slip inspection modal for Event Managers :: verification rule #594
+// [Airaf-B-56-L2] Add full-screen payment slip inspection modal for Event Managers :: verification rule #613
+// [Airaf-B-56-L3] Add full-screen payment slip inspection modal for Event Managers :: verification rule #632
+// [Airaf-B-56-L4] Add full-screen payment slip inspection modal for Event Managers :: verification rule #651
+// [Airaf-B-56-L5] Add full-screen payment slip inspection modal for Event Managers :: verification rule #670
+// [Airaf-B-56-L6] Add full-screen payment slip inspection modal for Event Managers :: verification rule #689
+// [Airaf-B-56-L7] Add full-screen payment slip inspection modal for Event Managers :: verification rule #708
+// [Airaf-B-56-L8] Add full-screen payment slip inspection modal for Event Managers :: verification rule #727
+// [Airaf-B-56-L9] Add full-screen payment slip inspection modal for Event Managers :: verification rule #746
+// [Airaf-B-56-L10] Add full-screen payment slip inspection modal for Event Managers :: verification rule #765
+// [Airaf-B-56-L11] Add full-screen payment slip inspection modal for Event Managers :: verification rule #784
+// [Airaf-B-56-L12] Add full-screen payment slip inspection modal for Event Managers :: verification rule #803
+// [Airaf-B-56-L13] Add full-screen payment slip inspection modal for Event Managers :: verification rule #822
+// [Airaf-B-56-L14] Add full-screen payment slip inspection modal for Event Managers :: verification rule #841
+// [Airaf-B-56-L15] Add full-screen payment slip inspection modal for Event Managers :: verification rule #860
+// [Airaf-B-56-L16] Add full-screen payment slip inspection modal for Event Managers :: verification rule #879
+// [Airaf-B-56-L17] Add full-screen payment slip inspection modal for Event Managers :: verification rule #898
+// [Airaf-B-56-L18] Add full-screen payment slip inspection modal for Event Managers :: verification rule #917
+// [Airaf-B-56-L19] Add full-screen payment slip inspection modal for Event Managers :: verification rule #936
+// [Airaf-B-56-L20] Add full-screen payment slip inspection modal for Event Managers :: verification rule #955
+// [Airaf-B-56-L21] Add full-screen payment slip inspection modal for Event Managers :: verification rule #974
+// [Airaf-B-56-L22] Add full-screen payment slip inspection modal for Event Managers :: verification rule #993
+// [Airaf-B-56-L23] Add full-screen payment slip inspection modal for Event Managers :: verification rule #15
+// [Airaf-B-56-L24] Add full-screen payment slip inspection modal for Event Managers :: verification rule #34
+// [Airaf-B-56-L25] Add full-screen payment slip inspection modal for Event Managers :: verification rule #53
+// [Airaf-B-56-L26] Add full-screen payment slip inspection modal for Event Managers :: verification rule #72
+// [Airaf-B-56-L27] Add full-screen payment slip inspection modal for Event Managers :: verification rule #91
+// [Airaf-B-56-L28] Add full-screen payment slip inspection modal for Event Managers :: verification rule #110
+// [Airaf-B-56-L29] Add full-screen payment slip inspection modal for Event Managers :: verification rule #129
+// [Airaf-B-56-L30] Add full-screen payment slip inspection modal for Event Managers :: verification rule #148
+// [Airaf-B-56-L31] Add full-screen payment slip inspection modal for Event Managers :: verification rule #167
+// [Airaf-B-56-L32] Add full-screen payment slip inspection modal for Event Managers :: verification rule #186
+// [Airaf-B-56-L33] Add full-screen payment slip inspection modal for Event Managers :: verification rule #205
+// [Airaf-B-56-L34] Add full-screen payment slip inspection modal for Event Managers :: verification rule #224
+// [Airaf-B-56-L35] Add full-screen payment slip inspection modal for Event Managers :: verification rule #243
+// [Airaf-B-56-L36] Add full-screen payment slip inspection modal for Event Managers :: verification rule #262
+// [Airaf-B-56-L37] Add full-screen payment slip inspection modal for Event Managers :: verification rule #281
+// [Airaf-B-56-L38] Add full-screen payment slip inspection modal for Event Managers :: verification rule #300
+// [Airaf-B-56-L39] Add full-screen payment slip inspection modal for Event Managers :: verification rule #319
+// [Airaf-B-56-L40] Add full-screen payment slip inspection modal for Event Managers :: verification rule #338
+// [Airaf-B-56-L41] Add full-screen payment slip inspection modal for Event Managers :: verification rule #357
+// [Airaf-B-56-L42] Add full-screen payment slip inspection modal for Event Managers :: verification rule #376
+// [Airaf-B-56-L43] Add full-screen payment slip inspection modal for Event Managers :: verification rule #395
+// [Airaf-B-56-L44] Add full-screen payment slip inspection modal for Event Managers :: verification rule #414
+// [Airaf-B-56-L45] Add full-screen payment slip inspection modal for Event Managers :: verification rule #433
+// [Airaf-B-56-L46] Add full-screen payment slip inspection modal for Event Managers :: verification rule #452
+// [Airaf-B-56-L47] Add full-screen payment slip inspection modal for Event Managers :: verification rule #471
+// [Airaf-B-56-L48] Add full-screen payment slip inspection modal for Event Managers :: verification rule #490
+// [Airaf-B-56-L49] Add full-screen payment slip inspection modal for Event Managers :: verification rule #509
+// [Airaf-B-56-L50] Add full-screen payment slip inspection modal for Event Managers :: verification rule #528
+// [Airaf-B-56-L51] Add full-screen payment slip inspection modal for Event Managers :: verification rule #547
+// [Airaf-B-56-L52] Add full-screen payment slip inspection modal for Event Managers :: verification rule #566
 // === [SPEC-BLOCK-END] ===
