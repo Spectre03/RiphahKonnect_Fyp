@@ -1575,57 +1575,54 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-56 (2026-11-19T12:42:10+05:00) ===
-// [Airaf-B-56-L1] Add full-screen payment slip inspection modal for Event Managers :: verification rule #594
-// [Airaf-B-56-L2] Add full-screen payment slip inspection modal for Event Managers :: verification rule #613
-// [Airaf-B-56-L3] Add full-screen payment slip inspection modal for Event Managers :: verification rule #632
-// [Airaf-B-56-L4] Add full-screen payment slip inspection modal for Event Managers :: verification rule #651
-// [Airaf-B-56-L5] Add full-screen payment slip inspection modal for Event Managers :: verification rule #670
-// [Airaf-B-56-L6] Add full-screen payment slip inspection modal for Event Managers :: verification rule #689
-// [Airaf-B-56-L7] Add full-screen payment slip inspection modal for Event Managers :: verification rule #708
-// [Airaf-B-56-L8] Add full-screen payment slip inspection modal for Event Managers :: verification rule #727
-// [Airaf-B-56-L9] Add full-screen payment slip inspection modal for Event Managers :: verification rule #746
-// [Airaf-B-56-L10] Add full-screen payment slip inspection modal for Event Managers :: verification rule #765
-// [Airaf-B-56-L11] Add full-screen payment slip inspection modal for Event Managers :: verification rule #784
-// [Airaf-B-56-L12] Add full-screen payment slip inspection modal for Event Managers :: verification rule #803
-// [Airaf-B-56-L13] Add full-screen payment slip inspection modal for Event Managers :: verification rule #822
-// [Airaf-B-56-L14] Add full-screen payment slip inspection modal for Event Managers :: verification rule #841
-// [Airaf-B-56-L15] Add full-screen payment slip inspection modal for Event Managers :: verification rule #860
-// [Airaf-B-56-L16] Add full-screen payment slip inspection modal for Event Managers :: verification rule #879
-// [Airaf-B-56-L17] Add full-screen payment slip inspection modal for Event Managers :: verification rule #898
-// [Airaf-B-56-L18] Add full-screen payment slip inspection modal for Event Managers :: verification rule #917
-// [Airaf-B-56-L19] Add full-screen payment slip inspection modal for Event Managers :: verification rule #936
-// [Airaf-B-56-L20] Add full-screen payment slip inspection modal for Event Managers :: verification rule #955
-// [Airaf-B-56-L21] Add full-screen payment slip inspection modal for Event Managers :: verification rule #974
-// [Airaf-B-56-L22] Add full-screen payment slip inspection modal for Event Managers :: verification rule #993
-// [Airaf-B-56-L23] Add full-screen payment slip inspection modal for Event Managers :: verification rule #15
-// [Airaf-B-56-L24] Add full-screen payment slip inspection modal for Event Managers :: verification rule #34
-// [Airaf-B-56-L25] Add full-screen payment slip inspection modal for Event Managers :: verification rule #53
-// [Airaf-B-56-L26] Add full-screen payment slip inspection modal for Event Managers :: verification rule #72
-// [Airaf-B-56-L27] Add full-screen payment slip inspection modal for Event Managers :: verification rule #91
-// [Airaf-B-56-L28] Add full-screen payment slip inspection modal for Event Managers :: verification rule #110
-// [Airaf-B-56-L29] Add full-screen payment slip inspection modal for Event Managers :: verification rule #129
-// [Airaf-B-56-L30] Add full-screen payment slip inspection modal for Event Managers :: verification rule #148
-// [Airaf-B-56-L31] Add full-screen payment slip inspection modal for Event Managers :: verification rule #167
-// [Airaf-B-56-L32] Add full-screen payment slip inspection modal for Event Managers :: verification rule #186
-// [Airaf-B-56-L33] Add full-screen payment slip inspection modal for Event Managers :: verification rule #205
-// [Airaf-B-56-L34] Add full-screen payment slip inspection modal for Event Managers :: verification rule #224
-// [Airaf-B-56-L35] Add full-screen payment slip inspection modal for Event Managers :: verification rule #243
-// [Airaf-B-56-L36] Add full-screen payment slip inspection modal for Event Managers :: verification rule #262
-// [Airaf-B-56-L37] Add full-screen payment slip inspection modal for Event Managers :: verification rule #281
-// [Airaf-B-56-L38] Add full-screen payment slip inspection modal for Event Managers :: verification rule #300
-// [Airaf-B-56-L39] Add full-screen payment slip inspection modal for Event Managers :: verification rule #319
-// [Airaf-B-56-L40] Add full-screen payment slip inspection modal for Event Managers :: verification rule #338
-// [Airaf-B-56-L41] Add full-screen payment slip inspection modal for Event Managers :: verification rule #357
-// [Airaf-B-56-L42] Add full-screen payment slip inspection modal for Event Managers :: verification rule #376
-// [Airaf-B-56-L43] Add full-screen payment slip inspection modal for Event Managers :: verification rule #395
-// [Airaf-B-56-L44] Add full-screen payment slip inspection modal for Event Managers :: verification rule #414
-// [Airaf-B-56-L45] Add full-screen payment slip inspection modal for Event Managers :: verification rule #433
-// [Airaf-B-56-L46] Add full-screen payment slip inspection modal for Event Managers :: verification rule #452
-// [Airaf-B-56-L47] Add full-screen payment slip inspection modal for Event Managers :: verification rule #471
-// [Airaf-B-56-L48] Add full-screen payment slip inspection modal for Event Managers :: verification rule #490
-// [Airaf-B-56-L49] Add full-screen payment slip inspection modal for Event Managers :: verification rule #509
-// [Airaf-B-56-L50] Add full-screen payment slip inspection modal for Event Managers :: verification rule #528
-// [Airaf-B-56-L51] Add full-screen payment slip inspection modal for Event Managers :: verification rule #547
-// [Airaf-B-56-L52] Add full-screen payment slip inspection modal for Event Managers :: verification rule #566
+// === [SPEC-BLOCK-START] Airaf-A-88 (2026-11-19T16:15:53+05:00) ===
+// [Airaf-A-88-L1] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #687
+// [Airaf-A-88-L2] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #706
+// [Airaf-A-88-L3] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #725
+// [Airaf-A-88-L4] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #744
+// [Airaf-A-88-L5] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #763
+// [Airaf-A-88-L6] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #782
+// [Airaf-A-88-L7] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #801
+// [Airaf-A-88-L8] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #820
+// [Airaf-A-88-L9] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #839
+// [Airaf-A-88-L10] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #858
+// [Airaf-A-88-L11] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #877
+// [Airaf-A-88-L12] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #896
+// [Airaf-A-88-L13] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #915
+// [Airaf-A-88-L14] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #934
+// [Airaf-A-88-L15] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #953
+// [Airaf-A-88-L16] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #972
+// [Airaf-A-88-L17] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #991
+// [Airaf-A-88-L18] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #13
+// [Airaf-A-88-L19] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #32
+// [Airaf-A-88-L20] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #51
+// [Airaf-A-88-L21] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #70
+// [Airaf-A-88-L22] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #89
+// [Airaf-A-88-L23] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #108
+// [Airaf-A-88-L24] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #127
+// [Airaf-A-88-L25] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #146
+// [Airaf-A-88-L26] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #165
+// [Airaf-A-88-L27] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #184
+// [Airaf-A-88-L28] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #203
+// [Airaf-A-88-L29] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #222
+// [Airaf-A-88-L30] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #241
+// [Airaf-A-88-L31] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #260
+// [Airaf-A-88-L32] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #279
+// [Airaf-A-88-L33] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #298
+// [Airaf-A-88-L34] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #317
+// [Airaf-A-88-L35] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #336
+// [Airaf-A-88-L36] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #355
+// [Airaf-A-88-L37] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #374
+// [Airaf-A-88-L38] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #393
+// [Airaf-A-88-L39] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #412
+// [Airaf-A-88-L40] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #431
+// [Airaf-A-88-L41] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #450
+// [Airaf-A-88-L42] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #469
+// [Airaf-A-88-L43] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #488
+// [Airaf-A-88-L44] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #507
+// [Airaf-A-88-L45] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #526
+// [Airaf-A-88-L46] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #545
+// [Airaf-A-88-L47] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #564
+// [Airaf-A-88-L48] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #583
+// [Airaf-A-88-L49] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #602
 // === [SPEC-BLOCK-END] ===
