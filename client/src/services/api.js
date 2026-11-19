@@ -100,13 +100,20 @@ export const eventsAPI = {
   delete: (id) => api.delete(`/events/${id}`),
   rsvp: (id, status) => api.post(`/events/${id}/rsvp`, { status }),
   getAttendees: (id) => api.get(`/events/${id}/attendees`),
+  addManager: (id, userId) => api.post(`/events/${id}/managers`, { userId }),
+  removeManager: (id, userId) => api.delete(`/events/${id}/managers/${userId}`),
 };
 
 // ─── Tickets ──────────────────────────────────────────────────────────────────
 export const ticketsAPI = {
-  buy: (eventId) => api.post(`/tickets/${eventId}/buy`),
+  buy: (eventId, data = {}) => api.post(`/tickets/${eventId}/buy`, data),
   getMyTickets: () => api.get('/tickets/my-tickets'),
   getEventTickets: (eventId) => api.get(`/tickets/event/${eventId}`),
+  approve: (ticketId) => api.patch(`/tickets/${ticketId}/approve`),
+  reject: (ticketId, reason) => api.patch(`/tickets/${ticketId}/reject`, { reason }),
+  verifyCheckIn: (ticketId) => api.patch(`/tickets/${ticketId}/verify-checkin`),
+  verifyByCode: (eventId, code, markUsed = false) =>
+    api.post(`/tickets/event/${eventId}/verify-code`, { code, markUsed }),
 };
 
 // ─── Lost & Found ─────────────────────────────────────────────────────────────

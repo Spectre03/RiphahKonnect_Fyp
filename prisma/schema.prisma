@@ -38,6 +38,7 @@ model User {
   posts              Post[]
   courses            UserCourse[]
   tickets            Ticket[]
+  managedEvents      EventManager[]
   verificationTokens VerificationToken[]
   notifications      Notification[]
 
@@ -137,24 +138,40 @@ model GroupMember {
 }
 
 model Event {
-  id          String      @id @default(cuid())
-  title       String
-  description String?
-  location    String?
-  startDate   DateTime
-  endDate     DateTime?
-  imageUrl    String?
-  price       Float       @default(0)
-  capacity    Int?
-  createdById String
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
-  createdBy   User        @relation(fields: [createdById], references: [id], onDelete: Cascade)
-  rsvps       EventRsvp[]
-  tickets     Ticket[]
+  id             String         @id @default(cuid())
+  title          String
+  description    String?
+  location       String?
+  startDate      DateTime
+  endDate        DateTime?
+  imageUrl       String?
+  price          Float          @default(0)
+  capacity       Int?
+  paymentDetails String?
+  createdById    String
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  createdBy      User           @relation(fields: [createdById], references: [id], onDelete: Cascade)
+  rsvps          EventRsvp[]
+  tickets        Ticket[]
+  managers       EventManager[]
 
   @@index([startDate])
   @@index([createdById])
+}
+
+model EventManager {
+  id         String   @id @default(cuid())
+  eventId    String
+  userId     String
+  assignedBy String?
+  createdAt  DateTime @default(now())
+  event      Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([eventId, userId])
+  @@index([eventId])
+  @@index([userId])
 }
 
 model EventRsvp {
@@ -296,22 +313,29 @@ enum AnnouncementType {
 }
 
 enum TicketStatus {
+  PENDING
   VALID
   USED
+  REJECTED
   CANCELLED
 }
 
 model Ticket {
-  id        String       @id @default(cuid())
-  code      String       @unique
-  pricePaid Float        @default(0)
-  status    TicketStatus @default(VALID)
-  userId    String
-  eventId   String
-  issuedAt  DateTime     @default(now())
-  usedAt    DateTime?
-  user      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
-  event     Event        @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  id              String       @id @default(cuid())
+  code            String?      @unique
+  pricePaid       Float        @default(0)
+  paymentSlipUrl  String?
+  paymentRef      String?
+  rejectionReason String?
+  approvedById    String?
+  approvedAt      DateTime?
+  status          TicketStatus @default(PENDING)
+  userId          String
+  eventId         String
+  issuedAt        DateTime     @default(now())
+  usedAt          DateTime?
+  user            User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  event           Event        @relation(fields: [eventId], references: [id], onDelete: Cascade)
 
   @@unique([userId, eventId])
   @@index([userId])
