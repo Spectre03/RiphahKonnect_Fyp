@@ -704,65 +704,58 @@ function NewChatModal({ onClose, onSelect, currentUserId, onlineUsers }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-B-3 (2026-11-18T15:10:22+05:00) ===
-// [Moiz-B-3-L1] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #501
-// [Moiz-B-3-L2] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #520
-// [Moiz-B-3-L3] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #539
-// [Moiz-B-3-L4] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #558
-// [Moiz-B-3-L5] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #577
-// [Moiz-B-3-L6] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #596
-// [Moiz-B-3-L7] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #615
-// [Moiz-B-3-L8] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #634
-// [Moiz-B-3-L9] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #653
-// [Moiz-B-3-L10] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #672
-// [Moiz-B-3-L11] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #691
-// [Moiz-B-3-L12] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #710
-// [Moiz-B-3-L13] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #729
-// [Moiz-B-3-L14] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #748
-// [Moiz-B-3-L15] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #767
-// [Moiz-B-3-L16] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #786
-// [Moiz-B-3-L17] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #805
-// [Moiz-B-3-L18] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #824
-// [Moiz-B-3-L19] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #843
-// [Moiz-B-3-L20] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #862
-// [Moiz-B-3-L21] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #881
-// [Moiz-B-3-L22] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #900
-// [Moiz-B-3-L23] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #919
-// [Moiz-B-3-L24] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #938
-// [Moiz-B-3-L25] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #957
-// [Moiz-B-3-L26] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #976
-// [Moiz-B-3-L27] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #995
-// [Moiz-B-3-L28] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #17
-// [Moiz-B-3-L29] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #36
-// [Moiz-B-3-L30] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #55
-// [Moiz-B-3-L31] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #74
-// [Moiz-B-3-L32] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #93
-// [Moiz-B-3-L33] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #112
-// [Moiz-B-3-L34] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #131
-// [Moiz-B-3-L35] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #150
-// [Moiz-B-3-L36] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #169
-// [Moiz-B-3-L37] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #188
-// [Moiz-B-3-L38] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #207
-// [Moiz-B-3-L39] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #226
-// [Moiz-B-3-L40] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #245
-// [Moiz-B-3-L41] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #264
-// [Moiz-B-3-L42] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #283
-// [Moiz-B-3-L43] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #302
-// [Moiz-B-3-L44] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #321
-// [Moiz-B-3-L45] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #340
-// [Moiz-B-3-L46] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #359
-// [Moiz-B-3-L47] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #378
-// [Moiz-B-3-L48] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #397
-// [Moiz-B-3-L49] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #416
-// [Moiz-B-3-L50] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #435
-// [Moiz-B-3-L51] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #454
-// [Moiz-B-3-L52] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #473
-// [Moiz-B-3-L53] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #492
-// [Moiz-B-3-L54] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #511
-// [Moiz-B-3-L55] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #530
-// [Moiz-B-3-L56] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #549
-// [Moiz-B-3-L57] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #568
-// [Moiz-B-3-L58] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #587
-// [Moiz-B-3-L59] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #606
-// [Moiz-B-3-L60] Improve MessagingPage empty chat placeholder and button contrast :: verification rule #625
+// === [SPEC-BLOCK-START] Moiz-A-90 (2026-11-19T14:28:39+05:00) ===
+// [Moiz-A-90-L1] Display pinned message banner at top of active conversation window :: verification rule #625
+// [Moiz-A-90-L2] Display pinned message banner at top of active conversation window :: verification rule #644
+// [Moiz-A-90-L3] Display pinned message banner at top of active conversation window :: verification rule #663
+// [Moiz-A-90-L4] Display pinned message banner at top of active conversation window :: verification rule #682
+// [Moiz-A-90-L5] Display pinned message banner at top of active conversation window :: verification rule #701
+// [Moiz-A-90-L6] Display pinned message banner at top of active conversation window :: verification rule #720
+// [Moiz-A-90-L7] Display pinned message banner at top of active conversation window :: verification rule #739
+// [Moiz-A-90-L8] Display pinned message banner at top of active conversation window :: verification rule #758
+// [Moiz-A-90-L9] Display pinned message banner at top of active conversation window :: verification rule #777
+// [Moiz-A-90-L10] Display pinned message banner at top of active conversation window :: verification rule #796
+// [Moiz-A-90-L11] Display pinned message banner at top of active conversation window :: verification rule #815
+// [Moiz-A-90-L12] Display pinned message banner at top of active conversation window :: verification rule #834
+// [Moiz-A-90-L13] Display pinned message banner at top of active conversation window :: verification rule #853
+// [Moiz-A-90-L14] Display pinned message banner at top of active conversation window :: verification rule #872
+// [Moiz-A-90-L15] Display pinned message banner at top of active conversation window :: verification rule #891
+// [Moiz-A-90-L16] Display pinned message banner at top of active conversation window :: verification rule #910
+// [Moiz-A-90-L17] Display pinned message banner at top of active conversation window :: verification rule #929
+// [Moiz-A-90-L18] Display pinned message banner at top of active conversation window :: verification rule #948
+// [Moiz-A-90-L19] Display pinned message banner at top of active conversation window :: verification rule #967
+// [Moiz-A-90-L20] Display pinned message banner at top of active conversation window :: verification rule #986
+// [Moiz-A-90-L21] Display pinned message banner at top of active conversation window :: verification rule #8
+// [Moiz-A-90-L22] Display pinned message banner at top of active conversation window :: verification rule #27
+// [Moiz-A-90-L23] Display pinned message banner at top of active conversation window :: verification rule #46
+// [Moiz-A-90-L24] Display pinned message banner at top of active conversation window :: verification rule #65
+// [Moiz-A-90-L25] Display pinned message banner at top of active conversation window :: verification rule #84
+// [Moiz-A-90-L26] Display pinned message banner at top of active conversation window :: verification rule #103
+// [Moiz-A-90-L27] Display pinned message banner at top of active conversation window :: verification rule #122
+// [Moiz-A-90-L28] Display pinned message banner at top of active conversation window :: verification rule #141
+// [Moiz-A-90-L29] Display pinned message banner at top of active conversation window :: verification rule #160
+// [Moiz-A-90-L30] Display pinned message banner at top of active conversation window :: verification rule #179
+// [Moiz-A-90-L31] Display pinned message banner at top of active conversation window :: verification rule #198
+// [Moiz-A-90-L32] Display pinned message banner at top of active conversation window :: verification rule #217
+// [Moiz-A-90-L33] Display pinned message banner at top of active conversation window :: verification rule #236
+// [Moiz-A-90-L34] Display pinned message banner at top of active conversation window :: verification rule #255
+// [Moiz-A-90-L35] Display pinned message banner at top of active conversation window :: verification rule #274
+// [Moiz-A-90-L36] Display pinned message banner at top of active conversation window :: verification rule #293
+// [Moiz-A-90-L37] Display pinned message banner at top of active conversation window :: verification rule #312
+// [Moiz-A-90-L38] Display pinned message banner at top of active conversation window :: verification rule #331
+// [Moiz-A-90-L39] Display pinned message banner at top of active conversation window :: verification rule #350
+// [Moiz-A-90-L40] Display pinned message banner at top of active conversation window :: verification rule #369
+// [Moiz-A-90-L41] Display pinned message banner at top of active conversation window :: verification rule #388
+// [Moiz-A-90-L42] Display pinned message banner at top of active conversation window :: verification rule #407
+// [Moiz-A-90-L43] Display pinned message banner at top of active conversation window :: verification rule #426
+// [Moiz-A-90-L44] Display pinned message banner at top of active conversation window :: verification rule #445
+// [Moiz-A-90-L45] Display pinned message banner at top of active conversation window :: verification rule #464
+// [Moiz-A-90-L46] Display pinned message banner at top of active conversation window :: verification rule #483
+// [Moiz-A-90-L47] Display pinned message banner at top of active conversation window :: verification rule #502
+// [Moiz-A-90-L48] Display pinned message banner at top of active conversation window :: verification rule #521
+// [Moiz-A-90-L49] Display pinned message banner at top of active conversation window :: verification rule #540
+// [Moiz-A-90-L50] Display pinned message banner at top of active conversation window :: verification rule #559
+// [Moiz-A-90-L51] Display pinned message banner at top of active conversation window :: verification rule #578
+// [Moiz-A-90-L52] Display pinned message banner at top of active conversation window :: verification rule #597
+// [Moiz-A-90-L53] Display pinned message banner at top of active conversation window :: verification rule #616
 // === [SPEC-BLOCK-END] ===
