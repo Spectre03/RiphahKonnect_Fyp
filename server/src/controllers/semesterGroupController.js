@@ -1,5 +1,6 @@
 const prisma = require('../config/db');
 const { coordinatorCanManage } = require('../utils/faculties');
+const { checkTextContent } = require('../utils/moderation');
 
 // GET /api/semester-groups
 const getGroups = async (req, res, next) => {
@@ -60,6 +61,14 @@ const createGroup = async (req, res, next) => {
 
     if (!department || !semester) {
       return res.status(400).json({ error: 'Department and semester are required.' });
+    }
+
+    const nameCheck = checkTextContent(name, { minLength: 3, fieldName: 'Group name' });
+    if (!nameCheck.clean) return res.status(400).json({ error: nameCheck.reason });
+
+    if (description) {
+      const descCheck = checkTextContent(description, { minLength: 3, fieldName: 'Group description' });
+      if (!descCheck.clean) return res.status(400).json({ error: descCheck.reason });
     }
 
     // COORDINATION is faculty-scoped — they can only create groups for their own faculty
@@ -164,11 +173,20 @@ const updateGroup = async (req, res, next) => {
       }
     }
 
+    if (req.body.name !== undefined) {
+      const nameCheck = checkTextContent(req.body.name, { minLength: 3, fieldName: 'Group name' });
+      if (!nameCheck.clean) return res.status(400).json({ error: nameCheck.reason });
+    }
+    if (req.body.description) {
+      const descCheck = checkTextContent(req.body.description, { minLength: 3, fieldName: 'Group description' });
+      if (!descCheck.clean) return res.status(400).json({ error: descCheck.reason });
+    }
+
     const updated = await prisma.semesterGroup.update({
       where: { id: req.params.id },
       data: {
-        name: req.body.name ?? group.name,
-        description: req.body.description ?? group.description,
+        name: req.body.name ? req.body.name.trim() : group.name,
+        description: req.body.description !== undefined ? req.body.description.trim() : group.description,
       },
     });
 

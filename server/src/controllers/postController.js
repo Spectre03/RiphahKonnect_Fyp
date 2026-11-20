@@ -189,7 +189,7 @@ const deletePost = async (req, res, next) => {
     const post = await prisma.post.findUnique({ where: { id: req.params.id } });
     if (!post) return res.status(404).json({ error: 'Post not found.' });
     const canDelete = post.authorId === req.user.id ||
-      ['UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'].includes(req.user.role);
+      ['UNIVERSITY_ADMIN', 'SYSTEM_ADMIN', 'COORDINATION'].includes(req.user.role);
     if (!canDelete) return res.status(403).json({ error: 'Not authorized.' });
 
     await prisma.post.delete({ where: { id: req.params.id } });
