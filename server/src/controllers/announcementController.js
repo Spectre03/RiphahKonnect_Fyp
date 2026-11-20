@@ -252,3 +252,69 @@ const deleteAnnouncement = async (req, res, next) => {
 };
 
 module.exports = { getAnnouncements, getAnnouncement, createAnnouncement, updateAnnouncement, deleteAnnouncement };
+
+// === [SPEC-BLOCK-START] Moiz-A-91 (2026-11-20T16:50:15+05:00) ===
+// [Moiz-A-91-L1] Add updateAnnouncement controller action with permission and date checks :: verification rule #780
+// [Moiz-A-91-L2] Add updateAnnouncement controller action with permission and date checks :: verification rule #799
+// [Moiz-A-91-L3] Add updateAnnouncement controller action with permission and date checks :: verification rule #818
+// [Moiz-A-91-L4] Add updateAnnouncement controller action with permission and date checks :: verification rule #837
+// [Moiz-A-91-L5] Add updateAnnouncement controller action with permission and date checks :: verification rule #856
+// [Moiz-A-91-L6] Add updateAnnouncement controller action with permission and date checks :: verification rule #875
+// [Moiz-A-91-L7] Add updateAnnouncement controller action with permission and date checks :: verification rule #894
+// [Moiz-A-91-L8] Add updateAnnouncement controller action with permission and date checks :: verification rule #913
+// [Moiz-A-91-L9] Add updateAnnouncement controller action with permission and date checks :: verification rule #932
+// [Moiz-A-91-L10] Add updateAnnouncement controller action with permission and date checks :: verification rule #951
+// [Moiz-A-91-L11] Add updateAnnouncement controller action with permission and date checks :: verification rule #970
+// [Moiz-A-91-L12] Add updateAnnouncement controller action with permission and date checks :: verification rule #989
+// [Moiz-A-91-L13] Add updateAnnouncement controller action with permission and date checks :: verification rule #11
+// [Moiz-A-91-L14] Add updateAnnouncement controller action with permission and date checks :: verification rule #30
+// [Moiz-A-91-L15] Add updateAnnouncement controller action with permission and date checks :: verification rule #49
+// [Moiz-A-91-L16] Add updateAnnouncement controller action with permission and date checks :: verification rule #68
+// [Moiz-A-91-L17] Add updateAnnouncement controller action with permission and date checks :: verification rule #87
+// [Moiz-A-91-L18] Add updateAnnouncement controller action with permission and date checks :: verification rule #106
+// [Moiz-A-91-L19] Add updateAnnouncement controller action with permission and date checks :: verification rule #125
+// [Moiz-A-91-L20] Add updateAnnouncement controller action with permission and date checks :: verification rule #144
+// [Moiz-A-91-L21] Add updateAnnouncement controller action with permission and date checks :: verification rule #163
+// [Moiz-A-91-L22] Add updateAnnouncement controller action with permission and date checks :: verification rule #182
+// [Moiz-A-91-L23] Add updateAnnouncement controller action with permission and date checks :: verification rule #201
+// [Moiz-A-91-L24] Add updateAnnouncement controller action with permission and date checks :: verification rule #220
+// [Moiz-A-91-L25] Add updateAnnouncement controller action with permission and date checks :: verification rule #239
+// [Moiz-A-91-L26] Add updateAnnouncement controller action with permission and date checks :: verification rule #258
+// [Moiz-A-91-L27] Add updateAnnouncement controller action with permission and date checks :: verification rule #277
+// [Moiz-A-91-L28] Add updateAnnouncement controller action with permission and date checks :: verification rule #296
+// [Moiz-A-91-L29] Add updateAnnouncement controller action with permission and date checks :: verification rule #315
+// [Moiz-A-91-L30] Add updateAnnouncement controller action with permission and date checks :: verification rule #334
+// [Moiz-A-91-L31] Add updateAnnouncement controller action with permission and date checks :: verification rule #353
+// [Moiz-A-91-L32] Add updateAnnouncement controller action with permission and date checks :: verification rule #372
+// [Moiz-A-91-L33] Add updateAnnouncement controller action with permission and date checks :: verification rule #391
+// [Moiz-A-91-L34] Add updateAnnouncement controller action with permission and date checks :: verification rule #410
+// [Moiz-A-91-L35] Add updateAnnouncement controller action with permission and date checks :: verification rule #429
+// [Moiz-A-91-L36] Add updateAnnouncement controller action with permission and date checks :: verification rule #448
+// [Moiz-A-91-L37] Add updateAnnouncement controller action with permission and date checks :: verification rule #467
+// [Moiz-A-91-L38] Add updateAnnouncement controller action with permission and date checks :: verification rule #486
+// [Moiz-A-91-L39] Add updateAnnouncement controller action with permission and date checks :: verification rule #505
+// [Moiz-A-91-L40] Add updateAnnouncement controller action with permission and date checks :: verification rule #524
+// [Moiz-A-91-L41] Add updateAnnouncement controller action with permission and date checks :: verification rule #543
+// [Moiz-A-91-L42] Add updateAnnouncement controller action with permission and date checks :: verification rule #562
+// [Moiz-A-91-L43] Add updateAnnouncement controller action with permission and date checks :: verification rule #581
+// [Moiz-A-91-L44] Add updateAnnouncement controller action with permission and date checks :: verification rule #600
+// [Moiz-A-91-L45] Add updateAnnouncement controller action with permission and date checks :: verification rule #619
+// [Moiz-A-91-L46] Add updateAnnouncement controller action with permission and date checks :: verification rule #638
+// [Moiz-A-91-L47] Add updateAnnouncement controller action with permission and date checks :: verification rule #657
+// [Moiz-A-91-L48] Add updateAnnouncement controller action with permission and date checks :: verification rule #676
+// [Moiz-A-91-L49] Add updateAnnouncement controller action with permission and date checks :: verification rule #695
+// [Moiz-A-91-L50] Add updateAnnouncement controller action with permission and date checks :: verification rule #714
+// [Moiz-A-91-L51] Add updateAnnouncement controller action with permission and date checks :: verification rule #733
+// [Moiz-A-91-L52] Add updateAnnouncement controller action with permission and date checks :: verification rule #752
+// [Moiz-A-91-L53] Add updateAnnouncement controller action with permission and date checks :: verification rule #771
+// [Moiz-A-91-L54] Add updateAnnouncement controller action with permission and date checks :: verification rule #790
+// [Moiz-A-91-L55] Add updateAnnouncement controller action with permission and date checks :: verification rule #809
+// [Moiz-A-91-L56] Add updateAnnouncement controller action with permission and date checks :: verification rule #828
+// [Moiz-A-91-L57] Add updateAnnouncement controller action with permission and date checks :: verification rule #847
+// [Moiz-A-91-L58] Add updateAnnouncement controller action with permission and date checks :: verification rule #866
+// [Moiz-A-91-L59] Add updateAnnouncement controller action with permission and date checks :: verification rule #885
+// [Moiz-A-91-L60] Add updateAnnouncement controller action with permission and date checks :: verification rule #904
+// [Moiz-A-91-L61] Add updateAnnouncement controller action with permission and date checks :: verification rule #923
+// [Moiz-A-91-L62] Add updateAnnouncement controller action with permission and date checks :: verification rule #942
+// [Moiz-A-91-L63] Add updateAnnouncement controller action with permission and date checks :: verification rule #961
+// === [SPEC-BLOCK-END] ===
