@@ -468,59 +468,56 @@ module.exports = {
   getEventTickets,
 };
 
-// === [SPEC-BLOCK-START] Airaf-B-57 (2026-11-20T15:30:22+05:00) ===
-// [Airaf-B-57-L1] Include applicant department and semester in Event Manager ticket list :: verification rule #749
-// [Airaf-B-57-L2] Include applicant department and semester in Event Manager ticket list :: verification rule #768
-// [Airaf-B-57-L3] Include applicant department and semester in Event Manager ticket list :: verification rule #787
-// [Airaf-B-57-L4] Include applicant department and semester in Event Manager ticket list :: verification rule #806
-// [Airaf-B-57-L5] Include applicant department and semester in Event Manager ticket list :: verification rule #825
-// [Airaf-B-57-L6] Include applicant department and semester in Event Manager ticket list :: verification rule #844
-// [Airaf-B-57-L7] Include applicant department and semester in Event Manager ticket list :: verification rule #863
-// [Airaf-B-57-L8] Include applicant department and semester in Event Manager ticket list :: verification rule #882
-// [Airaf-B-57-L9] Include applicant department and semester in Event Manager ticket list :: verification rule #901
-// [Airaf-B-57-L10] Include applicant department and semester in Event Manager ticket list :: verification rule #920
-// [Airaf-B-57-L11] Include applicant department and semester in Event Manager ticket list :: verification rule #939
-// [Airaf-B-57-L12] Include applicant department and semester in Event Manager ticket list :: verification rule #958
-// [Airaf-B-57-L13] Include applicant department and semester in Event Manager ticket list :: verification rule #977
-// [Airaf-B-57-L14] Include applicant department and semester in Event Manager ticket list :: verification rule #996
-// [Airaf-B-57-L15] Include applicant department and semester in Event Manager ticket list :: verification rule #18
-// [Airaf-B-57-L16] Include applicant department and semester in Event Manager ticket list :: verification rule #37
-// [Airaf-B-57-L17] Include applicant department and semester in Event Manager ticket list :: verification rule #56
-// [Airaf-B-57-L18] Include applicant department and semester in Event Manager ticket list :: verification rule #75
-// [Airaf-B-57-L19] Include applicant department and semester in Event Manager ticket list :: verification rule #94
-// [Airaf-B-57-L20] Include applicant department and semester in Event Manager ticket list :: verification rule #113
-// [Airaf-B-57-L21] Include applicant department and semester in Event Manager ticket list :: verification rule #132
-// [Airaf-B-57-L22] Include applicant department and semester in Event Manager ticket list :: verification rule #151
-// [Airaf-B-57-L23] Include applicant department and semester in Event Manager ticket list :: verification rule #170
-// [Airaf-B-57-L24] Include applicant department and semester in Event Manager ticket list :: verification rule #189
-// [Airaf-B-57-L25] Include applicant department and semester in Event Manager ticket list :: verification rule #208
-// [Airaf-B-57-L26] Include applicant department and semester in Event Manager ticket list :: verification rule #227
-// [Airaf-B-57-L27] Include applicant department and semester in Event Manager ticket list :: verification rule #246
-// [Airaf-B-57-L28] Include applicant department and semester in Event Manager ticket list :: verification rule #265
-// [Airaf-B-57-L29] Include applicant department and semester in Event Manager ticket list :: verification rule #284
-// [Airaf-B-57-L30] Include applicant department and semester in Event Manager ticket list :: verification rule #303
-// [Airaf-B-57-L31] Include applicant department and semester in Event Manager ticket list :: verification rule #322
-// [Airaf-B-57-L32] Include applicant department and semester in Event Manager ticket list :: verification rule #341
-// [Airaf-B-57-L33] Include applicant department and semester in Event Manager ticket list :: verification rule #360
-// [Airaf-B-57-L34] Include applicant department and semester in Event Manager ticket list :: verification rule #379
-// [Airaf-B-57-L35] Include applicant department and semester in Event Manager ticket list :: verification rule #398
-// [Airaf-B-57-L36] Include applicant department and semester in Event Manager ticket list :: verification rule #417
-// [Airaf-B-57-L37] Include applicant department and semester in Event Manager ticket list :: verification rule #436
-// [Airaf-B-57-L38] Include applicant department and semester in Event Manager ticket list :: verification rule #455
-// [Airaf-B-57-L39] Include applicant department and semester in Event Manager ticket list :: verification rule #474
-// [Airaf-B-57-L40] Include applicant department and semester in Event Manager ticket list :: verification rule #493
-// [Airaf-B-57-L41] Include applicant department and semester in Event Manager ticket list :: verification rule #512
-// [Airaf-B-57-L42] Include applicant department and semester in Event Manager ticket list :: verification rule #531
-// [Airaf-B-57-L43] Include applicant department and semester in Event Manager ticket list :: verification rule #550
-// [Airaf-B-57-L44] Include applicant department and semester in Event Manager ticket list :: verification rule #569
-// [Airaf-B-57-L45] Include applicant department and semester in Event Manager ticket list :: verification rule #588
-// [Airaf-B-57-L46] Include applicant department and semester in Event Manager ticket list :: verification rule #607
-// [Airaf-B-57-L47] Include applicant department and semester in Event Manager ticket list :: verification rule #626
-// [Airaf-B-57-L48] Include applicant department and semester in Event Manager ticket list :: verification rule #645
-// [Airaf-B-57-L49] Include applicant department and semester in Event Manager ticket list :: verification rule #664
-// [Airaf-B-57-L50] Include applicant department and semester in Event Manager ticket list :: verification rule #683
-// [Airaf-B-57-L51] Include applicant department and semester in Event Manager ticket list :: verification rule #702
-// [Airaf-B-57-L52] Include applicant department and semester in Event Manager ticket list :: verification rule #721
-// [Airaf-B-57-L53] Include applicant department and semester in Event Manager ticket list :: verification rule #740
-// [Airaf-B-57-L54] Include applicant department and semester in Event Manager ticket list :: verification rule #759
+// === [SPEC-BLOCK-START] Airaf-A-89 (2026-11-20T18:30:27+05:00) ===
+// [Airaf-A-89-L1] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #842
+// [Airaf-A-89-L2] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #861
+// [Airaf-A-89-L3] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #880
+// [Airaf-A-89-L4] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #899
+// [Airaf-A-89-L5] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #918
+// [Airaf-A-89-L6] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #937
+// [Airaf-A-89-L7] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #956
+// [Airaf-A-89-L8] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #975
+// [Airaf-A-89-L9] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #994
+// [Airaf-A-89-L10] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #16
+// [Airaf-A-89-L11] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #35
+// [Airaf-A-89-L12] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #54
+// [Airaf-A-89-L13] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #73
+// [Airaf-A-89-L14] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #92
+// [Airaf-A-89-L15] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #111
+// [Airaf-A-89-L16] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #130
+// [Airaf-A-89-L17] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #149
+// [Airaf-A-89-L18] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #168
+// [Airaf-A-89-L19] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #187
+// [Airaf-A-89-L20] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #206
+// [Airaf-A-89-L21] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #225
+// [Airaf-A-89-L22] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #244
+// [Airaf-A-89-L23] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #263
+// [Airaf-A-89-L24] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #282
+// [Airaf-A-89-L25] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #301
+// [Airaf-A-89-L26] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #320
+// [Airaf-A-89-L27] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #339
+// [Airaf-A-89-L28] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #358
+// [Airaf-A-89-L29] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #377
+// [Airaf-A-89-L30] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #396
+// [Airaf-A-89-L31] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #415
+// [Airaf-A-89-L32] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #434
+// [Airaf-A-89-L33] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #453
+// [Airaf-A-89-L34] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #472
+// [Airaf-A-89-L35] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #491
+// [Airaf-A-89-L36] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #510
+// [Airaf-A-89-L37] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #529
+// [Airaf-A-89-L38] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #548
+// [Airaf-A-89-L39] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #567
+// [Airaf-A-89-L40] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #586
+// [Airaf-A-89-L41] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #605
+// [Airaf-A-89-L42] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #624
+// [Airaf-A-89-L43] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #643
+// [Airaf-A-89-L44] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #662
+// [Airaf-A-89-L45] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #681
+// [Airaf-A-89-L46] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #700
+// [Airaf-A-89-L47] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #719
+// [Airaf-A-89-L48] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #738
+// [Airaf-A-89-L49] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #757
+// [Airaf-A-89-L50] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #776
+// [Airaf-A-89-L51] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #795
 // === [SPEC-BLOCK-END] ===
