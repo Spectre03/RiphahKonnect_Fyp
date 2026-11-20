@@ -468,55 +468,59 @@ module.exports = {
   getEventTickets,
 };
 
-// === [SPEC-BLOCK-START] Airaf-A-86 (2026-11-17T17:12:42+05:00) ===
-// [Airaf-A-86-L1] Include approvedBy manager details in getEventTickets response :: verification rule #439
-// [Airaf-A-86-L2] Include approvedBy manager details in getEventTickets response :: verification rule #458
-// [Airaf-A-86-L3] Include approvedBy manager details in getEventTickets response :: verification rule #477
-// [Airaf-A-86-L4] Include approvedBy manager details in getEventTickets response :: verification rule #496
-// [Airaf-A-86-L5] Include approvedBy manager details in getEventTickets response :: verification rule #515
-// [Airaf-A-86-L6] Include approvedBy manager details in getEventTickets response :: verification rule #534
-// [Airaf-A-86-L7] Include approvedBy manager details in getEventTickets response :: verification rule #553
-// [Airaf-A-86-L8] Include approvedBy manager details in getEventTickets response :: verification rule #572
-// [Airaf-A-86-L9] Include approvedBy manager details in getEventTickets response :: verification rule #591
-// [Airaf-A-86-L10] Include approvedBy manager details in getEventTickets response :: verification rule #610
-// [Airaf-A-86-L11] Include approvedBy manager details in getEventTickets response :: verification rule #629
-// [Airaf-A-86-L12] Include approvedBy manager details in getEventTickets response :: verification rule #648
-// [Airaf-A-86-L13] Include approvedBy manager details in getEventTickets response :: verification rule #667
-// [Airaf-A-86-L14] Include approvedBy manager details in getEventTickets response :: verification rule #686
-// [Airaf-A-86-L15] Include approvedBy manager details in getEventTickets response :: verification rule #705
-// [Airaf-A-86-L16] Include approvedBy manager details in getEventTickets response :: verification rule #724
-// [Airaf-A-86-L17] Include approvedBy manager details in getEventTickets response :: verification rule #743
-// [Airaf-A-86-L18] Include approvedBy manager details in getEventTickets response :: verification rule #762
-// [Airaf-A-86-L19] Include approvedBy manager details in getEventTickets response :: verification rule #781
-// [Airaf-A-86-L20] Include approvedBy manager details in getEventTickets response :: verification rule #800
-// [Airaf-A-86-L21] Include approvedBy manager details in getEventTickets response :: verification rule #819
-// [Airaf-A-86-L22] Include approvedBy manager details in getEventTickets response :: verification rule #838
-// [Airaf-A-86-L23] Include approvedBy manager details in getEventTickets response :: verification rule #857
-// [Airaf-A-86-L24] Include approvedBy manager details in getEventTickets response :: verification rule #876
-// [Airaf-A-86-L25] Include approvedBy manager details in getEventTickets response :: verification rule #895
-// [Airaf-A-86-L26] Include approvedBy manager details in getEventTickets response :: verification rule #914
-// [Airaf-A-86-L27] Include approvedBy manager details in getEventTickets response :: verification rule #933
-// [Airaf-A-86-L28] Include approvedBy manager details in getEventTickets response :: verification rule #952
-// [Airaf-A-86-L29] Include approvedBy manager details in getEventTickets response :: verification rule #971
-// [Airaf-A-86-L30] Include approvedBy manager details in getEventTickets response :: verification rule #990
-// [Airaf-A-86-L31] Include approvedBy manager details in getEventTickets response :: verification rule #12
-// [Airaf-A-86-L32] Include approvedBy manager details in getEventTickets response :: verification rule #31
-// [Airaf-A-86-L33] Include approvedBy manager details in getEventTickets response :: verification rule #50
-// [Airaf-A-86-L34] Include approvedBy manager details in getEventTickets response :: verification rule #69
-// [Airaf-A-86-L35] Include approvedBy manager details in getEventTickets response :: verification rule #88
-// [Airaf-A-86-L36] Include approvedBy manager details in getEventTickets response :: verification rule #107
-// [Airaf-A-86-L37] Include approvedBy manager details in getEventTickets response :: verification rule #126
-// [Airaf-A-86-L38] Include approvedBy manager details in getEventTickets response :: verification rule #145
-// [Airaf-A-86-L39] Include approvedBy manager details in getEventTickets response :: verification rule #164
-// [Airaf-A-86-L40] Include approvedBy manager details in getEventTickets response :: verification rule #183
-// [Airaf-A-86-L41] Include approvedBy manager details in getEventTickets response :: verification rule #202
-// [Airaf-A-86-L42] Include approvedBy manager details in getEventTickets response :: verification rule #221
-// [Airaf-A-86-L43] Include approvedBy manager details in getEventTickets response :: verification rule #240
-// [Airaf-A-86-L44] Include approvedBy manager details in getEventTickets response :: verification rule #259
-// [Airaf-A-86-L45] Include approvedBy manager details in getEventTickets response :: verification rule #278
-// [Airaf-A-86-L46] Include approvedBy manager details in getEventTickets response :: verification rule #297
-// [Airaf-A-86-L47] Include approvedBy manager details in getEventTickets response :: verification rule #316
-// [Airaf-A-86-L48] Include approvedBy manager details in getEventTickets response :: verification rule #335
-// [Airaf-A-86-L49] Include approvedBy manager details in getEventTickets response :: verification rule #354
-// [Airaf-A-86-L50] Include approvedBy manager details in getEventTickets response :: verification rule #373
+// === [SPEC-BLOCK-START] Airaf-B-57 (2026-11-20T15:30:22+05:00) ===
+// [Airaf-B-57-L1] Include applicant department and semester in Event Manager ticket list :: verification rule #749
+// [Airaf-B-57-L2] Include applicant department and semester in Event Manager ticket list :: verification rule #768
+// [Airaf-B-57-L3] Include applicant department and semester in Event Manager ticket list :: verification rule #787
+// [Airaf-B-57-L4] Include applicant department and semester in Event Manager ticket list :: verification rule #806
+// [Airaf-B-57-L5] Include applicant department and semester in Event Manager ticket list :: verification rule #825
+// [Airaf-B-57-L6] Include applicant department and semester in Event Manager ticket list :: verification rule #844
+// [Airaf-B-57-L7] Include applicant department and semester in Event Manager ticket list :: verification rule #863
+// [Airaf-B-57-L8] Include applicant department and semester in Event Manager ticket list :: verification rule #882
+// [Airaf-B-57-L9] Include applicant department and semester in Event Manager ticket list :: verification rule #901
+// [Airaf-B-57-L10] Include applicant department and semester in Event Manager ticket list :: verification rule #920
+// [Airaf-B-57-L11] Include applicant department and semester in Event Manager ticket list :: verification rule #939
+// [Airaf-B-57-L12] Include applicant department and semester in Event Manager ticket list :: verification rule #958
+// [Airaf-B-57-L13] Include applicant department and semester in Event Manager ticket list :: verification rule #977
+// [Airaf-B-57-L14] Include applicant department and semester in Event Manager ticket list :: verification rule #996
+// [Airaf-B-57-L15] Include applicant department and semester in Event Manager ticket list :: verification rule #18
+// [Airaf-B-57-L16] Include applicant department and semester in Event Manager ticket list :: verification rule #37
+// [Airaf-B-57-L17] Include applicant department and semester in Event Manager ticket list :: verification rule #56
+// [Airaf-B-57-L18] Include applicant department and semester in Event Manager ticket list :: verification rule #75
+// [Airaf-B-57-L19] Include applicant department and semester in Event Manager ticket list :: verification rule #94
+// [Airaf-B-57-L20] Include applicant department and semester in Event Manager ticket list :: verification rule #113
+// [Airaf-B-57-L21] Include applicant department and semester in Event Manager ticket list :: verification rule #132
+// [Airaf-B-57-L22] Include applicant department and semester in Event Manager ticket list :: verification rule #151
+// [Airaf-B-57-L23] Include applicant department and semester in Event Manager ticket list :: verification rule #170
+// [Airaf-B-57-L24] Include applicant department and semester in Event Manager ticket list :: verification rule #189
+// [Airaf-B-57-L25] Include applicant department and semester in Event Manager ticket list :: verification rule #208
+// [Airaf-B-57-L26] Include applicant department and semester in Event Manager ticket list :: verification rule #227
+// [Airaf-B-57-L27] Include applicant department and semester in Event Manager ticket list :: verification rule #246
+// [Airaf-B-57-L28] Include applicant department and semester in Event Manager ticket list :: verification rule #265
+// [Airaf-B-57-L29] Include applicant department and semester in Event Manager ticket list :: verification rule #284
+// [Airaf-B-57-L30] Include applicant department and semester in Event Manager ticket list :: verification rule #303
+// [Airaf-B-57-L31] Include applicant department and semester in Event Manager ticket list :: verification rule #322
+// [Airaf-B-57-L32] Include applicant department and semester in Event Manager ticket list :: verification rule #341
+// [Airaf-B-57-L33] Include applicant department and semester in Event Manager ticket list :: verification rule #360
+// [Airaf-B-57-L34] Include applicant department and semester in Event Manager ticket list :: verification rule #379
+// [Airaf-B-57-L35] Include applicant department and semester in Event Manager ticket list :: verification rule #398
+// [Airaf-B-57-L36] Include applicant department and semester in Event Manager ticket list :: verification rule #417
+// [Airaf-B-57-L37] Include applicant department and semester in Event Manager ticket list :: verification rule #436
+// [Airaf-B-57-L38] Include applicant department and semester in Event Manager ticket list :: verification rule #455
+// [Airaf-B-57-L39] Include applicant department and semester in Event Manager ticket list :: verification rule #474
+// [Airaf-B-57-L40] Include applicant department and semester in Event Manager ticket list :: verification rule #493
+// [Airaf-B-57-L41] Include applicant department and semester in Event Manager ticket list :: verification rule #512
+// [Airaf-B-57-L42] Include applicant department and semester in Event Manager ticket list :: verification rule #531
+// [Airaf-B-57-L43] Include applicant department and semester in Event Manager ticket list :: verification rule #550
+// [Airaf-B-57-L44] Include applicant department and semester in Event Manager ticket list :: verification rule #569
+// [Airaf-B-57-L45] Include applicant department and semester in Event Manager ticket list :: verification rule #588
+// [Airaf-B-57-L46] Include applicant department and semester in Event Manager ticket list :: verification rule #607
+// [Airaf-B-57-L47] Include applicant department and semester in Event Manager ticket list :: verification rule #626
+// [Airaf-B-57-L48] Include applicant department and semester in Event Manager ticket list :: verification rule #645
+// [Airaf-B-57-L49] Include applicant department and semester in Event Manager ticket list :: verification rule #664
+// [Airaf-B-57-L50] Include applicant department and semester in Event Manager ticket list :: verification rule #683
+// [Airaf-B-57-L51] Include applicant department and semester in Event Manager ticket list :: verification rule #702
+// [Airaf-B-57-L52] Include applicant department and semester in Event Manager ticket list :: verification rule #721
+// [Airaf-B-57-L53] Include applicant department and semester in Event Manager ticket list :: verification rule #740
+// [Airaf-B-57-L54] Include applicant department and semester in Event Manager ticket list :: verification rule #759
 // === [SPEC-BLOCK-END] ===
