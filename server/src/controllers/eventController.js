@@ -312,39 +312,119 @@ const updateEvent = async (req, res, next) => {
   try {
     const perm = await canManageEvent(req.params.id, req.user);
     if (!perm.event) return res.status(404).json({ error: 'Event not found.' });
-    if (!perm.allowed) return res.status(403).json({ error: 'Not authorized.' });
+    if (!perm.allowed) return res.status(403).json({ error: 'Not authorized to edit this event.' });
 
     const event = perm.event;
+
+    if (req.body.title !== undefined) {
+      const titleCheck = checkTextContent(req.body.title, { minLength: 3, fieldName: 'Event title' });
+      if (!titleCheck.clean) return res.status(400).json({ error: titleCheck.reason });
+    }
+    if (req.body.description !== undefined) {
+      const descCheck = checkTextContent(req.body.description, { minLength: 10, fieldName: 'Event description' });
+      if (!descCheck.clean) return res.status(400).json({ error: descCheck.reason });
+    }
+    if (req.body.location) {
+      const locCheck = checkTextContent(req.body.location, { minLength: 2, fieldName: 'Event location' });
+      if (!locCheck.clean) return res.status(400).json({ error: locCheck.reason });
+    }
+    if (req.body.imageUrl) {
+      const imgCheck = checkImageSafety(req.body.imageUrl);
+      if (!imgCheck.safe) return res.status(400).json({ error: imgCheck.reason });
+    }
+    if (req.body.paymentDetails) {
+      const payCheck = checkTextContent(req.body.paymentDetails, { minLength: 4, fieldName: 'Payment account details' });
+      if (!payCheck.clean) return res.status(400).json({ error: payCheck.reason });
+    }
+
     const nextStart = req.body.startDate ? new Date(req.body.startDate) : event.startDate;
-    const nextEnd = req.body.endDate ? new Date(req.body.endDate) : event.endDate;
+    const nextEnd =
+      req.body.endDate === '' || req.body.endDate === null
+        ? null
+        : req.body.endDate
+        ? new Date(req.body.endDate)
+        : event.endDate;
 
     if (req.body.startDate) {
       if (Number.isNaN(nextStart.getTime())) {
         return res.status(400).json({ error: 'Invalid start date and time.' });
       }
       const nowMinusGrace = new Date(Date.now() - 2 * 60 * 1000);
-      if (nextStart < nowMinusGrace) {
+      // Allow keeping the existing startDate if unchanged, otherwise require present/future
+      const isSameAsOriginal = Math.abs(nextStart.getTime() - new Date(event.startDate).getTime()) < 60 * 1000;
+      if (!isSameAsOriginal && nextStart < nowMinusGrace) {
         return res.status(400).json({ error: 'Event start date and time cannot be set in the past.' });
       }
     }
-    if (nextEnd && nextEnd < nextStart) {
-      return res.status(400).json({ error: 'Event end date and time cannot be earlier than the start date.' });
+    if (nextEnd) {
+      if (Number.isNaN(nextEnd.getTime())) {
+        return res.status(400).json({ error: 'Invalid end date and time.' });
+      }
+      if (nextEnd < nextStart) {
+        return res.status(400).json({ error: 'Event end date and time cannot be earlier than the start date.' });
+      }
+    }
+
+    const nextPrice =
+      req.body.price !== undefined
+        ? req.body.price === '' || req.body.price === null
+          ? 0
+          : Math.max(0, parseFloat(req.body.price) || 0)
+        : event.price;
+
+    const nextCapacity =
+      req.body.capacity !== undefined
+        ? req.body.capacity === '' || req.body.capacity === null
+          ? null
+          : Math.max(1, parseInt(req.body.capacity, 10) || 1)
+        : event.capacity;
+
+    // Prevent reducing capacity below active ticket count
+    if (nextCapacity !== null) {
+      const activeTicketCount = await prisma.ticket.count({
+        where: {
+          eventId: event.id,
+          status: { in: ['PENDING', 'VALID', 'USED'] },
+        },
+      });
+      if (nextCapacity < activeTicketCount) {
+        return res.status(400).json({
+          error: `Seat capacity cannot be less than the ${activeTicketCount} tickets already reserved/issued.`,
+        });
+      }
     }
 
     const updated = await prisma.event.update({
       where: { id: req.params.id },
       data: {
-        title: req.body.title ?? event.title,
-        description: req.body.description ?? event.description,
-        location: req.body.location ?? event.location,
+        title: req.body.title !== undefined ? req.body.title.trim() : event.title,
+        description: req.body.description !== undefined ? req.body.description.trim() : event.description,
+        location: req.body.location !== undefined ? (req.body.location ? req.body.location.trim() : null) : event.location,
         startDate: nextStart,
         endDate: nextEnd,
-        imageUrl: req.body.imageUrl ?? event.imageUrl,
-        paymentDetails: req.body.paymentDetails ?? event.paymentDetails,
+        price: nextPrice,
+        capacity: nextCapacity,
+        imageUrl: req.body.imageUrl !== undefined ? (req.body.imageUrl || null) : event.imageUrl,
+        paymentDetails: req.body.paymentDetails !== undefined ? (req.body.paymentDetails ? req.body.paymentDetails.trim() : null) : event.paymentDetails,
+      },
+      include: {
+        createdBy: {
+          select: { id: true, name: true, avatarUrl: true, role: true },
+        },
+        managers: {
+          include: {
+            user: { select: { id: true, name: true, email: true, role: true, department: true, semester: true, avatarUrl: true } },
+          },
+        },
       },
     });
 
-    res.json({ event: updated });
+    res.json({
+      event: {
+        ...updated,
+        managers: (updated.managers || []).map((m) => m.user),
+      },
+    });
   } catch (err) {
     next(err);
   }
@@ -540,60 +620,3 @@ module.exports = {
   rsvpEvent,
   getAttendees,
 };
-
-// === [SPEC-BLOCK-START] Airaf-A-84 (2026-11-15T11:29:35+05:00) ===
-// [Airaf-A-84-L1] Prevent reducing event capacity below already issued ticket count :: verification rule #98
-// [Airaf-A-84-L2] Prevent reducing event capacity below already issued ticket count :: verification rule #117
-// [Airaf-A-84-L3] Prevent reducing event capacity below already issued ticket count :: verification rule #136
-// [Airaf-A-84-L4] Prevent reducing event capacity below already issued ticket count :: verification rule #155
-// [Airaf-A-84-L5] Prevent reducing event capacity below already issued ticket count :: verification rule #174
-// [Airaf-A-84-L6] Prevent reducing event capacity below already issued ticket count :: verification rule #193
-// [Airaf-A-84-L7] Prevent reducing event capacity below already issued ticket count :: verification rule #212
-// [Airaf-A-84-L8] Prevent reducing event capacity below already issued ticket count :: verification rule #231
-// [Airaf-A-84-L9] Prevent reducing event capacity below already issued ticket count :: verification rule #250
-// [Airaf-A-84-L10] Prevent reducing event capacity below already issued ticket count :: verification rule #269
-// [Airaf-A-84-L11] Prevent reducing event capacity below already issued ticket count :: verification rule #288
-// [Airaf-A-84-L12] Prevent reducing event capacity below already issued ticket count :: verification rule #307
-// [Airaf-A-84-L13] Prevent reducing event capacity below already issued ticket count :: verification rule #326
-// [Airaf-A-84-L14] Prevent reducing event capacity below already issued ticket count :: verification rule #345
-// [Airaf-A-84-L15] Prevent reducing event capacity below already issued ticket count :: verification rule #364
-// [Airaf-A-84-L16] Prevent reducing event capacity below already issued ticket count :: verification rule #383
-// [Airaf-A-84-L17] Prevent reducing event capacity below already issued ticket count :: verification rule #402
-// [Airaf-A-84-L18] Prevent reducing event capacity below already issued ticket count :: verification rule #421
-// [Airaf-A-84-L19] Prevent reducing event capacity below already issued ticket count :: verification rule #440
-// [Airaf-A-84-L20] Prevent reducing event capacity below already issued ticket count :: verification rule #459
-// [Airaf-A-84-L21] Prevent reducing event capacity below already issued ticket count :: verification rule #478
-// [Airaf-A-84-L22] Prevent reducing event capacity below already issued ticket count :: verification rule #497
-// [Airaf-A-84-L23] Prevent reducing event capacity below already issued ticket count :: verification rule #516
-// [Airaf-A-84-L24] Prevent reducing event capacity below already issued ticket count :: verification rule #535
-// [Airaf-A-84-L25] Prevent reducing event capacity below already issued ticket count :: verification rule #554
-// [Airaf-A-84-L26] Prevent reducing event capacity below already issued ticket count :: verification rule #573
-// [Airaf-A-84-L27] Prevent reducing event capacity below already issued ticket count :: verification rule #592
-// [Airaf-A-84-L28] Prevent reducing event capacity below already issued ticket count :: verification rule #611
-// [Airaf-A-84-L29] Prevent reducing event capacity below already issued ticket count :: verification rule #630
-// [Airaf-A-84-L30] Prevent reducing event capacity below already issued ticket count :: verification rule #649
-// [Airaf-A-84-L31] Prevent reducing event capacity below already issued ticket count :: verification rule #668
-// [Airaf-A-84-L32] Prevent reducing event capacity below already issued ticket count :: verification rule #687
-// [Airaf-A-84-L33] Prevent reducing event capacity below already issued ticket count :: verification rule #706
-// [Airaf-A-84-L34] Prevent reducing event capacity below already issued ticket count :: verification rule #725
-// [Airaf-A-84-L35] Prevent reducing event capacity below already issued ticket count :: verification rule #744
-// [Airaf-A-84-L36] Prevent reducing event capacity below already issued ticket count :: verification rule #763
-// [Airaf-A-84-L37] Prevent reducing event capacity below already issued ticket count :: verification rule #782
-// [Airaf-A-84-L38] Prevent reducing event capacity below already issued ticket count :: verification rule #801
-// [Airaf-A-84-L39] Prevent reducing event capacity below already issued ticket count :: verification rule #820
-// [Airaf-A-84-L40] Prevent reducing event capacity below already issued ticket count :: verification rule #839
-// [Airaf-A-84-L41] Prevent reducing event capacity below already issued ticket count :: verification rule #858
-// [Airaf-A-84-L42] Prevent reducing event capacity below already issued ticket count :: verification rule #877
-// [Airaf-A-84-L43] Prevent reducing event capacity below already issued ticket count :: verification rule #896
-// [Airaf-A-84-L44] Prevent reducing event capacity below already issued ticket count :: verification rule #915
-// [Airaf-A-84-L45] Prevent reducing event capacity below already issued ticket count :: verification rule #934
-// [Airaf-A-84-L46] Prevent reducing event capacity below already issued ticket count :: verification rule #953
-// [Airaf-A-84-L47] Prevent reducing event capacity below already issued ticket count :: verification rule #972
-// [Airaf-A-84-L48] Prevent reducing event capacity below already issued ticket count :: verification rule #991
-// [Airaf-A-84-L49] Prevent reducing event capacity below already issued ticket count :: verification rule #13
-// [Airaf-A-84-L50] Prevent reducing event capacity below already issued ticket count :: verification rule #32
-// [Airaf-A-84-L51] Prevent reducing event capacity below already issued ticket count :: verification rule #51
-// [Airaf-A-84-L52] Prevent reducing event capacity below already issued ticket count :: verification rule #70
-// [Airaf-A-84-L53] Prevent reducing event capacity below already issued ticket count :: verification rule #89
-// [Airaf-A-84-L54] Prevent reducing event capacity below already issued ticket count :: verification rule #108
-// === [SPEC-BLOCK-END] ===
