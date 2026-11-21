@@ -3,6 +3,7 @@ import { useAuth } from '../context/AuthContext';
 import { cn } from '../utils/cn';
 import { Card, Button, Badge, Modal } from '../components/ui';
 import { DEPARTMENTS, SEMESTERS, getDepartmentsForUser } from '../utils/constants';
+import { checkTextContent } from '../utils/moderation';
 import toast from 'react-hot-toast';
 import {
   FileText, BookOpen, Upload, Search, Download,
@@ -43,7 +44,7 @@ function deptGrad(dept = '') {
   return DEPT_GRADIENTS[Math.abs(h) % DEPT_GRADIENTS.length];
 }
 
-const CAN_UPLOAD = ['STUDENT', 'TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN'];
+const CAN_UPLOAD = ['STUDENT', 'TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'];
 
 // Simulated local resource store (replaces API until backend is wired)
 let _store = [];
@@ -82,6 +83,7 @@ export default function ResourcesPage() {
   const [search,      setSearch]      = useState('');
   const [applied,     setApplied]     = useState({ search: '', department: deptFilter, semester: semFilter, type: '' });
   const [showUpload,  setShowUpload]  = useState(false);
+  const [deleteTarget, setDeleteTarget] = useState(null);
   const [deleting,    setDeleting]    = useState({});
 
   const load = (p = 1, filters = applied) => {
@@ -114,13 +116,19 @@ export default function ResourcesPage() {
     load(1, applied);
   };
 
-  const handleDelete = (id) => {
-    if (!confirm('Remove this resource?')) return;
+  const handleDelete = (resItem) => {
+    setDeleteTarget(resItem);
+  };
+
+  const confirmDeleteResource = () => {
+    if (!deleteTarget) return;
+    const id = deleteTarget.id;
     setDeleting((p) => ({ ...p, [id]: true }));
     setTimeout(() => {
       storeDelete(id);
       toast.success('Resource removed.');
       setDeleting((p) => ({ ...p, [id]: false }));
+      setDeleteTarget(null);
       load(page, applied);
     }, 300);
   };
@@ -318,7 +326,7 @@ export default function ResourcesPage() {
                           </button>
                           {canDel && (
                             <button
-                              onClick={() => handleDelete(res.id)}
+                              onClick={() => handleDelete(res)}
                               disabled={isDel}
                               className="p-1.5 rounded-xl text-red-400 hover:bg-red-50 border border-transparent hover:border-red-100 transition-all cursor-pointer disabled:opacity-50"
                             >
@@ -370,6 +378,31 @@ export default function ResourcesPage() {
           user={user}
         />
       )}
+
+      {/* Delete Resource Confirmation Modal */}
+      <Modal
+        open={Boolean(deleteTarget)}
+        onClose={() => setDeleteTarget(null)}
+        title="Remove Study Resource"
+        subtitle="This action cannot be undone"
+        icon={Trash2}
+        iconColor="bg-gradient-to-br from-red-500 to-rose-600"
+        size="sm"
+      >
+        <div className="space-y-4">
+          <p className="text-sm text-slate-600">
+            Are you sure you want to remove <span className="font-bold text-slate-900">&ldquo;{deleteTarget?.title}&rdquo;</span>?
+          </p>
+          <div className="flex justify-end gap-2 pt-2">
+            <Button variant="secondary" onClick={() => setDeleteTarget(null)}>
+              Cancel
+            </Button>
+            <Button variant="danger" onClick={confirmDeleteResource} icon={Trash2}>
+              Remove Resource
+            </Button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 }
@@ -386,9 +419,25 @@ function UploadModal({ open, onClose, onUploaded, user }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.title.trim() || !form.subject.trim() || !form.department || !form.semester) return;
+    const titleCheck = checkTextContent(form.title, { minLength: 3, fieldName: 'Resource title' });
+    if (!titleCheck.clean) { toast.error(titleCheck.reason); return; }
+
+    const subjCheck = checkTextContent(form.subject, { minLength: 2, fieldName: 'Subject' });
+    if (!subjCheck.clean) { toast.error(subjCheck.reason); return; }
+
+    if (form.description.trim()) {
+      const descCheck = checkTextContent(form.description, { minLength: 3, fieldName: 'Description' });
+      if (!descCheck.clean) { toast.error(descCheck.reason); return; }
+    }
+
+    let normalizedLink = form.link.trim();
+    if (normalizedLink && !/^https?:\/\//i.test(normalizedLink)) {
+      normalizedLink = `https://${normalizedLink}`;
+    }
+
     setSubmitting(true);
     setTimeout(() => {
-      onUploaded({ ...form, semester: parseInt(form.semester) });
+      onUploaded({ ...form, link: normalizedLink, semester: parseInt(form.semester) });
       setForm({ title: '', subject: '', description: '', link: '', type: 'NOTES', department: '', semester: '' });
       setSubmitting(false);
     }, 400);

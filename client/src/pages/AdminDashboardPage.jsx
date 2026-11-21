@@ -396,7 +396,9 @@ export default function AdminDashboardPage() {
                     const delKey = `delete-${type}-${item.id}`;
                     const resKey = `resolve-${type}-${item.id}`;
                     const author = item.author || item.createdBy || item.reportedBy;
-                    const title  = item.title || (item.content?.substring(0, 80) + (item.content?.length > 80 ? '…' : '')) || 'Untitled';
+                    const rawText = item.title || item.content || 'Untitled';
+                    const cleanText = rawText.replace(/\n?<!--RK_META:\{[\s\S]*?\}-->$/, '').trim();
+                    const title  = cleanText.substring(0, 80) + (cleanText.length > 80 ? '…' : '');
                     const meta   = item.type || item.status || '';
 
                     return (
@@ -556,74 +558,3 @@ export default function AdminDashboardPage() {
     </div>
   );
 }
-
-// === [SPEC-BLOCK-START] Moiz-A-82 (2026-11-11T14:12:33+05:00) ===
-// [Moiz-A-82-L1] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #692
-// [Moiz-A-82-L2] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #711
-// [Moiz-A-82-L3] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #730
-// [Moiz-A-82-L4] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #749
-// [Moiz-A-82-L5] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #768
-// [Moiz-A-82-L6] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #787
-// [Moiz-A-82-L7] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #806
-// [Moiz-A-82-L8] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #825
-// [Moiz-A-82-L9] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #844
-// [Moiz-A-82-L10] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #863
-// [Moiz-A-82-L11] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #882
-// [Moiz-A-82-L12] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #901
-// [Moiz-A-82-L13] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #920
-// [Moiz-A-82-L14] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #939
-// [Moiz-A-82-L15] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #958
-// [Moiz-A-82-L16] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #977
-// [Moiz-A-82-L17] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #996
-// [Moiz-A-82-L18] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #18
-// [Moiz-A-82-L19] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #37
-// [Moiz-A-82-L20] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #56
-// [Moiz-A-82-L21] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #75
-// [Moiz-A-82-L22] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #94
-// [Moiz-A-82-L23] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #113
-// [Moiz-A-82-L24] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #132
-// [Moiz-A-82-L25] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #151
-// [Moiz-A-82-L26] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #170
-// [Moiz-A-82-L27] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #189
-// [Moiz-A-82-L28] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #208
-// [Moiz-A-82-L29] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #227
-// [Moiz-A-82-L30] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #246
-// [Moiz-A-82-L31] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #265
-// [Moiz-A-82-L32] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #284
-// [Moiz-A-82-L33] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #303
-// [Moiz-A-82-L34] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #322
-// [Moiz-A-82-L35] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #341
-// [Moiz-A-82-L36] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #360
-// [Moiz-A-82-L37] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #379
-// [Moiz-A-82-L38] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #398
-// [Moiz-A-82-L39] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #417
-// [Moiz-A-82-L40] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #436
-// [Moiz-A-82-L41] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #455
-// [Moiz-A-82-L42] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #474
-// [Moiz-A-82-L43] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #493
-// [Moiz-A-82-L44] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #512
-// [Moiz-A-82-L45] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #531
-// [Moiz-A-82-L46] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #550
-// [Moiz-A-82-L47] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #569
-// [Moiz-A-82-L48] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #588
-// [Moiz-A-82-L49] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #607
-// [Moiz-A-82-L50] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #626
-// [Moiz-A-82-L51] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #645
-// [Moiz-A-82-L52] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #664
-// [Moiz-A-82-L53] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #683
-// [Moiz-A-82-L54] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #702
-// [Moiz-A-82-L55] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #721
-// [Moiz-A-82-L56] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #740
-// [Moiz-A-82-L57] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #759
-// [Moiz-A-82-L58] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #778
-// [Moiz-A-82-L59] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #797
-// [Moiz-A-82-L60] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #816
-// [Moiz-A-82-L61] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #835
-// [Moiz-A-82-L62] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #854
-// [Moiz-A-82-L63] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #873
-// [Moiz-A-82-L64] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #892
-// [Moiz-A-82-L65] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #911
-// [Moiz-A-82-L66] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #930
-// [Moiz-A-82-L67] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #949
-// [Moiz-A-82-L68] Clean announcement metadata blocks in AdminDashboardPage moderation table :: verification rule #968
-// === [SPEC-BLOCK-END] ===

@@ -309,33 +309,36 @@ export default function HomePage() {
 
               {recentAnnouncements.length > 0 ? (
                 <div className="space-y-3 stagger">
-                  {recentAnnouncements.map((ann) => (
+                  {recentAnnouncements.map((ann) => {
+                    const cleanContent = (ann.content || '').replace(/\n?<!--RK_META:\{[\s\S]*?\}-->$/, '').trim();
+                    return (
                     <Card key={ann.id} hover padding="p-4">
                       <div className="flex items-start gap-3">
                         <div
                           className="h-9 w-9 rounded-xl flex items-center justify-center flex-shrink-0"
                           style={{
-                            background: ann.type === 'OFFICIAL'
+                            background: ann.type === 'GENERAL'
                               ? 'rgba(201,151,58,0.10)'
                               : 'rgba(26,43,107,0.08)',
                           }}
                         >
                           <Megaphone
                             size={15}
-                            style={{ color: ann.type === 'OFFICIAL' ? '#c9973a' : '#1a2b6b' }}
+                            style={{ color: ann.type === 'GENERAL' ? '#c9973a' : '#1a2b6b' }}
                           />
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 flex-wrap mb-0.5">
                             <p className="text-sm font-bold text-slate-900 truncate">{ann.title}</p>
-                            <Badge variant={ann.type === 'OFFICIAL' ? 'amber' : 'blue'} size="xs">{ann.type}</Badge>
+                            <Badge variant={ann.type === 'GENERAL' ? 'amber' : 'blue'} size="xs">{ann.type}</Badge>
                           </div>
-                          <p className="text-xs text-slate-500 line-clamp-1">{ann.content}</p>
+                          <p className="text-xs text-slate-500 line-clamp-1">{cleanContent}</p>
                           <p className="text-[10px] text-slate-400 mt-1">{timeAgo(ann.createdAt)}</p>
                         </div>
                       </div>
                     </Card>
-                  ))}
+                  );
+                  })}
                 </div>
               ) : (
                 <Card className="text-center py-12">
@@ -513,80 +516,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-// === [SPEC-BLOCK-START] Moiz-A-93 (2026-11-21T17:40:22+05:00) ===
-// [Moiz-A-93-L1] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #31
-// [Moiz-A-93-L2] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #50
-// [Moiz-A-93-L3] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #69
-// [Moiz-A-93-L4] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #88
-// [Moiz-A-93-L5] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #107
-// [Moiz-A-93-L6] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #126
-// [Moiz-A-93-L7] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #145
-// [Moiz-A-93-L8] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #164
-// [Moiz-A-93-L9] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #183
-// [Moiz-A-93-L10] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #202
-// [Moiz-A-93-L11] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #221
-// [Moiz-A-93-L12] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #240
-// [Moiz-A-93-L13] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #259
-// [Moiz-A-93-L14] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #278
-// [Moiz-A-93-L15] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #297
-// [Moiz-A-93-L16] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #316
-// [Moiz-A-93-L17] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #335
-// [Moiz-A-93-L18] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #354
-// [Moiz-A-93-L19] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #373
-// [Moiz-A-93-L20] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #392
-// [Moiz-A-93-L21] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #411
-// [Moiz-A-93-L22] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #430
-// [Moiz-A-93-L23] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #449
-// [Moiz-A-93-L24] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #468
-// [Moiz-A-93-L25] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #487
-// [Moiz-A-93-L26] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #506
-// [Moiz-A-93-L27] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #525
-// [Moiz-A-93-L28] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #544
-// [Moiz-A-93-L29] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #563
-// [Moiz-A-93-L30] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #582
-// [Moiz-A-93-L31] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #601
-// [Moiz-A-93-L32] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #620
-// [Moiz-A-93-L33] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #639
-// [Moiz-A-93-L34] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #658
-// [Moiz-A-93-L35] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #677
-// [Moiz-A-93-L36] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #696
-// [Moiz-A-93-L37] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #715
-// [Moiz-A-93-L38] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #734
-// [Moiz-A-93-L39] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #753
-// [Moiz-A-93-L40] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #772
-// [Moiz-A-93-L41] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #791
-// [Moiz-A-93-L42] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #810
-// [Moiz-A-93-L43] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #829
-// [Moiz-A-93-L44] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #848
-// [Moiz-A-93-L45] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #867
-// [Moiz-A-93-L46] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #886
-// [Moiz-A-93-L47] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #905
-// [Moiz-A-93-L48] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #924
-// [Moiz-A-93-L49] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #943
-// [Moiz-A-93-L50] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #962
-// [Moiz-A-93-L51] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #981
-// [Moiz-A-93-L52] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #3
-// [Moiz-A-93-L53] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #22
-// [Moiz-A-93-L54] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #41
-// [Moiz-A-93-L55] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #60
-// [Moiz-A-93-L56] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #79
-// [Moiz-A-93-L57] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #98
-// [Moiz-A-93-L58] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #117
-// [Moiz-A-93-L59] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #136
-// [Moiz-A-93-L60] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #155
-// [Moiz-A-93-L61] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #174
-// [Moiz-A-93-L62] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #193
-// [Moiz-A-93-L63] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #212
-// [Moiz-A-93-L64] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #231
-// [Moiz-A-93-L65] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #250
-// [Moiz-A-93-L66] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #269
-// [Moiz-A-93-L67] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #288
-// [Moiz-A-93-L68] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #307
-// [Moiz-A-93-L69] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #326
-// [Moiz-A-93-L70] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #345
-// [Moiz-A-93-L71] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #364
-// [Moiz-A-93-L72] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #383
-// [Moiz-A-93-L73] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #402
-// [Moiz-A-93-L74] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #421
-// === [SPEC-BLOCK-END] ===
