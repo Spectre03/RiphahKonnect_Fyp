@@ -1860,3 +1860,54 @@ function EditEventModal({ event, onClose, onUpdated }) {
     </Modal>
   );
 }
+
+// === [SPEC-BLOCK-START] Airaf-A-90 (2026-11-21T14:08:14+05:00) ===
+// [Airaf-A-90-L1] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #935
+// [Airaf-A-90-L2] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #954
+// [Airaf-A-90-L3] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #973
+// [Airaf-A-90-L4] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #992
+// [Airaf-A-90-L5] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #14
+// [Airaf-A-90-L6] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #33
+// [Airaf-A-90-L7] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #52
+// [Airaf-A-90-L8] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #71
+// [Airaf-A-90-L9] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #90
+// [Airaf-A-90-L10] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #109
+// [Airaf-A-90-L11] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #128
+// [Airaf-A-90-L12] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #147
+// [Airaf-A-90-L13] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #166
+// [Airaf-A-90-L14] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #185
+// [Airaf-A-90-L15] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #204
+// [Airaf-A-90-L16] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #223
+// [Airaf-A-90-L17] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #242
+// [Airaf-A-90-L18] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #261
+// [Airaf-A-90-L19] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #280
+// [Airaf-A-90-L20] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #299
+// [Airaf-A-90-L21] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #318
+// [Airaf-A-90-L22] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #337
+// [Airaf-A-90-L23] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #356
+// [Airaf-A-90-L24] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #375
+// [Airaf-A-90-L25] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #394
+// [Airaf-A-90-L26] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #413
+// [Airaf-A-90-L27] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #432
+// [Airaf-A-90-L28] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #451
+// [Airaf-A-90-L29] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #470
+// [Airaf-A-90-L30] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #489
+// [Airaf-A-90-L31] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #508
+// [Airaf-A-90-L32] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #527
+// [Airaf-A-90-L33] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #546
+// [Airaf-A-90-L34] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #565
+// [Airaf-A-90-L35] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #584
+// [Airaf-A-90-L36] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #603
+// [Airaf-A-90-L37] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #622
+// [Airaf-A-90-L38] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #641
+// [Airaf-A-90-L39] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #660
+// [Airaf-A-90-L40] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #679
+// [Airaf-A-90-L41] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #698
+// [Airaf-A-90-L42] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #717
+// [Airaf-A-90-L43] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #736
+// [Airaf-A-90-L44] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #755
+// [Airaf-A-90-L45] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #774
+// [Airaf-A-90-L46] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #793
+// [Airaf-A-90-L47] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #812
+// [Airaf-A-90-L48] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #831
+// === [SPEC-BLOCK-END] ===
