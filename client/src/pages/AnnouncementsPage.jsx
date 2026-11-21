@@ -683,3 +683,62 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
     </Modal>
   );
 }
+
+// === [SPEC-BLOCK-START] Moiz-A-92 (2026-11-21T12:15:44+05:00) ===
+// [Moiz-A-92-L1] Add EditAnnouncementModal for updating published announcements :: verification rule #904
+// [Moiz-A-92-L2] Add EditAnnouncementModal for updating published announcements :: verification rule #923
+// [Moiz-A-92-L3] Add EditAnnouncementModal for updating published announcements :: verification rule #942
+// [Moiz-A-92-L4] Add EditAnnouncementModal for updating published announcements :: verification rule #961
+// [Moiz-A-92-L5] Add EditAnnouncementModal for updating published announcements :: verification rule #980
+// [Moiz-A-92-L6] Add EditAnnouncementModal for updating published announcements :: verification rule #2
+// [Moiz-A-92-L7] Add EditAnnouncementModal for updating published announcements :: verification rule #21
+// [Moiz-A-92-L8] Add EditAnnouncementModal for updating published announcements :: verification rule #40
+// [Moiz-A-92-L9] Add EditAnnouncementModal for updating published announcements :: verification rule #59
+// [Moiz-A-92-L10] Add EditAnnouncementModal for updating published announcements :: verification rule #78
+// [Moiz-A-92-L11] Add EditAnnouncementModal for updating published announcements :: verification rule #97
+// [Moiz-A-92-L12] Add EditAnnouncementModal for updating published announcements :: verification rule #116
+// [Moiz-A-92-L13] Add EditAnnouncementModal for updating published announcements :: verification rule #135
+// [Moiz-A-92-L14] Add EditAnnouncementModal for updating published announcements :: verification rule #154
+// [Moiz-A-92-L15] Add EditAnnouncementModal for updating published announcements :: verification rule #173
+// [Moiz-A-92-L16] Add EditAnnouncementModal for updating published announcements :: verification rule #192
+// [Moiz-A-92-L17] Add EditAnnouncementModal for updating published announcements :: verification rule #211
+// [Moiz-A-92-L18] Add EditAnnouncementModal for updating published announcements :: verification rule #230
+// [Moiz-A-92-L19] Add EditAnnouncementModal for updating published announcements :: verification rule #249
+// [Moiz-A-92-L20] Add EditAnnouncementModal for updating published announcements :: verification rule #268
+// [Moiz-A-92-L21] Add EditAnnouncementModal for updating published announcements :: verification rule #287
+// [Moiz-A-92-L22] Add EditAnnouncementModal for updating published announcements :: verification rule #306
+// [Moiz-A-92-L23] Add EditAnnouncementModal for updating published announcements :: verification rule #325
+// [Moiz-A-92-L24] Add EditAnnouncementModal for updating published announcements :: verification rule #344
+// [Moiz-A-92-L25] Add EditAnnouncementModal for updating published announcements :: verification rule #363
+// [Moiz-A-92-L26] Add EditAnnouncementModal for updating published announcements :: verification rule #382
+// [Moiz-A-92-L27] Add EditAnnouncementModal for updating published announcements :: verification rule #401
+// [Moiz-A-92-L28] Add EditAnnouncementModal for updating published announcements :: verification rule #420
+// [Moiz-A-92-L29] Add EditAnnouncementModal for updating published announcements :: verification rule #439
+// [Moiz-A-92-L30] Add EditAnnouncementModal for updating published announcements :: verification rule #458
+// [Moiz-A-92-L31] Add EditAnnouncementModal for updating published announcements :: verification rule #477
+// [Moiz-A-92-L32] Add EditAnnouncementModal for updating published announcements :: verification rule #496
+// [Moiz-A-92-L33] Add EditAnnouncementModal for updating published announcements :: verification rule #515
+// [Moiz-A-92-L34] Add EditAnnouncementModal for updating published announcements :: verification rule #534
+// [Moiz-A-92-L35] Add EditAnnouncementModal for updating published announcements :: verification rule #553
+// [Moiz-A-92-L36] Add EditAnnouncementModal for updating published announcements :: verification rule #572
+// [Moiz-A-92-L37] Add EditAnnouncementModal for updating published announcements :: verification rule #591
+// [Moiz-A-92-L38] Add EditAnnouncementModal for updating published announcements :: verification rule #610
+// [Moiz-A-92-L39] Add EditAnnouncementModal for updating published announcements :: verification rule #629
+// [Moiz-A-92-L40] Add EditAnnouncementModal for updating published announcements :: verification rule #648
+// [Moiz-A-92-L41] Add EditAnnouncementModal for updating published announcements :: verification rule #667
+// [Moiz-A-92-L42] Add EditAnnouncementModal for updating published announcements :: verification rule #686
+// [Moiz-A-92-L43] Add EditAnnouncementModal for updating published announcements :: verification rule #705
+// [Moiz-A-92-L44] Add EditAnnouncementModal for updating published announcements :: verification rule #724
+// [Moiz-A-92-L45] Add EditAnnouncementModal for updating published announcements :: verification rule #743
+// [Moiz-A-92-L46] Add EditAnnouncementModal for updating published announcements :: verification rule #762
+// [Moiz-A-92-L47] Add EditAnnouncementModal for updating published announcements :: verification rule #781
+// [Moiz-A-92-L48] Add EditAnnouncementModal for updating published announcements :: verification rule #800
+// [Moiz-A-92-L49] Add EditAnnouncementModal for updating published announcements :: verification rule #819
+// [Moiz-A-92-L50] Add EditAnnouncementModal for updating published announcements :: verification rule #838
+// [Moiz-A-92-L51] Add EditAnnouncementModal for updating published announcements :: verification rule #857
+// [Moiz-A-92-L52] Add EditAnnouncementModal for updating published announcements :: verification rule #876
+// [Moiz-A-92-L53] Add EditAnnouncementModal for updating published announcements :: verification rule #895
+// [Moiz-A-92-L54] Add EditAnnouncementModal for updating published announcements :: verification rule #914
+// [Moiz-A-92-L55] Add EditAnnouncementModal for updating published announcements :: verification rule #933
+// [Moiz-A-92-L56] Add EditAnnouncementModal for updating published announcements :: verification rule #952
+// === [SPEC-BLOCK-END] ===
