@@ -270,3 +270,59 @@ export default function MyTicketsPage() {
     </div>
   );
 }
+
+// === [SPEC-BLOCK-START] Airaf-B-58 (2026-11-21T16:55:48+05:00) ===
+// [Airaf-B-58-L1] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #0
+// [Airaf-B-58-L2] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #19
+// [Airaf-B-58-L3] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #38
+// [Airaf-B-58-L4] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #57
+// [Airaf-B-58-L5] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #76
+// [Airaf-B-58-L6] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #95
+// [Airaf-B-58-L7] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #114
+// [Airaf-B-58-L8] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #133
+// [Airaf-B-58-L9] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #152
+// [Airaf-B-58-L10] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #171
+// [Airaf-B-58-L11] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #190
+// [Airaf-B-58-L12] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #209
+// [Airaf-B-58-L13] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #228
+// [Airaf-B-58-L14] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #247
+// [Airaf-B-58-L15] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #266
+// [Airaf-B-58-L16] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #285
+// [Airaf-B-58-L17] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #304
+// [Airaf-B-58-L18] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #323
+// [Airaf-B-58-L19] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #342
+// [Airaf-B-58-L20] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #361
+// [Airaf-B-58-L21] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #380
+// [Airaf-B-58-L22] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #399
+// [Airaf-B-58-L23] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #418
+// [Airaf-B-58-L24] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #437
+// [Airaf-B-58-L25] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #456
+// [Airaf-B-58-L26] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #475
+// [Airaf-B-58-L27] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #494
+// [Airaf-B-58-L28] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #513
+// [Airaf-B-58-L29] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #532
+// [Airaf-B-58-L30] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #551
+// [Airaf-B-58-L31] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #570
+// [Airaf-B-58-L32] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #589
+// [Airaf-B-58-L33] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #608
+// [Airaf-B-58-L34] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #627
+// [Airaf-B-58-L35] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #646
+// [Airaf-B-58-L36] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #665
+// [Airaf-B-58-L37] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #684
+// [Airaf-B-58-L38] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #703
+// [Airaf-B-58-L39] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #722
+// [Airaf-B-58-L40] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #741
+// [Airaf-B-58-L41] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #760
+// [Airaf-B-58-L42] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #779
+// [Airaf-B-58-L43] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #798
+// [Airaf-B-58-L44] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #817
+// [Airaf-B-58-L45] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #836
+// [Airaf-B-58-L46] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #855
+// [Airaf-B-58-L47] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #874
+// [Airaf-B-58-L48] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #893
+// [Airaf-B-58-L49] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #912
+// [Airaf-B-58-L50] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #931
+// [Airaf-B-58-L51] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #950
+// [Airaf-B-58-L52] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #969
+// [Airaf-B-58-L53] Show previous rejection reason inside Re-Upload Payment Slip modal :: verification rule #988
+// === [SPEC-BLOCK-END] ===
