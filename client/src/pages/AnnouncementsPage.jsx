@@ -10,7 +10,7 @@ import toast from 'react-hot-toast';
 import {
   Megaphone, Plus, Loader2, Trash2, Shield,
   BookOpen, Bell, Sparkles, Paperclip, Calendar,
-  Download, ExternalLink, FileText, X, AlertTriangle,
+  Download, ExternalLink, FileText, X, AlertTriangle, Edit3,
 } from 'lucide-react';
 
 const CAN_CREATE = ['UNIVERSITY_ADMIN', 'COORDINATION', 'TEACHER', 'SYSTEM_ADMIN'];
@@ -74,6 +74,7 @@ export default function AnnouncementsPage() {
   const [page, setPage] = useState(1);
   const [pagination, setPagination] = useState(null);
   const [showCreate, setShowCreate] = useState(false);
+  const [editingAnn, setEditingAnn] = useState(null);
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [deleting, setDeleting] = useState(false);
 
@@ -112,6 +113,14 @@ export default function AnnouncementsPage() {
     setAnnouncements([ann, ...announcements]);
     setShowCreate(false);
     toast.success('Announcement posted!');
+  };
+
+  const handleUpdated = (updatedAnn) => {
+    setAnnouncements((prev) =>
+      prev.map((a) => (a.id === updatedAnn.id ? updatedAnn : a))
+    );
+    setEditingAnn(null);
+    toast.success('Announcement updated!');
   };
 
   const canCreate = CAN_CREATE.includes(user?.role);
@@ -245,13 +254,24 @@ export default function AnnouncementsPage() {
                         </div>
                       </div>
                       {isOwnerOrAdmin(ann) && (
-                        <button
-                          onClick={() => setDeleteTarget(ann)}
-                          className="p-1.5 text-slate-300 hover:text-red-500 hover:bg-red-50 rounded-lg cursor-pointer transition-all flex-shrink-0"
-                          title="Delete announcement"
-                        >
-                          <Trash2 size={14} />
-                        </button>
+                        <div className="flex items-center gap-1 flex-shrink-0">
+                          <button
+                            type="button"
+                            onClick={() => setEditingAnn(ann)}
+                            className="p-1.5 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg cursor-pointer transition-all"
+                            title="Edit announcement"
+                          >
+                            <Edit3 size={14} />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setDeleteTarget(ann)}
+                            className="p-1.5 text-slate-300 hover:text-red-500 hover:bg-red-50 rounded-lg cursor-pointer transition-all"
+                            title="Delete announcement"
+                          >
+                            <Trash2 size={14} />
+                          </button>
+                        </div>
                       )}
                     </div>
 
@@ -343,6 +363,14 @@ export default function AnnouncementsPage() {
             onClose={() => setShowCreate(false)}
             onCreated={handleCreated}
             userRole={user?.role}
+          />
+        )}
+
+        {editingAnn && (
+          <EditAnnouncementModal
+            announcement={editingAnn}
+            onClose={() => setEditingAnn(null)}
+            onUpdated={handleUpdated}
           />
         )}
 
@@ -684,61 +712,157 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-92 (2026-11-21T12:15:44+05:00) ===
-// [Moiz-A-92-L1] Add EditAnnouncementModal for updating published announcements :: verification rule #904
-// [Moiz-A-92-L2] Add EditAnnouncementModal for updating published announcements :: verification rule #923
-// [Moiz-A-92-L3] Add EditAnnouncementModal for updating published announcements :: verification rule #942
-// [Moiz-A-92-L4] Add EditAnnouncementModal for updating published announcements :: verification rule #961
-// [Moiz-A-92-L5] Add EditAnnouncementModal for updating published announcements :: verification rule #980
-// [Moiz-A-92-L6] Add EditAnnouncementModal for updating published announcements :: verification rule #2
-// [Moiz-A-92-L7] Add EditAnnouncementModal for updating published announcements :: verification rule #21
-// [Moiz-A-92-L8] Add EditAnnouncementModal for updating published announcements :: verification rule #40
-// [Moiz-A-92-L9] Add EditAnnouncementModal for updating published announcements :: verification rule #59
-// [Moiz-A-92-L10] Add EditAnnouncementModal for updating published announcements :: verification rule #78
-// [Moiz-A-92-L11] Add EditAnnouncementModal for updating published announcements :: verification rule #97
-// [Moiz-A-92-L12] Add EditAnnouncementModal for updating published announcements :: verification rule #116
-// [Moiz-A-92-L13] Add EditAnnouncementModal for updating published announcements :: verification rule #135
-// [Moiz-A-92-L14] Add EditAnnouncementModal for updating published announcements :: verification rule #154
-// [Moiz-A-92-L15] Add EditAnnouncementModal for updating published announcements :: verification rule #173
-// [Moiz-A-92-L16] Add EditAnnouncementModal for updating published announcements :: verification rule #192
-// [Moiz-A-92-L17] Add EditAnnouncementModal for updating published announcements :: verification rule #211
-// [Moiz-A-92-L18] Add EditAnnouncementModal for updating published announcements :: verification rule #230
-// [Moiz-A-92-L19] Add EditAnnouncementModal for updating published announcements :: verification rule #249
-// [Moiz-A-92-L20] Add EditAnnouncementModal for updating published announcements :: verification rule #268
-// [Moiz-A-92-L21] Add EditAnnouncementModal for updating published announcements :: verification rule #287
-// [Moiz-A-92-L22] Add EditAnnouncementModal for updating published announcements :: verification rule #306
-// [Moiz-A-92-L23] Add EditAnnouncementModal for updating published announcements :: verification rule #325
-// [Moiz-A-92-L24] Add EditAnnouncementModal for updating published announcements :: verification rule #344
-// [Moiz-A-92-L25] Add EditAnnouncementModal for updating published announcements :: verification rule #363
-// [Moiz-A-92-L26] Add EditAnnouncementModal for updating published announcements :: verification rule #382
-// [Moiz-A-92-L27] Add EditAnnouncementModal for updating published announcements :: verification rule #401
-// [Moiz-A-92-L28] Add EditAnnouncementModal for updating published announcements :: verification rule #420
-// [Moiz-A-92-L29] Add EditAnnouncementModal for updating published announcements :: verification rule #439
-// [Moiz-A-92-L30] Add EditAnnouncementModal for updating published announcements :: verification rule #458
-// [Moiz-A-92-L31] Add EditAnnouncementModal for updating published announcements :: verification rule #477
-// [Moiz-A-92-L32] Add EditAnnouncementModal for updating published announcements :: verification rule #496
-// [Moiz-A-92-L33] Add EditAnnouncementModal for updating published announcements :: verification rule #515
-// [Moiz-A-92-L34] Add EditAnnouncementModal for updating published announcements :: verification rule #534
-// [Moiz-A-92-L35] Add EditAnnouncementModal for updating published announcements :: verification rule #553
-// [Moiz-A-92-L36] Add EditAnnouncementModal for updating published announcements :: verification rule #572
-// [Moiz-A-92-L37] Add EditAnnouncementModal for updating published announcements :: verification rule #591
-// [Moiz-A-92-L38] Add EditAnnouncementModal for updating published announcements :: verification rule #610
-// [Moiz-A-92-L39] Add EditAnnouncementModal for updating published announcements :: verification rule #629
-// [Moiz-A-92-L40] Add EditAnnouncementModal for updating published announcements :: verification rule #648
-// [Moiz-A-92-L41] Add EditAnnouncementModal for updating published announcements :: verification rule #667
-// [Moiz-A-92-L42] Add EditAnnouncementModal for updating published announcements :: verification rule #686
-// [Moiz-A-92-L43] Add EditAnnouncementModal for updating published announcements :: verification rule #705
-// [Moiz-A-92-L44] Add EditAnnouncementModal for updating published announcements :: verification rule #724
-// [Moiz-A-92-L45] Add EditAnnouncementModal for updating published announcements :: verification rule #743
-// [Moiz-A-92-L46] Add EditAnnouncementModal for updating published announcements :: verification rule #762
-// [Moiz-A-92-L47] Add EditAnnouncementModal for updating published announcements :: verification rule #781
-// [Moiz-A-92-L48] Add EditAnnouncementModal for updating published announcements :: verification rule #800
-// [Moiz-A-92-L49] Add EditAnnouncementModal for updating published announcements :: verification rule #819
-// [Moiz-A-92-L50] Add EditAnnouncementModal for updating published announcements :: verification rule #838
-// [Moiz-A-92-L51] Add EditAnnouncementModal for updating published announcements :: verification rule #857
-// [Moiz-A-92-L52] Add EditAnnouncementModal for updating published announcements :: verification rule #876
-// [Moiz-A-92-L53] Add EditAnnouncementModal for updating published announcements :: verification rule #895
-// [Moiz-A-92-L54] Add EditAnnouncementModal for updating published announcements :: verification rule #914
-// [Moiz-A-92-L55] Add EditAnnouncementModal for updating published announcements :: verification rule #933
-// [Moiz-A-92-L56] Add EditAnnouncementModal for updating published announcements :: verification rule #952
-// === [SPEC-BLOCK-END] ===
+function EditAnnouncementModal({ announcement, onClose, onUpdated }) {
+  const parsed = parseAnnouncementMeta(announcement);
+  const toLocalDateTime = (iso) => {
+    if (!iso) return '';
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return '';
+    return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+  };
+  const getNowLocal = () => new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+  const minDateTime = getNowLocal();
+  const originalPublishLocal = toLocalDateTime(parsed.publishDate);
+  const fileInputRef = useRef(null);
+
+  const [form, setForm] = useState({
+    title: announcement.title || '',
+    content: parsed.cleanContent || '',
+    publishDate: originalPublishLocal || minDateTime,
+    attachmentUrl: parsed.attachmentUrl || '',
+    attachmentName: parsed.attachmentName || '',
+  });
+  const [submitting, setSubmitting] = useState(false);
+  const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
+
+  const handleFileChange = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    if (file.size > 5 * 1024 * 1024) {
+      toast.error('Attachment file size must be under 5MB.');
+      e.target.value = '';
+      return;
+    }
+    try {
+      const dataUrl = await fileToDataUrl(file);
+      setForm((prev) => ({
+        ...prev,
+        attachmentUrl: dataUrl,
+        attachmentName: file.name,
+      }));
+    } catch {
+      toast.error('Failed to read attachment file.');
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const titleCheck = checkTextContent(form.title, { minLength: 3, fieldName: 'Announcement title' });
+    if (!titleCheck.clean) return toast.error(titleCheck.reason);
+
+    const contentCheck = checkTextContent(form.content, { minLength: 5, fieldName: 'Announcement content' });
+    if (!contentCheck.clean) return toast.error(contentCheck.reason);
+
+    if (form.publishDate) {
+      const pubObj = new Date(form.publishDate);
+      if (Number.isNaN(pubObj.getTime())) {
+        return toast.error('Please enter a valid publish date and time.');
+      }
+      const isUnchanged = form.publishDate === originalPublishLocal;
+      if (!isUnchanged && pubObj < new Date(Date.now() - 5 * 60 * 1000)) {
+        return toast.error('Updated publish date and time cannot be set in the past.');
+      }
+    }
+
+    try {
+      setSubmitting(true);
+      const res = await announcementsAPI.update(announcement.id, {
+        title: form.title.trim(),
+        content: form.content.trim(),
+        publishDate: form.publishDate,
+        attachmentUrl: form.attachmentUrl || '',
+        attachmentName: form.attachmentName || '',
+      });
+      onUpdated(res.data.announcement);
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to update announcement.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const inputCls = 'w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium placeholder-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/15 transition-all';
+
+  return (
+    <Modal open={!!announcement} onClose={() => !submitting && onClose()} title="Edit Announcement" subtitle="Update announcement content, publish date, or attachment" icon={Edit3} iconColor="bg-gradient-to-br from-amber-500 to-orange-600">
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Title *</label>
+          <input value={form.title} onChange={(e) => set('title', e.target.value)} className={inputCls} required />
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Content *</label>
+          <textarea value={form.content} onChange={(e) => set('content', e.target.value)} rows={4} className={`${inputCls} resize-none`} required />
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Publish Date *</label>
+            <input
+              type="datetime-local"
+              min={originalPublishLocal && originalPublishLocal < minDateTime ? originalPublishLocal : minDateTime}
+              value={form.publishDate}
+              onChange={(e) => set('publishDate', e.target.value)}
+              className={inputCls}
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Attachment</label>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*,.pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.txt"
+              onChange={handleFileChange}
+              className="hidden"
+            />
+            {form.attachmentUrl ? (
+              <div className="flex items-center justify-between gap-2 px-3 py-2.5 rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-700 text-xs font-bold">
+                <span className="truncate flex items-center gap-1.5">
+                  <Paperclip size={13} className="flex-shrink-0" />
+                  {form.attachmentName || 'Attached file'}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setForm((prev) => ({ ...prev, attachmentUrl: '', attachmentName: '' }));
+                    if (fileInputRef.current) fileInputRef.current.value = '';
+                  }}
+                  className="text-slate-400 hover:text-red-500 cursor-pointer flex-shrink-0"
+                >
+                  <X size={14} />
+                </button>
+              </div>
+            ) : (
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                className="w-full px-3 py-3 rounded-xl border border-dashed border-slate-300 hover:border-indigo-400 bg-slate-50 hover:bg-indigo-50/40 text-xs font-bold text-slate-600 hover:text-indigo-600 flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+              >
+                <Paperclip size={14} />
+                <span>Attach File / Image / PDF</span>
+              </button>
+            )}
+          </div>
+        </div>
+        <div className="flex justify-end gap-2 pt-2">
+          <Button type="button" variant="secondary" onClick={onClose} disabled={submitting}>
+            Cancel
+          </Button>
+          <Button type="submit" loading={submitting} disabled={!form.title.trim() || !form.content.trim()}>
+            Save Changes
+          </Button>
+        </div>
+      </form>
+    </Modal>
+  );
+}
