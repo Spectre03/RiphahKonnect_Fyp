@@ -44,6 +44,21 @@ const updateProfile = async (req, res, next) => {
   try {
     const { name, department, semester, batchYear, bio, avatarUrl, phoneNumber, skills, interests } = req.body;
 
+    if (batchYear) {
+      const parsedYear = parseInt(batchYear, 10);
+      const maxYear = new Date().getFullYear() + 1;
+      if (Number.isNaN(parsedYear) || parsedYear < 2000 || parsedYear > maxYear) {
+        return res.status(400).json({ error: `Batch year must be between 2000 and ${maxYear}.` });
+      }
+    }
+
+    if (semester) {
+      const parsedSem = parseInt(semester, 10);
+      if (Number.isNaN(parsedSem) || parsedSem < 1 || parsedSem > 8) {
+        return res.status(400).json({ error: 'Semester must be between 1 and 8.' });
+      }
+    }
+
     const updated = await prisma.user.update({
       where: { id: req.user.id },
       data: {

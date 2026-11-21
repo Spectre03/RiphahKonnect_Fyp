@@ -387,30 +387,36 @@ export default function EventsPage() {
                       {/* RSVP & Ticket Action */}
                       {user && (
                         <div className="flex items-center justify-between gap-2 mt-3 pt-3 border-t border-slate-50 flex-wrap">
-                          <div className="flex items-center gap-2 flex-wrap">
-                            <span className="text-[11px] text-slate-400 font-bold">RSVP:</span>
-                            {[
-                              { status: 'GOING',      icon: Check,   label: `Going (${event.attendeeCount || 0})`,   active: 'bg-emerald-600 text-white border-emerald-600 shadow-sm shadow-emerald-500/30' },
-                              { status: 'INTERESTED', icon: Star,    label: 'Maybe',   active: 'bg-amber-500 text-white border-amber-500 shadow-sm shadow-amber-500/30' },
-                              { status: 'NOT_GOING',  icon: XCircle, label: "Can't go", active: 'bg-slate-600 text-white border-slate-600' },
-                            ].map(({ status, icon: Icon, label, active }) => {
-                              const isActive = event.myRsvp === status;
-                              return (
-                                <button
-                                  key={status}
-                                  type="button"
-                                  disabled={rsvpLoadingId === event.id}
-                                  onClick={() => handleRsvp(event.id, isActive ? 'REMOVE' : status)}
-                                  className={cn(
-                                    'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold cursor-pointer transition-all border disabled:opacity-50',
-                                    isActive ? active : 'border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-slate-800 hover:border-slate-300'
-                                  )}
-                                >
-                                  <Icon size={11} /> {label}
-                                </button>
-                              );
-                            })}
-                          </div>
+                          {upcoming ? (
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <span className="text-[11px] text-slate-400 font-bold">RSVP:</span>
+                              {[
+                                { status: 'GOING',      icon: Check,   label: `Going (${event.attendeeCount || 0})`,   active: 'bg-emerald-600 text-white border-emerald-600 shadow-sm shadow-emerald-500/30' },
+                                { status: 'INTERESTED', icon: Star,    label: 'Maybe',   active: 'bg-amber-500 text-white border-amber-500 shadow-sm shadow-amber-500/30' },
+                                { status: 'NOT_GOING',  icon: XCircle, label: "Can't go", active: 'bg-slate-600 text-white border-slate-600' },
+                              ].map(({ status, icon: Icon, label, active }) => {
+                                const isActive = event.myRsvp === status;
+                                return (
+                                  <button
+                                    key={status}
+                                    type="button"
+                                    disabled={rsvpLoadingId === event.id}
+                                    onClick={() => handleRsvp(event.id, isActive ? 'REMOVE' : status)}
+                                    className={cn(
+                                      'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold cursor-pointer transition-all border disabled:opacity-50',
+                                      isActive ? active : 'border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-slate-800 hover:border-slate-300'
+                                    )}
+                                  >
+                                    <Icon size={11} /> {label}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          ) : (
+                            <span className="text-[11px] text-slate-400 font-semibold italic">
+                              This event has already taken place ({event.attendeeCount || 0} attended).
+                            </span>
+                          )}
 
                           {upcoming && (
                             <div>
@@ -1248,6 +1254,8 @@ function EventManagerModal({ event, onClose }) {
    3. Create Event Modal (Includes Payment Account Details & Initial Co-Managers)
 ───────────────────────────────────────────────────────────────────────────── */
 function CreateEventModal({ open, onClose, onCreated }) {
+  const getNowLocal = () => new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+  const [minDateTime, setMinDateTime] = useState(getNowLocal);
   const [form, setForm] = useState({
     title: '',
     description: '',
@@ -1265,6 +1273,17 @@ function CreateEventModal({ open, onClose, onCreated }) {
   const [submitting, setSubmitting] = useState(false);
   const fileInputRef = useRef(null);
   const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
+
+  useEffect(() => {
+    if (open) {
+      const currentMin = getNowLocal();
+      setMinDateTime(currentMin);
+      setForm((prev) => ({
+        ...prev,
+        startDate: prev.startDate && prev.startDate >= currentMin ? prev.startDate : currentMin,
+      }));
+    }
+  }, [open]);
 
   const handleImageSelect = async (e) => {
     const file = e.target.files?.[0];
@@ -1310,6 +1329,23 @@ function CreateEventModal({ open, onClose, onCreated }) {
     if (!locCheck.clean) { toast.error(locCheck.reason); return; }
 
     if (!form.startDate) { toast.error('Start date and time are required.'); return; }
+
+    const startObj = new Date(form.startDate);
+    if (Number.isNaN(startObj.getTime())) {
+      toast.error('Please enter a valid start date and time.');
+      return;
+    }
+    if (startObj < new Date(Date.now() - 2 * 60 * 1000)) {
+      toast.error('Event start date and time cannot be in the past. Please choose a present or future date.');
+      return;
+    }
+    if (form.endDate) {
+      const endObj = new Date(form.endDate);
+      if (Number.isNaN(endObj.getTime()) || endObj < startObj) {
+        toast.error('Event end date and time cannot be earlier than the start date.');
+        return;
+      }
+    }
 
     try {
       setSubmitting(true);
@@ -1387,11 +1423,31 @@ function CreateEventModal({ open, onClose, onCreated }) {
         <div className="grid grid-cols-2 gap-3">
           <div>
             <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Start Date *</label>
-            <input type="datetime-local" value={form.startDate} onChange={(e) => set('startDate', e.target.value)} className={inputCls} required />
+            <input
+              type="datetime-local"
+              min={minDateTime}
+              value={form.startDate}
+              onChange={(e) => {
+                const val = e.target.value;
+                setForm((prev) => ({
+                  ...prev,
+                  startDate: val,
+                  endDate: prev.endDate && prev.endDate < val ? val : prev.endDate,
+                }));
+              }}
+              className={inputCls}
+              required
+            />
           </div>
           <div>
             <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">End Date</label>
-            <input type="datetime-local" value={form.endDate} onChange={(e) => set('endDate', e.target.value)} className={inputCls} />
+            <input
+              type="datetime-local"
+              min={form.startDate || minDateTime}
+              value={form.endDate}
+              onChange={(e) => set('endDate', e.target.value)}
+              className={inputCls}
+            />
           </div>
         </div>
         <div className="grid grid-cols-2 gap-3">

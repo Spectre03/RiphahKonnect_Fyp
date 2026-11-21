@@ -110,6 +110,22 @@ const createAnnouncement = async (req, res, next) => {
       ? 'CLASS'
       : 'GENERAL';
 
+    // Validate publishDate is present or future (cannot be created in the past)
+    let createdAtDate = undefined;
+    if (publishDate) {
+      const parsedPublish = new Date(publishDate);
+      if (Number.isNaN(parsedPublish.getTime())) {
+        return res.status(400).json({ error: 'Invalid publish date and time.' });
+      }
+      const nowMinusGrace = new Date(Date.now() - 5 * 60 * 1000); // 5-minute grace for "present"
+      if (parsedPublish < nowMinusGrace) {
+        return res.status(400).json({
+          error: 'Announcement publish date and time cannot be in the past. Please select the present or a future date.',
+        });
+      }
+      createdAtDate = parsedPublish;
+    }
+
     // Encode optional attachment metadata & publishDate cleanly if provided
     let storedContent = content.trim();
     if (attachmentUrl && !storedContent.includes('<!--RK_META:')) {
@@ -125,10 +141,6 @@ const createAnnouncement = async (req, res, next) => {
       };
       storedContent = `${storedContent}\n<!--RK_META:${JSON.stringify(metaObj)}-->`;
     }
-
-    const createdAtDate = publishDate && !Number.isNaN(new Date(publishDate).getTime())
-      ? new Date(publishDate)
-      : undefined;
 
     const announcement = await prisma.announcement.create({
       data: {

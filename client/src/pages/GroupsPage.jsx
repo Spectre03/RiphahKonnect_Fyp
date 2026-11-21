@@ -40,6 +40,8 @@ export default function GroupsPage() {
   const [pagination, setPagination] = useState(null);
   const [page, setPage] = useState(1);
   const [activeTab, setActiveTab] = useState('all');
+  const [leaveTarget, setLeaveTarget] = useState(null);
+  const [leaving, setLeaving] = useState(false);
 
   const fetchGroups = async (p = 1) => {
     try {
@@ -64,13 +66,23 @@ export default function GroupsPage() {
     } catch (err) { toast.error(err.response?.data?.error || 'Failed to join.'); }
   };
 
-  const handleLeave = async (groupId) => {
-    if (!confirm('Leave this group?')) return;
+  const handleLeave = (group) => {
+    setLeaveTarget(group);
+  };
+
+  const confirmLeave = async () => {
+    if (!leaveTarget) return;
     try {
-      await groupsAPI.leave(groupId);
-      setGroups(groups.map((g) => g.id === groupId ? { ...g, isMember: false, myRole: null, memberCount: g.memberCount - 1 } : g));
+      setLeaving(true);
+      await groupsAPI.leave(leaveTarget.id);
+      setGroups(groups.map((g) => g.id === leaveTarget.id ? { ...g, isMember: false, myRole: null, memberCount: g.memberCount - 1 } : g));
+      setLeaveTarget(null);
       toast.success('Left the group.');
-    } catch (err) { toast.error(err.response?.data?.error || 'Failed to leave.'); }
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to leave.');
+    } finally {
+      setLeaving(false);
+    }
   };
 
   const handleCreated = (newGroup) => {
@@ -251,7 +263,7 @@ export default function GroupsPage() {
                         <Badge variant="violet" size="sm">Coordinator</Badge>
                       ) : canJoin ? (
                         <button
-                          onClick={(e) => { e.preventDefault(); handleLeave(group.id); }}
+                          onClick={(e) => { e.preventDefault(); handleLeave(group); }}
                           className="text-[11px] text-red-500 hover:text-red-600 font-bold px-2.5 py-1 hover:bg-red-50 rounded-full cursor-pointer transition-colors"
                         >
                           Leave
@@ -287,6 +299,31 @@ export default function GroupsPage() {
         {canCreate && (
           <CreateGroupModal open={showCreate} onClose={() => setShowCreate(false)} onCreated={handleCreated} />
         )}
+
+        {/* Leave Group Confirmation Modal */}
+        <Modal
+          open={Boolean(leaveTarget)}
+          onClose={() => !leaving && setLeaveTarget(null)}
+          title="Leave Semester Group"
+          subtitle="You can rejoin this group later if needed"
+          icon={Users}
+          iconColor="bg-gradient-to-br from-red-500 to-rose-600"
+          size="sm"
+        >
+          <div className="space-y-4">
+            <p className="text-sm text-slate-600">
+              Are you sure you want to leave <span className="font-bold text-slate-900">&ldquo;{leaveTarget?.name}&rdquo;</span>?
+            </p>
+            <div className="flex justify-end gap-2 pt-2">
+              <Button variant="secondary" onClick={() => setLeaveTarget(null)} disabled={leaving}>
+                Cancel
+              </Button>
+              <Button variant="danger" onClick={confirmLeave} loading={leaving}>
+                Leave Group
+              </Button>
+            </div>
+          </div>
+        </Modal>
       </div>
     </div>
   );

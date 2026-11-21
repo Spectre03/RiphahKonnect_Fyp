@@ -128,6 +128,27 @@ const createEvent = async (req, res, next) => {
       if (!imgCheck.safe) return res.status(400).json({ error: imgCheck.reason });
     }
 
+    // Strict date validations: Start date cannot be in the past; End date must be >= Start date
+    const parsedStart = new Date(startDate);
+    if (Number.isNaN(parsedStart.getTime())) {
+      return res.status(400).json({ error: 'Invalid start date and time.' });
+    }
+    const nowMinusGrace = new Date(Date.now() - 2 * 60 * 1000); // 2-minute grace window for "present"
+    if (parsedStart < nowMinusGrace) {
+      return res.status(400).json({ error: 'Event start date and time cannot be in the past. Please choose a present or future date.' });
+    }
+
+    let parsedEnd = null;
+    if (endDate) {
+      parsedEnd = new Date(endDate);
+      if (Number.isNaN(parsedEnd.getTime())) {
+        return res.status(400).json({ error: 'Invalid end date and time.' });
+      }
+      if (parsedEnd < parsedStart) {
+        return res.status(400).json({ error: 'Event end date and time cannot be earlier than the start date.' });
+      }
+    }
+
     const parsedPrice = price !== undefined && price !== '' ? Math.max(0, parseFloat(price) || 0) : 0;
     const parsedCapacity = capacity !== undefined && capacity !== '' ? Math.max(1, parseInt(capacity) || 1) : null;
 
@@ -294,14 +315,30 @@ const updateEvent = async (req, res, next) => {
     if (!perm.allowed) return res.status(403).json({ error: 'Not authorized.' });
 
     const event = perm.event;
+    const nextStart = req.body.startDate ? new Date(req.body.startDate) : event.startDate;
+    const nextEnd = req.body.endDate ? new Date(req.body.endDate) : event.endDate;
+
+    if (req.body.startDate) {
+      if (Number.isNaN(nextStart.getTime())) {
+        return res.status(400).json({ error: 'Invalid start date and time.' });
+      }
+      const nowMinusGrace = new Date(Date.now() - 2 * 60 * 1000);
+      if (nextStart < nowMinusGrace) {
+        return res.status(400).json({ error: 'Event start date and time cannot be set in the past.' });
+      }
+    }
+    if (nextEnd && nextEnd < nextStart) {
+      return res.status(400).json({ error: 'Event end date and time cannot be earlier than the start date.' });
+    }
+
     const updated = await prisma.event.update({
       where: { id: req.params.id },
       data: {
         title: req.body.title ?? event.title,
         description: req.body.description ?? event.description,
         location: req.body.location ?? event.location,
-        startDate: req.body.startDate ? new Date(req.body.startDate) : event.startDate,
-        endDate: req.body.endDate ? new Date(req.body.endDate) : event.endDate,
+        startDate: nextStart,
+        endDate: nextEnd,
         imageUrl: req.body.imageUrl ?? event.imageUrl,
         paymentDetails: req.body.paymentDetails ?? event.paymentDetails,
       },
@@ -430,6 +467,10 @@ const rsvpEvent = async (req, res, next) => {
 
     const event = await prisma.event.findUnique({ where: { id: eventId } });
     if (!event) return res.status(404).json({ error: 'Event not found.' });
+
+    if (new Date(event.startDate) < new Date()) {
+      return res.status(400).json({ error: 'Cannot change RSVP for an event that has already passed.' });
+    }
 
     const existing = await prisma.eventRsvp.findUnique({
       where: { userId_eventId: { userId, eventId } },

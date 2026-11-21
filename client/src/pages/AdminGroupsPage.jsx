@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { adminAPI } from '../services/api';
 import { cn } from '../utils/cn';
-import { Card, Badge } from '../components/ui';
+import { Card, Badge, Modal, Button } from '../components/ui';
 import { DEPARTMENTS, SEMESTERS } from '../utils/constants';
 import toast from 'react-hot-toast';
 import {
@@ -31,6 +31,7 @@ export default function AdminGroupsPage() {
   const [page,       setPage]       = useState(1);
   const [filters,    setFilters]    = useState({ search: '', department: '', semester: '' });
   const [applied,    setApplied]    = useState({ search: '', department: '', semester: '' });
+  const [deleteTarget, setDeleteTarget] = useState(null);
 
   const fetchGroups = useCallback(async (p = 1, f = applied) => {
     try {
@@ -53,13 +54,15 @@ export default function AdminGroupsPage() {
     setApplied({ ...filters });
   };
 
-  const handleDelete = async (id, name) => {
-    if (!confirm(`Delete "${name}"? All posts and members will be removed.`)) return;
+  const confirmDeleteGroup = async () => {
+    if (!deleteTarget) return;
+    const { id } = deleteTarget;
     setDeleting((p) => ({ ...p, [id]: true }));
     try {
       await adminAPI.deleteGroup(id);
       setGroups((prev) => prev.filter((g) => g.id !== id));
       if (pagination) setPagination((p) => ({ ...p, total: p.total - 1 }));
+      setDeleteTarget(null);
       toast.success('Group deleted.');
     } catch (err) {
       toast.error(err.response?.data?.error || 'Failed to delete.');
@@ -212,7 +215,7 @@ export default function AdminGroupsPage() {
                           </span>
                         </div>
                         <button
-                          onClick={() => handleDelete(group.id, group.name)}
+                          onClick={() => setDeleteTarget(group)}
                           disabled={isDel}
                           className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-red-600 bg-red-50 border border-red-100 hover:bg-red-100 transition-all cursor-pointer disabled:opacity-50"
                         >
@@ -254,6 +257,31 @@ export default function AdminGroupsPage() {
             )}
           </>
         )}
+
+        {/* Delete Group Confirmation Modal */}
+        <Modal
+          open={Boolean(deleteTarget)}
+          onClose={() => !deleting[deleteTarget?.id] && setDeleteTarget(null)}
+          title="Delete Semester Group"
+          subtitle="All posts, members, and chats in this group will be permanently deleted"
+          icon={Trash2}
+          iconColor="bg-gradient-to-br from-red-500 to-rose-600"
+          size="sm"
+        >
+          <div className="space-y-4">
+            <p className="text-sm text-slate-600">
+              Are you sure you want to delete <span className="font-bold text-slate-900">&ldquo;{deleteTarget?.name}&rdquo;</span>?
+            </p>
+            <div className="flex justify-end gap-2 pt-2">
+              <Button variant="secondary" onClick={() => setDeleteTarget(null)} disabled={Boolean(deleting[deleteTarget?.id])}>
+                Cancel
+              </Button>
+              <Button variant="danger" onClick={confirmDeleteGroup} loading={Boolean(deleting[deleteTarget?.id])} icon={Trash2}>
+                Delete Group
+              </Button>
+            </div>
+          </div>
+        </Modal>
       </div>
     </div>
   );

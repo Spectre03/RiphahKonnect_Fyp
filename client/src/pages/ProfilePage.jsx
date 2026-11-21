@@ -6,7 +6,7 @@ import { useOnlineUsers } from '../services/socket';
 import { timeAgo, getAvatarGradient, formatDate } from '../utils/brand';
 import { cn } from '../utils/cn';
 import { validateImageFile, fileToDataUrl } from '../utils/moderation';
-import { Card, Button, Badge, Avatar } from '../components/ui';
+import { Card, Button, Badge, Avatar, Modal } from '../components/ui';
 import toast from 'react-hot-toast';
 import {
   Mail, BookOpen, GraduationCap, Edit3, Save, X, Loader2,
@@ -61,11 +61,13 @@ export default function ProfilePage() {
   const [newSkill, setNewSkill] = useState('');
   const [newInterest, setNewInterest] = useState('');
   const [tab, setTab] = useState('about');
+  const [deletePostId, setDeletePostId] = useState(null);
+  const [deletingPost, setDeletingPost] = useState(false);
   const avatarInputRef = useRef(null);
 
   const isOwnProfile = !id || id === currentUser?.id;
   const profileId = id || currentUser?.id;
-  const isOnline = isOwnProfile ? true : onlineUsers.includes(profileId);
+  const isOnline = isOwnProfile ? true : Boolean(onlineUsers?.has ? onlineUsers.has(profileId) : onlineUsers?.includes?.(profileId));
 
   useEffect(() => {
     const load = async () => {
@@ -178,13 +180,23 @@ export default function ProfilePage() {
     } catch { toast.error('Failed to like post.'); }
   };
 
-  const handleDeletePost = async (postId) => {
-    if (!confirm('Delete this post?')) return;
+  const handleDeletePost = (postId) => {
+    setDeletePostId(postId);
+  };
+
+  const confirmDeletePost = async () => {
+    if (!deletePostId) return;
     try {
-      await postsAPI.delete(postId);
-      setPosts(posts.filter((p) => p.id !== postId));
+      setDeletingPost(true);
+      await postsAPI.delete(deletePostId);
+      setPosts(posts.filter((p) => p.id !== deletePostId));
+      setDeletePostId(null);
       toast.success('Post deleted.');
-    } catch { toast.error('Failed to delete.'); }
+    } catch {
+      toast.error('Failed to delete.');
+    } finally {
+      setDeletingPost(false);
+    }
   };
 
   if (loading) {
@@ -472,6 +484,8 @@ export default function ProfilePage() {
                       <label className="block text-xs font-semibold text-slate-500 mb-1.5">Batch Year</label>
                       <input
                         type="number"
+                        min="2000"
+                        max={new Date().getFullYear() + 1}
                         value={editData.batchYear}
                         onChange={(e) => setEditData({ ...editData, batchYear: e.target.value })}
                         placeholder="e.g. 2024"
@@ -707,6 +721,31 @@ export default function ProfilePage() {
             )}
           </div>
         )}
+
+        {/* Delete Post Confirmation Modal */}
+        <Modal
+          open={Boolean(deletePostId)}
+          onClose={() => !deletingPost && setDeletePostId(null)}
+          title="Delete Post"
+          subtitle="This action cannot be undone"
+          icon={Trash2}
+          iconColor="bg-gradient-to-br from-red-500 to-rose-600"
+          size="sm"
+        >
+          <div className="space-y-4">
+            <p className="text-sm text-slate-600">
+              Are you sure you want to delete this post from your profile?
+            </p>
+            <div className="flex justify-end gap-2 pt-2">
+              <Button variant="secondary" onClick={() => setDeletePostId(null)} disabled={deletingPost}>
+                Cancel
+              </Button>
+              <Button variant="danger" onClick={confirmDeletePost} loading={deletingPost} icon={Trash2}>
+                Delete Post
+              </Button>
+            </div>
+          </div>
+        </Modal>
       </div>
     </div>
   );

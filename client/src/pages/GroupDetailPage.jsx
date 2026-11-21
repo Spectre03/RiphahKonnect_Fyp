@@ -5,7 +5,7 @@ import { groupsAPI, postsAPI } from '../services/api';
 import { useOnlineUsers } from '../services/socket';
 import { timeAgo } from '../utils/brand';
 import { cn } from '../utils/cn';
-import { Card, Button, Badge, Avatar } from '../components/ui';
+import { Card, Button, Badge, Avatar, Modal } from '../components/ui';
 import GroupChat from '../components/groups/GroupChat';
 import toast from 'react-hot-toast';
 import {
@@ -31,6 +31,8 @@ export default function GroupDetailPage() {
   const [showEdit, setShowEdit] = useState(false);
   const [editName, setEditName] = useState('');
   const [editDesc, setEditDesc] = useState('');
+  const [confirmAction, setConfirmAction] = useState(null); // { type: 'deletePost' | 'leaveGroup' | 'archiveGroup' | 'deleteGroup' | 'removeMember', payload }
+  const [confirmSubmitting, setConfirmSubmitting] = useState(false);
 
   useEffect(() => {
     const load = async () => {
@@ -82,15 +84,8 @@ export default function GroupDetailPage() {
     }
   };
 
-  const handleDeletePost = async (postId) => {
-    if (!confirm('Delete this post?')) return;
-    try {
-      await postsAPI.delete(postId);
-      setPosts(posts.filter((p) => p.id !== postId));
-      toast.success('Post deleted.');
-    } catch {
-      toast.error('Failed to delete.');
-    }
+  const handleDeletePost = (postId) => {
+    setConfirmAction({ type: 'deletePost', payload: postId });
   };
 
   const handleJoin = async () => {
@@ -103,36 +98,53 @@ export default function GroupDetailPage() {
     }
   };
 
-  const handleLeave = async () => {
-    if (!confirm('Leave this group?')) return;
+  const handleLeave = () => {
+    setConfirmAction({ type: 'leaveGroup' });
+  };
+
+  const handleArchive = () => {
+    setConfirmAction({ type: 'archiveGroup' });
+  };
+
+  const handleDeleteGroup = () => {
+    setConfirmAction({ type: 'deleteGroup' });
+  };
+
+  const executeConfirmAction = async () => {
+    if (!confirmAction) return;
     try {
-      await groupsAPI.leave(id);
-      setGroup({ ...group, isMember: false, myRole: null, memberCount: group.memberCount - 1 });
-      toast.success('Left the group.');
+      setConfirmSubmitting(true);
+      const { type, payload } = confirmAction;
+      if (type === 'deletePost') {
+        await postsAPI.delete(payload);
+        setPosts(posts.filter((p) => p.id !== payload));
+        toast.success('Post deleted.');
+      } else if (type === 'leaveGroup') {
+        await groupsAPI.leave(id);
+        setGroup({ ...group, isMember: false, myRole: null, memberCount: group.memberCount - 1 });
+        toast.success('Left the group.');
+      } else if (type === 'archiveGroup') {
+        const res = await groupsAPI.archive(id);
+        setGroup({ ...group, isArchived: res.data.group.isArchived });
+        toast.success(res.data.group.isArchived ? 'Group archived.' : 'Group unarchived.');
+      } else if (type === 'deleteGroup') {
+        await groupsAPI.delete(id);
+        toast.success('Group deleted.');
+        navigate('/groups');
+      } else if (type === 'removeMember') {
+        await groupsAPI.removeMember(id, payload);
+        setGroup({
+          ...group,
+          members: group.members.filter((m) => m.userId !== payload),
+          memberCount: group.memberCount - 1,
+        });
+        toast.success('User removed.');
+      }
+      setConfirmAction(null);
     } catch (err) {
-      toast.error(err.response?.data?.error || 'Failed to leave.');
-    }
-  };
-
-  const handleArchive = async () => {
-    if (!confirm(`Are you sure you want to ${group.isArchived ? 'unarchive' : 'archive'} this group?`)) return;
-    try {
-      const res = await groupsAPI.archive(id);
-      setGroup({ ...group, isArchived: res.data.group.isArchived });
-      toast.success(res.data.group.isArchived ? 'Group archived.' : 'Group unarchived.');
-    } catch {
-      toast.error('Failed to toggle archive status.');
-    }
-  };
-
-  const handleDeleteGroup = async () => {
-    if (!confirm('Are you ABSOLUTELY sure you want to delete this group? All posts and chats will be permanently lost.')) return;
-    try {
-      await groupsAPI.delete(id);
-      toast.success('Group deleted.');
-      navigate('/groups');
-    } catch {
-      toast.error('Failed to delete group.');
+      toast.error(err.response?.data?.error || 'Action failed.');
+    } finally {
+      setConfirmSubmitting(false);
     }
   };
 
@@ -149,21 +161,10 @@ export default function GroupDetailPage() {
     }
   };
 
-  const handleRemoveMember = async (e, userId) => {
+  const handleRemoveMember = (e, userId) => {
     e.preventDefault();
     e.stopPropagation();
-    if (!confirm('Remove this user from the group?')) return;
-    try {
-      await groupsAPI.removeMember(id, userId);
-      setGroup({
-        ...group,
-        members: group.members.filter(m => m.userId !== userId),
-        memberCount: group.memberCount - 1
-      });
-      toast.success('User removed.');
-    } catch {
-      toast.error('Failed to remove user.');
-    }
+    setConfirmAction({ type: 'removeMember', payload: userId });
   };
 
   if (loading) {
@@ -389,7 +390,7 @@ export default function GroupDetailPage() {
               group.members.map((member, i) => {
                 const isCoord = member.role === 'COORDINATOR';
                 const memberId = member.user?.id || member.userId;
-                const isMemberOnline = memberId === user?.id || onlineUsers.includes(memberId);
+                const isMemberOnline = memberId === user?.id || Boolean(onlineUsers?.has ? onlineUsers.has(memberId) : onlineUsers?.includes?.(memberId));
                 return (
                   <Link
                     key={member.id}
@@ -484,6 +485,49 @@ export default function GroupDetailPage() {
           </div>
         </div>
       )}
+
+      {/* Confirmation Pop-up Modal */}
+      <Modal
+        open={Boolean(confirmAction)}
+        onClose={() => !confirmSubmitting && setConfirmAction(null)}
+        title={
+          confirmAction?.type === 'deleteGroup'
+            ? 'Delete Semester Group'
+            : confirmAction?.type === 'archiveGroup'
+            ? `${group.isArchived ? 'Unarchive' : 'Archive'} Semester Group`
+            : confirmAction?.type === 'leaveGroup'
+            ? 'Leave Semester Group'
+            : confirmAction?.type === 'removeMember'
+            ? 'Remove Member'
+            : 'Delete Group Post'
+        }
+        subtitle="Please confirm this action"
+        icon={Trash2}
+        iconColor="bg-gradient-to-br from-red-500 to-rose-600"
+        size="sm"
+      >
+        <div className="space-y-4">
+          <p className="text-sm text-slate-600 leading-relaxed">
+            {confirmAction?.type === 'deleteGroup'
+              ? 'Are you sure you want to permanently delete this group? All posts and group chats will be lost.'
+              : confirmAction?.type === 'archiveGroup'
+              ? `Are you sure you want to ${group.isArchived ? 'unarchive' : 'archive'} this group?`
+              : confirmAction?.type === 'leaveGroup'
+              ? 'Are you sure you want to leave this semester group?'
+              : confirmAction?.type === 'removeMember'
+              ? 'Are you sure you want to remove this member from the group?'
+              : 'Are you sure you want to delete this post?'}
+          </p>
+          <div className="flex justify-end gap-2 pt-2">
+            <Button variant="secondary" onClick={() => setConfirmAction(null)} disabled={confirmSubmitting}>
+              Cancel
+            </Button>
+            <Button variant="danger" onClick={executeConfirmAction} loading={confirmSubmitting}>
+              Confirm
+            </Button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 }

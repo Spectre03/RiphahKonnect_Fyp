@@ -5,7 +5,7 @@ import { postsAPI } from '../services/api';
 import { timeAgo } from '../utils/brand';
 import { cn } from '../utils/cn';
 import { checkTextContent, validateImageFile, fileToDataUrl } from '../utils/moderation';
-import { Card, Button, Avatar } from '../components/ui';
+import { Card, Button, Avatar, Modal } from '../components/ui';
 import toast from 'react-hot-toast';
 import {
   Heart, MessageCircle, Send, Trash2, Loader2,
@@ -93,6 +93,8 @@ export default function FeedPage() {
   const [posting, setPosting] = useState(false);
   const [expandedComments, setExpandedComments] = useState({});
   const [filterType, setFilterType] = useState('ALL');
+  const [deleteTargetId, setDeleteTargetId] = useState(null);
+  const [deletingPost, setDeletingPost] = useState(false);
   const fileInputRef = useRef(null);
 
   const fetchPosts = async (p = 1, type = filterType) => {
@@ -219,13 +221,23 @@ export default function FeedPage() {
     } catch { toast.error('Failed to like post.'); }
   };
 
-  const handleDelete = async (postId) => {
-    if (!confirm('Delete this post?')) return;
+  const handleDelete = (postId) => {
+    setDeleteTargetId(postId);
+  };
+
+  const confirmDeletePost = async () => {
+    if (!deleteTargetId) return;
     try {
-      await postsAPI.delete(postId);
-      setPosts(posts.filter((p) => p.id !== postId));
+      setDeletingPost(true);
+      await postsAPI.delete(deleteTargetId);
+      setPosts(posts.filter((p) => p.id !== deleteTargetId));
+      setDeleteTargetId(null);
       toast.success('Post deleted.');
-    } catch { toast.error('Failed to delete post.'); }
+    } catch {
+      toast.error('Failed to delete post.');
+    } finally {
+      setDeletingPost(false);
+    }
   };
 
   const handleCommentCountChange = (postId, delta) => {
@@ -472,6 +484,31 @@ export default function FeedPage() {
             )}
           </div>
         )}
+
+        {/* Delete Post Confirmation Modal */}
+        <Modal
+          open={Boolean(deleteTargetId)}
+          onClose={() => !deletingPost && setDeleteTargetId(null)}
+          title="Delete Post"
+          subtitle="This action will permanently remove this post from the feed"
+          icon={Trash2}
+          iconColor="bg-gradient-to-br from-red-500 to-rose-600"
+          size="sm"
+        >
+          <div className="space-y-4">
+            <p className="text-sm text-slate-600">
+              Are you sure you want to delete this post? This cannot be undone.
+            </p>
+            <div className="flex justify-end gap-2 pt-2">
+              <Button variant="secondary" onClick={() => setDeleteTargetId(null)} disabled={deletingPost}>
+                Cancel
+              </Button>
+              <Button variant="danger" onClick={confirmDeletePost} loading={deletingPost} icon={Trash2}>
+                Delete Post
+              </Button>
+            </div>
+          </div>
+        </Modal>
       </div>
     </div>
   );

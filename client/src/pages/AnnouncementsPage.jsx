@@ -378,7 +378,8 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
   const { user } = useAuth();
   const availableDepts = getDepartmentsForUser(user);
   const defaultType = userRole === 'TEACHER' ? 'CLASS' : 'GENERAL';
-  const nowLocal = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+  const getNowLocal = () => new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+  const [minDateTime, setMinDateTime] = useState(getNowLocal);
   const fileInputRef = useRef(null);
   
   const [form, setForm] = useState({
@@ -387,13 +388,24 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
     type: defaultType,
     targetDepartments: [], 
     targetSemesters: [],
-    publishDate: nowLocal,
+    publishDate: getNowLocal(),
     attachmentUrl: '',
     attachmentName: '',
   });
   
   const [submitting, setSubmitting] = useState(false);
   const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
+
+  useEffect(() => {
+    if (open) {
+      const currentMin = getNowLocal();
+      setMinDateTime(currentMin);
+      setForm((prev) => ({
+        ...prev,
+        publishDate: prev.publishDate && prev.publishDate >= currentMin ? prev.publishDate : currentMin,
+      }));
+    }
+  }, [open]);
 
   const handleFileChange = async (e) => {
     const file = e.target.files?.[0];
@@ -459,6 +471,16 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
 
     const contentCheck = checkTextContent(form.content, { minLength: 5, fieldName: 'Announcement content' });
     if (!contentCheck.clean) return toast.error(contentCheck.reason);
+
+    if (form.publishDate) {
+      const pubObj = new Date(form.publishDate);
+      if (Number.isNaN(pubObj.getTime())) {
+        return toast.error('Please enter a valid publish date and time.');
+      }
+      if (pubObj < new Date(Date.now() - 5 * 60 * 1000)) {
+        return toast.error('Publish date and time cannot be in the past. Please choose the present or a future date.');
+      }
+    }
     
     const payload = { ...form };
     if (payload.type === 'CLASS') {
@@ -481,7 +503,7 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
         type: defaultType,
         targetDepartments: [],
         targetSemesters: [],
-        publishDate: nowLocal,
+        publishDate: getNowLocal(),
         attachmentUrl: '',
         attachmentName: '',
       });
@@ -533,6 +555,7 @@ function CreateAnnouncementModal({ open, onClose, onCreated, userRole }) {
             <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Publish Date *</label>
             <input
               type="datetime-local"
+              min={minDateTime}
               value={form.publishDate}
               onChange={(e) => set('publishDate', e.target.value)}
               className={inputCls}
