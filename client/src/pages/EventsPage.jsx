@@ -10,7 +10,7 @@ import {
   MapPin, Clock, Users, Plus, Loader2,
   Check, Star, XCircle, CalendarDays, Trash2, Sparkles,
   Image as ImageIcon, X, AlertTriangle, Ticket as TicketIcon,
-  ShieldCheck, Upload, Eye, CheckCircle2, UserPlus, Search, KeyRound,
+  ShieldCheck, Upload, Eye, CheckCircle2, UserPlus, Search, KeyRound, Edit3,
 } from 'lucide-react';
 
 const CAN_CREATE  = ['TEACHER', 'COORDINATION', 'UNIVERSITY_ADMIN', 'SYSTEM_ADMIN'];
@@ -33,6 +33,9 @@ export default function EventsPage() {
 
   // Event Manager Control Center Modal State
   const [managingEvent, setManagingEvent] = useState(null);
+
+  // Edit Event Modal State
+  const [editingEvent, setEditingEvent] = useState(null);
 
   const fetchEvents = async (p = 1) => {
     try {
@@ -123,6 +126,14 @@ export default function EventsPage() {
     setEvents([event, ...events]);
     setShowCreate(false);
     toast.success('Event created!');
+  };
+
+  const handleUpdated = (updatedEvent) => {
+    setEvents((prev) =>
+      prev.map((ev) => (ev.id === updatedEvent.id ? { ...ev, ...updatedEvent } : ev))
+    );
+    setEditingEvent(null);
+    toast.success('Event updated successfully!');
   };
 
   const handleTicketSubmitted = (eventId) => {
@@ -338,20 +349,31 @@ export default function EventsPage() {
 
                         <div className="flex items-center gap-1.5 flex-shrink-0">
                           {isManager && (
-                            <button
-                              type="button"
-                              onClick={() => setManagingEvent(event)}
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[11px] font-bold text-white shadow-sm cursor-pointer transition-all"
-                              style={{ background: 'linear-gradient(135deg, #1a2b6b, #2251b8)' }}
-                            >
-                              <ShieldCheck size={13} />
-                              Manage Tickets
-                              {event.pendingTicketCount > 0 && (
-                                <span className="ml-0.5 px-1.5 py-0.2 rounded-full bg-amber-400 text-[#0c1a4a] text-[10px] font-extrabold">
-                                  {event.pendingTicketCount}
-                                </span>
-                              )}
-                            </button>
+                            <>
+                              <button
+                                type="button"
+                                onClick={() => setEditingEvent(event)}
+                                className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-[11px] font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 cursor-pointer transition-all"
+                                title="Edit event details"
+                              >
+                                <Edit3 size={12} />
+                                Edit
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() => setManagingEvent(event)}
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[11px] font-bold text-white shadow-sm cursor-pointer transition-all"
+                                style={{ background: 'linear-gradient(135deg, #1a2b6b, #2251b8)' }}
+                              >
+                                <ShieldCheck size={13} />
+                                Manage Tickets
+                                {event.pendingTicketCount > 0 && (
+                                  <span className="ml-0.5 px-1.5 py-0.2 rounded-full bg-amber-400 text-[#0c1a4a] text-[10px] font-extrabold">
+                                    {event.pendingTicketCount}
+                                  </span>
+                                )}
+                              </button>
+                            </>
                           )}
                           {showDelete && (
                             <button
@@ -467,6 +489,15 @@ export default function EventsPage() {
             open={showCreate}
             onClose={() => setShowCreate(false)}
             onCreated={handleCreated}
+          />
+        )}
+
+        {/* Edit Event Modal */}
+        {editingEvent && (
+          <EditEventModal
+            event={editingEvent}
+            onClose={() => setEditingEvent(null)}
+            onUpdated={handleUpdated}
           />
         )}
 
@@ -1575,54 +1606,257 @@ function CreateEventModal({ open, onClose, onCreated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-88 (2026-11-19T16:15:53+05:00) ===
-// [Airaf-A-88-L1] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #687
-// [Airaf-A-88-L2] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #706
-// [Airaf-A-88-L3] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #725
-// [Airaf-A-88-L4] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #744
-// [Airaf-A-88-L5] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #763
-// [Airaf-A-88-L6] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #782
-// [Airaf-A-88-L7] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #801
-// [Airaf-A-88-L8] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #820
-// [Airaf-A-88-L9] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #839
-// [Airaf-A-88-L10] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #858
-// [Airaf-A-88-L11] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #877
-// [Airaf-A-88-L12] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #896
-// [Airaf-A-88-L13] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #915
-// [Airaf-A-88-L14] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #934
-// [Airaf-A-88-L15] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #953
-// [Airaf-A-88-L16] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #972
-// [Airaf-A-88-L17] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #991
-// [Airaf-A-88-L18] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #13
-// [Airaf-A-88-L19] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #32
-// [Airaf-A-88-L20] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #51
-// [Airaf-A-88-L21] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #70
-// [Airaf-A-88-L22] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #89
-// [Airaf-A-88-L23] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #108
-// [Airaf-A-88-L24] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #127
-// [Airaf-A-88-L25] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #146
-// [Airaf-A-88-L26] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #165
-// [Airaf-A-88-L27] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #184
-// [Airaf-A-88-L28] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #203
-// [Airaf-A-88-L29] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #222
-// [Airaf-A-88-L30] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #241
-// [Airaf-A-88-L31] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #260
-// [Airaf-A-88-L32] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #279
-// [Airaf-A-88-L33] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #298
-// [Airaf-A-88-L34] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #317
-// [Airaf-A-88-L35] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #336
-// [Airaf-A-88-L36] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #355
-// [Airaf-A-88-L37] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #374
-// [Airaf-A-88-L38] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #393
-// [Airaf-A-88-L39] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #412
-// [Airaf-A-88-L40] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #431
-// [Airaf-A-88-L41] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #450
-// [Airaf-A-88-L42] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #469
-// [Airaf-A-88-L43] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #488
-// [Airaf-A-88-L44] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #507
-// [Airaf-A-88-L45] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #526
-// [Airaf-A-88-L46] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #545
-// [Airaf-A-88-L47] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #564
-// [Airaf-A-88-L48] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #583
-// [Airaf-A-88-L49] Add custom Reject Payment Slip modal with preset reason chips :: verification rule #602
-// === [SPEC-BLOCK-END] ===
+/* ─────────────────────────────────────────────────────────────────────────────
+   4. Edit Event Modal (Update Event Title, Description, Location, Dates, Price, Capacity, Payment Details & Picture)
+───────────────────────────────────────────────────────────────────────────── */
+function EditEventModal({ event, onClose, onUpdated }) {
+  const toLocalDateTime = (iso) => {
+    if (!iso) return '';
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return '';
+    return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+  };
+  const getNowLocal = () => new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+  const minDateTime = getNowLocal();
+  const originalStartLocal = toLocalDateTime(event.startDate);
+
+  const [form, setForm] = useState({
+    title: event.title || '',
+    description: event.description || '',
+    location: event.location || '',
+    startDate: originalStartLocal,
+    endDate: toLocalDateTime(event.endDate),
+    price: event.price !== undefined && event.price !== null ? String(event.price) : '0',
+    capacity: event.capacity !== undefined && event.capacity !== null ? String(event.capacity) : '',
+    paymentDetails: event.paymentDetails || '',
+  });
+  const [imagePreview, setImagePreview] = useState(event.imageUrl || '');
+  const [submitting, setSubmitting] = useState(false);
+  const fileInputRef = useRef(null);
+  const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
+
+  const handleImageSelect = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const validation = validateImageFile(file);
+    if (!validation.valid) {
+      toast.error(validation.reason);
+      e.target.value = '';
+      return;
+    }
+    try {
+      const dataUrl = await fileToDataUrl(file);
+      setImagePreview(dataUrl);
+    } catch {
+      toast.error('Failed to read image file.');
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const titleCheck = checkTextContent(form.title, { minLength: 3, fieldName: 'Event title' });
+    if (!titleCheck.clean) { toast.error(titleCheck.reason); return; }
+
+    const descCheck = checkTextContent(form.description, { minLength: 10, fieldName: 'Event description' });
+    if (!descCheck.clean) { toast.error(descCheck.reason); return; }
+
+    const locCheck = checkTextContent(form.location, { minLength: 2, fieldName: 'Event location' });
+    if (!locCheck.clean) { toast.error(locCheck.reason); return; }
+
+    if (!form.startDate) { toast.error('Start date and time are required.'); return; }
+
+    const startObj = new Date(form.startDate);
+    if (Number.isNaN(startObj.getTime())) {
+      toast.error('Please enter a valid start date and time.');
+      return;
+    }
+    const isUnchangedStart = form.startDate === originalStartLocal;
+    if (!isUnchangedStart && startObj < new Date(Date.now() - 2 * 60 * 1000)) {
+      toast.error('Updated start date and time cannot be set in the past. Please choose a present or future date.');
+      return;
+    }
+    if (form.endDate) {
+      const endObj = new Date(form.endDate);
+      if (Number.isNaN(endObj.getTime()) || endObj < startObj) {
+        toast.error('Event end date and time cannot be earlier than the start date.');
+        return;
+      }
+    }
+
+    const activeTickets = event.ticketCount || 0;
+    if (form.capacity !== '' && parseInt(form.capacity, 10) < activeTickets) {
+      toast.error(`Seat capacity cannot be less than the ${activeTickets} tickets already reserved.`);
+      return;
+    }
+
+    try {
+      setSubmitting(true);
+      const res = await eventsAPI.update(event.id, {
+        title: form.title.trim(),
+        description: form.description.trim(),
+        location: form.location.trim(),
+        startDate: form.startDate,
+        endDate: form.endDate || null,
+        price: form.price !== '' ? parseFloat(form.price) : 0,
+        capacity: form.capacity !== '' ? parseInt(form.capacity, 10) : null,
+        paymentDetails: form.paymentDetails.trim() || null,
+        imageUrl: imagePreview || null,
+      });
+      onUpdated(res.data.event);
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to update event.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const inputCls = 'w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium placeholder-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/15 transition-all';
+
+  return (
+    <Modal
+      open={!!event}
+      onClose={() => !submitting && onClose()}
+      title="Edit Event Details"
+      subtitle="Update event schedule, venue, capacity, payment instructions, or poster picture"
+      icon={Edit3}
+      iconColor="bg-gradient-to-br from-indigo-600 to-blue-600"
+    >
+      <form onSubmit={handleSubmit} className="space-y-3.5">
+        <div>
+          <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Title *</label>
+          <input
+            value={form.title}
+            onChange={(e) => set('title', e.target.value)}
+            placeholder="Event title"
+            className={inputCls}
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Description * <span className="text-[10px] text-slate-400 normal-case">(min 10 chars)</span></label>
+          <textarea
+            value={form.description}
+            onChange={(e) => set('description', e.target.value)}
+            rows={2}
+            className={`${inputCls} resize-none`}
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Location *</label>
+          <input
+            value={form.location}
+            onChange={(e) => set('location', e.target.value)}
+            className={inputCls}
+            required
+          />
+        </div>
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Start Date *</label>
+            <input
+              type="datetime-local"
+              min={originalStartLocal && originalStartLocal < minDateTime ? originalStartLocal : minDateTime}
+              value={form.startDate}
+              onChange={(e) => {
+                const val = e.target.value;
+                setForm((prev) => ({
+                  ...prev,
+                  startDate: val,
+                  endDate: prev.endDate && prev.endDate < val ? val : prev.endDate,
+                }));
+              }}
+              className={inputCls}
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">End Date</label>
+            <input
+              type="datetime-local"
+              min={form.startDate || minDateTime}
+              value={form.endDate}
+              onChange={(e) => set('endDate', e.target.value)}
+              className={inputCls}
+            />
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Ticket Price (Rs.)</label>
+            <input type="number" min="0" value={form.price} onChange={(e) => set('price', e.target.value)} placeholder="0 for Free" className={inputCls} />
+          </div>
+          <div>
+            <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">
+              Seat Capacity {event.ticketCount > 0 ? `(min ${event.ticketCount})` : ''}
+            </label>
+            <input
+              type="number"
+              min={Math.max(1, event.ticketCount || 1)}
+              value={form.capacity}
+              onChange={(e) => set('capacity', e.target.value)}
+              placeholder="Unlimited"
+              className={inputCls}
+            />
+          </div>
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Payment Account / Slip Instructions</label>
+          <input
+            value={form.paymentDetails}
+            onChange={(e) => set('paymentDetails', e.target.value)}
+            placeholder="e.g. EasyPaisa/JazzCash: 0300-1234567 or Student Service Desk"
+            className={inputCls}
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wide">Event Picture</label>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/jpeg,image/png,image/webp,image/gif"
+            onChange={handleImageSelect}
+            className="hidden"
+          />
+          {imagePreview ? (
+            <div className="relative rounded-xl overflow-hidden border border-slate-200 bg-slate-50 max-h-40">
+              <img src={imagePreview} alt="Event preview" className="w-full max-h-40 object-cover" />
+              <button
+                type="button"
+                onClick={() => {
+                  setImagePreview('');
+                  if (fileInputRef.current) fileInputRef.current.value = '';
+                }}
+                className="absolute top-2 right-2 p-1.5 rounded-lg bg-slate-900/75 text-white hover:bg-red-600 transition-colors cursor-pointer"
+                title="Remove picture"
+              >
+                <X size={14} />
+              </button>
+            </div>
+          ) : (
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              className="w-full py-2.5 px-4 rounded-xl border-2 border-dashed border-slate-200 hover:border-indigo-400 bg-slate-50/50 hover:bg-indigo-50/30 text-slate-500 hover:text-indigo-600 text-xs font-bold flex items-center justify-center gap-2 transition-all cursor-pointer"
+            >
+              <ImageIcon size={16} />
+              <span>Upload / Replace Event Picture</span>
+            </button>
+          )}
+        </div>
+        <div className="flex justify-end gap-2 pt-2">
+          <Button type="button" variant="secondary" onClick={onClose} disabled={submitting}>
+            Cancel
+          </Button>
+          <Button
+            type="submit"
+            loading={submitting}
+            disabled={!form.title.trim() || !form.description.trim() || !form.location.trim() || !form.startDate}
+          >
+            Save Changes
+          </Button>
+        </div>
+      </form>
+    </Modal>
+  );
+}
