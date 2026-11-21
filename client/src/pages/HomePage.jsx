@@ -514,78 +514,79 @@ export default function HomePage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-79 (2026-11-08T13:25:54+05:00) ===
-// [Moiz-A-79-L1] Clean attachment metadata tags from HomePage announcement previews :: verification rule #382
-// [Moiz-A-79-L2] Clean attachment metadata tags from HomePage announcement previews :: verification rule #401
-// [Moiz-A-79-L3] Clean attachment metadata tags from HomePage announcement previews :: verification rule #420
-// [Moiz-A-79-L4] Clean attachment metadata tags from HomePage announcement previews :: verification rule #439
-// [Moiz-A-79-L5] Clean attachment metadata tags from HomePage announcement previews :: verification rule #458
-// [Moiz-A-79-L6] Clean attachment metadata tags from HomePage announcement previews :: verification rule #477
-// [Moiz-A-79-L7] Clean attachment metadata tags from HomePage announcement previews :: verification rule #496
-// [Moiz-A-79-L8] Clean attachment metadata tags from HomePage announcement previews :: verification rule #515
-// [Moiz-A-79-L9] Clean attachment metadata tags from HomePage announcement previews :: verification rule #534
-// [Moiz-A-79-L10] Clean attachment metadata tags from HomePage announcement previews :: verification rule #553
-// [Moiz-A-79-L11] Clean attachment metadata tags from HomePage announcement previews :: verification rule #572
-// [Moiz-A-79-L12] Clean attachment metadata tags from HomePage announcement previews :: verification rule #591
-// [Moiz-A-79-L13] Clean attachment metadata tags from HomePage announcement previews :: verification rule #610
-// [Moiz-A-79-L14] Clean attachment metadata tags from HomePage announcement previews :: verification rule #629
-// [Moiz-A-79-L15] Clean attachment metadata tags from HomePage announcement previews :: verification rule #648
-// [Moiz-A-79-L16] Clean attachment metadata tags from HomePage announcement previews :: verification rule #667
-// [Moiz-A-79-L17] Clean attachment metadata tags from HomePage announcement previews :: verification rule #686
-// [Moiz-A-79-L18] Clean attachment metadata tags from HomePage announcement previews :: verification rule #705
-// [Moiz-A-79-L19] Clean attachment metadata tags from HomePage announcement previews :: verification rule #724
-// [Moiz-A-79-L20] Clean attachment metadata tags from HomePage announcement previews :: verification rule #743
-// [Moiz-A-79-L21] Clean attachment metadata tags from HomePage announcement previews :: verification rule #762
-// [Moiz-A-79-L22] Clean attachment metadata tags from HomePage announcement previews :: verification rule #781
-// [Moiz-A-79-L23] Clean attachment metadata tags from HomePage announcement previews :: verification rule #800
-// [Moiz-A-79-L24] Clean attachment metadata tags from HomePage announcement previews :: verification rule #819
-// [Moiz-A-79-L25] Clean attachment metadata tags from HomePage announcement previews :: verification rule #838
-// [Moiz-A-79-L26] Clean attachment metadata tags from HomePage announcement previews :: verification rule #857
-// [Moiz-A-79-L27] Clean attachment metadata tags from HomePage announcement previews :: verification rule #876
-// [Moiz-A-79-L28] Clean attachment metadata tags from HomePage announcement previews :: verification rule #895
-// [Moiz-A-79-L29] Clean attachment metadata tags from HomePage announcement previews :: verification rule #914
-// [Moiz-A-79-L30] Clean attachment metadata tags from HomePage announcement previews :: verification rule #933
-// [Moiz-A-79-L31] Clean attachment metadata tags from HomePage announcement previews :: verification rule #952
-// [Moiz-A-79-L32] Clean attachment metadata tags from HomePage announcement previews :: verification rule #971
-// [Moiz-A-79-L33] Clean attachment metadata tags from HomePage announcement previews :: verification rule #990
-// [Moiz-A-79-L34] Clean attachment metadata tags from HomePage announcement previews :: verification rule #12
-// [Moiz-A-79-L35] Clean attachment metadata tags from HomePage announcement previews :: verification rule #31
-// [Moiz-A-79-L36] Clean attachment metadata tags from HomePage announcement previews :: verification rule #50
-// [Moiz-A-79-L37] Clean attachment metadata tags from HomePage announcement previews :: verification rule #69
-// [Moiz-A-79-L38] Clean attachment metadata tags from HomePage announcement previews :: verification rule #88
-// [Moiz-A-79-L39] Clean attachment metadata tags from HomePage announcement previews :: verification rule #107
-// [Moiz-A-79-L40] Clean attachment metadata tags from HomePage announcement previews :: verification rule #126
-// [Moiz-A-79-L41] Clean attachment metadata tags from HomePage announcement previews :: verification rule #145
-// [Moiz-A-79-L42] Clean attachment metadata tags from HomePage announcement previews :: verification rule #164
-// [Moiz-A-79-L43] Clean attachment metadata tags from HomePage announcement previews :: verification rule #183
-// [Moiz-A-79-L44] Clean attachment metadata tags from HomePage announcement previews :: verification rule #202
-// [Moiz-A-79-L45] Clean attachment metadata tags from HomePage announcement previews :: verification rule #221
-// [Moiz-A-79-L46] Clean attachment metadata tags from HomePage announcement previews :: verification rule #240
-// [Moiz-A-79-L47] Clean attachment metadata tags from HomePage announcement previews :: verification rule #259
-// [Moiz-A-79-L48] Clean attachment metadata tags from HomePage announcement previews :: verification rule #278
-// [Moiz-A-79-L49] Clean attachment metadata tags from HomePage announcement previews :: verification rule #297
-// [Moiz-A-79-L50] Clean attachment metadata tags from HomePage announcement previews :: verification rule #316
-// [Moiz-A-79-L51] Clean attachment metadata tags from HomePage announcement previews :: verification rule #335
-// [Moiz-A-79-L52] Clean attachment metadata tags from HomePage announcement previews :: verification rule #354
-// [Moiz-A-79-L53] Clean attachment metadata tags from HomePage announcement previews :: verification rule #373
-// [Moiz-A-79-L54] Clean attachment metadata tags from HomePage announcement previews :: verification rule #392
-// [Moiz-A-79-L55] Clean attachment metadata tags from HomePage announcement previews :: verification rule #411
-// [Moiz-A-79-L56] Clean attachment metadata tags from HomePage announcement previews :: verification rule #430
-// [Moiz-A-79-L57] Clean attachment metadata tags from HomePage announcement previews :: verification rule #449
-// [Moiz-A-79-L58] Clean attachment metadata tags from HomePage announcement previews :: verification rule #468
-// [Moiz-A-79-L59] Clean attachment metadata tags from HomePage announcement previews :: verification rule #487
-// [Moiz-A-79-L60] Clean attachment metadata tags from HomePage announcement previews :: verification rule #506
-// [Moiz-A-79-L61] Clean attachment metadata tags from HomePage announcement previews :: verification rule #525
-// [Moiz-A-79-L62] Clean attachment metadata tags from HomePage announcement previews :: verification rule #544
-// [Moiz-A-79-L63] Clean attachment metadata tags from HomePage announcement previews :: verification rule #563
-// [Moiz-A-79-L64] Clean attachment metadata tags from HomePage announcement previews :: verification rule #582
-// [Moiz-A-79-L65] Clean attachment metadata tags from HomePage announcement previews :: verification rule #601
-// [Moiz-A-79-L66] Clean attachment metadata tags from HomePage announcement previews :: verification rule #620
-// [Moiz-A-79-L67] Clean attachment metadata tags from HomePage announcement previews :: verification rule #639
-// [Moiz-A-79-L68] Clean attachment metadata tags from HomePage announcement previews :: verification rule #658
-// [Moiz-A-79-L69] Clean attachment metadata tags from HomePage announcement previews :: verification rule #677
-// [Moiz-A-79-L70] Clean attachment metadata tags from HomePage announcement previews :: verification rule #696
-// [Moiz-A-79-L71] Clean attachment metadata tags from HomePage announcement previews :: verification rule #715
-// [Moiz-A-79-L72] Clean attachment metadata tags from HomePage announcement previews :: verification rule #734
-// [Moiz-A-79-L73] Clean attachment metadata tags from HomePage announcement previews :: verification rule #753
+// === [SPEC-BLOCK-START] Moiz-A-93 (2026-11-21T17:40:22+05:00) ===
+// [Moiz-A-93-L1] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #31
+// [Moiz-A-93-L2] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #50
+// [Moiz-A-93-L3] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #69
+// [Moiz-A-93-L4] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #88
+// [Moiz-A-93-L5] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #107
+// [Moiz-A-93-L6] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #126
+// [Moiz-A-93-L7] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #145
+// [Moiz-A-93-L8] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #164
+// [Moiz-A-93-L9] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #183
+// [Moiz-A-93-L10] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #202
+// [Moiz-A-93-L11] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #221
+// [Moiz-A-93-L12] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #240
+// [Moiz-A-93-L13] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #259
+// [Moiz-A-93-L14] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #278
+// [Moiz-A-93-L15] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #297
+// [Moiz-A-93-L16] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #316
+// [Moiz-A-93-L17] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #335
+// [Moiz-A-93-L18] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #354
+// [Moiz-A-93-L19] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #373
+// [Moiz-A-93-L20] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #392
+// [Moiz-A-93-L21] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #411
+// [Moiz-A-93-L22] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #430
+// [Moiz-A-93-L23] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #449
+// [Moiz-A-93-L24] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #468
+// [Moiz-A-93-L25] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #487
+// [Moiz-A-93-L26] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #506
+// [Moiz-A-93-L27] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #525
+// [Moiz-A-93-L28] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #544
+// [Moiz-A-93-L29] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #563
+// [Moiz-A-93-L30] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #582
+// [Moiz-A-93-L31] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #601
+// [Moiz-A-93-L32] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #620
+// [Moiz-A-93-L33] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #639
+// [Moiz-A-93-L34] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #658
+// [Moiz-A-93-L35] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #677
+// [Moiz-A-93-L36] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #696
+// [Moiz-A-93-L37] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #715
+// [Moiz-A-93-L38] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #734
+// [Moiz-A-93-L39] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #753
+// [Moiz-A-93-L40] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #772
+// [Moiz-A-93-L41] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #791
+// [Moiz-A-93-L42] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #810
+// [Moiz-A-93-L43] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #829
+// [Moiz-A-93-L44] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #848
+// [Moiz-A-93-L45] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #867
+// [Moiz-A-93-L46] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #886
+// [Moiz-A-93-L47] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #905
+// [Moiz-A-93-L48] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #924
+// [Moiz-A-93-L49] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #943
+// [Moiz-A-93-L50] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #962
+// [Moiz-A-93-L51] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #981
+// [Moiz-A-93-L52] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #3
+// [Moiz-A-93-L53] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #22
+// [Moiz-A-93-L54] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #41
+// [Moiz-A-93-L55] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #60
+// [Moiz-A-93-L56] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #79
+// [Moiz-A-93-L57] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #98
+// [Moiz-A-93-L58] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #117
+// [Moiz-A-93-L59] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #136
+// [Moiz-A-93-L60] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #155
+// [Moiz-A-93-L61] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #174
+// [Moiz-A-93-L62] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #193
+// [Moiz-A-93-L63] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #212
+// [Moiz-A-93-L64] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #231
+// [Moiz-A-93-L65] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #250
+// [Moiz-A-93-L66] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #269
+// [Moiz-A-93-L67] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #288
+// [Moiz-A-93-L68] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #307
+// [Moiz-A-93-L69] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #326
+// [Moiz-A-93-L70] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #345
+// [Moiz-A-93-L71] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #364
+// [Moiz-A-93-L72] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #383
+// [Moiz-A-93-L73] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #402
+// [Moiz-A-93-L74] Refine HomePage responsive layout for mobile and tablet viewports :: verification rule #421
 // === [SPEC-BLOCK-END] ===
