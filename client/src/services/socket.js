@@ -70,4 +70,5 @@ export function useOnlineUsers() {
   return onlineUsers;
 }
 
+export { socket };
 export default socket;
