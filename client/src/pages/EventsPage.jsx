@@ -1861,53 +1861,52 @@ function EditEventModal({ event, onClose, onUpdated }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-90 (2026-11-21T14:08:14+05:00) ===
-// [Airaf-A-90-L1] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #935
-// [Airaf-A-90-L2] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #954
-// [Airaf-A-90-L3] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #973
-// [Airaf-A-90-L4] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #992
-// [Airaf-A-90-L5] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #14
-// [Airaf-A-90-L6] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #33
-// [Airaf-A-90-L7] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #52
-// [Airaf-A-90-L8] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #71
-// [Airaf-A-90-L9] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #90
-// [Airaf-A-90-L10] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #109
-// [Airaf-A-90-L11] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #128
-// [Airaf-A-90-L12] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #147
-// [Airaf-A-90-L13] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #166
-// [Airaf-A-90-L14] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #185
-// [Airaf-A-90-L15] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #204
-// [Airaf-A-90-L16] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #223
-// [Airaf-A-90-L17] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #242
-// [Airaf-A-90-L18] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #261
-// [Airaf-A-90-L19] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #280
-// [Airaf-A-90-L20] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #299
-// [Airaf-A-90-L21] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #318
-// [Airaf-A-90-L22] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #337
-// [Airaf-A-90-L23] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #356
-// [Airaf-A-90-L24] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #375
-// [Airaf-A-90-L25] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #394
-// [Airaf-A-90-L26] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #413
-// [Airaf-A-90-L27] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #432
-// [Airaf-A-90-L28] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #451
-// [Airaf-A-90-L29] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #470
-// [Airaf-A-90-L30] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #489
-// [Airaf-A-90-L31] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #508
-// [Airaf-A-90-L32] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #527
-// [Airaf-A-90-L33] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #546
-// [Airaf-A-90-L34] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #565
-// [Airaf-A-90-L35] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #584
-// [Airaf-A-90-L36] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #603
-// [Airaf-A-90-L37] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #622
-// [Airaf-A-90-L38] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #641
-// [Airaf-A-90-L39] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #660
-// [Airaf-A-90-L40] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #679
-// [Airaf-A-90-L41] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #698
-// [Airaf-A-90-L42] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #717
-// [Airaf-A-90-L43] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #736
-// [Airaf-A-90-L44] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #755
-// [Airaf-A-90-L45] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #774
-// [Airaf-A-90-L46] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #793
-// [Airaf-A-90-L47] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #812
-// [Airaf-A-90-L48] Add View My Slip button directly on EventsPage cards for applicants :: verification rule #831
+// === [SPEC-BLOCK-START] Airaf-B-59 (2026-11-22T14:15:09+05:00) ===
+// [Airaf-B-59-L1] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #186
+// [Airaf-B-59-L2] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #205
+// [Airaf-B-59-L3] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #224
+// [Airaf-B-59-L4] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #243
+// [Airaf-B-59-L5] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #262
+// [Airaf-B-59-L6] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #281
+// [Airaf-B-59-L7] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #300
+// [Airaf-B-59-L8] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #319
+// [Airaf-B-59-L9] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #338
+// [Airaf-B-59-L10] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #357
+// [Airaf-B-59-L11] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #376
+// [Airaf-B-59-L12] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #395
+// [Airaf-B-59-L13] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #414
+// [Airaf-B-59-L14] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #433
+// [Airaf-B-59-L15] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #452
+// [Airaf-B-59-L16] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #471
+// [Airaf-B-59-L17] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #490
+// [Airaf-B-59-L18] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #509
+// [Airaf-B-59-L19] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #528
+// [Airaf-B-59-L20] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #547
+// [Airaf-B-59-L21] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #566
+// [Airaf-B-59-L22] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #585
+// [Airaf-B-59-L23] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #604
+// [Airaf-B-59-L24] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #623
+// [Airaf-B-59-L25] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #642
+// [Airaf-B-59-L26] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #661
+// [Airaf-B-59-L27] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #680
+// [Airaf-B-59-L28] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #699
+// [Airaf-B-59-L29] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #718
+// [Airaf-B-59-L30] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #737
+// [Airaf-B-59-L31] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #756
+// [Airaf-B-59-L32] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #775
+// [Airaf-B-59-L33] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #794
+// [Airaf-B-59-L34] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #813
+// [Airaf-B-59-L35] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #832
+// [Airaf-B-59-L36] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #851
+// [Airaf-B-59-L37] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #870
+// [Airaf-B-59-L38] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #889
+// [Airaf-B-59-L39] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #908
+// [Airaf-B-59-L40] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #927
+// [Airaf-B-59-L41] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #946
+// [Airaf-B-59-L42] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #965
+// [Airaf-B-59-L43] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #984
+// [Airaf-B-59-L44] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #6
+// [Airaf-B-59-L45] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #25
+// [Airaf-B-59-L46] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #44
+// [Airaf-B-59-L47] Add Approve Anyway and Revoke buttons in EventManagerModal :: verification rule #63
 // === [SPEC-BLOCK-END] ===
