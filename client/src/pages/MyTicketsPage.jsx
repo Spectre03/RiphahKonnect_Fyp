@@ -271,44 +271,49 @@ export default function MyTicketsPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-91 (2026-11-22T16:45:38+05:00) ===
-// [Airaf-A-91-L1] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #217
-// [Airaf-A-91-L2] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #236
-// [Airaf-A-91-L3] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #255
-// [Airaf-A-91-L4] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #274
-// [Airaf-A-91-L5] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #293
-// [Airaf-A-91-L6] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #312
-// [Airaf-A-91-L7] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #331
-// [Airaf-A-91-L8] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #350
-// [Airaf-A-91-L9] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #369
-// [Airaf-A-91-L10] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #388
-// [Airaf-A-91-L11] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #407
-// [Airaf-A-91-L12] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #426
-// [Airaf-A-91-L13] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #445
-// [Airaf-A-91-L14] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #464
-// [Airaf-A-91-L15] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #483
-// [Airaf-A-91-L16] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #502
-// [Airaf-A-91-L17] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #521
-// [Airaf-A-91-L18] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #540
-// [Airaf-A-91-L19] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #559
-// [Airaf-A-91-L20] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #578
-// [Airaf-A-91-L21] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #597
-// [Airaf-A-91-L22] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #616
-// [Airaf-A-91-L23] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #635
-// [Airaf-A-91-L24] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #654
-// [Airaf-A-91-L25] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #673
-// [Airaf-A-91-L26] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #692
-// [Airaf-A-91-L27] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #711
-// [Airaf-A-91-L28] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #730
-// [Airaf-A-91-L29] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #749
-// [Airaf-A-91-L30] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #768
-// [Airaf-A-91-L31] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #787
-// [Airaf-A-91-L32] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #806
-// [Airaf-A-91-L33] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #825
-// [Airaf-A-91-L34] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #844
-// [Airaf-A-91-L35] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #863
-// [Airaf-A-91-L36] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #882
-// [Airaf-A-91-L37] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #901
-// [Airaf-A-91-L38] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #920
-// [Airaf-A-91-L39] Add inline Re-Upload and Replace Payment Slip modal on MyTicketsPage :: verification rule #939
+// === [SPEC-BLOCK-START] Airaf-A-92 (2026-11-22T19:18:05+05:00) ===
+// [Airaf-A-92-L1] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #279
+// [Airaf-A-92-L2] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #298
+// [Airaf-A-92-L3] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #317
+// [Airaf-A-92-L4] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #336
+// [Airaf-A-92-L5] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #355
+// [Airaf-A-92-L6] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #374
+// [Airaf-A-92-L7] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #393
+// [Airaf-A-92-L8] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #412
+// [Airaf-A-92-L9] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #431
+// [Airaf-A-92-L10] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #450
+// [Airaf-A-92-L11] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #469
+// [Airaf-A-92-L12] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #488
+// [Airaf-A-92-L13] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #507
+// [Airaf-A-92-L14] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #526
+// [Airaf-A-92-L15] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #545
+// [Airaf-A-92-L16] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #564
+// [Airaf-A-92-L17] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #583
+// [Airaf-A-92-L18] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #602
+// [Airaf-A-92-L19] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #621
+// [Airaf-A-92-L20] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #640
+// [Airaf-A-92-L21] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #659
+// [Airaf-A-92-L22] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #678
+// [Airaf-A-92-L23] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #697
+// [Airaf-A-92-L24] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #716
+// [Airaf-A-92-L25] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #735
+// [Airaf-A-92-L26] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #754
+// [Airaf-A-92-L27] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #773
+// [Airaf-A-92-L28] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #792
+// [Airaf-A-92-L29] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #811
+// [Airaf-A-92-L30] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #830
+// [Airaf-A-92-L31] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #849
+// [Airaf-A-92-L32] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #868
+// [Airaf-A-92-L33] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #887
+// [Airaf-A-92-L34] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #906
+// [Airaf-A-92-L35] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #925
+// [Airaf-A-92-L36] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #944
+// [Airaf-A-92-L37] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #963
+// [Airaf-A-92-L38] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #982
+// [Airaf-A-92-L39] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #4
+// [Airaf-A-92-L40] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #23
+// [Airaf-A-92-L41] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #42
+// [Airaf-A-92-L42] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #61
+// [Airaf-A-92-L43] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #80
+// [Airaf-A-92-L44] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #99
 // === [SPEC-BLOCK-END] ===
