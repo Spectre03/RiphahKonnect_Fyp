@@ -53,7 +53,16 @@ const getEvents = async (req, res, next) => {
             select: { id: true, userId: true, status: true },
           },
           tickets: {
-            select: { id: true, userId: true, status: true, code: true, rejectionReason: true },
+            select: {
+              id: true,
+              userId: true,
+              status: true,
+              code: true,
+              rejectionReason: true,
+              paymentSlipUrl: true,
+              paymentRef: true,
+              approvedAt: true,
+            },
           },
           managers: {
             include: {
@@ -90,6 +99,8 @@ const getEvents = async (req, res, next) => {
         myTicketStatus: myTicket?.status || null,
         myTicketCode: myTicket?.status === 'VALID' || myTicket?.status === 'USED' ? myTicket.code : null,
         myTicketRejectionReason: myTicket?.rejectionReason || null,
+        myTicketSlipUrl: myTicket?.paymentSlipUrl || null,
+        myTicketPaymentRef: myTicket?.paymentRef || null,
         isManager,
         isCreator,
         managers: (e.managers || []).map((m) => m.user),

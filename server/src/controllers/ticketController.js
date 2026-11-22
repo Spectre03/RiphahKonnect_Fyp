@@ -19,7 +19,7 @@ const generateUniqueTicketCode = async () => {
 };
 
 // POST /api/tickets/:eventId/buy
-// Submits a ticket request with a required payment slip attachment (or free registration)
+// Submits a ticket request with a required payment slip attachment
 const buyTicket = async (req, res, next) => {
   try {
     const { eventId } = req.params;
@@ -42,19 +42,16 @@ const buyTicket = async (req, res, next) => {
       return res.status(400).json({ error: 'Cannot request tickets for past events.' });
     }
 
-    // 3. Validate Payment Slip for paid events (and validate image if attached for free events)
-    const isPaidEvent = (event.price || 0) > 0;
-    if (isPaidEvent && !paymentSlipUrl) {
+    // 3. Always require a valid payment/registration slip attachment
+    if (!paymentSlipUrl) {
       return res.status(400).json({
-        error: 'Please attach your payment receipt/slip image before submitting.',
+        error: 'Please attach your payment receipt or registration slip image before submitting.',
       });
     }
 
-    if (paymentSlipUrl) {
-      const imgCheck = checkImageSafety(paymentSlipUrl);
-      if (!imgCheck.safe) {
-        return res.status(400).json({ error: imgCheck.reason || 'Invalid payment slip image.' });
-      }
+    const imgCheck = checkImageSafety(paymentSlipUrl);
+    if (!imgCheck.safe) {
+      return res.status(400).json({ error: imgCheck.reason || 'Invalid payment slip image.' });
     }
 
     if (paymentRef) {
@@ -64,7 +61,7 @@ const buyTicket = async (req, res, next) => {
       }
     }
 
-    // 4. Check if user already has a ticket
+    // 4. Check if user already has an active ticket
     const existingTicket = await prisma.ticket.findUnique({
       where: { userId_eventId: { userId, eventId } },
     });
@@ -73,7 +70,7 @@ const buyTicket = async (req, res, next) => {
       return res.status(409).json({
         error:
           existingTicket.status === 'PENDING'
-            ? 'Your ticket request and payment slip are already awaiting verification by the Event Manager.'
+            ? 'Your payment slip is already awaiting verification by the Event Manager.'
             : 'You already have an approved ticket for this event.',
       });
     }
@@ -87,7 +84,7 @@ const buyTicket = async (req, res, next) => {
     }
 
     // 6. Create or re-submit (if previously REJECTED/CANCELLED) ticket in PENDING status
-    // Note: No unique ticket code is assigned until the Event Manager verifies the payment slip and approves!
+    // No unique ticket code is assigned until the Event Manager verifies the payment slip and approves!
     let ticket;
     if (existingTicket) {
       ticket = await prisma.ticket.update({
@@ -95,7 +92,7 @@ const buyTicket = async (req, res, next) => {
         data: {
           code: null,
           pricePaid: event.price || 0,
-          paymentSlipUrl: paymentSlipUrl || null,
+          paymentSlipUrl,
           paymentRef: paymentRef ? paymentRef.trim() : null,
           status: 'PENDING',
           rejectionReason: null,
@@ -104,7 +101,8 @@ const buyTicket = async (req, res, next) => {
           issuedAt: new Date(),
         },
         include: {
-          event: { select: { id: true, title: true, startDate: true, location: true, imageUrl: true } },
+          user: { select: { id: true, name: true, email: true, department: true, semester: true, avatarUrl: true, role: true } },
+          event: { select: { id: true, title: true, startDate: true, endDate: true, location: true, imageUrl: true, price: true, paymentDetails: true } },
         },
       });
     } else {
@@ -112,19 +110,21 @@ const buyTicket = async (req, res, next) => {
         data: {
           code: null,
           pricePaid: event.price || 0,
-          paymentSlipUrl: paymentSlipUrl || null,
+          paymentSlipUrl,
           paymentRef: paymentRef ? paymentRef.trim() : null,
           status: 'PENDING',
           userId,
           eventId,
         },
         include: {
-          event: { select: { id: true, title: true, startDate: true, location: true, imageUrl: true } },
+          user: { select: { id: true, name: true, email: true, department: true, semester: true, avatarUrl: true, role: true } },
+          event: { select: { id: true, title: true, startDate: true, endDate: true, location: true, imageUrl: true, price: true, paymentDetails: true } },
         },
       });
     }
 
-    // Notify Event Creator & Assigned Event Managers
+    // Notify Event Creator & Assigned Event Managers + emit real-time socket update
+    const io = req.app.get('io');
     try {
       const managerUserIds = [
         ...new Set([
@@ -133,24 +133,37 @@ const buyTicket = async (req, res, next) => {
         ]),
       ].filter((uid) => uid && uid !== userId);
 
-      const io = req.app.get('io');
       for (const managerId of managerUserIds) {
         const notif = await prisma.notification.create({
           data: {
             userId: managerId,
             title: `🧾 Payment Slip Submitted: "${event.title}"`,
-            content: `${req.user.name} submitted a ticket request${paymentRef ? ` (Ref: ${paymentRef.trim()})` : ''}. Please review the payment slip and approve.`,
+            content: `${req.user.name} attached a payment slip${paymentRef ? ` (Ref: ${paymentRef.trim()})` : ''}. Please review and approve.`,
             type: 'EVENT',
             link: '/events',
           },
         });
-        if (io) io.to(`user:${managerId}`).emit('notification', notif);
+        if (io) {
+          io.to(`user:${managerId}`).emit('notification', notif);
+          io.to(`user:${managerId}`).emit('ticketUpdated', {
+            action: 'SUBMITTED',
+            eventId: event.id,
+            ticket,
+          });
+        }
+      }
+      if (io) {
+        io.to(`user:${userId}`).emit('ticketUpdated', {
+          action: 'SUBMITTED',
+          eventId: event.id,
+          ticket,
+        });
       }
     } catch {}
 
     res.status(201).json({
       ticket,
-      message: 'Payment slip submitted! Your unique ticket ID will be generated once an Event Manager approves it.',
+      message: 'Payment slip submitted! Your unique Ticket ID will be generated once the Event Manager verifies and approves your slip.',
     });
   } catch (err) {
     next(err);
@@ -166,8 +179,8 @@ const approveTicket = async (req, res, next) => {
     const ticket = await prisma.ticket.findUnique({
       where: { id: ticketId },
       include: {
-        event: true,
-        user: { select: { id: true, name: true, email: true, department: true, semester: true, avatarUrl: true } },
+        event: { include: { managers: true } },
+        user: { select: { id: true, name: true, email: true, department: true, semester: true, avatarUrl: true, role: true } },
       },
     });
     if (!ticket) return res.status(404).json({ error: 'Ticket request not found.' });
@@ -180,6 +193,24 @@ const approveTicket = async (req, res, next) => {
 
     if (ticket.status === 'VALID' || ticket.status === 'USED') {
       return res.status(400).json({ error: 'This ticket has already been approved.' });
+    }
+
+    // Ensure payment slip is attached before approving
+    if (!ticket.paymentSlipUrl) {
+      return res.status(400).json({ error: 'Cannot approve a ticket without an attached payment slip.' });
+    }
+
+    // Capacity check when approving a previously REJECTED ticket
+    if (ticket.status === 'REJECTED' && ticket.event.capacity) {
+      const activeCount = await prisma.ticket.count({
+        where: {
+          eventId: ticket.eventId,
+          status: { in: ['PENDING', 'VALID', 'USED'] },
+        },
+      });
+      if (activeCount >= ticket.event.capacity) {
+        return res.status(400).json({ error: 'Cannot approve: event has reached its maximum seat capacity.' });
+      }
     }
 
     // Generate cryptographically unique ticket ID known only to the attendee and Event Managers
@@ -195,8 +226,8 @@ const approveTicket = async (req, res, next) => {
         rejectionReason: null,
       },
       include: {
-        user: { select: { id: true, name: true, email: true, department: true, semester: true, avatarUrl: true } },
-        event: { select: { id: true, title: true, startDate: true, location: true } },
+        user: { select: { id: true, name: true, email: true, department: true, semester: true, avatarUrl: true, role: true } },
+        event: { select: { id: true, title: true, startDate: true, endDate: true, location: true, imageUrl: true, price: true, paymentDetails: true } },
       },
     });
 
@@ -207,24 +238,31 @@ const approveTicket = async (req, res, next) => {
       create: { userId: ticket.userId, eventId: ticket.eventId, status: 'GOING' },
     }).catch(() => {});
 
-    // Notify attendee with their private unique ticket ID
+    // Notify attendee with their private unique ticket ID & emit real-time ticketUpdated event
+    const io = req.app.get('io');
     try {
       const notif = await prisma.notification.create({
         data: {
           userId: ticket.userId,
           title: `🎟️ Ticket Approved for "${ticket.event.title}"!`,
-          content: `Your payment slip was verified by ${req.user.name}. Your unique Ticket ID is ${uniqueCode}. View your QR pass in My Tickets.`,
+          content: `Your payment slip was verified by ${req.user.name}. Your Unique Ticket ID is ${uniqueCode}. View your QR pass in My Tickets.`,
           type: 'EVENT',
           link: '/my-tickets',
         },
       });
-      const io = req.app.get('io');
-      if (io) io.to(`user:${ticket.userId}`).emit('notification', notif);
+      if (io) {
+        io.to(`user:${ticket.userId}`).emit('notification', notif);
+        io.to(`user:${ticket.userId}`).emit('ticketUpdated', {
+          action: 'APPROVED',
+          eventId: ticket.eventId,
+          ticket: updated,
+        });
+      }
     } catch {}
 
     res.json({
       ticket: updated,
-      message: `Ticket approved! Unique ID ${uniqueCode} assigned to ${updated.user.name}.`,
+      message: `Slip verified & approved! Unique Ticket ID ${uniqueCode} issued to ${updated.user.name}.`,
     });
   } catch (err) {
     next(err);
@@ -232,7 +270,7 @@ const approveTicket = async (req, res, next) => {
 };
 
 // PATCH /api/tickets/:ticketId/reject
-// Event Manager rejects an invalid/unpaid payment slip
+// Event Manager rejects an invalid/unpaid payment slip (or revokes an approval if slip was invalid)
 const rejectTicket = async (req, res, next) => {
   try {
     const { ticketId } = req.params;
@@ -242,7 +280,7 @@ const rejectTicket = async (req, res, next) => {
       where: { id: ticketId },
       include: {
         event: true,
-        user: { select: { id: true, name: true, email: true, department: true, semester: true, avatarUrl: true } },
+        user: { select: { id: true, name: true, email: true, department: true, semester: true, avatarUrl: true, role: true } },
       },
     });
     if (!ticket) return res.status(404).json({ error: 'Ticket request not found.' });
@@ -252,37 +290,54 @@ const rejectTicket = async (req, res, next) => {
       return res.status(403).json({ error: 'Only the Event Creator, assigned Event Managers, or Admins can reject tickets.' });
     }
 
+    if (ticket.status === 'USED') {
+      return res.status(400).json({ error: 'Cannot reject a ticket that has already been checked in at the venue.' });
+    }
+
+    const cleanReason =
+      reason && reason.trim()
+        ? reason.trim()
+        : 'Payment slip could not be verified. Please re-upload a clear payment receipt.';
+
     const updated = await prisma.ticket.update({
       where: { id: ticketId },
       data: {
         status: 'REJECTED',
         code: null,
-        rejectionReason: reason ? reason.trim() : 'Payment slip could not be verified. Please re-upload a clear receipt.',
+        rejectionReason: cleanReason,
         approvedById: req.user.id,
         approvedAt: new Date(),
       },
       include: {
-        user: { select: { id: true, name: true, email: true, department: true, semester: true, avatarUrl: true } },
+        user: { select: { id: true, name: true, email: true, department: true, semester: true, avatarUrl: true, role: true } },
+        event: { select: { id: true, title: true, startDate: true, endDate: true, location: true, imageUrl: true, price: true, paymentDetails: true } },
       },
     });
 
+    const io = req.app.get('io');
     try {
       const notif = await prisma.notification.create({
         data: {
           userId: ticket.userId,
-          title: `⚠️ Ticket Payment Slip Not Verified: "${ticket.event.title}"`,
+          title: `⚠️ Payment Slip Not Verified: "${ticket.event.title}"`,
           content: `Reason: ${updated.rejectionReason}`,
           type: 'EVENT',
-          link: '/events',
+          link: '/my-tickets',
         },
       });
-      const io = req.app.get('io');
-      if (io) io.to(`user:${ticket.userId}`).emit('notification', notif);
+      if (io) {
+        io.to(`user:${ticket.userId}`).emit('notification', notif);
+        io.to(`user:${ticket.userId}`).emit('ticketUpdated', {
+          action: 'REJECTED',
+          eventId: ticket.eventId,
+          ticket: updated,
+        });
+      }
     } catch {}
 
     res.json({
       ticket: updated,
-      message: 'Ticket request rejected and user notified.',
+      message: 'Payment slip rejected and user notified with reason.',
     });
   } catch (err) {
     next(err);
@@ -299,7 +354,7 @@ const verifyCheckIn = async (req, res, next) => {
       where: { id: ticketId },
       include: {
         event: true,
-        user: { select: { id: true, name: true, email: true, department: true, semester: true, avatarUrl: true } },
+        user: { select: { id: true, name: true, email: true, department: true, semester: true, avatarUrl: true, role: true } },
       },
     });
     if (!ticket) return res.status(404).json({ error: 'Ticket not found.' });
@@ -324,9 +379,19 @@ const verifyCheckIn = async (req, res, next) => {
         usedAt: new Date(),
       },
       include: {
-        user: { select: { id: true, name: true, email: true, department: true, semester: true, avatarUrl: true } },
+        user: { select: { id: true, name: true, email: true, department: true, semester: true, avatarUrl: true, role: true } },
+        event: { select: { id: true, title: true, startDate: true, endDate: true, location: true, imageUrl: true, price: true, paymentDetails: true } },
       },
     });
+
+    const io = req.app.get('io');
+    if (io) {
+      io.to(`user:${ticket.userId}`).emit('ticketUpdated', {
+        action: 'CHECKED_IN',
+        eventId: ticket.eventId,
+        ticket: updated,
+      });
+    }
 
     res.json({
       ticket: updated,
@@ -380,6 +445,14 @@ const verifyTicketByCode = async (req, res, next) => {
           user: { select: { id: true, name: true, email: true, department: true, semester: true, avatarUrl: true, role: true } },
         },
       });
+      const io = req.app.get('io');
+      if (io) {
+        io.to(`user:${ticket.userId}`).emit('ticketUpdated', {
+          action: 'CHECKED_IN',
+          eventId,
+          ticket: checkedIn,
+        });
+      }
       return res.json({
         valid: true,
         ticket: checkedIn,
@@ -411,7 +484,7 @@ const getMyTickets = async (req, res, next) => {
       orderBy: { issuedAt: 'desc' },
       include: {
         event: {
-          select: { id: true, title: true, startDate: true, endDate: true, location: true, imageUrl: true, price: true },
+          select: { id: true, title: true, startDate: true, endDate: true, location: true, imageUrl: true, price: true, paymentDetails: true },
         },
       },
     });
@@ -447,8 +520,26 @@ const getEventTickets = async (req, res, next) => {
       },
     });
 
+    // Also resolve approver names for audit transparency
+    const approverIds = [...new Set(tickets.map((t) => t.approvedById).filter(Boolean))];
+    let approverMap = {};
+    if (approverIds.length > 0) {
+      const approvers = await prisma.user.findMany({
+        where: { id: { in: approverIds } },
+        select: { id: true, name: true, role: true },
+      });
+      approvers.forEach((a) => {
+        approverMap[a.id] = a;
+      });
+    }
+
+    const enrichedTickets = tickets.map((t) => ({
+      ...t,
+      approvedBy: t.approvedById ? approverMap[t.approvedById] || null : null,
+    }));
+
     res.json({
-      tickets,
+      tickets: enrichedTickets,
       managers: perm.event.managers.map((m) => m.user),
       isCreator: perm.isCreator,
       isAdmin: perm.isAdmin,
@@ -467,57 +558,3 @@ module.exports = {
   getMyTickets,
   getEventTickets,
 };
-
-// === [SPEC-BLOCK-START] Airaf-A-89 (2026-11-20T18:30:27+05:00) ===
-// [Airaf-A-89-L1] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #842
-// [Airaf-A-89-L2] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #861
-// [Airaf-A-89-L3] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #880
-// [Airaf-A-89-L4] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #899
-// [Airaf-A-89-L5] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #918
-// [Airaf-A-89-L6] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #937
-// [Airaf-A-89-L7] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #956
-// [Airaf-A-89-L8] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #975
-// [Airaf-A-89-L9] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #994
-// [Airaf-A-89-L10] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #16
-// [Airaf-A-89-L11] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #35
-// [Airaf-A-89-L12] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #54
-// [Airaf-A-89-L13] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #73
-// [Airaf-A-89-L14] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #92
-// [Airaf-A-89-L15] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #111
-// [Airaf-A-89-L16] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #130
-// [Airaf-A-89-L17] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #149
-// [Airaf-A-89-L18] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #168
-// [Airaf-A-89-L19] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #187
-// [Airaf-A-89-L20] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #206
-// [Airaf-A-89-L21] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #225
-// [Airaf-A-89-L22] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #244
-// [Airaf-A-89-L23] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #263
-// [Airaf-A-89-L24] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #282
-// [Airaf-A-89-L25] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #301
-// [Airaf-A-89-L26] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #320
-// [Airaf-A-89-L27] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #339
-// [Airaf-A-89-L28] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #358
-// [Airaf-A-89-L29] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #377
-// [Airaf-A-89-L30] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #396
-// [Airaf-A-89-L31] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #415
-// [Airaf-A-89-L32] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #434
-// [Airaf-A-89-L33] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #453
-// [Airaf-A-89-L34] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #472
-// [Airaf-A-89-L35] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #491
-// [Airaf-A-89-L36] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #510
-// [Airaf-A-89-L37] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #529
-// [Airaf-A-89-L38] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #548
-// [Airaf-A-89-L39] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #567
-// [Airaf-A-89-L40] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #586
-// [Airaf-A-89-L41] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #605
-// [Airaf-A-89-L42] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #624
-// [Airaf-A-89-L43] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #643
-// [Airaf-A-89-L44] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #662
-// [Airaf-A-89-L45] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #681
-// [Airaf-A-89-L46] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #700
-// [Airaf-A-89-L47] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #719
-// [Airaf-A-89-L48] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #738
-// [Airaf-A-89-L49] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #757
-// [Airaf-A-89-L50] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #776
-// [Airaf-A-89-L51] Support re-approving rejected slips and revoking un-used valid tickets :: verification rule #795
-// === [SPEC-BLOCK-END] ===
