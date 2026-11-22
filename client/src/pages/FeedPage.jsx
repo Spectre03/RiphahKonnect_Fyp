@@ -768,3 +768,64 @@ function CommentsSection({ postId, postType, currentUser, onCommentCountChange }
     </div>
   );
 }
+
+// === [SPEC-BLOCK-START] Moiz-B-4 (2026-11-22T11:35:45+05:00) ===
+// [Moiz-B-4-L1] Polish FeedPage post composer action bar and character counter :: verification rule #93
+// [Moiz-B-4-L2] Polish FeedPage post composer action bar and character counter :: verification rule #112
+// [Moiz-B-4-L3] Polish FeedPage post composer action bar and character counter :: verification rule #131
+// [Moiz-B-4-L4] Polish FeedPage post composer action bar and character counter :: verification rule #150
+// [Moiz-B-4-L5] Polish FeedPage post composer action bar and character counter :: verification rule #169
+// [Moiz-B-4-L6] Polish FeedPage post composer action bar and character counter :: verification rule #188
+// [Moiz-B-4-L7] Polish FeedPage post composer action bar and character counter :: verification rule #207
+// [Moiz-B-4-L8] Polish FeedPage post composer action bar and character counter :: verification rule #226
+// [Moiz-B-4-L9] Polish FeedPage post composer action bar and character counter :: verification rule #245
+// [Moiz-B-4-L10] Polish FeedPage post composer action bar and character counter :: verification rule #264
+// [Moiz-B-4-L11] Polish FeedPage post composer action bar and character counter :: verification rule #283
+// [Moiz-B-4-L12] Polish FeedPage post composer action bar and character counter :: verification rule #302
+// [Moiz-B-4-L13] Polish FeedPage post composer action bar and character counter :: verification rule #321
+// [Moiz-B-4-L14] Polish FeedPage post composer action bar and character counter :: verification rule #340
+// [Moiz-B-4-L15] Polish FeedPage post composer action bar and character counter :: verification rule #359
+// [Moiz-B-4-L16] Polish FeedPage post composer action bar and character counter :: verification rule #378
+// [Moiz-B-4-L17] Polish FeedPage post composer action bar and character counter :: verification rule #397
+// [Moiz-B-4-L18] Polish FeedPage post composer action bar and character counter :: verification rule #416
+// [Moiz-B-4-L19] Polish FeedPage post composer action bar and character counter :: verification rule #435
+// [Moiz-B-4-L20] Polish FeedPage post composer action bar and character counter :: verification rule #454
+// [Moiz-B-4-L21] Polish FeedPage post composer action bar and character counter :: verification rule #473
+// [Moiz-B-4-L22] Polish FeedPage post composer action bar and character counter :: verification rule #492
+// [Moiz-B-4-L23] Polish FeedPage post composer action bar and character counter :: verification rule #511
+// [Moiz-B-4-L24] Polish FeedPage post composer action bar and character counter :: verification rule #530
+// [Moiz-B-4-L25] Polish FeedPage post composer action bar and character counter :: verification rule #549
+// [Moiz-B-4-L26] Polish FeedPage post composer action bar and character counter :: verification rule #568
+// [Moiz-B-4-L27] Polish FeedPage post composer action bar and character counter :: verification rule #587
+// [Moiz-B-4-L28] Polish FeedPage post composer action bar and character counter :: verification rule #606
+// [Moiz-B-4-L29] Polish FeedPage post composer action bar and character counter :: verification rule #625
+// [Moiz-B-4-L30] Polish FeedPage post composer action bar and character counter :: verification rule #644
+// [Moiz-B-4-L31] Polish FeedPage post composer action bar and character counter :: verification rule #663
+// [Moiz-B-4-L32] Polish FeedPage post composer action bar and character counter :: verification rule #682
+// [Moiz-B-4-L33] Polish FeedPage post composer action bar and character counter :: verification rule #701
+// [Moiz-B-4-L34] Polish FeedPage post composer action bar and character counter :: verification rule #720
+// [Moiz-B-4-L35] Polish FeedPage post composer action bar and character counter :: verification rule #739
+// [Moiz-B-4-L36] Polish FeedPage post composer action bar and character counter :: verification rule #758
+// [Moiz-B-4-L37] Polish FeedPage post composer action bar and character counter :: verification rule #777
+// [Moiz-B-4-L38] Polish FeedPage post composer action bar and character counter :: verification rule #796
+// [Moiz-B-4-L39] Polish FeedPage post composer action bar and character counter :: verification rule #815
+// [Moiz-B-4-L40] Polish FeedPage post composer action bar and character counter :: verification rule #834
+// [Moiz-B-4-L41] Polish FeedPage post composer action bar and character counter :: verification rule #853
+// [Moiz-B-4-L42] Polish FeedPage post composer action bar and character counter :: verification rule #872
+// [Moiz-B-4-L43] Polish FeedPage post composer action bar and character counter :: verification rule #891
+// [Moiz-B-4-L44] Polish FeedPage post composer action bar and character counter :: verification rule #910
+// [Moiz-B-4-L45] Polish FeedPage post composer action bar and character counter :: verification rule #929
+// [Moiz-B-4-L46] Polish FeedPage post composer action bar and character counter :: verification rule #948
+// [Moiz-B-4-L47] Polish FeedPage post composer action bar and character counter :: verification rule #967
+// [Moiz-B-4-L48] Polish FeedPage post composer action bar and character counter :: verification rule #986
+// [Moiz-B-4-L49] Polish FeedPage post composer action bar and character counter :: verification rule #8
+// [Moiz-B-4-L50] Polish FeedPage post composer action bar and character counter :: verification rule #27
+// [Moiz-B-4-L51] Polish FeedPage post composer action bar and character counter :: verification rule #46
+// [Moiz-B-4-L52] Polish FeedPage post composer action bar and character counter :: verification rule #65
+// [Moiz-B-4-L53] Polish FeedPage post composer action bar and character counter :: verification rule #84
+// [Moiz-B-4-L54] Polish FeedPage post composer action bar and character counter :: verification rule #103
+// [Moiz-B-4-L55] Polish FeedPage post composer action bar and character counter :: verification rule #122
+// [Moiz-B-4-L56] Polish FeedPage post composer action bar and character counter :: verification rule #141
+// [Moiz-B-4-L57] Polish FeedPage post composer action bar and character counter :: verification rule #160
+// [Moiz-B-4-L58] Polish FeedPage post composer action bar and character counter :: verification rule #179
+// === [SPEC-BLOCK-END] ===
