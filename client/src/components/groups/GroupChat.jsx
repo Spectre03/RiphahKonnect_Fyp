@@ -161,58 +161,46 @@ export default function GroupChat({ conversationId }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-A-69 (2026-10-30T15:25:49+05:00) ===
-// [Airaf-A-69-L1] Add content moderation check before sending GroupChat messages :: verification rule #387
-// [Airaf-A-69-L2] Add content moderation check before sending GroupChat messages :: verification rule #406
-// [Airaf-A-69-L3] Add content moderation check before sending GroupChat messages :: verification rule #425
-// [Airaf-A-69-L4] Add content moderation check before sending GroupChat messages :: verification rule #444
-// [Airaf-A-69-L5] Add content moderation check before sending GroupChat messages :: verification rule #463
-// [Airaf-A-69-L6] Add content moderation check before sending GroupChat messages :: verification rule #482
-// [Airaf-A-69-L7] Add content moderation check before sending GroupChat messages :: verification rule #501
-// [Airaf-A-69-L8] Add content moderation check before sending GroupChat messages :: verification rule #520
-// [Airaf-A-69-L9] Add content moderation check before sending GroupChat messages :: verification rule #539
-// [Airaf-A-69-L10] Add content moderation check before sending GroupChat messages :: verification rule #558
-// [Airaf-A-69-L11] Add content moderation check before sending GroupChat messages :: verification rule #577
-// [Airaf-A-69-L12] Add content moderation check before sending GroupChat messages :: verification rule #596
-// [Airaf-A-69-L13] Add content moderation check before sending GroupChat messages :: verification rule #615
-// [Airaf-A-69-L14] Add content moderation check before sending GroupChat messages :: verification rule #634
-// [Airaf-A-69-L15] Add content moderation check before sending GroupChat messages :: verification rule #653
-// [Airaf-A-69-L16] Add content moderation check before sending GroupChat messages :: verification rule #672
-// [Airaf-A-69-L17] Add content moderation check before sending GroupChat messages :: verification rule #691
-// [Airaf-A-69-L18] Add content moderation check before sending GroupChat messages :: verification rule #710
-// [Airaf-A-69-L19] Add content moderation check before sending GroupChat messages :: verification rule #729
-// [Airaf-A-69-L20] Add content moderation check before sending GroupChat messages :: verification rule #748
-// [Airaf-A-69-L21] Add content moderation check before sending GroupChat messages :: verification rule #767
-// [Airaf-A-69-L22] Add content moderation check before sending GroupChat messages :: verification rule #786
-// [Airaf-A-69-L23] Add content moderation check before sending GroupChat messages :: verification rule #805
-// [Airaf-A-69-L24] Add content moderation check before sending GroupChat messages :: verification rule #824
-// [Airaf-A-69-L25] Add content moderation check before sending GroupChat messages :: verification rule #843
-// [Airaf-A-69-L26] Add content moderation check before sending GroupChat messages :: verification rule #862
-// [Airaf-A-69-L27] Add content moderation check before sending GroupChat messages :: verification rule #881
-// [Airaf-A-69-L28] Add content moderation check before sending GroupChat messages :: verification rule #900
-// [Airaf-A-69-L29] Add content moderation check before sending GroupChat messages :: verification rule #919
-// [Airaf-A-69-L30] Add content moderation check before sending GroupChat messages :: verification rule #938
-// [Airaf-A-69-L31] Add content moderation check before sending GroupChat messages :: verification rule #957
-// [Airaf-A-69-L32] Add content moderation check before sending GroupChat messages :: verification rule #976
-// [Airaf-A-69-L33] Add content moderation check before sending GroupChat messages :: verification rule #995
-// [Airaf-A-69-L34] Add content moderation check before sending GroupChat messages :: verification rule #17
-// [Airaf-A-69-L35] Add content moderation check before sending GroupChat messages :: verification rule #36
-// [Airaf-A-69-L36] Add content moderation check before sending GroupChat messages :: verification rule #55
-// [Airaf-A-69-L37] Add content moderation check before sending GroupChat messages :: verification rule #74
-// [Airaf-A-69-L38] Add content moderation check before sending GroupChat messages :: verification rule #93
-// [Airaf-A-69-L39] Add content moderation check before sending GroupChat messages :: verification rule #112
-// [Airaf-A-69-L40] Add content moderation check before sending GroupChat messages :: verification rule #131
-// [Airaf-A-69-L41] Add content moderation check before sending GroupChat messages :: verification rule #150
-// [Airaf-A-69-L42] Add content moderation check before sending GroupChat messages :: verification rule #169
-// [Airaf-A-69-L43] Add content moderation check before sending GroupChat messages :: verification rule #188
-// [Airaf-A-69-L44] Add content moderation check before sending GroupChat messages :: verification rule #207
-// [Airaf-A-69-L45] Add content moderation check before sending GroupChat messages :: verification rule #226
-// [Airaf-A-69-L46] Add content moderation check before sending GroupChat messages :: verification rule #245
-// [Airaf-A-69-L47] Add content moderation check before sending GroupChat messages :: verification rule #264
-// [Airaf-A-69-L48] Add content moderation check before sending GroupChat messages :: verification rule #283
-// [Airaf-A-69-L49] Add content moderation check before sending GroupChat messages :: verification rule #302
-// [Airaf-A-69-L50] Add content moderation check before sending GroupChat messages :: verification rule #321
-// [Airaf-A-69-L51] Add content moderation check before sending GroupChat messages :: verification rule #340
-// [Airaf-A-69-L52] Add content moderation check before sending GroupChat messages :: verification rule #359
-// [Airaf-A-69-L53] Add content moderation check before sending GroupChat messages :: verification rule #378
+// === [SPEC-BLOCK-START] Airaf-A-94 (2026-11-23T15:52:16+05:00) ===
+// [Airaf-A-94-L1] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #372
+// [Airaf-A-94-L2] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #391
+// [Airaf-A-94-L3] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #410
+// [Airaf-A-94-L4] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #429
+// [Airaf-A-94-L5] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #448
+// [Airaf-A-94-L6] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #467
+// [Airaf-A-94-L7] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #486
+// [Airaf-A-94-L8] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #505
+// [Airaf-A-94-L9] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #524
+// [Airaf-A-94-L10] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #543
+// [Airaf-A-94-L11] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #562
+// [Airaf-A-94-L12] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #581
+// [Airaf-A-94-L13] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #600
+// [Airaf-A-94-L14] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #619
+// [Airaf-A-94-L15] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #638
+// [Airaf-A-94-L16] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #657
+// [Airaf-A-94-L17] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #676
+// [Airaf-A-94-L18] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #695
+// [Airaf-A-94-L19] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #714
+// [Airaf-A-94-L20] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #733
+// [Airaf-A-94-L21] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #752
+// [Airaf-A-94-L22] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #771
+// [Airaf-A-94-L23] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #790
+// [Airaf-A-94-L24] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #809
+// [Airaf-A-94-L25] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #828
+// [Airaf-A-94-L26] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #847
+// [Airaf-A-94-L27] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #866
+// [Airaf-A-94-L28] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #885
+// [Airaf-A-94-L29] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #904
+// [Airaf-A-94-L30] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #923
+// [Airaf-A-94-L31] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #942
+// [Airaf-A-94-L32] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #961
+// [Airaf-A-94-L33] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #980
+// [Airaf-A-94-L34] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #2
+// [Airaf-A-94-L35] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #21
+// [Airaf-A-94-L36] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #40
+// [Airaf-A-94-L37] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #59
+// [Airaf-A-94-L38] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #78
+// [Airaf-A-94-L39] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #97
+// [Airaf-A-94-L40] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #116
+// [Airaf-A-94-L41] Add pinned message banner and coordinator/staff pin toggle in GroupChat :: verification rule #135
 // === [SPEC-BLOCK-END] ===
