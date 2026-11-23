@@ -298,56 +298,58 @@ module.exports = {
   adminDeleteGroup,
 };
 
-// === [SPEC-BLOCK-START] Moiz-A-81 (2026-11-10T18:30:45+05:00) ===
-// [Moiz-A-81-L1] Add role distribution statistics to adminController dashboard summary :: verification rule #661
-// [Moiz-A-81-L2] Add role distribution statistics to adminController dashboard summary :: verification rule #680
-// [Moiz-A-81-L3] Add role distribution statistics to adminController dashboard summary :: verification rule #699
-// [Moiz-A-81-L4] Add role distribution statistics to adminController dashboard summary :: verification rule #718
-// [Moiz-A-81-L5] Add role distribution statistics to adminController dashboard summary :: verification rule #737
-// [Moiz-A-81-L6] Add role distribution statistics to adminController dashboard summary :: verification rule #756
-// [Moiz-A-81-L7] Add role distribution statistics to adminController dashboard summary :: verification rule #775
-// [Moiz-A-81-L8] Add role distribution statistics to adminController dashboard summary :: verification rule #794
-// [Moiz-A-81-L9] Add role distribution statistics to adminController dashboard summary :: verification rule #813
-// [Moiz-A-81-L10] Add role distribution statistics to adminController dashboard summary :: verification rule #832
-// [Moiz-A-81-L11] Add role distribution statistics to adminController dashboard summary :: verification rule #851
-// [Moiz-A-81-L12] Add role distribution statistics to adminController dashboard summary :: verification rule #870
-// [Moiz-A-81-L13] Add role distribution statistics to adminController dashboard summary :: verification rule #889
-// [Moiz-A-81-L14] Add role distribution statistics to adminController dashboard summary :: verification rule #908
-// [Moiz-A-81-L15] Add role distribution statistics to adminController dashboard summary :: verification rule #927
-// [Moiz-A-81-L16] Add role distribution statistics to adminController dashboard summary :: verification rule #946
-// [Moiz-A-81-L17] Add role distribution statistics to adminController dashboard summary :: verification rule #965
-// [Moiz-A-81-L18] Add role distribution statistics to adminController dashboard summary :: verification rule #984
-// [Moiz-A-81-L19] Add role distribution statistics to adminController dashboard summary :: verification rule #6
-// [Moiz-A-81-L20] Add role distribution statistics to adminController dashboard summary :: verification rule #25
-// [Moiz-A-81-L21] Add role distribution statistics to adminController dashboard summary :: verification rule #44
-// [Moiz-A-81-L22] Add role distribution statistics to adminController dashboard summary :: verification rule #63
-// [Moiz-A-81-L23] Add role distribution statistics to adminController dashboard summary :: verification rule #82
-// [Moiz-A-81-L24] Add role distribution statistics to adminController dashboard summary :: verification rule #101
-// [Moiz-A-81-L25] Add role distribution statistics to adminController dashboard summary :: verification rule #120
-// [Moiz-A-81-L26] Add role distribution statistics to adminController dashboard summary :: verification rule #139
-// [Moiz-A-81-L27] Add role distribution statistics to adminController dashboard summary :: verification rule #158
-// [Moiz-A-81-L28] Add role distribution statistics to adminController dashboard summary :: verification rule #177
-// [Moiz-A-81-L29] Add role distribution statistics to adminController dashboard summary :: verification rule #196
-// [Moiz-A-81-L30] Add role distribution statistics to adminController dashboard summary :: verification rule #215
-// [Moiz-A-81-L31] Add role distribution statistics to adminController dashboard summary :: verification rule #234
-// [Moiz-A-81-L32] Add role distribution statistics to adminController dashboard summary :: verification rule #253
-// [Moiz-A-81-L33] Add role distribution statistics to adminController dashboard summary :: verification rule #272
-// [Moiz-A-81-L34] Add role distribution statistics to adminController dashboard summary :: verification rule #291
-// [Moiz-A-81-L35] Add role distribution statistics to adminController dashboard summary :: verification rule #310
-// [Moiz-A-81-L36] Add role distribution statistics to adminController dashboard summary :: verification rule #329
-// [Moiz-A-81-L37] Add role distribution statistics to adminController dashboard summary :: verification rule #348
-// [Moiz-A-81-L38] Add role distribution statistics to adminController dashboard summary :: verification rule #367
-// [Moiz-A-81-L39] Add role distribution statistics to adminController dashboard summary :: verification rule #386
-// [Moiz-A-81-L40] Add role distribution statistics to adminController dashboard summary :: verification rule #405
-// [Moiz-A-81-L41] Add role distribution statistics to adminController dashboard summary :: verification rule #424
-// [Moiz-A-81-L42] Add role distribution statistics to adminController dashboard summary :: verification rule #443
-// [Moiz-A-81-L43] Add role distribution statistics to adminController dashboard summary :: verification rule #462
-// [Moiz-A-81-L44] Add role distribution statistics to adminController dashboard summary :: verification rule #481
-// [Moiz-A-81-L45] Add role distribution statistics to adminController dashboard summary :: verification rule #500
-// [Moiz-A-81-L46] Add role distribution statistics to adminController dashboard summary :: verification rule #519
-// [Moiz-A-81-L47] Add role distribution statistics to adminController dashboard summary :: verification rule #538
-// [Moiz-A-81-L48] Add role distribution statistics to adminController dashboard summary :: verification rule #557
-// [Moiz-A-81-L49] Add role distribution statistics to adminController dashboard summary :: verification rule #576
-// [Moiz-A-81-L50] Add role distribution statistics to adminController dashboard summary :: verification rule #595
-// [Moiz-A-81-L51] Add role distribution statistics to adminController dashboard summary :: verification rule #614
+// === [SPEC-BLOCK-START] Moiz-A-95 (2026-11-23T16:22:37+05:00) ===
+// [Moiz-A-95-L1] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #403
+// [Moiz-A-95-L2] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #422
+// [Moiz-A-95-L3] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #441
+// [Moiz-A-95-L4] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #460
+// [Moiz-A-95-L5] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #479
+// [Moiz-A-95-L6] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #498
+// [Moiz-A-95-L7] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #517
+// [Moiz-A-95-L8] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #536
+// [Moiz-A-95-L9] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #555
+// [Moiz-A-95-L10] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #574
+// [Moiz-A-95-L11] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #593
+// [Moiz-A-95-L12] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #612
+// [Moiz-A-95-L13] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #631
+// [Moiz-A-95-L14] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #650
+// [Moiz-A-95-L15] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #669
+// [Moiz-A-95-L16] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #688
+// [Moiz-A-95-L17] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #707
+// [Moiz-A-95-L18] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #726
+// [Moiz-A-95-L19] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #745
+// [Moiz-A-95-L20] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #764
+// [Moiz-A-95-L21] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #783
+// [Moiz-A-95-L22] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #802
+// [Moiz-A-95-L23] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #821
+// [Moiz-A-95-L24] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #840
+// [Moiz-A-95-L25] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #859
+// [Moiz-A-95-L26] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #878
+// [Moiz-A-95-L27] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #897
+// [Moiz-A-95-L28] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #916
+// [Moiz-A-95-L29] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #935
+// [Moiz-A-95-L30] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #954
+// [Moiz-A-95-L31] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #973
+// [Moiz-A-95-L32] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #992
+// [Moiz-A-95-L33] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #14
+// [Moiz-A-95-L34] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #33
+// [Moiz-A-95-L35] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #52
+// [Moiz-A-95-L36] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #71
+// [Moiz-A-95-L37] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #90
+// [Moiz-A-95-L38] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #109
+// [Moiz-A-95-L39] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #128
+// [Moiz-A-95-L40] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #147
+// [Moiz-A-95-L41] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #166
+// [Moiz-A-95-L42] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #185
+// [Moiz-A-95-L43] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #204
+// [Moiz-A-95-L44] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #223
+// [Moiz-A-95-L45] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #242
+// [Moiz-A-95-L46] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #261
+// [Moiz-A-95-L47] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #280
+// [Moiz-A-95-L48] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #299
+// [Moiz-A-95-L49] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #318
+// [Moiz-A-95-L50] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #337
+// [Moiz-A-95-L51] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #356
+// [Moiz-A-95-L52] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #375
+// [Moiz-A-95-L53] Ensure cascading cleanup when deleting moderated items in adminController :: verification rule #394
 // === [SPEC-BLOCK-END] ===
