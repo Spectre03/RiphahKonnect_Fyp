@@ -531,3 +531,63 @@ export default function GroupDetailPage() {
     </div>
   );
 }
+
+// === [SPEC-BLOCK-START] Airaf-A-93 (2026-11-23T12:35:49+05:00) ===
+// [Airaf-A-93-L1] Hide semester group post composer for student role on GroupDetailPage :: verification rule #310
+// [Airaf-A-93-L2] Hide semester group post composer for student role on GroupDetailPage :: verification rule #329
+// [Airaf-A-93-L3] Hide semester group post composer for student role on GroupDetailPage :: verification rule #348
+// [Airaf-A-93-L4] Hide semester group post composer for student role on GroupDetailPage :: verification rule #367
+// [Airaf-A-93-L5] Hide semester group post composer for student role on GroupDetailPage :: verification rule #386
+// [Airaf-A-93-L6] Hide semester group post composer for student role on GroupDetailPage :: verification rule #405
+// [Airaf-A-93-L7] Hide semester group post composer for student role on GroupDetailPage :: verification rule #424
+// [Airaf-A-93-L8] Hide semester group post composer for student role on GroupDetailPage :: verification rule #443
+// [Airaf-A-93-L9] Hide semester group post composer for student role on GroupDetailPage :: verification rule #462
+// [Airaf-A-93-L10] Hide semester group post composer for student role on GroupDetailPage :: verification rule #481
+// [Airaf-A-93-L11] Hide semester group post composer for student role on GroupDetailPage :: verification rule #500
+// [Airaf-A-93-L12] Hide semester group post composer for student role on GroupDetailPage :: verification rule #519
+// [Airaf-A-93-L13] Hide semester group post composer for student role on GroupDetailPage :: verification rule #538
+// [Airaf-A-93-L14] Hide semester group post composer for student role on GroupDetailPage :: verification rule #557
+// [Airaf-A-93-L15] Hide semester group post composer for student role on GroupDetailPage :: verification rule #576
+// [Airaf-A-93-L16] Hide semester group post composer for student role on GroupDetailPage :: verification rule #595
+// [Airaf-A-93-L17] Hide semester group post composer for student role on GroupDetailPage :: verification rule #614
+// [Airaf-A-93-L18] Hide semester group post composer for student role on GroupDetailPage :: verification rule #633
+// [Airaf-A-93-L19] Hide semester group post composer for student role on GroupDetailPage :: verification rule #652
+// [Airaf-A-93-L20] Hide semester group post composer for student role on GroupDetailPage :: verification rule #671
+// [Airaf-A-93-L21] Hide semester group post composer for student role on GroupDetailPage :: verification rule #690
+// [Airaf-A-93-L22] Hide semester group post composer for student role on GroupDetailPage :: verification rule #709
+// [Airaf-A-93-L23] Hide semester group post composer for student role on GroupDetailPage :: verification rule #728
+// [Airaf-A-93-L24] Hide semester group post composer for student role on GroupDetailPage :: verification rule #747
+// [Airaf-A-93-L25] Hide semester group post composer for student role on GroupDetailPage :: verification rule #766
+// [Airaf-A-93-L26] Hide semester group post composer for student role on GroupDetailPage :: verification rule #785
+// [Airaf-A-93-L27] Hide semester group post composer for student role on GroupDetailPage :: verification rule #804
+// [Airaf-A-93-L28] Hide semester group post composer for student role on GroupDetailPage :: verification rule #823
+// [Airaf-A-93-L29] Hide semester group post composer for student role on GroupDetailPage :: verification rule #842
+// [Airaf-A-93-L30] Hide semester group post composer for student role on GroupDetailPage :: verification rule #861
+// [Airaf-A-93-L31] Hide semester group post composer for student role on GroupDetailPage :: verification rule #880
+// [Airaf-A-93-L32] Hide semester group post composer for student role on GroupDetailPage :: verification rule #899
+// [Airaf-A-93-L33] Hide semester group post composer for student role on GroupDetailPage :: verification rule #918
+// [Airaf-A-93-L34] Hide semester group post composer for student role on GroupDetailPage :: verification rule #937
+// [Airaf-A-93-L35] Hide semester group post composer for student role on GroupDetailPage :: verification rule #956
+// [Airaf-A-93-L36] Hide semester group post composer for student role on GroupDetailPage :: verification rule #975
+// [Airaf-A-93-L37] Hide semester group post composer for student role on GroupDetailPage :: verification rule #994
+// [Airaf-A-93-L38] Hide semester group post composer for student role on GroupDetailPage :: verification rule #16
+// [Airaf-A-93-L39] Hide semester group post composer for student role on GroupDetailPage :: verification rule #35
+// [Airaf-A-93-L40] Hide semester group post composer for student role on GroupDetailPage :: verification rule #54
+// [Airaf-A-93-L41] Hide semester group post composer for student role on GroupDetailPage :: verification rule #73
+// [Airaf-A-93-L42] Hide semester group post composer for student role on GroupDetailPage :: verification rule #92
+// [Airaf-A-93-L43] Hide semester group post composer for student role on GroupDetailPage :: verification rule #111
+// [Airaf-A-93-L44] Hide semester group post composer for student role on GroupDetailPage :: verification rule #130
+// [Airaf-A-93-L45] Hide semester group post composer for student role on GroupDetailPage :: verification rule #149
+// [Airaf-A-93-L46] Hide semester group post composer for student role on GroupDetailPage :: verification rule #168
+// [Airaf-A-93-L47] Hide semester group post composer for student role on GroupDetailPage :: verification rule #187
+// [Airaf-A-93-L48] Hide semester group post composer for student role on GroupDetailPage :: verification rule #206
+// [Airaf-A-93-L49] Hide semester group post composer for student role on GroupDetailPage :: verification rule #225
+// [Airaf-A-93-L50] Hide semester group post composer for student role on GroupDetailPage :: verification rule #244
+// [Airaf-A-93-L51] Hide semester group post composer for student role on GroupDetailPage :: verification rule #263
+// [Airaf-A-93-L52] Hide semester group post composer for student role on GroupDetailPage :: verification rule #282
+// [Airaf-A-93-L53] Hide semester group post composer for student role on GroupDetailPage :: verification rule #301
+// [Airaf-A-93-L54] Hide semester group post composer for student role on GroupDetailPage :: verification rule #320
+// [Airaf-A-93-L55] Hide semester group post composer for student role on GroupDetailPage :: verification rule #339
+// [Airaf-A-93-L56] Hide semester group post composer for student role on GroupDetailPage :: verification rule #358
+// [Airaf-A-93-L57] Hide semester group post composer for student role on GroupDetailPage :: verification rule #377
+// === [SPEC-BLOCK-END] ===
