@@ -1,15 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { ticketsAPI } from '../services/api';
+import { socket } from '../services/socket';
 import { formatDate } from '../utils/brand';
 import { cn } from '../utils/cn';
-import { Card, Badge, Button, Modal } from '../components/ui';
+import { validateImageFile, fileToDataUrl, checkTextContent } from '../utils/moderation';
+import { Card, Badge, Button, Modal, Input } from '../components/ui';
 import toast from 'react-hot-toast';
 import { QRCodeSVG } from 'qrcode.react';
 import {
   Ticket as TicketIcon, Calendar, MapPin,
-  Loader2, ArrowRight, Clock, ShieldCheck, AlertTriangle, Eye, CheckCircle2,
+  Loader2, ArrowRight, Clock, ShieldCheck, AlertTriangle, Eye, CheckCircle2, Upload,
 } from 'lucide-react';
 
 export default function MyTicketsPage() {
@@ -17,20 +19,101 @@ export default function MyTicketsPage() {
   const [tickets, setTickets] = useState([]);
   const [loading, setLoading] = useState(true);
   const [viewSlipTicket, setViewSlipTicket] = useState(null);
+  const [reuploadTicket, setReuploadTicket] = useState(null);
+  const [slipDataUrl, setSlipDataUrl] = useState('');
+  const [slipFileName, setSlipFileName] = useState('');
+  const [paymentRef, setPaymentRef] = useState('');
+  const [uploadingSlip, setUploadingSlip] = useState(false);
+
+  const fetchTickets = useCallback(async () => {
+    try {
+      const res = await ticketsAPI.getMyTickets();
+      setTickets(res.data.tickets || []);
+    } catch {
+      toast.error('Failed to load tickets.');
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   useEffect(() => {
-    const fetchTickets = async () => {
-      try {
-        const res = await ticketsAPI.getMyTickets();
-        setTickets(res.data.tickets || []);
-      } catch {
-        toast.error('Failed to load tickets.');
-      } finally {
-        setLoading(false);
+    fetchTickets();
+  }, [fetchTickets]);
+
+  // Real-time Socket.IO listener so status changes (Approved / Rejected / Checked In) appear instantly
+  useEffect(() => {
+    const handleTicketUpdated = (payload) => {
+      if (!payload) return;
+      if (!payload.userId || payload.userId === user?.id) {
+        fetchTickets();
+        if (payload.action === 'APPROVED' && payload.code) {
+          toast.success(`Payment slip approved! Your Ticket ID is ${payload.code}`);
+        } else if (payload.action === 'REJECTED') {
+          toast.error('Your payment slip was not approved. Please check the reason and re-upload.');
+        } else if (payload.action === 'CHECKED_IN') {
+          toast.success('Ticket verified & checked in at the event!');
+        }
       }
     };
-    fetchTickets();
-  }, []);
+    socket.on('ticketUpdated', handleTicketUpdated);
+    return () => socket.off('ticketUpdated', handleTicketUpdated);
+  }, [user?.id, fetchTickets]);
+
+  const openReuploadModal = (ticket) => {
+    setReuploadTicket(ticket);
+    setSlipDataUrl('');
+    setSlipFileName('');
+    setPaymentRef(ticket.paymentRef || '');
+  };
+
+  const handleSlipFileChange = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const check = validateImageFile(file, 3);
+    if (!check.valid) {
+      toast.error(check.error);
+      e.target.value = '';
+      return;
+    }
+    try {
+      const dataUrl = await fileToDataUrl(file);
+      setSlipDataUrl(dataUrl);
+      setSlipFileName(file.name);
+    } catch {
+      toast.error('Could not read payment slip image.');
+    }
+  };
+
+  const handleReuploadSubmit = async (e) => {
+    e.preventDefault();
+    if (!reuploadTicket) return;
+    if (!slipDataUrl) {
+      toast.error('Please attach a clear screenshot or photo of your payment slip.');
+      return;
+    }
+    if (paymentRef.trim()) {
+      const refCheck = checkTextContent(paymentRef, 'Transaction Reference');
+      if (!refCheck.clean) {
+        toast.error(refCheck.reason);
+        return;
+      }
+    }
+
+    setUploadingSlip(true);
+    try {
+      await ticketsAPI.buy(reuploadTicket.eventId, {
+        paymentSlipUrl: slipDataUrl,
+        paymentRef: paymentRef.trim() || undefined,
+      });
+      toast.success('New payment slip submitted for Event Manager verification!');
+      setReuploadTicket(null);
+      await fetchTickets();
+    } catch (err) {
+      toast.error(err.response?.data?.message || 'Failed to upload payment slip.');
+    } finally {
+      setUploadingSlip(false);
+    }
+  };
 
   if (loading) {
     return (
@@ -202,7 +285,7 @@ export default function MyTicketsPage() {
                           <div className="text-xs leading-relaxed">
                             <p className="font-bold">Awaiting Event Manager Verification</p>
                             <p className="text-amber-700 mt-0.5">
-                              Your attached payment slip is being verified. Once approved, your private <strong>Unique Ticket ID</strong> &amp; QR code will appear here.
+                              Your attached payment slip is being verified. Once approved, your private <strong>Unique Ticket ID</strong> &amp; QR code will appear here automatically.
                             </p>
                           </div>
                         </div>
@@ -211,15 +294,26 @@ export default function MyTicketsPage() {
                             Fee: <strong className="text-slate-700">{ticket.pricePaid > 0 ? `Rs. ${ticket.pricePaid}` : 'Free'}</strong>
                             {ticket.paymentRef ? ` · Ref: ${ticket.paymentRef}` : ''}
                           </span>
-                          {ticket.paymentSlipUrl && (
-                            <button
-                              type="button"
-                              onClick={() => setViewSlipTicket(ticket)}
-                              className="font-bold text-indigo-600 hover:underline flex items-center gap-1 cursor-pointer"
-                            >
-                              <Eye size={13} /> View Attached Slip
-                            </button>
-                          )}
+                          <div className="flex items-center gap-3">
+                            {ticket.paymentSlipUrl && (
+                              <button
+                                type="button"
+                                onClick={() => setViewSlipTicket(ticket)}
+                                className="font-bold text-indigo-600 hover:underline flex items-center gap-1 cursor-pointer"
+                              >
+                                <Eye size={13} /> View Slip
+                              </button>
+                            )}
+                            {!isPastEvent && (
+                              <button
+                                type="button"
+                                onClick={() => openReuploadModal(ticket)}
+                                className="font-bold text-slate-600 hover:text-indigo-600 hover:underline flex items-center gap-1 cursor-pointer"
+                              >
+                                <Upload size={12} /> Replace Slip
+                              </button>
+                            )}
+                          </div>
                         </div>
                       </div>
                     ) : (
@@ -229,14 +323,29 @@ export default function MyTicketsPage() {
                           <div className="text-xs leading-relaxed">
                             <p className="font-bold">Payment Slip Not Approved</p>
                             <p className="text-red-700 mt-0.5">
-                              {ticket.rejectionReason || 'Please go to the Events page to upload a clear payment receipt.'}
+                              {ticket.rejectionReason || 'Please upload a clear payment receipt image for Event Manager verification.'}
                             </p>
                           </div>
                         </div>
-                        <div className="flex justify-end">
-                          <Link to="/events">
-                            <Button size="sm" variant="secondary">Go to Events to Re-Upload</Button>
-                          </Link>
+                        <div className="flex items-center justify-between gap-2">
+                          {ticket.paymentSlipUrl ? (
+                            <button
+                              type="button"
+                              onClick={() => setViewSlipTicket(ticket)}
+                              className="text-xs font-bold text-slate-600 hover:text-indigo-600 hover:underline flex items-center gap-1 cursor-pointer"
+                            >
+                              <Eye size={13} /> View Previous Slip
+                            </button>
+                          ) : <span />}
+                          {!isPastEvent && (
+                            <Button
+                              size="sm"
+                              icon={Upload}
+                              onClick={() => openReuploadModal(ticket)}
+                            >
+                              Re-Upload Payment Slip
+                            </Button>
+                          )}
                         </div>
                       </div>
                     )}
@@ -257,63 +366,98 @@ export default function MyTicketsPage() {
             icon={Eye}
             iconColor="bg-indigo-600"
           >
-            <div className="rounded-xl overflow-hidden border border-slate-200 bg-slate-950/5 max-h-[65vh] flex items-center justify-center">
-              <img
-                src={viewSlipTicket.paymentSlipUrl}
-                alt="Payment Slip"
-                className="max-h-[62vh] w-auto object-contain"
-              />
+            <div className="space-y-3">
+              <div className="rounded-xl overflow-hidden border border-slate-200 bg-slate-950/5 max-h-[60vh] flex items-center justify-center">
+                <img
+                  src={viewSlipTicket.paymentSlipUrl}
+                  alt="Payment Slip"
+                  className="max-h-[58vh] w-auto object-contain"
+                />
+              </div>
+              {viewSlipTicket.status === 'REJECTED' && (
+                <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-xs text-red-800 flex items-center justify-between gap-3">
+                  <span><strong>Reason:</strong> {viewSlipTicket.rejectionReason || 'Payment slip could not be verified.'}</span>
+                  <Button
+                    size="sm"
+                    icon={Upload}
+                    onClick={() => {
+                      const target = viewSlipTicket;
+                      setViewSlipTicket(null);
+                      openReuploadModal(target);
+                    }}
+                  >
+                    Re-Upload Now
+                  </Button>
+                </div>
+              )}
             </div>
+          </Modal>
+        )}
+
+        {/* Re-Upload / Replace Payment Slip Modal */}
+        {reuploadTicket && (
+          <Modal
+            open={!!reuploadTicket}
+            onClose={() => !uploadingSlip && setReuploadTicket(null)}
+            title={`${reuploadTicket.status === 'REJECTED' ? 'Re-Upload' : 'Replace'} Payment Slip`}
+            subtitle={reuploadTicket.event?.title}
+            icon={Upload}
+            iconColor="bg-indigo-600"
+          >
+            <form onSubmit={handleReuploadSubmit} className="space-y-4">
+              {reuploadTicket.status === 'REJECTED' && reuploadTicket.rejectionReason && (
+                <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-xs text-red-800">
+                  <strong>Previous Rejection Reason:</strong> {reuploadTicket.rejectionReason}
+                </div>
+              )}
+
+              <div>
+                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  Attach Clear Payment Slip / Receipt Image *
+                </label>
+                <label className="flex flex-col items-center justify-center border-2 border-dashed border-indigo-200 hover:border-indigo-400 rounded-xl p-4 bg-indigo-50/40 cursor-pointer transition-colors">
+                  <Upload className="h-6 w-6 text-indigo-500 mb-1.5" />
+                  <span className="text-xs font-semibold text-slate-700">
+                    {slipFileName || 'Click to choose payment slip screenshot (JPG, PNG, WEBP · max 3MB)'}
+                  </span>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleSlipFileChange}
+                    className="hidden"
+                  />
+                </label>
+                {slipDataUrl && (
+                  <div className="mt-2.5 rounded-xl overflow-hidden border border-slate-200 max-h-48 bg-slate-50 flex items-center justify-center">
+                    <img src={slipDataUrl} alt="New Payment Slip Preview" className="max-h-44 object-contain" />
+                  </div>
+                )}
+              </div>
+
+              <Input
+                label="Transaction / Reference ID (Optional)"
+                placeholder="e.g. JazzCash / EasyPaisa / Bank TID #9384712"
+                value={paymentRef}
+                onChange={(e) => setPaymentRef(e.target.value)}
+              />
+
+              <div className="flex justify-end gap-2 pt-2">
+                <Button
+                  type="button"
+                  variant="ghost"
+                  disabled={uploadingSlip}
+                  onClick={() => setReuploadTicket(null)}
+                >
+                  Cancel
+                </Button>
+                <Button type="submit" loading={uploadingSlip} icon={CheckCircle2}>
+                  Submit Slip for Verification
+                </Button>
+              </div>
+            </form>
           </Modal>
         )}
       </div>
     </div>
   );
 }
-
-// === [SPEC-BLOCK-START] Airaf-A-92 (2026-11-22T19:18:05+05:00) ===
-// [Airaf-A-92-L1] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #279
-// [Airaf-A-92-L2] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #298
-// [Airaf-A-92-L3] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #317
-// [Airaf-A-92-L4] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #336
-// [Airaf-A-92-L5] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #355
-// [Airaf-A-92-L6] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #374
-// [Airaf-A-92-L7] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #393
-// [Airaf-A-92-L8] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #412
-// [Airaf-A-92-L9] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #431
-// [Airaf-A-92-L10] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #450
-// [Airaf-A-92-L11] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #469
-// [Airaf-A-92-L12] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #488
-// [Airaf-A-92-L13] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #507
-// [Airaf-A-92-L14] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #526
-// [Airaf-A-92-L15] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #545
-// [Airaf-A-92-L16] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #564
-// [Airaf-A-92-L17] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #583
-// [Airaf-A-92-L18] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #602
-// [Airaf-A-92-L19] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #621
-// [Airaf-A-92-L20] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #640
-// [Airaf-A-92-L21] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #659
-// [Airaf-A-92-L22] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #678
-// [Airaf-A-92-L23] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #697
-// [Airaf-A-92-L24] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #716
-// [Airaf-A-92-L25] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #735
-// [Airaf-A-92-L26] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #754
-// [Airaf-A-92-L27] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #773
-// [Airaf-A-92-L28] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #792
-// [Airaf-A-92-L29] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #811
-// [Airaf-A-92-L30] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #830
-// [Airaf-A-92-L31] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #849
-// [Airaf-A-92-L32] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #868
-// [Airaf-A-92-L33] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #887
-// [Airaf-A-92-L34] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #906
-// [Airaf-A-92-L35] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #925
-// [Airaf-A-92-L36] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #944
-// [Airaf-A-92-L37] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #963
-// [Airaf-A-92-L38] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #982
-// [Airaf-A-92-L39] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #4
-// [Airaf-A-92-L40] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #23
-// [Airaf-A-92-L41] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #42
-// [Airaf-A-92-L42] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #61
-// [Airaf-A-92-L43] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #80
-// [Airaf-A-92-L44] Subscribe to ticketUpdated socket event for live approval updates :: verification rule #99
-// === [SPEC-BLOCK-END] ===
