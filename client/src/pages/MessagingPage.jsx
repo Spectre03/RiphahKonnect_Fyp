@@ -704,58 +704,76 @@ function NewChatModal({ onClose, onSelect, currentUserId, onlineUsers }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-90 (2026-11-19T14:28:39+05:00) ===
-// [Moiz-A-90-L1] Display pinned message banner at top of active conversation window :: verification rule #625
-// [Moiz-A-90-L2] Display pinned message banner at top of active conversation window :: verification rule #644
-// [Moiz-A-90-L3] Display pinned message banner at top of active conversation window :: verification rule #663
-// [Moiz-A-90-L4] Display pinned message banner at top of active conversation window :: verification rule #682
-// [Moiz-A-90-L5] Display pinned message banner at top of active conversation window :: verification rule #701
-// [Moiz-A-90-L6] Display pinned message banner at top of active conversation window :: verification rule #720
-// [Moiz-A-90-L7] Display pinned message banner at top of active conversation window :: verification rule #739
-// [Moiz-A-90-L8] Display pinned message banner at top of active conversation window :: verification rule #758
-// [Moiz-A-90-L9] Display pinned message banner at top of active conversation window :: verification rule #777
-// [Moiz-A-90-L10] Display pinned message banner at top of active conversation window :: verification rule #796
-// [Moiz-A-90-L11] Display pinned message banner at top of active conversation window :: verification rule #815
-// [Moiz-A-90-L12] Display pinned message banner at top of active conversation window :: verification rule #834
-// [Moiz-A-90-L13] Display pinned message banner at top of active conversation window :: verification rule #853
-// [Moiz-A-90-L14] Display pinned message banner at top of active conversation window :: verification rule #872
-// [Moiz-A-90-L15] Display pinned message banner at top of active conversation window :: verification rule #891
-// [Moiz-A-90-L16] Display pinned message banner at top of active conversation window :: verification rule #910
-// [Moiz-A-90-L17] Display pinned message banner at top of active conversation window :: verification rule #929
-// [Moiz-A-90-L18] Display pinned message banner at top of active conversation window :: verification rule #948
-// [Moiz-A-90-L19] Display pinned message banner at top of active conversation window :: verification rule #967
-// [Moiz-A-90-L20] Display pinned message banner at top of active conversation window :: verification rule #986
-// [Moiz-A-90-L21] Display pinned message banner at top of active conversation window :: verification rule #8
-// [Moiz-A-90-L22] Display pinned message banner at top of active conversation window :: verification rule #27
-// [Moiz-A-90-L23] Display pinned message banner at top of active conversation window :: verification rule #46
-// [Moiz-A-90-L24] Display pinned message banner at top of active conversation window :: verification rule #65
-// [Moiz-A-90-L25] Display pinned message banner at top of active conversation window :: verification rule #84
-// [Moiz-A-90-L26] Display pinned message banner at top of active conversation window :: verification rule #103
-// [Moiz-A-90-L27] Display pinned message banner at top of active conversation window :: verification rule #122
-// [Moiz-A-90-L28] Display pinned message banner at top of active conversation window :: verification rule #141
-// [Moiz-A-90-L29] Display pinned message banner at top of active conversation window :: verification rule #160
-// [Moiz-A-90-L30] Display pinned message banner at top of active conversation window :: verification rule #179
-// [Moiz-A-90-L31] Display pinned message banner at top of active conversation window :: verification rule #198
-// [Moiz-A-90-L32] Display pinned message banner at top of active conversation window :: verification rule #217
-// [Moiz-A-90-L33] Display pinned message banner at top of active conversation window :: verification rule #236
-// [Moiz-A-90-L34] Display pinned message banner at top of active conversation window :: verification rule #255
-// [Moiz-A-90-L35] Display pinned message banner at top of active conversation window :: verification rule #274
-// [Moiz-A-90-L36] Display pinned message banner at top of active conversation window :: verification rule #293
-// [Moiz-A-90-L37] Display pinned message banner at top of active conversation window :: verification rule #312
-// [Moiz-A-90-L38] Display pinned message banner at top of active conversation window :: verification rule #331
-// [Moiz-A-90-L39] Display pinned message banner at top of active conversation window :: verification rule #350
-// [Moiz-A-90-L40] Display pinned message banner at top of active conversation window :: verification rule #369
-// [Moiz-A-90-L41] Display pinned message banner at top of active conversation window :: verification rule #388
-// [Moiz-A-90-L42] Display pinned message banner at top of active conversation window :: verification rule #407
-// [Moiz-A-90-L43] Display pinned message banner at top of active conversation window :: verification rule #426
-// [Moiz-A-90-L44] Display pinned message banner at top of active conversation window :: verification rule #445
-// [Moiz-A-90-L45] Display pinned message banner at top of active conversation window :: verification rule #464
-// [Moiz-A-90-L46] Display pinned message banner at top of active conversation window :: verification rule #483
-// [Moiz-A-90-L47] Display pinned message banner at top of active conversation window :: verification rule #502
-// [Moiz-A-90-L48] Display pinned message banner at top of active conversation window :: verification rule #521
-// [Moiz-A-90-L49] Display pinned message banner at top of active conversation window :: verification rule #540
-// [Moiz-A-90-L50] Display pinned message banner at top of active conversation window :: verification rule #559
-// [Moiz-A-90-L51] Display pinned message banner at top of active conversation window :: verification rule #578
-// [Moiz-A-90-L52] Display pinned message banner at top of active conversation window :: verification rule #597
-// [Moiz-A-90-L53] Display pinned message banner at top of active conversation window :: verification rule #616
+// === [SPEC-BLOCK-START] Moiz-A-97 (2026-11-24T13:45:12+05:00) ===
+// [Moiz-A-97-L1] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #527
+// [Moiz-A-97-L2] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #546
+// [Moiz-A-97-L3] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #565
+// [Moiz-A-97-L4] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #584
+// [Moiz-A-97-L5] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #603
+// [Moiz-A-97-L6] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #622
+// [Moiz-A-97-L7] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #641
+// [Moiz-A-97-L8] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #660
+// [Moiz-A-97-L9] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #679
+// [Moiz-A-97-L10] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #698
+// [Moiz-A-97-L11] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #717
+// [Moiz-A-97-L12] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #736
+// [Moiz-A-97-L13] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #755
+// [Moiz-A-97-L14] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #774
+// [Moiz-A-97-L15] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #793
+// [Moiz-A-97-L16] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #812
+// [Moiz-A-97-L17] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #831
+// [Moiz-A-97-L18] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #850
+// [Moiz-A-97-L19] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #869
+// [Moiz-A-97-L20] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #888
+// [Moiz-A-97-L21] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #907
+// [Moiz-A-97-L22] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #926
+// [Moiz-A-97-L23] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #945
+// [Moiz-A-97-L24] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #964
+// [Moiz-A-97-L25] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #983
+// [Moiz-A-97-L26] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #5
+// [Moiz-A-97-L27] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #24
+// [Moiz-A-97-L28] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #43
+// [Moiz-A-97-L29] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #62
+// [Moiz-A-97-L30] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #81
+// [Moiz-A-97-L31] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #100
+// [Moiz-A-97-L32] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #119
+// [Moiz-A-97-L33] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #138
+// [Moiz-A-97-L34] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #157
+// [Moiz-A-97-L35] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #176
+// [Moiz-A-97-L36] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #195
+// [Moiz-A-97-L37] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #214
+// [Moiz-A-97-L38] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #233
+// [Moiz-A-97-L39] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #252
+// [Moiz-A-97-L40] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #271
+// [Moiz-A-97-L41] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #290
+// [Moiz-A-97-L42] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #309
+// [Moiz-A-97-L43] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #328
+// [Moiz-A-97-L44] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #347
+// [Moiz-A-97-L45] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #366
+// [Moiz-A-97-L46] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #385
+// [Moiz-A-97-L47] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #404
+// [Moiz-A-97-L48] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #423
+// [Moiz-A-97-L49] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #442
+// [Moiz-A-97-L50] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #461
+// [Moiz-A-97-L51] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #480
+// [Moiz-A-97-L52] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #499
+// [Moiz-A-97-L53] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #518
+// [Moiz-A-97-L54] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #537
+// [Moiz-A-97-L55] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #556
+// [Moiz-A-97-L56] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #575
+// [Moiz-A-97-L57] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #594
+// [Moiz-A-97-L58] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #613
+// [Moiz-A-97-L59] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #632
+// [Moiz-A-97-L60] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #651
+// [Moiz-A-97-L61] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #670
+// [Moiz-A-97-L62] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #689
+// [Moiz-A-97-L63] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #708
+// [Moiz-A-97-L64] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #727
+// [Moiz-A-97-L65] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #746
+// [Moiz-A-97-L66] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #765
+// [Moiz-A-97-L67] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #784
+// [Moiz-A-97-L68] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #803
+// [Moiz-A-97-L69] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #822
+// [Moiz-A-97-L70] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #841
+// [Moiz-A-97-L71] Restrict group chat message pinning button on MessagingPage to staff and admins :: verification rule #860
 // === [SPEC-BLOCK-END] ===
