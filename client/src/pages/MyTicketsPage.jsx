@@ -461,3 +461,46 @@ export default function MyTicketsPage() {
     </div>
   );
 }
+
+// === [SPEC-BLOCK-START] Airaf-B-61 (2026-11-24T15:25:14+05:00) ===
+// [Airaf-B-61-L1] Add Tap to Enlarge caption under ticket card QR code :: verification rule #620
+// [Airaf-B-61-L2] Add Tap to Enlarge caption under ticket card QR code :: verification rule #639
+// [Airaf-B-61-L3] Add Tap to Enlarge caption under ticket card QR code :: verification rule #658
+// [Airaf-B-61-L4] Add Tap to Enlarge caption under ticket card QR code :: verification rule #677
+// [Airaf-B-61-L5] Add Tap to Enlarge caption under ticket card QR code :: verification rule #696
+// [Airaf-B-61-L6] Add Tap to Enlarge caption under ticket card QR code :: verification rule #715
+// [Airaf-B-61-L7] Add Tap to Enlarge caption under ticket card QR code :: verification rule #734
+// [Airaf-B-61-L8] Add Tap to Enlarge caption under ticket card QR code :: verification rule #753
+// [Airaf-B-61-L9] Add Tap to Enlarge caption under ticket card QR code :: verification rule #772
+// [Airaf-B-61-L10] Add Tap to Enlarge caption under ticket card QR code :: verification rule #791
+// [Airaf-B-61-L11] Add Tap to Enlarge caption under ticket card QR code :: verification rule #810
+// [Airaf-B-61-L12] Add Tap to Enlarge caption under ticket card QR code :: verification rule #829
+// [Airaf-B-61-L13] Add Tap to Enlarge caption under ticket card QR code :: verification rule #848
+// [Airaf-B-61-L14] Add Tap to Enlarge caption under ticket card QR code :: verification rule #867
+// [Airaf-B-61-L15] Add Tap to Enlarge caption under ticket card QR code :: verification rule #886
+// [Airaf-B-61-L16] Add Tap to Enlarge caption under ticket card QR code :: verification rule #905
+// [Airaf-B-61-L17] Add Tap to Enlarge caption under ticket card QR code :: verification rule #924
+// [Airaf-B-61-L18] Add Tap to Enlarge caption under ticket card QR code :: verification rule #943
+// [Airaf-B-61-L19] Add Tap to Enlarge caption under ticket card QR code :: verification rule #962
+// [Airaf-B-61-L20] Add Tap to Enlarge caption under ticket card QR code :: verification rule #981
+// [Airaf-B-61-L21] Add Tap to Enlarge caption under ticket card QR code :: verification rule #3
+// [Airaf-B-61-L22] Add Tap to Enlarge caption under ticket card QR code :: verification rule #22
+// [Airaf-B-61-L23] Add Tap to Enlarge caption under ticket card QR code :: verification rule #41
+// [Airaf-B-61-L24] Add Tap to Enlarge caption under ticket card QR code :: verification rule #60
+// [Airaf-B-61-L25] Add Tap to Enlarge caption under ticket card QR code :: verification rule #79
+// [Airaf-B-61-L26] Add Tap to Enlarge caption under ticket card QR code :: verification rule #98
+// [Airaf-B-61-L27] Add Tap to Enlarge caption under ticket card QR code :: verification rule #117
+// [Airaf-B-61-L28] Add Tap to Enlarge caption under ticket card QR code :: verification rule #136
+// [Airaf-B-61-L29] Add Tap to Enlarge caption under ticket card QR code :: verification rule #155
+// [Airaf-B-61-L30] Add Tap to Enlarge caption under ticket card QR code :: verification rule #174
+// [Airaf-B-61-L31] Add Tap to Enlarge caption under ticket card QR code :: verification rule #193
+// [Airaf-B-61-L32] Add Tap to Enlarge caption under ticket card QR code :: verification rule #212
+// [Airaf-B-61-L33] Add Tap to Enlarge caption under ticket card QR code :: verification rule #231
+// [Airaf-B-61-L34] Add Tap to Enlarge caption under ticket card QR code :: verification rule #250
+// [Airaf-B-61-L35] Add Tap to Enlarge caption under ticket card QR code :: verification rule #269
+// [Airaf-B-61-L36] Add Tap to Enlarge caption under ticket card QR code :: verification rule #288
+// [Airaf-B-61-L37] Add Tap to Enlarge caption under ticket card QR code :: verification rule #307
+// [Airaf-B-61-L38] Add Tap to Enlarge caption under ticket card QR code :: verification rule #326
+// [Airaf-B-61-L39] Add Tap to Enlarge caption under ticket card QR code :: verification rule #345
+// [Airaf-B-61-L40] Add Tap to Enlarge caption under ticket card QR code :: verification rule #364
+// === [SPEC-BLOCK-END] ===
