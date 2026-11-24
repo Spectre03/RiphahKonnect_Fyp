@@ -1,36 +1,33 @@
 import { useState, useEffect, useRef } from 'react';
-import { io } from 'socket.io-client';
 import { useAuth } from '../../context/AuthContext';
 import { conversationsAPI } from '../../services/api';
+import socket from '../../services/socket';
 import { timeShort } from '../../utils/brand';
 import { cn } from '../../utils/cn';
+import { checkTextContent } from '../../utils/moderation';
 import { Avatar } from '../ui';
 import toast from 'react-hot-toast';
-import { Send, Loader2 } from 'lucide-react';
+import { Send, Loader2, Pin, X } from 'lucide-react';
 
-const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:4000';
-
-export default function GroupChat({ conversationId }) {
+export default function GroupChat({ conversationId, canPin = false }) {
   const { user } = useAuth();
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [newMessage, setNewMessage] = useState('');
   const [sending, setSending] = useState(false);
   const messagesEndRef = useRef(null);
-  const socketRef = useRef(null);
 
-  // Connect to socket and load messages
+  // Connect to shared socket and load messages
   useEffect(() => {
     if (!user?.id || !conversationId) return;
 
-    // Load initial messages
     const loadMessages = async () => {
       try {
         setLoading(true);
         const res = await conversationsAPI.getMessages(conversationId);
-        setMessages(res.data.messages);
+        setMessages(res.data.messages || []);
         setTimeout(() => messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' }), 100);
-      } catch (err) {
+      } catch {
         toast.error('Failed to load chat messages.');
       } finally {
         setLoading(false);
@@ -38,16 +35,14 @@ export default function GroupChat({ conversationId }) {
     };
     loadMessages();
 
-    // Setup Socket
-    const socket = io(SOCKET_URL, { transports: ['websocket', 'polling'] });
-    socketRef.current = socket;
-
-    socket.on('connect', () => {
+    if (!socket.connected) {
+      socket.connect();
+    } else {
       socket.emit('identify', user.id);
-      socket.emit('joinConversation', conversationId);
-    });
+    }
+    socket.emit('joinConversation', conversationId);
 
-    socket.on('newMessage', (msg) => {
+    const handleNewMessage = (msg) => {
       if (msg.conversationId === conversationId) {
         setMessages((prev) => {
           if (prev.some((m) => m.id === msg.id)) return prev;
@@ -55,11 +50,23 @@ export default function GroupChat({ conversationId }) {
         });
         setTimeout(() => messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' }), 50);
       }
-    });
+    };
+
+    const handleMessagePinned = (updatedMsg) => {
+      if (updatedMsg.conversationId === conversationId) {
+        setMessages((prev) =>
+          prev.map((m) => (m.id === updatedMsg.id ? updatedMsg : m))
+        );
+      }
+    };
+
+    socket.on('newMessage', handleNewMessage);
+    socket.on('messagePinned', handleMessagePinned);
 
     return () => {
       socket.emit('leaveConversation', conversationId);
-      socket.disconnect();
+      socket.off('newMessage', handleNewMessage);
+      socket.off('messagePinned', handleMessagePinned);
     };
   }, [user?.id, conversationId]);
 
@@ -67,19 +74,40 @@ export default function GroupChat({ conversationId }) {
     e.preventDefault();
     if (!newMessage.trim() || !conversationId) return;
 
+    const modCheck = checkTextContent(newMessage, { minLength: 1, fieldName: 'Message' });
+    if (!modCheck.clean) {
+      toast.error(modCheck.reason);
+      return;
+    }
+
     try {
       setSending(true);
-      const res = await conversationsAPI.sendMessage(conversationId, newMessage);
+      const res = await conversationsAPI.sendMessage(conversationId, newMessage.trim());
       const sent = res.data.message;
-      setMessages((prev) => prev.some((m) => m.id === sent.id) ? prev : [...prev, sent]);
+      setMessages((prev) => (prev.some((m) => m.id === sent.id) ? prev : [...prev, sent]));
       setNewMessage('');
       setTimeout(() => messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' }), 50);
-    } catch {
-      toast.error('Failed to send message.');
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to send message.');
     } finally {
       setSending(false);
     }
   };
+
+  const handleTogglePin = async (messageId) => {
+    if (!canPin) return;
+    try {
+      const res = await conversationsAPI.togglePin(messageId);
+      const updatedMsg = res.data.message;
+      setMessages((prev) => prev.map((m) => (m.id === updatedMsg.id ? updatedMsg : m)));
+      toast.success(updatedMsg.isPinned ? 'Message pinned to group chat' : 'Message unpinned');
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to pin/unpin message.');
+    }
+  };
+
+  const pinnedMessages = messages.filter((m) => m.isPinned);
+  const latestPinned = pinnedMessages[pinnedMessages.length - 1] || null;
 
   if (loading) {
     return (
@@ -92,7 +120,40 @@ export default function GroupChat({ conversationId }) {
 
   return (
     <div className="flex flex-col bg-slate-50/30 rounded-2xl border border-slate-200/60 overflow-hidden" style={{ height: '600px' }}>
-      
+      {/* Pinned Message Banner */}
+      {latestPinned && (
+        <div className="bg-amber-50 border-b border-amber-200/70 px-4 py-2.5 flex items-center justify-between gap-3">
+          <div className="flex items-start gap-2.5 min-w-0">
+            <div className="h-7 w-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <Pin size={14} className="fill-amber-600" />
+            </div>
+            <div className="min-w-0">
+              <div className="flex items-center gap-2">
+                <p className="text-xs font-bold text-amber-900">
+                  Pinned Message {pinnedMessages.length > 1 ? `(${pinnedMessages.length})` : ''}
+                </p>
+                {latestPinned.sender?.name && (
+                  <span className="text-[11px] font-medium text-amber-700">
+                    · {latestPinned.sender.name}
+                  </span>
+                )}
+              </div>
+              <p className="text-xs text-amber-800 truncate">{latestPinned.content}</p>
+            </div>
+          </div>
+          {canPin && (
+            <button
+              type="button"
+              onClick={() => handleTogglePin(latestPinned.id)}
+              className="p-1.5 text-amber-700 hover:text-amber-900 hover:bg-amber-100 rounded-lg transition-colors cursor-pointer flex-shrink-0"
+              title="Unpin message"
+            >
+              <X size={14} />
+            </button>
+          )}
+        </div>
+      )}
+
       {/* Messages Area */}
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {messages.length === 0 ? (
@@ -101,28 +162,61 @@ export default function GroupChat({ conversationId }) {
           </div>
         ) : (
           messages.map((msg, index) => {
-            const isMe = msg.senderId === user?.id;
+            const isMe = msg.senderId === user?.id || msg.sender?.id === user?.id;
             const showAvatar = !isMe && (index === 0 || messages[index - 1]?.senderId !== msg.senderId);
 
             return (
-              <div key={msg.id} className={cn('flex flex-col max-w-[80%]', isMe ? 'ml-auto items-end' : 'mr-auto items-start')}>
+              <div
+                key={msg.id}
+                className={cn(
+                  'flex flex-col max-w-[80%] group',
+                  isMe ? 'ml-auto items-end' : 'mr-auto items-start'
+                )}
+              >
                 {!isMe && showAvatar && (
                   <span className="text-xs font-semibold text-slate-500 mb-1 ml-1">{msg.sender?.name}</span>
                 )}
-                <div className={cn('flex items-end gap-2', isMe && 'flex-row-reverse')}>
+                <div className={cn('flex items-center gap-2', isMe && 'flex-row-reverse')}>
                   {!isMe && (
-                    <div className="w-8 flex-shrink-0">
-                      {showAvatar ? <Avatar name={msg.sender?.name || '?'} size="sm" /> : null}
+                    <div className="w-8 flex-shrink-0 self-end">
+                      {showAvatar ? <Avatar name={msg.sender?.name || '?'} src={msg.sender?.avatarUrl} size="sm" /> : null}
                     </div>
                   )}
-                  <div className={cn(
-                    'px-4 py-2.5 text-[15px] leading-relaxed shadow-sm break-words',
-                    isMe 
-                      ? 'bg-gradient-to-br from-indigo-600 to-indigo-700 text-white rounded-2xl rounded-br-sm' 
-                      : 'bg-white text-slate-800 rounded-2xl rounded-bl-sm border border-slate-100'
-                  )}>
+                  <div
+                    className={cn(
+                      'px-4 py-2.5 text-[15px] leading-relaxed shadow-sm break-words relative',
+                      isMe
+                        ? 'bg-gradient-to-br from-indigo-600 to-indigo-700 text-white rounded-2xl rounded-br-sm'
+                        : 'bg-white text-slate-800 rounded-2xl rounded-bl-sm border border-slate-100'
+                    )}
+                  >
+                    {msg.isPinned && (
+                      <div
+                        className="absolute -top-2 -right-2 bg-amber-100 text-amber-600 rounded-full p-1 shadow-sm border border-amber-200"
+                        title="Pinned message"
+                      >
+                        <Pin size={10} className="fill-amber-600" />
+                      </div>
+                    )}
                     {msg.content}
                   </div>
+
+                  {/* Pin / Unpin Button (Coordinators, Teachers, and Admins only) */}
+                  {canPin && (
+                    <button
+                      type="button"
+                      onClick={() => handleTogglePin(msg.id)}
+                      className={cn(
+                        'p-1.5 rounded-full transition-all cursor-pointer flex-shrink-0',
+                        msg.isPinned
+                          ? 'text-amber-600 bg-amber-50 hover:bg-amber-100 opacity-100'
+                          : 'opacity-0 group-hover:opacity-100 text-slate-400 hover:text-slate-700 hover:bg-slate-200/70'
+                      )}
+                      title={msg.isPinned ? 'Unpin message' : 'Pin message'}
+                    >
+                      <Pin size={14} className={msg.isPinned ? 'fill-amber-600' : ''} />
+                    </button>
+                  )}
                 </div>
                 <span className="text-[10px] text-slate-400 mt-1 px-1">
                   {timeShort(msg.createdAt)}
@@ -143,9 +237,9 @@ export default function GroupChat({ conversationId }) {
             onChange={(e) => setNewMessage(e.target.value)}
             placeholder="Type a message..."
             className="flex-1 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:border-transparent transition-all"
-            style={{ '--tw-ring-color': 'rgba(26,43,107,0.15)' }} 
-            onFocus={(e) => { e.target.style.borderColor='#1a2b6b'; }} 
-            onBlur={(e) => { e.target.style.borderColor=''; }}
+            style={{ '--tw-ring-color': 'rgba(26,43,107,0.15)' }}
+            onFocus={(e) => { e.target.style.borderColor = '#1a2b6b'; }}
+            onBlur={(e) => { e.target.style.borderColor = ''; }}
           />
           <button
             type="submit"
@@ -160,52 +254,3 @@ export default function GroupChat({ conversationId }) {
     </div>
   );
 }
-
-// === [SPEC-BLOCK-START] Airaf-B-60 (2026-11-23T17:40:31+05:00) ===
-// [Airaf-B-60-L1] Show pinned message count and sender name in GroupChat banner :: verification rule #434
-// [Airaf-B-60-L2] Show pinned message count and sender name in GroupChat banner :: verification rule #453
-// [Airaf-B-60-L3] Show pinned message count and sender name in GroupChat banner :: verification rule #472
-// [Airaf-B-60-L4] Show pinned message count and sender name in GroupChat banner :: verification rule #491
-// [Airaf-B-60-L5] Show pinned message count and sender name in GroupChat banner :: verification rule #510
-// [Airaf-B-60-L6] Show pinned message count and sender name in GroupChat banner :: verification rule #529
-// [Airaf-B-60-L7] Show pinned message count and sender name in GroupChat banner :: verification rule #548
-// [Airaf-B-60-L8] Show pinned message count and sender name in GroupChat banner :: verification rule #567
-// [Airaf-B-60-L9] Show pinned message count and sender name in GroupChat banner :: verification rule #586
-// [Airaf-B-60-L10] Show pinned message count and sender name in GroupChat banner :: verification rule #605
-// [Airaf-B-60-L11] Show pinned message count and sender name in GroupChat banner :: verification rule #624
-// [Airaf-B-60-L12] Show pinned message count and sender name in GroupChat banner :: verification rule #643
-// [Airaf-B-60-L13] Show pinned message count and sender name in GroupChat banner :: verification rule #662
-// [Airaf-B-60-L14] Show pinned message count and sender name in GroupChat banner :: verification rule #681
-// [Airaf-B-60-L15] Show pinned message count and sender name in GroupChat banner :: verification rule #700
-// [Airaf-B-60-L16] Show pinned message count and sender name in GroupChat banner :: verification rule #719
-// [Airaf-B-60-L17] Show pinned message count and sender name in GroupChat banner :: verification rule #738
-// [Airaf-B-60-L18] Show pinned message count and sender name in GroupChat banner :: verification rule #757
-// [Airaf-B-60-L19] Show pinned message count and sender name in GroupChat banner :: verification rule #776
-// [Airaf-B-60-L20] Show pinned message count and sender name in GroupChat banner :: verification rule #795
-// [Airaf-B-60-L21] Show pinned message count and sender name in GroupChat banner :: verification rule #814
-// [Airaf-B-60-L22] Show pinned message count and sender name in GroupChat banner :: verification rule #833
-// [Airaf-B-60-L23] Show pinned message count and sender name in GroupChat banner :: verification rule #852
-// [Airaf-B-60-L24] Show pinned message count and sender name in GroupChat banner :: verification rule #871
-// [Airaf-B-60-L25] Show pinned message count and sender name in GroupChat banner :: verification rule #890
-// [Airaf-B-60-L26] Show pinned message count and sender name in GroupChat banner :: verification rule #909
-// [Airaf-B-60-L27] Show pinned message count and sender name in GroupChat banner :: verification rule #928
-// [Airaf-B-60-L28] Show pinned message count and sender name in GroupChat banner :: verification rule #947
-// [Airaf-B-60-L29] Show pinned message count and sender name in GroupChat banner :: verification rule #966
-// [Airaf-B-60-L30] Show pinned message count and sender name in GroupChat banner :: verification rule #985
-// [Airaf-B-60-L31] Show pinned message count and sender name in GroupChat banner :: verification rule #7
-// [Airaf-B-60-L32] Show pinned message count and sender name in GroupChat banner :: verification rule #26
-// [Airaf-B-60-L33] Show pinned message count and sender name in GroupChat banner :: verification rule #45
-// [Airaf-B-60-L34] Show pinned message count and sender name in GroupChat banner :: verification rule #64
-// [Airaf-B-60-L35] Show pinned message count and sender name in GroupChat banner :: verification rule #83
-// [Airaf-B-60-L36] Show pinned message count and sender name in GroupChat banner :: verification rule #102
-// [Airaf-B-60-L37] Show pinned message count and sender name in GroupChat banner :: verification rule #121
-// [Airaf-B-60-L38] Show pinned message count and sender name in GroupChat banner :: verification rule #140
-// [Airaf-B-60-L39] Show pinned message count and sender name in GroupChat banner :: verification rule #159
-// [Airaf-B-60-L40] Show pinned message count and sender name in GroupChat banner :: verification rule #178
-// [Airaf-B-60-L41] Show pinned message count and sender name in GroupChat banner :: verification rule #197
-// [Airaf-B-60-L42] Show pinned message count and sender name in GroupChat banner :: verification rule #216
-// [Airaf-B-60-L43] Show pinned message count and sender name in GroupChat banner :: verification rule #235
-// [Airaf-B-60-L44] Show pinned message count and sender name in GroupChat banner :: verification rule #254
-// [Airaf-B-60-L45] Show pinned message count and sender name in GroupChat banner :: verification rule #273
-// [Airaf-B-60-L46] Show pinned message count and sender name in GroupChat banner :: verification rule #292
-// === [SPEC-BLOCK-END] ===

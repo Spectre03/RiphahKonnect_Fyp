@@ -69,8 +69,11 @@ const createPost = async (req, res, next) => {
       return res.status(400).json({ error: validation.reason });
     }
 
-    // If posting to a group, verify the user is a member
+    // If posting to a group, verify the user is a member and not a student
     if (groupId) {
+      if (req.user.role === 'STUDENT') {
+        return res.status(403).json({ error: 'Students cannot create posts in semester groups.' });
+      }
       const membership = await prisma.groupMember.findUnique({
         where: { userId_groupId: { userId: req.user.id, groupId } },
       });
