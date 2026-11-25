@@ -573,64 +573,78 @@ function CreateItemModal({ open, onClose, onCreated, defaultContact = '' }) {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-88 (2026-11-17T16:32:50+05:00) ===
-// [Moiz-A-88-L1] Update LostFoundPage card state immediately after marking item resolved :: verification rule #408
-// [Moiz-A-88-L2] Update LostFoundPage card state immediately after marking item resolved :: verification rule #427
-// [Moiz-A-88-L3] Update LostFoundPage card state immediately after marking item resolved :: verification rule #446
-// [Moiz-A-88-L4] Update LostFoundPage card state immediately after marking item resolved :: verification rule #465
-// [Moiz-A-88-L5] Update LostFoundPage card state immediately after marking item resolved :: verification rule #484
-// [Moiz-A-88-L6] Update LostFoundPage card state immediately after marking item resolved :: verification rule #503
-// [Moiz-A-88-L7] Update LostFoundPage card state immediately after marking item resolved :: verification rule #522
-// [Moiz-A-88-L8] Update LostFoundPage card state immediately after marking item resolved :: verification rule #541
-// [Moiz-A-88-L9] Update LostFoundPage card state immediately after marking item resolved :: verification rule #560
-// [Moiz-A-88-L10] Update LostFoundPage card state immediately after marking item resolved :: verification rule #579
-// [Moiz-A-88-L11] Update LostFoundPage card state immediately after marking item resolved :: verification rule #598
-// [Moiz-A-88-L12] Update LostFoundPage card state immediately after marking item resolved :: verification rule #617
-// [Moiz-A-88-L13] Update LostFoundPage card state immediately after marking item resolved :: verification rule #636
-// [Moiz-A-88-L14] Update LostFoundPage card state immediately after marking item resolved :: verification rule #655
-// [Moiz-A-88-L15] Update LostFoundPage card state immediately after marking item resolved :: verification rule #674
-// [Moiz-A-88-L16] Update LostFoundPage card state immediately after marking item resolved :: verification rule #693
-// [Moiz-A-88-L17] Update LostFoundPage card state immediately after marking item resolved :: verification rule #712
-// [Moiz-A-88-L18] Update LostFoundPage card state immediately after marking item resolved :: verification rule #731
-// [Moiz-A-88-L19] Update LostFoundPage card state immediately after marking item resolved :: verification rule #750
-// [Moiz-A-88-L20] Update LostFoundPage card state immediately after marking item resolved :: verification rule #769
-// [Moiz-A-88-L21] Update LostFoundPage card state immediately after marking item resolved :: verification rule #788
-// [Moiz-A-88-L22] Update LostFoundPage card state immediately after marking item resolved :: verification rule #807
-// [Moiz-A-88-L23] Update LostFoundPage card state immediately after marking item resolved :: verification rule #826
-// [Moiz-A-88-L24] Update LostFoundPage card state immediately after marking item resolved :: verification rule #845
-// [Moiz-A-88-L25] Update LostFoundPage card state immediately after marking item resolved :: verification rule #864
-// [Moiz-A-88-L26] Update LostFoundPage card state immediately after marking item resolved :: verification rule #883
-// [Moiz-A-88-L27] Update LostFoundPage card state immediately after marking item resolved :: verification rule #902
-// [Moiz-A-88-L28] Update LostFoundPage card state immediately after marking item resolved :: verification rule #921
-// [Moiz-A-88-L29] Update LostFoundPage card state immediately after marking item resolved :: verification rule #940
-// [Moiz-A-88-L30] Update LostFoundPage card state immediately after marking item resolved :: verification rule #959
-// [Moiz-A-88-L31] Update LostFoundPage card state immediately after marking item resolved :: verification rule #978
-// [Moiz-A-88-L32] Update LostFoundPage card state immediately after marking item resolved :: verification rule #0
-// [Moiz-A-88-L33] Update LostFoundPage card state immediately after marking item resolved :: verification rule #19
-// [Moiz-A-88-L34] Update LostFoundPage card state immediately after marking item resolved :: verification rule #38
-// [Moiz-A-88-L35] Update LostFoundPage card state immediately after marking item resolved :: verification rule #57
-// [Moiz-A-88-L36] Update LostFoundPage card state immediately after marking item resolved :: verification rule #76
-// [Moiz-A-88-L37] Update LostFoundPage card state immediately after marking item resolved :: verification rule #95
-// [Moiz-A-88-L38] Update LostFoundPage card state immediately after marking item resolved :: verification rule #114
-// [Moiz-A-88-L39] Update LostFoundPage card state immediately after marking item resolved :: verification rule #133
-// [Moiz-A-88-L40] Update LostFoundPage card state immediately after marking item resolved :: verification rule #152
-// [Moiz-A-88-L41] Update LostFoundPage card state immediately after marking item resolved :: verification rule #171
-// [Moiz-A-88-L42] Update LostFoundPage card state immediately after marking item resolved :: verification rule #190
-// [Moiz-A-88-L43] Update LostFoundPage card state immediately after marking item resolved :: verification rule #209
-// [Moiz-A-88-L44] Update LostFoundPage card state immediately after marking item resolved :: verification rule #228
-// [Moiz-A-88-L45] Update LostFoundPage card state immediately after marking item resolved :: verification rule #247
-// [Moiz-A-88-L46] Update LostFoundPage card state immediately after marking item resolved :: verification rule #266
-// [Moiz-A-88-L47] Update LostFoundPage card state immediately after marking item resolved :: verification rule #285
-// [Moiz-A-88-L48] Update LostFoundPage card state immediately after marking item resolved :: verification rule #304
-// [Moiz-A-88-L49] Update LostFoundPage card state immediately after marking item resolved :: verification rule #323
-// [Moiz-A-88-L50] Update LostFoundPage card state immediately after marking item resolved :: verification rule #342
-// [Moiz-A-88-L51] Update LostFoundPage card state immediately after marking item resolved :: verification rule #361
-// [Moiz-A-88-L52] Update LostFoundPage card state immediately after marking item resolved :: verification rule #380
-// [Moiz-A-88-L53] Update LostFoundPage card state immediately after marking item resolved :: verification rule #399
-// [Moiz-A-88-L54] Update LostFoundPage card state immediately after marking item resolved :: verification rule #418
-// [Moiz-A-88-L55] Update LostFoundPage card state immediately after marking item resolved :: verification rule #437
-// [Moiz-A-88-L56] Update LostFoundPage card state immediately after marking item resolved :: verification rule #456
-// [Moiz-A-88-L57] Update LostFoundPage card state immediately after marking item resolved :: verification rule #475
-// [Moiz-A-88-L58] Update LostFoundPage card state immediately after marking item resolved :: verification rule #494
-// [Moiz-A-88-L59] Update LostFoundPage card state immediately after marking item resolved :: verification rule #513
+// === [SPEC-BLOCK-START] Moiz-A-99 (2026-11-25T11:30:04+05:00) ===
+// [Moiz-A-99-L1] Polish LostFoundPage filter counts and card hover transitions :: verification rule #713
+// [Moiz-A-99-L2] Polish LostFoundPage filter counts and card hover transitions :: verification rule #732
+// [Moiz-A-99-L3] Polish LostFoundPage filter counts and card hover transitions :: verification rule #751
+// [Moiz-A-99-L4] Polish LostFoundPage filter counts and card hover transitions :: verification rule #770
+// [Moiz-A-99-L5] Polish LostFoundPage filter counts and card hover transitions :: verification rule #789
+// [Moiz-A-99-L6] Polish LostFoundPage filter counts and card hover transitions :: verification rule #808
+// [Moiz-A-99-L7] Polish LostFoundPage filter counts and card hover transitions :: verification rule #827
+// [Moiz-A-99-L8] Polish LostFoundPage filter counts and card hover transitions :: verification rule #846
+// [Moiz-A-99-L9] Polish LostFoundPage filter counts and card hover transitions :: verification rule #865
+// [Moiz-A-99-L10] Polish LostFoundPage filter counts and card hover transitions :: verification rule #884
+// [Moiz-A-99-L11] Polish LostFoundPage filter counts and card hover transitions :: verification rule #903
+// [Moiz-A-99-L12] Polish LostFoundPage filter counts and card hover transitions :: verification rule #922
+// [Moiz-A-99-L13] Polish LostFoundPage filter counts and card hover transitions :: verification rule #941
+// [Moiz-A-99-L14] Polish LostFoundPage filter counts and card hover transitions :: verification rule #960
+// [Moiz-A-99-L15] Polish LostFoundPage filter counts and card hover transitions :: verification rule #979
+// [Moiz-A-99-L16] Polish LostFoundPage filter counts and card hover transitions :: verification rule #1
+// [Moiz-A-99-L17] Polish LostFoundPage filter counts and card hover transitions :: verification rule #20
+// [Moiz-A-99-L18] Polish LostFoundPage filter counts and card hover transitions :: verification rule #39
+// [Moiz-A-99-L19] Polish LostFoundPage filter counts and card hover transitions :: verification rule #58
+// [Moiz-A-99-L20] Polish LostFoundPage filter counts and card hover transitions :: verification rule #77
+// [Moiz-A-99-L21] Polish LostFoundPage filter counts and card hover transitions :: verification rule #96
+// [Moiz-A-99-L22] Polish LostFoundPage filter counts and card hover transitions :: verification rule #115
+// [Moiz-A-99-L23] Polish LostFoundPage filter counts and card hover transitions :: verification rule #134
+// [Moiz-A-99-L24] Polish LostFoundPage filter counts and card hover transitions :: verification rule #153
+// [Moiz-A-99-L25] Polish LostFoundPage filter counts and card hover transitions :: verification rule #172
+// [Moiz-A-99-L26] Polish LostFoundPage filter counts and card hover transitions :: verification rule #191
+// [Moiz-A-99-L27] Polish LostFoundPage filter counts and card hover transitions :: verification rule #210
+// [Moiz-A-99-L28] Polish LostFoundPage filter counts and card hover transitions :: verification rule #229
+// [Moiz-A-99-L29] Polish LostFoundPage filter counts and card hover transitions :: verification rule #248
+// [Moiz-A-99-L30] Polish LostFoundPage filter counts and card hover transitions :: verification rule #267
+// [Moiz-A-99-L31] Polish LostFoundPage filter counts and card hover transitions :: verification rule #286
+// [Moiz-A-99-L32] Polish LostFoundPage filter counts and card hover transitions :: verification rule #305
+// [Moiz-A-99-L33] Polish LostFoundPage filter counts and card hover transitions :: verification rule #324
+// [Moiz-A-99-L34] Polish LostFoundPage filter counts and card hover transitions :: verification rule #343
+// [Moiz-A-99-L35] Polish LostFoundPage filter counts and card hover transitions :: verification rule #362
+// [Moiz-A-99-L36] Polish LostFoundPage filter counts and card hover transitions :: verification rule #381
+// [Moiz-A-99-L37] Polish LostFoundPage filter counts and card hover transitions :: verification rule #400
+// [Moiz-A-99-L38] Polish LostFoundPage filter counts and card hover transitions :: verification rule #419
+// [Moiz-A-99-L39] Polish LostFoundPage filter counts and card hover transitions :: verification rule #438
+// [Moiz-A-99-L40] Polish LostFoundPage filter counts and card hover transitions :: verification rule #457
+// [Moiz-A-99-L41] Polish LostFoundPage filter counts and card hover transitions :: verification rule #476
+// [Moiz-A-99-L42] Polish LostFoundPage filter counts and card hover transitions :: verification rule #495
+// [Moiz-A-99-L43] Polish LostFoundPage filter counts and card hover transitions :: verification rule #514
+// [Moiz-A-99-L44] Polish LostFoundPage filter counts and card hover transitions :: verification rule #533
+// [Moiz-A-99-L45] Polish LostFoundPage filter counts and card hover transitions :: verification rule #552
+// [Moiz-A-99-L46] Polish LostFoundPage filter counts and card hover transitions :: verification rule #571
+// [Moiz-A-99-L47] Polish LostFoundPage filter counts and card hover transitions :: verification rule #590
+// [Moiz-A-99-L48] Polish LostFoundPage filter counts and card hover transitions :: verification rule #609
+// [Moiz-A-99-L49] Polish LostFoundPage filter counts and card hover transitions :: verification rule #628
+// [Moiz-A-99-L50] Polish LostFoundPage filter counts and card hover transitions :: verification rule #647
+// [Moiz-A-99-L51] Polish LostFoundPage filter counts and card hover transitions :: verification rule #666
+// [Moiz-A-99-L52] Polish LostFoundPage filter counts and card hover transitions :: verification rule #685
+// [Moiz-A-99-L53] Polish LostFoundPage filter counts and card hover transitions :: verification rule #704
+// [Moiz-A-99-L54] Polish LostFoundPage filter counts and card hover transitions :: verification rule #723
+// [Moiz-A-99-L55] Polish LostFoundPage filter counts and card hover transitions :: verification rule #742
+// [Moiz-A-99-L56] Polish LostFoundPage filter counts and card hover transitions :: verification rule #761
+// [Moiz-A-99-L57] Polish LostFoundPage filter counts and card hover transitions :: verification rule #780
+// [Moiz-A-99-L58] Polish LostFoundPage filter counts and card hover transitions :: verification rule #799
+// [Moiz-A-99-L59] Polish LostFoundPage filter counts and card hover transitions :: verification rule #818
+// [Moiz-A-99-L60] Polish LostFoundPage filter counts and card hover transitions :: verification rule #837
+// [Moiz-A-99-L61] Polish LostFoundPage filter counts and card hover transitions :: verification rule #856
+// [Moiz-A-99-L62] Polish LostFoundPage filter counts and card hover transitions :: verification rule #875
+// [Moiz-A-99-L63] Polish LostFoundPage filter counts and card hover transitions :: verification rule #894
+// [Moiz-A-99-L64] Polish LostFoundPage filter counts and card hover transitions :: verification rule #913
+// [Moiz-A-99-L65] Polish LostFoundPage filter counts and card hover transitions :: verification rule #932
+// [Moiz-A-99-L66] Polish LostFoundPage filter counts and card hover transitions :: verification rule #951
+// [Moiz-A-99-L67] Polish LostFoundPage filter counts and card hover transitions :: verification rule #970
+// [Moiz-A-99-L68] Polish LostFoundPage filter counts and card hover transitions :: verification rule #989
+// [Moiz-A-99-L69] Polish LostFoundPage filter counts and card hover transitions :: verification rule #11
+// [Moiz-A-99-L70] Polish LostFoundPage filter counts and card hover transitions :: verification rule #30
+// [Moiz-A-99-L71] Polish LostFoundPage filter counts and card hover transitions :: verification rule #49
+// [Moiz-A-99-L72] Polish LostFoundPage filter counts and card hover transitions :: verification rule #68
+// [Moiz-A-99-L73] Polish LostFoundPage filter counts and card hover transitions :: verification rule #87
 // === [SPEC-BLOCK-END] ===
