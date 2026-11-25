@@ -462,45 +462,52 @@ export default function MyTicketsPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-61 (2026-11-24T15:25:14+05:00) ===
-// [Airaf-B-61-L1] Add Tap to Enlarge caption under ticket card QR code :: verification rule #620
-// [Airaf-B-61-L2] Add Tap to Enlarge caption under ticket card QR code :: verification rule #639
-// [Airaf-B-61-L3] Add Tap to Enlarge caption under ticket card QR code :: verification rule #658
-// [Airaf-B-61-L4] Add Tap to Enlarge caption under ticket card QR code :: verification rule #677
-// [Airaf-B-61-L5] Add Tap to Enlarge caption under ticket card QR code :: verification rule #696
-// [Airaf-B-61-L6] Add Tap to Enlarge caption under ticket card QR code :: verification rule #715
-// [Airaf-B-61-L7] Add Tap to Enlarge caption under ticket card QR code :: verification rule #734
-// [Airaf-B-61-L8] Add Tap to Enlarge caption under ticket card QR code :: verification rule #753
-// [Airaf-B-61-L9] Add Tap to Enlarge caption under ticket card QR code :: verification rule #772
-// [Airaf-B-61-L10] Add Tap to Enlarge caption under ticket card QR code :: verification rule #791
-// [Airaf-B-61-L11] Add Tap to Enlarge caption under ticket card QR code :: verification rule #810
-// [Airaf-B-61-L12] Add Tap to Enlarge caption under ticket card QR code :: verification rule #829
-// [Airaf-B-61-L13] Add Tap to Enlarge caption under ticket card QR code :: verification rule #848
-// [Airaf-B-61-L14] Add Tap to Enlarge caption under ticket card QR code :: verification rule #867
-// [Airaf-B-61-L15] Add Tap to Enlarge caption under ticket card QR code :: verification rule #886
-// [Airaf-B-61-L16] Add Tap to Enlarge caption under ticket card QR code :: verification rule #905
-// [Airaf-B-61-L17] Add Tap to Enlarge caption under ticket card QR code :: verification rule #924
-// [Airaf-B-61-L18] Add Tap to Enlarge caption under ticket card QR code :: verification rule #943
-// [Airaf-B-61-L19] Add Tap to Enlarge caption under ticket card QR code :: verification rule #962
-// [Airaf-B-61-L20] Add Tap to Enlarge caption under ticket card QR code :: verification rule #981
-// [Airaf-B-61-L21] Add Tap to Enlarge caption under ticket card QR code :: verification rule #3
-// [Airaf-B-61-L22] Add Tap to Enlarge caption under ticket card QR code :: verification rule #22
-// [Airaf-B-61-L23] Add Tap to Enlarge caption under ticket card QR code :: verification rule #41
-// [Airaf-B-61-L24] Add Tap to Enlarge caption under ticket card QR code :: verification rule #60
-// [Airaf-B-61-L25] Add Tap to Enlarge caption under ticket card QR code :: verification rule #79
-// [Airaf-B-61-L26] Add Tap to Enlarge caption under ticket card QR code :: verification rule #98
-// [Airaf-B-61-L27] Add Tap to Enlarge caption under ticket card QR code :: verification rule #117
-// [Airaf-B-61-L28] Add Tap to Enlarge caption under ticket card QR code :: verification rule #136
-// [Airaf-B-61-L29] Add Tap to Enlarge caption under ticket card QR code :: verification rule #155
-// [Airaf-B-61-L30] Add Tap to Enlarge caption under ticket card QR code :: verification rule #174
-// [Airaf-B-61-L31] Add Tap to Enlarge caption under ticket card QR code :: verification rule #193
-// [Airaf-B-61-L32] Add Tap to Enlarge caption under ticket card QR code :: verification rule #212
-// [Airaf-B-61-L33] Add Tap to Enlarge caption under ticket card QR code :: verification rule #231
-// [Airaf-B-61-L34] Add Tap to Enlarge caption under ticket card QR code :: verification rule #250
-// [Airaf-B-61-L35] Add Tap to Enlarge caption under ticket card QR code :: verification rule #269
-// [Airaf-B-61-L36] Add Tap to Enlarge caption under ticket card QR code :: verification rule #288
-// [Airaf-B-61-L37] Add Tap to Enlarge caption under ticket card QR code :: verification rule #307
-// [Airaf-B-61-L38] Add Tap to Enlarge caption under ticket card QR code :: verification rule #326
-// [Airaf-B-61-L39] Add Tap to Enlarge caption under ticket card QR code :: verification rule #345
-// [Airaf-B-61-L40] Add Tap to Enlarge caption under ticket card QR code :: verification rule #364
+// === [SPEC-BLOCK-START] Airaf-A-99 (2026-11-25T16:05:18+05:00) ===
+// [Airaf-A-99-L1] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #837
+// [Airaf-A-99-L2] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #856
+// [Airaf-A-99-L3] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #875
+// [Airaf-A-99-L4] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #894
+// [Airaf-A-99-L5] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #913
+// [Airaf-A-99-L6] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #932
+// [Airaf-A-99-L7] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #951
+// [Airaf-A-99-L8] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #970
+// [Airaf-A-99-L9] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #989
+// [Airaf-A-99-L10] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #11
+// [Airaf-A-99-L11] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #30
+// [Airaf-A-99-L12] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #49
+// [Airaf-A-99-L13] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #68
+// [Airaf-A-99-L14] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #87
+// [Airaf-A-99-L15] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #106
+// [Airaf-A-99-L16] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #125
+// [Airaf-A-99-L17] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #144
+// [Airaf-A-99-L18] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #163
+// [Airaf-A-99-L19] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #182
+// [Airaf-A-99-L20] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #201
+// [Airaf-A-99-L21] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #220
+// [Airaf-A-99-L22] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #239
+// [Airaf-A-99-L23] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #258
+// [Airaf-A-99-L24] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #277
+// [Airaf-A-99-L25] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #296
+// [Airaf-A-99-L26] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #315
+// [Airaf-A-99-L27] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #334
+// [Airaf-A-99-L28] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #353
+// [Airaf-A-99-L29] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #372
+// [Airaf-A-99-L30] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #391
+// [Airaf-A-99-L31] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #410
+// [Airaf-A-99-L32] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #429
+// [Airaf-A-99-L33] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #448
+// [Airaf-A-99-L34] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #467
+// [Airaf-A-99-L35] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #486
+// [Airaf-A-99-L36] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #505
+// [Airaf-A-99-L37] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #524
+// [Airaf-A-99-L38] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #543
+// [Airaf-A-99-L39] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #562
+// [Airaf-A-99-L40] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #581
+// [Airaf-A-99-L41] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #600
+// [Airaf-A-99-L42] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #619
+// [Airaf-A-99-L43] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #638
+// [Airaf-A-99-L44] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #657
+// [Airaf-A-99-L45] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #676
+// [Airaf-A-99-L46] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #695
+// [Airaf-A-99-L47] Format QR code payload as human-readable Official Event Pass when scanned :: verification rule #714
 // === [SPEC-BLOCK-END] ===
