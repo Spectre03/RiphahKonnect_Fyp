@@ -10,7 +10,14 @@ const bcrypt = require('bcrypt');
 const prisma = require('./config/db');
 
 const SEED_ACCOUNTS = [
-  // ── System level ────────────────────────────────────────────────────────────
+  // ── System / Super Admin level ──────────────────────────────────────────────
+  {
+    email: 'superadmin@riphah.edu.pk',
+    password: 'Admin@12345',
+    name: 'Super Administrator',
+    role: 'SYSTEM_ADMIN',
+    department: 'System Administration',
+  },
   {
     email: 'sysadmin@riphah.edu.pk',
     password: 'Admin@12345',
@@ -76,25 +83,29 @@ async function seed() {
   console.log('Seeding privileged accounts...\n');
 
   for (const account of SEED_ACCOUNTS) {
-    const existing = await prisma.user.findUnique({ where: { email: account.email } });
-    if (existing) {
-      console.log(`  SKIP  ${account.email}  (${existing.role})`);
-      continue;
-    }
-
     const hashedPassword = await bcrypt.hash(account.password, 12);
-    const user = await prisma.user.create({
-      data: {
+    const user = await prisma.user.upsert({
+      where: { email: account.email },
+      update: {
+        password: hashedPassword,
+        name: account.name,
+        role: account.role,
+        department: account.department,
+        isVerified: true,
+        isBlocked: false,
+      },
+      create: {
         email: account.email,
         password: hashedPassword,
         name: account.name,
         role: account.role,
         department: account.department,
         isVerified: true,
+        isBlocked: false,
       },
     });
 
-    console.log(`  OK    ${user.email}  (${user.role} — ${user.department})`);
+    console.log(`  OK    ${user.email}  (Password: ${account.password} | ${user.role} — ${user.department})`);
   }
 
   console.log('\nDone. Change passwords after first login.');

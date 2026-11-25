@@ -231,6 +231,11 @@ const approveTicket = async (req, res, next) => {
       },
     });
 
+    const enrichedUpdated = {
+      ...updated,
+      approvedBy: { id: req.user.id, name: req.user.name, role: req.user.role },
+    };
+
     // Automatically mark attendee as GOING in EventRsvp upon approval
     await prisma.eventRsvp.upsert({
       where: { userId_eventId: { userId: ticket.userId, eventId: ticket.eventId } },
@@ -254,14 +259,16 @@ const approveTicket = async (req, res, next) => {
         io.to(`user:${ticket.userId}`).emit('notification', notif);
         io.to(`user:${ticket.userId}`).emit('ticketUpdated', {
           action: 'APPROVED',
+          userId: ticket.userId,
+          code: uniqueCode,
           eventId: ticket.eventId,
-          ticket: updated,
+          ticket: enrichedUpdated,
         });
       }
     } catch {}
 
     res.json({
-      ticket: updated,
+      ticket: enrichedUpdated,
       message: `Slip verified & approved! Unique Ticket ID ${uniqueCode} issued to ${updated.user.name}.`,
     });
   } catch (err) {
@@ -314,6 +321,11 @@ const rejectTicket = async (req, res, next) => {
       },
     });
 
+    const enrichedRejected = {
+      ...updated,
+      approvedBy: { id: req.user.id, name: req.user.name, role: req.user.role },
+    };
+
     const io = req.app.get('io');
     try {
       const notif = await prisma.notification.create({
@@ -329,14 +341,15 @@ const rejectTicket = async (req, res, next) => {
         io.to(`user:${ticket.userId}`).emit('notification', notif);
         io.to(`user:${ticket.userId}`).emit('ticketUpdated', {
           action: 'REJECTED',
+          userId: ticket.userId,
           eventId: ticket.eventId,
-          ticket: updated,
+          ticket: enrichedRejected,
         });
       }
     } catch {}
 
     res.json({
-      ticket: updated,
+      ticket: enrichedRejected,
       message: 'Payment slip rejected and user notified with reason.',
     });
   } catch (err) {

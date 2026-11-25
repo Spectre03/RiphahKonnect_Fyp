@@ -256,67 +256,80 @@ export default function MyTicketsPage() {
                   {/* Bottom Half - Unique Ticket ID / Pending / Rejected Status */}
                   <div className="p-5 bg-white">
                     {isApproved ? (
-                      <div className="flex items-center gap-5">
-                        <button
-                          type="button"
-                          onClick={() => setQrModalTicket(ticket)}
-                          className={cn(
-                            'p-2.5 rounded-xl border-2 flex-shrink-0 bg-white transition-all cursor-pointer group relative shadow-sm hover:shadow-md',
-                            isUsed ? 'border-slate-200 opacity-75' : 'border-indigo-100 hover:border-indigo-300'
-                          )}
-                          title="Click to enlarge QR code for scanning"
-                        >
-                          <QRCodeSVG
-                            value={formatTicketQrValue(ticket, user)}
-                            size={100}
-                            level="M"
-                            bgColor="#ffffff"
-                            fgColor={isUsed ? '#475569' : '#0f172a'}
-                            marginSize={2}
-                          />
-                          <span className="block text-[9px] font-bold text-indigo-600 text-center mt-1 group-hover:underline">
-                            Tap to Enlarge
-                          </span>
-                        </button>
-
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-1 text-[10px] font-bold text-emerald-700 uppercase tracking-widest mb-1">
-                            <ShieldCheck size={12} /> Unique Ticket ID
-                          </div>
-                          <div className="flex items-center gap-1.5 flex-wrap">
-                            <p className="text-base font-mono font-extrabold tracking-wider text-slate-900 bg-indigo-50 border border-indigo-100 px-2.5 py-1 rounded-lg inline-block">
-                              {ticket.code}
-                            </p>
-                            <button
-                              type="button"
-                              onClick={() => setQrModalTicket(ticket)}
-                              className="text-[11px] font-bold text-indigo-600 hover:text-indigo-800 bg-indigo-50/70 hover:bg-indigo-100 px-2 py-1 rounded-lg flex items-center gap-1 cursor-pointer transition-colors"
-                              title="Open full scannable QR Pass"
-                            >
-                              <QrCode size={12} /> QR Pass
-                            </button>
-                          </div>
-                          <p className="text-[11px] text-slate-500 mt-2 truncate">
-                            Issued to: <span className="font-bold text-slate-700">{user?.name}</span>
-                          </p>
-                          <div className="mt-1.5 flex items-center justify-between">
-                            <span className="text-[11px] text-slate-500">
-                              Fee: <strong className="text-slate-700">{ticket.pricePaid > 0 ? `Rs. ${ticket.pricePaid}` : 'Free'}</strong>
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-4">
+                          <button
+                            type="button"
+                            onClick={() => setQrModalTicket(ticket)}
+                            className={cn(
+                              'p-2 rounded-xl border-2 flex-shrink-0 bg-white transition-all cursor-pointer group relative shadow-xs hover:shadow-md',
+                              isUsed ? 'border-slate-200 opacity-75' : 'border-indigo-100 hover:border-indigo-300'
+                            )}
+                            title="Click to enlarge QR code for scanning"
+                          >
+                            <QRCodeSVG
+                              value={formatTicketQrValue(ticket, user)}
+                              size={92}
+                              level="M"
+                              bgColor="#ffffff"
+                              fgColor={isUsed ? '#475569' : '#0f172a'}
+                              marginSize={2}
+                            />
+                            <span className="block text-[9px] font-bold text-indigo-600 text-center mt-1 group-hover:underline">
+                              Tap to Enlarge
                             </span>
-                            {ticket.paymentSlipUrl && (
+                          </button>
+
+                          <div className="flex-1 min-w-0 space-y-1.5">
+                            <div className="flex items-center gap-1 text-[10px] font-bold text-emerald-700 uppercase tracking-widest">
+                              <ShieldCheck size={12} /> Unique Ticket ID
+                            </div>
+                            <div className="inline-flex items-center gap-1.5 bg-indigo-50 border border-indigo-100 px-2.5 py-1 rounded-lg max-w-full">
+                              <span className="text-sm sm:text-base font-mono font-extrabold tracking-wider text-slate-900 truncate">
+                                {ticket.code}
+                              </span>
                               <button
                                 type="button"
-                                onClick={() => setViewSlipTicket(ticket)}
-                                className="text-[11px] font-bold text-indigo-600 hover:underline flex items-center gap-1 cursor-pointer"
+                                onClick={() => {
+                                  navigator.clipboard?.writeText(ticket.code);
+                                  toast.success(`Copied Ticket ID: ${ticket.code}`);
+                                }}
+                                className="p-1 text-slate-400 hover:text-indigo-600 rounded hover:bg-indigo-100/60 cursor-pointer flex-shrink-0"
+                                title="Copy Unique Ticket ID"
                               >
-                                <Eye size={12} /> Slip
+                                <Copy size={12} />
                               </button>
+                            </div>
+                            <p className="text-[11px] text-slate-500 truncate">
+                              Issued to: <span className="font-bold text-slate-700">{user?.name}</span>
+                            </p>
+                            <p className="text-[11px] text-slate-500">
+                              Fee: <strong className="text-slate-700">{ticket.pricePaid > 0 ? `Rs. ${ticket.pricePaid}` : 'Free'}</strong>
+                            </p>
+                            {isUsed && ticket.usedAt && (
+                              <p className="text-[10px] font-bold text-blue-600 flex items-center gap-1">
+                                <CheckCircle2 size={11} /> Checked in at {new Date(ticket.usedAt).toLocaleTimeString()}
+                              </p>
                             )}
                           </div>
-                          {isUsed && ticket.usedAt && (
-                            <p className="text-[10px] font-bold text-blue-600 mt-1 flex items-center gap-1">
-                              <CheckCircle2 size={11} /> Checked in at {new Date(ticket.usedAt).toLocaleTimeString()}
-                            </p>
+                        </div>
+
+                        <div className="pt-2.5 border-t border-slate-100 flex items-center justify-between gap-2">
+                          <button
+                            type="button"
+                            onClick={() => setQrModalTicket(ticket)}
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200/70 cursor-pointer transition-colors"
+                          >
+                            <QrCode size={13} /> Open Full QR Pass
+                          </button>
+                          {ticket.paymentSlipUrl && (
+                            <button
+                              type="button"
+                              onClick={() => setViewSlipTicket(ticket)}
+                              className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-indigo-600 hover:bg-slate-50 border border-slate-200 cursor-pointer transition-colors"
+                            >
+                              <Eye size={13} /> View Slip
+                            </button>
                           )}
                         </div>
                       </div>

@@ -41,17 +41,17 @@ export default function EventsPage() {
   // View Own Attached Slip Modal State
   const [viewingOwnSlipEvent, setViewingOwnSlipEvent] = useState(null);
 
-  const fetchEvents = async (p = 1) => {
+  const fetchEvents = async (p = 1, silent = false) => {
     try {
-      setLoading(true);
+      if (!silent) setLoading(true);
       const res = await eventsAPI.getAll(p, filter === 'upcoming');
       setEvents(p === 1 ? res.data.events : [...events, ...res.data.events]);
       setPagination(res.data.pagination);
       setPage(p);
     } catch {
-      toast.error('Failed to load events.');
+      if (!silent) toast.error('Failed to load events.');
     } finally {
-      setLoading(false);
+      if (!silent) setLoading(false);
     }
   };
 
@@ -60,7 +60,7 @@ export default function EventsPage() {
   // Real-time Socket sync for ticket slip submissions, approvals, rejections, and check-ins
   useEffect(() => {
     const handleTicketUpdated = () => {
-      fetchEvents(page);
+      fetchEvents(page, true);
     };
     socket.on('ticketUpdated', handleTicketUpdated);
     return () => {
@@ -614,10 +614,10 @@ export default function EventsPage() {
         {managingEvent && (
           <EventManagerModal
             event={managingEvent}
-            onTicketChanged={() => fetchEvents(page)}
+            onTicketChanged={() => fetchEvents(page, true)}
             onClose={() => {
               setManagingEvent(null);
-              fetchEvents(page);
+              fetchEvents(page, true);
             }}
           />
         )}
@@ -824,29 +824,29 @@ function EventManagerModal({ event, onTicketChanged, onClose }) {
   const [searchingUsers, setSearchingUsers] = useState(false);
   const [addingManagerId, setAddingManagerId] = useState(null);
 
-  const loadEventManagementData = async () => {
+  const loadEventManagementData = async (silent = false) => {
     try {
-      setLoading(true);
+      if (!silent) setLoading(true);
       const res = await ticketsAPI.getEventTickets(event.id);
       setTickets(res.data.tickets || []);
       if (res.data.managers) setManagers(res.data.managers);
       setCanEditManagers(Boolean(res.data.isCreator || res.data.isAdmin));
     } catch (err) {
-      toast.error(err.response?.data?.error || 'Failed to load event tickets.');
+      if (!silent) toast.error(err.response?.data?.error || 'Failed to load event tickets.');
     } finally {
-      setLoading(false);
+      if (!silent) setLoading(false);
     }
   };
 
   useEffect(() => {
-    loadEventManagementData();
+    loadEventManagementData(false);
   }, [event.id]);
 
   // Real-time refresh when a student submits a new payment slip
   useEffect(() => {
     const handleLiveTicket = (payload) => {
       if (!payload || payload.eventId === event.id) {
-        loadEventManagementData();
+        loadEventManagementData(true);
       }
     };
     socket.on('ticketUpdated', handleLiveTicket);
@@ -1109,7 +1109,7 @@ function EventManagerModal({ event, onTicketChanged, onClose }) {
                     <div
                       key={t.id}
                       className={cn(
-                        'p-3.5 rounded-xl border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3',
+                        'p-4 rounded-xl border transition-all space-y-3',
                         isPending
                           ? 'bg-amber-50/40 border-amber-200'
                           : isValid || isUsed
@@ -1117,146 +1117,171 @@ function EventManagerModal({ event, onTicketChanged, onClose }) {
                           : 'bg-red-50/30 border-red-200'
                       )}
                     >
-                      <div className="flex items-start gap-3 min-w-0">
-                        {/* Clickable Payment Slip Thumbnail */}
-                        {t.paymentSlipUrl ? (
-                          <button
-                            type="button"
-                            onClick={() => setPreviewSlipTicket(t)}
-                            className="relative h-14 w-14 rounded-xl overflow-hidden border-2 border-indigo-200 bg-white flex-shrink-0 group cursor-pointer shadow-sm"
-                            title="Click to inspect full payment slip"
-                          >
-                            <img
-                              src={t.paymentSlipUrl}
-                              alt="Slip"
-                              className="h-full w-full object-cover group-hover:scale-105 transition-transform"
-                            />
-                            <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                              <Eye size={14} className="text-white" />
-                            </div>
-                          </button>
-                        ) : (
-                          <Avatar name={t.user?.name || ''} src={t.user?.avatarUrl} size="sm" />
-                        )}
-
-                        <div className="min-w-0">
-                          <div className="flex items-center gap-2 flex-wrap">
-                            <p className="text-sm font-bold text-slate-900">{t.user?.name}</p>
-                            <Badge
-                              variant={
-                                isPending ? 'amber' : isValid ? 'green' : isUsed ? 'blue' : 'red'
-                              }
-                              size="xs"
+                      {/* Top Row: Thumbnail + Applicant Details + Status Badge */}
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex items-start gap-3 min-w-0">
+                          {t.paymentSlipUrl ? (
+                            <button
+                              type="button"
+                              onClick={() => setPreviewSlipTicket(t)}
+                              className="relative h-14 w-14 rounded-xl overflow-hidden border-2 border-indigo-200 bg-white flex-shrink-0 group cursor-pointer shadow-sm"
+                              title="Click to inspect full payment slip"
                             >
-                              {isPending
-                                ? 'Pending Slip Verification'
-                                : isValid
-                                ? 'Approved'
-                                : isUsed
-                                ? 'Checked In'
-                                : 'Slip Rejected'}
-                            </Badge>
-                          </div>
-                          <p className="text-xs text-slate-500 truncate">
-                            {t.user?.email} · {t.user?.department || 'Campus'}
-                            {t.user?.semester ? ` (Sem ${t.user.semester})` : ''}
-                          </p>
-                          <div className="flex items-center gap-2 flex-wrap mt-0.5 text-[11px] text-slate-500">
-                            <span>
-                              Submitted: <strong>{formatDate(t.issuedAt, true)}</strong>
-                            </span>
-                            {t.paymentRef && (
+                              <img
+                                src={t.paymentSlipUrl}
+                                alt="Slip"
+                                className="h-full w-full object-cover group-hover:scale-105 transition-transform"
+                              />
+                              <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                                <Eye size={14} className="text-white" />
+                              </div>
+                            </button>
+                          ) : (
+                            <Avatar name={t.user?.name || ''} src={t.user?.avatarUrl} size="sm" />
+                          )}
+
+                          <div className="min-w-0">
+                            <p className="text-sm font-bold text-slate-900 truncate">{t.user?.name}</p>
+                            <p className="text-xs text-slate-500 truncate mt-0.5">
+                              {t.user?.email} · {t.user?.department || 'Campus'}
+                              {t.user?.semester ? ` (Sem ${t.user.semester})` : ''}
+                            </p>
+                            <div className="flex items-center gap-2 flex-wrap mt-1 text-[11px] text-slate-500">
                               <span>
-                                · Ref: <strong className="font-mono text-slate-700">{t.paymentRef}</strong>
+                                Submitted: <strong>{formatDate(t.issuedAt, true)}</strong>
                               </span>
-                            )}
+                              {t.paymentRef && (
+                                <span>
+                                  · Ref: <strong className="font-mono text-slate-700">{t.paymentRef}</strong>
+                                </span>
+                              )}
+                            </div>
                           </div>
-                          {t.code && (
-                            <p className="text-xs font-bold text-indigo-700 mt-1">
-                              Unique Ticket ID:{' '}
-                              <span className="font-mono bg-indigo-100 px-2 py-0.5 rounded-md tracking-wider">
-                                {t.code}
-                              </span>
-                            </p>
-                          )}
-                          {isRejected && t.rejectionReason && (
-                            <p className="text-[11px] text-red-600 font-medium mt-1">
-                              Reason: {t.rejectionReason}
-                            </p>
-                          )}
-                          {t.approvedBy && (
-                            <p className="text-[10px] text-slate-400 mt-0.5">
-                              {isRejected ? 'Rejected' : 'Verified'} by {t.approvedBy.name}
-                            </p>
-                          )}
+                        </div>
+
+                        <div className="flex-shrink-0">
+                          <Badge
+                            variant={
+                              isPending ? 'amber' : isValid ? 'green' : isUsed ? 'blue' : 'red'
+                            }
+                            size="xs"
+                          >
+                            {isPending
+                              ? 'Pending Verification'
+                              : isValid
+                              ? 'Approved'
+                              : isUsed
+                              ? 'Checked In'
+                              : 'Slip Rejected'}
+                          </Badge>
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-1.5 flex-wrap sm:flex-nowrap flex-shrink-0">
-                        {t.paymentSlipUrl && (
-                          <button
-                            type="button"
-                            onClick={() => setPreviewSlipTicket(t)}
-                            className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 cursor-pointer"
-                          >
-                            <Eye size={13} /> View Slip
-                          </button>
-                        )}
-                        {isPending && (
-                          <>
+                      {/* Middle Status Box: Approved Unique Ticket ID or Rejection Reason */}
+                      {(t.code || (isRejected && t.rejectionReason)) && (
+                        <div
+                          className={cn(
+                            'px-3 py-2 rounded-lg border flex items-center justify-between gap-2 flex-wrap text-xs',
+                            isRejected
+                              ? 'bg-red-50/80 border-red-200 text-red-800'
+                              : 'bg-white/90 border-emerald-200 text-slate-800'
+                          )}
+                        >
+                          {t.code ? (
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <span className="font-bold text-emerald-700 flex items-center gap-1">
+                                <ShieldCheck size={13} /> Unique Ticket ID:
+                              </span>
+                              <span className="font-mono font-extrabold text-indigo-800 bg-indigo-50 border border-indigo-200 px-2.5 py-0.5 rounded-md tracking-wider">
+                                {t.code}
+                              </span>
+                            </div>
+                          ) : (
+                            <span className="font-medium">
+                              <strong>Rejection Reason:</strong> {t.rejectionReason}
+                            </span>
+                          )}
+
+                          {t.approvedBy && (
+                            <span className="text-[11px] text-slate-500">
+                              {isRejected ? 'Rejected' : 'Verified'} by{' '}
+                              <strong className="text-slate-700">{t.approvedBy.name}</strong>
+                            </span>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Bottom Action Bar */}
+                      <div className="pt-2.5 border-t border-slate-200/70 flex items-center justify-between gap-2 flex-wrap">
+                        <div>
+                          {t.paymentSlipUrl && (
+                            <button
+                              type="button"
+                              onClick={() => setPreviewSlipTicket(t)}
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 cursor-pointer shadow-2xs"
+                            >
+                              <Eye size={13} /> View Payment Slip
+                            </button>
+                          )}
+                        </div>
+
+                        <div className="flex items-center gap-2 flex-wrap">
+                          {isPending && (
+                            <>
+                              <button
+                                type="button"
+                                disabled={actionId === t.id}
+                                onClick={() => openRejectPrompt(t)}
+                                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-white hover:bg-red-50 text-red-600 border border-red-200 cursor-pointer disabled:opacity-50"
+                              >
+                                <X size={13} /> Reject
+                              </button>
+                              <button
+                                type="button"
+                                disabled={actionId === t.id}
+                                onClick={() => handleApprove(t.id)}
+                                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white cursor-pointer disabled:opacity-50 shadow-xs"
+                              >
+                                {actionId === t.id ? <Loader2 size={12} className="animate-spin" /> : <Check size={13} />}
+                                Approve &amp; Issue ID
+                              </button>
+                            </>
+                          )}
+                          {isRejected && (
                             <button
                               type="button"
                               disabled={actionId === t.id}
                               onClick={() => handleApprove(t.id)}
-                              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white cursor-pointer disabled:opacity-50 shadow-sm"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white cursor-pointer disabled:opacity-50 shadow-xs"
+                              title="Re-approve this slip and issue a Unique Ticket ID"
                             >
                               {actionId === t.id ? <Loader2 size={12} className="animate-spin" /> : <Check size={13} />}
-                              Approve &amp; Issue ID
+                              Approve Anyway
                             </button>
-                            <button
-                              type="button"
-                              disabled={actionId === t.id}
-                              onClick={() => openRejectPrompt(t)}
-                              className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 cursor-pointer disabled:opacity-50"
-                            >
-                              <X size={13} /> Reject
-                            </button>
-                          </>
-                        )}
-                        {isRejected && (
-                          <button
-                            type="button"
-                            disabled={actionId === t.id}
-                            onClick={() => handleApprove(t.id)}
-                            className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 cursor-pointer disabled:opacity-50"
-                            title="Re-approve this slip and issue a Unique Ticket ID"
-                          >
-                            {actionId === t.id ? <Loader2 size={12} className="animate-spin" /> : <Check size={13} />}
-                            Approve Anyway
-                          </button>
-                        )}
-                        {isValid && (
-                          <>
-                            <button
-                              type="button"
-                              disabled={actionId === t.id}
-                              onClick={() => handleCheckIn(t.id)}
-                              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white cursor-pointer disabled:opacity-50"
-                            >
-                              {actionId === t.id ? <Loader2 size={12} className="animate-spin" /> : <CheckCircle2 size={13} />}
-                              Check In
-                            </button>
-                            <button
-                              type="button"
-                              disabled={actionId === t.id}
-                              onClick={() => openRejectPrompt(t)}
-                              className="inline-flex items-center gap-1 px-2 py-1.5 rounded-lg text-[11px] font-bold text-red-600 hover:bg-red-50 border border-transparent hover:border-red-200 cursor-pointer"
-                              title="Revoke approval if slip was invalid"
-                            >
-                              Revoke
-                            </button>
-                          </>
-                        )}
+                          )}
+                          {isValid && (
+                            <>
+                              <button
+                                type="button"
+                                disabled={actionId === t.id}
+                                onClick={() => openRejectPrompt(t)}
+                                className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold text-red-600 bg-white hover:bg-red-50 border border-red-200 cursor-pointer disabled:opacity-50"
+                                title="Revoke approval if slip was invalid"
+                              >
+                                Revoke
+                              </button>
+                              <button
+                                type="button"
+                                disabled={actionId === t.id}
+                                onClick={() => handleCheckIn(t.id)}
+                                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white cursor-pointer disabled:opacity-50 shadow-xs"
+                              >
+                                {actionId === t.id ? <Loader2 size={12} className="animate-spin" /> : <CheckCircle2 size={13} />}
+                                Check In Attendee
+                              </button>
+                            </>
+                          )}
+                        </div>
                       </div>
                     </div>
                   );

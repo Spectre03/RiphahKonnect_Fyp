@@ -3,16 +3,25 @@ import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
+const sizeClasses = {
+  sm: 'max-w-md',
+  md: 'max-w-lg',
+  lg: 'max-w-2xl',
+  xl: 'max-w-3xl',
+};
+
 export default function Modal({
   open,
   onClose,
   title,
   subtitle,
   children,
+  size,
   maxWidth = 'max-w-lg',
   icon: Icon,
   iconColor = 'bg-indigo-600',
 }) {
+  const resolvedMaxWidth = size && sizeClasses[size] ? sizeClasses[size] : maxWidth;
   useEffect(() => {
     if (!open) return;
     const handleKey = (e) => { if (e.key === 'Escape') onClose(); };
@@ -40,7 +49,7 @@ export default function Modal({
           'relative bg-white w-full sm:rounded-2xl shadow-2xl shadow-slate-900/20 max-h-[95dvh] overflow-y-auto',
           'border border-slate-900/[0.06] animate-scaleUp',
           'rounded-t-2xl sm:rounded-2xl',
-          maxWidth
+          resolvedMaxWidth
         )}
       >
         {/* Header */}
