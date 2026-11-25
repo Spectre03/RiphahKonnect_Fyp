@@ -53,11 +53,20 @@ socket.on('connect', () => {
   socket.emit('request_online_users');
 });
 
+const withSetMethods = (arr) => {
+  const copy = Array.isArray(arr) ? [...arr] : [];
+  Object.defineProperty(copy, 'has', {
+    value: (id) => copy.includes(id),
+    enumerable: false,
+  });
+  return copy;
+};
+
 export function useOnlineUsers() {
-  const [onlineUsers, setOnlineUsers] = useState(currentOnlineUsers);
+  const [onlineUsers, setOnlineUsers] = useState(() => withSetMethods(currentOnlineUsers));
 
   useEffect(() => {
-    const handler = (users) => setOnlineUsers([...users]);
+    const handler = (users) => setOnlineUsers(withSetMethods(users));
     listeners.add(handler);
     if (socket.connected) {
       socket.emit('request_online_users');

@@ -42,7 +42,7 @@ export default function AdminUsersPage() {
     try {
       setLoading(true);
       const res = await usersAPI.listAll({ page: p, ...f });
-      setUsers(res.data.users);
+      setUsers(res.data.users || []);
       setPagination(res.data.pagination);
       setPage(p);
     } catch {
@@ -230,7 +230,7 @@ export default function AdminUsersPage() {
                     {users.map((u) => {
                       const roleMeta  = ROLE_BADGE[u.role] || { variant: 'slate', label: u.role };
                       const canManage = MANAGEABLE_ROLES.includes(u.role);
-                      const isOnline  = onlineUsers.has(u.id);
+                      const isOnline  = Boolean(onlineUsers?.has ? onlineUsers.has(u.id) : onlineUsers?.includes?.(u.id));
 
                       return (
                         <tr key={u.id} className={cn('hover:bg-slate-50/60 transition-colors', u.isBlocked && 'opacity-60')}>
