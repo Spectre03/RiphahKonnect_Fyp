@@ -462,44 +462,57 @@ export default function MyTicketsPage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Airaf-B-63 (2026-11-25T18:10:00+05:00) ===
-// [Airaf-B-63-L1] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #868
-// [Airaf-B-63-L2] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #887
-// [Airaf-B-63-L3] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #906
-// [Airaf-B-63-L4] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #925
-// [Airaf-B-63-L5] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #944
-// [Airaf-B-63-L6] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #963
-// [Airaf-B-63-L7] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #982
-// [Airaf-B-63-L8] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #4
-// [Airaf-B-63-L9] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #23
-// [Airaf-B-63-L10] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #42
-// [Airaf-B-63-L11] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #61
-// [Airaf-B-63-L12] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #80
-// [Airaf-B-63-L13] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #99
-// [Airaf-B-63-L14] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #118
-// [Airaf-B-63-L15] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #137
-// [Airaf-B-63-L16] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #156
-// [Airaf-B-63-L17] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #175
-// [Airaf-B-63-L18] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #194
-// [Airaf-B-63-L19] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #213
-// [Airaf-B-63-L20] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #232
-// [Airaf-B-63-L21] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #251
-// [Airaf-B-63-L22] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #270
-// [Airaf-B-63-L23] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #289
-// [Airaf-B-63-L24] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #308
-// [Airaf-B-63-L25] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #327
-// [Airaf-B-63-L26] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #346
-// [Airaf-B-63-L27] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #365
-// [Airaf-B-63-L28] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #384
-// [Airaf-B-63-L29] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #403
-// [Airaf-B-63-L30] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #422
-// [Airaf-B-63-L31] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #441
-// [Airaf-B-63-L32] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #460
-// [Airaf-B-63-L33] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #479
-// [Airaf-B-63-L34] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #498
-// [Airaf-B-63-L35] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #517
-// [Airaf-B-63-L36] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #536
-// [Airaf-B-63-L37] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #555
-// [Airaf-B-63-L38] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #574
-// [Airaf-B-63-L39] Polish Official Campus Event QR Pass modal table and copy button :: verification rule #593
+// === [SPEC-BLOCK-START] Airaf-A-100 (2026-11-25T19:30:00+05:00) ===
+// [Airaf-A-100-L1] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #899
+// [Airaf-A-100-L2] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #918
+// [Airaf-A-100-L3] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #937
+// [Airaf-A-100-L4] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #956
+// [Airaf-A-100-L5] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #975
+// [Airaf-A-100-L6] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #994
+// [Airaf-A-100-L7] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #16
+// [Airaf-A-100-L8] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #35
+// [Airaf-A-100-L9] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #54
+// [Airaf-A-100-L10] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #73
+// [Airaf-A-100-L11] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #92
+// [Airaf-A-100-L12] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #111
+// [Airaf-A-100-L13] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #130
+// [Airaf-A-100-L14] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #149
+// [Airaf-A-100-L15] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #168
+// [Airaf-A-100-L16] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #187
+// [Airaf-A-100-L17] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #206
+// [Airaf-A-100-L18] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #225
+// [Airaf-A-100-L19] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #244
+// [Airaf-A-100-L20] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #263
+// [Airaf-A-100-L21] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #282
+// [Airaf-A-100-L22] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #301
+// [Airaf-A-100-L23] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #320
+// [Airaf-A-100-L24] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #339
+// [Airaf-A-100-L25] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #358
+// [Airaf-A-100-L26] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #377
+// [Airaf-A-100-L27] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #396
+// [Airaf-A-100-L28] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #415
+// [Airaf-A-100-L29] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #434
+// [Airaf-A-100-L30] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #453
+// [Airaf-A-100-L31] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #472
+// [Airaf-A-100-L32] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #491
+// [Airaf-A-100-L33] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #510
+// [Airaf-A-100-L34] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #529
+// [Airaf-A-100-L35] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #548
+// [Airaf-A-100-L36] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #567
+// [Airaf-A-100-L37] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #586
+// [Airaf-A-100-L38] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #605
+// [Airaf-A-100-L39] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #624
+// [Airaf-A-100-L40] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #643
+// [Airaf-A-100-L41] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #662
+// [Airaf-A-100-L42] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #681
+// [Airaf-A-100-L43] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #700
+// [Airaf-A-100-L44] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #719
+// [Airaf-A-100-L45] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #738
+// [Airaf-A-100-L46] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #757
+// [Airaf-A-100-L47] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #776
+// [Airaf-A-100-L48] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #795
+// [Airaf-A-100-L49] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #814
+// [Airaf-A-100-L50] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #833
+// [Airaf-A-100-L51] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #852
+// [Airaf-A-100-L52] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #871
 // === [SPEC-BLOCK-END] ===
