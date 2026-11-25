@@ -11,14 +11,42 @@ import toast from 'react-hot-toast';
 import { QRCodeSVG } from 'qrcode.react';
 import {
   Ticket as TicketIcon, Calendar, MapPin,
-  Loader2, ArrowRight, Clock, ShieldCheck, AlertTriangle, Eye, CheckCircle2, Upload,
+  Loader2, ArrowRight, Clock, ShieldCheck, AlertTriangle, Eye, CheckCircle2, Upload, QrCode, Copy,
 } from 'lucide-react';
+
+function formatTicketQrValue(ticket, user) {
+  const statusText =
+    ticket.status === 'USED'
+      ? `CHECKED IN (${ticket.usedAt ? new Date(ticket.usedAt).toLocaleString() : 'Verified'})`
+      : 'APPROVED - VALID ENTRY PASS';
+  const feeText = ticket.pricePaid > 0 ? `Rs. ${ticket.pricePaid}` : 'Free Entry';
+  return [
+    'RIPHAH KONNECT - OFFICIAL EVENT PASS',
+    '====================================',
+    `Ticket ID  : ${ticket.code}`,
+    `Status     : ${statusText}`,
+    `Attendee   : ${user?.name || 'Registered Student'}`,
+    user?.email ? `Email      : ${user.email}` : null,
+    user?.department ? `Department : ${user.department}${user?.semester ? ` (Sem ${user.semester})` : ''}` : null,
+    '------------------------------------',
+    `Event      : ${ticket.event?.title || 'Campus Event'}`,
+    `Date & Time: ${formatDate(ticket.event?.startDate, true)}`,
+    `Venue      : ${ticket.event?.location || 'Campus Grounds'}`,
+    `Entry Fee  : ${feeText}`,
+    ticket.paymentRef ? `Payment Ref: ${ticket.paymentRef}` : null,
+    '====================================',
+    'Present this Unique Ticket ID at the event desk for verification.',
+  ]
+    .filter(Boolean)
+    .join('\n');
+}
 
 export default function MyTicketsPage() {
   const { user } = useAuth();
   const [tickets, setTickets] = useState([]);
   const [loading, setLoading] = useState(true);
   const [viewSlipTicket, setViewSlipTicket] = useState(null);
+  const [qrModalTicket, setQrModalTicket] = useState(null);
   const [reuploadTicket, setReuploadTicket] = useState(null);
   const [slipDataUrl, setSlipDataUrl] = useState('');
   const [slipFileName, setSlipFileName] = useState('');
@@ -229,31 +257,45 @@ export default function MyTicketsPage() {
                   <div className="p-5 bg-white">
                     {isApproved ? (
                       <div className="flex items-center gap-5">
-                        <div className={cn(
-                          'p-2 rounded-xl border-2 flex-shrink-0',
-                          isUsed ? 'border-slate-200 bg-slate-50 opacity-60' : 'border-indigo-100'
-                        )}>
+                        <button
+                          type="button"
+                          onClick={() => setQrModalTicket(ticket)}
+                          className={cn(
+                            'p-2.5 rounded-xl border-2 flex-shrink-0 bg-white transition-all cursor-pointer group relative shadow-sm hover:shadow-md',
+                            isUsed ? 'border-slate-200 opacity-75' : 'border-indigo-100 hover:border-indigo-300'
+                          )}
+                          title="Click to enlarge QR code for scanning"
+                        >
                           <QRCodeSVG
-                            value={JSON.stringify({
-                              code: ticket.code,
-                              ticketId: ticket.id,
-                              userId: user?.id,
-                              name: user?.name,
-                              event: ticket.eventId,
-                            })}
-                            size={92}
+                            value={formatTicketQrValue(ticket, user)}
+                            size={100}
                             level="M"
-                            fgColor={isUsed ? '#64748b' : '#0f172a'}
+                            bgColor="#ffffff"
+                            fgColor={isUsed ? '#475569' : '#0f172a'}
+                            marginSize={2}
                           />
-                        </div>
+                          <span className="block text-[9px] font-bold text-indigo-600 text-center mt-1 group-hover:underline">
+                            Tap to Enlarge
+                          </span>
+                        </button>
 
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-1 text-[10px] font-bold text-emerald-700 uppercase tracking-widest mb-1">
                             <ShieldCheck size={12} /> Unique Ticket ID
                           </div>
-                          <p className="text-base font-mono font-extrabold tracking-wider text-slate-900 bg-indigo-50 border border-indigo-100 px-2.5 py-1 rounded-lg inline-block">
-                            {ticket.code}
-                          </p>
+                          <div className="flex items-center gap-1.5 flex-wrap">
+                            <p className="text-base font-mono font-extrabold tracking-wider text-slate-900 bg-indigo-50 border border-indigo-100 px-2.5 py-1 rounded-lg inline-block">
+                              {ticket.code}
+                            </p>
+                            <button
+                              type="button"
+                              onClick={() => setQrModalTicket(ticket)}
+                              className="text-[11px] font-bold text-indigo-600 hover:text-indigo-800 bg-indigo-50/70 hover:bg-indigo-100 px-2 py-1 rounded-lg flex items-center gap-1 cursor-pointer transition-colors"
+                              title="Open full scannable QR Pass"
+                            >
+                              <QrCode size={12} /> QR Pass
+                            </button>
+                          </div>
                           <p className="text-[11px] text-slate-500 mt-2 truncate">
                             Issued to: <span className="font-bold text-slate-700">{user?.name}</span>
                           </p>
@@ -457,62 +499,109 @@ export default function MyTicketsPage() {
             </form>
           </Modal>
         )}
+
+        {/* Full-Size Scannable QR Event Pass Modal */}
+        {qrModalTicket && (
+          <Modal
+            open={!!qrModalTicket}
+            onClose={() => setQrModalTicket(null)}
+            title="Official Campus Event QR Pass"
+            subtitle={qrModalTicket.event?.title}
+            icon={QrCode}
+            iconColor="bg-gradient-to-br from-[#0c1a4a] to-[#2251b8]"
+          >
+            <div className="space-y-4">
+              {/* High-Contrast Scannable QR Card */}
+              <div className="flex flex-col items-center justify-center p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                <div className="p-4 bg-white rounded-2xl shadow-md border-2 border-indigo-100">
+                  <QRCodeSVG
+                    value={formatTicketQrValue(qrModalTicket, user)}
+                    size={230}
+                    level="M"
+                    bgColor="#ffffff"
+                    fgColor="#0f172a"
+                    marginSize={3}
+                  />
+                </div>
+
+                <div className="mt-4 text-center">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-700 flex items-center justify-center gap-1">
+                    <ShieldCheck size={13} /> Unique Ticket ID
+                  </span>
+                  <div className="mt-1 inline-flex items-center gap-2 bg-white border border-indigo-200 px-3.5 py-1.5 rounded-xl shadow-xs">
+                    <span className="text-lg font-mono font-extrabold tracking-widest text-slate-900">
+                      {qrModalTicket.code}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        navigator.clipboard?.writeText(qrModalTicket.code);
+                        toast.success(`Copied Ticket ID: ${qrModalTicket.code}`);
+                      }}
+                      className="p-1 text-slate-400 hover:text-indigo-600 rounded-md hover:bg-indigo-50 cursor-pointer transition-colors"
+                      title="Copy Unique Ticket ID"
+                    >
+                      <Copy size={14} />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Structured Pass Details (What displays when scanned) */}
+              <div className="rounded-xl border border-slate-200 bg-white divide-y divide-slate-100 text-xs">
+                <div className="px-4 py-2.5 bg-slate-50/70 flex items-center justify-between">
+                  <span className="font-bold text-slate-700 uppercase tracking-wider text-[10px]">
+                    Scanned Pass Details
+                  </span>
+                  <Badge variant={qrModalTicket.status === 'USED' ? 'blue' : 'green'} size="xs">
+                    {qrModalTicket.status === 'USED' ? 'Checked In' : 'Approved · Valid Pass'}
+                  </Badge>
+                </div>
+                <div className="px-4 py-2.5 flex justify-between gap-4">
+                  <span className="text-slate-500">Attendee</span>
+                  <span className="font-bold text-slate-900 text-right">{user?.name}</span>
+                </div>
+                {user?.department && (
+                  <div className="px-4 py-2.5 flex justify-between gap-4">
+                    <span className="text-slate-500">Department</span>
+                    <span className="font-semibold text-slate-700 text-right">
+                      {user.department}{user?.semester ? ` · Sem ${user.semester}` : ''}
+                    </span>
+                  </div>
+                )}
+                <div className="px-4 py-2.5 flex justify-between gap-4">
+                  <span className="text-slate-500">Event</span>
+                  <span className="font-bold text-slate-900 text-right">{qrModalTicket.event?.title}</span>
+                </div>
+                <div className="px-4 py-2.5 flex justify-between gap-4">
+                  <span className="text-slate-500">Date &amp; Time</span>
+                  <span className="font-semibold text-slate-700 text-right">
+                    {formatDate(qrModalTicket.event?.startDate, true)}
+                  </span>
+                </div>
+                <div className="px-4 py-2.5 flex justify-between gap-4">
+                  <span className="text-slate-500">Venue</span>
+                  <span className="font-semibold text-slate-700 text-right">
+                    {qrModalTicket.event?.location || 'Campus Grounds'}
+                  </span>
+                </div>
+                <div className="px-4 py-2.5 flex justify-between gap-4">
+                  <span className="text-slate-500">Entry Fee</span>
+                  <span className="font-bold text-slate-900 text-right">
+                    {qrModalTicket.pricePaid > 0 ? `Rs. ${qrModalTicket.pricePaid}` : 'Free Entry'}
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex justify-end">
+                <Button variant="secondary" size="sm" onClick={() => setQrModalTicket(null)}>
+                  Close Pass
+                </Button>
+              </div>
+            </div>
+          </Modal>
+        )}
       </div>
     </div>
   );
 }
-
-// === [SPEC-BLOCK-START] Airaf-A-100 (2026-11-25T19:30:00+05:00) ===
-// [Airaf-A-100-L1] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #899
-// [Airaf-A-100-L2] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #918
-// [Airaf-A-100-L3] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #937
-// [Airaf-A-100-L4] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #956
-// [Airaf-A-100-L5] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #975
-// [Airaf-A-100-L6] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #994
-// [Airaf-A-100-L7] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #16
-// [Airaf-A-100-L8] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #35
-// [Airaf-A-100-L9] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #54
-// [Airaf-A-100-L10] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #73
-// [Airaf-A-100-L11] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #92
-// [Airaf-A-100-L12] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #111
-// [Airaf-A-100-L13] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #130
-// [Airaf-A-100-L14] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #149
-// [Airaf-A-100-L15] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #168
-// [Airaf-A-100-L16] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #187
-// [Airaf-A-100-L17] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #206
-// [Airaf-A-100-L18] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #225
-// [Airaf-A-100-L19] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #244
-// [Airaf-A-100-L20] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #263
-// [Airaf-A-100-L21] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #282
-// [Airaf-A-100-L22] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #301
-// [Airaf-A-100-L23] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #320
-// [Airaf-A-100-L24] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #339
-// [Airaf-A-100-L25] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #358
-// [Airaf-A-100-L26] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #377
-// [Airaf-A-100-L27] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #396
-// [Airaf-A-100-L28] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #415
-// [Airaf-A-100-L29] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #434
-// [Airaf-A-100-L30] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #453
-// [Airaf-A-100-L31] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #472
-// [Airaf-A-100-L32] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #491
-// [Airaf-A-100-L33] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #510
-// [Airaf-A-100-L34] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #529
-// [Airaf-A-100-L35] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #548
-// [Airaf-A-100-L36] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #567
-// [Airaf-A-100-L37] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #586
-// [Airaf-A-100-L38] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #605
-// [Airaf-A-100-L39] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #624
-// [Airaf-A-100-L40] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #643
-// [Airaf-A-100-L41] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #662
-// [Airaf-A-100-L42] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #681
-// [Airaf-A-100-L43] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #700
-// [Airaf-A-100-L44] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #719
-// [Airaf-A-100-L45] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #738
-// [Airaf-A-100-L46] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #757
-// [Airaf-A-100-L47] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #776
-// [Airaf-A-100-L48] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #795
-// [Airaf-A-100-L49] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #814
-// [Airaf-A-100-L50] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #833
-// [Airaf-A-100-L51] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #852
-// [Airaf-A-100-L52] Add full-size scannable QR Pass modal with one-click Copy Ticket ID button :: verification rule #871
-// === [SPEC-BLOCK-END] ===

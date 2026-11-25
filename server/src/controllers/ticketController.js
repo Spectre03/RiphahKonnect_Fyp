@@ -419,7 +419,9 @@ const verifyTicketByCode = async (req, res, next) => {
       return res.status(403).json({ error: 'Not authorized to verify tickets for this event.' });
     }
 
-    const normalizedCode = code.trim().toUpperCase();
+    const rawInput = code.trim().toUpperCase();
+    const rkMatch = rawInput.match(/RK-[A-Z0-9]{4}-[A-Z0-9]{4}/);
+    const normalizedCode = rkMatch ? rkMatch[0] : rawInput;
     const ticket = await prisma.ticket.findFirst({
       where: {
         eventId,
@@ -558,51 +560,3 @@ module.exports = {
   getMyTickets,
   getEventTickets,
 };
-
-// === [SPEC-BLOCK-START] Airaf-A-97 (2026-11-24T18:15:09+05:00) ===
-// [Airaf-A-97-L1] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #682
-// [Airaf-A-97-L2] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #701
-// [Airaf-A-97-L3] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #720
-// [Airaf-A-97-L4] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #739
-// [Airaf-A-97-L5] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #758
-// [Airaf-A-97-L6] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #777
-// [Airaf-A-97-L7] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #796
-// [Airaf-A-97-L8] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #815
-// [Airaf-A-97-L9] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #834
-// [Airaf-A-97-L10] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #853
-// [Airaf-A-97-L11] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #872
-// [Airaf-A-97-L12] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #891
-// [Airaf-A-97-L13] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #910
-// [Airaf-A-97-L14] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #929
-// [Airaf-A-97-L15] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #948
-// [Airaf-A-97-L16] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #967
-// [Airaf-A-97-L17] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #986
-// [Airaf-A-97-L18] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #8
-// [Airaf-A-97-L19] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #27
-// [Airaf-A-97-L20] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #46
-// [Airaf-A-97-L21] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #65
-// [Airaf-A-97-L22] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #84
-// [Airaf-A-97-L23] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #103
-// [Airaf-A-97-L24] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #122
-// [Airaf-A-97-L25] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #141
-// [Airaf-A-97-L26] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #160
-// [Airaf-A-97-L27] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #179
-// [Airaf-A-97-L28] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #198
-// [Airaf-A-97-L29] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #217
-// [Airaf-A-97-L30] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #236
-// [Airaf-A-97-L31] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #255
-// [Airaf-A-97-L32] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #274
-// [Airaf-A-97-L33] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #293
-// [Airaf-A-97-L34] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #312
-// [Airaf-A-97-L35] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #331
-// [Airaf-A-97-L36] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #350
-// [Airaf-A-97-L37] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #369
-// [Airaf-A-97-L38] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #388
-// [Airaf-A-97-L39] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #407
-// [Airaf-A-97-L40] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #426
-// [Airaf-A-97-L41] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #445
-// [Airaf-A-97-L42] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #464
-// [Airaf-A-97-L43] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #483
-// [Airaf-A-97-L44] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #502
-// [Airaf-A-97-L45] Extract RK-XXXX-XXXX code automatically from scanned QR pass text :: verification rule #521
-// === [SPEC-BLOCK-END] ===

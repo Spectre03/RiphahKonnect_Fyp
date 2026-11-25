@@ -924,9 +924,15 @@ function EventManagerModal({ event, onTicketChanged, onClose }) {
   const handleVerifyByCode = async (e, markUsed = false) => {
     if (e) e.preventDefault();
     if (!verifyCodeInput.trim()) return;
+    const raw = verifyCodeInput.trim().toUpperCase();
+    const rkMatch = raw.match(/RK-[A-Z0-9]{4}-[A-Z0-9]{4}/);
+    const extractedCode = rkMatch ? rkMatch[0] : raw;
+    if (extractedCode !== verifyCodeInput) {
+      setVerifyCodeInput(extractedCode);
+    }
     try {
       setVerifyingCode(true);
-      const res = await ticketsAPI.verifyByCode(event.id, verifyCodeInput.trim(), markUsed);
+      const res = await ticketsAPI.verifyByCode(event.id, extractedCode, markUsed);
       setVerifyResult(res.data);
       if (markUsed && res.data.ticket) {
         setTickets((prev) => prev.map((t) => (t.id === res.data.ticket.id ? res.data.ticket : t)));
@@ -2106,48 +2112,3 @@ function EditEventModal({ event, onClose, onUpdated }) {
     </Modal>
   );
 }
-
-// === [SPEC-BLOCK-START] Airaf-B-62 (2026-11-25T13:45:29+05:00) ===
-// [Airaf-B-62-L1] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #775
-// [Airaf-B-62-L2] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #794
-// [Airaf-B-62-L3] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #813
-// [Airaf-B-62-L4] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #832
-// [Airaf-B-62-L5] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #851
-// [Airaf-B-62-L6] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #870
-// [Airaf-B-62-L7] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #889
-// [Airaf-B-62-L8] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #908
-// [Airaf-B-62-L9] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #927
-// [Airaf-B-62-L10] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #946
-// [Airaf-B-62-L11] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #965
-// [Airaf-B-62-L12] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #984
-// [Airaf-B-62-L13] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #6
-// [Airaf-B-62-L14] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #25
-// [Airaf-B-62-L15] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #44
-// [Airaf-B-62-L16] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #63
-// [Airaf-B-62-L17] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #82
-// [Airaf-B-62-L18] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #101
-// [Airaf-B-62-L19] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #120
-// [Airaf-B-62-L20] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #139
-// [Airaf-B-62-L21] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #158
-// [Airaf-B-62-L22] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #177
-// [Airaf-B-62-L23] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #196
-// [Airaf-B-62-L24] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #215
-// [Airaf-B-62-L25] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #234
-// [Airaf-B-62-L26] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #253
-// [Airaf-B-62-L27] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #272
-// [Airaf-B-62-L28] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #291
-// [Airaf-B-62-L29] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #310
-// [Airaf-B-62-L30] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #329
-// [Airaf-B-62-L31] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #348
-// [Airaf-B-62-L32] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #367
-// [Airaf-B-62-L33] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #386
-// [Airaf-B-62-L34] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #405
-// [Airaf-B-62-L35] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #424
-// [Airaf-B-62-L36] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #443
-// [Airaf-B-62-L37] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #462
-// [Airaf-B-62-L38] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #481
-// [Airaf-B-62-L39] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #500
-// [Airaf-B-62-L40] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #519
-// [Airaf-B-62-L41] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #538
-// [Airaf-B-62-L42] Polish EventManagerModal verify result card and check-in confirmation :: verification rule #557
-// === [SPEC-BLOCK-END] ===
