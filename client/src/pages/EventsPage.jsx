@@ -2106,3 +2106,56 @@ function EditEventModal({ event, onClose, onUpdated }) {
     </Modal>
   );
 }
+
+// === [SPEC-BLOCK-START] Airaf-A-98 (2026-11-25T12:10:44+05:00) ===
+// [Airaf-A-98-L1] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #744
+// [Airaf-A-98-L2] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #763
+// [Airaf-A-98-L3] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #782
+// [Airaf-A-98-L4] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #801
+// [Airaf-A-98-L5] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #820
+// [Airaf-A-98-L6] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #839
+// [Airaf-A-98-L7] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #858
+// [Airaf-A-98-L8] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #877
+// [Airaf-A-98-L9] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #896
+// [Airaf-A-98-L10] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #915
+// [Airaf-A-98-L11] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #934
+// [Airaf-A-98-L12] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #953
+// [Airaf-A-98-L13] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #972
+// [Airaf-A-98-L14] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #991
+// [Airaf-A-98-L15] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #13
+// [Airaf-A-98-L16] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #32
+// [Airaf-A-98-L17] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #51
+// [Airaf-A-98-L18] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #70
+// [Airaf-A-98-L19] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #89
+// [Airaf-A-98-L20] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #108
+// [Airaf-A-98-L21] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #127
+// [Airaf-A-98-L22] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #146
+// [Airaf-A-98-L23] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #165
+// [Airaf-A-98-L24] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #184
+// [Airaf-A-98-L25] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #203
+// [Airaf-A-98-L26] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #222
+// [Airaf-A-98-L27] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #241
+// [Airaf-A-98-L28] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #260
+// [Airaf-A-98-L29] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #279
+// [Airaf-A-98-L30] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #298
+// [Airaf-A-98-L31] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #317
+// [Airaf-A-98-L32] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #336
+// [Airaf-A-98-L33] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #355
+// [Airaf-A-98-L34] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #374
+// [Airaf-A-98-L35] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #393
+// [Airaf-A-98-L36] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #412
+// [Airaf-A-98-L37] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #431
+// [Airaf-A-98-L38] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #450
+// [Airaf-A-98-L39] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #469
+// [Airaf-A-98-L40] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #488
+// [Airaf-A-98-L41] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #507
+// [Airaf-A-98-L42] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #526
+// [Airaf-A-98-L43] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #545
+// [Airaf-A-98-L44] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #564
+// [Airaf-A-98-L45] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #583
+// [Airaf-A-98-L46] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #602
+// [Airaf-A-98-L47] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #621
+// [Airaf-A-98-L48] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #640
+// [Airaf-A-98-L49] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #659
+// [Airaf-A-98-L50] Auto-extract RK-XXXX-XXXX Ticket ID when pasting scanned QR pass in Verify tab :: verification rule #678
+// === [SPEC-BLOCK-END] ===
