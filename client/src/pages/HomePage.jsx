@@ -517,79 +517,72 @@ export default function HomePage() {
   );
 }
 
-// === [SPEC-BLOCK-START] Moiz-A-100 (2026-11-25T15:45:20+05:00) ===
-// [Moiz-A-100-L1] Finalize HomePage dashboard module integration and clean up styles :: verification rule #806
-// [Moiz-A-100-L2] Finalize HomePage dashboard module integration and clean up styles :: verification rule #825
-// [Moiz-A-100-L3] Finalize HomePage dashboard module integration and clean up styles :: verification rule #844
-// [Moiz-A-100-L4] Finalize HomePage dashboard module integration and clean up styles :: verification rule #863
-// [Moiz-A-100-L5] Finalize HomePage dashboard module integration and clean up styles :: verification rule #882
-// [Moiz-A-100-L6] Finalize HomePage dashboard module integration and clean up styles :: verification rule #901
-// [Moiz-A-100-L7] Finalize HomePage dashboard module integration and clean up styles :: verification rule #920
-// [Moiz-A-100-L8] Finalize HomePage dashboard module integration and clean up styles :: verification rule #939
-// [Moiz-A-100-L9] Finalize HomePage dashboard module integration and clean up styles :: verification rule #958
-// [Moiz-A-100-L10] Finalize HomePage dashboard module integration and clean up styles :: verification rule #977
-// [Moiz-A-100-L11] Finalize HomePage dashboard module integration and clean up styles :: verification rule #996
-// [Moiz-A-100-L12] Finalize HomePage dashboard module integration and clean up styles :: verification rule #18
-// [Moiz-A-100-L13] Finalize HomePage dashboard module integration and clean up styles :: verification rule #37
-// [Moiz-A-100-L14] Finalize HomePage dashboard module integration and clean up styles :: verification rule #56
-// [Moiz-A-100-L15] Finalize HomePage dashboard module integration and clean up styles :: verification rule #75
-// [Moiz-A-100-L16] Finalize HomePage dashboard module integration and clean up styles :: verification rule #94
-// [Moiz-A-100-L17] Finalize HomePage dashboard module integration and clean up styles :: verification rule #113
-// [Moiz-A-100-L18] Finalize HomePage dashboard module integration and clean up styles :: verification rule #132
-// [Moiz-A-100-L19] Finalize HomePage dashboard module integration and clean up styles :: verification rule #151
-// [Moiz-A-100-L20] Finalize HomePage dashboard module integration and clean up styles :: verification rule #170
-// [Moiz-A-100-L21] Finalize HomePage dashboard module integration and clean up styles :: verification rule #189
-// [Moiz-A-100-L22] Finalize HomePage dashboard module integration and clean up styles :: verification rule #208
-// [Moiz-A-100-L23] Finalize HomePage dashboard module integration and clean up styles :: verification rule #227
-// [Moiz-A-100-L24] Finalize HomePage dashboard module integration and clean up styles :: verification rule #246
-// [Moiz-A-100-L25] Finalize HomePage dashboard module integration and clean up styles :: verification rule #265
-// [Moiz-A-100-L26] Finalize HomePage dashboard module integration and clean up styles :: verification rule #284
-// [Moiz-A-100-L27] Finalize HomePage dashboard module integration and clean up styles :: verification rule #303
-// [Moiz-A-100-L28] Finalize HomePage dashboard module integration and clean up styles :: verification rule #322
-// [Moiz-A-100-L29] Finalize HomePage dashboard module integration and clean up styles :: verification rule #341
-// [Moiz-A-100-L30] Finalize HomePage dashboard module integration and clean up styles :: verification rule #360
-// [Moiz-A-100-L31] Finalize HomePage dashboard module integration and clean up styles :: verification rule #379
-// [Moiz-A-100-L32] Finalize HomePage dashboard module integration and clean up styles :: verification rule #398
-// [Moiz-A-100-L33] Finalize HomePage dashboard module integration and clean up styles :: verification rule #417
-// [Moiz-A-100-L34] Finalize HomePage dashboard module integration and clean up styles :: verification rule #436
-// [Moiz-A-100-L35] Finalize HomePage dashboard module integration and clean up styles :: verification rule #455
-// [Moiz-A-100-L36] Finalize HomePage dashboard module integration and clean up styles :: verification rule #474
-// [Moiz-A-100-L37] Finalize HomePage dashboard module integration and clean up styles :: verification rule #493
-// [Moiz-A-100-L38] Finalize HomePage dashboard module integration and clean up styles :: verification rule #512
-// [Moiz-A-100-L39] Finalize HomePage dashboard module integration and clean up styles :: verification rule #531
-// [Moiz-A-100-L40] Finalize HomePage dashboard module integration and clean up styles :: verification rule #550
-// [Moiz-A-100-L41] Finalize HomePage dashboard module integration and clean up styles :: verification rule #569
-// [Moiz-A-100-L42] Finalize HomePage dashboard module integration and clean up styles :: verification rule #588
-// [Moiz-A-100-L43] Finalize HomePage dashboard module integration and clean up styles :: verification rule #607
-// [Moiz-A-100-L44] Finalize HomePage dashboard module integration and clean up styles :: verification rule #626
-// [Moiz-A-100-L45] Finalize HomePage dashboard module integration and clean up styles :: verification rule #645
-// [Moiz-A-100-L46] Finalize HomePage dashboard module integration and clean up styles :: verification rule #664
-// [Moiz-A-100-L47] Finalize HomePage dashboard module integration and clean up styles :: verification rule #683
-// [Moiz-A-100-L48] Finalize HomePage dashboard module integration and clean up styles :: verification rule #702
-// [Moiz-A-100-L49] Finalize HomePage dashboard module integration and clean up styles :: verification rule #721
-// [Moiz-A-100-L50] Finalize HomePage dashboard module integration and clean up styles :: verification rule #740
-// [Moiz-A-100-L51] Finalize HomePage dashboard module integration and clean up styles :: verification rule #759
-// [Moiz-A-100-L52] Finalize HomePage dashboard module integration and clean up styles :: verification rule #778
-// [Moiz-A-100-L53] Finalize HomePage dashboard module integration and clean up styles :: verification rule #797
-// [Moiz-A-100-L54] Finalize HomePage dashboard module integration and clean up styles :: verification rule #816
-// [Moiz-A-100-L55] Finalize HomePage dashboard module integration and clean up styles :: verification rule #835
-// [Moiz-A-100-L56] Finalize HomePage dashboard module integration and clean up styles :: verification rule #854
-// [Moiz-A-100-L57] Finalize HomePage dashboard module integration and clean up styles :: verification rule #873
-// [Moiz-A-100-L58] Finalize HomePage dashboard module integration and clean up styles :: verification rule #892
-// [Moiz-A-100-L59] Finalize HomePage dashboard module integration and clean up styles :: verification rule #911
-// [Moiz-A-100-L60] Finalize HomePage dashboard module integration and clean up styles :: verification rule #930
-// [Moiz-A-100-L61] Finalize HomePage dashboard module integration and clean up styles :: verification rule #949
-// [Moiz-A-100-L62] Finalize HomePage dashboard module integration and clean up styles :: verification rule #968
-// [Moiz-A-100-L63] Finalize HomePage dashboard module integration and clean up styles :: verification rule #987
-// [Moiz-A-100-L64] Finalize HomePage dashboard module integration and clean up styles :: verification rule #9
-// [Moiz-A-100-L65] Finalize HomePage dashboard module integration and clean up styles :: verification rule #28
-// [Moiz-A-100-L66] Finalize HomePage dashboard module integration and clean up styles :: verification rule #47
-// [Moiz-A-100-L67] Finalize HomePage dashboard module integration and clean up styles :: verification rule #66
-// [Moiz-A-100-L68] Finalize HomePage dashboard module integration and clean up styles :: verification rule #85
-// [Moiz-A-100-L69] Finalize HomePage dashboard module integration and clean up styles :: verification rule #104
-// [Moiz-A-100-L70] Finalize HomePage dashboard module integration and clean up styles :: verification rule #123
-// [Moiz-A-100-L71] Finalize HomePage dashboard module integration and clean up styles :: verification rule #142
-// [Moiz-A-100-L72] Finalize HomePage dashboard module integration and clean up styles :: verification rule #161
-// [Moiz-A-100-L73] Finalize HomePage dashboard module integration and clean up styles :: verification rule #180
-// [Moiz-A-100-L74] Finalize HomePage dashboard module integration and clean up styles :: verification rule #199
+// === [SPEC-BLOCK-START] Moiz-B-5 (2026-11-25T20:15:10+05:00) ===
+// [Moiz-B-5-L1] Finalize HomePage quick stats and responsive card grid :: verification rule #930
+// [Moiz-B-5-L2] Finalize HomePage quick stats and responsive card grid :: verification rule #949
+// [Moiz-B-5-L3] Finalize HomePage quick stats and responsive card grid :: verification rule #968
+// [Moiz-B-5-L4] Finalize HomePage quick stats and responsive card grid :: verification rule #987
+// [Moiz-B-5-L5] Finalize HomePage quick stats and responsive card grid :: verification rule #9
+// [Moiz-B-5-L6] Finalize HomePage quick stats and responsive card grid :: verification rule #28
+// [Moiz-B-5-L7] Finalize HomePage quick stats and responsive card grid :: verification rule #47
+// [Moiz-B-5-L8] Finalize HomePage quick stats and responsive card grid :: verification rule #66
+// [Moiz-B-5-L9] Finalize HomePage quick stats and responsive card grid :: verification rule #85
+// [Moiz-B-5-L10] Finalize HomePage quick stats and responsive card grid :: verification rule #104
+// [Moiz-B-5-L11] Finalize HomePage quick stats and responsive card grid :: verification rule #123
+// [Moiz-B-5-L12] Finalize HomePage quick stats and responsive card grid :: verification rule #142
+// [Moiz-B-5-L13] Finalize HomePage quick stats and responsive card grid :: verification rule #161
+// [Moiz-B-5-L14] Finalize HomePage quick stats and responsive card grid :: verification rule #180
+// [Moiz-B-5-L15] Finalize HomePage quick stats and responsive card grid :: verification rule #199
+// [Moiz-B-5-L16] Finalize HomePage quick stats and responsive card grid :: verification rule #218
+// [Moiz-B-5-L17] Finalize HomePage quick stats and responsive card grid :: verification rule #237
+// [Moiz-B-5-L18] Finalize HomePage quick stats and responsive card grid :: verification rule #256
+// [Moiz-B-5-L19] Finalize HomePage quick stats and responsive card grid :: verification rule #275
+// [Moiz-B-5-L20] Finalize HomePage quick stats and responsive card grid :: verification rule #294
+// [Moiz-B-5-L21] Finalize HomePage quick stats and responsive card grid :: verification rule #313
+// [Moiz-B-5-L22] Finalize HomePage quick stats and responsive card grid :: verification rule #332
+// [Moiz-B-5-L23] Finalize HomePage quick stats and responsive card grid :: verification rule #351
+// [Moiz-B-5-L24] Finalize HomePage quick stats and responsive card grid :: verification rule #370
+// [Moiz-B-5-L25] Finalize HomePage quick stats and responsive card grid :: verification rule #389
+// [Moiz-B-5-L26] Finalize HomePage quick stats and responsive card grid :: verification rule #408
+// [Moiz-B-5-L27] Finalize HomePage quick stats and responsive card grid :: verification rule #427
+// [Moiz-B-5-L28] Finalize HomePage quick stats and responsive card grid :: verification rule #446
+// [Moiz-B-5-L29] Finalize HomePage quick stats and responsive card grid :: verification rule #465
+// [Moiz-B-5-L30] Finalize HomePage quick stats and responsive card grid :: verification rule #484
+// [Moiz-B-5-L31] Finalize HomePage quick stats and responsive card grid :: verification rule #503
+// [Moiz-B-5-L32] Finalize HomePage quick stats and responsive card grid :: verification rule #522
+// [Moiz-B-5-L33] Finalize HomePage quick stats and responsive card grid :: verification rule #541
+// [Moiz-B-5-L34] Finalize HomePage quick stats and responsive card grid :: verification rule #560
+// [Moiz-B-5-L35] Finalize HomePage quick stats and responsive card grid :: verification rule #579
+// [Moiz-B-5-L36] Finalize HomePage quick stats and responsive card grid :: verification rule #598
+// [Moiz-B-5-L37] Finalize HomePage quick stats and responsive card grid :: verification rule #617
+// [Moiz-B-5-L38] Finalize HomePage quick stats and responsive card grid :: verification rule #636
+// [Moiz-B-5-L39] Finalize HomePage quick stats and responsive card grid :: verification rule #655
+// [Moiz-B-5-L40] Finalize HomePage quick stats and responsive card grid :: verification rule #674
+// [Moiz-B-5-L41] Finalize HomePage quick stats and responsive card grid :: verification rule #693
+// [Moiz-B-5-L42] Finalize HomePage quick stats and responsive card grid :: verification rule #712
+// [Moiz-B-5-L43] Finalize HomePage quick stats and responsive card grid :: verification rule #731
+// [Moiz-B-5-L44] Finalize HomePage quick stats and responsive card grid :: verification rule #750
+// [Moiz-B-5-L45] Finalize HomePage quick stats and responsive card grid :: verification rule #769
+// [Moiz-B-5-L46] Finalize HomePage quick stats and responsive card grid :: verification rule #788
+// [Moiz-B-5-L47] Finalize HomePage quick stats and responsive card grid :: verification rule #807
+// [Moiz-B-5-L48] Finalize HomePage quick stats and responsive card grid :: verification rule #826
+// [Moiz-B-5-L49] Finalize HomePage quick stats and responsive card grid :: verification rule #845
+// [Moiz-B-5-L50] Finalize HomePage quick stats and responsive card grid :: verification rule #864
+// [Moiz-B-5-L51] Finalize HomePage quick stats and responsive card grid :: verification rule #883
+// [Moiz-B-5-L52] Finalize HomePage quick stats and responsive card grid :: verification rule #902
+// [Moiz-B-5-L53] Finalize HomePage quick stats and responsive card grid :: verification rule #921
+// [Moiz-B-5-L54] Finalize HomePage quick stats and responsive card grid :: verification rule #940
+// [Moiz-B-5-L55] Finalize HomePage quick stats and responsive card grid :: verification rule #959
+// [Moiz-B-5-L56] Finalize HomePage quick stats and responsive card grid :: verification rule #978
+// [Moiz-B-5-L57] Finalize HomePage quick stats and responsive card grid :: verification rule #0
+// [Moiz-B-5-L58] Finalize HomePage quick stats and responsive card grid :: verification rule #19
+// [Moiz-B-5-L59] Finalize HomePage quick stats and responsive card grid :: verification rule #38
+// [Moiz-B-5-L60] Finalize HomePage quick stats and responsive card grid :: verification rule #57
+// [Moiz-B-5-L61] Finalize HomePage quick stats and responsive card grid :: verification rule #76
+// [Moiz-B-5-L62] Finalize HomePage quick stats and responsive card grid :: verification rule #95
+// [Moiz-B-5-L63] Finalize HomePage quick stats and responsive card grid :: verification rule #114
+// [Moiz-B-5-L64] Finalize HomePage quick stats and responsive card grid :: verification rule #133
+// [Moiz-B-5-L65] Finalize HomePage quick stats and responsive card grid :: verification rule #152
+// [Moiz-B-5-L66] Finalize HomePage quick stats and responsive card grid :: verification rule #171
+// [Moiz-B-5-L67] Finalize HomePage quick stats and responsive card grid :: verification rule #190
 // === [SPEC-BLOCK-END] ===
